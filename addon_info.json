@@ -1,0 +1,10 @@
+﻿{
+  "addon_name": "AbsoluteYoutube",
+  "addon_description": "Download YouTube videos as MP3, MP4 and WAV with resume, trim clips, snapshots, short URL copy, and smart failed download manager fast & accessible for NVDA users.",
+  "addon_version": "2026.2",
+  "addon_author": "chaichaimee",
+  "addon_url": "https://github.com/chaichaimee/AbsoluteYoutube",
+  "addon_download_url": "https://github.com/chaichaimee/AbsoluteYoutube/releases/download/v2026.2/AbsoluteYoutube-v2026.2.nvda-addon",
+  "addon_min_nvda_version": "2022.4"
+}
+
