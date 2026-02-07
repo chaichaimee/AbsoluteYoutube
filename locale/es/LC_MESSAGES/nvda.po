@@ -1,0 +1,40 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.7\n"
+
+# ... (header เดียวกัน แต่เปลี่ยน Language: es)
+msgid "Absolute YouTube"
+msgstr "Absolute YouTube"
+
+msgid "Download MP3"
+msgstr "Descargar MP3"
+
+msgid "Playlist mode enabled"
+msgstr "Modo lista de reproducción activado"
+
+msgid "You must be on a YouTube page to use this feature"
+msgstr "Debes estar en una página de YouTube para usar esta función"
+
+msgid "No failed downloads"
+msgstr "No hay descargas fallidas"
+
+msgid "Trimming and downloading {format}..."
+msgstr "Recortando y descargando {format}..."
+
+msgid "&Beep while converting"
+msgstr "&Pitido mientras se convierte"
+
+msgid "Use &cookies (recommended to avoid block)"
+msgstr "Usar &cookies (recomendado para evitar bloqueos)"
+
+msgid "Reset to safe settings. Remember to use cookies for best results."
+msgstr "Restablecido a configuración segura. Recuerda usar cookies para mejores resultados."

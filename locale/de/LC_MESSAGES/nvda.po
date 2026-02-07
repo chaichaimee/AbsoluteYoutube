@@ -1,0 +1,431 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Absolute YouTube\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-07 11:30+0700\n"
+"PO-Revision-Date: 2026-02-07 11:35+0700\n"
+"Last-Translator: Grok-assisted\n"
+"Language-Team: German\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.7\n"
+
+msgid "Absolute YouTube"
+msgstr "Absolute YouTube"
+
+msgid "Error importing core functions: {str}"
+msgstr "Fehler beim Importieren der Kernfunktionen: {str}"
+
+msgid "Error initializing AbsoluteYoutube: {str}"
+msgstr "Fehler bei der Initialisierung von AbsoluteYoutube: {str}"
+
+msgid "Download MP3 (single tap), MP4 (double tap), or WAV (triple tap)"
+msgstr "MP3 herunterladen (einmal tippen), MP4 (doppelt tippen) oder WAV (dreifach tippen)"
+
+msgid "Download MP3"
+msgstr "MP3 herunterladen"
+
+msgid "Download MP4"
+msgstr "MP4 herunterladen"
+
+msgid "Download WAV"
+msgstr "WAV herunterladen"
+
+msgid "Open context menu (single tap) or download folder (double tap)"
+msgstr "Kontextmenü öffnen (einmal tippen) oder Download-Ordner öffnen (doppelt tippen)"
+
+msgid "Error opening folder"
+msgstr "Fehler beim Öffnen des Ordners"
+
+msgid "Invalid download folder"
+msgstr "Ungültiger Download-Ordner"
+
+msgid "Not on a YouTube video page"
+msgstr "Nicht auf einer YouTube-Videoseite"
+
+msgid "Short URL copied to clipboard"
+msgstr "Kurz-URL in die Zwischenablage kopiert"
+
+msgid "Could not create shortened URL"
+msgstr "Kurz-URL konnte nicht erstellt werden"
+
+msgid "Cannot determine current context"
+msgstr "Aktueller Kontext kann nicht bestimmt werden"
+
+msgid "Error displaying context menu"
+msgstr "Fehler beim Anzeigen des Kontextmenüs"
+
+msgid "Toggle playlist mode"
+msgstr "Playlist-Modus umschalten"
+
+msgid "Playlist mode enabled"
+msgstr "Playlist-Modus aktiviert"
+
+msgid "Playlist mode disabled"
+msgstr "Playlist-Modus deaktiviert"
+
+msgid "Cycle MP3 quality settings"
+msgstr "MP3-Qualitätseinstellungen durchlaufen"
+
+msgid "{quality} kbps"
+msgstr "{quality} kbps"
+
+msgid "You must be on a YouTube page to use this feature"
+msgstr "Sie müssen auf einer YouTube-Seite sein, um diese Funktion zu nutzen"
+
+msgid "Error: Trim module not available"
+msgstr "Fehler: Trim-Modul nicht verfügbar"
+
+msgid "Error opening trim dialog: {str}"
+msgstr "Fehler beim Öffnen des Trim-Dialogs: {str}"
+
+msgid "Error: Snapshot module not available"
+msgstr "Fehler: Snapshot-Modul nicht verfügbar"
+
+msgid "Error importing settings panel: {str}"
+msgstr "Fehler beim Importieren des Einstellungspanels: {str}"
+
+msgid "Error opening settings dialog: {str}"
+msgstr "Fehler beim Öffnen des Einstellungsdialogs: {str}"
+
+msgid "Error: DownloadFail module not available"
+msgstr "Fehler: DownloadFail-Modul nicht verfügbar"
+
+msgid "No failed downloads"
+msgstr "Keine fehlgeschlagenen Downloads"
+
+msgid "Error opening download fail dialog: {str}"
+msgstr "Fehler beim Öffnen des Download-Fehler-Dialogs: {str}"
+
+msgid "Error loading failed downloads: {e}"
+msgstr "Fehler beim Laden fehlgeschlagener Downloads: {e}"
+
+msgid "Error saving failed downloads: {e}"
+msgstr "Fehler beim Speichern fehlgeschlagener Downloads: {e}"
+
+msgid "Cannot create folder"
+msgstr "Ordner kann nicht erstellt werden"
+
+msgid "Browser required"
+msgstr "Browser erforderlich"
+
+msgid "URL not found"
+msgstr "URL nicht gefunden"
+
+msgid "File exists"
+msgstr "Datei existiert bereits"
+
+msgid "yt-dlp.exe missing"
+msgstr "yt-dlp.exe fehlt"
+
+msgid "Error: ffmpeg.exe not found."
+msgstr "Fehler: ffmpeg.exe nicht gefunden."
+
+msgid "File already exists. Skipping download."
+msgstr "Datei existiert bereits. Download wird übersprungen."
+
+msgid "No valid multimedia link found."
+msgstr "Kein gültiger Multimedia-Link gefunden."
+
+msgid "Not a YouTube video or valid multimedia link"
+msgstr "Kein YouTube-Video oder gültiger Multimedia-Link"
+
+msgid "Adding link as {format} to download queue"
+msgstr "Link als {format} zur Download-Warteschlange hinzufügen"
+
+msgid "Download Fail Manager - Absolute YouTube"
+msgstr "Download-Fehler-Manager - Absolute YouTube"
+
+msgid "Video Title"
+msgstr "Videotitel"
+
+msgid "Duration"
+msgstr "Dauer"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "&Delete Selected"
+msgstr "Ausgewählte löschen"
+
+msgid "&Download All"
+msgstr "Alle herunterladen"
+
+msgid "&Clear All"
+msgstr "Alle löschen"
+
+msgid "&OK"
+msgstr "&OK"
+
+msgid "&Cancel"
+msgstr "&Abbrechen"
+
+msgid "Delete"
+msgstr "Löschen"
+
+msgid "Download file"
+msgstr "Datei herunterladen"
+
+msgid "Delete selected"
+msgstr "Ausgewählte löschen"
+
+msgid "Download all"
+msgstr "Alle herunterladen"
+
+msgid "Clear all"
+msgstr "Alle löschen"
+
+msgid "Item deleted"
+msgstr "Eintrag gelöscht"
+
+msgid "Error starting download"
+msgstr "Fehler beim Starten des Downloads"
+
+msgid "Download started for: {title}"
+msgstr "Download gestartet für: {title}"
+
+msgid "No items selected"
+msgstr "Keine Einträge ausgewählt"
+
+msgid "Selected items deleted"
+msgstr "Ausgewählte Einträge gelöscht"
+
+msgid "No failed downloads to process"
+msgstr "Keine fehlgeschlagenen Downloads zum Verarbeiten"
+
+msgid "All downloads started"
+msgstr "Alle Downloads gestartet"
+
+msgid "No failed downloads to clear"
+msgstr "Keine fehlgeschlagenen Downloads zum Löschen"
+
+msgid "All failed downloads cleared"
+msgstr "Alle fehlgeschlagenen Downloads gelöscht"
+
+msgid "Error creating download folder"
+msgstr "Fehler beim Erstellen des Download-Ordners"
+
+msgid "Snapshot file already exists"
+msgstr "Snapshot-Datei existiert bereits"
+
+msgid "Capturing full-size snapshot..."
+msgstr "Erfasse Vollbild-Snapshot..."
+
+msgid "Downloading thumbnail..."
+msgstr "Thumbnail wird heruntergeladen..."
+
+msgid "Processing snapshot..."
+msgstr "Snapshot wird verarbeitet..."
+
+msgid "Error: Failed to capture snapshot."
+msgstr "Fehler: Snapshot konnte nicht erfasst werden."
+
+msgid "Error: No snapshot file created."
+msgstr "Fehler: Keine Snapshot-Datei erstellt."
+
+msgid "An unexpected error occurred."
+msgstr "Ein unerwarteter Fehler ist aufgetreten."
+
+msgid "Full-size snapshot complete"
+msgstr "Vollbild-Snapshot abgeschlossen"
+
+msgid "Absolute YouTube Trim"
+msgstr "Absolute YouTube Trimmen"
+
+msgid "Start time:"
+msgstr "Startzeit:"
+
+msgid "End time:"
+msgstr "Endzeit:"
+
+msgid "Video duration: unknown; Overall period: 0 seconds"
+msgstr "Videodauer: unbekannt; Gesamtzeitraum: 0 Sekunden"
+
+msgid "Preview start"
+msgstr "Vorschau starten"
+
+msgid "File Format"
+msgstr "Dateiformat"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP4"
+msgstr "MP4"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "Audio Quality"
+msgstr "Audioqualität"
+
+msgid "Start download"
+msgstr "Download starten"
+
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgid "Invalid URL or start time"
+msgstr "Ungültige URL oder Startzeit"
+
+msgid "Could not open preview URL"
+msgstr "Vorschau-URL konnte nicht geöffnet werden"
+
+msgid "URL is required"
+msgstr "URL ist erforderlich"
+
+msgid "Start time must be less than end time"
+msgstr "Startzeit muss kleiner als Endzeit sein"
+
+msgid "Trimming and downloading {format}..."
+msgstr "Schneide und lade {format} herunter..."
+
+msgid "Destination folder"
+msgstr "Zielordner"
+
+msgid "&Browse..."
+msgstr "&Durchsuchen..."
+
+msgid "Select a directory"
+msgstr "Verzeichnis auswählen"
+
+msgid "&Beep while converting"
+msgstr "&Piepen während der Konvertierung"
+
+msgid "&Say download complete"
+msgstr "&Download abgeschlossen ankündigen"
+
+msgid "MP3 &quality (kbps):"
+msgstr "MP3-&Qualität (kbps):"
+
+msgid "Use download section"
+msgstr "Download-Bereich verwenden"
+
+msgid "&Number of connections:"
+msgstr "&Anzahl der Verbindungen:"
+
+msgid "Enable &playlist mode by default"
+msgstr "Playlist-Modus standardmäßig &aktivieren"
+
+msgid "Skip existing files"
+msgstr "Vorhandene Dateien überspringen"
+
+msgid "Resume interrupted downloads on restart"
+msgstr "Unterbrochene Downloads beim Neustart fortsetzen"
+
+msgid "Enable &logging"
+msgstr "&Protokollierung aktivieren"
+
+msgid "&Max concurrent downloads (1-4):"
+msgstr "&Maximale gleichzeitige Downloads (1-4):"
+
+msgid "Anti-blocking settings"
+msgstr "Anti-Blockierungs-Einstellungen"
+
+msgid "Use &cookies (recommended to avoid block)"
+msgstr "&Cookies verwenden (empfohlen, um Blockierung zu vermeiden)"
+
+msgid "Cookies &file:"
+msgstr "Cookies-&Datei:"
+
+msgid "How to get cookies?"
+msgstr "Wie bekomme ich Cookies?"
+
+msgid "Use &custom user agent"
+msgstr "&Benutzerdefinierten User-Agent verwenden"
+
+msgid "User &agent:"
+msgstr "User-&Agent:"
+
+msgid "&Throttle rate (KB/s, 0=unlimited):"
+msgstr "&Drosselungsrate (KB/s, 0=unbegrenzt):"
+
+msgid "&Sleep between requests (seconds):"
+msgstr "&Pause zwischen Anfragen (Sekunden):"
+
+msgid "&Retry count:"
+msgstr "&Wiederholungsanzahl:"
+
+msgid "Fragment &retries:"
+msgstr "Fragment-&Wiederholungen:"
+
+msgid "Skip &unavailable fragments"
+msgstr "&Nicht verfügbare Fragmente überspringen"
+
+msgid "Use &proxy"
+msgstr "&Proxy verwenden"
+
+msgid "Proxy &URL:"
+msgstr "Proxy-&URL:"
+
+msgid "&Geo bypass"
+msgstr "&Geo-Bypass"
+
+msgid "Geo bypass &country:"
+msgstr "Geo-Bypass-&Land:"
+
+msgid "Force I&Pv4"
+msgstr "IPv&4 erzwingen"
+
+msgid "Force I&Pv6"
+msgstr "IPv&6 erzwingen"
+
+msgid "&Mark as watched"
+msgstr "Als &angesehen markieren"
+
+msgid "Reset to &safe settings (recommended if blocked)"
+msgstr "Auf &sichere Einstellungen zurücksetzen (empfohlen bei Blockierung)"
+
+msgid "yt-dlp Update"
+msgstr "yt-dlp Aktualisierung"
+
+msgid "Auto-update yt-dlp on startup"
+msgstr "yt-dlp beim Start automatisch aktualisieren"
+
+msgid "Update yt-dlp now"
+msgstr "yt-dlp jetzt aktualisieren"
+
+msgid "Update status: Idle"
+msgstr "Aktualisierungsstatus: Leerlauf"
+
+msgid ""
+"How to get YouTube cookies:\n"
+"\n"
+"1. Install 'Get cookies.txt' extension in Chrome or Firefox\n"
+"2. Login to YouTube in your browser\n"
+"3. Click the extension icon and export cookies\n"
+"4. Save as cookies.txt and select it here\n"
+"\n"
+"Using cookies helps avoid blocks because YouTube sees you as a logged-in user."
+msgstr ""
+"So erhalten Sie YouTube-Cookies:\n"
+"\n"
+"1. Installieren Sie die Erweiterung 'Get cookies.txt' in Chrome oder Firefox\n"
+"2. Melden Sie sich in Ihrem Browser bei YouTube an\n"
+"3. Klicken Sie auf das Erweiterungssymbol und exportieren Sie die Cookies\n"
+"4. Speichern Sie als cookies.txt und wählen Sie sie hier aus\n"
+"\n"
+"Die Verwendung von Cookies hilft, Blockierungen zu vermeiden, da YouTube Sie als angemeldeten Benutzer erkennt."
+
+msgid "Reset to safe settings. Remember to use cookies for best results."
+msgstr "Auf sichere Einstellungen zurückgesetzt. Denken Sie daran, Cookies für beste Ergebnisse zu verwenden."
+
+msgid "Update status: Updating..."
+msgstr "Aktualisierungsstatus: Wird aktualisiert..."
+
+msgid "Updating yt-dlp..."
+msgstr "Aktualisiere yt-dlp..."
+
+msgid "yt-dlp updated successfully"
+msgstr "yt-dlp erfolgreich aktualisiert"
+
+msgid "Update status: Update successful"
+msgstr "Aktualisierungsstatus: Aktualisierung erfolgreich"
+
+msgid "Update failed: {str}"
+msgstr "Aktualisierung fehlgeschlagen: {str}"
+
+msgid "Failed to create the specified folder. Please select a valid folder."
+msgstr "Fehler beim Erstellen des angegebenen Ordners. Bitte wählen Sie einen gültigen Ordner."
