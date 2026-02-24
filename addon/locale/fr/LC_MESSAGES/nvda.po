@@ -1,0 +1,31 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.7\n"
+
+# ... Language: fr
+msgid "Absolute YouTube"
+msgstr "Absolute YouTube"
+
+msgid "Download MP3"
+msgstr "Télécharger MP3"
+
+msgid "Playlist mode enabled"
+msgstr "Mode playlist activé"
+
+msgid "You must be on a YouTube page to use this feature"
+msgstr "Vous devez être sur une page YouTube pour utiliser cette fonctionnalité"
+
+msgid "Error: ffmpeg.exe not found."
+msgstr "Erreur : ffmpeg.exe non trouvé."
+
+msgid "Use &cookies (recommended to avoid block)"
+msgstr "Utiliser les &cookies (recommandé pour éviter le blocage)"

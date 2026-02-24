@@ -1,0 +1,591 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Absolute YouTube\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-07 11:30+0700\n"
+"PO-Revision-Date: 2026-02-07 11:33+0700\n"
+"Last-Translator: Chai Chaimee\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.7\n"
+
+#: __init__.py
+msgid "Absolute YouTube"
+msgstr "Absolute YouTube"
+
+#: __init__.py
+msgid "Error importing core functions: {str}"
+msgstr "Error importing core functions: {str}"
+
+#: __init__.py
+msgid "Error initializing AbsoluteYoutube: {str}"
+msgstr "Error initializing AbsoluteYoutube: {str}"
+
+#: __init__.py
+msgid "Download MP3 (single tap), MP4 (double tap), or WAV (triple tap)"
+msgstr "Download MP3 (single tap), MP4 (double tap), or WAV (triple tap)"
+
+#: __init__.py
+msgid "Download MP3"
+msgstr "Download MP3"
+
+#: __init__.py
+msgid "Download MP4"
+msgstr "Download MP4"
+
+#: __init__.py
+msgid "Download WAV"
+msgstr "Download WAV"
+
+#: __init__.py
+msgid "Open context menu (single tap) or download folder (double tap)"
+msgstr "Open context menu (single tap) or download folder (double tap)"
+
+#: __init__.py
+msgid "Error opening folder"
+msgstr "Error opening folder"
+
+#: __init__.py
+msgid "Invalid download folder"
+msgstr "Invalid download folder"
+
+#: __init__.py
+msgid "Not on a YouTube video page"
+msgstr "Not on a YouTube video page"
+
+#: __init__.py
+msgid "Short URL copied to clipboard"
+msgstr "Short URL copied to clipboard"
+
+#: __init__.py
+msgid "Could not create shortened URL"
+msgstr "Could not create shortened URL"
+
+#: __init__.py
+msgid "Cannot determine current context"
+msgstr "Cannot determine current context"
+
+#: __init__.py
+msgid "Error displaying context menu"
+msgstr "Error displaying context menu"
+
+#: __init__.py
+msgid "Toggle playlist mode"
+msgstr "Toggle playlist mode"
+
+#: __init__.py
+msgid "Playlist mode enabled"
+msgstr "Playlist mode enabled"
+
+#: __init__.py
+msgid "Playlist mode disabled"
+msgstr "Playlist mode disabled"
+
+#: __init__.py
+msgid "Cycle MP3 quality settings"
+msgstr "Cycle MP3 quality settings"
+
+#: __init__.py
+msgid "{quality} kbps"
+msgstr "{quality} kbps"
+
+#: __init__.py
+msgid "You must be on a YouTube page to use this feature"
+msgstr "You must be on a YouTube page to use this feature"
+
+#: __init__.py
+msgid "Error: Trim module not available"
+msgstr "Error: Trim module not available"
+
+#: __init__.py
+msgid "Error opening trim dialog: {str}"
+msgstr "Error opening trim dialog: {str}"
+
+#: __init__.py
+msgid "Error: Snapshot module not available"
+msgstr "Error: Snapshot module not available"
+
+#: __init__.py
+msgid "Error importing settings panel: {str}"
+msgstr "Error importing settings panel: {str}"
+
+#: __init__.py
+msgid "Error opening settings dialog: {str}"
+msgstr "Error opening settings dialog: {str}"
+
+#: __init__.py
+msgid "Error: DownloadFail module not available"
+msgstr "Error: DownloadFail module not available"
+
+#: __init__.py
+msgid "No failed downloads"
+msgstr "No failed downloads"
+
+#: __init__.py
+msgid "Error opening download fail dialog: {str}"
+msgstr "Error opening download fail dialog: {str}"
+
+#: Download_core.py
+msgid "Error loading failed downloads: {e}"
+msgstr "Error loading failed downloads: {e}"
+
+#: Download_core.py
+msgid "Error saving failed downloads: {e}"
+msgstr "Error saving failed downloads: {e}"
+
+#: Download_core.py
+msgid "Error playing sound: {e}"
+msgstr "Error playing sound: {e}"
+
+#: Download_core.py
+msgid "Error checking yt-dlp update: {e}"
+msgstr "Error checking yt-dlp update: {e}"
+
+#: Download_core.py
+msgid "Error writing log: {e}"
+msgstr "Error writing log: {e}"
+
+#: Download_core.py
+msgid "Cannot create folder"
+msgstr "Cannot create folder"
+
+#: Download_core.py
+msgid "Failed to create folder: {e}"
+msgstr "Failed to create folder: {e}"
+
+#: Download_core.py
+msgid "Browser required"
+msgstr "Browser required"
+
+#: Download_core.py
+msgid "URL not found"
+msgstr "URL not found"
+
+#: Download_core.py
+msgid "File exists"
+msgstr "File exists"
+
+#: Download_core.py
+msgid "yt-dlp.exe missing"
+msgstr "yt-dlp.exe missing"
+
+#: Download_core.py Trim.py
+msgid "Error: ffmpeg.exe not found."
+msgstr "Error: ffmpeg.exe not found."
+
+#: Download_core.py
+msgid "File already exists. Skipping download."
+msgstr "File already exists. Skipping download."
+
+#: Download_core.py
+msgid "No valid multimedia link found."
+msgstr "No valid multimedia link found."
+
+#: Download_core.py
+msgid "Not a YouTube video or valid multimedia link"
+msgstr "Not a YouTube video or valid multimedia link"
+
+#: Download_core.py
+msgid "Adding link as {format} to download queue"
+msgstr "Adding link as {format} to download queue"
+
+#: downloadFail.py
+msgid "Download Fail Manager - Absolute YouTube"
+msgstr "Download Fail Manager - Absolute YouTube"
+
+#: downloadFail.py
+msgid "Video Title"
+msgstr "Video Title"
+
+#: downloadFail.py
+msgid "Duration"
+msgstr "Duration"
+
+#: downloadFail.py
+msgid "URL"
+msgstr "URL"
+
+#: downloadFail.py
+msgid "&Delete Selected"
+msgstr "&Delete Selected"
+
+#: downloadFail.py
+msgid "&Download All"
+msgstr "&Download All"
+
+#: downloadFail.py
+msgid "&Clear All"
+msgstr "&Clear All"
+
+#: downloadFail.py
+msgid "&OK"
+msgstr "&OK"
+
+#: downloadFail.py
+msgid "&Cancel"
+msgstr "&Cancel"
+
+#: downloadFail.py
+msgid "Delete"
+msgstr "Delete"
+
+#: downloadFail.py
+msgid "Download file"
+msgstr "Download file"
+
+#: downloadFail.py
+msgid "Delete selected"
+msgstr "Delete selected"
+
+#: downloadFail.py
+msgid "Download all"
+msgstr "Download all"
+
+#: downloadFail.py
+msgid "Clear all"
+msgstr "Clear all"
+
+#: downloadFail.py
+msgid "Item deleted"
+msgstr "Item deleted"
+
+#: downloadFail.py
+msgid "Error starting download"
+msgstr "Error starting download"
+
+#: downloadFail.py
+msgid "Download started for: {title}"
+msgstr "Download started for: {title}"
+
+#: downloadFail.py
+msgid "No items selected"
+msgstr "No items selected"
+
+#: downloadFail.py
+msgid "Selected items deleted"
+msgstr "Selected items deleted"
+
+#: downloadFail.py
+msgid "No failed downloads to process"
+msgstr "No failed downloads to process"
+
+#: downloadFail.py
+msgid "All downloads started"
+msgstr "All downloads started"
+
+#: downloadFail.py
+msgid "No failed downloads to clear"
+msgstr "No failed downloads to clear"
+
+#: downloadFail.py
+msgid "All failed downloads cleared"
+msgstr "All failed downloads cleared"
+
+#: Snapshot.py
+msgid "Error creating download folder"
+msgstr "Error creating download folder"
+
+#: Snapshot.py
+msgid "Snapshot file already exists"
+msgstr "Snapshot file already exists"
+
+#: Snapshot.py
+msgid "Capturing full-size snapshot..."
+msgstr "Capturing full-size snapshot..."
+
+#: Snapshot.py
+msgid "Downloading thumbnail..."
+msgstr "Downloading thumbnail..."
+
+#: Snapshot.py
+msgid "Processing snapshot..."
+msgstr "Processing snapshot..."
+
+#: Snapshot.py
+msgid "Error: Failed to capture snapshot."
+msgstr "Error: Failed to capture snapshot."
+
+#: Snapshot.py
+msgid "Error: No snapshot file created."
+msgstr "Error: No snapshot file created."
+
+#: Snapshot.py
+msgid "An unexpected error occurred."
+msgstr "An unexpected error occurred."
+
+#: Snapshot.py
+msgid "Full-size snapshot complete"
+msgstr "Full-size snapshot complete"
+
+#: Trim.py
+msgid "Absolute YouTube Trim"
+msgstr "Absolute YouTube Trim"
+
+#: Trim.py
+msgid "Start time:"
+msgstr "Start time:"
+
+#: Trim.py
+msgid "End time:"
+msgstr "End time:"
+
+#: Trim.py
+msgid "Video duration: unknown; Overall period: 0 seconds"
+msgstr "Video duration: unknown; Overall period: 0 seconds"
+
+#: Trim.py
+msgid "Preview start"
+msgstr "Preview start"
+
+#: Trim.py
+msgid "File Format"
+msgstr "File Format"
+
+#: Trim.py
+msgid "MP3"
+msgstr "MP3"
+
+#: Trim.py
+msgid "MP4"
+msgstr "MP4"
+
+#: Trim.py
+msgid "WAV"
+msgstr "WAV"
+
+#: Trim.py
+msgid "Audio Quality"
+msgstr "Audio Quality"
+
+#: Trim.py
+msgid "Start download"
+msgstr "Start download"
+
+#: Trim.py
+msgid "Cancel"
+msgstr "Cancel"
+
+#: Trim.py
+msgid "Invalid URL or start time"
+msgstr "Invalid URL or start time"
+
+#: Trim.py
+msgid "Could not open preview URL"
+msgstr "Could not open preview URL"
+
+#: Trim.py
+msgid "URL is required"
+msgstr "URL is required"
+
+#: Trim.py
+msgid "Start time must be less than end time"
+msgstr "Start time must be less than end time"
+
+#: Trim.py
+msgid "Trimming and downloading {format}..."
+msgstr "Trimming and downloading {format}..."
+
+#: Trim.py
+msgid "Error: yt-dlp.exe not found."
+msgstr "Error: yt-dlp.exe not found."
+
+#: Youtube_settings.py
+msgid "Destination folder"
+msgstr "Destination folder"
+
+#: Youtube_settings.py
+msgid "&Browse..."
+msgstr "&Browse..."
+
+#: Youtube_settings.py
+msgid "Select a directory"
+msgstr "Select a directory"
+
+#: Youtube_settings.py
+msgid "&Beep while converting"
+msgstr "&Beep while converting"
+
+#: Youtube_settings.py
+msgid "&Say download complete"
+msgstr "&Say download complete"
+
+#: Youtube_settings.py
+msgid "MP3 &quality (kbps):"
+msgstr "MP3 &quality (kbps):"
+
+#: Youtube_settings.py
+msgid "Use download section"
+msgstr "Use download section"
+
+#: Youtube_settings.py
+msgid "&Number of connections:"
+msgstr "&Number of connections:"
+
+#: Youtube_settings.py
+msgid "Enable &playlist mode by default"
+msgstr "Enable &playlist mode by default"
+
+#: Youtube_settings.py
+msgid "Skip existing files"
+msgstr "Skip existing files"
+
+#: Youtube_settings.py
+msgid "Resume interrupted downloads on restart"
+msgstr "Resume interrupted downloads on restart"
+
+#: Youtube_settings.py
+msgid "Enable &logging"
+msgstr "Enable &logging"
+
+#: Youtube_settings.py
+msgid "&Max concurrent downloads (1-4):"
+msgstr "&Max concurrent downloads (1-4):"
+
+#: Youtube_settings.py
+msgid "Anti-blocking settings"
+msgstr "Anti-blocking settings"
+
+#: Youtube_settings.py
+msgid "Use &cookies (recommended to avoid block)"
+msgstr "Use &cookies (recommended to avoid block)"
+
+#: Youtube_settings.py
+msgid "Cookies &file:"
+msgstr "Cookies &file:"
+
+#: Youtube_settings.py
+msgid "How to get cookies?"
+msgstr "How to get cookies?"
+
+#: Youtube_settings.py
+msgid "Use &custom user agent"
+msgstr "Use &custom user agent"
+
+#: Youtube_settings.py
+msgid "User &agent:"
+msgstr "User &agent:"
+
+#: Youtube_settings.py
+msgid "&Throttle rate (KB/s, 0=unlimited):"
+msgstr "&Throttle rate (KB/s, 0=unlimited):"
+
+#: Youtube_settings.py
+msgid "&Sleep between requests (seconds):"
+msgstr "&Sleep between requests (seconds):"
+
+#: Youtube_settings.py
+msgid "&Retry count:"
+msgstr "&Retry count:"
+
+#: Youtube_settings.py
+msgid "Fragment &retries:"
+msgstr "Fragment &retries:"
+
+#: Youtube_settings.py
+msgid "Skip &unavailable fragments"
+msgstr "Skip &unavailable fragments"
+
+#: Youtube_settings.py
+msgid "Use &proxy"
+msgstr "Use &proxy"
+
+#: Youtube_settings.py
+msgid "Proxy &URL:"
+msgstr "Proxy &URL:"
+
+#: Youtube_settings.py
+msgid "&Geo bypass"
+msgstr "&Geo bypass"
+
+#: Youtube_settings.py
+msgid "Geo bypass &country:"
+msgstr "Geo bypass &country:"
+
+#: Youtube_settings.py
+msgid "Force I&Pv4"
+msgstr "Force I&Pv4"
+
+#: Youtube_settings.py
+msgid "Force I&Pv6"
+msgstr "Force I&Pv6"
+
+#: Youtube_settings.py
+msgid "&Mark as watched"
+msgstr "&Mark as watched"
+
+#: Youtube_settings.py
+msgid "Reset to &safe settings (recommended if blocked)"
+msgstr "Reset to &safe settings (recommended if blocked)"
+
+#: Youtube_settings.py
+msgid "yt-dlp Update"
+msgstr "yt-dlp Update"
+
+#: Youtube_settings.py
+msgid "Auto-update yt-dlp on startup"
+msgstr "Auto-update yt-dlp on startup"
+
+#: Youtube_settings.py
+msgid "Update yt-dlp now"
+msgstr "Update yt-dlp now"
+
+#: Youtube_settings.py
+msgid "Update status: Idle"
+msgstr "Update status: Idle"
+
+#: Youtube_settings.py
+msgid ""
+"How to get YouTube cookies:\n"
+"\n"
+"1. Install 'Get cookies.txt' extension in Chrome or Firefox\n"
+"2. Login to YouTube in your browser\n"
+"3. Click the extension icon and export cookies\n"
+"4. Save as cookies.txt and select it here\n"
+"\n"
+"Using cookies helps avoid blocks because YouTube sees you as a logged-in "
+"user."
+msgstr ""
+"How to get YouTube cookies:\n"
+"\n"
+"1. Install 'Get cookies.txt' extension in Chrome or Firefox\n"
+"2. Login to YouTube in your browser\n"
+"3. Click the extension icon and export cookies\n"
+"4. Save as cookies.txt and select it here\n"
+"\n"
+"Using cookies helps avoid blocks because YouTube sees you as a logged-in "
+"user."
+
+#: Youtube_settings.py
+msgid "How to get cookies"
+msgstr "How to get cookies"
+
+#: Youtube_settings.py
+msgid "Reset to safe settings. Remember to use cookies for best results."
+msgstr "Reset to safe settings. Remember to use cookies for best results."
+
+#: Youtube_settings.py
+msgid "Update status: Updating..."
+msgstr "Update status: Updating..."
+
+#: Youtube_settings.py
+msgid "Updating yt-dlp..."
+msgstr "Updating yt-dlp..."
+
+#: Youtube_settings.py
+msgid "yt-dlp updated successfully"
+msgstr "yt-dlp updated successfully"
+
+#: Youtube_settings.py
+msgid "Update status: Update successful"
+msgstr "Update status: Update successful"
+
+#: Youtube_settings.py
+msgid "Update failed: {str}"
+msgstr "Update failed: {str}"
+
+#: Youtube_settings.py
+msgid "Failed to create the specified folder. Please select a valid folder."
+msgstr "Failed to create the specified folder. Please select a valid folder."
