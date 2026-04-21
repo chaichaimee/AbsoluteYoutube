@@ -2,6 +2,7 @@
 
 import wx
 import ui
+import urllib.parse
 import addonHandler
 from .Download_core import log, getINI, DownloadPath
 
@@ -80,8 +81,11 @@ class AddChannelDialog(wx.Dialog):
 				data = wx.TextDataObject()
 				if wx.TheClipboard.GetData(data):
 					text = data.GetText().strip()
-					if text and ("youtube.com" in text or "youtu.be" in text):
-						return text
+					if text:
+						parsed = urllib.parse.urlparse(text)
+						hostname = parsed.hostname or ""
+						if hostname.endswith("youtube.com") or hostname.endswith("youtu.be"):
+							return text
 		except Exception as e:
 			log(f"Error reading clipboard: {e}")
 		finally:
