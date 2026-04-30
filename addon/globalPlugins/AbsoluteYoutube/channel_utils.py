@@ -1,9 +1,9 @@
 # channel_utils.py
-
 import os
 import re
 import json
 import urllib.parse
+import threading
 import addonHandler
 import globalVars
 from .Download_core import log
@@ -22,6 +22,11 @@ VIDEO_CACHE_FILE = os.path.join(
 	globalVars.appArgs.configPath,
 	'ChaiChaimee', 'AbsoluteYoutube', 'video_cache.json'
 )
+
+_cache_lock = threading.Lock()
+_cache_dirty = False
+_cache_debounce_timer = None
+_internal_cache = None
 
 def ensure_channel_dir():
 	if not os.path.exists(CHANNEL_DATA_DIR):
@@ -51,9 +56,6 @@ def load_channel_videos(filepath):
 	return []
 
 def save_channel_videos(filepath, videos, channel_url=None, content_type="videos", playlist_data=None):
-	for v in videos:
-		if 'title_finalized' not in v:
-			v['title_finalized'] = True
 	data = {
 		'channel_url': channel_url,
 		'videos': videos,
@@ -79,7 +81,12 @@ def get_all_channel_files():
 			files.append((name, path))
 	return files
 
-# --- Video Cache Functions ---
+def _get_internal_cache():
+	global _internal_cache
+	if _internal_cache is None:
+		_internal_cache = load_video_cache()
+	return _internal_cache
+
 def load_video_cache():
 	if os.path.exists(VIDEO_CACHE_FILE):
 		try:
@@ -89,25 +96,53 @@ def load_video_cache():
 			log(f"Error loading video cache: {e}")
 	return {}
 
-def save_video_cache(cache):
-	try:
-		os.makedirs(os.path.dirname(VIDEO_CACHE_FILE), exist_ok=True)
-		with open(VIDEO_CACHE_FILE, 'w', encoding='utf-8') as f:
-			json.dump(cache, f, ensure_ascii=False, indent=2)
-	except Exception as e:
-		log(f"Error saving video cache: {e}")
+def _do_save_video_cache():
+	global _cache_dirty, _cache_debounce_timer, _internal_cache
+	with _cache_lock:
+		if not _cache_dirty:
+			return
+		try:
+			os.makedirs(os.path.dirname(VIDEO_CACHE_FILE), exist_ok=True)
+			with open(VIDEO_CACHE_FILE, 'w', encoding='utf-8') as f:
+				json.dump(_internal_cache if _internal_cache else {}, f, ensure_ascii=False, indent=2)
+			_cache_dirty = False
+			log("Video cache saved (debounced)")
+		except Exception as e:
+			log(f"Error saving video cache: {e}")
+		_cache_debounce_timer = None
+
+def schedule_video_cache_save(delay=2.0):
+	global _cache_debounce_timer
+	with _cache_lock:
+		if _cache_debounce_timer:
+			_cache_debounce_timer.cancel()
+		_cache_debounce_timer = threading.Timer(delay, _do_save_video_cache)
+		_cache_debounce_timer.daemon = True
+		_cache_debounce_timer.start()
 
 def update_video_cache(video_url, video_info):
-	cache = load_video_cache()
+	global _cache_dirty
+	cache = _get_internal_cache()
 	cache[video_url] = video_info
-	save_video_cache(cache)
+	with _cache_lock:
+		_cache_dirty = True
+	schedule_video_cache_save()
 
 def get_video_from_cache(video_url):
-	cache = load_video_cache()
+	cache = _get_internal_cache()
 	return cache.get(video_url)
 
+def flush_video_cache():
+	global _cache_debounce_timer
+	with _cache_lock:
+		if _cache_debounce_timer:
+			_cache_debounce_timer.cancel()
+			_cache_debounce_timer = None
+		if _cache_dirty:
+			_do_save_video_cache()
+
 def merge_videos(old_videos, new_videos):
-	cache = load_video_cache()
+	cache = _get_internal_cache()
 	old_by_url = {v['url']: v for v in old_videos}
 	seen_urls = set()
 	merged = []
@@ -144,8 +179,6 @@ def merge_videos(old_videos, new_videos):
 
 	for old_v in old_videos:
 		if old_v['url'] not in seen_urls:
-			if 'title_finalized' not in old_v:
-				old_v['title_finalized'] = True
 			merged.append(old_v)
 			seen_urls.add(old_v['url'])
 

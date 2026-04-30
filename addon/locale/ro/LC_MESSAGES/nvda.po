@@ -1,0 +1,1336 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AbsoluteYoutube 2026.5.1\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-04-30 14:14+0700\n"
+"PO-Revision-Date: 2026-04-30 20:35+0700\n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: Romanian\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: Youtube_settings.py:66
+msgid "&Beep while converting"
+msgstr "&Bip în timpul convertirii"
+
+#: Youtube_settings.py:44
+msgid "&Browse..."
+msgstr "&Răsfoire..."
+
+#: channel_dialogs.py:69
+#: channel_dialogs.py:133
+#: downloadFail.py:92
+msgid "&Cancel"
+msgstr "&Anulare"
+
+#: downloadFail.py:84
+#: download_list.py:85
+msgid "&Clear All"
+msgstr "&Șterge tot"
+
+#: channel_core.py:189
+#: playlist.py:89
+#: search.py:157
+msgid "&Close"
+msgstr "În&chide"
+
+#: downloadFail.py:76
+#: download_list.py:73
+msgid "&Delete Selected"
+msgstr "&Șterge elementele selectate"
+
+#: channel_core.py:181
+#: downloadFail.py:80
+#: download_list.py:81
+#: search.py:149
+msgid "&Download All"
+msgstr "&Descarcă tot"
+
+#: playlist.py:85
+msgid "&Download All Videos in Playlist"
+msgstr "&Descarcă toate videoclipurile din listă"
+
+#: download_list.py:77
+msgid "&Download Selected"
+msgstr "&Descarcă selecția"
+
+#: search.py:153
+msgid "&Download folder"
+msgstr "&Dosar descărcări"
+
+#: Youtube_settings.py:241
+msgid "&Geo bypass"
+msgstr "&Ocolire restricții geografice"
+
+#: Youtube_settings.py:264
+msgid "&Mark as watched"
+msgstr "&Marchează ca vizionat"
+
+#: Youtube_settings.py:135
+msgid "&Max concurrent downloads (1-4):"
+msgstr "Număr &maxim de descărcări simultane (1-4):"
+
+#: Youtube_settings.py:97
+msgid "&Number of connections:"
+msgstr "&Număr de conexiuni:"
+
+#: channel_dialogs.py:67
+#: channel_dialogs.py:131
+#: downloadFail.py:88
+#: download_list.py:89
+msgid "&OK"
+msgstr "&OK"
+
+#: Youtube_settings.py:207
+msgid "&Retry count:"
+msgstr "Număr de &reîncercări:"
+
+#: Youtube_settings.py:72
+msgid "&Say download complete"
+msgstr "&Anunță finalizarea descărcării"
+
+#: Youtube_settings.py:199
+msgid "&Sleep between requests (seconds):"
+msgstr "Pau&ză între cereri (secunde):"
+
+#: channel_core.py:185
+msgid "&Source"
+msgstr "&Sursă"
+
+#: Youtube_settings.py:191
+msgid "&Throttle rate (KB/s, 0=unlimited):"
+msgstr "&Limitare viteză (KB/s, 0=nelimitat):"
+
+#: channel_core.py:1100
+msgid "A channel with this name already exists. Overwrite?"
+msgstr "Există deja un canal cu acest nume. Suprascrieți?"
+
+#: __init__.py:256
+msgid "A new version of yt-dlp is available: {latest}. Current: {current}. Please update in settings."
+msgstr "O nouă versiune yt-dlp este disponibilă: {latest}. Versiunea actuală: {current}. Vă rugăm să actualizați din setări."
+
+#: Download_core.py:32
+#: Youtube_settings.py:21
+#: __init__.py:44
+msgid "Absolute YouTube"
+msgstr "Absolute YouTube"
+
+#: Trim.py:64
+msgid "Absolute YouTube Trim"
+msgstr "Absolute YouTube Decupare"
+
+#: __init__.py:529
+msgid "Absolute YouTube setting"
+msgstr "Setări Absolute YouTube"
+
+#: menu.py:18
+msgid "Absolute Youtube"
+msgstr "Absolute Youtube"
+
+#: channel_dialogs.py:41
+msgid "Add New Channel"
+msgstr "Adaugă un canal nou"
+
+#: channel_core.py:112
+msgid "Add new channel"
+msgstr "Adaugă canal nou"
+
+#: __init__.py:184
+msgid "Add-on initialization failed: missing pending file path function. Please restart NVDA."
+msgstr "Inițializarea extensiei a eșuat: lipsește funcția de cale fișier. Vă rugăm să reporniți NVDA."
+
+#: download_list.py:24
+msgid "Add-on internal error: missing components. Please restart NVDA."
+msgstr "Eroare internă a extensiei: componente lipsă. Vă rugăm să reporniți NVDA."
+
+#: download_list.py:69
+msgid "Added Time"
+msgstr "Data adăugării"
+
+#: __init__.py:376
+msgid "Added to download list: {format} - {title}"
+msgstr "Adăugat la lista de descărcări: {format} - {title}"
+
+#: __init__.py:370
+msgid "Added to download queue: {format} - {title}"
+msgstr "Adăugat la coada de descărcare: {format} - {title}"
+
+#: download_list.py:169
+msgid "Added to download queue: {title}"
+msgstr "Adăugat la coada de descărcare: {title}"
+
+#: Download_core.py:1097
+msgid "Adding link as {format} to download queue"
+msgstr "Se adaugă link-ul ca {format} în coada de descărcare"
+
+#: channel_core.py:297
+#: search.py:591
+msgid "Adding {count} videos to download queue..."
+msgstr "Se adaugă {count} videoclipuri în coada de descărcare..."
+
+#: channel_core.py:1358
+#: playlist.py:364
+#: search.py:572
+msgid "Adding {title} to download queue."
+msgstr "Se adaugă {title} în coada de descărcare."
+
+#: search.py:123
+#: search.py:204
+msgid "All"
+msgstr "Tot"
+
+#: downloadFail.py:294
+msgid "All downloads started"
+msgstr "Toate descărcările au pornit"
+
+#: downloadFail.py:305
+msgid "All failed downloads cleared"
+msgstr "Toate descărcările eșuate au fost șterse"
+
+#: download_list.py:230
+msgid "All items added to download queue"
+msgstr "Toate elementele au fost adăugate în coada de descărcare"
+
+#: download_list.py:249
+msgid "All pending downloads cleared"
+msgstr "Toate descărcările în așteptare au fost șterse"
+
+#: __init__.py:378
+msgid "Already in download list"
+msgstr "Deja în lista de descărcări"
+
+#: __init__.py:372
+#: download_list.py:171
+msgid "Already in download queue"
+msgstr "Deja în coada de descărcare"
+
+#: Snapshot.py:104
+msgid "An unexpected error occurred."
+msgstr "A apărut o eroare neașteptată."
+
+#: Youtube_settings.py:144
+msgid "Anti-blocking settings"
+msgstr "Setări anti-blocare"
+
+#: channel_core.py:731
+msgid "Are you sure you want to delete saved data for '{name}'?"
+msgstr "Sigur doriți să ștergeți datele salvate pentru „{name}”?"
+
+#: Trim.py:164
+#: channel_dialogs.py:172
+msgid "Audio Quality"
+msgstr "Calitate audio"
+
+#: Trim.py:177
+#: channel_dialogs.py:183
+#: search.py:681
+msgid "Cancel"
+msgstr "Anulare"
+
+#: channel_core.py:292
+msgid "Cannot create download folder."
+msgstr "Nu s-a putut crea dosarul de descărcări."
+
+#: Download_core.py:352
+#: Download_core.py:890
+msgid "Cannot create folder"
+msgstr "Nu s-a putut crea dosarul"
+
+#: search.py:563
+msgid "Cannot determine URL for this video."
+msgstr "Nu s-a putut determina URL-ul pentru acest videoclip."
+
+#: search.py:610
+msgid "Cannot open download folder."
+msgstr "Nu s-a putut deschide dosarul de descărcări."
+
+#: channel_core.py:320
+msgid "Cannot open source folder."
+msgstr "Nu s-a putut deschide dosarul sursă."
+
+#: Snapshot.py:58
+msgid "Capturing full-size snapshot..."
+msgstr "Se capturează instantaneul la dimensiune completă..."
+
+#: channel_core.py:713
+msgid "Channel URL updated."
+msgstr "URL-ul canalului a fost actualizat."
+
+#: channel_dialogs.py:58
+#: channel_dialogs.py:124
+msgid "Channel URL:"
+msgstr "URL canal:"
+
+#: channel_core.py:906
+msgid "Channel added successfully."
+msgstr "Canal adăugat cu succes."
+
+#: channel_core.py:743
+#: channel_core.py:746
+msgid "Channel deleted."
+msgstr "Canal șters."
+
+#: channel_dialogs.py:51
+#: channel_dialogs.py:117
+msgid "Channel name:"
+msgstr "Nume canal:"
+
+#: channel_core.py:633
+msgid "Channel pinned."
+msgstr "Canal fixat."
+
+#: channel_core.py:1121
+msgid "Channel saved."
+msgstr "Canal salvat."
+
+#: channel_core.py:630
+msgid "Channel unpinned."
+msgstr "Canal de-fixat."
+
+#: channel_core.py:700
+msgid "Channel updated."
+msgstr "Canal actualizat."
+
+#: channel_core.py:100
+msgid "Channel:"
+msgstr "Canal:"
+
+#: channel_core.py:955
+msgid "Checking for new videos..."
+msgstr "Se verifică videoclipuri noi..."
+
+#: Download_core.py:601
+msgid "Checking interrupted downloads..."
+msgstr "Se verifică descărcările întrerupte..."
+
+#: downloadFail.py:162
+#: download_list.py:131
+msgid "Clear all"
+msgstr "Șterge tot"
+
+#: channel_core.py:732
+msgid "Confirm Delete"
+msgstr "Confirmare ștergere"
+
+#: playlist.py:374
+msgid "Confirm Download"
+msgstr "Confirmare descărcare"
+
+#: channel_core.py:1101
+msgid "Confirm Overwrite"
+msgstr "Confirmare suprascriere"
+
+#: channel_core.py:125
+msgid "Content type:"
+msgstr "Tip conținut:"
+
+#: Youtube_settings.py:156
+msgid "Cookies &file:"
+msgstr "&Fișier de module cookie:"
+
+#: channel_core.py:1298
+msgid "Copy URL"
+msgstr "Copiere URL"
+
+#: __init__.py:509
+#: playlist.py:314
+#: search.py:526
+msgid "Copy video Shorten URL"
+msgstr "Copiază URL scurt videoclip"
+
+#: channel_core.py:1308
+#: playlist.py:320
+msgid "Correct title now"
+msgstr "Corectează titlul acum"
+
+#: channel_core.py:1366
+#: playlist.py:337
+msgid "Correcting title for selected video..."
+msgstr "Se corectează titlul pentru videoclipul selectat..."
+
+#: playlist.py:354
+#: search.py:555
+msgid "Could not create short URL"
+msgstr "Nu s-a putut crea URL-ul scurt"
+
+#: __init__.py:549
+msgid "Could not create shortened URL"
+msgstr "Nu s-a putut crea URL-ul scurtat"
+
+#: Trim.py:302
+msgid "Could not open preview URL"
+msgstr "Nu s-a putut deschide URL-ul de previzualizare"
+
+#: __init__.py:713
+msgid "Cycle MP3 quality settings"
+msgstr "Comută între setările de calitate MP3"
+
+#: channel_core.py:607
+#: downloadFail.py:146
+#: download_list.py:119
+msgid "Delete"
+msgstr "Șterge"
+
+#: downloadFail.py:153
+#: download_list.py:124
+msgid "Delete selected"
+msgstr "Șterge elementele selectate"
+
+#: download_list.py:121
+msgid "Download"
+msgstr "Descarcă"
+
+#: channel_dialogs.py:155
+#: search.py:663
+msgid "Download All Videos"
+msgstr "Descarcă toate videoclipurile"
+
+#: downloadFail.py:16
+msgid "Download Fail Manager - Absolute YouTube"
+msgstr "Manager descărcări eșuate - Absolute YouTube"
+
+#: download_list.py:14
+msgid "Download List Manager - Absolute YouTube"
+msgstr "Manager listă descărcări - Absolute YouTube"
+
+#: channel_core.py:1311
+#: playlist.py:323
+#: search.py:532
+msgid "Download MP3"
+msgstr "Descarcă MP3"
+
+#: channel_core.py:1314
+#: playlist.py:326
+#: search.py:535
+msgid "Download MP4"
+msgstr "Descarcă MP4"
+
+#: channel_core.py:1317
+#: playlist.py:329
+#: search.py:538
+msgid "Download WAV"
+msgstr "Descarcă WAV"
+
+#: downloadFail.py:159
+#: download_list.py:129
+msgid "Download all"
+msgstr "Descarcă tot"
+
+#: playlist.py:373
+msgid "Download all {count} videos in this playlist?"
+msgstr "Descărcați toate cele {count} videoclipuri din această listă?"
+
+#: Download_core.py:840
+msgid "Download complete"
+msgstr "Descărcare finalizată"
+
+#: channel_core.py:1305
+msgid "Download entire playlist"
+msgstr "Descarcă întreaga listă"
+
+#: __init__.py:509
+msgid "Download fail manager"
+msgstr "Manager descărcări eșuate"
+
+#: __init__.py:517
+msgid "Download fail manager (no failed)"
+msgstr "Manager descărcări eșuate (nicio eroare)"
+
+#: Download_core.py:846
+msgid "Download failed"
+msgstr "Descărcare eșuată"
+
+#: Download_core.py:872
+msgid "Download failed due to an error"
+msgstr "Descărcarea a eșuat din cauza unei erori"
+
+#: Download_core.py:859
+msgid "Download failed due to timeout"
+msgstr "Descărcarea a eșuat din cauza expirării timpului"
+
+#: downloadFail.py:149
+msgid "Download file"
+msgstr "Descarcă fișierul"
+
+#: search.py:612
+msgid "Download folder does not exist."
+msgstr "Dosarul de descărcări nu există."
+
+#: channel_core.py:1346
+#: channel_core.py:1360
+#: playlist.py:366
+#: playlist.py:382
+#: search.py:574
+msgid "Download function not available."
+msgstr "Funcția de descărcare nu este disponibilă."
+
+#: __init__.py:511
+msgid "Download list manager"
+msgstr "Manager listă descărcări"
+
+#: __init__.py:385
+msgid "Download or queue video (single tap MP3, double tap MP4, triple tap WAV)"
+msgstr "Descarcă sau pune în coadă (o apăsare MP3, două MP4, trei WAV)"
+
+#: download_list.py:126
+msgid "Download selected"
+msgstr "Descarcă elementele selectate"
+
+#: downloadFail.py:249
+msgid "Download started for: {title}"
+msgstr "Descărcare pornită pentru: {title}"
+
+#: Snapshot.py:63
+msgid "Downloading thumbnail..."
+msgstr "Se descarcă miniatura..."
+
+#: channel_core.py:310
+#: search.py:600
+msgid "Downloads started."
+msgstr "Descărcările au pornit."
+
+#: downloadFail.py:68
+#: search.py:36
+msgid "Duration"
+msgstr "Durată"
+
+#: channel_dialogs.py:105
+msgid "Edit Channel"
+msgstr "Editare canal"
+
+#: channel_core.py:116
+msgid "Edit channel"
+msgstr "Editare canal"
+
+#: channel_core.py:604
+msgid "Edit channel..."
+msgstr "Editare canal..."
+
+#: Youtube_settings.py:130
+msgid "Enable &logging"
+msgstr "Activare &jurnalizare"
+
+#: Youtube_settings.py:112
+msgid "Enable &playlist mode by default"
+msgstr "Activare mod &listă de redare implicit"
+
+#: Trim.py:140
+msgid "End time:"
+msgstr "Timp final:"
+
+#: search.py:104
+msgid "Enter a search query."
+msgstr "Introduceți un termen de căutare."
+
+#: download_list.py:25
+msgid "Error"
+msgstr "Eroare"
+
+#: Snapshot.py:42
+msgid "Error creating download folder"
+msgstr "Eroare la crearea dosarului de descărcări"
+
+#: channel_core.py:749
+msgid "Error deleting channel."
+msgstr "Eroare la ștergerea canalului."
+
+#: __init__.py:271
+msgid "Error during auto-update of yt-dlp: {str}"
+msgstr "Eroare în timpul actualizării automate a yt-dlp: {str}"
+
+#: channel_core.py:912
+msgid "Error fetching channel: {str}"
+msgstr "Eroare la preluarea canalului: {str}"
+
+#: __init__.py:178
+#: downloadFail.py:44
+msgid "Error importing core functions: {str}"
+msgstr "Eroare la importul funcțiilor de bază: {str}"
+
+#: __init__.py:659
+msgid "Error importing settings panel: {str}"
+msgstr "Eroare la importul panoului de setări: {str}"
+
+#: __init__.py:202
+msgid "Error initializing AbsoluteYoutube: {str}"
+msgstr "Eroare la inițializarea AbsoluteYoutube: {str}"
+
+#: channel_core.py:774
+msgid "Error loading cache."
+msgstr "Eroare la încărcarea cache-ului."
+
+#: channel_core.py:503
+#: channel_core.py:675
+msgid "Error loading channel data."
+msgstr "Eroare la încărcarea datelor canalului."
+
+#: __init__.py:455
+msgid "Error opening channel dialog"
+msgstr "Eroare la deschiderea dialogului canalului"
+
+#: __init__.py:701
+msgid "Error opening channel/playlist list: {str}"
+msgstr "Eroare la deschiderea listei de canale/liste: {str}"
+
+#: __init__.py:569
+#: __init__.py:573
+msgid "Error opening download fail dialog: {str}"
+msgstr "Eroare la deschiderea dialogului descărcări eșuate: {str}"
+
+#: __init__.py:494
+msgid "Error opening download list dialog: {str}"
+msgstr "Eroare la deschiderea dialogului listă descărcări: {str}"
+
+#: __init__.py:421
+msgid "Error opening folder"
+msgstr "Eroare la deschiderea dosarului"
+
+#: channel_core.py:1280
+msgid "Error opening playlist."
+msgstr "Eroare la deschiderea listei de redare."
+
+#: __init__.py:646
+msgid "Error opening search dialog: {str}"
+msgstr "Eroare la deschiderea dialogului de căutare: {str}"
+
+#: __init__.py:662
+msgid "Error opening settings dialog: {str}"
+msgstr "Eroare la deschiderea dialogului de setări: {str}"
+
+#: __init__.py:627
+msgid "Error opening trim dialog: {str}"
+msgstr "Eroare la deschiderea dialogului de decupare: {str}"
+
+#: Download_core.py:942
+msgid "Error processing URL"
+msgstr "Eroare la procesarea URL-ului"
+
+#: downloadFail.py:253
+msgid "Error starting download"
+msgstr "Eroare la pornirea descărcării"
+
+#: channel_core.py:716
+msgid "Error updating channel URL."
+msgstr "Eroare la actualizarea URL-ului canalului."
+
+#: channel_core.py:703
+msgid "Error updating channel."
+msgstr "Eroare la actualizarea canalului."
+
+#: __init__.py:499
+msgid "Error: Download list module not available"
+msgstr "Eroare: Modulul listă descărcări nu este disponibil"
+
+#: __init__.py:559
+msgid "Error: DownloadFail module not available"
+msgstr "Eroare: Modulul descărcări eșuate nu este disponibil"
+
+#: Snapshot.py:86
+msgid "Error: Failed to capture snapshot."
+msgstr "Eroare: Captura instantaneului a eșuat."
+
+#: Snapshot.py:93
+msgid "Error: No snapshot file created."
+msgstr "Eroare: Nu s-a creat niciun fișier instantaneu."
+
+#: __init__.py:651
+msgid "Error: Search module not available"
+msgstr "Eroare: Modulul de căutare nu este disponibil"
+
+#: __init__.py:600
+msgid "Error: Snapshot module not available"
+msgstr "Eroare: Modulul instantaneu nu este disponibil"
+
+#: __init__.py:610
+msgid "Error: Trim module not available"
+msgstr "Eroare: Modulul decupare nu este disponibil"
+
+#: Download_core.py:1067
+#: Trim.py:329
+msgid "Error: ffmpeg.exe not found."
+msgstr "Eroare: ffmpeg.exe nu a fost găsit."
+
+#: Trim.py:326
+msgid "Error: yt-dlp.exe not found."
+msgstr "Eroare: yt-dlp.exe nu a fost găsit."
+
+#: Youtube_settings.py:382
+msgid "Failed to create the specified folder. Please select a valid folder."
+msgstr "Crearea dosarului specificat a eșuat. Vă rugăm să selectați un dosar valid."
+
+#: __init__.py:519
+msgid "Favorite channel"
+msgstr "Canal favorit"
+
+#: channel_core.py:1063
+msgid "Fetched {count} items total."
+msgstr "S-au preluat în total {count} elemente."
+
+#: __init__.py:688
+msgid "Fetching channel information..."
+msgstr "Se preiau informațiile canalului..."
+
+#: channel_core.py:1108
+msgid "Fetching channel items..."
+msgstr "Se preiau elementele canalului..."
+
+#: channel_core.py:955
+msgid "Fetching channel videos..."
+msgstr "Se preiau videoclipurile canalului..."
+
+#: Trim.py:151
+#: channel_dialogs.py:162
+#: search.py:669
+msgid "File Format"
+msgstr "Format fișier"
+
+#: Download_core.py:1072
+msgid "File already exists. Skipping download."
+msgstr "Fișierul există deja. Se omite descărcarea."
+
+#: Download_core.py:923
+msgid "File exists"
+msgstr "Fișierul există"
+
+#: Youtube_settings.py:253
+msgid "Force I&Pv4"
+msgstr "Forțare I&Pv4"
+
+#: Youtube_settings.py:258
+msgid "Force I&Pv6"
+msgstr "Forțare I&Pv6"
+
+#: download_list.py:68
+msgid "Format"
+msgstr "Format"
+
+#: Download_core.py:465
+msgid ""
+"Found {count} interrupted downloads\n"
+"Resume all?\n"
+msgstr ""
+"S-au găsit {count} descărcări întrerupte\n"
+"Reluați tot?\n"
+
+#: search.py:490
+msgid "Found {count} videos for '{query}'."
+msgstr "S-au găsit {count} videoclipuri pentru „{query}”."
+
+#: search.py:404
+msgid "Found {} videos..."
+msgstr "S-au găsit {} videoclipuri..."
+
+#: Youtube_settings.py:215
+msgid "Fragment &retries:"
+msgstr "&Reîncercări fragmente:"
+
+#: Snapshot.py:111
+msgid "Full-size snapshot complete"
+msgstr "Instantaneu la dimensiune completă finalizat"
+
+#: Youtube_settings.py:246
+msgid "Geo bypass &country:"
+msgstr "&Țară pentru ocolire geo:"
+
+#: channel_core.py:174
+#: search.py:142
+msgid "Go"
+msgstr "Mergi"
+
+#: channel_core.py:353
+#: search.py:200
+msgid "Go to page of {}:"
+msgstr "Mergi la pagina {}:"
+
+#: Youtube_settings.py:308
+msgid ""
+"How to get YouTube cookies:\n"
+"\n"
+"1. Install 'Get cookies.txt' extension in Chrome or Firefox\n"
+"2. Login to YouTube in your browser\n"
+"3. Click the extension icon and export cookies\n"
+"4. Save as cookies.txt and select it here\n"
+"\n"
+"Using cookies helps avoid blocks because YouTube sees you as a logged-in user.\n"
+msgstr ""
+"Cum să obțineți modulele cookie YouTube:\n"
+"\n"
+"1. Instalați extensia „Get cookies.txt” în Chrome sau Firefox\n"
+"2. Autentificați-vă pe YouTube în browser\n"
+"3. Faceți clic pe pictograma extensiei și exportați modulele cookie\n"
+"4. Salvați ca cookies.txt și selectați-l aici\n"
+"\n"
+"Utilizarea modulelor cookie ajută la evitarea blocărilor deoarece YouTube vă vede ca pe un utilizator autentificat.\n"
+
+#: Youtube_settings.py:316
+msgid "How to get cookies"
+msgstr "Cum se obțin modulele cookie"
+
+#: Youtube_settings.py:165
+msgid "How to get cookies?"
+msgstr "Cum se obțin modulele cookie?"
+
+#: __init__.py:439
+msgid "Immediate download mode disabled"
+msgstr "Modul de descărcare imediată dezactivat"
+
+#: __init__.py:437
+msgid "Immediate download mode enabled"
+msgstr "Modul de descărcare imediată activat"
+
+#: Trim.py:282
+msgid "Invalid URL or start time"
+msgstr "URL sau timp de pornire nevalid"
+
+#: __init__.py:443
+msgid "Invalid channel URL"
+msgstr "URL canal nevalid"
+
+#: __init__.py:423
+msgid "Invalid download folder"
+msgstr "Dosar de descărcări nevalid"
+
+#: downloadFail.py:187
+#: download_list.py:159
+msgid "Item deleted"
+msgstr "Element șters"
+
+#: channel_core.py:1385
+#: search.py:580
+msgid "Item removed."
+msgstr "Element eliminat."
+
+#: channel_core.py:65
+msgid "Live"
+msgstr "Live"
+
+#: channel_core.py:770
+msgid "Loaded {count} videos from cache."
+msgstr "S-au încărcat {count} videoclipuri din cache."
+
+#: channel_core.py:488
+#: channel_core.py:939
+msgid "Loaded {count} videos from {name}."
+msgstr "S-au încărcat {count} videoclipuri din {name}."
+
+#: playlist.py:225
+msgid "Loaded {count} videos."
+msgstr "S-au încărcat {count} videoclipuri."
+
+#: playlist.py:51
+msgid "Loading playlist videos..."
+msgstr "Se încarcă videoclipurile din listă..."
+
+#: Youtube_settings.py:77
+msgid "MP3 &quality (kbps):"
+msgstr "&Calitate MP3 (kbps):"
+
+#: channel_core.py:599
+msgid "Move Down"
+msgstr "Mută în jos"
+
+#: channel_core.py:595
+msgid "Move Up"
+msgstr "Mută în sus"
+
+#: channel_core.py:165
+#: playlist.py:78
+#: search.py:133
+msgid "NextPage"
+msgstr "Pagina următoare"
+
+#: __init__.py:340
+#: __init__.py:539
+msgid "No YouTube URL found"
+msgstr "Nu s-a găsit niciun URL YouTube"
+
+#: channel_core.py:252
+msgid "No channel selected."
+msgstr "Niciun canal selectat."
+
+#: __init__.py:555
+msgid "No failed downloads"
+msgstr "Nicio descărcare eșuată"
+
+#: downloadFail.py:299
+msgid "No failed downloads to clear"
+msgstr "Nicio descărcare eșuată de șters"
+
+#: downloadFail.py:279
+msgid "No failed downloads to process"
+msgstr "Nicio descărcare eșuată de procesat"
+
+#: download_list.py:232
+msgid "No items added (all already in queue)"
+msgstr "Niciun element adăugat (toate sunt deja în coadă)"
+
+#: channel_core.py:908
+msgid "No items found for this URL."
+msgstr "Nu s-au găsit elemente pentru acest URL."
+
+#: channel_core.py:1067
+msgid "No items found."
+msgstr "Nu s-au găsit elemente."
+
+#: downloadFail.py:264
+#: download_list.py:187
+#: download_list.py:196
+msgid "No items selected"
+msgstr "Niciun element selectat"
+
+#: download_list.py:212
+msgid "No new items added (already in queue)"
+msgstr "Niciun element nou adăugat (deja în coadă)"
+
+#: download_list.py:219
+msgid "No pending downloads"
+msgstr "Nicio descărcare în așteptare"
+
+#: download_list.py:239
+msgid "No pending downloads to clear"
+msgstr "Nicio descărcare în așteptare de șters"
+
+#: search.py:487
+msgid "No results found for '{query}'."
+msgstr "Nu s-au găsit rezultate pentru „{query}”."
+
+#: search.py:488
+msgid "No results found."
+msgstr "Nu s-au găsit rezultate."
+
+#: channel_core.py:85
+msgid "No saved data for this channel."
+msgstr "Nu există date salvate pentru acest canal."
+
+#: Download_core.py:1075
+msgid "No valid multimedia link found."
+msgstr "Nu s-a găsit niciun link multimedia valid."
+
+#: channel_core.py:278
+#: playlist.py:370
+#: search.py:584
+msgid "No videos to download."
+msgstr "Nu există videoclipuri de descărcat."
+
+#: __init__.py:542
+msgid "Not a YouTube URL"
+msgstr "Nu este un URL YouTube"
+
+#: Download_core.py:1106
+msgid "Not a YouTube video or valid multimedia link"
+msgstr "Nu este un videoclip YouTube sau un link multimedia valid"
+
+#: __init__.py:398
+msgid "Open context menu (single tap), download folder (double tap), Search Youtube (triple tap)"
+msgstr "Deschide meniul contextual (o apăsare), dosarul de descărcări (două apăsări), caută pe Youtube (trei apăsări)"
+
+#: channel_core.py:1301
+msgid "Open in browser"
+msgstr "Deschide în browser"
+
+#: channel_core.py:272
+#: search.py:237
+msgid "Page number out of range (1-{})."
+msgstr "Numărul paginii este în afara limitelor (1-{})."
+
+#: channel_core.py:349
+#: playlist.py:122
+#: search.py:196
+msgid "Page {}/{}"
+msgstr "Pagina {}/{}"
+
+#: channel_core.py:591
+msgid "Pin"
+msgstr "Fixează"
+
+#: playlist.py:317
+#: search.py:529
+msgid "Play on YouTube"
+msgstr "Redă pe YouTube"
+
+#: channel_core.py:1344
+#: playlist.py:380
+msgid "Playlist download started."
+msgstr "Descărcarea listei a început."
+
+#: __init__.py:711
+msgid "Playlist mode disabled"
+msgstr "Mod listă de redare dezactivat"
+
+#: __init__.py:711
+msgid "Playlist mode enabled"
+msgstr "Mod listă de redare activat"
+
+#: channel_core.py:67
+msgid "Playlists"
+msgstr "Liste de redare"
+
+#: channel_dialogs.py:98
+#: channel_dialogs.py:148
+msgid "Please enter a channel URL."
+msgstr "Vă rugăm să introduceți URL-ul canalului."
+
+#: channel_dialogs.py:95
+#: channel_dialogs.py:145
+msgid "Please enter a channel name."
+msgstr "Vă rugăm să introduceți numele canalului."
+
+#: search.py:245
+msgid "Please enter a search term."
+msgstr "Vă rugăm să introduceți un termen de căutare."
+
+#: channel_core.py:266
+#: search.py:231
+msgid "Please enter a valid number."
+msgstr "Vă rugăm să introduceți un număr valid."
+
+#: channel_core.py:66
+msgid "Podcasts"
+msgstr "Podcast-uri"
+
+#: Trim.py:146
+msgid "Preview start"
+msgstr "Pornire previzualizare"
+
+#: channel_core.py:161
+#: playlist.py:74
+#: search.py:129
+msgid "PreviousPage"
+msgstr "Pagina anterioară"
+
+#: Snapshot.py:83
+msgid "Processing snapshot..."
+msgstr "Se procesează instantaneul..."
+
+#: Youtube_settings.py:234
+msgid "Proxy &URL:"
+msgstr "&URL Proxy:"
+
+#: channel_core.py:142
+msgid "Ready"
+msgstr "Pregătit"
+
+#: channel_core.py:1320
+#: search.py:542
+msgid "Remove from list"
+msgstr "Elimină din listă"
+
+#: Youtube_settings.py:269
+msgid "Reset to &safe settings (recommended if blocked)"
+msgstr "&Resetare la setări sigure (recomandat dacă sunteți blocat)"
+
+#: Youtube_settings.py:335
+msgid "Reset to safe settings. Remember to use cookies for best results."
+msgstr "Setările sigure au fost resetate. Nu uitați să utilizați modulele cookie pentru cele mai bune rezultate."
+
+#: Download_core.py:466
+msgid "Resume downloads"
+msgstr "Reluare descărcări"
+
+#: Youtube_settings.py:124
+msgid "Resume interrupted downloads on restart"
+msgstr "Reluare descărcări întrerupte la repornire"
+
+#: search.py:95
+msgid "Search"
+msgstr "Caută"
+
+#: search.py:59
+msgid "Search YouTube"
+msgstr "Caută pe YouTube"
+
+#: search.py:92
+msgid "Search YouTube:"
+msgstr "Caută pe YouTube:"
+
+#: __init__.py:527
+msgid "Search Youtube"
+msgstr "Caută pe Youtube"
+
+#: search.py:252
+msgid "Search already in progress."
+msgstr "Căutarea este deja în desfășurare."
+
+#: search.py:492
+msgid "Search completed."
+msgstr "Căutare finalizată."
+
+#: search.py:501
+msgid "Search failed."
+msgstr "Căutarea a eșuat."
+
+#: search.py:500
+msgid "Search failed: {error}"
+msgstr "Căutarea a eșuat: {error}"
+
+#: channel_core.py:135
+msgid "Search:"
+msgstr "Caută:"
+
+#: search.py:282
+msgid "Searching..."
+msgstr "Se caută..."
+
+#: Youtube_settings.py:45
+msgid "Select a directory"
+msgstr "Selectați un director"
+
+#: download_list.py:210
+msgid "Selected items added to download queue"
+msgstr "Elementele selectate au fost adăugate în coada de descărcare"
+
+#: downloadFail.py:274
+#: download_list.py:187
+msgid "Selected items deleted"
+msgstr "Elementele selectate au fost șterse"
+
+#: __init__.py:547
+#: channel_core.py:1333
+#: playlist.py:352
+#: search.py:553
+msgid "Short URL copied to clipboard"
+msgstr "URL-ul scurt a fost copiat în clipboard"
+
+#: channel_core.py:64
+msgid "Shorts"
+msgstr "Shorts"
+
+#: channel_core.py:153
+#: playlist.py:66
+#: search.py:120
+msgid "Show items:"
+msgstr "Afișează elementele:"
+
+#: Youtube_settings.py:223
+msgid "Skip &unavailable fragments"
+msgstr "Omite fragmentele &indisponibile"
+
+#: Youtube_settings.py:118
+msgid "Skip existing files"
+msgstr "Omite fișierele existente"
+
+#: __init__.py:522
+msgid "Snapshot"
+msgstr "Instantaneu"
+
+#: Snapshot.py:54
+msgid "Snapshot file already exists"
+msgstr "Fișierul instantaneu există deja"
+
+#: Trim.py:174
+#: channel_dialogs.py:181
+#: search.py:680
+msgid "Start download"
+msgstr "Pornește descărcarea"
+
+#: Youtube_settings.py:60
+msgid "Start download immediately (NVDA+Y)"
+msgstr "Pornește descărcarea imediat (NVDA+Y)"
+
+#: Trim.py:316
+msgid "Start time must be less than end time"
+msgstr "Timpul de pornire trebuie să fie mai mic decât timpul final"
+
+#: Trim.py:139
+msgid "Start time:"
+msgstr "Timp de pornire:"
+
+#: __init__.py:365
+msgid "Starting download: {format} - {title}"
+msgstr "Se pornește descărcarea: {format} - {title}"
+
+#: Download_core.py:791
+msgid "Starting next download from queue: {title}"
+msgstr "Se pornește următoarea descărcare din coadă: {title}"
+
+#: channel_dialogs.py:15
+msgid "Title"
+msgstr "Titlu"
+
+#: channel_core.py:1374
+#: playlist.py:342
+msgid "Title correction completed and locked."
+msgstr "Corecția titlului a fost finalizată și blocată."
+
+#: channel_core.py:538
+msgid "Title correction completed for {count} videos."
+msgstr "Corecția titlului a fost finalizată pentru {count} videoclipuri."
+
+#: channel_core.py:1376
+#: playlist.py:344
+msgid "Title correction failed."
+msgstr "Corecția titlului a eșuat."
+
+#: __init__.py:431
+msgid "Toggle immediate download mode"
+msgstr "Comutare mod descărcare imediată"
+
+#: __init__.py:706
+msgid "Toggle playlist mode"
+msgstr "Comutare mod listă de redare"
+
+#: __init__.py:525
+msgid "Trim setting"
+msgstr "Setări decupare"
+
+#: Trim.py:332
+msgid "Trimming and downloading {format}..."
+msgstr "Se decupează și se descarcă {format}..."
+
+#: Trim.py:132
+#: downloadFail.py:69
+msgid "URL"
+msgstr "URL"
+
+#: channel_core.py:1336
+msgid "URL copied to clipboard"
+msgstr "URL copiat în clipboard"
+
+#: Trim.py:307
+msgid "URL is required"
+msgstr "URL-ul este necesar"
+
+#: Download_core.py:903
+msgid "URL not found"
+msgstr "URL-ul nu a fost găsit"
+
+#: Download_core.py:672
+#: __init__.py:359
+#: downloadFail.py:110
+#: downloadFail.py:113
+#: downloadFail.py:114
+#: download_list.py:103
+msgid "Unknown"
+msgstr "Necunoscut"
+
+#: channel_core.py:591
+msgid "Unpin"
+msgstr "De-fixează"
+
+#: Youtube_settings.py:369
+#: __init__.py:287
+msgid "Update failed: {str}"
+msgstr "Actualizarea a eșuat: {str}"
+
+#: Youtube_settings.py:290
+msgid "Update status: Idle"
+msgstr "Stare actualizare: Inactiv"
+
+#: Youtube_settings.py:368
+msgid "Update status: Update failed: {str}"
+msgstr "Stare actualizare: Eșuată: {str}"
+
+#: Youtube_settings.py:364
+msgid "Update status: Update successful"
+msgstr "Stare actualizare: Reușită"
+
+#: Youtube_settings.py:354
+msgid "Update status: Updating..."
+msgstr "Stare actualizare: Se actualizează..."
+
+#: Youtube_settings.py:286
+msgid "Update yt-dlp now"
+msgstr "Actualizează yt-dlp acum"
+
+#: Youtube_settings.py:355
+#: __init__.py:275
+msgid "Updating yt-dlp..."
+msgstr "Se actualizează yt-dlp..."
+
+#: Youtube_settings.py:150
+msgid "Use &cookies (recommended to avoid block)"
+msgstr "Utilizare &module cookie (recomandat pentru a evita blocarea)"
+
+#: Youtube_settings.py:179
+msgid "Use &custom user agent"
+msgstr "Utilizare user agent &personalizat"
+
+#: Youtube_settings.py:229
+msgid "Use &proxy"
+msgstr "Utilizare &proxy"
+
+#: Youtube_settings.py:92
+msgid "Use download section"
+msgstr "Utilizare secțiune descărcări"
+
+#: Youtube_settings.py:184
+msgid "User &agent:"
+msgstr "User &agent:"
+
+#: downloadFail.py:67
+#: download_list.py:67
+#: search.py:35
+msgid "Video Title"
+msgstr "Titlu videoclip"
+
+#: Trim.py:144
+msgid "Video duration: unknown; Overall period: 0 seconds"
+msgstr "Durată videoclip: necunoscută; Perioadă totală: 0 secunde"
+
+#: Trim.py:255
+msgid "Video duration: {duration}; Overall period: {period} seconds"
+msgstr "Durată videoclip: {duration}; Perioadă totală: {period} secunde"
+
+#: channel_core.py:63
+msgid "Videos"
+msgstr "Videoclipuri"
+
+#: playlist.py:23
+msgid "Videos in {title}"
+msgstr "Videoclipuri în {title}"
+
+#: __init__.py:592
+#: __init__.py:606
+msgid "You must be on a YouTube page to use this feature"
+msgstr "Trebuie să fiți pe o pagină YouTube pentru a utiliza această funcție"
+
+#: channel_core.py:30
+msgid "Your favorite channel"
+msgstr "Canalul dumneavoastră favorit"
+
+#: Trim.py:254
+msgid "invalid"
+msgstr "nevalid"
+
+#: Trim.py:250
+msgid "invalid (negative)"
+msgstr "nevalid (negativ)"
+
+#: search.py:53
+msgid "loading..."
+msgstr "se încarcă..."
+
+#: Trim.py:244
+msgid "unknown"
+msgstr "necunoscut"
+
+#: Youtube_settings.py:276
+msgid "yt-dlp Update"
+msgstr "Actualizare yt-dlp"
+
+#: Youtube_settings.py:365
+#: __init__.py:284
+msgid "yt-dlp updated successfully"
+msgstr "yt-dlp actualizat cu succes"
+
+#: Download_core.py:946
+msgid "yt-dlp.exe missing"
+msgstr "yt-dlp.exe lipsește"
+
+#: channel_core.py:816
+#: search.py:256
+msgid "yt-dlp.exe not found."
+msgstr "yt-dlp.exe nu a fost găsit."
+
+#: __init__.py:725
+msgid "{quality} kbps"
+msgstr "{quality} kbps"
+
+#: channel_core.py:350
+#: playlist.py:123
+#: search.py:197
+msgid "{}, showing {} of {} videos"
+msgstr "{}, se afișează {} din {} videoclipuri"

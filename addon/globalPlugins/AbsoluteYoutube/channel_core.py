@@ -1,5 +1,4 @@
 # channel_core.py
-
 import wx
 import gui
 import threading
@@ -17,7 +16,8 @@ from .Download_core import log, YouTubeEXE, convertToMP, getINI, DownloadPath, P
 from .channel_utils import (
 	ensure_channel_dir, sanitize_filename, get_channel_filepath, save_channel_videos,
 	get_all_channel_files, merge_videos, create_short_youtube_url, load_pinned_order,
-	save_pinned_order, update_pinned_after_rename, update_pinned_after_delete, get_base_channel_url
+	save_pinned_order, update_pinned_after_rename, update_pinned_after_delete, get_base_channel_url,
+	flush_video_cache, get_video_from_cache, update_video_cache
 )
 from .channel_dialogs import VirtualVideoList, AddChannelDialog, EditChannelDialog, DownloadAllFormatDialog
 from .playlist import PlaylistVideosDialog
@@ -35,6 +35,7 @@ class ChannelPlaylistDialog(wx.Dialog):
 		self.videos = []
 		self.filtered_indices = []
 		self._stop_fetch = False
+		self._closing = False
 		self._beep_active = False
 		self._beep_thread = None
 		self._is_fetching = False
@@ -47,6 +48,9 @@ class ChannelPlaylistDialog(wx.Dialog):
 		self._pending_channel = None
 		self._background_title_fetch_running = False
 		self._pending_content_type = None
+		self._save_timer = None
+		self._save_pending = False
+		self._bg_threads = []
 
 		self.page_size = 50
 		self.current_page = 0
@@ -197,6 +201,8 @@ class ChannelPlaylistDialog(wx.Dialog):
 		self._update_edit_button_state()
 
 	def _on_content_type_selected(self, event):
+		if self._closing:
+			return
 		selected_label = self.typeCombo.GetStringSelection()
 		for key, (_, label) in self.content_type_map.items():
 			if label == selected_label:
@@ -205,6 +211,8 @@ class ChannelPlaylistDialog(wx.Dialog):
 		event.Skip()
 
 	def _on_content_type_kill_focus(self, event):
+		if self._closing:
+			return
 		if self._pending_content_type is not None and self._pending_content_type != self.content_type:
 			self.content_type = self._pending_content_type
 			self._pending_content_type = None
@@ -219,7 +227,7 @@ class ChannelPlaylistDialog(wx.Dialog):
 		event.Skip()
 
 	def _save_content_type_to_file(self):
-		if not self.filepath or not os.path.exists(self.filepath):
+		if self._closing or not self.filepath or not os.path.exists(self.filepath):
 			return
 		try:
 			with open(self.filepath, 'r', encoding='utf-8') as f:
@@ -231,10 +239,14 @@ class ChannelPlaylistDialog(wx.Dialog):
 			log(f"Error saving content_type: {e}")
 
 	def _update_edit_button_state(self):
+		if self._closing:
+			return
 		sel = self.channelCombo.GetSelection()
 		self.editBtn.Enable(sel != wx.NOT_FOUND)
 
 	def _on_edit_current_channel(self, event):
+		if self._closing:
+			return
 		sel = self.channelCombo.GetSelection()
 		if sel == wx.NOT_FOUND:
 			ui.message(_("No channel selected."))
@@ -243,6 +255,8 @@ class ChannelPlaylistDialog(wx.Dialog):
 		self._on_edit_channel(channel_name)
 
 	def _on_go_to_page(self, event):
+		if self._closing:
+			return
 		page_str = self.goPageText.GetValue().strip()
 		if not page_str:
 			return
@@ -258,6 +272,8 @@ class ChannelPlaylistDialog(wx.Dialog):
 			ui.message(_("Page number out of range (1-{}).").format(self.total_pages))
 
 	def _on_download_all(self, event):
+		if self._closing:
+			return
 		if not self.videos:
 			ui.message(_("No videos to download."))
 			return
@@ -295,6 +311,8 @@ class ChannelPlaylistDialog(wx.Dialog):
 		dlg.Destroy()
 
 	def _on_source(self, event):
+		if self._closing:
+			return
 		try:
 			os.startfile(CHANNEL_DATA_DIR)
 		except Exception as e:
@@ -310,6 +328,8 @@ class ChannelPlaylistDialog(wx.Dialog):
 		return self._get_page_indices(self.current_page)
 
 	def _update_paging(self):
+		if self._closing:
+			return
 		total_filtered = len(self.filtered_indices)
 		self.total_pages = (total_filtered + self.page_size - 1) // self.page_size
 		if self.total_pages == 0:
@@ -333,6 +353,8 @@ class ChannelPlaylistDialog(wx.Dialog):
 		self.goPageLabel.SetLabel(_("Go to page of {}:").format(self.total_pages))
 
 	def _on_page_size_change(self, event):
+		if self._closing:
+			return
 		try:
 			self.page_size = int(self.pageSizeCombo.GetStringSelection())
 		except:
@@ -341,11 +363,15 @@ class ChannelPlaylistDialog(wx.Dialog):
 		self._update_paging()
 
 	def _on_prev_page(self, event):
+		if self._closing:
+			return
 		if self.current_page > 0:
 			self.current_page -= 1
 			self._update_paging()
 
 	def _on_next_page(self, event):
+		if self._closing:
+			return
 		if self.current_page < self.total_pages - 1:
 			self.current_page += 1
 			self._update_paging()
@@ -354,12 +380,16 @@ class ChannelPlaylistDialog(wx.Dialog):
 		event.Skip()
 
 	def _refresh_display(self, reset_page=True):
+		if self._closing:
+			return
 		self.filtered_indices = [i for i, v in enumerate(self.videos) if self._matches_filter(v)]
 		if reset_page:
 			self.current_page = 0
 		self._update_paging()
 
 	def _matches_filter(self, video):
+		if self._closing:
+			return False
 		filter_text = self.searchCtrl.GetValue().lower()
 		if not filter_text:
 			return True
@@ -367,9 +397,13 @@ class ChannelPlaylistDialog(wx.Dialog):
 		return filter_text in title
 
 	def _on_search(self, event):
+		if self._closing:
+			return
 		self._refresh_display(reset_page=True)
 
 	def _populate_channel_combo(self):
+		if self._closing:
+			return
 		files = get_all_channel_files()
 		name_to_path = {name: path for name, path in files}
 		all_names = set(name for name, _ in files)
@@ -397,14 +431,18 @@ class ChannelPlaylistDialog(wx.Dialog):
 		self._update_edit_button_state()
 
 	def _fix_channel_url_if_needed(self):
+		if self._closing:
+			return
 		if not self.url and hasattr(self, 'initial_url') and self.initial_url:
 			self.url = self.initial_url
-			self._save_videos()
+			self._save_videos(immediate=True)
 			log(f"Fixed missing channel_url for {self.channel_identifier}: set to {self.url}")
 		elif self.url and not isinstance(self.url, str):
 			pass
 
 	def _on_channel_selected(self, event):
+		if self._closing:
+			return
 		self._update_edit_button_state()
 		sel = self.channelCombo.GetSelection()
 		if sel == wx.NOT_FOUND:
@@ -415,6 +453,8 @@ class ChannelPlaylistDialog(wx.Dialog):
 		self._pending_channel = (channel_name, filepath)
 
 	def _on_channel_combo_kill_focus(self, event):
+		if self._closing:
+			return
 		if self._pending_channel:
 			channel_name, filepath = self._pending_channel
 			self._do_load_selected_channel(channel_name, filepath)
@@ -422,7 +462,7 @@ class ChannelPlaylistDialog(wx.Dialog):
 		event.Skip()
 
 	def _do_load_selected_channel(self, channel_name, filepath):
-		if not filepath or not os.path.exists(filepath):
+		if self._closing or not filepath or not os.path.exists(filepath):
 			return
 
 		try:
@@ -463,16 +503,22 @@ class ChannelPlaylistDialog(wx.Dialog):
 			ui.message(_("Error loading channel data."))
 
 	def _start_background_title_fetch(self):
-		if self._background_title_fetch_running:
+		if self._closing or self._background_title_fetch_running:
 			return
 		videos_to_fetch = [i for i, v in enumerate(self.videos) if not v.get('title_finalized', False) and not v.get('is_playlist', False)]
 		if not videos_to_fetch:
 			return
 		self._background_title_fetch_running = True
-		threading.Thread(target=self._background_title_fetch_worker, args=(videos_to_fetch,), daemon=True).start()
+		thread = threading.Thread(target=self._background_title_fetch_worker, args=(videos_to_fetch,), daemon=True)
+		self._bg_threads.append(thread)
+		thread.start()
 
 	def _background_title_fetch_worker(self, indices):
-		for idx in indices:
+		batch_size = 20
+		updated_count = 0
+		for i, idx in enumerate(indices):
+			if self._closing or self._stop_fetch:
+				break
 			if idx >= len(self.videos):
 				continue
 			video = self.videos[idx]
@@ -480,12 +526,25 @@ class ChannelPlaylistDialog(wx.Dialog):
 				continue
 			success = self._fetch_video_details(video)
 			if success:
-				wx.CallAfter(self._save_videos)
-				wx.CallAfter(self._refresh_display, False)
-			time.sleep(0.5)
+				updated_count += 1
+				if not self._closing:
+					wx.CallAfter(self._refresh_display, False)
+			time.sleep(0.3)
+			if (i+1) % batch_size == 0 or i == len(indices)-1:
+				if not self._closing:
+					wx.CallAfter(self._save_videos, False)
 		self._background_title_fetch_running = False
+		if updated_count > 0 and not self._closing:
+			wx.CallAfter(ui.message, _("Title correction completed for {count} videos.").format(count=updated_count))
 
 	def _fetch_video_details(self, video):
+		if self._closing or video.get('title_finalized', False):
+			return False
+		cached = get_video_from_cache(video['url'])
+		if cached and cached.get('title_finalized', False):
+			video['title'] = cached['title']
+			video['title_finalized'] = True
+			return True
 		try:
 			cmd = [
 				YouTubeEXE, "--dump-json", "--no-playlist",
@@ -506,6 +565,11 @@ class ChannelPlaylistDialog(wx.Dialog):
 				if real_title and real_title != video['title']:
 					video['title'] = real_title
 					video['title_finalized'] = True
+					update_video_cache(video['url'], {
+						'title': real_title,
+						'duration': video.get('duration', ''),
+						'title_finalized': True
+					})
 					log(f"Updated title for {video['url']} to: {real_title}")
 					return True
 			return False
@@ -514,6 +578,8 @@ class ChannelPlaylistDialog(wx.Dialog):
 			return False
 
 	def _on_channel_context_menu(self, event):
+		if self._closing:
+			return
 		sel = self.channelCombo.GetSelection()
 		if sel == wx.NOT_FOUND:
 			return
@@ -557,6 +623,8 @@ class ChannelPlaylistDialog(wx.Dialog):
 		return idx < len(self.pinned)-1
 
 	def _on_toggle_pin(self, channel_name):
+		if self._closing:
+			return
 		if channel_name in self.pinned:
 			self.pinned.remove(channel_name)
 			ui.message(_("Channel unpinned."))
@@ -567,6 +635,8 @@ class ChannelPlaylistDialog(wx.Dialog):
 		self._populate_channel_combo()
 
 	def _on_move_up(self, channel_name):
+		if self._closing:
+			return
 		idx = self.pinned.index(channel_name)
 		if idx > 0:
 			self.pinned[idx], self.pinned[idx-1] = self.pinned[idx-1], self.pinned[idx]
@@ -574,6 +644,8 @@ class ChannelPlaylistDialog(wx.Dialog):
 			self._populate_channel_combo()
 
 	def _on_move_down(self, channel_name):
+		if self._closing:
+			return
 		idx = self.pinned.index(channel_name)
 		if idx < len(self.pinned)-1:
 			self.pinned[idx], self.pinned[idx+1] = self.pinned[idx+1], self.pinned[idx]
@@ -581,6 +653,8 @@ class ChannelPlaylistDialog(wx.Dialog):
 			self._populate_channel_combo()
 
 	def _on_edit_channel(self, old_name):
+		if self._closing:
+			return
 		old_path = None
 		for i in range(self.channelCombo.GetCount()):
 			if self.channelCombo.GetString(i) == old_name:
@@ -644,6 +718,8 @@ class ChannelPlaylistDialog(wx.Dialog):
 		dlg.Destroy()
 
 	def _on_delete_channel(self, name):
+		if self._closing:
+			return
 		path = None
 		for i in range(self.channelCombo.GetCount()):
 			if self.channelCombo.GetString(i) == name:
@@ -674,6 +750,8 @@ class ChannelPlaylistDialog(wx.Dialog):
 		dlg.Destroy()
 
 	def _load_from_file(self):
+		if self._closing:
+			return
 		try:
 			with open(self.filepath, 'r', encoding='utf-8') as f:
 				data = json.load(f)
@@ -695,22 +773,36 @@ class ChannelPlaylistDialog(wx.Dialog):
 			log(f"Error loading {self.filepath}: {e}")
 			self.status_label.SetLabel(_("Error loading cache."))
 
-	def _save_videos(self):
-		with self._save_lock:
-			save_channel_videos(self.filepath, self.videos, self.url, self.content_type)
+	def _save_videos(self, immediate=False):
+		if self._closing:
+			return
+		if immediate:
+			if self._save_timer:
+				self._save_timer.Stop()
+				self._save_timer = None
+			with self._save_lock:
+				save_channel_videos(self.filepath, self.videos, self.url, self.content_type)
+			self._save_pending = False
+		else:
+			if not self._save_pending:
+				self._save_pending = True
+				if self._save_timer:
+					self._save_timer.Stop()
+				self._save_timer = wx.CallLater(2000, self._save_videos, True)
 
 	def _start_beep(self):
-		if self._beep_active:
+		if self._closing or self._beep_active:
 			return
 		self._beep_active = True
 		self._beep_thread = threading.Thread(target=self._beep_loop, daemon=True)
+		self._bg_threads.append(self._beep_thread)
 		self._beep_thread.start()
 
 	def _stop_beep(self):
 		self._beep_active = False
 
 	def _beep_loop(self):
-		while self._beep_active:
+		while self._beep_active and not self._closing:
 			tones.beep(440, 100)
 			time.sleep(2)
 
@@ -763,6 +855,9 @@ class ChannelPlaylistDialog(wx.Dialog):
 
 			new_items = []
 			for line in process.stdout:
+				if self._closing or self._stop_fetch:
+					process.terminate()
+					return
 				if line.strip():
 					try:
 						info = json.loads(line)
@@ -805,23 +900,29 @@ class ChannelPlaylistDialog(wx.Dialog):
 			if stderr:
 				log(f"yt-dlp stderr: {stderr}")
 
-			if new_items:
+			if new_items and not self._closing:
 				save_channel_videos(filepath, new_items, url, content_type)
 				wx.CallAfter(self._on_channel_added, name_safe, filepath, url, new_items, content_type)
 				wx.CallAfter(ui.message, _("Channel added successfully."))
-			else:
+			elif not self._closing:
 				wx.CallAfter(self._show_info_message, _("No items found for this URL."))
 		except Exception as e:
 			log(f"Error fetching channel: {e}")
-			wx.CallAfter(self._show_info_message, _("Error fetching channel: {str}").format(str=str(e)))
+			if not self._closing:
+				wx.CallAfter(self._show_info_message, _("Error fetching channel: {str}").format(str=str(e)))
 		finally:
-			wx.CallAfter(self._stop_beep)
+			if not self._closing:
+				wx.CallAfter(self._stop_beep)
 
 	def _show_info_message(self, msg):
+		if self._closing:
+			return
 		self.status_label.SetLabel(msg)
 		ui.message(msg)
 
 	def _on_channel_added(self, name_safe, filepath, url, items, content_type):
+		if self._closing:
+			return
 		self.pinned = load_pinned_order()
 		self._populate_channel_combo()
 		index = self.channelCombo.FindString(name_safe)
@@ -846,7 +947,7 @@ class ChannelPlaylistDialog(wx.Dialog):
 				log(f"Error loading new channel: {e}")
 
 	def _start_fetch(self, silent=False):
-		if not self.url or self._is_fetching:
+		if self._closing or not self.url or self._is_fetching:
 			return
 		self._is_fetching = True
 		self._fetch_complete = False
@@ -854,6 +955,7 @@ class ChannelPlaylistDialog(wx.Dialog):
 		self.status_label.SetLabel(_("Checking for new videos...") if silent else _("Fetching channel videos..."))
 		self._stop_fetch = False
 		thread = threading.Thread(target=self._fetch_videos, args=(silent,), daemon=True)
+		self._bg_threads.append(thread)
 		thread.start()
 		if not silent:
 			self._start_beep()
@@ -908,7 +1010,7 @@ class ChannelPlaylistDialog(wx.Dialog):
 
 			new_items = []
 			for line in process.stdout:
-				if self._stop_fetch:
+				if self._closing or self._stop_fetch:
 					process.terminate()
 					return
 
@@ -954,21 +1056,21 @@ class ChannelPlaylistDialog(wx.Dialog):
 			if stderr:
 				log(f"yt-dlp stderr: {stderr}")
 
-			if new_items:
+			if new_items and not self._closing:
 				old_items = self.videos
 				self.videos = merge_videos(old_items, new_items)
 				wx.CallAfter(self._refresh_display, False)
 				wx.CallAfter(self.status_label.SetLabel, _("Fetched {count} items total.").format(count=len(self.videos)))
-				wx.CallAfter(self._save_videos)
+				wx.CallAfter(self._save_videos, False)
 				wx.CallAfter(self._start_background_title_fetch)
-			else:
-				if not silent:
-					wx.CallAfter(self._show_info_message, _("No items found."))
+			elif not silent and not self._closing:
+				wx.CallAfter(self._show_info_message, _("No items found."))
 		except Exception as e:
 			log(f"Exception in _fetch_videos: {e}")
-			wx.CallAfter(self._show_info_message, str(e))
+			if not self._closing:
+				wx.CallAfter(self._show_info_message, str(e))
 		finally:
-			if not silent:
+			if not silent and not self._closing:
 				wx.CallAfter(self._stop_beep)
 			self._is_fetching = False
 			self._fetch_complete = True
@@ -976,10 +1078,14 @@ class ChannelPlaylistDialog(wx.Dialog):
 				wx.CallAfter(self._perform_save, self._pending_save_name, self._pending_save_path)
 
 	def _show_info_message(self, msg):
+		if self._closing:
+			return
 		self.status_label.SetLabel(msg)
 		ui.message(msg)
 
 	def _on_add_channel(self, event):
+		if self._closing:
+			return
 		default_name = self.channel_identifier if self.channel_identifier != 'unknown' else ""
 		default_url = self.initial_url if self.initial_url else ""
 		dlg = AddChannelDialog(self, default_name, default_url)
@@ -1001,11 +1107,14 @@ class ChannelPlaylistDialog(wx.Dialog):
 
 			ui.message(_("Fetching channel items..."))
 			thread = threading.Thread(target=self._fetch_and_save_channel, args=(url, name_safe, filepath, content_type), daemon=True)
+			self._bg_threads.append(thread)
 			thread.start()
 
 		dlg.Destroy()
 
 	def _perform_save(self, name_safe, filepath):
+		if self._closing:
+			return
 		save_channel_videos(filepath, self.videos, self.url, self.content_type)
 		self.channel_identifier = name_safe
 		self.filepath = filepath
@@ -1015,12 +1124,17 @@ class ChannelPlaylistDialog(wx.Dialog):
 		self._pending_save_path = None
 
 	def _start_background_auto_update(self):
+		if self._closing:
+			return
 		thread = threading.Thread(target=self._background_auto_update, daemon=True)
+		self._bg_threads.append(thread)
 		thread.start()
 
 	def _background_auto_update(self):
 		files = get_all_channel_files()
 		for name, filepath in files:
+			if self._closing or self._stop_fetch:
+				return
 			if filepath == self.filepath:
 				continue
 			try:
@@ -1068,7 +1182,7 @@ class ChannelPlaylistDialog(wx.Dialog):
 				)
 				new_items = []
 				for line in process.stdout:
-					if self._stop_fetch:
+					if self._closing or self._stop_fetch:
 						process.terminate()
 						return
 					try:
@@ -1108,7 +1222,7 @@ class ChannelPlaylistDialog(wx.Dialog):
 					except:
 						continue
 
-				if new_items:
+				if new_items and not self._closing:
 					merged = merge_videos(videos, new_items)
 					if len(merged) != len(videos):
 						save_channel_videos(filepath, merged, channel_url, content_type)
@@ -1125,7 +1239,16 @@ class ChannelPlaylistDialog(wx.Dialog):
 		event.Skip()
 
 	def _on_close(self, event):
+		self._closing = True
 		self._stop_fetch = True
+		if self._save_timer:
+			self._save_timer.Stop()
+			self._save_timer = None
+		self._save_videos(immediate=True)
+		try:
+			flush_video_cache()
+		except Exception:
+			pass
 		self.Destroy()
 
 	def _on_cancel(self, event):
@@ -1133,6 +1256,8 @@ class ChannelPlaylistDialog(wx.Dialog):
 		self.Close()
 
 	def _on_item_activated(self, event):
+		if self._closing:
+			return
 		idx = event.GetIndex()
 		page_indices = self._get_current_page_indices()
 		if 0 <= idx < len(page_indices):
@@ -1142,6 +1267,8 @@ class ChannelPlaylistDialog(wx.Dialog):
 				playlist_url = video['url']
 				playlist_title = video['title']
 				def show_playlist_dialog():
+					if self._closing:
+						return
 					try:
 						gui.mainFrame.prePopup()
 						dlg = PlaylistVideosDialog(gui.mainFrame, playlist_url, playlist_title, self.plugin)
@@ -1156,6 +1283,8 @@ class ChannelPlaylistDialog(wx.Dialog):
 				webbrowser.open(video['url'])
 
 	def _on_list_context_menu(self, event):
+		if self._closing:
+			return
 		selected_idx = self.list_ctrl.GetFirstSelected()
 		if selected_idx == -1:
 			return
@@ -1195,6 +1324,8 @@ class ChannelPlaylistDialog(wx.Dialog):
 		menu.Destroy()
 
 	def _on_copy_url(self, video_idx):
+		if self._closing:
+			return
 		url = self.videos[video_idx]['url']
 		short_url = create_short_youtube_url(url)
 		if short_url:
@@ -1205,6 +1336,8 @@ class ChannelPlaylistDialog(wx.Dialog):
 			ui.message(_("URL copied to clipboard"))
 
 	def _download_playlist(self, playlist_url, playlist_title):
+		if self._closing:
+			return
 		save_path = getINI("ResultFolder") or DownloadPath
 		if hasattr(self.plugin, 'core_functions') and 'convertToMP' in self.plugin.core_functions:
 			self.plugin.core_functions['convertToMP']("mp3", save_path, True, playlist_url, playlist_title)
@@ -1213,6 +1346,8 @@ class ChannelPlaylistDialog(wx.Dialog):
 			ui.message(_("Download function not available."))
 
 	def _download_video(self, video_idx, format_type):
+		if self._closing:
+			return
 		video = self.videos[video_idx]
 		url = video.get('url')
 		title = video.get('title', 'Unknown')
@@ -1225,25 +1360,33 @@ class ChannelPlaylistDialog(wx.Dialog):
 			ui.message(_("Download function not available."))
 
 	def _on_correct_title_now(self, video_idx):
+		if self._closing:
+			return
 		video = self.videos[video_idx]
 		ui.message(_("Correcting title for selected video..."))
 		def worker():
+			if self._closing:
+				return
 			success = self._fetch_video_details(video)
-			if success:
-				wx.CallAfter(self._save_videos)
+			if success and not self._closing:
+				wx.CallAfter(self._save_videos, False)
 				wx.CallAfter(self._refresh_display, False)
 				wx.CallAfter(ui.message, _("Title correction completed and locked."))
-			else:
+			elif not self._closing:
 				wx.CallAfter(ui.message, _("Title correction failed."))
 		threading.Thread(target=worker, daemon=True).start()
 
 	def _on_remove_item(self, video_idx):
+		if self._closing:
+			return
 		del self.videos[video_idx]
-		self._save_videos()
+		self._save_videos(immediate=False)
 		self._refresh_display(reset_page=False)
 		ui.message(_("Item removed."))
 
 	def get_selected_video_info(self):
+		if self._closing:
+			return None
 		selected = self.list_ctrl.GetFirstSelected()
 		if selected == -1:
 			return None

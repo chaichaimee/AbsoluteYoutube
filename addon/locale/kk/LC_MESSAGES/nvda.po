@@ -1,0 +1,1344 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AbsoluteYoutube 2026.5.1\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-04-30 14:14+0700\n"
+"PO-Revision-Date: 2026-04-30 19:12+0700\n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: Kazakh\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: Youtube_settings.py:66
+msgid "&Beep while converting"
+msgstr "Түрлендіру кезінде дыбыстық сигнал беру(&B)"
+
+#: Youtube_settings.py:44
+msgid "&Browse..."
+msgstr "Шолу(&B)..."
+
+#: channel_dialogs.py:69
+#: channel_dialogs.py:133
+#: downloadFail.py:92
+msgid "&Cancel"
+msgstr "Бас тарту(&C)"
+
+#: downloadFail.py:84
+#: download_list.py:85
+msgid "&Clear All"
+msgstr "Барлығын тазалау(&C)"
+
+#: channel_core.py:189
+#: playlist.py:89
+#: search.py:157
+msgid "&Close"
+msgstr "Жабу(&C)"
+
+#: downloadFail.py:76
+#: download_list.py:73
+msgid "&Delete Selected"
+msgstr "Таңдалғанды жою(&D)"
+
+#: channel_core.py:181
+#: downloadFail.py:80
+#: download_list.py:81
+#: search.py:149
+msgid "&Download All"
+msgstr "Барлығын жүктеп алу(&D)"
+
+#: playlist.py:85
+msgid "&Download All Videos in Playlist"
+msgstr "Ойнату тізіміндегі барлық бейнелерді жүктеу(&D)"
+
+#: download_list.py:77
+msgid "&Download Selected"
+msgstr "Таңдалғанды жүктеп алу(&D)"
+
+#: search.py:153
+msgid "&Download folder"
+msgstr "Жүктеулер қапшығы(&D)"
+
+#: Youtube_settings.py:241
+msgid "&Geo bypass"
+msgstr "Географиялық шектеуді айналып өту(&G)"
+
+#: Youtube_settings.py:264
+msgid "&Mark as watched"
+msgstr "Қаралған ретінде белгілеу(&M)"
+
+#: Youtube_settings.py:135
+msgid "&Max concurrent downloads (1-4):"
+msgstr "Макс. бір мезгілде жүктеу саны (1-4)(&M):"
+
+#: Youtube_settings.py:97
+msgid "&Number of connections:"
+msgstr "Қосылымдар саны(&N):"
+
+#: channel_dialogs.py:67
+#: channel_dialogs.py:131
+#: downloadFail.py:88
+#: download_list.py:89
+msgid "&OK"
+msgstr "&OK"
+
+#: Youtube_settings.py:207
+msgid "&Retry count:"
+msgstr "Қайталау әрекеттерінің саны(&R):"
+
+#: Youtube_settings.py:72
+msgid "&Say download complete"
+msgstr "Жүктеу аяқталғанын айту(&S)"
+
+#: Youtube_settings.py:199
+msgid "&Sleep between requests (seconds):"
+msgstr "Сұраныстар арасындағы кідіріс (секунд)(&S):"
+
+#: channel_core.py:185
+msgid "&Source"
+msgstr "Дереккөз(&S)"
+
+#: Youtube_settings.py:191
+msgid "&Throttle rate (KB/s, 0=unlimited):"
+msgstr "Жылдамдықты шектеу (КБ/с, 0=шексіз)(&T):"
+
+#: channel_core.py:1100
+msgid "A channel with this name already exists. Overwrite?"
+msgstr "Осындай атаумен арна бар. Үстінен жазу керек пе?"
+
+#: __init__.py:256
+msgid "A new version of yt-dlp is available: {latest}. Current: {current}. Please update in settings."
+msgstr "yt-dlp жаңа нұсқасы қолжетімді: {latest}. Ағымдағы: {current}. Параметрлер арқылы жаңартыңыз."
+
+#: Download_core.py:32
+#: Youtube_settings.py:21
+#: __init__.py:44
+msgid "Absolute YouTube"
+msgstr "Absolute YouTube"
+
+#: Trim.py:64
+msgid "Absolute YouTube Trim"
+msgstr "Absolute YouTube Trim"
+
+#: __init__.py:529
+msgid "Absolute YouTube setting"
+msgstr "Absolute YouTube параметрлері"
+
+#: menu.py:18
+msgid "Absolute Youtube"
+msgstr "Absolute Youtube"
+
+#: channel_dialogs.py:41
+msgid "Add New Channel"
+msgstr "Жаңа арна қосу"
+
+#: channel_core.py:112
+msgid "Add new channel"
+msgstr "Жаңа арна қосу"
+
+#: __init__.py:184
+msgid "Add-on initialization failed: missing pending file path function. Please restart NVDA."
+msgstr "Қондырманы іске қосу сәтсіз аяқталды: файл жолын анықтау мүмкін емес. NVDA-ны қайта іске қосыңыз."
+
+#: download_list.py:24
+msgid "Add-on internal error: missing components. Please restart NVDA."
+msgstr "Қондырманың ішкі қатесі: компоненттер жетіспейді. NVDA-ны қайта іске қосыңыз."
+
+#: download_list.py:69
+msgid "Added Time"
+msgstr "Қосылған уақыты"
+
+#: __init__.py:376
+msgid "Added to download list: {format} - {title}"
+msgstr "Жүктеулер тізіміне қосылды: {format} - {title}"
+
+#: __init__.py:370
+msgid "Added to download queue: {format} - {title}"
+msgstr "Жүктеу кезегіне қосылды: {format} - {title}"
+
+#: download_list.py:169
+msgid "Added to download queue: {title}"
+msgstr "Жүктеу кезегіне қосылды: {title}"
+
+#: Download_core.py:1097
+msgid "Adding link as {format} to download queue"
+msgstr "Сілтеме {format} форматында жүктеу кезегіне қосылуда"
+
+#: channel_core.py:297
+#: search.py:591
+msgid "Adding {count} videos to download queue..."
+msgstr "{count} бейне жүктеу кезегіне қосылуда..."
+
+#: channel_core.py:1358
+#: playlist.py:364
+#: search.py:572
+msgid "Adding {title} to download queue."
+msgstr "{title} жүктеу кезегіне қосылуда."
+
+#: search.py:123
+#: search.py:204
+msgid "All"
+msgstr "Барлығы"
+
+#: downloadFail.py:294
+msgid "All downloads started"
+msgstr "Барлық жүктеулер басталды"
+
+#: downloadFail.py:305
+msgid "All failed downloads cleared"
+msgstr "Барлық сәтсіз жүктеулер тазартылды"
+
+#: download_list.py:230
+msgid "All items added to download queue"
+msgstr "Барлық элементтер жүктеу кезегіне қосылды"
+
+#: download_list.py:249
+msgid "All pending downloads cleared"
+msgstr "Барлық күтудегі жүктеулер тазартылды"
+
+#: __init__.py:378
+msgid "Already in download list"
+msgstr "Жүктеулер тізімінде бар"
+
+#: __init__.py:372
+#: download_list.py:171
+msgid "Already in download queue"
+msgstr "Жүктеу кезегінде бар"
+
+#: Snapshot.py:104
+msgid "An unexpected error occurred."
+msgstr "Күтпеген қате орын алды."
+
+#: Youtube_settings.py:144
+msgid "Anti-blocking settings"
+msgstr "Блоктауға қарсы параметрлер"
+
+#: channel_core.py:731
+msgid "Are you sure you want to delete saved data for '{name}'?"
+msgstr "'{name}' үшін сақталған деректерді жоюды растайсыз ба?"
+
+#: Trim.py:164
+#: channel_dialogs.py:172
+msgid "Audio Quality"
+msgstr "Аудио сапасы"
+
+#: Youtube_settings.py:281
+msgid "Auto-update yt-dlp on startup"
+msgstr "Іске қосылғанда yt-dlp автоматты түрде жаңарту"
+
+#: Trim.py:177
+#: channel_dialogs.py:183
+#: search.py:681
+msgid "Cancel"
+msgstr "Бас тарту"
+
+#: channel_core.py:292
+msgid "Cannot create download folder."
+msgstr "Жүктеу қапшығын жасау мүмкін емес."
+
+#: Download_core.py:352
+#: Download_core.py:890
+msgid "Cannot create folder"
+msgstr "Қапшықты жасау мүмкін емес"
+
+#: search.py:563
+msgid "Cannot determine URL for this video."
+msgstr "Бұл бейне үшін URL мекенжайын анықтау мүмкін емес."
+
+#: search.py:610
+msgid "Cannot open download folder."
+msgstr "Жүктеу қапшығын ашу мүмкін емес."
+
+#: channel_core.py:320
+msgid "Cannot open source folder."
+msgstr "Дереккөз қапшығын ашу мүмкін емес."
+
+#: Snapshot.py:58
+msgid "Capturing full-size snapshot..."
+msgstr "Толық өлшемді скриншот түсірілуде..."
+
+#: channel_core.py:713
+msgid "Channel URL updated."
+msgstr "Арнаның URL мекенжайы жаңартылды."
+
+#: channel_dialogs.py:58
+#: channel_dialogs.py:124
+msgid "Channel URL:"
+msgstr "Арнаның URL мекенжайы:"
+
+#: channel_core.py:906
+msgid "Channel added successfully."
+msgstr "Арна сәтті қосылды."
+
+#: channel_core.py:743
+#: channel_core.py:746
+msgid "Channel deleted."
+msgstr "Арна жойылды."
+
+#: channel_dialogs.py:51
+#: channel_dialogs.py:117
+msgid "Channel name:"
+msgstr "Арна атауы:"
+
+#: channel_core.py:633
+msgid "Channel pinned."
+msgstr "Арна бекітілді."
+
+#: channel_core.py:1121
+msgid "Channel saved."
+msgstr "Арна сақталды."
+
+#: channel_core.py:630
+msgid "Channel unpinned."
+msgstr "Арна босатылды."
+
+#: channel_core.py:700
+msgid "Channel updated."
+msgstr "Арна жаңартылды."
+
+#: channel_core.py:100
+msgid "Channel:"
+msgstr "Арна:"
+
+#: channel_core.py:955
+msgid "Checking for new videos..."
+msgstr "Жаңа бейнелер тексерілуде..."
+
+#: Download_core.py:601
+msgid "Checking interrupted downloads..."
+msgstr "Үзілген жүктеулер тексерілуде..."
+
+#: downloadFail.py:162
+#: download_list.py:131
+msgid "Clear all"
+msgstr "Барлығын тазалау"
+
+#: channel_core.py:732
+msgid "Confirm Delete"
+msgstr "Жоюды растау"
+
+#: playlist.py:374
+msgid "Confirm Download"
+msgstr "Жүктеуді растау"
+
+#: channel_core.py:1101
+msgid "Confirm Overwrite"
+msgstr "Үстінен жазуды растау"
+
+#: channel_core.py:125
+msgid "Content type:"
+msgstr "Мазмұн түрі:"
+
+#: Youtube_settings.py:156
+msgid "Cookies &file:"
+msgstr "Cookies файлы(&F):"
+
+#: channel_core.py:1298
+msgid "Copy URL"
+msgstr "URL мекенжайын көшіру"
+
+#: __init__.py:509
+#: playlist.py:314
+#: search.py:526
+msgid "Copy video Shorten URL"
+msgstr "Бейненің қысқа URL мекенжайын көшіру"
+
+#: channel_core.py:1308
+#: playlist.py:320
+msgid "Correct title now"
+msgstr "Атауын қазір түзету"
+
+#: channel_core.py:1366
+#: playlist.py:337
+msgid "Correcting title for selected video..."
+msgstr "Таңдалған бейненің атауы түзетілуде..."
+
+#: playlist.py:354
+#: search.py:555
+msgid "Could not create short URL"
+msgstr "Қысқа URL жасау мүмкін болмады"
+
+#: __init__.py:549
+msgid "Could not create shortened URL"
+msgstr "Қысқартылған URL жасау мүмкін болмады"
+
+#: Trim.py:302
+msgid "Could not open preview URL"
+msgstr "Алдын ала қарау URL мекенжайын ашу мүмкін болмады"
+
+#: __init__.py:713
+msgid "Cycle MP3 quality settings"
+msgstr "MP3 сапа параметрлерін ауыстыру"
+
+#: channel_core.py:607
+#: downloadFail.py:146
+#: download_list.py:119
+msgid "Delete"
+msgstr "Жою"
+
+#: downloadFail.py:153
+#: download_list.py:124
+msgid "Delete selected"
+msgstr "Таңдалғанды жою"
+
+#: Youtube_settings.py:41
+msgid "Destination folder"
+msgstr "Сақтау қапшығы"
+
+#: download_list.py:121
+msgid "Download"
+msgstr "Жүктеу"
+
+#: channel_dialogs.py:155
+#: search.py:663
+msgid "Download All Videos"
+msgstr "Барлық бейнелерді жүктеу"
+
+#: downloadFail.py:16
+msgid "Download Fail Manager - Absolute YouTube"
+msgstr "Сәтсіз жүктеулер менеджері - Absolute YouTube"
+
+#: download_list.py:14
+msgid "Download List Manager - Absolute YouTube"
+msgstr "Жүктеулер тізімі менеджері - Absolute YouTube"
+
+#: channel_core.py:1311
+#: playlist.py:323
+#: search.py:532
+msgid "Download MP3"
+msgstr "MP3 жүктеу"
+
+#: channel_core.py:1314
+#: playlist.py:326
+#: search.py:535
+msgid "Download MP4"
+msgstr "MP4 жүктеу"
+
+#: channel_core.py:1317
+#: playlist.py:329
+#: search.py:538
+msgid "Download WAV"
+msgstr "WAV жүктеу"
+
+#: downloadFail.py:159
+#: download_list.py:129
+msgid "Download all"
+msgstr "Барлығын жүктеу"
+
+#: playlist.py:373
+msgid "Download all {count} videos in this playlist?"
+msgstr "Осы ойнату тізіміндегі барлық {count} бейнені жүктеу керек пе?"
+
+#: Download_core.py:840
+msgid "Download complete"
+msgstr "Жүктеу аяқталды"
+
+#: channel_core.py:1305
+msgid "Download entire playlist"
+msgstr "Бүкіл ойнату тізімін жүктеу"
+
+#: __init__.py:509
+msgid "Download fail manager"
+msgstr "Сәтсіз жүктеулер менеджері"
+
+#: __init__.py:517
+msgid "Download fail manager (no failed)"
+msgstr "Сәтсіз жүктеулер менеджері (қателер жоқ)"
+
+#: Download_core.py:846
+msgid "Download failed"
+msgstr "Жүктеу сәтсіз аяқталды"
+
+#: Download_core.py:872
+msgid "Download failed due to an error"
+msgstr "Қате салдарынан жүктеу сәтсіз аяқталды"
+
+#: Download_core.py:859
+msgid "Download failed due to timeout"
+msgstr "Күту уақыты аяқталғандықтан жүктеу сәтсіз аяқталды"
+
+#: downloadFail.py:149
+msgid "Download file"
+msgstr "Файлды жүктеу"
+
+#: search.py:612
+msgid "Download folder does not exist."
+msgstr "Жүктеу қапшығы жоқ."
+
+#: channel_core.py:1346
+#: channel_core.py:1360
+#: playlist.py:366
+#: playlist.py:382
+#: search.py:574
+msgid "Download function not available."
+msgstr "Жүктеу функциясы қолжетімді емес."
+
+#: __init__.py:511
+msgid "Download list manager"
+msgstr "Жүктеулер тізімі менеджері"
+
+#: __init__.py:385
+msgid "Download or queue video (single tap MP3, double tap MP4, triple tap WAV)"
+msgstr "Жүктеу немесе кезекке қою (бір рет басу: MP3, екі рет: MP4, үш рет: WAV)"
+
+#: download_list.py:126
+msgid "Download selected"
+msgstr "Таңдалғанды жүктеу"
+
+#: downloadFail.py:249
+msgid "Download started for: {title}"
+msgstr "{title} үшін жүктеу басталды"
+
+#: Snapshot.py:63
+msgid "Downloading thumbnail..."
+msgstr "Эскиз жүктелуде..."
+
+#: channel_core.py:310
+#: search.py:600
+msgid "Downloads started."
+msgstr "Жүктеулер басталды."
+
+#: downloadFail.py:68
+#: search.py:36
+msgid "Duration"
+msgstr "Ұзақтығы"
+
+#: channel_dialogs.py:105
+msgid "Edit Channel"
+msgstr "Арнаны өңдеу"
+
+#: channel_core.py:116
+msgid "Edit channel"
+msgstr "Арнаны өңдеу"
+
+#: channel_core.py:604
+msgid "Edit channel..."
+msgstr "Арнаны өңдеу..."
+
+#: Youtube_settings.py:130
+msgid "Enable &logging"
+msgstr "Журналдауды қосу(&L)"
+
+#: Youtube_settings.py:112
+msgid "Enable &playlist mode by default"
+msgstr "Әдепкі бойынша ойнату тізімі режимін қосу(&P)"
+
+#: Trim.py:140
+msgid "End time:"
+msgstr "Аяқталу уақыты:"
+
+#: search.py:104
+msgid "Enter a search query."
+msgstr "Іздеу сұрауын енгізіңіз."
+
+#: download_list.py:25
+msgid "Error"
+msgstr "Қате"
+
+#: Snapshot.py:42
+msgid "Error creating download folder"
+msgstr "Жүктеу қапшығын жасау қатесі"
+
+#: channel_core.py:749
+msgid "Error deleting channel."
+msgstr "Арнаны жою қатесі."
+
+#: __init__.py:271
+msgid "Error during auto-update of yt-dlp: {str}"
+msgstr "yt-dlp автоматты жаңарту кезіндегі қате: {str}"
+
+#: channel_core.py:912
+msgid "Error fetching channel: {str}"
+msgstr "Арнаны алу қатесі: {str}"
+
+#: __init__.py:178
+#: downloadFail.py:44
+msgid "Error importing core functions: {str}"
+msgstr "Негізгі функцияларды импорттау қатесі: {str}"
+
+#: __init__.py:659
+msgid "Error importing settings panel: {str}"
+msgstr "Параметрлер панелін импорттау қатесі: {str}"
+
+#: __init__.py:202
+msgid "Error initializing AbsoluteYoutube: {str}"
+msgstr "AbsoluteYoutube іске қосу қатесі: {str}"
+
+#: channel_core.py:774
+msgid "Error loading cache."
+msgstr "Кэшті жүктеу қатесі."
+
+#: channel_core.py:503
+#: channel_core.py:675
+msgid "Error loading channel data."
+msgstr "Арна деректерін жүктеу қатесі."
+
+#: __init__.py:455
+msgid "Error opening channel dialog"
+msgstr "Арна диалогын ашу қатесі"
+
+#: __init__.py:701
+msgid "Error opening channel/playlist list: {str}"
+msgstr "Арна/ойнату тізімін ашу қатесі: {str}"
+
+#: __init__.py:569
+#: __init__.py:573
+msgid "Error opening download fail dialog: {str}"
+msgstr "Сәтсіз жүктеулер диалогын ашу қатесі: {str}"
+
+#: __init__.py:494
+msgid "Error opening download list dialog: {str}"
+msgstr "Жүктеулер тізімі диалогын ашу қатесі: {str}"
+
+#: __init__.py:421
+msgid "Error opening folder"
+msgstr "Қапшықты ашу қатесі"
+
+#: channel_core.py:1280
+msgid "Error opening playlist."
+msgstr "Ойнату тізімін ашу қатесі."
+
+#: __init__.py:646
+msgid "Error opening search dialog: {str}"
+msgstr "Іздеу диалогын ашу қатесі: {str}"
+
+#: __init__.py:662
+msgid "Error opening settings dialog: {str}"
+msgstr "Параметрлер диалогын ашу қатесі: {str}"
+
+#: __init__.py:627
+msgid "Error opening trim dialog: {str}"
+msgstr "Қию диалогын ашу қатесі: {str}"
+
+#: Download_core.py:942
+msgid "Error processing URL"
+msgstr "URL өңдеу қатесі"
+
+#: downloadFail.py:253
+msgid "Error starting download"
+msgstr "Жүктеуді бастау қатесі"
+
+#: channel_core.py:716
+msgid "Error updating channel URL."
+msgstr "Арнаның URL мекенжайын жаңарту қатесі."
+
+#: channel_core.py:703
+msgid "Error updating channel."
+msgstr "Арнаны жаңарту қатесі."
+
+#: __init__.py:499
+msgid "Error: Download list module not available"
+msgstr "Қате: Жүктеулер тізімі модулі қолжетімді емес"
+
+#: __init__.py:559
+msgid "Error: DownloadFail module not available"
+msgstr "Қате: DownloadFail модулі қолжетімді емес"
+
+#: Snapshot.py:86
+msgid "Error: Failed to capture snapshot."
+msgstr "Қате: Скриншот түсіру сәтсіз аяқталды."
+
+#: Snapshot.py:93
+msgid "Error: No snapshot file created."
+msgstr "Қате: Скриншот файлы жасалмады."
+
+#: __init__.py:651
+msgid "Error: Search module not available"
+msgstr "Қате: Іздеу модулі қолжетімді емес"
+
+#: __init__.py:600
+msgid "Error: Snapshot module not available"
+msgstr "Қате: Snapshot модулі қолжетімді емес"
+
+#: __init__.py:610
+msgid "Error: Trim module not available"
+msgstr "Қате: Trim модулі қолжетімді емес"
+
+#: Download_core.py:1067
+#: Trim.py:329
+msgid "Error: ffmpeg.exe not found."
+msgstr "Қате: ffmpeg.exe табылмады."
+
+#: Trim.py:326
+msgid "Error: yt-dlp.exe not found."
+msgstr "Қате: yt-dlp.exe табылмады."
+
+#: Youtube_settings.py:382
+msgid "Failed to create the specified folder. Please select a valid folder."
+msgstr "Көрсетілген қапшықты жасау мүмкін болмады. Жарамды қапшықты таңдаңыз."
+
+#: __init__.py:519
+msgid "Favorite channel"
+msgstr "Таңдаулы арна"
+
+#: channel_core.py:1063
+msgid "Fetched {count} items total."
+msgstr "Барлығы {count} элемент алынды."
+
+#: __init__.py:688
+msgid "Fetching channel information..."
+msgstr "Арна ақпараты алынуда..."
+
+#: channel_core.py:1108
+msgid "Fetching channel items..."
+msgstr "Арна элементтері алынуда..."
+
+#: channel_core.py:955
+msgid "Fetching channel videos..."
+msgstr "Арна бейнелері алынуда..."
+
+#: Trim.py:151
+#: channel_dialogs.py:162
+#: search.py:669
+msgid "File Format"
+msgstr "Файл форматы"
+
+#: Download_core.py:1072
+msgid "File already exists. Skipping download."
+msgstr "Файл бар. Жүктеу өткізіліп жіберілді."
+
+#: Download_core.py:923
+msgid "File exists"
+msgstr "Файл бар"
+
+#: Youtube_settings.py:253
+msgid "Force I&Pv4"
+msgstr "IPv4 мәжбүрлеу(&P)"
+
+#: Youtube_settings.py:258
+msgid "Force I&Pv6"
+msgstr "IPv6 мәжбүрлеу(&P)"
+
+#: download_list.py:68
+msgid "Format"
+msgstr "Формат"
+
+#: Download_core.py:465
+msgid ""
+"Found {count} interrupted downloads\n"
+"Resume all?\n"
+msgstr ""
+"{count} үзілген жүктеу табылды\n"
+"Барлығын жалғастыру керек пе?\n"
+
+#: search.py:490
+msgid "Found {count} videos for '{query}'."
+msgstr "'{query}' үшін {count} бейне табылды."
+
+#: search.py:404
+msgid "Found {} videos..."
+msgstr "{} бейне табылды..."
+
+#: Youtube_settings.py:215
+msgid "Fragment &retries:"
+msgstr "Фрагментті қайта жүктеу саны(&R):"
+
+#: Snapshot.py:111
+msgid "Full-size snapshot complete"
+msgstr "Толық өлшемді скриншот дайын"
+
+#: Youtube_settings.py:246
+msgid "Geo bypass &country:"
+msgstr "Географиялық айналып өту елі(&C):"
+
+#: channel_core.py:174
+#: search.py:142
+msgid "Go"
+msgstr "Өту"
+
+#: channel_core.py:353
+#: search.py:200
+msgid "Go to page of {}:"
+msgstr "{} бетіне өту:"
+
+#: Youtube_settings.py:308
+msgid ""
+"How to get YouTube cookies:\n"
+"\n"
+"1. Install 'Get cookies.txt' extension in Chrome or Firefox\n"
+"2. Login to YouTube in your browser\n"
+"3. Click the extension icon and export cookies\n"
+"4. Save as cookies.txt and select it here\n"
+"\n"
+"Using cookies helps avoid blocks because YouTube sees you as a logged-in user.\n"
+msgstr ""
+"YouTube cookies қалай алуға болады:\n"
+"\n"
+"1. Chrome немесе Firefox браузеріне 'Get cookies.txt' кеңейтілімін орнатыңыз\n"
+"2. Браузерде YouTube-ке кіріңіз\n"
+"3. Кеңейтілім белгішесін басып, cookies экспорттаңыз\n"
+"4. cookies.txt ретінде сақтап, осы жерде таңдаңыз\n"
+"\n"
+"Cookies пайдалану блоктаудан аулақ болуға көмектеседі, өйткені YouTube сізді жүйеге кірген пайдаланушы ретінде көреді.\n"
+
+#: Youtube_settings.py:316
+msgid "How to get cookies"
+msgstr "Cookies қалай алуға болады"
+
+#: Youtube_settings.py:165
+msgid "How to get cookies?"
+msgstr "Cookies қалай аламын?"
+
+#: __init__.py:439
+msgid "Immediate download mode disabled"
+msgstr "Жедел жүктеу режимі өшірілді"
+
+#: __init__.py:437
+msgid "Immediate download mode enabled"
+msgstr "Жедел жүктеу режимі қосылды"
+
+#: Trim.py:282
+msgid "Invalid URL or start time"
+msgstr "URL немесе бастау уақыты жарамсыз"
+
+#: __init__.py:443
+msgid "Invalid channel URL"
+msgstr "Арнаның URL мекенжайы жарамсыз"
+
+#: __init__.py:423
+msgid "Invalid download folder"
+msgstr "Жүктеу қапшығы жарамсыз"
+
+#: downloadFail.py:187
+#: download_list.py:159
+msgid "Item deleted"
+msgstr "Элемент жойылды"
+
+#: channel_core.py:1385
+#: search.py:580
+msgid "Item removed."
+msgstr "Элемент жойылды."
+
+#: channel_core.py:65
+msgid "Live"
+msgstr "Тікелей эфир"
+
+#: channel_core.py:770
+msgid "Loaded {count} videos from cache."
+msgstr "Кэштен {count} бейне жүктелді."
+
+#: channel_core.py:488
+#: channel_core.py:939
+msgid "Loaded {count} videos from {name}."
+msgstr "{name} арнасынан {count} бейне жүктелді."
+
+#: playlist.py:225
+msgid "Loaded {count} videos."
+msgstr "{count} бейне жүктелді."
+
+#: playlist.py:51
+msgid "Loading playlist videos..."
+msgstr "Ойнату тізімі бейнелері жүктелуде..."
+
+#: Youtube_settings.py:77
+msgid "MP3 &quality (kbps):"
+msgstr "MP3 сапасы (кбит/с)(&Q):"
+
+#: channel_core.py:599
+msgid "Move Down"
+msgstr "Төмен жылжыту"
+
+#: channel_core.py:595
+msgid "Move Up"
+msgstr "Жоғары жылжыту"
+
+#: channel_core.py:165
+#: playlist.py:78
+#: search.py:133
+msgid "NextPage"
+msgstr "КелесіБет"
+
+#: __init__.py:340
+#: __init__.py:539
+msgid "No YouTube URL found"
+msgstr "YouTube URL табылмады"
+
+#: channel_core.py:252
+msgid "No channel selected."
+msgstr "Арна таңдалмады."
+
+#: __init__.py:555
+msgid "No failed downloads"
+msgstr "Сәтсіз жүктеулер жоқ"
+
+#: downloadFail.py:299
+msgid "No failed downloads to clear"
+msgstr "Тазартатын сәтсіз жүктеулер жоқ"
+
+#: downloadFail.py:279
+msgid "No failed downloads to process"
+msgstr "Өңдейтін сәтсіз жүктеулер жоқ"
+
+#: download_list.py:232
+msgid "No items added (all already in queue)"
+msgstr "Элементтер қосылмады (барлығы кезекте тұр)"
+
+#: channel_core.py:908
+msgid "No items found for this URL."
+msgstr "Бұл URL үшін элементтер табылмады."
+
+#: channel_core.py:1067
+msgid "No items found."
+msgstr "Элементтер табылмады."
+
+#: downloadFail.py:264
+#: download_list.py:187
+#: download_list.py:196
+msgid "No items selected"
+msgstr "Элементтер таңдалмады"
+
+#: download_list.py:212
+msgid "No new items added (already in queue)"
+msgstr "Жаңа элементтер қосылмады (кезекте бар)"
+
+#: download_list.py:219
+msgid "No pending downloads"
+msgstr "Күтудегі жүктеулер жоқ"
+
+#: download_list.py:239
+msgid "No pending downloads to clear"
+msgstr "Тазартатын күтудегі жүктеулер жоқ"
+
+#: search.py:487
+msgid "No results found for '{query}'."
+msgstr "'{query}' үшін нәтиже табылмады."
+
+#: search.py:488
+msgid "No results found."
+msgstr "Нәтижелер табылмады."
+
+#: channel_core.py:85
+msgid "No saved data for this channel."
+msgstr "Бұл арна үшін сақталған деректер жоқ."
+
+#: Download_core.py:1075
+msgid "No valid multimedia link found."
+msgstr "Жарамды мультимедиа сілтемесі табылмады."
+
+#: channel_core.py:278
+#: playlist.py:370
+#: search.py:584
+msgid "No videos to download."
+msgstr "Жүктейтін бейнелер жоқ."
+
+#: __init__.py:542
+msgid "Not a YouTube URL"
+msgstr "YouTube URL мекенжайы емес"
+
+#: Download_core.py:1106
+msgid "Not a YouTube video or valid multimedia link"
+msgstr "YouTube бейнесі немесе жарамды мультимедиа сілтемесі емес"
+
+#: __init__.py:398
+msgid "Open context menu (single tap), download folder (double tap), Search Youtube (triple tap)"
+msgstr "Контекстік мәзірді ашу (бір басу), жүктеу қапшығы (екі басу), YouTube іздеу (үш басу)"
+
+#: channel_core.py:1301
+msgid "Open in browser"
+msgstr "Браузерде ашу"
+
+#: channel_core.py:272
+#: search.py:237
+msgid "Page number out of range (1-{})."
+msgstr "Бет нөмірі ауқымнан тыс (1-{})."
+
+#: channel_core.py:349
+#: playlist.py:122
+#: search.py:196
+msgid "Page {}/{}"
+msgstr "Бет {}/{}"
+
+#: channel_core.py:591
+msgid "Pin"
+msgstr "Бекіту"
+
+#: playlist.py:317
+#: search.py:529
+msgid "Play on YouTube"
+msgstr "YouTube арқылы көру"
+
+#: channel_core.py:1344
+#: playlist.py:380
+msgid "Playlist download started."
+msgstr "Ойнату тізімін жүктеу басталды."
+
+#: __init__.py:711
+msgid "Playlist mode disabled"
+msgstr "Ойнату тізімі режимі өшірілді"
+
+#: __init__.py:711
+msgid "Playlist mode enabled"
+msgstr "Ойнату тізімі режимі қосылды"
+
+#: channel_core.py:67
+msgid "Playlists"
+msgstr "Ойнату тізімдері"
+
+#: channel_dialogs.py:98
+#: channel_dialogs.py:148
+msgid "Please enter a channel URL."
+msgstr "Арнаның URL мекенжайын енгізіңіз."
+
+#: channel_dialogs.py:95
+#: channel_dialogs.py:145
+msgid "Please enter a channel name."
+msgstr "Арна атауын енгізіңіз."
+
+#: search.py:245
+msgid "Please enter a search term."
+msgstr "Іздеу сөзін енгізіңіз."
+
+#: channel_core.py:266
+#: search.py:231
+msgid "Please enter a valid number."
+msgstr "Жарамды санды енгізіңіз."
+
+#: channel_core.py:66
+msgid "Podcasts"
+msgstr "Подкасттар"
+
+#: Trim.py:146
+msgid "Preview start"
+msgstr "Алдын ала қарауды бастау"
+
+#: channel_core.py:161
+#: playlist.py:74
+#: search.py:129
+msgid "PreviousPage"
+msgstr "АлдыңғыБет"
+
+#: Snapshot.py:83
+msgid "Processing snapshot..."
+msgstr "Скриншот өңделуде..."
+
+#: Youtube_settings.py:234
+msgid "Proxy &URL:"
+msgstr "Прокси URL(&U):"
+
+#: channel_core.py:142
+msgid "Ready"
+msgstr "Дайын"
+
+#: channel_core.py:1320
+#: search.py:542
+msgid "Remove from list"
+msgstr "Тізімнен жою"
+
+#: Youtube_settings.py:269
+msgid "Reset to &safe settings (recommended if blocked)"
+msgstr "Қауіпсіз параметрлерге қайтару (блокталған жағдайда ұсынылады)(&S)"
+
+#: Youtube_settings.py:335
+msgid "Reset to safe settings. Remember to use cookies for best results."
+msgstr "Қауіпсіз параметрлерге қайтарылды. Жақсы нәтиже үшін cookies қолдануды ұмытпаңыз."
+
+#: Download_core.py:466
+msgid "Resume downloads"
+msgstr "Жүктеулерді жалғастыру"
+
+#: Youtube_settings.py:124
+msgid "Resume interrupted downloads on restart"
+msgstr "Қайта іске қосылғанда үзілген жүктеулерді жалғастыру"
+
+#: search.py:95
+msgid "Search"
+msgstr "Іздеу"
+
+#: search.py:59
+msgid "Search YouTube"
+msgstr "YouTube іздеу"
+
+#: search.py:92
+msgid "Search YouTube:"
+msgstr "YouTube іздеу:"
+
+#: __init__.py:527
+msgid "Search Youtube"
+msgstr "YouTube іздеу"
+
+#: search.py:252
+msgid "Search already in progress."
+msgstr "Іздеу жүріп жатыр."
+
+#: search.py:492
+msgid "Search completed."
+msgstr "Іздеу аяқталды."
+
+#: search.py:501
+msgid "Search failed."
+msgstr "Іздеу сәтсіз аяқталды."
+
+#: search.py:500
+msgid "Search failed: {error}"
+msgstr "Іздеу сәтсіз аяқталды: {error}"
+
+#: channel_core.py:135
+msgid "Search:"
+msgstr "Іздеу:"
+
+#: search.py:282
+msgid "Searching..."
+msgstr "Іздеу..."
+
+#: Youtube_settings.py:45
+msgid "Select a directory"
+msgstr "Директорияны таңдау"
+
+#: download_list.py:210
+msgid "Selected items added to download queue"
+msgstr "Таңдалған элементтер жүктеу кезегіне қосылды"
+
+#: downloadFail.py:274
+#: download_list.py:187
+msgid "Selected items deleted"
+msgstr "Таңдалған элементтер жойылды"
+
+#: __init__.py:547
+#: channel_core.py:1333
+#: playlist.py:352
+#: search.py:553
+msgid "Short URL copied to clipboard"
+msgstr "Қысқа URL алмасу буферіне көшірілді"
+
+#: channel_core.py:64
+msgid "Shorts"
+msgstr "Shorts"
+
+#: channel_core.py:153
+#: playlist.py:66
+#: search.py:120
+msgid "Show items:"
+msgstr "Көрсетілетін элементтер:"
+
+#: Youtube_settings.py:223
+msgid "Skip &unavailable fragments"
+msgstr "Қолжетімсіз фрагменттерді өткізіп жіберу(&U)"
+
+#: Youtube_settings.py:118
+msgid "Skip existing files"
+msgstr "Бар файлдарды өткізіп жіберу"
+
+#: __init__.py:522
+msgid "Snapshot"
+msgstr "Скриншот"
+
+#: Snapshot.py:54
+msgid "Snapshot file already exists"
+msgstr "Скриншот файлы бар"
+
+#: Trim.py:174
+#: channel_dialogs.py:181
+#: search.py:680
+msgid "Start download"
+msgstr "Жүктеуді бастау"
+
+#: Youtube_settings.py:60
+msgid "Start download immediately (NVDA+Y)"
+msgstr "Жүктеуді бірден бастау (NVDA+Y)"
+
+#: Trim.py:316
+msgid "Start time must be less than end time"
+msgstr "Бастау уақыты аяқталу уақытынан аз болуы керек"
+
+#: Trim.py:139
+msgid "Start time:"
+msgstr "Бастау уақыты:"
+
+#: __init__.py:365
+msgid "Starting download: {format} - {title}"
+msgstr "Жүктеу басталуда: {format} - {title}"
+
+#: Download_core.py:791
+msgid "Starting next download from queue: {title}"
+msgstr "Кезектегі келесі жүктеу басталуда: {title}"
+
+#: channel_dialogs.py:15
+msgid "Title"
+msgstr "Атауы"
+
+#: channel_core.py:1374
+#: playlist.py:342
+msgid "Title correction completed and locked."
+msgstr "Атауды түзету аяқталды және бекітілді."
+
+#: channel_core.py:538
+msgid "Title correction completed for {count} videos."
+msgstr "{count} бейне үшін атауды түзету аяқталды."
+
+#: channel_core.py:1376
+#: playlist.py:344
+msgid "Title correction failed."
+msgstr "Атауды түзету сәтсіз аяқталды."
+
+#: __init__.py:431
+msgid "Toggle immediate download mode"
+msgstr "Жедел жүктеу режимін ауыстыру"
+
+#: __init__.py:706
+msgid "Toggle playlist mode"
+msgstr "Ойнату тізімі режимін ауыстыру"
+
+#: __init__.py:525
+msgid "Trim setting"
+msgstr "Қию параметрлері"
+
+#: Trim.py:332
+msgid "Trimming and downloading {format}..."
+msgstr "Қиып алу және {format} жүктеу..."
+
+#: Trim.py:132
+#: downloadFail.py:69
+msgid "URL"
+msgstr "URL"
+
+#: channel_core.py:1336
+msgid "URL copied to clipboard"
+msgstr "URL алмасу буферіне көшірілді"
+
+#: Trim.py:307
+msgid "URL is required"
+msgstr "URL қажет"
+
+#: Download_core.py:903
+msgid "URL not found"
+msgstr "URL табылмады"
+
+#: Download_core.py:672
+#: __init__.py:359
+#: downloadFail.py:110
+#: downloadFail.py:113
+#: downloadFail.py:114
+#: download_list.py:103
+msgid "Unknown"
+msgstr "Белгісіз"
+
+#: channel_core.py:591
+msgid "Unpin"
+msgstr "Босату"
+
+#: Youtube_settings.py:369
+#: __init__.py:287
+msgid "Update failed: {str}"
+msgstr "Жаңарту сәтсіз аяқталды: {str}"
+
+#: Youtube_settings.py:290
+msgid "Update status: Idle"
+msgstr "Жаңарту күйі: Күтуде"
+
+#: Youtube_settings.py:368
+msgid "Update status: Update failed: {str}"
+msgstr "Жаңарту күйі: Жаңарту сәтсіз: {str}"
+
+#: Youtube_settings.py:364
+msgid "Update status: Update successful"
+msgstr "Жаңарту күйі: Сәтті жаңартылды"
+
+#: Youtube_settings.py:354
+msgid "Update status: Updating..."
+msgstr "Жаңарту күйі: Жаңартылуда..."
+
+#: Youtube_settings.py:286
+msgid "Update yt-dlp now"
+msgstr "yt-dlp қазір жаңарту"
+
+#: Youtube_settings.py:355
+#: __init__.py:275
+msgid "Updating yt-dlp..."
+msgstr "yt-dlp жаңартылуда..."
+
+#: Youtube_settings.py:150
+msgid "Use &cookies (recommended to avoid block)"
+msgstr "Cookies пайдалану (блоктауды болдырмау үшін ұсынылады)(&C)"
+
+#: Youtube_settings.py:179
+msgid "Use &custom user agent"
+msgstr "Пайдаланушының жеке агентін қолдану(&C)"
+
+#: Youtube_settings.py:229
+msgid "Use &proxy"
+msgstr "Проксиді қолдану(&P)"
+
+#: Youtube_settings.py:92
+msgid "Use download section"
+msgstr "Жүктеу бөлімін қолдану"
+
+#: Youtube_settings.py:184
+msgid "User &agent:"
+msgstr "Пайдаланушы агенті(&A):"
+
+#: downloadFail.py:67
+#: download_list.py:67
+#: search.py:35
+msgid "Video Title"
+msgstr "Бейне атауы"
+
+#: Trim.py:144
+msgid "Video duration: unknown; Overall period: 0 seconds"
+msgstr "Бейне ұзақтығы: белгісіз; Жалпы кезең: 0 секунд"
+
+#: Trim.py:255
+msgid "Video duration: {duration}; Overall period: {period} seconds"
+msgstr "Бейне ұзақтығы: {duration}; Жалпы кезең: {period} секунд"
+
+#: channel_core.py:63
+msgid "Videos"
+msgstr "Бейнелер"
+
+#: playlist.py:23
+msgid "Videos in {title}"
+msgstr "{title} ішіндегі бейнелер"
+
+#: __init__.py:592
+#: __init__.py:606
+msgid "You must be on a YouTube page to use this feature"
+msgstr "Бұл мүмкіндікті пайдалану үшін YouTube бетінде болуыңыз керек"
+
+#: channel_core.py:30
+msgid "Your favorite channel"
+msgstr "Таңдаулы арнаңыз"
+
+#: Trim.py:254
+msgid "invalid"
+msgstr "жарамсыз"
+
+#: Trim.py:250
+msgid "invalid (negative)"
+msgstr "жарамсыз (теріс)"
+
+#: search.py:53
+msgid "loading..."
+msgstr "жүктелуде..."
+
+#: Trim.py:244
+msgid "unknown"
+msgstr "белгісіз"
+
+#: Youtube_settings.py:276
+msgid "yt-dlp Update"
+msgstr "yt-dlp жаңартуы"
+
+#: Youtube_settings.py:365
+#: __init__.py:284
+msgid "yt-dlp updated successfully"
+msgstr "yt-dlp сәтті жаңартылды"
+
+#: Download_core.py:946
+msgid "yt-dlp.exe missing"
+msgstr "yt-dlp.exe табылмады"
+
+#: channel_core.py:816
+#: search.py:256
+msgid "yt-dlp.exe not found."
+msgstr "yt-dlp.exe табылмады."
+
+#: __init__.py:725
+msgid "{quality} kbps"
+msgstr "{quality} кбит/с"
+
+#: channel_core.py:350
+#: playlist.py:123
+#: search.py:197
+msgid "{}, showing {} of {} videos"
+msgstr "{}, {} бейненің {} көрсетілуде"

@@ -1,5 +1,4 @@
-# Download_core.py
-
+# Download_core.py (Full replacement)
 import wx
 import os
 import json
@@ -58,21 +57,46 @@ _global_active_downloads = 0
 _global_active_lock = threading.Lock()
 _num_workers = 1
 
+_pending_lock = threading.Lock()
+
+
+def clean_youtube_url(url, is_playlist=False):
+	if not url or ("youtube.com" not in url and "youtu.be" not in url):
+		return url
+	import urllib.parse
+	parsed = urllib.parse.urlparse(url)
+	query_params = urllib.parse.parse_qs(parsed.query)
+	unwanted = ['start_radio', 'pp', 'feature', 'index', 'playnext', 'sp', 'si', 'src_vid', 'rv']
+	for param in unwanted:
+		if param in query_params:
+			del query_params[param]
+	if not is_playlist and 'list' in query_params:
+		del query_params['list']
+	if 'v' not in query_params and "youtu.be" in url:
+		video_id = parsed.path.lstrip('/')
+		if video_id and '/' not in video_id:
+			query_params['v'] = [video_id]
+			new_netloc = "www.youtube.com"
+			new_path = "/watch"
+			parsed = parsed._replace(netloc=new_netloc, path=new_path)
+	new_query = urllib.parse.urlencode(query_params, doseq=True)
+	clean_url = urllib.parse.urlunparse((
+		parsed.scheme, parsed.netloc, parsed.path,
+		parsed.params, new_query, parsed.fragment
+	))
+	return clean_url
+
 
 def getStateFilePath():
-	"""Get path for state file to store download queue (new location under ChaiChaimee)"""
 	try:
 		import globalVars
 		if globalVars.appArgs.secure:
-			# In secure mode, use a fixed location under user's AppData
 			base = os.path.join(os.path.expanduser('~'), 'AppData', 'Roaming', 'nvda')
 		else:
 			base = globalVars.appArgs.configPath or os.path.join(os.path.expanduser('~'), 'AppData', 'Roaming', 'nvda')
-		# New subdirectory structure
 		new_dir = os.path.join(base, 'ChaiChaimee', 'AbsoluteYoutube')
 		return os.path.join(new_dir, 'AbsoluteYoutube.json')
 	except Exception:
-		# Fallback
 		base = os.path.join(os.path.expanduser('~'), 'AppData', 'Roaming', 'nvda')
 		return os.path.join(base, 'ChaiChaimee', 'AbsoluteYoutube', 'AbsoluteYoutube.json')
 
@@ -82,10 +106,8 @@ FAILED_DOWNLOADS_FILE = os.path.join(os.path.dirname(StateFilePath), 'AbsoluteYo
 
 
 def _migrate_old_json_files():
-	"""Move old JSON files from the old location to the new one."""
 	try:
 		import globalVars
-		# Determine old base directory
 		if globalVars.appArgs.secure:
 			old_base = os.path.join(os.path.expanduser('~'), 'AppData', 'Roaming', 'nvda')
 		else:
@@ -123,7 +145,6 @@ def _migrate_old_json_files():
 
 
 def load_failed_downloads():
-	"""Load failed downloads from JSON file"""
 	try:
 		if os.path.exists(FAILED_DOWNLOADS_FILE):
 			with open(FAILED_DOWNLOADS_FILE, 'r', encoding='utf-8') as f:
@@ -134,7 +155,6 @@ def load_failed_downloads():
 
 
 def save_failed_downloads(failed_list):
-	"""Save failed downloads to JSON file"""
 	try:
 		os.makedirs(os.path.dirname(FAILED_DOWNLOADS_FILE), exist_ok=True)
 		with open(FAILED_DOWNLOADS_FILE, 'w', encoding='utf-8') as f:
@@ -144,17 +164,14 @@ def save_failed_downloads(failed_list):
 
 
 def getINI(key):
-	"""Get configuration value by key"""
 	return config.conf[sectionName][key]
 
 
 def setINI(key, value):
-	"""Set configuration value for a key"""
 	config.conf[sectionName][key] = value
 
 
 def PlayWave(filename):
-	"""Play a sound file if enabled"""
 	try:
 		path = os.path.join(SoundPath, filename + ".wav")
 		if os.path.exists(path) and getINI("BeepWhileConverting"):
@@ -164,7 +181,6 @@ def PlayWave(filename):
 
 
 def check_yt_dlp_update():
-	"""Check yt-dlp version and return current and latest versions"""
 	try:
 		if not os.path.exists(YouTubeEXE):
 			return None, None
@@ -184,7 +200,6 @@ def check_yt_dlp_update():
 
 
 def _heartbeat_loop():
-	"""Run heartbeat sound during active downloads"""
 	global _heartbeat_active
 	while _heartbeat_active:
 		PlayWave("heart")
@@ -193,7 +208,6 @@ def _heartbeat_loop():
 
 
 def startHeartbeat():
-	"""Start the heartbeat sound thread"""
 	global _heartbeat_thread, _heartbeat_active
 	if not _heartbeat_active:
 		_heartbeat_active = True
@@ -202,7 +216,6 @@ def startHeartbeat():
 
 
 def stopHeartbeat():
-	"""Stop the heartbeat sound thread"""
 	global _heartbeat_thread, _heartbeat_active
 	_heartbeat_active = False
 	if _heartbeat_thread and _heartbeat_thread.is_alive():
@@ -213,7 +226,6 @@ def stopHeartbeat():
 
 
 def initialize_folders():
-	"""Initialize required folders for downloads and tools, and migrate old JSON files."""
 	global DownloadPath, _num_workers
 	folder = getINI("ResultFolder") or os.path.join(AppData, "AbsoluteYoutube")
 	setINI("ResultFolder", folder)
@@ -225,7 +237,6 @@ def initialize_folders():
 	if not os.path.exists(SoundPath):
 		os.makedirs(SoundPath, exist_ok=True)
 
-	# Ensure the new JSON directory exists and migrate old files
 	json_dir = os.path.dirname(StateFilePath)
 	if not os.path.exists(json_dir):
 		os.makedirs(json_dir, exist_ok=True)
@@ -234,7 +245,6 @@ def initialize_folders():
 	if not os.path.exists(StateFilePath):
 		saveState([])
 
-	# Get MaxConcurrentDownloads from config
 	try:
 		_num_workers = getINI("MaxConcurrentDownloads")
 		if _num_workers < 1:
@@ -248,7 +258,6 @@ def initialize_folders():
 
 
 def saveState(queue_list):
-	"""Save download queue to state file"""
 	try:
 		os.makedirs(os.path.dirname(StateFilePath), exist_ok=True)
 		with open(StateFilePath, 'w', encoding='utf-8') as f:
@@ -258,7 +267,6 @@ def saveState(queue_list):
 
 
 def loadState():
-	"""Load download queue from state file"""
 	try:
 		if os.path.exists(StateFilePath):
 			with open(StateFilePath, 'r', encoding='utf-8') as f:
@@ -269,7 +277,6 @@ def loadState():
 
 
 def clearState():
-	"""Clear the download queue state file"""
 	try:
 		if os.path.exists(StateFilePath):
 			with open(StateFilePath, 'w', encoding='utf-8') as f:
@@ -279,7 +286,6 @@ def clearState():
 
 
 def addDownloadToQueue(download_obj):
-	"""Add a download task to the queue"""
 	with _global_state_lock:
 		queue = loadState()
 		download_obj["id"] = str(uuid.uuid4())
@@ -292,7 +298,6 @@ def addDownloadToQueue(download_obj):
 
 
 def updateDownloadStatusInQueue(download_id, status):
-	"""Update the status of a download task in the queue"""
 	with _global_state_lock:
 		queue = loadState()
 		updated = False
@@ -309,7 +314,6 @@ def updateDownloadStatusInQueue(download_id, status):
 
 
 def removeCompletedOrFailedDownloadsFromQueue():
-	"""Remove completed or failed downloads from the queue"""
 	with _global_state_lock:
 		queue = loadState()
 		new_queue = [item for item in queue if item.get("status") not in ["completed", "failed", "cancelled"]]
@@ -319,17 +323,14 @@ def removeCompletedOrFailedDownloadsFromQueue():
 
 
 def makePrintable(s):
-	"""Convert string to printable characters"""
 	return "".join(c if c.isprintable() else " " for c in str(s))
 
 
 def validFilename(s):
-	"""Sanitize filename by replacing invalid characters"""
 	return "".join(c if c not in ["/", "\\", ":", "*", "<", ">", "?", "\"", "|", "\n", "\r", "\t"] else "_" for c in s)
 
 
 def log(s):
-	"""Log messages to NVDA log and optionally to a file"""
 	try:
 		api.log.info(f"AbsoluteYoutube: {makePrintable(s)}")
 		if getINI("Logging"):
@@ -342,7 +343,6 @@ def log(s):
 
 
 def createFolder(folder):
-	"""Create a folder if it doesn't exist"""
 	if not os.path.isdir(folder):
 		try:
 			os.makedirs(folder, exist_ok=True)
@@ -356,7 +356,6 @@ def createFolder(folder):
 
 
 def getCurrentAppName():
-	"""Get the name of the current application"""
 	try:
 		return api.getForegroundObject().appModule.appName
 	except Exception:
@@ -364,13 +363,11 @@ def getCurrentAppName():
 
 
 def isBrowser():
-	"""Check if the current focus is in a browser"""
 	obj = api.getFocusObject()
 	return obj.treeInterceptor is not None
 
 
 def getCurrentDocumentURL():
-	"""Get the URL of the current document"""
 	try:
 		obj = api.getFocusObject()
 		if hasattr(obj, 'treeInterceptor') and obj.treeInterceptor:
@@ -386,7 +383,6 @@ def getCurrentDocumentURL():
 
 
 def getLinkURL():
-	"""Get the URL of the current link"""
 	obj = api.getNavigatorObject()
 	if obj.role == controlTypes.Role.LINK:
 		url = obj.value
@@ -397,7 +393,6 @@ def getLinkURL():
 
 
 def getLinkName():
-	"""Get the name of the current link"""
 	obj = api.getNavigatorObject()
 	if obj.role == controlTypes.Role.LINK:
 		return obj.name
@@ -405,13 +400,11 @@ def getLinkName():
 
 
 def getMultimediaURLExtension():
-	"""Get the file extension from a multimedia URL"""
 	url = getLinkURL()
 	return url[url.rfind("."):].lower() if "." in url else ""
 
 
 def isValidMultimediaExtension(ext):
-	"""Check if the file extension is a valid multimedia type"""
 	return ext.replace(".", "") in {
 		"aac", "avi", "flac", "mkv", "m3u8", "m4a", "m4s", "m4v",
 		"mpg", "mov", "mp2", "mp3", "mp4", "mpeg", "mpegts", "ogg",
@@ -421,7 +414,6 @@ def isValidMultimediaExtension(ext):
 
 
 def getWebSiteTitle():
-	"""Get the title of the current website"""
 	try:
 		title = api.getForegroundObject().name
 		unwanted_suffixes = [" - YouTube", "| YouTube", " - Google Chrome", " - Brave", " - Microsoft Edge"]
@@ -433,7 +425,6 @@ def getWebSiteTitle():
 
 
 def checkFileExists(savePath, title, extension, is_trimming=False):
-	"""Check if a file already exists to avoid duplicate downloads"""
 	if not getINI("SkipExisting"):
 		return False
 
@@ -470,14 +461,12 @@ def checkFileExists(savePath, title, extension, is_trimming=False):
 
 
 def promptResumeDownloads(downloads_list):
-	"""Prompt user to resume interrupted downloads"""
 	count = len(downloads_list)
 	msg = _("Found {count} interrupted downloads\nResume all?").format(count=count)
 	return gui.messageBox(msg, _("Resume downloads"), wx.YES_NO) == wx.YES
 
 
 def _cleanup_temp_files(save_path, title, file_format, check_count=2):
-	"""Clean up temporary files created during download"""
 	if not title or not save_path:
 		log(f"Temp cleanup skipped: title or path missing (title: {title}, path: {save_path})")
 		return
@@ -517,7 +506,6 @@ def _cleanup_temp_files(save_path, title, file_format, check_count=2):
 
 
 def get_video_duration(url):
-	"""Get the duration of a YouTube video"""
 	try:
 		cmd = [YouTubeEXE, "--get-duration", "--no-playlist", "--quiet", url]
 		result = subprocess.run(cmd, capture_output=True, text=True, encoding='utf-8', creationflags=subprocess.CREATE_NO_WINDOW)
@@ -542,7 +530,6 @@ def get_video_duration(url):
 
 
 def get_file_duration(file_path):
-	"""Get the duration of a local media file"""
 	try:
 		cmd = [ConverterEXE, "-i", file_path, "-show_entries", "format=duration", "-v", "quiet", "-of", "csv=p=0"]
 		result = subprocess.run(cmd, capture_output=True, text=True, encoding='utf-8', creationflags=subprocess.CREATE_NO_WINDOW)
@@ -557,7 +544,6 @@ def get_file_duration(file_path):
 
 
 def repairIncompleteFiles(path):
-	"""Repair or remove incomplete download files"""
 	repaired_count = 0
 	patterns = [
 		"*.part", "*.ytdl", "*.temp", "*.download", "*.f*.tmp",
@@ -599,7 +585,6 @@ def repairIncompleteFiles(path):
 
 
 def resumeInterruptedDownloads():
-	"""Resume interrupted downloads if enabled"""
 	if not getINI("ResumeOnRestart"):
 		return
 	if not os.path.exists(StateFilePath):
@@ -633,7 +618,6 @@ def resumeInterruptedDownloads():
 
 
 def start_worker_threads():
-	"""Start worker threads for handling downloads"""
 	global _num_workers
 	try:
 		_num_workers = getINI("MaxConcurrentDownloads")
@@ -651,14 +635,12 @@ def start_worker_threads():
 
 
 def shutdown_workers():
-	"""Shut down worker threads"""
 	global _num_workers
 	for _ in range(_num_workers):
 		_download_queue.put(None)
 
 
 def worker_loop():
-	"""Process download tasks from the queue"""
 	while True:
 		item = _download_queue.get()
 		if item is None:
@@ -668,26 +650,21 @@ def worker_loop():
 
 
 def _process_next_download():
-	"""Placeholder for processing the next download (used by Trim)"""
 	pass
 
 
 def get_failed_downloads():
-	"""Get list of failed downloads"""
 	return load_failed_downloads()
 
 
 def add_failed_download(url, title, format_type, duration=None):
-	"""Add a failed download to the failed downloads list"""
 	try:
 		failed_list = load_failed_downloads()
 
-		# Check if already exists
 		for item in failed_list:
 			if item.get('url') == url and item.get('title') == title:
 				return
 
-		# Add new failed download
 		failed_item = {
 			'url': url,
 			'title': title,
@@ -704,7 +681,6 @@ def add_failed_download(url, title, format_type, duration=None):
 
 
 def remove_failed_download(url, title):
-	"""Remove a failed download from the list"""
 	try:
 		failed_list = load_failed_downloads()
 		new_list = [item for item in failed_list if not (item.get('url') == url and item.get('title') == title)]
@@ -720,7 +696,6 @@ def remove_failed_download(url, title):
 
 
 def clear_failed_downloads():
-	"""Clear all failed downloads"""
 	try:
 		save_failed_downloads([])
 		log("Cleared all failed downloads")
@@ -730,8 +705,95 @@ def clear_failed_downloads():
 		return False
 
 
+def get_pending_file_path():
+	try:
+		import globalVars
+		if globalVars.appArgs.secure:
+			base = os.path.join(os.path.expanduser('~'), 'AppData', 'Roaming', 'nvda')
+		else:
+			base = globalVars.appArgs.configPath or os.path.join(os.path.expanduser('~'), 'AppData', 'Roaming', 'nvda')
+		new_dir = os.path.join(base, 'ChaiChaimee', 'AbsoluteYoutube')
+		return os.path.join(new_dir, 'pending_downloads.json')
+	except Exception:
+		base = os.path.join(os.path.expanduser('~'), 'AppData', 'Roaming', 'nvda')
+		return os.path.join(base, 'ChaiChaimee', 'AbsoluteYoutube', 'pending_downloads.json')
+
+
+def load_pending_downloads():
+	pending_file = get_pending_file_path()
+	if os.path.exists(pending_file):
+		try:
+			with open(pending_file, 'r', encoding='utf-8') as f:
+				return json.load(f)
+		except Exception:
+			return []
+	return []
+
+
+def save_pending_downloads(pending_list):
+	pending_file = get_pending_file_path()
+	os.makedirs(os.path.dirname(pending_file), exist_ok=True)
+	with open(pending_file, 'w', encoding='utf-8') as f:
+		json.dump(pending_list, f, ensure_ascii=False, indent=4)
+
+
+def add_pending_download(url, title, format_type):
+	with _pending_lock:
+		pending_list = load_pending_downloads()
+		for item in pending_list:
+			if item.get('url') == url and item.get('format') == format_type:
+				log(f"Pending download already exists: {title}")
+				return False
+		new_item = {
+			'url': url,
+			'title': title,
+			'format': format_type,
+			'added_time': datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+		}
+		pending_list.append(new_item)
+		save_pending_downloads(pending_list)
+		log(f"Added to pending queue: {title}")
+		return True
+
+
+def remove_pending_download_by_index(idx):
+	with _pending_lock:
+		pending_list = load_pending_downloads()
+		if 0 <= idx < len(pending_list):
+			removed = pending_list.pop(idx)
+			save_pending_downloads(pending_list)
+			log(f"Removed from pending queue: {removed.get('title')}")
+			return True
+		return False
+
+
+def clear_pending_downloads():
+	with _pending_lock:
+		save_pending_downloads([])
+		log("Cleared all pending downloads")
+
+
+def get_pending_downloads():
+	return load_pending_downloads()
+
+
+def is_download_active():
+	return _global_active_downloads > 0
+
+
+def start_next_pending():
+	with _pending_lock:
+		pending_list = load_pending_downloads()
+		if not pending_list:
+			return False
+		next_item = pending_list.pop(0)
+		save_pending_downloads(pending_list)
+	wx.CallAfter(ui.message, _("Starting next download from queue: {title}").format(title=next_item['title']))
+	convertToMP(next_item['format'], getINI("ResultFolder") or DownloadPath, False, next_item['url'], next_item['title'])
+	return True
+
+
 def run_download(item):
-	"""Execute a download task with no console window"""
 	download_id = item["id"]
 	cmd = item["cmd"]
 	save_path = item["path"]
@@ -753,7 +815,6 @@ def run_download(item):
 
 	process = None
 	try:
-		# Create startupinfo to hide console window
 		si = subprocess.STARTUPINFO()
 		si.dwFlags |= subprocess.STARTF_USESHOWWINDOW
 		si.wShowWindow = subprocess.SW_HIDE
@@ -768,7 +829,7 @@ def run_download(item):
 			creationflags=subprocess.CREATE_NO_WINDOW
 		)
 		log(f"Process started with PID: {process.pid}")
-		timeout = 1800  # 30 minutes timeout
+		timeout = 1800
 		try:
 			process.communicate(timeout=timeout)
 			return_code = process.returncode
@@ -778,14 +839,12 @@ def run_download(item):
 				if getINI("SayDownloadComplete"):
 					wx.CallAfter(ui.message, _("Download complete"))
 				updateDownloadStatusInQueue(download_id, "completed")
-				# Remove from failed downloads if exists
 				remove_failed_download(url, title)
 			else:
 				log(f"Download for ID {download_id} failed with return code {return_code}.")
 				PlayWave('failed')
 				wx.CallAfter(ui.message, _("Download failed"))
 				updateDownloadStatusInQueue(download_id, "failed")
-				# Add to failed downloads list
 				duration = get_video_duration(url)
 				add_failed_download(url, title, file_format, duration)
 		except subprocess.TimeoutExpired:
@@ -799,7 +858,6 @@ def run_download(item):
 			PlayWave('failed')
 			wx.CallAfter(ui.message, _("Download failed due to timeout"))
 			updateDownloadStatusInQueue(download_id, "failed")
-			# Add to failed downloads list
 			duration = get_video_duration(url)
 			add_failed_download(url, title, file_format, duration)
 	except Exception as e:
@@ -813,7 +871,6 @@ def run_download(item):
 		PlayWave('failed')
 		wx.CallAfter(ui.message, _("Download failed due to an error"))
 		updateDownloadStatusInQueue(download_id, "failed")
-		# Add to failed downloads list
 		duration = get_video_duration(url)
 		add_failed_download(url, title, file_format, duration)
 	finally:
@@ -825,10 +882,10 @@ def run_download(item):
 			if _global_active_downloads == 0:
 				wx.CallAfter(stopHeartbeat)
 		log(f"Download for ID {download_id} finished.")
+		wx.CallAfter(start_next_pending)
 
 
 def convertToMP(mpFormat, savePath, isPlaylist=False, url=None, title=None):
-	"""Convert and download media in specified format (MP3, MP4, WAV) with anti-blocking measures"""
 	if not createFolder(savePath):
 		ui.message(_("Cannot create folder"))
 		return
@@ -836,23 +893,21 @@ def convertToMP(mpFormat, savePath, isPlaylist=False, url=None, title=None):
 		repaired = repairIncompleteFiles(savePath)
 		log(f"Auto-repaired {repaired} files before new download")
 	
-	# Use provided URL or get from current document
 	current_url = url or getCurrentDocumentURL()
 	link_url = getLinkURL()
 	
-	# Determine which URL to use
 	if not current_url:
 		current_url = link_url
 	
-	# Check if we have a URL
 	if not current_url:
 		ui.message(_("URL not found"))
 		return
 	
-	is_youtube_url = any(y in current_url.lower() for y in [".youtube.", "youtu.be", "youtube.com"])
+	is_youtube_url_flag = any(y in current_url.lower() for y in [".youtube.", "youtu.be", "youtube.com"])
 	
-	if is_youtube_url:
-		# For YouTube URLs, use provided title or get from website
+	if is_youtube_url_flag:
+		current_url = clean_youtube_url(current_url, isPlaylist)
+		
 		if title:
 			video_title = title
 		else:
@@ -892,13 +947,11 @@ def convertToMP(mpFormat, savePath, isPlaylist=False, url=None, title=None):
 			return
 		PlayWave("start")
 
-		# Use yt-dlp's built-in playlist handling for faster startup
 		output_template = os.path.join(savePath, "%(playlist)s/%(title)s.%(ext)s") if isPlaylist else os.path.join(savePath, "%(title)s.%(ext)s")
 
 		use_multipart = getINI("UseMultiPart") and os.path.exists(Aria2cEXE)
 		connections = getINI("MultiPartConnections")
 
-		# Build base command with anti-blocking options
 		base_cmd = [
 			YouTubeEXE, "--yes-playlist" if isPlaylist else "--no-playlist",
 			"--ignore-errors", "--no-warnings", "--quiet", "--no-check-certificate",
@@ -906,26 +959,27 @@ def convertToMP(mpFormat, savePath, isPlaylist=False, url=None, title=None):
 			"--retries", str(getINI("RetryCount"))
 		]
 
-		# Add cookies if enabled
+		use_auto_cookies = not getINI("UseCookies")
+		if use_auto_cookies:
+			base_cmd.extend(["--cookies-from-browser", "chrome"])
+			log("Attempting to use cookies from Chrome browser automatically")
+
 		if getINI("UseCookies") and getINI("CookiesFile"):
 			cookies_file = getINI("CookiesFile")
 			if os.path.exists(cookies_file):
 				base_cmd.extend(["--cookies", cookies_file])
 				log("Using cookies file for authentication")
 
-		# Add custom user agent if enabled
 		if getINI("UseCustomUserAgent") and getINI("CustomUserAgent"):
 			user_agent = getINI("CustomUserAgent")
 			base_cmd.extend(["--user-agent", user_agent])
 			log(f"Using custom user agent: {user_agent}")
 
-		# Add proxy if enabled
 		if getINI("UseProxy") and getINI("ProxyURL"):
 			proxy_url = getINI("ProxyURL")
 			base_cmd.extend(["--proxy", proxy_url])
 			log(f"Using proxy: {proxy_url}")
 
-		# Add geo-bypass options
 		if getINI("GeoBypass"):
 			base_cmd.append("--geo-bypass")
 			if getINI("GeoBypassCountry"):
@@ -933,40 +987,32 @@ def convertToMP(mpFormat, savePath, isPlaylist=False, url=None, title=None):
 			if getINI("GeoBypassIP"):
 				base_cmd.extend(["--geo-bypass-ip", getINI("GeoBypassIP")])
 
-		# Add network options
 		if getINI("ForceIpv4"):
 			base_cmd.append("--force-ipv4")
 		if getINI("ForceIpv6"):
 			base_cmd.append("--force-ipv6")
 
-		# Add throttle rate
 		if getINI("ThrottleRate") > 0:
 			throttle_rate = getINI("ThrottleRate")
 			base_cmd.extend(["--limit-rate", f"{throttle_rate}K"])
 
-		# Add sleep between requests
 		if getINI("SleepBetweenRequests") > 0:
 			sleep_time = getINI("SleepBetweenRequests")
 			base_cmd.extend(["--sleep-interval", str(sleep_time)])
 
-		# Add sponsor block if enabled
 		if getINI("UseSponsorBlock"):
 			sponsor_categories = getINI("SponsorBlockCategories")
 			base_cmd.extend(["--sponsorblock-api", "https://sponsor.ajay.app", "--sponsorblock-mark", sponsor_categories])
 
-		# Add abort on error
 		if getINI("AbortOnError"):
 			base_cmd.append("--abort-on-error")
 
-		# Add skip unavailable fragments
 		if getINI("SkipUnavailableFragments"):
 			base_cmd.append("--skip-unavailable-fragments")
 
-		# Add mark watched
 		if getINI("MarkWatched"):
 			base_cmd.append("--mark-watched")
 
-		# Add format-specific options
 		if mpFormat == "mp3":
 			cmd = base_cmd + [
 				"-x", "--audio-format", "mp3",
@@ -991,7 +1037,7 @@ def convertToMP(mpFormat, savePath, isPlaylist=False, url=None, title=None):
 				aria2_args = f"-x{safe_connections} -j{safe_connections} -s{safe_connections} -k1M --file-allocation=none --allow-overwrite=true --max-tries=3 --retry-wait=5 --quiet --console-log-level=error"
 				cmd.extend(["--external-downloader", Aria2cEXE,
 							"--external-downloader-args", f"aria2c:{aria2_args}"])
-		else:  # mp4
+		else:
 			cmd = base_cmd + [
 				"-f", "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/bv*+ba/b",
 				"--remux-video", "mp4",
@@ -1041,7 +1087,7 @@ def convertToMP(mpFormat, savePath, isPlaylist=False, url=None, title=None):
 					"-c:a", "pcm_s16le",
 					"-map", "0:a", "-y", "-loglevel", "quiet", multimediaLinkName
 				]
-			else:  # mp4
+			else:
 				cmd = [
 					ConverterEXE, "-i", multimediaLinkURL,
 					"-c:v", "libx265", "-preset", "fast", "-crf", "23",
@@ -1061,6 +1107,5 @@ def convertToMP(mpFormat, savePath, isPlaylist=False, url=None, title=None):
 
 
 def setSpeed(sp):
-	"""Set speech rate for NVDA"""
 	speech.setSpeechOption("rate", sp)
 	speech.speak(" ")

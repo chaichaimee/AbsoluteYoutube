@@ -1,0 +1,1336 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AbsoluteYoutube 2026.5.1\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-04-30 14:14+0700\n"
+"PO-Revision-Date: 2026-04-30 21:10+0700\n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: Urdu\n"
+"Language: ur\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: Youtube_settings.py:66
+msgid "&Beep while converting"
+msgstr "تبدیلی کے دوران &بیپ کریں"
+
+#: Youtube_settings.py:44
+msgid "&Browse..."
+msgstr "&براؤز کریں..."
+
+#: channel_dialogs.py:69
+#: channel_dialogs.py:133
+#: downloadFail.py:92
+msgid "&Cancel"
+msgstr "&منسوخ کریں"
+
+#: downloadFail.py:84
+#: download_list.py:85
+msgid "&Clear All"
+msgstr "&سب صاف کریں"
+
+#: channel_core.py:189
+#: playlist.py:89
+#: search.py:157
+msgid "&Close"
+msgstr "&بند کریں"
+
+#: downloadFail.py:76
+#: download_list.py:81
+msgid "&Delete Selected"
+msgstr "منتخب کردہ کو &حذف کریں"
+
+#: channel_core.py:181
+#: downloadFail.py:80
+#: download_list.py:81
+#: search.py:149
+msgid "&Download All"
+msgstr "سب &ڈاؤن لوڈ کریں"
+
+#: playlist.py:85
+msgid "&Download All Videos in Playlist"
+msgstr "پلے لسٹ میں تمام ویڈیوز &ڈاؤن لوڈ کریں"
+
+#: download_list.py:77
+msgid "&Download Selected"
+msgstr "منتخب کردہ &ڈاؤن لوڈ کریں"
+
+#: search.py:153
+msgid "&Download folder"
+msgstr "&ڈاؤن لوڈ فولڈر"
+
+#: Youtube_settings.py:241
+msgid "&Geo bypass"
+msgstr "&جغرافیائی بائی پاس"
+
+#: Youtube_settings.py:264
+msgid "&Mark as watched"
+msgstr "دیکھا ہوا &نشان زد کریں"
+
+#: Youtube_settings.py:135
+msgid "&Max concurrent downloads (1-4):"
+msgstr "&زیادہ سے زیادہ بیک وقت ڈاؤن لوڈز (1-4):"
+
+#: Youtube_settings.py:97
+msgid "&Number of connections:"
+msgstr "کنکشنز کی &تعداد:"
+
+#: channel_dialogs.py:67
+#: channel_dialogs.py:131
+#: downloadFail.py:88
+#: download_list.py:89
+msgid "&OK"
+msgstr "&ٹھیک ہے"
+
+#: Youtube_settings.py:207
+msgid "&Retry count:"
+msgstr "&دوبارہ کوشش کی تعداد:"
+
+#: Youtube_settings.py:72
+msgid "&Say download complete"
+msgstr "ڈاؤن لوڈ مکمل ہونے پر &بتائیں"
+
+#: Youtube_settings.py:199
+msgid "&Sleep between requests (seconds):"
+msgstr "درخواستوں کے درمیان &وقفہ (سیکنڈ):"
+
+#: channel_core.py:185
+msgid "&Source"
+msgstr "&ذریعہ"
+
+#: Youtube_settings.py:191
+msgid "&Throttle rate (KB/s, 0=unlimited):"
+msgstr "&رفتار کی حد (KB/s، 0=لامحدود):"
+
+#: channel_core.py:1100
+msgid "A channel with this name already exists. Overwrite?"
+msgstr "اس نام کا چینل پہلے سے موجود ہے۔ کیا آپ اس پر لکھنا چاہتے ہیں؟"
+
+#: __init__.py:256
+msgid "A new version of yt-dlp is available: {latest}. Current: {current}. Please update in settings."
+msgstr "yt-dlp کا نیا ورژن دستیاب ہے: {latest}۔ موجودہ: {current}۔ براہ کرم ترتیبات میں اپ ڈیٹ کریں۔"
+
+#: Download_core.py:32
+#: Youtube_settings.py:21
+#: __init__.py:44
+msgid "Absolute YouTube"
+msgstr "Absolute YouTube"
+
+#: Trim.py:64
+msgid "Absolute YouTube Trim"
+msgstr "Absolute YouTube Trim"
+
+#: __init__.py:529
+msgid "Absolute YouTube setting"
+msgstr "Absolute YouTube ترتیبات"
+
+#: menu.py:18
+msgid "Absolute Youtube"
+msgstr "Absolute Youtube"
+
+#: channel_dialogs.py:41
+msgid "Add New Channel"
+msgstr "نیا چینل شامل کریں"
+
+#: channel_core.py:112
+msgid "Add new channel"
+msgstr "نیا چینل شامل کریں"
+
+#: __init__.py:184
+msgid "Add-on initialization failed: missing pending file path function. Please restart NVDA."
+msgstr "ایڈ آن شروع کرنے میں ناکامی: فائل پاتھ کا فنکشن غائب ہے۔ براہ کرم NVDA دوبارہ شروع کریں۔"
+
+#: download_list.py:24
+msgid "Add-on internal error: missing components. Please restart NVDA."
+msgstr "ایڈ آن کی اندرونی غلطی: اجزاء غائب ہیں۔ براہ کرم NVDA دوبارہ شروع کریں۔"
+
+#: download_list.py:69
+msgid "Added Time"
+msgstr "شامل کرنے کا وقت"
+
+#: __init__.py:376
+msgid "Added to download list: {format} - {title}"
+msgstr "ڈاؤن لوڈ لسٹ میں شامل کیا گیا: {format} - {title}"
+
+#: __init__.py:370
+msgid "Added to download queue: {format} - {title}"
+msgstr "ڈاؤن لوڈ کیو میں شامل کیا گیا: {format} - {title}"
+
+#: download_list.py:169
+msgid "Added to download queue: {title}"
+msgstr "ڈاؤن لوڈ کیو میں شامل کیا گیا: {title}"
+
+#: Download_core.py:1097
+msgid "Adding link as {format} to download queue"
+msgstr "لنک کو بطور {format} ڈاؤن لوڈ کیو میں شامل کیا جا رہا ہے"
+
+#: channel_core.py:297
+#: search.py:591
+msgid "Adding {count} videos to download queue..."
+msgstr "{count} ویڈیوز ڈاؤن لوڈ کیو میں شامل کی جا رہی ہیں..."
+
+#: channel_core.py:1358
+#: playlist.py:364
+#: search.py:572
+msgid "Adding {title} to download queue."
+msgstr "{title} کو ڈاؤن لوڈ کیو میں شامل کیا جا رہا ہے۔"
+
+#: search.py:123
+#: search.py:204
+msgid "All"
+msgstr "سب"
+
+#: downloadFail.py:294
+msgid "All downloads started"
+msgstr "تمام ڈاؤن لوڈز شروع ہو گئے"
+
+#: downloadFail.py:305
+msgid "All failed downloads cleared"
+msgstr "تمام ناکام ڈاؤن لوڈز صاف کر دیے گئے"
+
+#: download_list.py:230
+msgid "All items added to download queue"
+msgstr "تمام اشیاء ڈاؤن لوڈ کیو میں شامل کر دی گئیں"
+
+#: download_list.py:249
+msgid "All pending downloads cleared"
+msgstr "تمام زیر التوا ڈاؤن لوڈز صاف کر دیے گئے"
+
+#: __init__.py:378
+msgid "Already in download list"
+msgstr "پہلے سے ڈاؤن لوڈ لسٹ میں موجود ہے"
+
+#: __init__.py:372
+#: download_list.py:171
+msgid "Already in download queue"
+msgstr "پہلے سے ڈاؤن لوڈ کیو میں موجود ہے"
+
+#: Snapshot.py:104
+msgid "An unexpected error occurred."
+msgstr "ایک غیر متوقع غلطی واقع ہوئی۔"
+
+#: Youtube_settings.py:144
+msgid "Anti-blocking settings"
+msgstr "اینٹی بلاکنگ ترتیبات"
+
+#: channel_core.py:731
+msgid "Are you sure you want to delete saved data for '{name}'?"
+msgstr "کیا آپ واقعی '{name}' کا محفوظ ڈیٹا حذف کرنا چاہتے ہیں؟"
+
+#: Trim.py:164
+#: channel_dialogs.py:172
+msgid "Audio Quality"
+msgstr "آڈیو کوالٹی"
+
+#: Trim.py:177
+#: channel_dialogs.py:183
+#: search.py:681
+msgid "Cancel"
+msgstr "منسوخ کریں"
+
+#: channel_core.py:292
+msgid "Cannot create download folder."
+msgstr "ڈاؤن لوڈ فولڈر نہیں بنایا جا سکتا۔"
+
+#: Download_core.py:352
+#: Download_core.py:890
+msgid "Cannot create folder"
+msgstr "فولڈر نہیں بنایا جا سکتا"
+
+#: search.py:563
+msgid "Cannot determine URL for this video."
+msgstr "اس ویڈیو کا URL معلوم نہیں کیا جا سکتا۔"
+
+#: search.py:610
+msgid "Cannot open download folder."
+msgstr "ڈاؤن لوڈ فولڈر نہیں کھولا جا سکتا۔"
+
+#: channel_core.py:320
+msgid "Cannot open source folder."
+msgstr "سورس فولڈر نہیں کھولا جا سکتا۔"
+
+#: Snapshot.py:58
+msgid "Capturing full-size snapshot..."
+msgstr "پورے سائز کا سنیپ شاٹ لیا جا رہا ہے..."
+
+#: channel_core.py:713
+msgid "Channel URL updated."
+msgstr "چینل کا URL اپ ڈیٹ کر دیا گیا۔"
+
+#: channel_dialogs.py:58
+#: channel_dialogs.py:124
+msgid "Channel URL:"
+msgstr "چینل کا URL:"
+
+#: channel_core.py:906
+msgid "Channel added successfully."
+msgstr "چینل کامیابی سے شامل کر دیا گیا۔"
+
+#: channel_core.py:743
+#: channel_core.py:746
+msgid "Channel deleted."
+msgstr "چینل حذف کر دیا گیا۔"
+
+#: channel_dialogs.py:51
+#: channel_dialogs.py:117
+msgid "Channel name:"
+msgstr "چینل کا نام:"
+
+#: channel_core.py:633
+msgid "Channel pinned."
+msgstr "چینل پن کر دیا گیا۔"
+
+#: channel_core.py:1121
+msgid "Channel saved."
+msgstr "چینل محفوظ کر لیا گیا۔"
+
+#: channel_core.py:630
+msgid "Channel unpinned."
+msgstr "چینل ان پن کر دیا گیا۔"
+
+#: channel_core.py:700
+msgid "Channel updated."
+msgstr "چینل اپ ڈیٹ کر دیا گیا۔"
+
+#: channel_core.py:100
+msgid "Channel:"
+msgstr "چینل:"
+
+#: channel_core.py:955
+msgid "Checking for new videos..."
+msgstr "نئی ویڈیوز چیک کی جا رہی ہیں..."
+
+#: Download_core.py:601
+msgid "Checking interrupted downloads..."
+msgstr "روکے گئے ڈاؤن لوڈز چیک کیے جا رہے ہیں..."
+
+#: downloadFail.py:162
+#: download_list.py:131
+msgid "Clear all"
+msgstr "سب صاف کریں"
+
+#: channel_core.py:732
+msgid "Confirm Delete"
+msgstr "حذف کرنے کی تصدیق کریں"
+
+#: playlist.py:374
+msgid "Confirm Download"
+msgstr "ڈاؤن لوڈ کی تصدیق کریں"
+
+#: channel_core.py:1101
+msgid "Confirm Overwrite"
+msgstr "اوور رائٹ کی تصدیق کریں"
+
+#: channel_core.py:125
+msgid "Content type:"
+msgstr "مواد کی قسم:"
+
+#: Youtube_settings.py:156
+msgid "Cookies &file:"
+msgstr "کوکیز &فائل:"
+
+#: channel_core.py:1298
+msgid "Copy URL"
+msgstr "URL کاپی کریں"
+
+#: __init__.py:509
+#: playlist.py:314
+#: search.py:526
+msgid "Copy video Shorten URL"
+msgstr "ویڈیو کا مختصر URL کاپی کریں"
+
+#: channel_core.py:1308
+#: playlist.py:320
+msgid "Correct title now"
+msgstr "ابھی عنوان درست کریں"
+
+#: channel_core.py:1366
+#: playlist.py:337
+msgid "Correcting title for selected video..."
+msgstr "منتخب ویڈیو کا عنوان درست کیا جا رہا ہے..."
+
+#: playlist.py:354
+#: search.py:555
+msgid "Could not create short URL"
+msgstr "مختصر URL نہیں بنایا جا سکا"
+
+#: __init__.py:549
+msgid "Could not create shortened URL"
+msgstr "مختصر کردہ URL نہیں بنایا جا سکا"
+
+#: Trim.py:302
+msgid "Could not open preview URL"
+msgstr "پریویو URL نہیں کھولا جا سکا"
+
+#: __init__.py:713
+msgid "Cycle MP3 quality settings"
+msgstr "MP3 کوالٹی کی ترتیبات تبدیل کریں"
+
+#: channel_core.py:607
+#: downloadFail.py:146
+#: download_list.py:119
+msgid "Delete"
+msgstr "حذف کریں"
+
+#: downloadFail.py:153
+#: download_list.py:124
+msgid "Delete selected"
+msgstr "منتخب کردہ کو حذف کریں"
+
+#: download_list.py:121
+msgid "Download"
+msgstr "ڈاؤن لوڈ"
+
+#: channel_dialogs.py:155
+#: search.py:663
+msgid "Download All Videos"
+msgstr "تمام ویڈیوز ڈاؤن لوڈ کریں"
+
+#: downloadFail.py:16
+msgid "Download Fail Manager - Absolute YouTube"
+msgstr "ڈاؤن لوڈ فیل منیجر - Absolute YouTube"
+
+#: download_list.py:14
+msgid "Download List Manager - Absolute YouTube"
+msgstr "ڈاؤن لوڈ لسٹ منیجر - Absolute YouTube"
+
+#: channel_core.py:1311
+#: playlist.py:323
+#: search.py:532
+msgid "Download MP3"
+msgstr "MP3 ڈاؤن لوڈ کریں"
+
+#: channel_core.py:1314
+#: playlist.py:326
+#: search.py:535
+msgid "Download MP4"
+msgstr "MP4 ڈاؤن لوڈ کریں"
+
+#: channel_core.py:1317
+#: playlist.py:329
+#: search.py:538
+msgid "Download WAV"
+msgstr "WAV ڈاؤن لوڈ کریں"
+
+#: downloadFail.py:159
+#: download_list.py:129
+msgid "Download all"
+msgstr "سب ڈاؤن لوڈ کریں"
+
+#: playlist.py:373
+msgid "Download all {count} videos in this playlist?"
+msgstr "کیا اس پلے لسٹ کی تمام {count} ویڈیوز ڈاؤن لوڈ کریں؟"
+
+#: Download_core.py:840
+msgid "Download complete"
+msgstr "ڈاؤن لوڈ مکمل"
+
+#: channel_core.py:1305
+msgid "Download entire playlist"
+msgstr "پوری پلے لسٹ ڈاؤن لوڈ کریں"
+
+#: __init__.py:509
+msgid "Download fail manager"
+msgstr "ڈاؤن لوڈ فیل منیجر"
+
+#: __init__.py:517
+msgid "Download fail manager (no failed)"
+msgstr "ڈاؤن لوڈ فیل منیجر (کوئی ناکام نہیں)"
+
+#: Download_core.py:846
+msgid "Download failed"
+msgstr "ڈاؤن لوڈ ناکام ہو گیا"
+
+#: Download_core.py:872
+msgid "Download failed due to an error"
+msgstr "غلطی کی وجہ سے ڈاؤن لوڈ ناکام ہو گیا"
+
+#: Download_core.py:859
+msgid "Download failed due to timeout"
+msgstr "ٹائم آؤٹ کی وجہ سے ڈاؤن لوڈ ناکام ہو گیا"
+
+#: downloadFail.py:149
+msgid "Download file"
+msgstr "فائل ڈاؤن لوڈ کریں"
+
+#: search.py:612
+msgid "Download folder does not exist."
+msgstr "ڈاؤن لوڈ فولڈر موجود نہیں ہے۔"
+
+#: channel_core.py:1346
+#: channel_core.py:1360
+#: playlist.py:366
+#: playlist.py:382
+#: search.py:574
+msgid "Download function not available."
+msgstr "ڈاؤن لوڈ فنکشن دستیاب نہیں ہے۔"
+
+#: __init__.py:511
+msgid "Download list manager"
+msgstr "ڈاؤن لوڈ لسٹ منیجر"
+
+#: __init__.py:385
+msgid "Download or queue video (single tap MP3, double tap MP4, triple tap WAV)"
+msgstr "ویڈیو ڈاؤن لوڈ کریں یا کیو میں ڈالیں (ایک ٹیپ MP3، دو ٹیپ MP4، تین ٹیپ WAV)"
+
+#: download_list.py:126
+msgid "Download selected"
+msgstr "منتخب کردہ ڈاؤن لوڈ کریں"
+
+#: downloadFail.py:249
+msgid "Download started for: {title}"
+msgstr "ڈاؤن لوڈ شروع برائے: {title}"
+
+#: Snapshot.py:63
+msgid "Downloading thumbnail..."
+msgstr "تھمب نیل ڈاؤن لوڈ ہو رہا ہے..."
+
+#: channel_core.py:310
+#: search.py:600
+msgid "Downloads started."
+msgstr "ڈاؤن لوڈز شروع ہو گئے۔"
+
+#: downloadFail.py:68
+#: search.py:36
+msgid "Duration"
+msgstr "دورانیہ"
+
+#: channel_dialogs.py:105
+msgid "Edit Channel"
+msgstr "چینل میں ترمیم کریں"
+
+#: channel_core.py:116
+msgid "Edit channel"
+msgstr "چینل میں ترمیم کریں"
+
+#: channel_core.py:604
+msgid "Edit channel..."
+msgstr "چینل میں ترمیم کریں..."
+
+#: Youtube_settings.py:130
+msgid "Enable &logging"
+msgstr "&لاگنگ فعال کریں"
+
+#: Youtube_settings.py:112
+msgid "Enable &playlist mode by default"
+msgstr "بطور ڈیفالٹ &پلے لسٹ موڈ فعال کریں"
+
+#: Trim.py:140
+msgid "End time:"
+msgstr "اختتام کا وقت:"
+
+#: search.py:104
+msgid "Enter a search query."
+msgstr "تلاش کے لیے کچھ لکھیں۔"
+
+#: download_list.py:25
+msgid "Error"
+msgstr "غلطی"
+
+#: Snapshot.py:42
+msgid "Error creating download folder"
+msgstr "ڈاؤن لوڈ فولڈر بنانے میں غلطی"
+
+#: channel_core.py:749
+msgid "Error deleting channel."
+msgstr "چینل حذف کرنے میں غلطی۔"
+
+#: __init__.py:271
+msgid "Error during auto-update of yt-dlp: {str}"
+msgstr "yt-dlp کی خودکار اپ ڈیٹ کے دوران غلطی: {str}"
+
+#: channel_core.py:912
+msgid "Error fetching channel: {str}"
+msgstr "چینل حاصل کرنے میں غلطی: {str}"
+
+#: __init__.py:178
+#: downloadFail.py:44
+msgid "Error importing core functions: {str}"
+msgstr "بنیادی فنکشنز درآمد کرنے میں غلطی: {str}"
+
+#: __init__.py:659
+msgid "Error importing settings panel: {str}"
+msgstr "ترتیبات کا پینل درآمد کرنے میں غلطی: {str}"
+
+#: __init__.py:202
+msgid "Error initializing AbsoluteYoutube: {str}"
+msgstr "AbsoluteYoutube شروع کرنے میں غلطی: {str}"
+
+#: channel_core.py:774
+msgid "Error loading cache."
+msgstr "کیشے لوڈ کرنے میں غلطی۔"
+
+#: channel_core.py:503
+#: channel_core.py:675
+msgid "Error loading channel data."
+msgstr "چینل کا ڈیٹا لوڈ کرنے میں غلطی۔"
+
+#: __init__.py:455
+msgid "Error opening channel dialog"
+msgstr "چینل ڈائیلاگ کھولنے میں غلطی"
+
+#: __init__.py:701
+msgid "Error opening channel/playlist list: {str}"
+msgstr "چینل/پلے لسٹ لسٹ کھولنے میں غلطی: {str}"
+
+#: __init__.py:569
+#: __init__.py:573
+msgid "Error opening download fail dialog: {str}"
+msgstr "ڈاؤن لوڈ فیل ڈائیلاگ کھولنے میں غلطی: {str}"
+
+#: __init__.py:494
+msgid "Error opening download list dialog: {str}"
+msgstr "ڈاؤن لوڈ لسٹ ڈائیلاگ کھولنے میں غلطی: {str}"
+
+#: __init__.py:421
+msgid "Error opening folder"
+msgstr "فولڈر کھولنے میں غلطی"
+
+#: channel_core.py:1280
+msgid "Error opening playlist."
+msgstr "پلے لسٹ کھولنے میں غلطی۔"
+
+#: __init__.py:646
+msgid "Error opening search dialog: {str}"
+msgstr "تلاش کا ڈائیلاگ کھولنے میں غلطی: {str}"
+
+#: __init__.py:662
+msgid "Error opening settings dialog: {str}"
+msgstr "ترتیبات کا ڈائیلاگ کھولنے میں غلطی: {str}"
+
+#: __init__.py:627
+msgid "Error opening trim dialog: {str}"
+msgstr "ٹرم ڈائیلاگ کھولنے میں غلطی: {str}"
+
+#: Download_core.py:942
+msgid "Error processing URL"
+msgstr "URL پر کارروائی کرنے میں غلطی"
+
+#: downloadFail.py:253
+msgid "Error starting download"
+msgstr "ڈاؤن لوڈ شروع کرنے میں غلطی"
+
+#: channel_core.py:716
+msgid "Error updating channel URL."
+msgstr "چینل کا URL اپ ڈیٹ کرنے میں غلطی۔"
+
+#: channel_core.py:703
+msgid "Error updating channel."
+msgstr "چینل اپ ڈیٹ کرنے میں غلطی۔"
+
+#: __init__.py:499
+msgid "Error: Download list module not available"
+msgstr "غلطی: ڈاؤن لوڈ لسٹ ماڈیول دستیاب نہیں ہے"
+
+#: __init__.py:559
+msgid "Error: DownloadFail module not available"
+msgstr "غلطی: DownloadFail ماڈیول دستیاب نہیں ہے"
+
+#: Snapshot.py:86
+msgid "Error: Failed to capture snapshot."
+msgstr "غلطی: سنیپ شاٹ لینے میں ناکامی۔"
+
+#: Snapshot.py:93
+msgid "Error: No snapshot file created."
+msgstr "غلطی: کوئی سنیپ شاٹ فائل نہیں بنی۔"
+
+#: __init__.py:651
+msgid "Error: Search module not available"
+msgstr "غلطی: سرچ ماڈیول دستیاب نہیں ہے"
+
+#: __init__.py:600
+msgid "Error: Snapshot module not available"
+msgstr "غلطی: سنیپ شاٹ ماڈیول دستیاب نہیں ہے"
+
+#: __init__.py:610
+msgid "Error: Trim module not available"
+msgstr "غلطی: ٹرم ماڈیول دستیاب نہیں ہے"
+
+#: Download_core.py:1067
+#: Trim.py:329
+msgid "Error: ffmpeg.exe not found."
+msgstr "غلطی: ffmpeg.exe نہیں ملا۔"
+
+#: Trim.py:326
+msgid "Error: yt-dlp.exe not found."
+msgstr "غلطی: yt-dlp.exe نہیں ملا۔"
+
+#: Youtube_settings.py:382
+msgid "Failed to create the specified folder. Please select a valid folder."
+msgstr "مخصوص فولڈر بنانے میں ناکامی۔ براہ کرم ایک درست فولڈر منتخب کریں۔"
+
+#: __init__.py:519
+msgid "Favorite channel"
+msgstr "پسندیدہ چینل"
+
+#: channel_core.py:1063
+msgid "Fetched {count} items total."
+msgstr "کل {count} اشیاء حاصل کی گئیں۔"
+
+#: __init__.py:688
+msgid "Fetching channel information..."
+msgstr "چینل کی معلومات حاصل کی جا رہی ہیں..."
+
+#: channel_core.py:1108
+msgid "Fetching channel items..."
+msgstr "چینل کی اشیاء حاصل کی جا رہی ہیں..."
+
+#: channel_core.py:955
+msgid "Fetching channel videos..."
+msgstr "چینل کی ویڈیوز حاصل کی جا رہی ہیں..."
+
+#: Trim.py:151
+#: channel_dialogs.py:162
+#: search.py:669
+msgid "File Format"
+msgstr "فائل فارمیٹ"
+
+#: Download_core.py:1072
+msgid "File already exists. Skipping download."
+msgstr "فائل پہلے سے موجود ہے۔ ڈاؤن لوڈ چھوڑ دیا گیا۔"
+
+#: Download_core.py:923
+msgid "File exists"
+msgstr "فائل موجود ہے"
+
+#: Youtube_settings.py:253
+msgid "Force I&Pv4"
+msgstr "I&Pv4 پر مجبور کریں"
+
+#: Youtube_settings.py:258
+msgid "Force I&Pv6"
+msgstr "I&Pv6 پر مجبور کریں"
+
+#: download_list.py:68
+msgid "Format"
+msgstr "فارمیٹ"
+
+#: Download_core.py:465
+msgid ""
+"Found {count} interrupted downloads\n"
+"Resume all?\n"
+msgstr ""
+"{count} روکے گئے ڈاؤن لوڈز ملے\n"
+"کیا سب دوبارہ شروع کریں؟\n"
+
+#: search.py:490
+msgid "Found {count} videos for '{query}'."
+msgstr "'{query}' کے لیے {count} ویڈیوز ملیں۔"
+
+#: search.py:404
+msgid "Found {} videos..."
+msgstr "{} ویڈیوز ملیں..."
+
+#: Youtube_settings.py:215
+msgid "Fragment &retries:"
+msgstr "ٹکڑوں کی &دوبارہ کوششیں:"
+
+#: Snapshot.py:111
+msgid "Full-size snapshot complete"
+msgstr "پورے سائز کا سنیپ شاٹ مکمل"
+
+#: Youtube_settings.py:246
+msgid "Geo bypass &country:"
+msgstr "جغرافیائی بائی پاس &ملک:"
+
+#: channel_core.py:174
+#: search.py:142
+msgid "Go"
+msgstr "جائیں"
+
+#: channel_core.py:353
+#: search.py:200
+msgid "Go to page of {}:"
+msgstr "{} کے صفحے پر جائیں:"
+
+#: Youtube_settings.py:308
+msgid ""
+"How to get YouTube cookies:\n"
+"\n"
+"1. Install 'Get cookies.txt' extension in Chrome or Firefox\n"
+"2. Login to YouTube in your browser\n"
+"3. Click the extension icon and export cookies\n"
+"4. Save as cookies.txt and select it here\n"
+"\n"
+"Using cookies helps avoid blocks because YouTube sees you as a logged-in user.\n"
+msgstr ""
+"یوٹیوب کوکیز کیسے حاصل کریں:\n"
+"\n"
+"1. کروم یا فائر فاکس میں 'Get cookies.txt' ایکسٹینشن انسٹال کریں\n"
+"2. اپنے براؤزر میں یوٹیوب لاگ ان کریں\n"
+"3. ایکسٹینشن آئیکن پر کلک کریں اور کوکیز ایکسپورٹ کریں\n"
+"4. اسے cookies.txt کے طور پر محفوظ کریں اور یہاں منتخب کریں\n"
+"\n"
+"کوکیز کا استعمال بلاک سے بچنے میں مدد کرتا ہے کیونکہ یوٹیوب آپ کو لاگ ان صارف کے طور پر دیکھتا ہے۔\n"
+
+#: Youtube_settings.py:316
+msgid "How to get cookies"
+msgstr "کوکیز کیسے حاصل کریں"
+
+#: Youtube_settings.py:165
+msgid "How to get cookies?"
+msgstr "کوکیز کیسے حاصل کریں؟"
+
+#: __init__.py:439
+msgid "Immediate download mode disabled"
+msgstr "فوری ڈاؤن لوڈ موڈ غیر فعال کر دیا گیا"
+
+#: __init__.py:437
+msgid "Immediate download mode enabled"
+msgstr "فوری ڈاؤن لوڈ موڈ فعال کر دیا گیا"
+
+#: Trim.py:282
+msgid "Invalid URL or start time"
+msgstr "غلط URL یا آغاز کا وقت"
+
+#: __init__.py:443
+msgid "Invalid channel URL"
+msgstr "غلط چینل URL"
+
+#: __init__.py:423
+msgid "Invalid download folder"
+msgstr "غلط ڈاؤن لوڈ فولڈر"
+
+#: downloadFail.py:187
+#: download_list.py:159
+msgid "Item deleted"
+msgstr "آئٹم حذف کر دیا گیا"
+
+#: channel_core.py:1385
+#: search.py:580
+msgid "Item removed."
+msgstr "آئٹم ہٹا دیا گیا۔"
+
+#: channel_core.py:65
+msgid "Live"
+msgstr "براہ راست"
+
+#: channel_core.py:770
+msgid "Loaded {count} videos from cache."
+msgstr "کیشے سے {count} ویڈیوز لوڈ کی گئیں۔"
+
+#: channel_core.py:488
+#: channel_core.py:939
+msgid "Loaded {count} videos from {name}."
+msgstr "{name} سے {count} ویڈیوز لوڈ کی گئیں۔"
+
+#: playlist.py:225
+msgid "Loaded {count} videos."
+msgstr "{count} ویڈیوز لوڈ کی گئیں۔"
+
+#: playlist.py:51
+msgid "Loading playlist videos..."
+msgstr "پلے لسٹ ویڈیوز لوڈ ہو رہی ہیں..."
+
+#: Youtube_settings.py:77
+msgid "MP3 &quality (kbps):"
+msgstr "MP3 &کوالٹی (kbps):"
+
+#: channel_core.py:599
+msgid "Move Down"
+msgstr "نیچے کریں"
+
+#: channel_core.py:595
+msgid "Move Up"
+msgstr "اوپر کریں"
+
+#: channel_core.py:165
+#: playlist.py:78
+#: search.py:133
+msgid "NextPage"
+msgstr "اگلا صفحہ"
+
+#: __init__.py:340
+#: __init__.py:539
+msgid "No YouTube URL found"
+msgstr "کوئی یوٹیوب URL نہیں ملا"
+
+#: channel_core.py:252
+msgid "No channel selected."
+msgstr "کوئی چینل منتخب نہیں کیا گیا۔"
+
+#: __init__.py:555
+msgid "No failed downloads"
+msgstr "کوئی ناکام ڈاؤن لوڈ نہیں"
+
+#: downloadFail.py:299
+msgid "No failed downloads to clear"
+msgstr "صاف کرنے کے لیے کوئی ناکام ڈاؤن لوڈ نہیں"
+
+#: downloadFail.py:279
+msgid "No failed downloads to process"
+msgstr "کارروائی کے لیے کوئی ناکام ڈاؤن لوڈ نہیں"
+
+#: download_list.py:232
+msgid "No items added (all already in queue)"
+msgstr "کوئی آئٹم شامل نہیں کیا گیا (سب پہلے سے کیو میں ہیں)"
+
+#: channel_core.py:908
+msgid "No items found for this URL."
+msgstr "اس URL کے لیے کوئی اشیاء نہیں ملیں۔"
+
+#: channel_core.py:1067
+msgid "No items found."
+msgstr "کوئی اشیاء نہیں ملیں۔"
+
+#: downloadFail.py:264
+#: download_list.py:187
+#: download_list.py:196
+msgid "No items selected"
+msgstr "کوئی آئٹم منتخب نہیں کیا گیا"
+
+#: download_list.py:212
+msgid "No new items added (already in queue)"
+msgstr "کوئی نیا آئٹم شامل نہیں کیا گیا (پہلے سے کیو میں ہے)"
+
+#: download_list.py:219
+msgid "No pending downloads"
+msgstr "کوئی زیر التوا ڈاؤن لوڈ نہیں"
+
+#: download_list.py:239
+msgid "No pending downloads to clear"
+msgstr "صاف کرنے کے لیے کوئی زیر التوا ڈاؤن لوڈ نہیں"
+
+#: search.py:487
+msgid "No results found for '{query}'."
+msgstr "'{query}' کے لیے کوئی نتائج نہیں ملے۔"
+
+#: search.py:488
+msgid "No results found."
+msgstr "کوئی نتائج نہیں ملے۔"
+
+#: channel_core.py:85
+msgid "No saved data for this channel."
+msgstr "اس چینل کے لیے کوئی محفوظ ڈیٹا نہیں ہے۔"
+
+#: Download_core.py:1075
+msgid "No valid multimedia link found."
+msgstr "کوئی درست ملٹی میڈیا لنک نہیں ملا۔"
+
+#: channel_core.py:278
+#: playlist.py:370
+#: search.py:584
+msgid "No videos to download."
+msgstr "ڈاؤن لوڈ کے لیے کوئی ویڈیوز نہیں ہیں۔"
+
+#: __init__.py:542
+msgid "Not a YouTube URL"
+msgstr "یہ یوٹیوب URL نہیں ہے"
+
+#: Download_core.py:1106
+msgid "Not a YouTube video or valid multimedia link"
+msgstr "یہ یوٹیوب ویڈیو یا درست ملٹی میڈیا لنک نہیں ہے"
+
+#: __init__.py:398
+msgid "Open context menu (single tap), download folder (double tap), Search Youtube (triple tap)"
+msgstr "کانٹیکسٹ مینو کھولیں (ایک ٹیپ)، ڈاؤن لوڈ فولڈر (دو ٹیپ)، یوٹیوب تلاش کریں (تین ٹیپ)"
+
+#: channel_core.py:1301
+msgid "Open in browser"
+msgstr "براؤزر میں کھولیں"
+
+#: channel_core.py:272
+#: search.py:237
+msgid "Page number out of range (1-{})."
+msgstr "صفحہ نمبر حد سے باہر ہے (1-{})۔"
+
+#: channel_core.py:349
+#: playlist.py:122
+#: search.py:196
+msgid "Page {}/{}"
+msgstr "صفحہ {}/{}"
+
+#: channel_core.py:591
+msgid "Pin"
+msgstr "پن کریں"
+
+#: playlist.py:317
+#: search.py:529
+msgid "Play on YouTube"
+msgstr "یوٹیوب پر چلائیں"
+
+#: channel_core.py:1344
+#: playlist.py:380
+msgid "Playlist download started."
+msgstr "پلے لسٹ ڈاؤن لوڈ شروع ہو گیا۔"
+
+#: __init__.py:711
+msgid "Playlist mode disabled"
+msgstr "پلے لسٹ موڈ غیر فعال"
+
+#: __init__.py:711
+msgid "Playlist mode enabled"
+msgstr "پلے لسٹ موڈ فعال"
+
+#: channel_core.py:67
+msgid "Playlists"
+msgstr "پلے لسٹس"
+
+#: channel_dialogs.py:98
+#: channel_dialogs.py:148
+msgid "Please enter a channel URL."
+msgstr "براہ کرم چینل کا URL درج کریں۔"
+
+#: channel_dialogs.py:95
+#: channel_dialogs.py:145
+msgid "Please enter a channel name."
+msgstr "براہ کرم چینل کا نام درج کریں۔"
+
+#: search.py:245
+msgid "Please enter a search term."
+msgstr "براہ کرم تلاش کے لیے کچھ درج کریں۔"
+
+#: channel_core.py:266
+#: search.py:231
+msgid "Please enter a valid number."
+msgstr "براہ کرم ایک درست نمبر درج کریں۔"
+
+#: channel_core.py:66
+msgid "Podcasts"
+msgstr "پوڈکاسٹ"
+
+#: Trim.py:146
+msgid "Preview start"
+msgstr "پریویو کا آغاز"
+
+#: channel_core.py:161
+#: playlist.py:74
+#: search.py:129
+msgid "PreviousPage"
+msgstr "پچھلا صفحہ"
+
+#: Snapshot.py:83
+msgid "Processing snapshot..."
+msgstr "سنیپ شاٹ پر کارروائی ہو رہی ہے..."
+
+#: Youtube_settings.py:234
+msgid "Proxy &URL:"
+msgstr "پروکسی &URL:"
+
+#: channel_core.py:142
+msgid "Ready"
+msgstr "تیار"
+
+#: channel_core.py:1320
+#: search.py:542
+msgid "Remove from list"
+msgstr "فہرست سے ہٹائیں"
+
+#: Youtube_settings.py:269
+msgid "Reset to &safe settings (recommended if blocked)"
+msgstr "&محفوظ ترتیبات پر ری سیٹ کریں (بلاک ہونے کی صورت میں تجویز کردہ)"
+
+#: Youtube_settings.py:335
+msgid "Reset to safe settings. Remember to use cookies for best results."
+msgstr "محفوظ ترتیبات پر ری سیٹ کر دیا گیا۔ بہترین نتائج کے لیے کوکیز کا استعمال یاد رکھیں۔"
+
+#: Download_core.py:466
+msgid "Resume downloads"
+msgstr "ڈاؤن لوڈز دوبارہ شروع کریں"
+
+#: Youtube_settings.py:124
+msgid "Resume interrupted downloads on restart"
+msgstr "دوبارہ شروع ہونے پر روکے گئے ڈاؤن لوڈز جاری رکھیں"
+
+#: search.py:95
+msgid "Search"
+msgstr "تلاش"
+
+#: search.py:59
+msgid "Search YouTube"
+msgstr "یوٹیوب تلاش کریں"
+
+#: search.py:92
+msgid "Search YouTube:"
+msgstr "یوٹیوب تلاش کریں:"
+
+#: __init__.py:527
+msgid "Search Youtube"
+msgstr "یوٹیوب تلاش کریں"
+
+#: search.py:252
+msgid "Search already in progress."
+msgstr "تلاش پہلے ہی جاری ہے۔"
+
+#: search.py:492
+msgid "Search completed."
+msgstr "تلاش مکمل ہو گئی۔"
+
+#: search.py:501
+msgid "Search failed."
+msgstr "تلاش ناکام ہو گئی۔"
+
+#: search.py:500
+msgid "Search failed: {error}"
+msgstr "تلاش ناکام: {error}"
+
+#: channel_core.py:135
+msgid "Search:"
+msgstr "تلاش:"
+
+#: search.py:282
+msgid "Searching..."
+msgstr "تلاش ہو رہی ہے..."
+
+#: Youtube_settings.py:45
+msgid "Select a directory"
+msgstr "ڈائریکٹری منتخب کریں"
+
+#: download_list.py:210
+msgid "Selected items added to download queue"
+msgstr "منتخب اشیاء ڈاؤن لوڈ کیو میں شامل کر دی گئیں"
+
+#: downloadFail.py:274
+#: download_list.py:187
+msgid "Selected items deleted"
+msgstr "منتخب اشیاء حذف کر دی گئیں"
+
+#: __init__.py:547
+#: channel_core.py:1333
+#: playlist.py:352
+#: search.py:553
+msgid "Short URL copied to clipboard"
+msgstr "مختصر URL کلپ بورڈ پر کاپی کر دیا گیا"
+
+#: channel_core.py:64
+msgid "Shorts"
+msgstr "Shorts"
+
+#: channel_core.py:153
+#: playlist.py:66
+#: search.py:120
+msgid "Show items:"
+msgstr "اشیاء دکھائیں:"
+
+#: Youtube_settings.py:223
+msgid "Skip &unavailable fragments"
+msgstr "&ناقابل دستیاب ٹکڑوں کو چھوڑ دیں"
+
+#: Youtube_settings.py:118
+msgid "Skip existing files"
+msgstr "موجودہ فائلوں کو چھوڑ دیں"
+
+#: __init__.py:522
+msgid "Snapshot"
+msgstr "سنیپ شاٹ"
+
+#: Snapshot.py:54
+msgid "Snapshot file already exists"
+msgstr "سنیپ شاٹ فائل پہلے سے موجود ہے"
+
+#: Trim.py:174
+#: channel_dialogs.py:181
+#: search.py:680
+msgid "Start download"
+msgstr "ڈاؤن لوڈ شروع کریں"
+
+#: Youtube_settings.py:60
+msgid "Start download immediately (NVDA+Y)"
+msgstr "فوری ڈاؤن لوڈ شروع کریں (NVDA+Y)"
+
+#: Trim.py:316
+msgid "Start time must be less than end time"
+msgstr "آغاز کا وقت اختتام کے وقت سے کم ہونا چاہیے"
+
+#: Trim.py:139
+msgid "Start time:"
+msgstr "آغاز کا وقت:"
+
+#: __init__.py:365
+msgid "Starting download: {format} - {title}"
+msgstr "ڈاؤن لوڈ شروع ہو رہا ہے: {format} - {title}"
+
+#: Download_core.py:791
+msgid "Starting next download from queue: {title}"
+msgstr "کیو سے اگلا ڈاؤن لوڈ شروع کیا جا رہا ہے: {title}"
+
+#: channel_dialogs.py:15
+msgid "Title"
+msgstr "عنوان"
+
+#: channel_core.py:1374
+#: playlist.py:342
+msgid "Title correction completed and locked."
+msgstr "عنوان کی درستگی مکمل اور مقفل کر دی گئی۔"
+
+#: channel_core.py:538
+msgid "Title correction completed for {count} videos."
+msgstr "{count} ویڈیوز کے لیے عنوان کی درستگی مکمل ہو گئی۔"
+
+#: channel_core.py:1376
+#: playlist.py:344
+msgid "Title correction failed."
+msgstr "عنوان کی درستگی ناکام ہو گئی۔"
+
+#: __init__.py:431
+msgid "Toggle immediate download mode"
+msgstr "فوری ڈاؤن لوڈ موڈ تبدیل کریں"
+
+#: __init__.py:706
+msgid "Toggle playlist mode"
+msgstr "پلے لسٹ موڈ تبدیل کریں"
+
+#: __init__.py:525
+msgid "Trim setting"
+msgstr "ٹرم ترتیبات"
+
+#: Trim.py:332
+msgid "Trimming and downloading {format}..."
+msgstr "ٹرم اور ڈاؤن لوڈ ہو رہا ہے {format}..."
+
+#: Trim.py:132
+#: downloadFail.py:69
+msgid "URL"
+msgstr "URL"
+
+#: channel_core.py:1336
+msgid "URL copied to clipboard"
+msgstr "URL کلپ بورڈ پر کاپی کر دیا گیا"
+
+#: Trim.py:307
+msgid "URL is required"
+msgstr "URL ضروری ہے"
+
+#: Download_core.py:903
+msgid "URL not found"
+msgstr "URL نہیں ملا"
+
+#: Download_core.py:672
+#: __init__.py:359
+#: downloadFail.py:110
+#: downloadFail.py:113
+#: downloadFail.py:114
+#: download_list.py:103
+msgid "Unknown"
+msgstr "نامعلوم"
+
+#: channel_core.py:591
+msgid "Unpin"
+msgstr "ان پن کریں"
+
+#: Youtube_settings.py:369
+#: __init__.py:287
+msgid "Update failed: {str}"
+msgstr "اپ ڈیٹ ناکام: {str}"
+
+#: Youtube_settings.py:290
+msgid "Update status: Idle"
+msgstr "اپ ڈیٹ کی حالت: بیکار"
+
+#: Youtube_settings.py:368
+msgid "Update status: Update failed: {str}"
+msgstr "اپ ڈیٹ کی حالت: اپ ڈیٹ ناکام: {str}"
+
+#: Youtube_settings.py:364
+msgid "Update status: Update successful"
+msgstr "اپ ڈیٹ کی حالت: اپ ڈیٹ کامیاب"
+
+#: Youtube_settings.py:354
+msgid "Update status: Updating..."
+msgstr "اپ ڈیٹ کی حالت: اپ ڈیٹ ہو رہا ہے..."
+
+#: Youtube_settings.py:286
+msgid "Update yt-dlp now"
+msgstr "ابھی yt-dlp اپ ڈیٹ کریں"
+
+#: Youtube_settings.py:355
+#: __init__.py:275
+msgid "Updating yt-dlp..."
+msgstr "yt-dlp اپ ڈیٹ ہو رہا ہے..."
+
+#: Youtube_settings.py:150
+msgid "Use &cookies (recommended to avoid block)"
+msgstr "&کوکیز استعمال کریں (بلاک سے بچنے کے لیے تجویز کردہ)"
+
+#: Youtube_settings.py:179
+msgid "Use &custom user agent"
+msgstr "&اپنی مرضی کا یوزر ایجنٹ استعمال کریں"
+
+#: Youtube_settings.py:229
+msgid "Use &proxy"
+msgstr "&پروکسی استعمال کریں"
+
+#: Youtube_settings.py:92
+msgid "Use download section"
+msgstr "ڈاؤن لوڈ سیکشن استعمال کریں"
+
+#: Youtube_settings.py:184
+msgid "User &agent:"
+msgstr "یوزر &ایجنٹ:"
+
+#: downloadFail.py:67
+#: download_list.py:67
+#: search.py:35
+msgid "Video Title"
+msgstr "ویڈیو کا عنوان"
+
+#: Trim.py:144
+msgid "Video duration: unknown; Overall period: 0 seconds"
+msgstr "ویڈیو کا دورانیہ: نامعلوم؛ مجموعی مدت: 0 سیکنڈ"
+
+#: Trim.py:255
+msgid "Video duration: {duration}; Overall period: {period} seconds"
+msgstr "ویڈیو کا دورانیہ: {duration}؛ مجموعی مدت: {period} سیکنڈ"
+
+#: channel_core.py:63
+msgid "Videos"
+msgstr "ویڈیوز"
+
+#: playlist.py:23
+msgid "Videos in {title}"
+msgstr "{title} میں ویڈیوز"
+
+#: __init__.py:592
+#: __init__.py:606
+msgid "You must be on a YouTube page to use this feature"
+msgstr "اس فیچر کو استعمال کرنے کے لیے آپ کا یوٹیوب پیج پر ہونا ضروری ہے"
+
+#: channel_core.py:30
+msgid "Your favorite channel"
+msgstr "آپ کا پسندیدہ چینل"
+
+#: Trim.py:254
+msgid "invalid"
+msgstr "غلط"
+
+#: Trim.py:250
+msgid "invalid (negative)"
+msgstr "غلط (منفی)"
+
+#: search.py:53
+msgid "loading..."
+msgstr "لوڈ ہو رہا ہے..."
+
+#: Trim.py:244
+msgid "unknown"
+msgstr "نامعلوم"
+
+#: Youtube_settings.py:276
+msgid "yt-dlp Update"
+msgstr "yt-dlp اپ ڈیٹ"
+
+#: Youtube_settings.py:365
+#: __init__.py:284
+msgid "yt-dlp updated successfully"
+msgstr "yt-dlp کامیابی سے اپ ڈیٹ ہو گیا"
+
+#: Download_core.py:946
+msgid "yt-dlp.exe missing"
+msgstr "yt-dlp.exe غائب ہے"
+
+#: channel_core.py:816
+#: search.py:256
+msgid "yt-dlp.exe not found."
+msgstr "yt-dlp.exe نہیں ملا۔"
+
+#: __init__.py:725
+msgid "{quality} kbps"
+msgstr "{quality} kbps"
+
+#: channel_core.py:350
+#: playlist.py:123
+#: search.py:197
+msgid "{}, showing {} of {} videos"
+msgstr "{}، {} میں سے {} ویڈیوز دکھائی جا رہی ہیں"

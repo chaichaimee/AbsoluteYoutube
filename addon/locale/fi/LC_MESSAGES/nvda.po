@@ -1,0 +1,1344 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AbsoluteYoutube 2026.5.1\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-04-30 14:14+0700\n"
+"PO-Revision-Date: 2026-04-30 17:55+0700\n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: Finnish\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: Youtube_settings.py:66
+msgid "&Beep while converting"
+msgstr "&Piippaa muunnon aikana"
+
+#: Youtube_settings.py:44
+msgid "&Browse..."
+msgstr "&Selaa..."
+
+#: channel_dialogs.py:69
+#: channel_dialogs.py:133
+#: downloadFail.py:92
+msgid "&Cancel"
+msgstr "&Peruuta"
+
+#: downloadFail.py:84
+#: download_list.py:85
+msgid "&Clear All"
+msgstr "&Tyhjennä kaikki"
+
+#: channel_core.py:189
+#: playlist.py:89
+#: search.py:157
+msgid "&Close"
+msgstr "&Sulje"
+
+#: downloadFail.py:76
+#: download_list.py:73
+msgid "&Delete Selected"
+msgstr "&Poista valitut"
+
+#: channel_core.py:181
+#: downloadFail.py:80
+#: download_list.py:81
+#: search.py:149
+msgid "&Download All"
+msgstr "&Lataa kaikki"
+
+#: playlist.py:85
+msgid "&Download All Videos in Playlist"
+msgstr "&Lataa kaikki soittolistan videot"
+
+#: download_list.py:77
+msgid "&Download Selected"
+msgstr "Lataa &valitut"
+
+#: search.py:153
+msgid "&Download folder"
+msgstr "Lataus&kansio"
+
+#: Youtube_settings.py:241
+msgid "&Geo bypass"
+msgstr "&Maantieteellinen ohitus"
+
+#: Youtube_settings.py:264
+msgid "&Mark as watched"
+msgstr "&Merkitse katsotuksi"
+
+#: Youtube_settings.py:135
+msgid "&Max concurrent downloads (1-4):"
+msgstr "&Samanaikaisten latausten enimmäismäärä (1-4):"
+
+#: Youtube_settings.py:97
+msgid "&Number of connections:"
+msgstr "&Yhteyksien määrä:"
+
+#: channel_dialogs.py:67
+#: channel_dialogs.py:131
+#: downloadFail.py:88
+#: download_list.py:89
+msgid "&OK"
+msgstr "&OK"
+
+#: Youtube_settings.py:207
+msgid "&Retry count:"
+msgstr "Yrityskertojen &määrä:"
+
+#: Youtube_settings.py:72
+msgid "&Say download complete"
+msgstr "&Puhu, kun lataus on valmis"
+
+#: Youtube_settings.py:199
+msgid "&Sleep between requests (seconds):"
+msgstr "&Tauko pyyntöjen välillä (sekuntia):"
+
+#: channel_core.py:185
+msgid "&Source"
+msgstr "&Lähde"
+
+#: Youtube_settings.py:191
+msgid "&Throttle rate (KB/s, 0=unlimited):"
+msgstr "&Nopeusrajoitus (kt/s, 0=rajoittamaton):"
+
+#: channel_core.py:1100
+msgid "A channel with this name already exists. Overwrite?"
+msgstr "Tämänniminen kanava on jo olemassa. Korvataanko se?"
+
+#: __init__.py:256
+msgid "A new version of yt-dlp is available: {latest}. Current: {current}. Please update in settings."
+msgstr "Uusi versio yt-dlp:stä on saatavilla: {latest}. Nykyinen: {current}. Päivitä asetuksista."
+
+#: Download_core.py:32
+#: Youtube_settings.py:21
+#: __init__.py:44
+msgid "Absolute YouTube"
+msgstr "Absolute YouTube"
+
+#: Trim.py:64
+msgid "Absolute YouTube Trim"
+msgstr "Absolute YouTube Trim -leikkaus"
+
+#: __init__.py:529
+msgid "Absolute YouTube setting"
+msgstr "Absolute YouTube -asetukset"
+
+#: menu.py:18
+msgid "Absolute Youtube"
+msgstr "Absolute Youtube"
+
+#: channel_dialogs.py:41
+msgid "Add New Channel"
+msgstr "Lisää uusi kanava"
+
+#: channel_core.py:112
+msgid "Add new channel"
+msgstr "Lisää uusi kanava"
+
+#: __init__.py:184
+msgid "Add-on initialization failed: missing pending file path function. Please restart NVDA."
+msgstr "Lisäosan alustus epäonnistui: tiedostopolun funktio puuttuu. Käynnistä NVDA uudelleen."
+
+#: download_list.py:24
+msgid "Add-on internal error: missing components. Please restart NVDA."
+msgstr "Lisäosan sisäinen virhe: komponentteja puuttuu. Käynnistä NVDA uudelleen."
+
+#: download_list.py:69
+msgid "Added Time"
+msgstr "Lisätty"
+
+#: __init__.py:376
+msgid "Added to download list: {format} - {title}"
+msgstr "Lisätty latauslistalle: {format} - {title}"
+
+#: __init__.py:370
+msgid "Added to download queue: {format} - {title}"
+msgstr "Lisätty latausjonoon: {format} - {title}"
+
+#: download_list.py:169
+msgid "Added to download queue: {title}"
+msgstr "Lisätty latausjonoon: {title}"
+
+#: Download_core.py:1097
+msgid "Adding link as {format} to download queue"
+msgstr "Lisätään linkki latausjonoon muodossa {format}"
+
+#: channel_core.py:297
+#: search.py:591
+msgid "Adding {count} videos to download queue..."
+msgstr "Lisätään {count} videota latausjonoon..."
+
+#: channel_core.py:1358
+#: playlist.py:364
+#: search.py:572
+msgid "Adding {title} to download queue."
+msgstr "Lisätään {title} latausjonoon."
+
+#: search.py:123
+#: search.py:204
+msgid "All"
+msgstr "Kaikki"
+
+#: downloadFail.py:294
+msgid "All downloads started"
+msgstr "Kaikki lataukset aloitettu"
+
+#: downloadFail.py:305
+msgid "All failed downloads cleared"
+msgstr "Kaikki epäonnistuneet lataukset tyhjennetty"
+
+#: download_list.py:230
+msgid "All items added to download queue"
+msgstr "Kaikki kohteet lisätty latausjonoon"
+
+#: download_list.py:249
+msgid "All pending downloads cleared"
+msgstr "Kaikki odottavat lataukset tyhjennetty"
+
+#: __init__.py:378
+msgid "Already in download list"
+msgstr "On jo latauslistalla"
+
+#: __init__.py:372
+#: download_list.py:171
+msgid "Already in download queue"
+msgstr "On jo latausjonossa"
+
+#: Snapshot.py:104
+msgid "An unexpected error occurred."
+msgstr "Tapahtui odottamaton virhe."
+
+#: Youtube_settings.py:144
+msgid "Anti-blocking settings"
+msgstr "Estojen välttämisasetukset"
+
+#: channel_core.py:731
+msgid "Are you sure you want to delete saved data for '{name}'?"
+msgstr "Haluatko varmasti poistaa tallennetut tiedot kohteelle '{name}'?"
+
+#: Trim.py:164
+#: channel_dialogs.py:172
+msgid "Audio Quality"
+msgstr "Äänen laatu"
+
+#: Youtube_settings.py:281
+msgid "Auto-update yt-dlp on startup"
+msgstr "Päivitä yt-dlp automaattisesti käynnistyksen yhteydessä"
+
+#: Trim.py:177
+#: channel_dialogs.py:183
+#: search.py:681
+msgid "Cancel"
+msgstr "Peruuta"
+
+#: channel_core.py:292
+msgid "Cannot create download folder."
+msgstr "Latauskansiota ei voida luoda."
+
+#: Download_core.py:352
+#: Download_core.py:890
+msgid "Cannot create folder"
+msgstr "Kansiota ei voida luoda"
+
+#: search.py:563
+msgid "Cannot determine URL for this video."
+msgstr "Videon URL-osoitetta ei voida määrittää."
+
+#: search.py:610
+msgid "Cannot open download folder."
+msgstr "Latauskansiota ei voida avata."
+
+#: channel_core.py:320
+msgid "Cannot open source folder."
+msgstr "Lähdekansiota ei voida avata."
+
+#: Snapshot.py:58
+msgid "Capturing full-size snapshot..."
+msgstr "Otetaan täysikokoista kuvakaappausta..."
+
+#: channel_core.py:713
+msgid "Channel URL updated."
+msgstr "Kanavan URL päivitetty."
+
+#: channel_dialogs.py:58
+#: channel_dialogs.py:124
+msgid "Channel URL:"
+msgstr "Kanavan URL:"
+
+#: channel_core.py:906
+msgid "Channel added successfully."
+msgstr "Kanava lisätty onnistuneesti."
+
+#: channel_core.py:743
+#: channel_core.py:746
+msgid "Channel deleted."
+msgstr "Kanava poistettu."
+
+#: channel_dialogs.py:51
+#: channel_dialogs.py:117
+msgid "Channel name:"
+msgstr "Kanavan nimi:"
+
+#: channel_core.py:633
+msgid "Channel pinned."
+msgstr "Kanava kiinnitetty."
+
+#: channel_core.py:1121
+msgid "Channel saved."
+msgstr "Kanava tallennettu."
+
+#: channel_core.py:630
+msgid "Channel unpinned."
+msgstr "Kanavan kiinnitys poistettu."
+
+#: channel_core.py:700
+msgid "Channel updated."
+msgstr "Kanava päivitetty."
+
+#: channel_core.py:100
+msgid "Channel:"
+msgstr "Kanava:"
+
+#: channel_core.py:955
+msgid "Checking for new videos..."
+msgstr "Tarkistetaan uusia videoita..."
+
+#: Download_core.py:601
+msgid "Checking interrupted downloads..."
+msgstr "Tarkistetaan keskeytyneitä latauksia..."
+
+#: downloadFail.py:162
+#: download_list.py:131
+msgid "Clear all"
+msgstr "Tyhjennä kaikki"
+
+#: channel_core.py:732
+msgid "Confirm Delete"
+msgstr "Vahvista poisto"
+
+#: playlist.py:374
+msgid "Confirm Download"
+msgstr "Vahvista lataus"
+
+#: channel_core.py:1101
+msgid "Confirm Overwrite"
+msgstr "Vahvista ylikirjoitus"
+
+#: channel_core.py:125
+msgid "Content type:"
+msgstr "Sisältötyyppi:"
+
+#: Youtube_settings.py:156
+msgid "Cookies &file:"
+msgstr "Eväste&tiedosto:"
+
+#: channel_core.py:1298
+msgid "Copy URL"
+msgstr "Kopioi URL"
+
+#: __init__.py:509
+#: playlist.py:314
+#: search.py:526
+msgid "Copy video Shorten URL"
+msgstr "Kopioi videon lyhennetty URL"
+
+#: channel_core.py:1308
+#: playlist.py:320
+msgid "Correct title now"
+msgstr "Korjaa nimi nyt"
+
+#: channel_core.py:1366
+#: playlist.py:337
+msgid "Correcting title for selected video..."
+msgstr "Korjataan valitun videon nimeä..."
+
+#: playlist.py:354
+#: search.py:555
+msgid "Could not create short URL"
+msgstr "Lyhyt-URL-osoitetta ei voitu luoda"
+
+#: __init__.py:549
+msgid "Could not create shortened URL"
+msgstr "Lyhennettyä URL-osoitetta ei voitu luoda"
+
+#: Trim.py:302
+msgid "Could not open preview URL"
+msgstr "Esikatselun URL-osoitetta ei voitu avata"
+
+#: __init__.py:713
+msgid "Cycle MP3 quality settings"
+msgstr "Selaa MP3-laatuasetuksia"
+
+#: channel_core.py:607
+#: downloadFail.py:146
+#: download_list.py:119
+msgid "Delete"
+msgstr "Poista"
+
+#: downloadFail.py:153
+#: download_list.py:124
+msgid "Delete selected"
+msgstr "Poista valitut"
+
+#: Youtube_settings.py:41
+msgid "Destination folder"
+msgstr "Kohdekansio"
+
+#: download_list.py:121
+msgid "Download"
+msgstr "Lataa"
+
+#: channel_dialogs.py:155
+#: search.py:663
+msgid "Download All Videos"
+msgstr "Lataa kaikki videot"
+
+#: downloadFail.py:16
+msgid "Download Fail Manager - Absolute YouTube"
+msgstr "Epäonnistuneet lataukset - Absolute YouTube"
+
+#: download_list.py:14
+msgid "Download List Manager - Absolute YouTube"
+msgstr "Latauslistan hallinta - Absolute YouTube"
+
+#: channel_core.py:1311
+#: playlist.py:323
+#: search.py:532
+msgid "Download MP3"
+msgstr "Lataa MP3"
+
+#: channel_core.py:1314
+#: playlist.py:326
+#: search.py:535
+msgid "Download MP4"
+msgstr "Lataa MP4"
+
+#: channel_core.py:1317
+#: playlist.py:329
+#: search.py:538
+msgid "Download WAV"
+msgstr "Lataa WAV"
+
+#: downloadFail.py:159
+#: download_list.py:129
+msgid "Download all"
+msgstr "Lataa kaikki"
+
+#: playlist.py:373
+msgid "Download all {count} videos in this playlist?"
+msgstr "Ladataanko kaikki soittolistan {count} videota?"
+
+#: Download_core.py:840
+msgid "Download complete"
+msgstr "Lataus valmis"
+
+#: channel_core.py:1305
+msgid "Download entire playlist"
+msgstr "Lataa koko soittolista"
+
+#: __init__.py:515
+msgid "Download fail manager"
+msgstr "Epäonnistuneiden latausten hallinta"
+
+#: __init__.py:517
+msgid "Download fail manager (no failed)"
+msgstr "Epäonnistuneiden latausten hallinta (ei virheitä)"
+
+#: Download_core.py:846
+msgid "Download failed"
+msgstr "Lataus epäonnistui"
+
+#: Download_core.py:872
+msgid "Download failed due to an error"
+msgstr "Lataus epäonnistui virheen vuoksi"
+
+#: Download_core.py:859
+msgid "Download failed due to timeout"
+msgstr "Lataus epäonnistui aikakatkaisun vuoksi"
+
+#: downloadFail.py:149
+msgid "Download file"
+msgstr "Lataa tiedosto"
+
+#: search.py:612
+msgid "Download folder does not exist."
+msgstr "Latauskansiota ei ole olemassa."
+
+#: channel_core.py:1346
+#: channel_core.py:1360
+#: playlist.py:366
+#: playlist.py:382
+#: search.py:574
+msgid "Download function not available."
+msgstr "Lataustoiminto ei ole käytettävissä."
+
+#: __init__.py:511
+msgid "Download list manager"
+msgstr "Latauslistan hallinta"
+
+#: __init__.py:385
+msgid "Download or queue video (single tap MP3, double tap MP4, triple tap WAV)"
+msgstr "Lataa tai aseta jonoon (yksi painallus: MP3, kaksi: MP4, kolme: WAV)"
+
+#: download_list.py:126
+msgid "Download selected"
+msgstr "Lataa valitut"
+
+#: downloadFail.py:249
+msgid "Download started for: {title}"
+msgstr "Lataus aloitettu: {title}"
+
+#: Snapshot.py:63
+msgid "Downloading thumbnail..."
+msgstr "Ladataan pikkukuvaa..."
+
+#: channel_core.py:310
+#: search.py:600
+msgid "Downloads started."
+msgstr "Lataukset aloitettu."
+
+#: downloadFail.py:68
+#: search.py:36
+msgid "Duration"
+msgstr "Kesto"
+
+#: channel_dialogs.py:105
+msgid "Edit Channel"
+msgstr "Muokkaa kanavaa"
+
+#: channel_core.py:116
+msgid "Edit channel"
+msgstr "Muokkaa kanavaa"
+
+#: channel_core.py:604
+msgid "Edit channel..."
+msgstr "Muokkaa kanavaa..."
+
+#: Youtube_settings.py:130
+msgid "Enable &logging"
+msgstr "Ota &loki käyttöön"
+
+#: Youtube_settings.py:112
+msgid "Enable &playlist mode by default"
+msgstr "Ota &soittolistatila oletuksena käyttöön"
+
+#: Trim.py:140
+msgid "End time:"
+msgstr "Päättymisaika:"
+
+#: search.py:104
+msgid "Enter a search query."
+msgstr "Syötä hakusana."
+
+#: download_list.py:25
+msgid "Error"
+msgstr "Virhe"
+
+#: Snapshot.py:42
+msgid "Error creating download folder"
+msgstr "Virhe luotaessa latauskansiota"
+
+#: channel_core.py:749
+msgid "Error deleting channel."
+msgstr "Virhe poistettaessa kanavaa."
+
+#: __init__.py:271
+msgid "Error during auto-update of yt-dlp: {str}"
+msgstr "Virhe yt-dlp:n automaattisessa päivityksessä: {str}"
+
+#: channel_core.py:912
+msgid "Error fetching channel: {str}"
+msgstr "Virhe haettaessa kanavaa: {str}"
+
+#: __init__.py:178
+#: downloadFail.py:44
+msgid "Error importing core functions: {str}"
+msgstr "Virhe tuotaessa ydintoimintoja: {str}"
+
+#: __init__.py:659
+msgid "Error importing settings panel: {str}"
+msgstr "Virhe tuotaessa asetuspaneelia: {str}"
+
+#: __init__.py:202
+msgid "Error initializing AbsoluteYoutube: {str}"
+msgstr "Virhe alustettaessa AbsoluteYoutubea: {str}"
+
+#: channel_core.py:774
+msgid "Error loading cache."
+msgstr "Virhe välimuistin lataamisessa."
+
+#: channel_core.py:503
+#: channel_core.py:675
+msgid "Error loading channel data."
+msgstr "Virhe kanavatietojen lataamisessa."
+
+#: __init__.py:455
+msgid "Error opening channel dialog"
+msgstr "Virhe avattaessa kanavaikkunaa"
+
+#: __init__.py:701
+msgid "Error opening channel/playlist list: {str}"
+msgstr "Virhe avattaessa kanava-/soittolistasivua: {str}"
+
+#: __init__.py:569
+#: __init__.py:573
+msgid "Error opening download fail dialog: {str}"
+msgstr "Virhe avattaessa epäonnistuneiden latausten ikkunaa: {str}"
+
+#: __init__.py:494
+msgid "Error opening download list dialog: {str}"
+msgstr "Virhe avattaessa latauslistaikkunaa: {str}"
+
+#: __init__.py:421
+msgid "Error opening folder"
+msgstr "Virhe kansiota avattaessa"
+
+#: channel_core.py:1280
+msgid "Error opening playlist."
+msgstr "Virhe avattaessa soittolistaa."
+
+#: __init__.py:646
+msgid "Error opening search dialog: {str}"
+msgstr "Virhe avattaessa hakuikkunaa: {str}"
+
+#: __init__.py:662
+msgid "Error opening settings dialog: {str}"
+msgstr "Virhe avattaessa asetusikkunaa: {str}"
+
+#: __init__.py:627
+msgid "Error opening trim dialog: {str}"
+msgstr "Virhe avattaessa leikkausikkunaa: {str}"
+
+#: Download_core.py:942
+msgid "Error processing URL"
+msgstr "Virhe käsiteltäessä URL-osoitetta"
+
+#: downloadFail.py:253
+msgid "Error starting download"
+msgstr "Virhe latauksen aloituksessa"
+
+#: channel_core.py:716
+msgid "Error updating channel URL."
+msgstr "Virhe päivitettäessä kanavan URL-osoitetta."
+
+#: channel_core.py:703
+msgid "Error updating channel."
+msgstr "Virhe päivitettäessä kanavaa."
+
+#: __init__.py:499
+msgid "Error: Download list module not available"
+msgstr "Virhe: Latauslistamoduuli ei ole käytettävissä"
+
+#: __init__.py:559
+msgid "Error: DownloadFail module not available"
+msgstr "Virhe: DownloadFail-moduuli ei ole käytettävissä"
+
+#: Snapshot.py:86
+msgid "Error: Failed to capture snapshot."
+msgstr "Virhe: Kuvakaappaus epäonnistui."
+
+#: Snapshot.py:93
+msgid "Error: No snapshot file created."
+msgstr "Virhe: Kuvakaappaustiedostoa ei luotu."
+
+#: __init__.py:651
+msgid "Error: Search module not available"
+msgstr "Virhe: Hakumoduuli ei ole käytettävissä"
+
+#: __init__.py:600
+msgid "Error: Snapshot module not available"
+msgstr "Virhe: Kuvakaappausmoduuli ei ole käytettävissä"
+
+#: __init__.py:610
+msgid "Error: Trim module not available"
+msgstr "Virhe: Leikkausmoduuli ei ole käytettävissä"
+
+#: Download_core.py:1067
+#: Trim.py:329
+msgid "Error: ffmpeg.exe not found."
+msgstr "Virhe: ffmpeg.exe ei löydy."
+
+#: Trim.py:326
+msgid "Error: yt-dlp.exe not found."
+msgstr "Virhe: yt-dlp.exe ei löydy."
+
+#: Youtube_settings.py:382
+msgid "Failed to create the specified folder. Please select a valid folder."
+msgstr "Määritetyn kansion luonti epäonnistui. Valitse kelvollinen kansio."
+
+#: __init__.py:519
+msgid "Favorite channel"
+msgstr "Suosikkikanava"
+
+#: channel_core.py:1063
+msgid "Fetched {count} items total."
+msgstr "Haettu yhteensä {count} kohdetta."
+
+#: __init__.py:688
+msgid "Fetching channel information..."
+msgstr "Haetaan kanavan tietoja..."
+
+#: channel_core.py:1108
+msgid "Fetching channel items..."
+msgstr "Haetaan kanavan kohteita..."
+
+#: channel_core.py:955
+msgid "Fetching channel videos..."
+msgstr "Haetaan kanavan videoita..."
+
+#: Trim.py:151
+#: channel_dialogs.py:162
+#: search.py:669
+msgid "File Format"
+msgstr "Tiedostomuoto"
+
+#: Download_core.py:1072
+msgid "File already exists. Skipping download."
+msgstr "Tiedosto on jo olemassa. Ohitetaan lataus."
+
+#: Download_core.py:923
+msgid "File exists"
+msgstr "Tiedosto on olemassa"
+
+#: Youtube_settings.py:253
+msgid "Force I&Pv4"
+msgstr "Pakota I&Pv4"
+
+#: Youtube_settings.py:258
+msgid "Force I&Pv6"
+msgstr "Pakota I&Pv6"
+
+#: download_list.py:68
+msgid "Format"
+msgstr "Muoto"
+
+#: Download_core.py:465
+msgid ""
+"Found {count} interrupted downloads\n"
+"Resume all?\n"
+msgstr ""
+"Löytyi {count} keskeytynyttä latausta\n"
+"Jatketaanko kaikkia?\n"
+
+#: search.py:490
+msgid "Found {count} videos for '{query}'."
+msgstr "Löytyi {count} videota haulle '{query}'."
+
+#: search.py:404
+msgid "Found {} videos..."
+msgstr "Löytyi {} videota..."
+
+#: Youtube_settings.py:215
+msgid "Fragment &retries:"
+msgstr "Fragmenttien &uudelleenyritykset:"
+
+#: Snapshot.py:111
+msgid "Full-size snapshot complete"
+msgstr "Täysikokoinen kuvakaappaus valmis"
+
+#: Youtube_settings.py:246
+msgid "Geo bypass &country:"
+msgstr "&Maa maantieteelliseen ohitukseen:"
+
+#: channel_core.py:174
+#: search.py:142
+msgid "Go"
+msgstr "Siirry"
+
+#: channel_core.py:353
+#: search.py:200
+msgid "Go to page of {}:"
+msgstr "Siirry sivulle {}:"
+
+#: Youtube_settings.py:308
+msgid ""
+"How to get YouTube cookies:\n"
+"\n"
+"1. Install 'Get cookies.txt' extension in Chrome or Firefox\n"
+"2. Login to YouTube in your browser\n"
+"3. Click the extension icon and export cookies\n"
+"4. Save as cookies.txt and select it here\n"
+"\n"
+"Using cookies helps avoid blocks because YouTube sees you as a logged-in user.\n"
+msgstr ""
+"Näin saat YouTube-evästeet:\n"
+"\n"
+"1. Asenna 'Get cookies.txt' -laajennus Chromeen tai Firefoxiin\n"
+"2. Kirjaudu YouTubeen selaimessasi\n"
+"3. Napsauta laajennuksen kuvaketta ja vie evästeet\n"
+"4. Tallenna nimellä cookies.txt ja valitse se tästä\n"
+"\n"
+"Evästeiden käyttö auttaa välttämään estoja, koska YouTube tunnistaa sinut kirjautuneena käyttäjänä.\n"
+
+#: Youtube_settings.py:316
+msgid "How to get cookies"
+msgstr "Kuinka evästeet saadaan"
+
+#: Youtube_settings.py:165
+msgid "How to get cookies?"
+msgstr "Kuinka evästeet saadaan?"
+
+#: __init__.py:439
+msgid "Immediate download mode disabled"
+msgstr "Välitön lataustila poistettu käytöstä"
+
+#: __init__.py:437
+msgid "Immediate download mode enabled"
+msgstr "Välitön lataustila käytössä"
+
+#: Trim.py:282
+msgid "Invalid URL or start time"
+msgstr "Virheellinen URL tai aloitusaika"
+
+#: __init__.py:443
+msgid "Invalid channel URL"
+msgstr "Virheellinen kanavan URL"
+
+#: __init__.py:423
+msgid "Invalid download folder"
+msgstr "Virheellinen latauskansio"
+
+#: downloadFail.py:187
+#: download_list.py:159
+msgid "Item deleted"
+msgstr "Kohde poistettu"
+
+#: channel_core.py:1385
+#: search.py:580
+msgid "Item removed."
+msgstr "Kohde poistettu."
+
+#: channel_core.py:65
+msgid "Live"
+msgstr "Suora"
+
+#: channel_core.py:770
+msgid "Loaded {count} videos from cache."
+msgstr "Ladattu {count} videota välimuistista."
+
+#: channel_core.py:488
+#: channel_core.py:939
+msgid "Loaded {count} videos from {name}."
+msgstr "Ladattu {count} videota kohteesta {name}."
+
+#: playlist.py:225
+msgid "Loaded {count} videos."
+msgstr "Ladattu {count} videota."
+
+#: playlist.py:51
+msgid "Loading playlist videos..."
+msgstr "Ladataan soittolistan videoita..."
+
+#: Youtube_settings.py:77
+msgid "MP3 &quality (kbps):"
+msgstr "MP3-&laatu (kbps):"
+
+#: channel_core.py:599
+msgid "Move Down"
+msgstr "Siirrä alas"
+
+#: channel_core.py:595
+msgid "Move Up"
+msgstr "Siirrä ylös"
+
+#: channel_core.py:165
+#: playlist.py:78
+#: search.py:133
+msgid "NextPage"
+msgstr "Seuraava sivu"
+
+#: __init__.py:340
+#: __init__.py:539
+msgid "No YouTube URL found"
+msgstr "YouTube-URL-osoitetta ei löytynyt"
+
+#: channel_core.py:252
+msgid "No channel selected."
+msgstr "Ei kanavaa valittuna."
+
+#: __init__.py:555
+msgid "No failed downloads"
+msgstr "Ei epäonnistuneita latauksia"
+
+#: downloadFail.py:299
+msgid "No failed downloads to clear"
+msgstr "Ei tyhjennettäviä epäonnistuneita latauksia"
+
+#: downloadFail.py:279
+msgid "No failed downloads to process"
+msgstr "Ei käsiteltäviä epäonnistuneita latauksia"
+
+#: download_list.py:232
+msgid "No items added (all already in queue)"
+msgstr "Ei lisättyjä kohteita (kaikki ovat jo jonossa)"
+
+#: channel_core.py:908
+msgid "No items found for this URL."
+msgstr "Tälle URL-osoitteelle ei löytynyt kohteita."
+
+#: channel_core.py:1067
+msgid "No items found."
+msgstr "Kohteita ei löytynyt."
+
+#: downloadFail.py:264
+#: download_list.py:187
+#: download_list.py:196
+msgid "No items selected"
+msgstr "Ei kohteita valittuna"
+
+#: download_list.py:212
+msgid "No new items added (already in queue)"
+msgstr "Ei lisättyjä uusia kohteita (jo jonossa)"
+
+#: download_list.py:219
+msgid "No pending downloads"
+msgstr "Ei odottavia latauksia"
+
+#: download_list.py:239
+msgid "No pending downloads to clear"
+msgstr "Ei tyhjennettäviä odottavia latauksia"
+
+#: search.py:487
+msgid "No results found for '{query}'."
+msgstr "Haulle '{query}' ei löytynyt tuloksia."
+
+#: search.py:488
+msgid "No results found."
+msgstr "Tuloksia ei löytynyt."
+
+#: channel_core.py:85
+msgid "No saved data for this channel."
+msgstr "Tälle kanavalle ei ole tallennettuja tietoja."
+
+#: Download_core.py:1075
+msgid "No valid multimedia link found."
+msgstr "Kelvollista multimedialinkkiä ei löytynyt."
+
+#: channel_core.py:278
+#: playlist.py:370
+#: search.py:584
+msgid "No videos to download."
+msgstr "Ei ladattavia videoita."
+
+#: __init__.py:542
+msgid "Not a YouTube URL"
+msgstr "Ei ole YouTube-URL"
+
+#: Download_core.py:1106
+msgid "Not a YouTube video or valid multimedia link"
+msgstr "Ei ole YouTube-video tai kelvollinen multimedialinkki"
+
+#: __init__.py:398
+msgid "Open context menu (single tap), download folder (double tap), Search Youtube (triple tap)"
+msgstr "Avaa pikavalikko (yksi painallus), latauskansio (kaksi), YouTube-haku (kolme)"
+
+#: channel_core.py:1301
+msgid "Open in browser"
+msgstr "Avaa selaimessa"
+
+#: channel_core.py:272
+#: search.py:237
+msgid "Page number out of range (1-{})."
+msgstr "Sivunumero alueen ulkopuolella (1-{})."
+
+#: channel_core.py:349
+#: playlist.py:122
+#: search.py:196
+msgid "Page {}/{}"
+msgstr "Sivu {}/{}"
+
+#: channel_core.py:591
+msgid "Pin"
+msgstr "Kiinnitä"
+
+#: playlist.py:317
+#: search.py:529
+msgid "Play on YouTube"
+msgstr "Toista YouTubessa"
+
+#: channel_core.py:1344
+#: playlist.py:380
+msgid "Playlist download started."
+msgstr "Soittolistan lataus aloitettu."
+
+#: __init__.py:711
+msgid "Playlist mode disabled"
+msgstr "Soittolistatila poistettu käytöstä"
+
+#: __init__.py:711
+msgid "Playlist mode enabled"
+msgstr "Soittolistatila käytössä"
+
+#: channel_core.py:67
+msgid "Playlists"
+msgstr "Soittolistat"
+
+#: channel_dialogs.py:98
+#: channel_dialogs.py:148
+msgid "Please enter a channel URL."
+msgstr "Syötä kanavan URL."
+
+#: channel_dialogs.py:95
+#: channel_dialogs.py:145
+msgid "Please enter a channel name."
+msgstr "Syötä kanavan nimi."
+
+#: search.py:245
+msgid "Please enter a search term."
+msgstr "Syötä hakusana."
+
+#: channel_core.py:266
+#: search.py:231
+msgid "Please enter a valid number."
+msgstr "Syötä kelvollinen luku."
+
+#: channel_core.py:66
+msgid "Podcasts"
+msgstr "Podcastit"
+
+#: Trim.py:146
+msgid "Preview start"
+msgstr "Esikatselun alku"
+
+#: channel_core.py:161
+#: playlist.py:74
+#: search.py:129
+msgid "PreviousPage"
+msgstr "Edellinen sivu"
+
+#: Snapshot.py:83
+msgid "Processing snapshot..."
+msgstr "Käsitellään kuvakaappausta..."
+
+#: Youtube_settings.py:234
+msgid "Proxy &URL:"
+msgstr "Proxy-&URL:"
+
+#: channel_core.py:142
+msgid "Ready"
+msgstr "Valmis"
+
+#: channel_core.py:1320
+#: search.py:542
+msgid "Remove from list"
+msgstr "Poista listalta"
+
+#: Youtube_settings.py:269
+msgid "Reset to &safe settings (recommended if blocked)"
+msgstr "Palauta &turvalliset asetukset (suositellaan, jos yhteys on estetty)"
+
+#: Youtube_settings.py:335
+msgid "Reset to safe settings. Remember to use cookies for best results."
+msgstr "Palautettu turvallisiin asetuksiin. Käytä evästeitä parhaan tuloksen saavuttamiseksi."
+
+#: Download_core.py:466
+msgid "Resume downloads"
+msgstr "Jatka latauksia"
+
+#: Youtube_settings.py:124
+msgid "Resume interrupted downloads on restart"
+msgstr "Jatka keskeytyneitä latauksia käynnistyksen yhteydessä"
+
+#: search.py:95
+msgid "Search"
+msgstr "Hae"
+
+#: search.py:59
+msgid "Search YouTube"
+msgstr "Hae YouTubesta"
+
+#: search.py:92
+msgid "Search YouTube:"
+msgstr "Hae YouTubesta:"
+
+#: __init__.py:527
+msgid "Search Youtube"
+msgstr "Hae YouTubesta"
+
+#: search.py:252
+msgid "Search already in progress."
+msgstr "Haku on jo käynnissä."
+
+#: search.py:492
+msgid "Search completed."
+msgstr "Haku valmis."
+
+#: search.py:501
+msgid "Search failed."
+msgstr "Haku epäonnistui."
+
+#: search.py:500
+msgid "Search failed: {error}"
+msgstr "Haku epäonnistui: {error}"
+
+#: channel_core.py:135
+msgid "Search:"
+msgstr "Haku:"
+
+#: search.py:282
+msgid "Searching..."
+msgstr "Haetaan..."
+
+#: Youtube_settings.py:45
+msgid "Select a directory"
+msgstr "Valitse kansio"
+
+#: download_list.py:210
+msgid "Selected items added to download queue"
+msgstr "Valitut kohteet lisätty latausjonoon"
+
+#: downloadFail.py:274
+#: download_list.py:187
+msgid "Selected items deleted"
+msgstr "Valitut kohteet poistettu"
+
+#: __init__.py:547
+#: channel_core.py:1333
+#: playlist.py:352
+#: search.py:553
+msgid "Short URL copied to clipboard"
+msgstr "Lyhyt-URL kopioitu leikepöydälle"
+
+#: channel_core.py:64
+msgid "Shorts"
+msgstr "Shorts-videot"
+
+#: channel_core.py:153
+#: playlist.py:66
+#: search.py:120
+msgid "Show items:"
+msgstr "Näytä kohteet:"
+
+#: Youtube_settings.py:223
+msgid "Skip &unavailable fragments"
+msgstr "Ohita puuttuvat &fragmentit"
+
+#: Youtube_settings.py:118
+msgid "Skip existing files"
+msgstr "Ohita olemassa olevat tiedostot"
+
+#: __init__.py:522
+msgid "Snapshot"
+msgstr "Kuvakaappaus"
+
+#: Snapshot.py:54
+msgid "Snapshot file already exists"
+msgstr "Kuvakaappaustiedosto on jo olemassa"
+
+#: Trim.py:174
+#: channel_dialogs.py:181
+#: search.py:680
+msgid "Start download"
+msgstr "Aloita lataus"
+
+#: Youtube_settings.py:60
+msgid "Start download immediately (NVDA+Y)"
+msgstr "Aloita lataus välittömästi (NVDA+Y)"
+
+#: Trim.py:316
+msgid "Start time must be less than end time"
+msgstr "Aloitusajan on oltava ennen päättymisaikaa"
+
+#: Trim.py:139
+msgid "Start time:"
+msgstr "Aloitusaika:"
+
+#: __init__.py:365
+msgid "Starting download: {format} - {title}"
+msgstr "Aloitetaan lataus: {format} - {title}"
+
+#: Download_core.py:791
+msgid "Starting next download from queue: {title}"
+msgstr "Aloitetaan seuraava lataus jonosta: {title}"
+
+#: channel_dialogs.py:15
+msgid "Title"
+msgstr "Otsikko"
+
+#: channel_core.py:1374
+#: playlist.py:342
+msgid "Title correction completed and locked."
+msgstr "Nimen korjaus valmis ja lukittu."
+
+#: channel_core.py:538
+msgid "Title correction completed for {count} videos."
+msgstr "Nimen korjaus suoritettu {count} videolle."
+
+#: channel_core.py:1376
+#: playlist.py:344
+msgid "Title correction failed."
+msgstr "Nimen korjaus epäonnistui."
+
+#: __init__.py:431
+msgid "Toggle immediate download mode"
+msgstr "Vaihda välitöntä lataustilaa"
+
+#: __init__.py:706
+msgid "Toggle playlist mode"
+msgstr "Vaihda soittolistatilaa"
+
+#: __init__.py:525
+msgid "Trim setting"
+msgstr "Leikkausasetukset"
+
+#: Trim.py:332
+msgid "Trimming and downloading {format}..."
+msgstr "Leikataan ja ladataan muodossa {format}..."
+
+#: Trim.py:132
+#: downloadFail.py:69
+msgid "URL"
+msgstr "URL"
+
+#: channel_core.py:1336
+msgid "URL copied to clipboard"
+msgstr "URL kopioitu leikepöydälle"
+
+#: Trim.py:307
+msgid "URL is required"
+msgstr "URL-osoite vaaditaan"
+
+#: Download_core.py:903
+msgid "URL not found"
+msgstr "URL-osoitetta ei löytynyt"
+
+#: Download_core.py:672
+#: __init__.py:359
+#: downloadFail.py:110
+#: downloadFail.py:113
+#: downloadFail.py:114
+#: download_list.py:103
+msgid "Unknown"
+msgstr "Tuntematon"
+
+#: channel_core.py:591
+msgid "Unpin"
+msgstr "Poista kiinnitys"
+
+#: Youtube_settings.py:369
+#: __init__.py:287
+msgid "Update failed: {str}"
+msgstr "Päivitys epäonnistui: {str}"
+
+#: Youtube_settings.py:290
+msgid "Update status: Idle"
+msgstr "Päivityksen tila: Joutilas"
+
+#: Youtube_settings.py:368
+msgid "Update status: Update failed: {str}"
+msgstr "Päivityksen tila: Epäonnistui: {str}"
+
+#: Youtube_settings.py:364
+msgid "Update status: Update successful"
+msgstr "Päivityksen tila: Onnistui"
+
+#: Youtube_settings.py:354
+msgid "Update status: Updating..."
+msgstr "Päivityksen tila: Päivitetään..."
+
+#: Youtube_settings.py:286
+msgid "Update yt-dlp now"
+msgstr "Päivitä yt-dlp nyt"
+
+#: Youtube_settings.py:355
+#: __init__.py:275
+msgid "Updating yt-dlp..."
+msgstr "Päivitetään yt-dlp..."
+
+#: Youtube_settings.py:150
+msgid "Use &cookies (recommended to avoid block)"
+msgstr "Käytä &evästeitä (suositellaan estojen välttämiseksi)"
+
+#: Youtube_settings.py:179
+msgid "Use &custom user agent"
+msgstr "Käytä &omaa User Agentia"
+
+#: Youtube_settings.py:229
+msgid "Use &proxy"
+msgstr "Käytä &proxya"
+
+#: Youtube_settings.py:92
+msgid "Use download section"
+msgstr "Käytä latausosiota"
+
+#: Youtube_settings.py:184
+msgid "User &agent:"
+msgstr "User &Agent:"
+
+#: downloadFail.py:67
+#: download_list.py:67
+#: search.py:35
+msgid "Video Title"
+msgstr "Videon nimi"
+
+#: Trim.py:144
+msgid "Video duration: unknown; Overall period: 0 seconds"
+msgstr "Videon kesto: tuntematon; Kokonaisaika: 0 sekuntia"
+
+#: Trim.py:255
+msgid "Video duration: {duration}; Overall period: {period} seconds"
+msgstr "Videon kesto: {duration}; Kokonaisaika: {period} sekuntia"
+
+#: channel_core.py:63
+msgid "Videos"
+msgstr "Videot"
+
+#: playlist.py:23
+msgid "Videos in {title}"
+msgstr "Videot kohteessa {title}"
+
+#: __init__.py:592
+#: __init__.py:606
+msgid "You must be on a YouTube page to use this feature"
+msgstr "Sinun on oltava YouTube-sivulla käyttääksesi tätä ominaisuutta"
+
+#: channel_core.py:30
+msgid "Your favorite channel"
+msgstr "Suosikkikanavasi"
+
+#: Trim.py:254
+msgid "invalid"
+msgstr "virheellinen"
+
+#: Trim.py:250
+msgid "invalid (negative)"
+msgstr "virheellinen (negatiivinen)"
+
+#: search.py:53
+msgid "loading..."
+msgstr "ladataan..."
+
+#: Trim.py:244
+msgid "unknown"
+msgstr "tuntematon"
+
+#: Youtube_settings.py:276
+msgid "yt-dlp Update"
+msgstr "yt-dlp-päivitys"
+
+#: Youtube_settings.py:365
+#: __init__.py:284
+msgid "yt-dlp updated successfully"
+msgstr "yt-dlp päivitetty onnistuneesti"
+
+#: Download_core.py:946
+msgid "yt-dlp.exe missing"
+msgstr "yt-dlp.exe puuttuu"
+
+#: channel_core.py:816
+#: search.py:256
+msgid "yt-dlp.exe not found."
+msgstr "yt-dlp.exe ei löydy."
+
+#: __init__.py:725
+msgid "{quality} kbps"
+msgstr "{quality} kbps"
+
+#: channel_core.py:350
+#: playlist.py:123
+#: search.py:197
+msgid "{}, showing {} of {} videos"
+msgstr "{}, näytetään {} / {} videota"

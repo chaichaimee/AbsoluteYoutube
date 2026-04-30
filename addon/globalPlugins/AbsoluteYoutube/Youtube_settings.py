@@ -1,5 +1,4 @@
 # Youtube_settings.py
-
 import wx
 import gui
 import config
@@ -25,12 +24,10 @@ sectionName = AddOnName
 
 
 def getINI(key):
-	"""Get configuration value by key"""
 	return config.conf[sectionName][key]
 
 
 def setINI(key, value):
-	"""Set configuration value for a key"""
 	config.conf[sectionName][key] = value
 
 
@@ -38,7 +35,6 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 	title = AddOnSummary
 
 	def makeSettings(self, settingsSizer):
-		"""Create the settings panel UI"""
 		helper = guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
 
 		# Destination folder selection
@@ -58,6 +54,12 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 		else:
 			self.folderPathCtrl.SetValue(current_result_folder)
 		helper.addItem(folderSizer)
+
+		# Immediate download mode
+		self.immediateChk = helper.addItem(
+			wx.CheckBox(self, label=_("Start download immediately (NVDA+Y)"))
+		)
+		self.immediateChk.SetValue(getINI("ImmediateDownload"))
 
 		# Beep while converting
 		self.beepChk = helper.addItem(
@@ -297,14 +299,12 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 		self.useProxyChk.Bind(wx.EVT_CHECKBOX, self.on_use_proxy_changed)
 		self.multipartChk.Bind(wx.EVT_CHECKBOX, self.on_multipart_changed)
 
-		# Set initial states
 		self.on_use_cookies_changed(None)
 		self.on_custom_user_agent_changed(None)
 		self.on_use_proxy_changed(None)
 		self.on_multipart_changed(None)
 
 	def on_cookies_help(self, event):
-		"""Show help dialog for getting cookies"""
 		help_text = _(
 			"How to get YouTube cookies:\n\n"
 			"1. Install 'Get cookies.txt' extension in Chrome or Firefox\n"
@@ -316,7 +316,6 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 		wx.MessageBox(help_text, _("How to get cookies"), wx.OK | wx.ICON_INFORMATION)
 
 	def on_reset_safe_settings(self, event):
-		"""Reset to safe settings to avoid blocks"""
 		safe_settings = {
 			"MaxConcurrentDownloads": 1,
 			"UseMultiPart": False,
@@ -326,8 +325,6 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 			"RetryCount": 3,
 			"FragmentRetries": 10,
 		}
-
-		# Apply safe settings
 		self.maxDownloadsSpin.SetValue(safe_settings["MaxConcurrentDownloads"])
 		self.multipartChk.SetValue(safe_settings["UseMultiPart"])
 		self.connectionsChoice.SetSelection(safe_settings["MultiPartConnections"] - 1)
@@ -335,29 +332,23 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 		self.sleepRequestsSpin.SetValue(safe_settings["SleepBetweenRequests"])
 		self.retryCountSpin.SetValue(safe_settings["RetryCount"])
 		self.fragmentRetriesSpin.SetValue(safe_settings["FragmentRetries"])
-
 		ui.message(_("Reset to safe settings. Remember to use cookies for best results."))
 
 	def on_use_cookies_changed(self, event):
-		"""Enable/disable cookies file picker"""
 		enable = self.useCookiesChk.GetValue()
 		self.cookiesFilePicker.Enable(enable)
 		self.cookiesHelpBtn.Enable(enable)
 
 	def on_custom_user_agent_changed(self, event):
-		"""Enable/disable custom user agent text field"""
 		self.userAgentText.Enable(self.customUserAgentChk.GetValue())
 
 	def on_use_proxy_changed(self, event):
-		"""Enable/disable proxy URL text field"""
 		self.proxyText.Enable(self.useProxyChk.GetValue())
 
 	def on_multipart_changed(self, event):
-		"""Enable/disable connections choice"""
 		self.connectionsChoice.Enable(self.multipartChk.GetValue())
 
 	def on_update_yt_dlp(self, event):
-		"""Handle manual yt-dlp update"""
 		def update_thread():
 			try:
 				wx.CallAfter(self.updateStatusLabel.SetLabel, _("Update status: Updating..."))
@@ -369,7 +360,6 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 				temp_file = os.path.join(tempfile.gettempdir(), f"yt-dlp_{uuid.uuid4().hex}.exe")
 				with urllib.request.urlopen(req) as response, open(temp_file, 'wb') as out_file:
 					out_file.write(response.read())
-
 				shutil.move(temp_file, YouTubeEXE)
 				wx.CallAfter(self.updateStatusLabel.SetLabel, _("Update status: Update successful"))
 				ui.message(_("yt-dlp updated successfully"))
@@ -378,11 +368,9 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 				wx.CallAfter(self.updateStatusLabel.SetLabel, _("Update status: Update failed: {str}").format(str=str(e)))
 				ui.message(_("Update failed: {str}").format(str=str(e)))
 				log(f"Error updating yt-dlp: {e}")
-
 		threading.Thread(target=update_thread, daemon=True).start()
 
 	def onSave(self):
-		"""Save settings to configuration"""
 		folder = self.folderPathCtrl.GetValue().strip()
 		if folder.endswith("\\"):
 			folder = folder[:-1]
@@ -394,6 +382,7 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 					ui.message(_("Failed to create the specified folder. Please select a valid folder."))
 					return
 			setINI("ResultFolder", folder)
+			setINI("ImmediateDownload", self.immediateChk.GetValue())
 			setINI("BeepWhileConverting", self.beepChk.GetValue())
 			setINI("SayDownloadComplete", self.sayCompleteChk.GetValue())
 			setINI("MP3Quality", int(self.qualityChoice.GetStringSelection()))
@@ -406,7 +395,6 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 			setINI("AutoUpdateYtDlp", self.autoUpdateChk.GetValue())
 			setINI("MaxConcurrentDownloads", self.maxDownloadsSpin.GetValue())
 
-			# Anti-blocking settings
 			setINI("UseCookies", self.useCookiesChk.GetValue())
 			setINI("CookiesFile", self.cookiesFilePicker.GetPath())
 			setINI("UseCustomUserAgent", self.customUserAgentChk.GetValue())

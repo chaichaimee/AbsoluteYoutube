@@ -1,0 +1,1336 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AbsoluteYoutube 2026.5.1\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-04-30 14:14+0700\n"
+"PO-Revision-Date: 2026-04-30 20:45+0700\n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: Sinhala\n"
+"Language: si\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: Youtube_settings.py:66
+msgid "&Beep while converting"
+msgstr "පරිවර්තනය වන විට බීප් හඬ නිකුත් කරන්න (&B)"
+
+#: Youtube_settings.py:44
+msgid "&Browse..."
+msgstr "ගවේෂණය කරන්න (&B)..."
+
+#: channel_dialogs.py:69
+#: channel_dialogs.py:133
+#: downloadFail.py:92
+msgid "&Cancel"
+msgstr "අවලංගු කරන්න (&C)"
+
+#: downloadFail.py:84
+#: download_list.py:85
+msgid "&Clear All"
+msgstr "සියල්ල ඉවත් කරන්න (&C)"
+
+#: channel_core.py:189
+#: playlist.py:89
+#: search.py:157
+msgid "&Close"
+msgstr "වසා දමන්න (&C)"
+
+#: downloadFail.py:76
+#: download_list.py:81
+msgid "&Delete Selected"
+msgstr "තෝරාගත් දෑ මකා දමන්න (&D)"
+
+#: channel_core.py:181
+#: downloadFail.py:80
+#: download_list.py:81
+#: search.py:149
+msgid "&Download All"
+msgstr "සියල්ල බාගත කරන්න (&D)"
+
+#: playlist.py:85
+msgid "&Download All Videos in Playlist"
+msgstr "ධාවන ලැයිස්තුවේ ඇති සියලුම වීඩියෝ බාගත කරන්න (&D)"
+
+#: download_list.py:77
+msgid "&Download Selected"
+msgstr "තෝරාගත් දෑ බාගත කරන්න (&D)"
+
+#: search.py:153
+msgid "&Download folder"
+msgstr "බාගත කිරීමේ ෆෝල්ඩරය (&D)"
+
+#: Youtube_settings.py:241
+msgid "&Geo bypass"
+msgstr "භූගෝලීය සීමා මග හැරීම (&G)"
+
+#: Youtube_settings.py:264
+msgid "&Mark as watched"
+msgstr "නරඹන ලද ලෙස සලකුණු කරන්න (&M)"
+
+#: Youtube_settings.py:135
+msgid "&Max concurrent downloads (1-4):"
+msgstr "උපරිම සමගාමී බාගැනීම් (1-4) (&M):"
+
+#: Youtube_settings.py:97
+msgid "&Number of connections:"
+msgstr "සම්බන්ධතා සංඛ්‍යාව (&N):"
+
+#: channel_dialogs.py:67
+#: channel_dialogs.py:131
+#: downloadFail.py:88
+#: download_list.py:89
+msgid "&OK"
+msgstr "හරි (&O)"
+
+#: Youtube_settings.py:207
+msgid "&Retry count:"
+msgstr "නැවත උත්සාහ කිරීමේ වාර ගණන (&R):"
+
+#: Youtube_settings.py:72
+msgid "&Say download complete"
+msgstr "බාගත කිරීම අවසන් වූ විට පවසන්න (&S)"
+
+#: Youtube_settings.py:199
+msgid "&Sleep between requests (seconds):"
+msgstr "ඉල්ලීම් අතර විරාමය (තත්පර) (&S):"
+
+#: channel_core.py:185
+msgid "&Source"
+msgstr "මූලාශ්‍රය (&S)"
+
+#: Youtube_settings.py:191
+msgid "&Throttle rate (KB/s, 0=unlimited):"
+msgstr "වේගය පාලනය කරන්න (KB/s, 0=අසීමිත) (&T):"
+
+#: channel_core.py:1100
+msgid "A channel with this name already exists. Overwrite?"
+msgstr "මෙම නමින් යුත් නාලිකාවක් දැනටමත් පවතී. එය මත නැවත ලිවීමට අවශ්‍යද?"
+
+#: __init__.py:256
+msgid "A new version of yt-dlp is available: {latest}. Current: {current}. Please update in settings."
+msgstr "yt-dlp හි නව සංස්කරණයක් පවතී: {latest}. වර්තමාන: {current}. කරුණාකර සැකසීම් හරහා යාවත්කාලීන කරන්න."
+
+#: Download_core.py:32
+#: Youtube_settings.py:21
+#: __init__.py:44
+msgid "Absolute YouTube"
+msgstr "Absolute YouTube"
+
+#: Trim.py:64
+msgid "Absolute YouTube Trim"
+msgstr "Absolute YouTube කප්පාදු කිරීම"
+
+#: __init__.py:529
+msgid "Absolute YouTube setting"
+msgstr "Absolute YouTube සැකසීම්"
+
+#: menu.py:18
+msgid "Absolute Youtube"
+msgstr "Absolute Youtube"
+
+#: channel_dialogs.py:41
+msgid "Add New Channel"
+msgstr "නව නාලිකාවක් එක් කරන්න"
+
+#: channel_core.py:112
+msgid "Add new channel"
+msgstr "නව නාලිකාවක් එක් කරන්න"
+
+#: __init__.py:184
+msgid "Add-on initialization failed: missing pending file path function. Please restart NVDA."
+msgstr "Add-on ආරම්භ කිරීම අසාර්ථක විය: ලිපිගොනු පථය හමු නොවේ. කරුණාකර NVDA නැවත පණගන්වන්න."
+
+#: download_list.py:24
+msgid "Add-on internal error: missing components. Please restart NVDA."
+msgstr "Add-on අභ්‍යන්තර දෝෂයකි: කොටස් කිහිපයක් අස්ථානගත වී ඇත. කරුණාකර NVDA නැවත පණගන්වන්න."
+
+#: download_list.py:69
+msgid "Added Time"
+msgstr "එක් කළ වේලාව"
+
+#: __init__.py:376
+msgid "Added to download list: {format} - {title}"
+msgstr "බාගත කිරීමේ ලැයිස්තුවට එක් කරන ලදී: {format} - {title}"
+
+#: __init__.py:370
+msgid "Added to download queue: {format} - {title}"
+msgstr "බාගත කිරීමේ පෝලිමට එක් කරන ලදී: {format} - {title}"
+
+#: download_list.py:169
+msgid "Added to download queue: {title}"
+msgstr "බාගත කිරීමේ පෝලිමට එක් කරන ලදී: {title}"
+
+#: Download_core.py:1097
+msgid "Adding link as {format} to download queue"
+msgstr "සම්බන්ධකය {format} ලෙස බාගත කිරීමේ පෝලිමට එක් කරමින්"
+
+#: channel_core.py:297
+#: search.py:591
+msgid "Adding {count} videos to download queue..."
+msgstr "වීඩියෝ {count} ක් බාගත කිරීමේ පෝලිමට එක් කරමින් පවතී..."
+
+#: channel_core.py:1358
+#: playlist.py:364
+#: search.py:572
+msgid "Adding {title} to download queue."
+msgstr "{title} බාගත කිරීමේ පෝලිමට එක් කරමින් පවතී."
+
+#: search.py:123
+#: search.py:204
+msgid "All"
+msgstr "සියල්ල"
+
+#: downloadFail.py:294
+msgid "All downloads started"
+msgstr "සියලුම බාගත කිරීම් ආරම්භ විය"
+
+#: downloadFail.py:305
+msgid "All failed downloads cleared"
+msgstr "අසාර්ථක වූ සියලුම බාගත කිරීම් ඉවත් කරන ලදී"
+
+#: download_list.py:230
+msgid "All items added to download queue"
+msgstr "සියලුම අයිතම බාගත කිරීමේ පෝලිමට එක් කරන ලදී"
+
+#: download_list.py:249
+msgid "All pending downloads cleared"
+msgstr "පෝලිමේ තිබූ සියලුම බාගත කිරීම් ඉවත් කරන ලදී"
+
+#: __init__.py:378
+msgid "Already in download list"
+msgstr "දැනටමත් බාගත කිරීමේ ලැයිස්තුවේ ඇත"
+
+#: __init__.py:372
+#: download_list.py:171
+msgid "Already in download queue"
+msgstr "දැනටමත් බාගත කිරීමේ පෝලිමේ ඇත"
+
+#: Snapshot.py:104
+msgid "An unexpected error occurred."
+msgstr "අපේක්ෂා නොකළ දෝෂයක් සිදු විය."
+
+#: Youtube_settings.py:144
+msgid "Anti-blocking settings"
+msgstr "අවහිර කිරීම් වළක්වන සැකසීම්"
+
+#: channel_core.py:731
+msgid "Are you sure you want to delete saved data for '{name}'?"
+msgstr "'{name}' සඳහා සුරකින ලද දත්ත මකා දැමීමට ඔබට විශ්වාසද?"
+
+#: Trim.py:164
+#: channel_dialogs.py:172
+msgid "Audio Quality"
+msgstr "ශ්‍රව්‍ය තත්ත්වය"
+
+#: Trim.py:177
+#: channel_dialogs.py:183
+#: search.py:681
+msgid "Cancel"
+msgstr "අවලංගු කරන්න"
+
+#: channel_core.py:292
+msgid "Cannot create download folder."
+msgstr "බාගත කිරීමේ ෆෝල්ඩරය සෑදිය නොහැක."
+
+#: Download_core.py:352
+#: Download_core.py:890
+msgid "Cannot create folder"
+msgstr "ෆෝල්ඩරය සෑදිය නොහැක"
+
+#: search.py:563
+msgid "Cannot determine URL for this video."
+msgstr "මෙම වීඩියෝවේ URL එක හඳුනාගත නොහැක."
+
+#: search.py:610
+msgid "Cannot open download folder."
+msgstr "බාගත කිරීමේ ෆෝල්ඩරය විවෘත කළ නොහැක."
+
+#: channel_core.py:320
+msgid "Cannot open source folder."
+msgstr "මූලාශ්‍ර ෆෝල්ඩරය විවෘත කළ නොහැක."
+
+#: Snapshot.py:58
+msgid "Capturing full-size snapshot..."
+msgstr "පූර්ණ ප්‍රමාණයේ ඡායාරූපයක් ලබා ගනිමින්..."
+
+#: channel_core.py:713
+msgid "Channel URL updated."
+msgstr "නාලිකා URL එක යාවත්කාලීන කරන ලදී."
+
+#: channel_dialogs.py:58
+#: channel_dialogs.py:124
+msgid "Channel URL:"
+msgstr "නාලිකා URL:"
+
+#: channel_core.py:906
+msgid "Channel added successfully."
+msgstr "නාලිකාව සාර්ථකව එක් කරන ලදී."
+
+#: channel_core.py:743
+#: channel_core.py:746
+msgid "Channel deleted."
+msgstr "නාලිකාව මකා දමන ලදී."
+
+#: channel_dialogs.py:51
+#: channel_dialogs.py:117
+msgid "Channel name:"
+msgstr "නාලිකා නම:"
+
+#: channel_core.py:633
+msgid "Channel pinned."
+msgstr "නාලිකාව පින් (Pin) කරන ලදී."
+
+#: channel_core.py:1121
+msgid "Channel saved."
+msgstr "නාලිකාව සුරකින ලදී."
+
+#: channel_core.py:630
+msgid "Channel unpinned."
+msgstr "නාලිකාව පින් කිරීමෙන් ඉවත් කරන ලදී."
+
+#: channel_core.py:700
+msgid "Channel updated."
+msgstr "නාලිකාව යාවත්කාලීන කරන ලදී."
+
+#: channel_core.py:100
+msgid "Channel:"
+msgstr "නාලිකාව:"
+
+#: channel_core.py:955
+msgid "Checking for new videos..."
+msgstr "නව වීඩියෝ ඇත්දැයි පරීක්ෂා කරමින්..."
+
+#: Download_core.py:601
+msgid "Checking interrupted downloads..."
+msgstr "බාධා වූ බාගත කිරීම් පරීක්ෂා කරමින්..."
+
+#: downloadFail.py:162
+#: download_list.py:131
+msgid "Clear all"
+msgstr "සියල්ල ඉවත් කරන්න"
+
+#: channel_core.py:732
+msgid "Confirm Delete"
+msgstr "මැකීම තහවුරු කරන්න"
+
+#: playlist.py:374
+msgid "Confirm Download"
+msgstr "බාගත කිරීම තහවුරු කරන්න"
+
+#: channel_core.py:1101
+msgid "Confirm Overwrite"
+msgstr "නැවත ලිවීම තහවුරු කරන්න"
+
+#: channel_core.py:125
+msgid "Content type:"
+msgstr "අන්තර්ගත වර්ගය:"
+
+#: Youtube_settings.py:156
+msgid "Cookies &file:"
+msgstr "කුකී ගොනුව (Cookies) (&F):"
+
+#: channel_core.py:1298
+msgid "Copy URL"
+msgstr "URL එක පිටපත් කරන්න"
+
+#: __init__.py:509
+#: playlist.py:314
+#: search.py:526
+msgid "Copy video Shorten URL"
+msgstr "වීඩියෝවේ කෙටි URL එක පිටපත් කරන්න"
+
+#: channel_core.py:1308
+#: playlist.py:320
+msgid "Correct title now"
+msgstr "මාතෘකාව දැන් නිවැරදි කරන්න"
+
+#: channel_core.py:1366
+#: playlist.py:337
+msgid "Correcting title for selected video..."
+msgstr "තෝරාගත් වීඩියෝවේ මාතෘකාව නිවැරදි කරමින්..."
+
+#: playlist.py:354
+#: search.py:555
+msgid "Could not create short URL"
+msgstr "කෙටි URL එකක් සෑදිය නොහැකි විය"
+
+#: __init__.py:549
+msgid "Could not create shortened URL"
+msgstr "කෙටි කරන ලද URL එකක් සෑදිය නොහැකි විය"
+
+#: Trim.py:302
+msgid "Could not open preview URL"
+msgstr "පූර්ව දර්ශන URL එක විවෘත කළ නොහැකි විය"
+
+#: __init__.py:713
+msgid "Cycle MP3 quality settings"
+msgstr "MP3 තත්ත්ව සැකසීම් අතර මාරු වන්න"
+
+#: channel_core.py:607
+#: downloadFail.py:146
+#: download_list.py:119
+msgid "Delete"
+msgstr "මකා දමන්න"
+
+#: downloadFail.py:153
+#: download_list.py:124
+msgid "Delete selected"
+msgstr "තෝරාගත් දෑ මකා දමන්න"
+
+#: download_list.py:121
+msgid "Download"
+msgstr "බාගත කරන්න"
+
+#: channel_dialogs.py:155
+#: search.py:663
+msgid "Download All Videos"
+msgstr "සියලුම වීඩියෝ බාගත කරන්න"
+
+#: downloadFail.py:16
+msgid "Download Fail Manager - Absolute YouTube"
+msgstr "අසාර්ථක බාගැනීම් කළමනාකරු - Absolute YouTube"
+
+#: download_list.py:14
+msgid "Download List Manager - Absolute YouTube"
+msgstr "බාගැනීම් ලැයිස්තු කළමනාකරු - Absolute YouTube"
+
+#: channel_core.py:1311
+#: playlist.py:323
+#: search.py:532
+msgid "Download MP3"
+msgstr "MP3 බාගත කරන්න"
+
+#: channel_core.py:1314
+#: playlist.py:326
+#: search.py:535
+msgid "Download MP4"
+msgstr "MP4 බාගත කරන්න"
+
+#: channel_core.py:1317
+#: playlist.py:329
+#: search.py:538
+msgid "Download WAV"
+msgstr "WAV බාගත කරන්න"
+
+#: downloadFail.py:159
+#: download_list.py:129
+msgid "Download all"
+msgstr "සියල්ල බාගත කරන්න"
+
+#: playlist.py:373
+msgid "Download all {count} videos in this playlist?"
+msgstr "මෙම ධාවන ලැයිස්තුවේ ඇති සියලුම වීඩියෝ {count} බාගත කිරීමට අවශ්‍යද?"
+
+#: Download_core.py:840
+msgid "Download complete"
+msgstr "බාගත කිරීම අවසන්"
+
+#: channel_core.py:1305
+msgid "Download entire playlist"
+msgstr "සම්පූර්ණ ධාවන ලැයිස්තුවම බාගත කරන්න"
+
+#: __init__.py:509
+msgid "Download fail manager"
+msgstr "අසාර්ථක බාගැනීම් කළමනාකරු"
+
+#: __init__.py:517
+msgid "Download fail manager (no failed)"
+msgstr "අසාර්ථක බාගැනීම් කළමනාකරු (අසාර්ථක වූ දෑ නැත)"
+
+#: Download_core.py:846
+msgid "Download failed"
+msgstr "බාගත කිරීම අසාර්ථක විය"
+
+#: Download_core.py:872
+msgid "Download failed due to an error"
+msgstr "දෝෂයක් හේතුවෙන් බාගත කිරීම අසාර්ථක විය"
+
+#: Download_core.py:859
+msgid "Download failed due to timeout"
+msgstr "කාලය ඉක්මවා යාම හේතුවෙන් බාගත කිරීම අසාර්ථක විය"
+
+#: downloadFail.py:149
+msgid "Download file"
+msgstr "ගොනුව බාගත කරන්න"
+
+#: search.py:612
+msgid "Download folder does not exist."
+msgstr "බාගත කිරීමේ ෆෝල්ඩරය පවතින්නේ නැත."
+
+#: channel_core.py:1346
+#: channel_core.py:1360
+#: playlist.py:366
+#: playlist.py:382
+#: search.py:574
+msgid "Download function not available."
+msgstr "බාගත කිරීමේ ශ්‍රිතය ලබා ගත නොහැක."
+
+#: __init__.py:511
+msgid "Download list manager"
+msgstr "බාගැනීම් ලැයිස්තු කළමනාකරු"
+
+#: __init__.py:385
+msgid "Download or queue video (single tap MP3, double tap MP4, triple tap WAV)"
+msgstr "බාගත කිරීම හෝ පෝලිමට එක් කිරීම (එක් වරක් MP3, දෙවරක් MP4, තෙවරක් WAV)"
+
+#: download_list.py:126
+msgid "Download selected"
+msgstr "තෝරාගත් දෑ බාගත කරන්න"
+
+#: downloadFail.py:249
+msgid "Download started for: {title}"
+msgstr "බාගත කිරීම ආරම්භ විය: {title}"
+
+#: Snapshot.py:63
+msgid "Downloading thumbnail..."
+msgstr "Thumbnail රූපය බාගත කරමින්..."
+
+#: channel_core.py:310
+#: search.py:600
+msgid "Downloads started."
+msgstr "බාගත කිරීම් ආරම්භ විය."
+
+#: downloadFail.py:68
+#: search.py:36
+msgid "Duration"
+msgstr "කාලසීමාව"
+
+#: channel_dialogs.py:105
+msgid "Edit Channel"
+msgstr "නාලිකාව සංස්කරණය කරන්න"
+
+#: channel_core.py:116
+msgid "Edit channel"
+msgstr "නාලිකාව සංස්කරණය කරන්න"
+
+#: channel_core.py:604
+msgid "Edit channel..."
+msgstr "නාලිකාව සංස්කරණය කරන්න..."
+
+#: Youtube_settings.py:130
+msgid "Enable &logging"
+msgstr "ලොග් සටහන් සක්‍රීය කරන්න (&L)"
+
+#: Youtube_settings.py:112
+msgid "Enable &playlist mode by default"
+msgstr "ධාවන ලැයිස්තු මාදිලිය පෙරනිමියෙන් සක්‍රීය කරන්න (&P)"
+
+#: Trim.py:140
+msgid "End time:"
+msgstr "අවසාන වේලාව:"
+
+#: search.py:104
+msgid "Enter a search query."
+msgstr "සෙවීමට අවශ්‍ය දේ ඇතුළත් කරන්න."
+
+#: download_list.py:25
+msgid "Error"
+msgstr "දෝෂය"
+
+#: Snapshot.py:42
+msgid "Error creating download folder"
+msgstr "බාගත කිරීමේ ෆෝල්ඩරය සෑදීමේ දෝෂයකි"
+
+#: channel_core.py:749
+msgid "Error deleting channel."
+msgstr "නාලිකාව මැකීමේ දෝෂයකි."
+
+#: __init__.py:271
+msgid "Error during auto-update of yt-dlp: {str}"
+msgstr "yt-dlp ස්වයංක්‍රීයව යාවත්කාලීන කිරීමේදී දෝෂයක්: {str}"
+
+#: channel_core.py:912
+msgid "Error fetching channel: {str}"
+msgstr "නාලිකාව ලබා ගැනීමේ දෝෂයක්: {str}"
+
+#: __init__.py:178
+#: downloadFail.py:44
+msgid "Error importing core functions: {str}"
+msgstr "මූලික ශ්‍රිත ආයාත කිරීමේ දෝෂයක්: {str}"
+
+#: __init__.py:659
+msgid "Error importing settings panel: {str}"
+msgstr "සැකසීම් පුවරුව ආයාත කිරීමේ දෝෂයක්: {str}"
+
+#: __init__.py:202
+msgid "Error initializing AbsoluteYoutube: {str}"
+msgstr "AbsoluteYoutube ආරම්භ කිරීමේ දෝෂයක්: {str}"
+
+#: channel_core.py:774
+msgid "Error loading cache."
+msgstr "Cache දත්ත පූරණය කිරීමේ දෝෂයකි."
+
+#: channel_core.py:503
+#: channel_core.py:675
+msgid "Error loading channel data."
+msgstr "නාලිකා දත්ත පූරණය කිරීමේ දෝෂයකි."
+
+#: __init__.py:455
+msgid "Error opening channel dialog"
+msgstr "නාලිකා සංවාද කොටුව විවෘත කිරීමේ දෝෂයකි"
+
+#: __init__.py:701
+msgid "Error opening channel/playlist list: {str}"
+msgstr "නාලිකා/ධාවන ලැයිස්තු විවෘත කිරීමේ දෝෂයක්: {str}"
+
+#: __init__.py:569
+#: __init__.py:573
+msgid "Error opening download fail dialog: {str}"
+msgstr "අසාර්ථක බාගැනීම් සංවාද කොටුව විවෘත කිරීමේ දෝෂයක්: {str}"
+
+#: __init__.py:494
+msgid "Error opening download list dialog: {str}"
+msgstr "බාගැනීම් ලැයිස්තු සංවාද කොටුව විවෘත කිරීමේ දෝෂයක්: {str}"
+
+#: __init__.py:421
+msgid "Error opening folder"
+msgstr "ෆෝල්ඩරය විවෘත කිරීමේ දෝෂයකි"
+
+#: channel_core.py:1280
+msgid "Error opening playlist."
+msgstr "ධාවන ලැයිස්තුව විවෘත කිරීමේ දෝෂයකි."
+
+#: __init__.py:646
+msgid "Error opening search dialog: {str}"
+msgstr "සෙවුම් සංවාද කොටුව විවෘත කිරීමේ දෝෂයක්: {str}"
+
+#: __init__.py:662
+msgid "Error opening settings dialog: {str}"
+msgstr "සැකසීම් සංවාද කොටුව විවෘත කිරීමේ දෝෂයක්: {str}"
+
+#: __init__.py:627
+msgid "Error opening trim dialog: {str}"
+msgstr "කප්පාදු කිරීමේ සංවාද කොටුව විවෘත කිරීමේ දෝෂයක්: {str}"
+
+#: Download_core.py:942
+msgid "Error processing URL"
+msgstr "URL සැකසීමේ දෝෂයකි"
+
+#: downloadFail.py:253
+msgid "Error starting download"
+msgstr "බාගත කිරීම ආරම්භ කිරීමේ දෝෂයකි"
+
+#: channel_core.py:716
+msgid "Error updating channel URL."
+msgstr "නාලිකා URL යාවත්කාලීන කිරීමේ දෝෂයකි."
+
+#: channel_core.py:703
+msgid "Error updating channel."
+msgstr "නාලිකාව යාවත්කාලීන කිරීමේ දෝෂයකි."
+
+#: __init__.py:499
+msgid "Error: Download list module not available"
+msgstr "දෝෂය: බාගැනීම් ලැයිස්තු මොඩියුලය ලබා ගත නොහැක"
+
+#: __init__.py:559
+msgid "Error: DownloadFail module not available"
+msgstr "දෝෂය: DownloadFail මොඩියුලය ලබා ගත නොහැක"
+
+#: Snapshot.py:86
+msgid "Error: Failed to capture snapshot."
+msgstr "දෝෂය: ඡායාරූපය ලබා ගැනීමට අසාර්ථක විය."
+
+#: Snapshot.py:93
+msgid "Error: No snapshot file created."
+msgstr "දෝෂය: ඡායාරූප ගොනුවක් සෑදී නැත."
+
+#: __init__.py:651
+msgid "Error: Search module not available"
+msgstr "දෝෂය: සෙවුම් මොඩියුලය ලබා ගත නොහැක"
+
+#: __init__.py:600
+msgid "Error: Snapshot module not available"
+msgstr "දෝෂය: Snapshot මොඩියුලය ලබා ගත නොහැක"
+
+#: __init__.py:610
+msgid "Error: Trim module not available"
+msgstr "දෝෂය: Trim මොඩියුලය ලබා ගත නොහැක"
+
+#: Download_core.py:1067
+#: Trim.py:329
+msgid "Error: ffmpeg.exe not found."
+msgstr "දෝෂය: ffmpeg.exe හමු නොවිණි."
+
+#: Trim.py:326
+msgid "Error: yt-dlp.exe not found."
+msgstr "දෝෂය: yt-dlp.exe හමු නොවිණි."
+
+#: Youtube_settings.py:382
+msgid "Failed to create the specified folder. Please select a valid folder."
+msgstr "නිශ්චිත ෆෝල්ඩරය සෑදීමට අසාර්ථක විය. කරුණාකර වලංගු ෆෝල්ඩරයක් තෝරන්න."
+
+#: __init__.py:519
+msgid "Favorite channel"
+msgstr "ප්‍රියතම නාලිකාව"
+
+#: channel_core.py:1063
+msgid "Fetched {count} items total."
+msgstr "මුළු අයිතම {count} ක් ලබා ගන්නා ලදී."
+
+#: __init__.py:688
+msgid "Fetching channel information..."
+msgstr "නාලිකා තොරතුරු ලබා ගනිමින්..."
+
+#: channel_core.py:1108
+msgid "Fetching channel items..."
+msgstr "නාලිකා අයිතම ලබා ගනිමින්..."
+
+#: channel_core.py:955
+msgid "Fetching channel videos..."
+msgstr "නාලිකා වීඩියෝ ලබා ගනිමින්..."
+
+#: Trim.py:151
+#: channel_dialogs.py:162
+#: search.py:669
+msgid "File Format"
+msgstr "ගොනු ආකෘතිය"
+
+#: Download_core.py:1072
+msgid "File already exists. Skipping download."
+msgstr "ගොනුව දැනටමත් පවතී. බාගත කිරීම මඟ හරිනු ලැබේ."
+
+#: Download_core.py:923
+msgid "File exists"
+msgstr "ගොනුව පවතී"
+
+#: Youtube_settings.py:253
+msgid "Force I&Pv4"
+msgstr "I&Pv4 බල කරන්න"
+
+#: Youtube_settings.py:258
+msgid "Force I&Pv6"
+msgstr "I&Pv6 බල කරන්න"
+
+#: download_list.py:68
+msgid "Format"
+msgstr "ආකෘතිය"
+
+#: Download_core.py:465
+msgid ""
+"Found {count} interrupted downloads\n"
+"Resume all?\n"
+msgstr ""
+"බාධා වූ බාගත කිරීම් {count} ක් හමු විය\n"
+"සියල්ල නැවත ආරම්භ කරන්නද?\n"
+
+#: search.py:490
+msgid "Found {count} videos for '{query}'."
+msgstr "'{query}' සඳහා වීඩියෝ {count} ක් හමු විය."
+
+#: search.py:404
+msgid "Found {} videos..."
+msgstr "වීඩියෝ {} ක් හමු විය..."
+
+#: Youtube_settings.py:215
+msgid "Fragment &retries:"
+msgstr "කොටස් නැවත උත්සාහ කිරීම (&R):"
+
+#: Snapshot.py:111
+msgid "Full-size snapshot complete"
+msgstr "පූර්ණ ප්‍රමාණයේ ඡායාරූපය සූදානම්"
+
+#: Youtube_settings.py:246
+msgid "Geo bypass &country:"
+msgstr "භූගෝලීය සීමා මඟ හැරිය යුතු රට (&C):"
+
+#: channel_core.py:174
+#: search.py:142
+msgid "Go"
+msgstr "යන්න"
+
+#: channel_core.py:353
+#: search.py:200
+msgid "Go to page of {}:"
+msgstr "{} හි පිටුවට යන්න:"
+
+#: Youtube_settings.py:308
+msgid ""
+"How to get YouTube cookies:\n"
+"\n"
+"1. Install 'Get cookies.txt' extension in Chrome or Firefox\n"
+"2. Login to YouTube in your browser\n"
+"3. Click the extension icon and export cookies\n"
+"4. Save as cookies.txt and select it here\n"
+"\n"
+"Using cookies helps avoid blocks because YouTube sees you as a logged-in user.\n"
+msgstr ""
+"YouTube කුකීස් (Cookies) ලබා ගන්නා ආකාරය:\n"
+"\n"
+"1. Chrome හෝ Firefox සඳහා 'Get cookies.txt' දිගුව ස්ථාපනය කරන්න\n"
+"2. ඔබගේ බ්‍රවුසරයෙන් YouTube වෙත ලොග් වන්න\n"
+"3. දිගු අයිකනය මත ක්ලික් කර කුකීස් අපනයනය (Export) කරන්න\n"
+"4. එය cookies.txt ලෙස සුරකින්න සහ මෙහි තෝරන්න\n"
+"\n"
+"කුකීස් භාවිතා කිරීමෙන් YouTube ඔබව ලොග් වූ පරිශීලකයෙකු ලෙස හඳුනා ගන්නා බැවින් අවහිර කිරීම් මඟ හැරේ.\n"
+
+#: Youtube_settings.py:316
+msgid "How to get cookies"
+msgstr "කුකීස් ලබා ගන්නේ කෙසේද"
+
+#: Youtube_settings.py:165
+msgid "How to get cookies?"
+msgstr "කුකීස් ලබා ගන්නේ කෙසේද?"
+
+#: __init__.py:439
+msgid "Immediate download mode disabled"
+msgstr "ක්ෂණික බාගත කිරීමේ මාදිලිය අක්‍රීයයි"
+
+#: __init__.py:437
+msgid "Immediate download mode enabled"
+msgstr "ක්ෂණික බාගත කිරීමේ මාදිලිය සක්‍රීයයි"
+
+#: Trim.py:282
+msgid "Invalid URL or start time"
+msgstr "අවලංගු URL එකක් හෝ ආරම්භක වේලාවක්"
+
+#: __init__.py:443
+msgid "Invalid channel URL"
+msgstr "අවලංගු නාලිකා URL එකක්"
+
+#: __init__.py:423
+msgid "Invalid download folder"
+msgstr "අවලංගු බාගත කිරීමේ ෆෝල්ඩරයක්"
+
+#: downloadFail.py:187
+#: download_list.py:159
+msgid "Item deleted"
+msgstr "අයිතමය මකා දමන ලදී"
+
+#: channel_core.py:1385
+#: search.py:580
+msgid "Item removed."
+msgstr "අයිතමය ඉවත් කරන ලදී."
+
+#: channel_core.py:65
+msgid "Live"
+msgstr "සජීවී"
+
+#: channel_core.py:770
+msgid "Loaded {count} videos from cache."
+msgstr "Cache දත්ත වලින් වීඩියෝ {count} ක් පූරණය කරන ලදී."
+
+#: channel_core.py:488
+#: channel_core.py:939
+msgid "Loaded {count} videos from {name}."
+msgstr "{name} වෙතින් වීඩියෝ {count} ක් පූරණය කරන ලදී."
+
+#: playlist.py:225
+msgid "Loaded {count} videos."
+msgstr "වීඩියෝ {count} ක් පූරණය කරන ලදී."
+
+#: playlist.py:51
+msgid "Loading playlist videos..."
+msgstr "ධාවන ලැයිස්තුවේ වීඩියෝ පූරණය කරමින්..."
+
+#: Youtube_settings.py:77
+msgid "MP3 &quality (kbps):"
+msgstr "MP3 තත්ත්වය (kbps) (&Q):"
+
+#: channel_core.py:599
+msgid "Move Down"
+msgstr "පහළට ගෙන යන්න"
+
+#: channel_core.py:595
+msgid "Move Up"
+msgstr "ඉහළට ගෙන යන්න"
+
+#: channel_core.py:165
+#: playlist.py:78
+#: search.py:133
+msgid "NextPage"
+msgstr "මීළඟ පිටුව"
+
+#: __init__.py:340
+#: __init__.py:539
+msgid "No YouTube URL found"
+msgstr "YouTube URL එකක් හමු නොවිණි"
+
+#: channel_core.py:252
+msgid "No channel selected."
+msgstr "කිසිදු නාලිකාවක් තෝරා නැත."
+
+#: __init__.py:555
+msgid "No failed downloads"
+msgstr "අසාර්ථක බාගැනීම් කිසිවක් නැත"
+
+#: downloadFail.py:299
+msgid "No failed downloads to clear"
+msgstr "ඉවත් කිරීමට අසාර්ථක බාගැනීම් නැත"
+
+#: downloadFail.py:279
+msgid "No failed downloads to process"
+msgstr "සැකසීමට අසාර්ථක බාගැනීම් නැත"
+
+#: download_list.py:232
+msgid "No items added (all already in queue)"
+msgstr "කිසිදු අයිතමයක් එක් නොකළේය (සියල්ල දැනටමත් පෝලිමේ ඇත)"
+
+#: channel_core.py:908
+msgid "No items found for this URL."
+msgstr "මෙම URL එක සඳහා කිසිදු අයිතමයක් හමු නොවිණි."
+
+#: channel_core.py:1067
+msgid "No items found."
+msgstr "කිසිදු අයිතමයක් හමු නොවිණි."
+
+#: downloadFail.py:264
+#: download_list.py:187
+#: download_list.py:196
+msgid "No items selected"
+msgstr "කිසිදු අයිතමයක් තෝරා නැත"
+
+#: download_list.py:212
+msgid "No new items added (already in queue)"
+msgstr "නව අයිතම කිසිවක් එක් නොකළේය (දැනටමත් පෝලිමේ ඇත)"
+
+#: download_list.py:219
+msgid "No pending downloads"
+msgstr "බලාපොරොත්තුවෙන් පවතින බාගැනීම් නැත"
+
+#: download_list.py:239
+msgid "No pending downloads to clear"
+msgstr "ඉවත් කිරීමට පෝලිමේ ඇති බාගැනීම් නැත"
+
+#: search.py:487
+msgid "No results found for '{query}'."
+msgstr "'{query}' සඳහා ප්‍රතිඵල හමු නොවිණි."
+
+#: search.py:488
+msgid "No results found."
+msgstr "ප්‍රතිඵල හමු නොවිණි."
+
+#: channel_core.py:85
+msgid "No saved data for this channel."
+msgstr "මෙම නාලිකාව සඳහා සුරකින ලද දත්ත නැත."
+
+#: Download_core.py:1075
+msgid "No valid multimedia link found."
+msgstr "වලංගු බහුමාධ්‍ය සම්බන්ධකයක් හමු නොවිණි."
+
+#: channel_core.py:278
+#: playlist.py:370
+#: search.py:584
+msgid "No videos to download."
+msgstr "බාගත කිරීමට වීඩියෝ නැත."
+
+#: __init__.py:542
+msgid "Not a YouTube URL"
+msgstr "මෙය YouTube URL එකක් නොවේ"
+
+#: Download_core.py:1106
+msgid "Not a YouTube video or valid multimedia link"
+msgstr "මෙය YouTube වීඩියෝවක් හෝ වලංගු බහුමාධ්‍ය සම්බන්ධකයක් නොවේ"
+
+#: __init__.py:398
+msgid "Open context menu (single tap), download folder (double tap), Search Youtube (triple tap)"
+msgstr "Context මෙනුව (එක් වරක්), බාගත කිරීමේ ෆෝල්ඩරය (දෙවරක්), YouTube හි සොයන්න (තෙවරක්)"
+
+#: channel_core.py:1301
+msgid "Open in browser"
+msgstr "බ්‍රවුසරයෙන් විවෘත කරන්න"
+
+#: channel_core.py:272
+#: search.py:237
+msgid "Page number out of range (1-{})."
+msgstr "පිටු අංකය පරාසයෙන් පිටත වේ (1-{})."
+
+#: channel_core.py:349
+#: playlist.py:122
+#: search.py:196
+msgid "Page {}/{}"
+msgstr "පිටුව {}/{}"
+
+#: channel_core.py:591
+msgid "Pin"
+msgstr "Pin කරන්න"
+
+#: playlist.py:317
+#: search.py:529
+msgid "Play on YouTube"
+msgstr "YouTube හි ධාවනය කරන්න"
+
+#: channel_core.py:1344
+#: playlist.py:380
+msgid "Playlist download started."
+msgstr "ධාවන ලැයිස්තුව බාගත කිරීම ආරම්භ විය."
+
+#: __init__.py:711
+msgid "Playlist mode disabled"
+msgstr "ධාවන ලැයිස්තු මාදිලිය අක්‍රීයයි"
+
+#: __init__.py:711
+msgid "Playlist mode enabled"
+msgstr "ධාවන ලැයිස්තු මාදිලිය සක්‍රීයයි"
+
+#: channel_core.py:67
+msgid "Playlists"
+msgstr "ධාවන ලැයිස්තු"
+
+#: channel_dialogs.py:98
+#: channel_dialogs.py:148
+msgid "Please enter a channel URL."
+msgstr "කරුණාකර නාලිකා URL එක ඇතුළත් කරන්න."
+
+#: channel_dialogs.py:95
+#: channel_dialogs.py:145
+msgid "Please enter a channel name."
+msgstr "කරුණාකර නාලිකා නම ඇතුළත් කරන්න."
+
+#: search.py:245
+msgid "Please enter a search term."
+msgstr "කරුණාකර සෙවීමට අවශ්‍ය වචනය ඇතුළත් කරන්න."
+
+#: channel_core.py:266
+#: search.py:231
+msgid "Please enter a valid number."
+msgstr "කරුණාකර වලංගු අංකයක් ඇතුළත් කරන්න."
+
+#: channel_core.py:66
+msgid "Podcasts"
+msgstr "පොඩ්කාස්ට්"
+
+#: Trim.py:146
+msgid "Preview start"
+msgstr "පූර්ව දර්ශනය ආරම්භ කරන්න"
+
+#: channel_core.py:161
+#: playlist.py:74
+#: search.py:129
+msgid "PreviousPage"
+msgstr "පෙර පිටුව"
+
+#: Snapshot.py:83
+msgid "Processing snapshot..."
+msgstr "ඡායාරූපය සකසමින්..."
+
+#: Youtube_settings.py:234
+msgid "Proxy &URL:"
+msgstr "Proxy URL (&U):"
+
+#: channel_core.py:142
+msgid "Ready"
+msgstr "සූදානම්"
+
+#: channel_core.py:1320
+#: search.py:542
+msgid "Remove from list"
+msgstr "ලැයිස්තුවෙන් ඉවත් කරන්න"
+
+#: Youtube_settings.py:269
+msgid "Reset to &safe settings (recommended if blocked)"
+msgstr "ආරක්ෂිත සැකසීම් වෙත නැවත සකසන්න (අවහිර වී ඇත්නම් නිර්දේශිතයි) (&S)"
+
+#: Youtube_settings.py:335
+msgid "Reset to safe settings. Remember to use cookies for best results."
+msgstr "ආරක්ෂිත සැකසීම් වෙත සකසන ලදී. හොඳම ප්‍රතිඵල සඳහා කුකීස් භාවිතා කිරීමට අමතක නොකරන්න."
+
+#: Download_core.py:466
+msgid "Resume downloads"
+msgstr "බාගත කිරීම් නැවත ආරම්භ කරන්න"
+
+#: Youtube_settings.py:124
+msgid "Resume interrupted downloads on restart"
+msgstr "නැවත පණගැන්වීමේදී බාධා වූ බාගත කිරීම් නැවත අරඹන්න"
+
+#: search.py:95
+msgid "Search"
+msgstr "සොයන්න"
+
+#: search.py:59
+msgid "Search YouTube"
+msgstr "YouTube හි සොයන්න"
+
+#: search.py:92
+msgid "Search YouTube:"
+msgstr "YouTube හි සොයන්න:"
+
+#: __init__.py:527
+msgid "Search Youtube"
+msgstr "YouTube හි සොයන්න"
+
+#: search.py:252
+msgid "Search already in progress."
+msgstr "සෙවුම් ක්‍රියාවලිය දැනටමත් සිදුවෙමින් පවතී."
+
+#: search.py:492
+msgid "Search completed."
+msgstr "සෙවුම අවසන්."
+
+#: search.py:501
+msgid "Search failed."
+msgstr "සෙවුම අසාර්ථක විය."
+
+#: search.py:500
+msgid "Search failed: {error}"
+msgstr "සෙවුම අසාර්ථක විය: {error}"
+
+#: channel_core.py:135
+msgid "Search:"
+msgstr "සොයන්න:"
+
+#: search.py:282
+msgid "Searching..."
+msgstr "සොයමින් පවතී..."
+
+#: Youtube_settings.py:45
+msgid "Select a directory"
+msgstr "ෆෝල්ඩරයක් තෝරන්න"
+
+#: download_list.py:210
+msgid "Selected items added to download queue"
+msgstr "තෝරාගත් අයිතම බාගත කිරීමේ පෝලිමට එක් කරන ලදී"
+
+#: downloadFail.py:274
+#: download_list.py:187
+msgid "Selected items deleted"
+msgstr "තෝරාගත් අයිතම මකා දමන ලදී"
+
+#: __init__.py:547
+#: channel_core.py:1333
+#: playlist.py:352
+#: search.py:553
+msgid "Short URL copied to clipboard"
+msgstr "කෙටි URL එක Clipboard වෙත පිටපත් කරන ලදී"
+
+#: channel_core.py:64
+msgid "Shorts"
+msgstr "Shorts"
+
+#: channel_core.py:153
+#: playlist.py:66
+#: search.py:120
+msgid "Show items:"
+msgstr "අයිතම පෙන්වන්න:"
+
+#: Youtube_settings.py:223
+msgid "Skip &unavailable fragments"
+msgstr "ලබා ගත නොහැකි කොටස් මඟ හරින්න (&U)"
+
+#: Youtube_settings.py:118
+msgid "Skip existing files"
+msgstr "දැනටමත් පවතින ගොනු මඟ හරින්න"
+
+#: __init__.py:522
+msgid "Snapshot"
+msgstr "Snapshot (ඡායාරූපය)"
+
+#: Snapshot.py:54
+msgid "Snapshot file already exists"
+msgstr "Snapshot ගොනුව දැනටමත් පවතී"
+
+#: Trim.py:174
+#: channel_dialogs.py:181
+#: search.py:680
+msgid "Start download"
+msgstr "බාගත කිරීම ආරම්භ කරන්න"
+
+#: Youtube_settings.py:60
+msgid "Start download immediately (NVDA+Y)"
+msgstr "වහාම බාගත කිරීම ආරම්භ කරන්න (NVDA+Y)"
+
+#: Trim.py:316
+msgid "Start time must be less than end time"
+msgstr "ආරම්භක වේලාව අවසාන වේලාවට වඩා අඩු විය යුතුය"
+
+#: Trim.py:139
+msgid "Start time:"
+msgstr "ආරම්භක වේලාව:"
+
+#: __init__.py:365
+msgid "Starting download: {format} - {title}"
+msgstr "බාගත කිරීම ආරම්භ වෙමින්: {format} - {title}"
+
+#: Download_core.py:791
+msgid "Starting next download from queue: {title}"
+msgstr "පෝලිමේ ඇති මීළඟ බාගැනීම ආරම්භ වෙමින්: {title}"
+
+#: channel_dialogs.py:15
+msgid "Title"
+msgstr "මාතෘකාව"
+
+#: channel_core.py:1374
+#: playlist.py:342
+msgid "Title correction completed and locked."
+msgstr "මාතෘකාව නිවැරදි කිරීම අවසන් කර අගුළු දමන ලදී."
+
+#: channel_core.py:538
+msgid "Title correction completed for {count} videos."
+msgstr "වීඩියෝ {count} ක් සඳහා මාතෘකා නිවැරදි කිරීම අවසන්."
+
+#: channel_core.py:1376
+#: playlist.py:344
+msgid "Title correction failed."
+msgstr "මාතෘකාව නිවැරදි කිරීම අසාර්ථක විය."
+
+#: __init__.py:431
+msgid "Toggle immediate download mode"
+msgstr "ක්ෂණික බාගත කිරීමේ මාදිලිය මාරු කරන්න"
+
+#: __init__.py:706
+msgid "Toggle playlist mode"
+msgstr "ධාවන ලැයිස්තු මාදිලිය මාරු කරන්න"
+
+#: __init__.py:525
+msgid "Trim setting"
+msgstr "කප්පාදු සැකසීම්"
+
+#: Trim.py:332
+msgid "Trimming and downloading {format}..."
+msgstr "කප්පාදු කරමින් සහ {format} බාගත කරමින්..."
+
+#: Trim.py:132
+#: downloadFail.py:69
+msgid "URL"
+msgstr "URL"
+
+#: channel_core.py:1336
+msgid "URL copied to clipboard"
+msgstr "URL එක Clipboard වෙත පිටපත් කරන ලදී"
+
+#: Trim.py:307
+msgid "URL is required"
+msgstr "URL එක අවශ්‍ය වේ"
+
+#: Download_core.py:903
+msgid "URL not found"
+msgstr "URL එක හමු නොවිණි"
+
+#: Download_core.py:672
+#: __init__.py:359
+#: downloadFail.py:110
+#: downloadFail.py:113
+#: downloadFail.py:114
+#: download_list.py:103
+msgid "Unknown"
+msgstr "නොදනී"
+
+#: channel_core.py:591
+msgid "Unpin"
+msgstr "පින් කිරීමෙන් ඉවත් කරන්න"
+
+#: Youtube_settings.py:369
+#: __init__.py:287
+msgid "Update failed: {str}"
+msgstr "යාවත්කාලීන කිරීම අසාර්ථක විය: {str}"
+
+#: Youtube_settings.py:290
+msgid "Update status: Idle"
+msgstr "යාවත්කාලීන තත්ත්වය: ක්‍රියාවක් නැත"
+
+#: Youtube_settings.py:368
+msgid "Update status: Update failed: {str}"
+msgstr "යාවත්කාලීන තත්ත්වය: අසාර්ථක විය: {str}"
+
+#: Youtube_settings.py:364
+msgid "Update status: Update successful"
+msgstr "යාවත්කාලීන තත්ත්වය: සාර්ථකයි"
+
+#: Youtube_settings.py:354
+msgid "Update status: Updating..."
+msgstr "යාවත්කාලීන තත්ත්වය: යාවත්කාලීන වෙමින්..."
+
+#: Youtube_settings.py:286
+msgid "Update yt-dlp now"
+msgstr "yt-dlp දැන් යාවත්කාලීන කරන්න"
+
+#: Youtube_settings.py:355
+#: __init__.py:275
+msgid "Updating yt-dlp..."
+msgstr "yt-dlp යාවත්කාලීන වෙමින් පවතී..."
+
+#: Youtube_settings.py:150
+msgid "Use &cookies (recommended to avoid block)"
+msgstr "කුකීස් (Cookies) භාවිතා කරන්න (අවහිර කිරීම් වැළැක්වීමට නිර්දේශිතයි) (&C)"
+
+#: Youtube_settings.py:179
+msgid "Use &custom user agent"
+msgstr "Custom User Agent භාවිතා කරන්න (&C)"
+
+#: Youtube_settings.py:229
+msgid "Use &proxy"
+msgstr "ප්‍රොක්සි (Proxy) භාවිතා කරන්න (&P)"
+
+#: Youtube_settings.py:92
+msgid "Use download section"
+msgstr "බාගත කිරීමේ කොටස භාවිතා කරන්න"
+
+#: Youtube_settings.py:184
+msgid "User &agent:"
+msgstr "User Agent (&A):"
+
+#: downloadFail.py:67
+#: download_list.py:67
+#: search.py:35
+msgid "Video Title"
+msgstr "වීඩියෝ මාතෘකාව"
+
+#: Trim.py:144
+msgid "Video duration: unknown; Overall period: 0 seconds"
+msgstr "වීඩියෝ කාලසීමාව: නොදනී; මුළු කාලය: තත්පර 0"
+
+#: Trim.py:255
+msgid "Video duration: {duration}; Overall period: {period} seconds"
+msgstr "වීඩියෝ කාලසීමාව: {duration}; මුළු කාලය: තත්පර {period}"
+
+#: channel_core.py:63
+msgid "Videos"
+msgstr "වීඩියෝ"
+
+#: playlist.py:23
+msgid "Videos in {title}"
+msgstr "{title} හි ඇති වීඩියෝ"
+
+#: __init__.py:592
+#: __init__.py:606
+msgid "You must be on a YouTube page to use this feature"
+msgstr "මෙම අංගය භාවිතා කිරීමට ඔබ YouTube පිටුවක සිටිය යුතුය"
+
+#: channel_core.py:30
+msgid "Your favorite channel"
+msgstr "ඔබේ ප්‍රියතම නාලිකාව"
+
+#: Trim.py:254
+msgid "invalid"
+msgstr "අවලංගුයි"
+
+#: Trim.py:250
+msgid "invalid (negative)"
+msgstr "අවලංගුයි (සෘණ අගයක්)"
+
+#: search.py:53
+msgid "loading..."
+msgstr "පූරණය වෙමින්..."
+
+#: Trim.py:244
+msgid "unknown"
+msgstr "නොදනී"
+
+#: Youtube_settings.py:276
+msgid "yt-dlp Update"
+msgstr "yt-dlp යාවත්කාලීන කිරීම"
+
+#: Youtube_settings.py:365
+#: __init__.py:284
+msgid "yt-dlp updated successfully"
+msgstr "yt-dlp සාර්ථකව යාවත්කාලීන විය"
+
+#: Download_core.py:946
+msgid "yt-dlp.exe missing"
+msgstr "yt-dlp.exe අස්ථානගත වී ඇත"
+
+#: channel_core.py:816
+#: search.py:256
+msgid "yt-dlp.exe not found."
+msgstr "yt-dlp.exe හමු නොවිණි."
+
+#: __init__.py:725
+msgid "{quality} kbps"
+msgstr "{quality} kbps"
+
+#: channel_core.py:350
+#: playlist.py:123
+#: search.py:197
+msgid "{}, showing {} of {} videos"
+msgstr "{}, වීඩියෝ {} කින් {} ක් පෙන්වයි"

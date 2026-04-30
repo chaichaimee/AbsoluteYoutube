@@ -1,0 +1,1336 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AbsoluteYoutube 2026.5.1\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-04-30 14:14+0700\n"
+"PO-Revision-Date: 2026-04-30 20:55+0700\n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: Turkmen\n"
+"Language: tk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: Youtube_settings.py:66
+msgid "&Beep while converting"
+msgstr "Konwertirlenen wagty &biper"
+
+#: Youtube_settings.py:44
+msgid "&Browse..."
+msgstr "&Gözle..."
+
+#: channel_dialogs.py:69
+#: channel_dialogs.py:133
+#: downloadFail.py:92
+msgid "&Cancel"
+msgstr "&Yatyr"
+
+#: downloadFail.py:84
+#: download_list.py:85
+msgid "&Clear All"
+msgstr "Ählisini &arassala"
+
+#: channel_core.py:189
+#: playlist.py:89
+#: search.py:157
+msgid "&Close"
+msgstr "&Yap"
+
+#: downloadFail.py:76
+#: download_list.py:81
+msgid "&Delete Selected"
+msgstr "Saýlanany &poz"
+
+#: channel_core.py:181
+#: downloadFail.py:80
+#: download_list.py:81
+#: search.py:149
+msgid "&Download All"
+msgstr "Ählisini &ýükle"
+
+#: playlist.py:85
+msgid "&Download All Videos in Playlist"
+msgstr "Pleýlistdäki ähli wideolary &ýükle"
+
+#: download_list.py:77
+msgid "&Download Selected"
+msgstr "Saýlanany &ýükle"
+
+#: search.py:153
+msgid "&Download folder"
+msgstr "Ýüklemeler &papgasy"
+
+#: Youtube_settings.py:241
+msgid "&Geo bypass"
+msgstr "&Geo bypass"
+
+#: Youtube_settings.py:264
+msgid "&Mark as watched"
+msgstr "Görüldi diýip &belle"
+
+#: Youtube_settings.py:135
+msgid "&Max concurrent downloads (1-4):"
+msgstr "&Maksimum birwagtlyk ýüklemeler (1-4):"
+
+#: Youtube_settings.py:97
+msgid "&Number of connections:"
+msgstr "Baglanyşyk &sany:"
+
+#: channel_dialogs.py:67
+#: channel_dialogs.py:131
+#: downloadFail.py:88
+#: download_list.py:89
+msgid "&OK"
+msgstr "&Bolýar"
+
+#: Youtube_settings.py:207
+msgid "&Retry count:"
+msgstr "&Gaýtalamak sany:"
+
+#: Youtube_settings.py:72
+msgid "&Say download complete"
+msgstr "Ýükleme tamamlananda &aýt"
+
+#: Youtube_settings.py:199
+msgid "&Sleep between requests (seconds):"
+msgstr "Soraaglaryň arasyndaky &arakesme (sekunt):"
+
+#: channel_core.py:185
+msgid "&Source"
+msgstr "&Çeşme"
+
+#: Youtube_settings.py:191
+msgid "&Throttle rate (KB/s, 0=unlimited):"
+msgstr "&Tizlik çäklendirmesi (KB/s, 0=çäksiz):"
+
+#: channel_core.py:1100
+msgid "A channel with this name already exists. Overwrite?"
+msgstr "Bu atly kanal eýýäm bar. Üstüne ýazmalymy?"
+
+#: __init__.py:256
+msgid "A new version of yt-dlp is available: {latest}. Current: {current}. Please update in settings."
+msgstr "yt-dlp-iň täze wersiýasy bar: {latest}. Häzirki: {current}. Sazlamalardan täzeläň."
+
+#: Download_core.py:32
+#: Youtube_settings.py:21
+#: __init__.py:44
+msgid "Absolute YouTube"
+msgstr "Absolute YouTube"
+
+#: Trim.py:64
+msgid "Absolute YouTube Trim"
+msgstr "Absolute YouTube Trim"
+
+#: __init__.py:529
+msgid "Absolute YouTube setting"
+msgstr "Absolute YouTube sazlamalary"
+
+#: menu.py:18
+msgid "Absolute Youtube"
+msgstr "Absolute Youtube"
+
+#: channel_dialogs.py:41
+msgid "Add New Channel"
+msgstr "Täze kanal goş"
+
+#: channel_core.py:112
+msgid "Add new channel"
+msgstr "Täze kanal goş"
+
+#: __init__.py:184
+msgid "Add-on initialization failed: missing pending file path function. Please restart NVDA."
+msgstr "Goşulmanyň işe girizilmegi şowsuz: faýl ýoly tapylmady. NVDA-ny täzeden başladyň."
+
+#: download_list.py:24
+msgid "Add-on internal error: missing components. Please restart NVDA."
+msgstr "Goşulmanyň içki ýalňyşlygy: komponentler ýetmezçilik edýär. NVDA-ny täzeden başladyň."
+
+#: download_list.py:69
+msgid "Added Time"
+msgstr "Goşulan wagty"
+
+#: __init__.py:376
+msgid "Added to download list: {format} - {title}"
+msgstr "Ýükleme sanawyna goşuldy: {format} - {title}"
+
+#: __init__.py:370
+msgid "Added to download queue: {format} - {title}"
+msgstr "Ýükleme nobatyna goşuldy: {format} - {title}"
+
+#: download_list.py:169
+msgid "Added to download queue: {title}"
+msgstr "Ýükleme nobatyna goşuldy: {title}"
+
+#: Download_core.py:1097
+msgid "Adding link as {format} to download queue"
+msgstr "Baglanyşyk {format} hökmünde nobata goşulýar"
+
+#: channel_core.py:297
+#: search.py:591
+msgid "Adding {count} videos to download queue..."
+msgstr "{count} wideony ýükleme nobatyna goşýarys..."
+
+#: channel_core.py:1358
+#: playlist.py:364
+#: search.py:572
+msgid "Adding {title} to download queue."
+msgstr "{title} wideony ýükleme nobatyna goşýarys."
+
+#: search.py:123
+#: search.py:204
+msgid "All"
+msgstr "Ählisi"
+
+#: downloadFail.py:294
+msgid "All downloads started"
+msgstr "Ähli ýüklemeler başlady"
+
+#: downloadFail.py:305
+msgid "All failed downloads cleared"
+msgstr "Ähli şowsuz ýüklemeler arassalandy"
+
+#: download_list.py:230
+msgid "All items added to download queue"
+msgstr "Ähli elementler ýükleme nobatyna goşuldy"
+
+#: download_list.py:249
+msgid "All pending downloads cleared"
+msgstr "Ähli garaşylýan ýüklemeler arassalandy"
+
+#: __init__.py:378
+msgid "Already in download list"
+msgstr "Eýýäm ýükleme sanawynda bar"
+
+#: __init__.py:372
+#: download_list.py:171
+msgid "Already in download queue"
+msgstr "Eýýäm ýükleme nobatynda bar"
+
+#: Snapshot.py:104
+msgid "An unexpected error occurred."
+msgstr "Garaşylmadyk ýalňyşlyk ýüze çykdy."
+
+#: Youtube_settings.py:144
+msgid "Anti-blocking settings"
+msgstr "Bloklamaga garşy sazlamalar"
+
+#: channel_core.py:731
+msgid "Are you sure you want to delete saved data for '{name}'?"
+msgstr "'{name}' üçin ýazgy edilen maglumatlary pozmak isleýärsiňizmi?"
+
+#: Trim.py:164
+#: channel_dialogs.py:172
+msgid "Audio Quality"
+msgstr "Ses hili"
+
+#: Trim.py:177
+#: channel_dialogs.py:183
+#: search.py:681
+msgid "Cancel"
+msgstr "Yatyr"
+
+#: channel_core.py:292
+msgid "Cannot create download folder."
+msgstr "Ýükleme papgasyny döredip bolanok."
+
+#: Download_core.py:352
+#: Download_core.py:890
+msgid "Cannot create folder"
+msgstr "Papgany döredip bolanok"
+
+#: search.py:563
+msgid "Cannot determine URL for this video."
+msgstr "Bu wideonyň URL salgysyny kesgitläp bolanok."
+
+#: search.py:610
+msgid "Cannot open download folder."
+msgstr "Ýükleme papgasyny açyp bolanok."
+
+#: channel_core.py:320
+msgid "Cannot open source folder."
+msgstr "Çeşme papgasyny açyp bolanok."
+
+#: Snapshot.py:58
+msgid "Capturing full-size snapshot..."
+msgstr "Doly ölçegli surata düşürilýär..."
+
+#: channel_core.py:713
+msgid "Channel URL updated."
+msgstr "Kanal URL-i täzelendi."
+
+#: channel_dialogs.py:58
+#: channel_dialogs.py:124
+msgid "Channel URL:"
+msgstr "Kanal URL:"
+
+#: channel_core.py:906
+msgid "Channel added successfully."
+msgstr "Kanal üstünlikli goşuldy."
+
+#: channel_core.py:743
+#: channel_core.py:746
+msgid "Channel deleted."
+msgstr "Kanal pozuldy."
+
+#: channel_dialogs.py:51
+#: channel_dialogs.py:117
+msgid "Channel name:"
+msgstr "Kanal ady:"
+
+#: channel_core.py:633
+msgid "Channel pinned."
+msgstr "Kanal berkidildi."
+
+#: channel_core.py:1121
+msgid "Channel saved."
+msgstr "Kanal ýazgy edildi."
+
+#: channel_core.py:630
+msgid "Channel unpinned."
+msgstr "Kanal berkidilmekden aýryldy."
+
+#: channel_core.py:700
+msgid "Channel updated."
+msgstr "Kanal täzelendi."
+
+#: channel_core.py:100
+msgid "Channel:"
+msgstr "Kanal:"
+
+#: channel_core.py:955
+msgid "Checking for new videos..."
+msgstr "Täze wideolar barlandyrylýar..."
+
+#: Download_core.py:601
+msgid "Checking interrupted downloads..."
+msgstr "Bökdelip galan ýüklemeler barlandyrylýar..."
+
+#: downloadFail.py:162
+#: download_list.py:131
+msgid "Clear all"
+msgstr "Ählisini arassala"
+
+#: channel_core.py:732
+msgid "Confirm Delete"
+msgstr "Pozmagy tassykla"
+
+#: playlist.py:374
+msgid "Confirm Download"
+msgstr "Ýüklemegi tassykla"
+
+#: channel_core.py:1101
+msgid "Confirm Overwrite"
+msgstr "Üstüne ýazmagy tassykla"
+
+#: channel_core.py:125
+msgid "Content type:"
+msgstr "Mazmunyň görnüşi:"
+
+#: Youtube_settings.py:156
+msgid "Cookies &file:"
+msgstr "Kuki &faýly:"
+
+#: channel_core.py:1298
+msgid "Copy URL"
+msgstr "URL göçür"
+
+#: __init__.py:509
+#: playlist.py:314
+#: search.py:526
+msgid "Copy video Shorten URL"
+msgstr "Wideonyň gysga URL-ni göçür"
+
+#: channel_core.py:1308
+#: playlist.py:320
+msgid "Correct title now"
+msgstr "Adyny häzir düzet"
+
+#: channel_core.py:1366
+#: playlist.py:337
+msgid "Correcting title for selected video..."
+msgstr "Saýlanan wideonyň ady düzedilýär..."
+
+#: playlist.py:354
+#: search.py:555
+msgid "Could not create short URL"
+msgstr "Gysga URL döredip bolmady"
+
+#: __init__.py:549
+msgid "Could not create shortened URL"
+msgstr "Gysgaldylan URL döredip bolmady"
+
+#: Trim.py:302
+msgid "Could not open preview URL"
+msgstr "Deslapky görnüş URL-ini açyp bolmady"
+
+#: __init__.py:713
+msgid "Cycle MP3 quality settings"
+msgstr "MP3 hili sazlamalaryny gezekleşdir"
+
+#: channel_core.py:607
+#: downloadFail.py:146
+#: download_list.py:119
+msgid "Delete"
+msgstr "Poz"
+
+#: downloadFail.py:153
+#: download_list.py:124
+msgid "Delete selected"
+msgstr "Saýlanany poz"
+
+#: download_list.py:121
+msgid "Download"
+msgstr "Ýükle"
+
+#: channel_dialogs.py:155
+#: search.py:663
+msgid "Download All Videos"
+msgstr "Ähli wideolary ýükle"
+
+#: downloadFail.py:16
+msgid "Download Fail Manager - Absolute YouTube"
+msgstr "Şowsuz ýüklemeler dolandyryjysy - Absolute YouTube"
+
+#: download_list.py:14
+msgid "Download List Manager - Absolute YouTube"
+msgstr "Ýükleme sanawy dolandyryjysy - Absolute YouTube"
+
+#: channel_core.py:1311
+#: playlist.py:323
+#: search.py:532
+msgid "Download MP3"
+msgstr "MP3 ýükle"
+
+#: channel_core.py:1314
+#: playlist.py:326
+#: search.py:535
+msgid "Download MP4"
+msgstr "MP4 ýükle"
+
+#: channel_core.py:1317
+#: playlist.py:329
+#: search.py:538
+msgid "Download WAV"
+msgstr "WAV ýükle"
+
+#: downloadFail.py:159
+#: download_list.py:129
+msgid "Download all"
+msgstr "Ählisini ýükle"
+
+#: playlist.py:373
+msgid "Download all {count} videos in this playlist?"
+msgstr "Bu pleýlistdäki ähli {count} wideony ýüklemelimi?"
+
+#: Download_core.py:840
+msgid "Download complete"
+msgstr "Ýükleme tamamlandy"
+
+#: channel_core.py:1305
+msgid "Download entire playlist"
+msgstr "Ähli pleýlisti ýükle"
+
+#: __init__.py:509
+msgid "Download fail manager"
+msgstr "Şowsuz ýüklemeler dolandyryjysy"
+
+#: __init__.py:517
+msgid "Download fail manager (no failed)"
+msgstr "Şowsuz ýüklemeler dolandyryjysy (şowsuz ýok)"
+
+#: Download_core.py:846
+msgid "Download failed"
+msgstr "Ýükleme şowsuz boldy"
+
+#: Download_core.py:872
+msgid "Download failed due to an error"
+msgstr "Ýalňyşlyk sebäpli ýükleme şowsuz boldy"
+
+#: Download_core.py:859
+msgid "Download failed due to timeout"
+msgstr "Wagt çäklenmesi sebäpli ýükleme şowsuz boldy"
+
+#: downloadFail.py:149
+msgid "Download file"
+msgstr "Faýly ýükle"
+
+#: search.py:612
+msgid "Download folder does not exist."
+msgstr "Ýükleme papgasy ýok."
+
+#: channel_core.py:1346
+#: channel_core.py:1360
+#: playlist.py:366
+#: playlist.py:382
+#: search.py:574
+msgid "Download function not available."
+msgstr "Ýükleme funksiýasy elýeterli däl."
+
+#: __init__.py:511
+msgid "Download list manager"
+msgstr "Ýükleme sanawy dolandyryjysy"
+
+#: __init__.py:385
+msgid "Download or queue video (single tap MP3, double tap MP4, triple tap WAV)"
+msgstr "Wideony ýükle ýa-da nobata goý (bir gezek basyş MP3, iki gezek MP4, üç gezek WAV)"
+
+#: download_list.py:126
+msgid "Download selected"
+msgstr "Saýlanany ýükle"
+
+#: downloadFail.py:249
+msgid "Download started for: {title}"
+msgstr "{title} üçin ýükleme başlady"
+
+#: Snapshot.py:63
+msgid "Downloading thumbnail..."
+msgstr "Thumbnail ýüklenýär..."
+
+#: channel_core.py:310
+#: search.py:600
+msgid "Downloads started."
+msgstr "Ýüklemeler başlady."
+
+#: downloadFail.py:68
+#: search.py:36
+msgid "Duration"
+msgstr "Dowamlylygy"
+
+#: channel_dialogs.py:105
+msgid "Edit Channel"
+msgstr "Kanaly redaktirle"
+
+#: channel_core.py:116
+msgid "Edit channel"
+msgstr "Kanaly redaktirle"
+
+#: channel_core.py:604
+msgid "Edit channel..."
+msgstr "Kanaly redaktirle..."
+
+#: Youtube_settings.py:130
+msgid "Enable &logging"
+msgstr "&Log ýazmagy işjeňleşdir"
+
+#: Youtube_settings.py:112
+msgid "Enable &playlist mode by default"
+msgstr "&Pleýlist tertibini deslapky hökmünde ulan"
+
+#: Trim.py:140
+msgid "End time:"
+msgstr "Gutarýan wagty:"
+
+#: search.py:104
+msgid "Enter a search query."
+msgstr "Gözleg sözüni giriziň."
+
+#: download_list.py:25
+msgid "Error"
+msgstr "Ýalňyşlyk"
+
+#: Snapshot.py:42
+msgid "Error creating download folder"
+msgstr "Ýükleme papgasyny döretmekde ýalňyşlyk"
+
+#: channel_core.py:749
+msgid "Error deleting channel."
+msgstr "Kanaly pozmakda ýalňyşlyk."
+
+#: __init__.py:271
+msgid "Error during auto-update of yt-dlp: {str}"
+msgstr "yt-dlp awtomatiki täzelenýän wagty ýalňyşlyk ýüze çykdy: {str}"
+
+#: channel_core.py:912
+msgid "Error fetching channel: {str}"
+msgstr "Kanal maglumatlaryny alanyňda ýalňyşlyk: {str}"
+
+#: __init__.py:178
+#: downloadFail.py:44
+msgid "Error importing core functions: {str}"
+msgstr "Esasy funksiýalary import etmekde ýalňyşlyk: {str}"
+
+#: __init__.py:659
+msgid "Error importing settings panel: {str}"
+msgstr "Sazlamalar panelini import etmekde ýalňyşlyk: {str}"
+
+#: __init__.py:202
+msgid "Error initializing AbsoluteYoutube: {str}"
+msgstr "AbsoluteYoutube başladylanda ýalňyşlyk: {str}"
+
+#: channel_core.py:774
+msgid "Error loading cache."
+msgstr "Keşi ýüklemekde ýalňyşlyk."
+
+#: channel_core.py:503
+#: channel_core.py:675
+msgid "Error loading channel data."
+msgstr "Kanal maglumatlaryny ýüklemekde ýalňyşlyk."
+
+#: __init__.py:455
+msgid "Error opening channel dialog"
+msgstr "Kanal dialogyny açmakda ýalňyşlyk"
+
+#: __init__.py:701
+msgid "Error opening channel/playlist list: {str}"
+msgstr "Kanal/pleýlist sanawyny açmakda ýalňyşlyk: {str}"
+
+#: __init__.py:569
+#: __init__.py:573
+msgid "Error opening download fail dialog: {str}"
+msgstr "Şowsuz ýüklemeler dialogyny açmakda ýalňyşlyk: {str}"
+
+#: __init__.py:494
+msgid "Error opening download list dialog: {str}"
+msgstr "Ýükleme sanawy dialogyny açmakda ýalňyşlyk: {str}"
+
+#: __init__.py:421
+msgid "Error opening folder"
+msgstr "Papgany açmakda ýalňyşlyk"
+
+#: channel_core.py:1280
+msgid "Error opening playlist."
+msgstr "Pleýlisti açmakda ýalňyşlyk."
+
+#: __init__.py:646
+msgid "Error opening search dialog: {str}"
+msgstr "Gözleg dialogyny açmakda ýalňyşlyk: {str}"
+
+#: __init__.py:662
+msgid "Error opening settings dialog: {str}"
+msgstr "Sazlamalar dialogyny açmakda ýalňyşlyk: {str}"
+
+#: __init__.py:627
+msgid "Error opening trim dialog: {str}"
+msgstr "Kesmek dialogyny açmakda ýalňyşlyk: {str}"
+
+#: Download_core.py:942
+msgid "Error processing URL"
+msgstr "URL işlenilende ýalňyşlyk"
+
+#: downloadFail.py:253
+msgid "Error starting download"
+msgstr "Ýükleme başladylanda ýalňyşlyk"
+
+#: channel_core.py:716
+msgid "Error updating channel URL."
+msgstr "Kanal URL-ini täzelemekde ýalňyşlyk."
+
+#: channel_core.py:703
+msgid "Error updating channel."
+msgstr "Kanaly täzelemekde ýalňyşlyk."
+
+#: __init__.py:499
+msgid "Error: Download list module not available"
+msgstr "Ýalňyşlyk: Ýükleme sanawy moduly elýeterli däl"
+
+#: __init__.py:559
+msgid "Error: DownloadFail module not available"
+msgstr "Ýalňyşlyk: Şowsuz ýüklemeler moduly elýeterli däl"
+
+#: Snapshot.py:86
+msgid "Error: Failed to capture snapshot."
+msgstr "Ýalňyşlyk: Surata düşürip bolmady."
+
+#: Snapshot.py:93
+msgid "Error: No snapshot file created."
+msgstr "Ýalňyşlyk: Surat faýly döredilmedi."
+
+#: __init__.py:651
+msgid "Error: Search module not available"
+msgstr "Ýalňyşlyk: Gözleg moduly elýeterli däl"
+
+#: __init__.py:600
+msgid "Error: Snapshot module not available"
+msgstr "Ýalňyşlyk: Snapshot moduly elýeterli däl"
+
+#: __init__.py:610
+msgid "Error: Trim module not available"
+msgstr "Ýalňyşlyk: Kesmek moduly elýeterli däl"
+
+#: Download_core.py:1067
+#: Trim.py:329
+msgid "Error: ffmpeg.exe not found."
+msgstr "Ýalňyşlyk: ffmpeg.exe tapylmady."
+
+#: Trim.py:326
+msgid "Error: yt-dlp.exe not found."
+msgstr "Ýalňyşlyk: yt-dlp.exe tapylmady."
+
+#: Youtube_settings.py:382
+msgid "Failed to create the specified folder. Please select a valid folder."
+msgstr "Görkezilen papgany döredip bolmady. Dogry papga saýlaň."
+
+#: __init__.py:519
+msgid "Favorite channel"
+msgstr "Halanýan kanal"
+
+#: channel_core.py:1063
+msgid "Fetched {count} items total."
+msgstr "Jemi {count} element alyndy."
+
+#: __init__.py:688
+msgid "Fetching channel information..."
+msgstr "Kanal maglumatlary alynýar..."
+
+#: channel_core.py:1108
+msgid "Fetching channel items..."
+msgstr "Kanal elementleri alynýar..."
+
+#: channel_core.py:955
+msgid "Fetching channel videos..."
+msgstr "Kanal wideolary alynýar..."
+
+#: Trim.py:151
+#: channel_dialogs.py:162
+#: search.py:669
+msgid "File Format"
+msgstr "Faýl formaty"
+
+#: Download_core.py:1072
+msgid "File already exists. Skipping download."
+msgstr "Faýl eýýäm bar. Ýükleme goýberilýär."
+
+#: Download_core.py:923
+msgid "File exists"
+msgstr "Faýl bar"
+
+#: Youtube_settings.py:253
+msgid "Force I&Pv4"
+msgstr "I&Pv4 mejbur et"
+
+#: Youtube_settings.py:258
+msgid "Force I&Pv6"
+msgstr "I&Pv6 mejbur et"
+
+#: download_list.py:68
+msgid "Format"
+msgstr "Format"
+
+#: Download_core.py:465
+msgid ""
+"Found {count} interrupted downloads\n"
+"Resume all?\n"
+msgstr ""
+"{count} sany bökdelip galan ýükleme tapyldy\n"
+"Ählisini dowam etmelimi?\n"
+
+#: search.py:490
+msgid "Found {count} videos for '{query}'."
+msgstr "'{query}' üçin {count} wideo tapyldy."
+
+#: search.py:404
+msgid "Found {} videos..."
+msgstr "{} wideo tapyldy..."
+
+#: Youtube_settings.py:215
+msgid "Fragment &retries:"
+msgstr "Fragment &gaýtalamalary:"
+
+#: Snapshot.py:111
+msgid "Full-size snapshot complete"
+msgstr "Doly ölçegli surat tamamlandy"
+
+#: Youtube_settings.py:246
+msgid "Geo bypass &country:"
+msgstr "Geo bypass &ýurdy:"
+
+#: channel_core.py:174
+#: search.py:142
+msgid "Go"
+msgstr "Git"
+
+#: channel_core.py:353
+#: search.py:200
+msgid "Go to page of {}:"
+msgstr "{} sahypasyna git:"
+
+#: Youtube_settings.py:308
+msgid ""
+"How to get YouTube cookies:\n"
+"\n"
+"1. Install 'Get cookies.txt' extension in Chrome or Firefox\n"
+"2. Login to YouTube in your browser\n"
+"3. Click the extension icon and export cookies\n"
+"4. Save as cookies.txt and select it here\n"
+"\n"
+"Using cookies helps avoid blocks because YouTube sees you as a logged-in user.\n"
+msgstr ""
+"YouTube kukilerini nädip almaly:\n"
+"\n"
+"1. Chrome ýa-da Firefox-da 'Get cookies.txt' giňeltmesini guruň\n"
+"2. Brauzeriňizde YouTube-a giriň\n"
+"3. Giňeltme şekiljigine basyň we kukileri eksport ediň\n"
+"4. cookies.txt hökmünde ýazdyryň we şu ýere saýlaň\n"
+"\n"
+"Kukileri ulanmak bloklamalaryň öňüni almaga kömek edýär.\n"
+
+#: Youtube_settings.py:316
+msgid "How to get cookies"
+msgstr "Kukileri nädip almaly"
+
+#: Youtube_settings.py:165
+msgid "How to get cookies?"
+msgstr "Kukileri nädip almaly?"
+
+#: __init__.py:439
+msgid "Immediate download mode disabled"
+msgstr "Gyssagly ýükleme tertibi öçürildi"
+
+#: __init__.py:437
+msgid "Immediate download mode enabled"
+msgstr "Gyssagly ýükleme tertibi işledildi"
+
+#: Trim.py:282
+msgid "Invalid URL or start time"
+msgstr "Nädogry URL ýa-da başlaýyş wagty"
+
+#: __init__.py:443
+msgid "Invalid channel URL"
+msgstr "Nädogry kanal URL-i"
+
+#: __init__.py:423
+msgid "Invalid download folder"
+msgstr "Nädogry ýükleme papgasy"
+
+#: downloadFail.py:187
+#: download_list.py:159
+msgid "Item deleted"
+msgstr "Element pozuldy"
+
+#: channel_core.py:1385
+#: search.py:580
+msgid "Item removed."
+msgstr "Element aýryldy."
+
+#: channel_core.py:65
+msgid "Live"
+msgstr "Göni ýaýlym"
+
+#: channel_core.py:770
+msgid "Loaded {count} videos from cache."
+msgstr "Keşden {count} wideo ýüklendi."
+
+#: channel_core.py:488
+#: channel_core.py:939
+msgid "Loaded {count} videos from {name}."
+msgstr "{name} kanalundan {count} wideo ýüklendi."
+
+#: playlist.py:225
+msgid "Loaded {count} videos."
+msgstr "{count} wideo ýüklendi."
+
+#: playlist.py:51
+msgid "Loading playlist videos..."
+msgstr "Pleýlist wideolary ýüklenýär..."
+
+#: Youtube_settings.py:77
+msgid "MP3 &quality (kbps):"
+msgstr "MP3 &hili (kbps):"
+
+#: channel_core.py:599
+msgid "Move Down"
+msgstr "Aşak süýşür"
+
+#: channel_core.py:595
+msgid "Move Up"
+msgstr "Ýokary süýşür"
+
+#: channel_core.py:165
+#: playlist.py:78
+#: search.py:133
+msgid "NextPage"
+msgstr "Indiki Sahypa"
+
+#: __init__.py:340
+#: __init__.py:539
+msgid "No YouTube URL found"
+msgstr "YouTube URL-i tapylmady"
+
+#: channel_core.py:252
+msgid "No channel selected."
+msgstr "Kanal saýlanmady."
+
+#: __init__.py:555
+msgid "No failed downloads"
+msgstr "Şowsuz ýükleme ýok"
+
+#: downloadFail.py:299
+msgid "No failed downloads to clear"
+msgstr "Arassalamak üçin şowsuz ýükleme ýok"
+
+#: downloadFail.py:279
+msgid "No failed downloads to process"
+msgstr "Işlemek üçin şowsuz ýükleme ýok"
+
+#: download_list.py:232
+msgid "No items added (all already in queue)"
+msgstr "Element goşulmady (ählisi eýýäm nobatda)"
+
+#: channel_core.py:908
+msgid "No items found for this URL."
+msgstr "Bu URL üçin element tapylmady."
+
+#: channel_core.py:1067
+msgid "No items found."
+msgstr "Element tapylmady."
+
+#: downloadFail.py:264
+#: download_list.py:187
+#: download_list.py:196
+msgid "No items selected"
+msgstr "Element saýlanmady"
+
+#: download_list.py:212
+msgid "No new items added (already in queue)"
+msgstr "Täze element goşulmady (eýýäm nobatda)"
+
+#: download_list.py:219
+msgid "No pending downloads"
+msgstr "Garaşylýan ýükleme ýok"
+
+#: download_list.py:239
+msgid "No pending downloads to clear"
+msgstr "Arassalamak üçin garaşylýan ýükleme ýok"
+
+#: search.py:487
+msgid "No results found for '{query}'."
+msgstr "'{query}' üçin netije tapylmady."
+
+#: search.py:488
+msgid "No results found."
+msgstr "Netije tapylmady."
+
+#: channel_core.py:85
+msgid "No saved data for this channel."
+msgstr "Bu kanal üçin ýazgy edilen maglumat ýok."
+
+#: Download_core.py:1075
+msgid "No valid multimedia link found."
+msgstr "Dogry multimedia baglanyşygy tapylmady."
+
+#: channel_core.py:278
+#: playlist.py:370
+#: search.py:584
+msgid "No videos to download."
+msgstr "Ýüklemek üçin wideo ýok."
+
+#: __init__.py:542
+msgid "Not a YouTube URL"
+msgstr "YouTube URL-i däl"
+
+#: Download_core.py:1106
+msgid "Not a YouTube video or valid multimedia link"
+msgstr "YouTube wideosy ýa-da dogry multimedia baglanyşygy däl"
+
+#: __init__.py:398
+msgid "Open context menu (single tap), download folder (double tap), Search Youtube (triple tap)"
+msgstr "Kontekst menýusyny aç (bir basyş), ýüklemeler papgasyny aç (iki basyş), Youtube-da gözle (üç basyş)"
+
+#: channel_core.py:1301
+msgid "Open in browser"
+msgstr "Brauzerde aç"
+
+#: channel_core.py:272
+#: search.py:237
+msgid "Page number out of range (1-{})."
+msgstr "Sahypa belgisi çäkden daşary (1-{})."
+
+#: channel_core.py:349
+#: playlist.py:122
+#: search.py:196
+msgid "Page {}/{}"
+msgstr "Sahypa {}/{}"
+
+#: channel_core.py:591
+msgid "Pin"
+msgstr "Berkit"
+
+#: playlist.py:317
+#: search.py:529
+msgid "Play on YouTube"
+msgstr "YouTube-da goýber"
+
+#: channel_core.py:1344
+#: playlist.py:380
+msgid "Playlist download started."
+msgstr "Pleýlist ýüklemesi başlady."
+
+#: __init__.py:711
+msgid "Playlist mode disabled"
+msgstr "Pleýlist tertibi öçürildi"
+
+#: __init__.py:711
+msgid "Playlist mode enabled"
+msgstr "Pleýlist tertibi işledildi"
+
+#: channel_core.py:67
+msgid "Playlists"
+msgstr "Pleýlistler"
+
+#: channel_dialogs.py:98
+#: channel_dialogs.py:148
+msgid "Please enter a channel URL."
+msgstr "Kanal URL-ini giriziň."
+
+#: channel_dialogs.py:95
+#: channel_dialogs.py:145
+msgid "Please enter a channel name."
+msgstr "Kanal adyny giriziň."
+
+#: search.py:245
+msgid "Please enter a search term."
+msgstr "Gözleg sözüni giriziň."
+
+#: channel_core.py:266
+#: search.py:231
+msgid "Please enter a valid number."
+msgstr "Dogry san giriziň."
+
+#: channel_core.py:66
+msgid "Podcasts"
+msgstr "Podkastlar"
+
+#: Trim.py:146
+msgid "Preview start"
+msgstr "Deslapky görnüşi başlat"
+
+#: channel_core.py:161
+#: playlist.py:74
+#: search.py:129
+msgid "PreviousPage"
+msgstr "Öňki Sahypa"
+
+#: Snapshot.py:83
+msgid "Processing snapshot..."
+msgstr "Surat işlenilýär..."
+
+#: Youtube_settings.py:234
+msgid "Proxy &URL:"
+msgstr "Proksi &URL:"
+
+#: channel_core.py:142
+msgid "Ready"
+msgstr "Taýýar"
+
+#: channel_core.py:1320
+#: search.py:542
+msgid "Remove from list"
+msgstr "Sanawdan aýyr"
+
+#: Youtube_settings.py:269
+msgid "Reset to &safe settings (recommended if blocked)"
+msgstr "&Howpsuz sazlamalara gaýtar (bloklanan bolsaňyz maslahat berilýär)"
+
+#: Youtube_settings.py:335
+msgid "Reset to safe settings. Remember to use cookies for best results."
+msgstr "Howpsuz sazlamalara gaýtaryldy. Iň gowy netije üçin kukileri ulanmagy unutmaň."
+
+#: Download_core.py:466
+msgid "Resume downloads"
+msgstr "Ýüklemeleri dowam et"
+
+#: Youtube_settings.py:124
+msgid "Resume interrupted downloads on restart"
+msgstr "Täzeden başlananda bökdelip galan ýüklemeleri dowam et"
+
+#: search.py:95
+msgid "Search"
+msgstr "Gözle"
+
+#: search.py:59
+msgid "Search YouTube"
+msgstr "YouTube-da gözle"
+
+#: search.py:92
+msgid "Search YouTube:"
+msgstr "YouTube-da gözle:"
+
+#: __init__.py:527
+msgid "Search Youtube"
+msgstr "Youtube-da gözleg"
+
+#: search.py:252
+msgid "Search already in progress."
+msgstr "Gözleg eýýäm dowam edýär."
+
+#: search.py:492
+msgid "Search completed."
+msgstr "Gözleg tamamlandy."
+
+#: search.py:501
+msgid "Search failed."
+msgstr "Gözleg şowsuz boldy."
+
+#: search.py:500
+msgid "Search failed: {error}"
+msgstr "Gözleg şowsuz: {error}"
+
+#: channel_core.py:135
+msgid "Search:"
+msgstr "Gözle:"
+
+#: search.py:282
+msgid "Searching..."
+msgstr "Gözlenilýär..."
+
+#: Youtube_settings.py:45
+msgid "Select a directory"
+msgstr "Katalog saýla"
+
+#: download_list.py:210
+msgid "Selected items added to download queue"
+msgstr "Saýlanan elementler ýükleme nobatyna goşuldy"
+
+#: downloadFail.py:274
+#: download_list.py:187
+msgid "Selected items deleted"
+msgstr "Saýlanan elementler pozuldy"
+
+#: __init__.py:547
+#: channel_core.py:1333
+#: playlist.py:352
+#: search.py:553
+msgid "Short URL copied to clipboard"
+msgstr "Gysga URL buferine göçürildi"
+
+#: channel_core.py:64
+msgid "Shorts"
+msgstr "Shorts"
+
+#: channel_core.py:153
+#: playlist.py:66
+#: search.py:120
+msgid "Show items:"
+msgstr "Elementleri görkez:"
+
+#: Youtube_settings.py:223
+msgid "Skip &unavailable fragments"
+msgstr "Elýeterli däl fragmentleri &goýber"
+
+#: Youtube_settings.py:118
+msgid "Skip existing files"
+msgstr "Bar bolan faýllary goýber"
+
+#: __init__.py:522
+msgid "Snapshot"
+msgstr "Snapshot"
+
+#: Snapshot.py:54
+msgid "Snapshot file already exists"
+msgstr "Snapshot faýly eýýäm bar"
+
+#: Trim.py:174
+#: channel_dialogs.py:181
+#: search.py:680
+msgid "Start download"
+msgstr "Ýüklemäni başlat"
+
+#: Youtube_settings.py:60
+msgid "Start download immediately (NVDA+Y)"
+msgstr "Ýüklemäni haýal etmän başlat (NVDA+Y)"
+
+#: Trim.py:316
+msgid "Start time must be less than end time"
+msgstr "Başlaýyş wagty gutarýan wagtyndan az bolmaly"
+
+#: Trim.py:139
+msgid "Start time:"
+msgstr "Başlaýyş wagty:"
+
+#: __init__.py:365
+msgid "Starting download: {format} - {title}"
+msgstr "Ýükleme başlanýar: {format} - {title}"
+
+#: Download_core.py:791
+msgid "Starting next download from queue: {title}"
+msgstr "Nobatdaky indiki ýükleme başlanýar: {title}"
+
+#: channel_dialogs.py:15
+msgid "Title"
+msgstr "Ady"
+
+#: channel_core.py:1374
+#: playlist.py:342
+msgid "Title correction completed and locked."
+msgstr "Adyny düzetmek tamamlandy we gulplandy."
+
+#: channel_core.py:538
+msgid "Title correction completed for {count} videos."
+msgstr "{count} wideonyň ady düzeltildi."
+
+#: channel_core.py:1376
+#: playlist.py:344
+msgid "Title correction failed."
+msgstr "Adyny düzetmek şowsuz boldy."
+
+#: __init__.py:431
+msgid "Toggle immediate download mode"
+msgstr "Gyssagly ýükleme tertibini çalşyr"
+
+#: __init__.py:706
+msgid "Toggle playlist mode"
+msgstr "Pleýlist tertibini çalşyr"
+
+#: __init__.py:525
+msgid "Trim setting"
+msgstr "Kesmek sazlamasy"
+
+#: Trim.py:332
+msgid "Trimming and downloading {format}..."
+msgstr "Kesilýär we {format} hökmünde ýüklenýär..."
+
+#: Trim.py:132
+#: downloadFail.py:69
+msgid "URL"
+msgstr "URL"
+
+#: channel_core.py:1336
+msgid "URL copied to clipboard"
+msgstr "URL buferine göçürildi"
+
+#: Trim.py:307
+msgid "URL is required"
+msgstr "URL hökmandyr"
+
+#: Download_core.py:903
+msgid "URL not found"
+msgstr "URL tapylmady"
+
+#: Download_core.py:672
+#: __init__.py:359
+#: downloadFail.py:110
+#: downloadFail.py:113
+#: downloadFail.py:114
+#: download_list.py:103
+msgid "Unknown"
+msgstr "Nämälim"
+
+#: channel_core.py:591
+msgid "Unpin"
+msgstr "Berkidilmegini aýyr"
+
+#: Youtube_settings.py:369
+#: __init__.py:287
+msgid "Update failed: {str}"
+msgstr "Täzelemek şowsuz: {str}"
+
+#: Youtube_settings.py:290
+msgid "Update status: Idle"
+msgstr "Täzeleme ýagdaýy: Garaşylýar"
+
+#: Youtube_settings.py:368
+msgid "Update status: Update failed: {str}"
+msgstr "Täzeleme ýagdaýy: Täzeleme şowsuz boldy: {str}"
+
+#: Youtube_settings.py:364
+msgid "Update status: Update successful"
+msgstr "Täzeleme ýagdaýy: Täzeleme üstünlikli"
+
+#: Youtube_settings.py:354
+msgid "Update status: Updating..."
+msgstr "Täzeleme ýagdaýy: Täzelenýär..."
+
+#: Youtube_settings.py:286
+msgid "Update yt-dlp now"
+msgstr "yt-dlp-i häzir täzele"
+
+#: Youtube_settings.py:355
+#: __init__.py:275
+msgid "Updating yt-dlp..."
+msgstr "yt-dlp täzelenýär..."
+
+#: Youtube_settings.py:150
+msgid "Use &cookies (recommended to avoid block)"
+msgstr "&Kukileri ulan (bloklamalardan gaçmak üçin maslahat berilýär)"
+
+#: Youtube_settings.py:179
+msgid "Use &custom user agent"
+msgstr "&Ýörite user agent ulan"
+
+#: Youtube_settings.py:229
+msgid "Use &proxy"
+msgstr "&Proksi ulan"
+
+#: Youtube_settings.py:92
+msgid "Use download section"
+msgstr "Ýükleme bölümini ulan"
+
+#: Youtube_settings.py:184
+msgid "User &agent:"
+msgstr "User &agent:"
+
+#: downloadFail.py:67
+#: download_list.py:67
+#: search.py:35
+msgid "Video Title"
+msgstr "Wideonyň ady"
+
+#: Trim.py:144
+msgid "Video duration: unknown; Overall period: 0 seconds"
+msgstr "Wideo dowamlylygy: nämälim; Umumy döwür: 0 sekunt"
+
+#: Trim.py:255
+msgid "Video duration: {duration}; Overall period: {period} seconds"
+msgstr "Wideo dowamlylygy: {duration}; Umumy döwür: {period} sekunt"
+
+#: channel_core.py:63
+msgid "Videos"
+msgstr "Wideolar"
+
+#: playlist.py:23
+msgid "Videos in {title}"
+msgstr "{title} içindäki wideolar"
+
+#: __init__.py:592
+#: __init__.py:606
+msgid "You must be on a YouTube page to use this feature"
+msgstr "Bu funksiýany ulanmak üçin YouTube sahypasynda bolmaly"
+
+#: channel_core.py:30
+msgid "Your favorite channel"
+msgstr "Siziň halanýan kanalyňyz"
+
+#: Trim.py:254
+msgid "invalid"
+msgstr "nädogry"
+
+#: Trim.py:250
+msgid "invalid (negative)"
+msgstr "nädogry (minus)"
+
+#: search.py:53
+msgid "loading..."
+msgstr "ýüklenýär..."
+
+#: Trim.py:244
+msgid "unknown"
+msgstr "nämälim"
+
+#: Youtube_settings.py:276
+msgid "yt-dlp Update"
+msgstr "yt-dlp täzelemesi"
+
+#: Youtube_settings.py:365
+#: __init__.py:284
+msgid "yt-dlp updated successfully"
+msgstr "yt-dlp üstünlikli täzelendi"
+
+#: Download_core.py:946
+msgid "yt-dlp.exe missing"
+msgstr "yt-dlp.exe ýitdi"
+
+#: channel_core.py:816
+#: search.py:256
+msgid "yt-dlp.exe not found."
+msgstr "yt-dlp.exe tapylmady."
+
+#: __init__.py:725
+msgid "{quality} kbps"
+msgstr "{quality} kbps"
+
+#: channel_core.py:350
+#: playlist.py:123
+#: search.py:197
+msgid "{}, showing {} of {} videos"
+msgstr "{}, {} wideodan {} görkezilýär"

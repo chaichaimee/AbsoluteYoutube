@@ -1,0 +1,1340 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AbsoluteYoutube 2026.5.1\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-04-30 14:14+0700\n"
+"PO-Revision-Date: 2026-04-30 20:20+0700\n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: Malay\n"
+"Language: ms\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: Youtube_settings.py:66
+msgid "&Beep while converting"
+msgstr "&Beep semasa menukar"
+
+#: Youtube_settings.py:44
+msgid "&Browse..."
+msgstr "&Layari..."
+
+#: channel_dialogs.py:69
+#: channel_dialogs.py:133
+#: downloadFail.py:92
+msgid "&Cancel"
+msgstr "&Batal"
+
+#: downloadFail.py:84
+#: download_list.py:85
+msgid "&Clear All"
+msgstr "&Kosongkan Semua"
+
+#: channel_core.py:189
+#: playlist.py:89
+#: search.py:157
+msgid "&Close"
+msgstr "&Tutup"
+
+#: downloadFail.py:76
+#: download_list.py:73
+msgid "&Delete Selected"
+msgstr "&Padam yang Dipilih"
+
+#: channel_core.py:181
+#: downloadFail.py:80
+#: download_list.py:81
+#: search.py:149
+msgid "&Download All"
+msgstr "&Muat Turun Semua"
+
+#: playlist.py:85
+msgid "&Download All Videos in Playlist"
+msgstr "&Muat Turun Semua Video dalam Senarai Main"
+
+#: download_list.py:77
+msgid "&Download Selected"
+msgstr "&Muat Turun yang Dipilih"
+
+#: search.py:153
+msgid "&Download folder"
+msgstr "&Folder muat turun"
+
+#: Youtube_settings.py:241
+msgid "&Geo bypass"
+msgstr "Pintasan &geo"
+
+#: Youtube_settings.py:264
+msgid "&Mark as watched"
+msgstr "&Tanda sebagai telah ditonton"
+
+#: Youtube_settings.py:135
+msgid "&Max concurrent downloads (1-4):"
+msgstr "Muat turun serentak &maksimum (1-4):"
+
+#: Youtube_settings.py:97
+msgid "&Number of connections:"
+msgstr "&Bilangan sambungan:"
+
+#: channel_dialogs.py:67
+#: channel_dialogs.py:131
+#: downloadFail.py:88
+#: download_list.py:89
+msgid "&OK"
+msgstr "&OK"
+
+#: Youtube_settings.py:207
+msgid "&Retry count:"
+msgstr "Bilangan &percubaan semula:"
+
+#: Youtube_settings.py:72
+msgid "&Say download complete"
+msgstr "&Sebut muat turun selesai"
+
+#: Youtube_settings.py:199
+msgid "&Sleep between requests (seconds):"
+msgstr "&Jeda antara permintaan (saat):"
+
+#: channel_core.py:185
+msgid "&Source"
+msgstr "&Sumber"
+
+#: Youtube_settings.py:191
+msgid "&Throttle rate (KB/s, 0=unlimited):"
+msgstr "Kadar &had laju (KB/s, 0=tanpa had):"
+
+#: channel_core.py:1100
+msgid "A channel with this name already exists. Overwrite?"
+msgstr "Saluran dengan nama ini sudah wujud. Tulis ganti?"
+
+#: __init__.py:256
+msgid "A new version of yt-dlp is available: {latest}. Current: {current}. Please update in settings."
+msgstr "Versi baharu yt-dlp tersedia: {latest}. Semasa: {current}. Sila kemas kini dalam tetapan."
+
+#: Download_core.py:32
+#: Youtube_settings.py:21
+#: __init__.py:44
+msgid "Absolute YouTube"
+msgstr "Absolute YouTube"
+
+#: Trim.py:64
+msgid "Absolute YouTube Trim"
+msgstr "Absolute YouTube Trim"
+
+#: __init__.py:529
+msgid "Absolute YouTube setting"
+msgstr "Tetapan Absolute YouTube"
+
+#: menu.py:18
+msgid "Absolute Youtube"
+msgstr "Absolute Youtube"
+
+#: channel_dialogs.py:41
+msgid "Add New Channel"
+msgstr "Tambah Saluran Baharu"
+
+#: channel_core.py:112
+msgid "Add new channel"
+msgstr "Tambah saluran baharu"
+
+#: __init__.py:184
+msgid "Add-on initialization failed: missing pending file path function. Please restart NVDA."
+msgstr "Permulaan add-on gagal: fungsi laluan fail tertunda hilang. Sila mulakan semula NVDA."
+
+#: download_list.py:24
+msgid "Add-on internal error: missing components. Please restart NVDA."
+msgstr "Ralat dalaman add-on: komponen hilang. Sila mulakan semula NVDA."
+
+#: download_list.py:69
+msgid "Added Time"
+msgstr "Masa Ditambah"
+
+#: __init__.py:376
+msgid "Added to download list: {format} - {title}"
+msgstr "Ditambah ke senarai muat turun: {format} - {title}"
+
+#: __init__.py:370
+msgid "Added to download queue: {format} - {title}"
+msgstr "Ditambah ke giliran muat turun: {format} - {title}"
+
+#: download_list.py:169
+msgid "Added to download queue: {title}"
+msgstr "Ditambah ke giliran muat turun: {title}"
+
+#: Download_core.py:1097
+msgid "Adding link as {format} to download queue"
+msgstr "Menambah pautan sebagai {format} ke giliran muat turun"
+
+#: channel_core.py:297
+#: search.py:591
+msgid "Adding {count} videos to download queue..."
+msgstr "Menambah {count} video ke giliran muat turun..."
+
+#: channel_core.py:1358
+#: playlist.py:364
+#: search.py:572
+msgid "Adding {title} to download queue."
+msgstr "Menambah {title} ke giliran muat turun."
+
+#: search.py:123
+#: search.py:204
+msgid "All"
+msgstr "Semua"
+
+#: downloadFail.py:294
+msgid "All downloads started"
+msgstr "Semua muat turun dimulakan"
+
+#: downloadFail.py:305
+msgid "All failed downloads cleared"
+msgstr "Semua muat turun yang gagal telah dikosongkan"
+
+#: download_list.py:230
+msgid "All items added to download queue"
+msgstr "Semua item ditambah ke giliran muat turun"
+
+#: download_list.py:249
+msgid "All pending downloads cleared"
+msgstr "Semua muat turun tertunda telah dikosongkan"
+
+#: __init__.py:378
+msgid "Already in download list"
+msgstr "Sudah ada dalam senarai muat turun"
+
+#: __init__.py:372
+#: download_list.py:171
+msgid "Already in download queue"
+msgstr "Sudah ada dalam giliran muat turun"
+
+#: Snapshot.py:104
+msgid "An unexpected error occurred."
+msgstr "Ralat yang tidak dijangka berlaku."
+
+#: Youtube_settings.py:144
+msgid "Anti-blocking settings"
+msgstr "Tetapan anti-sekatan"
+
+#: channel_core.py:731
+msgid "Are you sure you want to delete saved data for '{name}'?"
+msgstr "Adakah anda pasti mahu memadam data tersimpan untuk '{name}'?"
+
+#: Trim.py:164
+#: channel_dialogs.py:172
+msgid "Audio Quality"
+msgstr "Kualiti Audio"
+
+#: Trim.py:177
+#: channel_dialogs.py:183
+#: search.py:681
+msgid "Cancel"
+msgstr "Batal"
+
+#: channel_core.py:292
+msgid "Cannot create download folder."
+msgstr "Tidak dapat mencipta folder muat turun."
+
+#: Download_core.py:352
+#: Download_core.py:890
+msgid "Cannot create folder"
+msgstr "Tidak dapat mencipta folder"
+
+#: search.py:563
+msgid "Cannot determine URL for this video."
+msgstr "Tidak dapat menentukan URL untuk video ini."
+
+#: search.py:610
+msgid "Cannot open download folder."
+msgstr "Tidak dapat membuka folder muat turun."
+
+#: channel_core.py:320
+msgid "Cannot open source folder."
+msgstr "Tidak dapat membuka folder sumber."
+
+#: Snapshot.py:58
+msgid "Capturing full-size snapshot..."
+msgstr "Menangkap syot kilat saiz penuh..."
+
+#: channel_core.py:713
+msgid "Channel URL updated."
+msgstr "URL saluran dikemas kini."
+
+#: channel_dialogs.py:58
+#: channel_dialogs.py:124
+msgid "Channel URL:"
+msgstr "URL Saluran:"
+
+#: channel_core.py:906
+msgid "Channel added successfully."
+msgstr "Saluran berjaya ditambah."
+
+#: channel_core.py:743
+#: channel_core.py:746
+msgid "Channel deleted."
+msgstr "Saluran dipadam."
+
+#: channel_dialogs.py:51
+#: channel_dialogs.py:117
+msgid "Channel name:"
+msgstr "Nama saluran:"
+
+#: channel_core.py:633
+msgid "Channel pinned."
+msgstr "Saluran dipinkan."
+
+#: channel_core.py:1121
+msgid "Channel saved."
+msgstr "Saluran disimpan."
+
+#: channel_core.py:630
+msgid "Channel unpinned."
+msgstr "Pin saluran dialih keluar."
+
+#: channel_core.py:700
+msgid "Channel updated."
+msgstr "Saluran dikemas kini."
+
+#: channel_core.py:100
+msgid "Channel:"
+msgstr "Saluran:"
+
+#: channel_core.py:955
+msgid "Checking for new videos..."
+msgstr "Menyemak video baharu..."
+
+#: Download_core.py:601
+msgid "Checking interrupted downloads..."
+msgstr "Menyemak muat turun yang terganggu..."
+
+#: downloadFail.py:162
+#: download_list.py:131
+msgid "Clear all"
+msgstr "Kosongkan semua"
+
+#: channel_core.py:732
+msgid "Confirm Delete"
+msgstr "Sahkan Padam"
+
+#: playlist.py:374
+msgid "Confirm Download"
+msgstr "Sahkan Muat Turun"
+
+#: channel_core.py:1101
+msgid "Confirm Overwrite"
+msgstr "Sahkan Tulis Ganti"
+
+#: channel_core.py:125
+msgid "Content type:"
+msgstr "Jenis kandungan:"
+
+#: Youtube_settings.py:156
+msgid "Cookies &file:"
+msgstr "&Fail kuki:"
+
+#: channel_core.py:1298
+msgid "Copy URL"
+msgstr "Salin URL"
+
+#: __init__.py:509
+#: playlist.py:314
+#: search.py:526
+msgid "Copy video Shorten URL"
+msgstr "Salin URL Singkat video"
+
+#: channel_core.py:1308
+#: playlist.py:320
+msgid "Correct title now"
+msgstr "Betulkan tajuk sekarang"
+
+#: channel_core.py:1366
+#: playlist.py:337
+msgid "Correcting title for selected video..."
+msgstr "Membetulkan tajuk untuk video yang dipilih..."
+
+#: playlist.py:354
+#: search.py:555
+msgid "Could not create short URL"
+msgstr "Tidak dapat mencipta URL singkat"
+
+#: __init__.py:549
+msgid "Could not create shortened URL"
+msgstr "Tidak dapat mencipta URL yang disingkatkan"
+
+#: Trim.py:302
+msgid "Could not open preview URL"
+msgstr "Tidak dapat membuka URL pratonton"
+
+#: __init__.py:713
+msgid "Cycle MP3 quality settings"
+msgstr "Kitar tetapan kualiti MP3"
+
+#: channel_core.py:607
+#: downloadFail.py:146
+#: download_list.py:119
+msgid "Delete"
+msgstr "Padam"
+
+#: downloadFail.py:153
+#: download_list.py:124
+msgid "Delete selected"
+msgstr "Padam yang dipilih"
+
+#: Youtube_settings.py:41
+msgid "Destination folder"
+msgstr "Folder destinasi"
+
+#: download_list.py:121
+msgid "Download"
+msgstr "Muat Turun"
+
+#: channel_dialogs.py:155
+#: search.py:663
+msgid "Download All Videos"
+msgstr "Muat Turun Semua Video"
+
+#: downloadFail.py:16
+msgid "Download Fail Manager - Absolute YouTube"
+msgstr "Pengurus Gagal Muat Turun - Absolute YouTube"
+
+#: download_list.py:14
+msgid "Download List Manager - Absolute YouTube"
+msgstr "Pengurus Senarai Muat Turun - Absolute YouTube"
+
+#: channel_core.py:1311
+#: playlist.py:323
+#: search.py:532
+msgid "Download MP3"
+msgstr "Muat Turun MP3"
+
+#: channel_core.py:1314
+#: playlist.py:326
+#: search.py:535
+msgid "Download MP4"
+msgstr "Muat Turun MP4"
+
+#: channel_core.py:1317
+#: playlist.py:329
+#: search.py:538
+msgid "Download WAV"
+msgstr "Muat Turun WAV"
+
+#: downloadFail.py:159
+#: download_list.py:129
+msgid "Download all"
+msgstr "Muat turun semua"
+
+#: playlist.py:373
+msgid "Download all {count} videos in this playlist?"
+msgstr "Muat turun semua {count} video dalam senarai main ini?"
+
+#: Download_core.py:840
+msgid "Download complete"
+msgstr "Muat turun selesai"
+
+#: channel_core.py:1305
+msgid "Download entire playlist"
+msgstr "Muat turun keseluruhan senarai main"
+
+#: __init__.py:509
+msgid "Download fail manager"
+msgstr "Pengurus gagal muat turun"
+
+#: __init__.py:517
+msgid "Download fail manager (no failed)"
+msgstr "Pengurus gagal muat turun (tiada kegagalan)"
+
+#: Download_core.py:846
+msgid "Download failed"
+msgstr "Muat turun gagal"
+
+#: Download_core.py:872
+msgid "Download failed due to an error"
+msgstr "Muat turun gagal kerana ralat"
+
+#: Download_core.py:859
+msgid "Download failed due to timeout"
+msgstr "Muat turun gagal kerana tamat masa"
+
+#: downloadFail.py:149
+msgid "Download file"
+msgstr "Muat turun fail"
+
+#: search.py:612
+msgid "Download folder does not exist."
+msgstr "Folder muat turun tidak wujud."
+
+#: channel_core.py:1346
+#: channel_core.py:1360
+#: playlist.py:366
+#: playlist.py:382
+#: search.py:574
+msgid "Download function not available."
+msgstr "Fungsi muat turun tidak tersedia."
+
+#: __init__.py:511
+msgid "Download list manager"
+msgstr "Pengurus senarai muat turun"
+
+#: __init__.py:385
+msgid "Download or queue video (single tap MP3, double tap MP4, triple tap WAV)"
+msgstr "Muat turun atau gilirkan video (sekali ketik MP3, dua kali MP4, tiga kali WAV)"
+
+#: download_list.py:126
+msgid "Download selected"
+msgstr "Muat turun yang dipilih"
+
+#: downloadFail.py:249
+msgid "Download started for: {title}"
+msgstr "Muat turun dimulakan untuk: {title}"
+
+#: Snapshot.py:63
+msgid "Downloading thumbnail..."
+msgstr "Memuat turun lakaran kenit..."
+
+#: channel_core.py:310
+#: search.py:600
+msgid "Downloads started."
+msgstr "Muat turun dimulakan."
+
+#: downloadFail.py:68
+#: search.py:36
+msgid "Duration"
+msgstr "Tempoh"
+
+#: channel_dialogs.py:105
+msgid "Edit Channel"
+msgstr "Edit Saluran"
+
+#: channel_core.py:116
+msgid "Edit channel"
+msgstr "Edit saluran"
+
+#: channel_core.py:604
+msgid "Edit channel..."
+msgstr "Edit saluran..."
+
+#: Youtube_settings.py:130
+msgid "Enable &logging"
+msgstr "Dayakan p&elogan"
+
+#: Youtube_settings.py:112
+msgid "Enable &playlist mode by default"
+msgstr "Dayakan mod &senarai main secara lalai"
+
+#: Trim.py:140
+msgid "End time:"
+msgstr "Masa tamat:"
+
+#: search.py:104
+msgid "Enter a search query."
+msgstr "Masukkan pertanyaan carian."
+
+#: download_list.py:25
+msgid "Error"
+msgstr "Ralat"
+
+#: Snapshot.py:42
+msgid "Error creating download folder"
+msgstr "Ralat mencipta folder muat turun"
+
+#: channel_core.py:749
+msgid "Error deleting channel."
+msgstr "Ralat memadam saluran."
+
+#: __init__.py:271
+msgid "Error during auto-update of yt-dlp: {str}"
+msgstr "Ralat semasa kemas kini automatik yt-dlp: {str}"
+
+#: channel_core.py:912
+msgid "Error fetching channel: {str}"
+msgstr "Ralat mengambil maklumat saluran: {str}"
+
+#: __init__.py:178
+#: downloadFail.py:44
+msgid "Error importing core functions: {str}"
+msgstr "Ralat mengimport fungsi teras: {str}"
+
+#: __init__.py:659
+msgid "Error importing settings panel: {str}"
+msgstr "Ralat mengimport panel tetapan: {str}"
+
+#: __init__.py:202
+msgid "Error initializing AbsoluteYoutube: {str}"
+msgstr "Ralat memulakan AbsoluteYoutube: {str}"
+
+#: channel_core.py:774
+msgid "Error loading cache."
+msgstr "Ralat memuatkan cache."
+
+#: channel_core.py:503
+#: channel_core.py:675
+msgid "Error loading channel data."
+msgstr "Ralat memuatkan data saluran."
+
+#: __init__.py:455
+msgid "Error opening channel dialog"
+msgstr "Ralat membuka dialog saluran"
+
+#: __init__.py:701
+msgid "Error opening channel/playlist list: {str}"
+msgstr "Ralat membuka senarai saluran/senarai main: {str}"
+
+#: __init__.py:569
+#: __init__.py:573
+msgid "Error opening download fail dialog: {str}"
+msgstr "Ralat membuka dialog gagal muat turun: {str}"
+
+#: __init__.py:494
+msgid "Error opening download list dialog: {str}"
+msgstr "Ralat membuka dialog senarai muat turun: {str}"
+
+#: __init__.py:421
+msgid "Error opening folder"
+msgstr "Ralat membuka folder"
+
+#: channel_core.py:1280
+msgid "Error opening playlist."
+msgstr "Ralat membuka senarai main."
+
+#: __init__.py:646
+msgid "Error opening search dialog: {str}"
+msgstr "Ralat membuka dialog carian: {str}"
+
+#: __init__.py:662
+msgid "Error opening settings dialog: {str}"
+msgstr "Ralat membuka dialog tetapan: {str}"
+
+#: __init__.py:627
+msgid "Error opening trim dialog: {str}"
+msgstr "Ralat membuka dialog pemotongan: {str}"
+
+#: Download_core.py:942
+msgid "Error processing URL"
+msgstr "Ralat memproses URL"
+
+#: downloadFail.py:253
+msgid "Error starting download"
+msgstr "Ralat memulakan muat turun"
+
+#: channel_core.py:716
+msgid "Error updating channel URL."
+msgstr "Ralat mengemas kini URL saluran."
+
+#: channel_core.py:703
+msgid "Error updating channel."
+msgstr "Ralat mengemas kini saluran."
+
+#: __init__.py:499
+msgid "Error: Download list module not available"
+msgstr "Ralat: Modul senarai muat turun tidak tersedia"
+
+#: __init__.py:559
+msgid "Error: DownloadFail module not available"
+msgstr "Ralat: Modul DownloadFail tidak tersedia"
+
+#: Snapshot.py:86
+msgid "Error: Failed to capture snapshot."
+msgstr "Ralat: Gagal menangkap syot kilat."
+
+#: Snapshot.py:93
+msgid "Error: No snapshot file created."
+msgstr "Ralat: Tiada fail syot kilat dicipta."
+
+#: __init__.py:651
+msgid "Error: Search module not available"
+msgstr "Ralat: Modul carian tidak tersedia"
+
+#: __init__.py:600
+msgid "Error: Snapshot module not available"
+msgstr "Ralat: Modul syot kilat tidak tersedia"
+
+#: __init__.py:610
+msgid "Error: Trim module not available"
+msgstr "Ralat: Modul pemotongan tidak tersedia"
+
+#: Download_core.py:1067
+#: Trim.py:329
+msgid "Error: ffmpeg.exe not found."
+msgstr "Ralat: ffmpeg.exe tidak ditemui."
+
+#: Trim.py:326
+msgid "Error: yt-dlp.exe not found."
+msgstr "Ralat: yt-dlp.exe tidak ditemui."
+
+#: Youtube_settings.py:382
+msgid "Failed to create the specified folder. Please select a valid folder."
+msgstr "Gagal mencipta folder yang dinyatakan. Sila pilih folderที่ sah."
+
+#: __init__.py:519
+msgid "Favorite channel"
+msgstr "Saluran kegemaran"
+
+#: channel_core.py:1063
+msgid "Fetched {count} items total."
+msgstr "Diambil {count} item secara keseluruhan."
+
+#: __init__.py:688
+msgid "Fetching channel information..."
+msgstr "Mengambil maklumat saluran..."
+
+#: channel_core.py:1108
+msgid "Fetching channel items..."
+msgstr "Mengambil item saluran..."
+
+#: channel_core.py:955
+msgid "Fetching channel videos..."
+msgstr "Mengambil video saluran..."
+
+#: Trim.py:151
+#: channel_dialogs.py:162
+#: search.py:669
+msgid "File Format"
+msgstr "Format Fail"
+
+#: Download_core.py:1072
+msgid "File already exists. Skipping download."
+msgstr "Fail sudah wujud. Melangkau muat turun."
+
+#: Download_core.py:923
+msgid "File exists"
+msgstr "Fail wujud"
+
+#: Youtube_settings.py:253
+msgid "Force I&Pv4"
+msgstr "Paksa I&Pv4"
+
+#: Youtube_settings.py:258
+msgid "Force I&Pv6"
+msgstr "Paksa I&Pv6"
+
+#: download_list.py:68
+msgid "Format"
+msgstr "Format"
+
+#: Download_core.py:465
+msgid ""
+"Found {count} interrupted downloads\n"
+"Resume all?\n"
+msgstr ""
+"Menemui {count} muat turun yang terganggu\n"
+"Sambung semua?\n"
+
+#: search.py:490
+msgid "Found {count} videos for '{query}'."
+msgstr "Menemui {count} video untuk '{query}'."
+
+#: search.py:404
+msgid "Found {} videos..."
+msgstr "Menemui {} video..."
+
+#: Youtube_settings.py:215
+msgid "Fragment &retries:"
+msgstr "&Percubaan semula fragmen:"
+
+#: Snapshot.py:111
+msgid "Full-size snapshot complete"
+msgstr "Syot kilat saiz penuh selesai"
+
+#: Youtube_settings.py:246
+msgid "Geo bypass &country:"
+msgstr "&Negara pintasan geo:"
+
+#: channel_core.py:174
+#: search.py:142
+msgid "Go"
+msgstr "Pergi"
+
+#: channel_core.py:353
+#: search.py:200
+msgid "Go to page of {}:"
+msgstr "Pergi ke halaman {}:"
+
+#: Youtube_settings.py:308
+msgid ""
+"How to get YouTube cookies:\n"
+"\n"
+"1. Install 'Get cookies.txt' extension in Chrome or Firefox\n"
+"2. Login to YouTube in your browser\n"
+"3. Click the extension icon and export cookies\n"
+"4. Save as cookies.txt and select it here\n"
+"\n"
+"Using cookies helps avoid blocks because YouTube sees you as a logged-in user.\n"
+msgstr ""
+"Cara mendapatkan kuki YouTube:\n"
+"\n"
+"1. Pasang sambungan 'Get cookies.txt' dalam Chrome atau Firefox\n"
+"2. Log masuk ke YouTube dalam pelayar anda\n"
+"3. Klik ikon sambungan dan eksport kuki\n"
+"4. Simpan sebagai cookies.txt dan pilih di sini\n"
+"\n"
+"Menggunakan kuki membantu mengelakkan sekatan kerana YouTube melihat anda sebagai pengguna yang telah log masuk.\n"
+
+#: Youtube_settings.py:316
+msgid "How to get cookies"
+msgstr "Cara mendapatkan kuki"
+
+#: Youtube_settings.py:165
+msgid "How to get cookies?"
+msgstr "Bagaimana untuk mendapatkan kuki?"
+
+#: __init__.py:439
+msgid "Immediate download mode disabled"
+msgstr "Mod muat turun segera dinyahdayakan"
+
+#: __init__.py:437
+msgid "Immediate download mode enabled"
+msgstr "Mod muat turun segera didayakan"
+
+#: Trim.py:282
+msgid "Invalid URL or start time"
+msgstr "URL atau masa mula tidak sah"
+
+#: __init__.py:443
+msgid "Invalid channel URL"
+msgstr "URL saluran tidak sah"
+
+#: __init__.py:423
+msgid "Invalid download folder"
+msgstr "Folder muat turun tidak sah"
+
+#: downloadFail.py:187
+#: download_list.py:159
+msgid "Item deleted"
+msgstr "Item dipadam"
+
+#: channel_core.py:1385
+#: search.py:580
+msgid "Item removed."
+msgstr "Item dialih keluar."
+
+#: channel_core.py:65
+msgid "Live"
+msgstr "Langsung"
+
+#: channel_core.py:770
+msgid "Loaded {count} videos from cache."
+msgstr "Dimuatkan {count} video daripada cache."
+
+#: channel_core.py:488
+#: channel_core.py:939
+msgid "Loaded {count} videos from {name}."
+msgstr "Dimuatkan {count} video daripada {name}."
+
+#: playlist.py:225
+msgid "Loaded {count} videos."
+msgstr "Dimuatkan {count} video."
+
+#: playlist.py:51
+msgid "Loading playlist videos..."
+msgstr "Memuatkan video senarai main..."
+
+#: Youtube_settings.py:77
+msgid "MP3 &quality (kbps):"
+msgstr "&Kualiti MP3 (kbps):"
+
+#: channel_core.py:599
+msgid "Move Down"
+msgstr "Alih ke Bawah"
+
+#: channel_core.py:595
+msgid "Move Up"
+msgstr "Alih ke Atas"
+
+#: channel_core.py:165
+#: playlist.py:78
+#: search.py:133
+msgid "NextPage"
+msgstr "Halaman Seterusnya"
+
+#: __init__.py:340
+#: __init__.py:539
+msgid "No YouTube URL found"
+msgstr "Tiada URL YouTube ditemui"
+
+#: channel_core.py:252
+msgid "No channel selected."
+msgstr "Tiada saluran dipilih."
+
+#: __init__.py:555
+msgid "No failed downloads"
+msgstr "Tiada muat turun yang gagal"
+
+#: downloadFail.py:299
+msgid "No failed downloads to clear"
+msgstr "Tiada muat turun yang gagal untuk dikosongkan"
+
+#: downloadFail.py:279
+msgid "No failed downloads to process"
+msgstr "Tiada muat turun yang gagal untuk diproses"
+
+#: download_list.py:232
+msgid "No items added (all already in queue)"
+msgstr "Tiada item ditambah (semua sudah dalam giliran)"
+
+#: channel_core.py:908
+msgid "No items found for this URL."
+msgstr "Tiada item ditemui untuk URL ini."
+
+#: channel_core.py:1067
+msgid "No items found."
+msgstr "Tiada item ditemui."
+
+#: downloadFail.py:264
+#: download_list.py:187
+#: download_list.py:196
+msgid "No items selected"
+msgstr "Tiada item dipilih"
+
+#: download_list.py:212
+msgid "No new items added (already in queue)"
+msgstr "Tiada item baharu ditambah (sudah dalam giliran)"
+
+#: download_list.py:219
+msgid "No pending downloads"
+msgstr "Tiada muat turun tertunda"
+
+#: download_list.py:239
+msgid "No pending downloads to clear"
+msgstr "Tiada muat turun tertunda untuk dikosongkan"
+
+#: search.py:487
+msgid "No results found for '{query}'."
+msgstr "Tiada keputusan ditemui untuk '{query}'."
+
+#: search.py:488
+msgid "No results found."
+msgstr "Tiada keputusan ditemui."
+
+#: channel_core.py:85
+msgid "No saved data for this channel."
+msgstr "Tiada data tersimpan untuk saluran ini."
+
+#: Download_core.py:1075
+msgid "No valid multimedia link found."
+msgstr "Tiada pautan multimedia yang sah ditemui."
+
+#: channel_core.py:278
+#: playlist.py:370
+#: search.py:584
+msgid "No videos to download."
+msgstr "Tiada video untuk dimuat turun."
+
+#: __init__.py:542
+msgid "Not a YouTube URL"
+msgstr "Bukan URL YouTube"
+
+#: Download_core.py:1106
+msgid "Not a YouTube video or valid multimedia link"
+msgstr "Bukan video YouTube atau pautan multimedia yang sah"
+
+#: __init__.py:398
+msgid "Open context menu (single tap), download folder (double tap), Search Youtube (triple tap)"
+msgstr "Buka menu konteks (ketukan tunggal), folder muat turun (ketukan dua kali), Cari Youtube (ketukan tiga kali)"
+
+#: channel_core.py:1301
+msgid "Open in browser"
+msgstr "Buka dalam pelayar"
+
+#: channel_core.py:272
+#: search.py:237
+msgid "Page number out of range (1-{})."
+msgstr "Nombor halaman di luar julat (1-{})."
+
+#: channel_core.py:349
+#: playlist.py:122
+#: search.py:196
+msgid "Page {}/{}"
+msgstr "Halaman {}/{}"
+
+#: channel_core.py:591
+msgid "Pin"
+msgstr "Pin"
+
+#: playlist.py:317
+#: search.py:529
+msgid "Play on YouTube"
+msgstr "Main di YouTube"
+
+#: channel_core.py:1344
+#: playlist.py:380
+msgid "Playlist download started."
+msgstr "Muat turun senarai main dimulakan."
+
+#: __init__.py:711
+msgid "Playlist mode disabled"
+msgstr "Mod senarai main dinyahdayakan"
+
+#: __init__.py:711
+msgid "Playlist mode enabled"
+msgstr "Mod senarai main didayakan"
+
+#: channel_core.py:67
+msgid "Playlists"
+msgstr "Senarai Main"
+
+#: channel_dialogs.py:98
+#: channel_dialogs.py:148
+msgid "Please enter a channel URL."
+msgstr "Sila masukkan URL saluran."
+
+#: channel_dialogs.py:95
+#: channel_dialogs.py:145
+msgid "Please enter a channel name."
+msgstr "Sila masukkan nama saluran."
+
+#: search.py:245
+msgid "Please enter a search term."
+msgstr "Sila masukkan istilah carian."
+
+#: channel_core.py:266
+#: search.py:231
+msgid "Please enter a valid number."
+msgstr "Sila masukkan nombor yang sah."
+
+#: channel_core.py:66
+msgid "Podcasts"
+msgstr "Podcast"
+
+#: Trim.py:146
+msgid "Preview start"
+msgstr "Mula pratonton"
+
+#: channel_core.py:161
+#: playlist.py:74
+#: search.py:129
+msgid "PreviousPage"
+msgstr "Halaman Sebelumnya"
+
+#: Snapshot.py:83
+msgid "Processing snapshot..."
+msgstr "Memproses syot kilat..."
+
+#: Youtube_settings.py:234
+msgid "Proxy &URL:"
+msgstr "&URL Proksi:"
+
+#: channel_core.py:142
+msgid "Ready"
+msgstr "Sedia"
+
+#: channel_core.py:1320
+#: search.py:542
+msgid "Remove from list"
+msgstr "Alih keluar daripada senarai"
+
+#: Youtube_settings.py:269
+msgid "Reset to &safe settings (recommended if blocked)"
+msgstr "Tetapkan semula ke tetapan &selamat (disyorkan jika disekat)"
+
+#: Youtube_settings.py:335
+msgid "Reset to safe settings. Remember to use cookies for best results."
+msgstr "Tetapkan semula ke tetapan selamat. Ingat untuk menggunakan kuki untuk hasil terbaik."
+
+#: Download_core.py:466
+msgid "Resume downloads"
+msgstr "Sambung muat turun"
+
+#: Youtube_settings.py:124
+msgid "Resume interrupted downloads on restart"
+msgstr "Sambung muat turun yang terganggu semasa mula semula"
+
+#: search.py:95
+msgid "Search"
+msgstr "Cari"
+
+#: search.py:59
+msgid "Search YouTube"
+msgstr "Cari YouTube"
+
+#: search.py:92
+msgid "Search YouTube:"
+msgstr "Cari YouTube:"
+
+#: __init__.py:527
+msgid "Search Youtube"
+msgstr "Cari Youtube"
+
+#: search.py:252
+msgid "Search already in progress."
+msgstr "Carian sedang dijalankan."
+
+#: search.py:492
+msgid "Search completed."
+msgstr "Carian selesai."
+
+#: search.py:501
+msgid "Search failed."
+msgstr "Carian gagal."
+
+#: search.py:500
+msgid "Search failed: {error}"
+msgstr "Carian gagal: {error}"
+
+#: channel_core.py:135
+msgid "Search:"
+msgstr "Cari:"
+
+#: search.py:282
+msgid "Searching..."
+msgstr "Mencari..."
+
+#: Youtube_settings.py:45
+msgid "Select a directory"
+msgstr "Pilih direktori"
+
+#: download_list.py:210
+msgid "Selected items added to download queue"
+msgstr "Item yang dipilih ditambah ke giliran muat turun"
+
+#: downloadFail.py:274
+#: download_list.py:187
+msgid "Selected items deleted"
+msgstr "Item yang dipilih dipadam"
+
+#: __init__.py:547
+#: channel_core.py:1333
+#: playlist.py:352
+#: search.py:553
+msgid "Short URL copied to clipboard"
+msgstr "URL singkat disalin ke papan keratan"
+
+#: channel_core.py:64
+msgid "Shorts"
+msgstr "Shorts"
+
+#: channel_core.py:153
+#: playlist.py:66
+#: search.py:120
+msgid "Show items:"
+msgstr "Tunjukkan item:"
+
+#: Youtube_settings.py:223
+msgid "Skip &unavailable fragments"
+msgstr "Langkau fragmen yang &tidak tersedia"
+
+#: Youtube_settings.py:118
+msgid "Skip existing files"
+msgstr "Langkau fail sedia ada"
+
+#: __init__.py:522
+msgid "Snapshot"
+msgstr "Syot kilat"
+
+#: Snapshot.py:54
+msgid "Snapshot file already exists"
+msgstr "Fail syot kilat sudah wujud"
+
+#: Trim.py:174
+#: channel_dialogs.py:181
+#: search.py:680
+msgid "Start download"
+msgstr "Mula muat turun"
+
+#: Youtube_settings.py:60
+msgid "Start download immediately (NVDA+Y)"
+msgstr "Mula muat turun segera (NVDA+Y)"
+
+#: Trim.py:316
+msgid "Start time must be less than end time"
+msgstr "Masa mula mestilah kurang daripada masa tamat"
+
+#: Trim.py:139
+msgid "Start time:"
+msgstr "Masa mula:"
+
+#: __init__.py:365
+msgid "Starting download: {format} - {title}"
+msgstr "Memulakan muat turun: {format} - {title}"
+
+#: Download_core.py:791
+msgid "Starting next download from queue: {title}"
+msgstr "Memulakan muat turun seterusnya daripada giliran: {title}"
+
+#: channel_dialogs.py:15
+msgid "Title"
+msgstr "Tajuk"
+
+#: channel_core.py:1374
+#: playlist.py:342
+msgid "Title correction completed and locked."
+msgstr "Pembetulan tajuk selesai dan dikunci."
+
+#: channel_core.py:538
+msgid "Title correction completed for {count} videos."
+msgstr "Pembetulan tajuk selesai untuk {count} video."
+
+#: channel_core.py:1376
+#: playlist.py:344
+msgid "Title correction failed."
+msgstr "Pembetulan tajuk gagal."
+
+#: __init__.py:431
+msgid "Toggle immediate download mode"
+msgstr "Togol mod muat turun segera"
+
+#: __init__.py:706
+msgid "Toggle playlist mode"
+msgstr "Togol mod senarai main"
+
+#: __init__.py:525
+msgid "Trim setting"
+msgstr "Tetapan pemotongan"
+
+#: Trim.py:332
+msgid "Trimming and downloading {format}..."
+msgstr "Memotong dan memuat turun {format}..."
+
+#: Trim.py:132
+#: downloadFail.py:69
+msgid "URL"
+msgstr "URL"
+
+#: channel_core.py:1336
+msgid "URL copied to clipboard"
+msgstr "URL disalin ke papan keratan"
+
+#: Trim.py:307
+msgid "URL is required"
+msgstr "URL diperlukan"
+
+#: Download_core.py:903
+msgid "URL not found"
+msgstr "URL tidak ditemui"
+
+#: Download_core.py:672
+#: __init__.py:359
+#: downloadFail.py:110
+#: downloadFail.py:113
+#: downloadFail.py:114
+#: download_list.py:103
+msgid "Unknown"
+msgstr "Tidak diketahui"
+
+#: channel_core.py:591
+msgid "Unpin"
+msgstr "Nyahpin"
+
+#: Youtube_settings.py:369
+#: __init__.py:287
+msgid "Update failed: {str}"
+msgstr "Kemas kini gagal: {str}"
+
+#: Youtube_settings.py:290
+msgid "Update status: Idle"
+msgstr "Status kemas kini: Melahu"
+
+#: Youtube_settings.py:368
+msgid "Update status: Update failed: {str}"
+msgstr "Status kemas kini: Kemas kini gagal: {str}"
+
+#: Youtube_settings.py:364
+msgid "Update status: Update successful"
+msgstr "Status kemas kini: Kemas kini berjaya"
+
+#: Youtube_settings.py:354
+msgid "Update status: Updating..."
+msgstr "Status kemas kini: Mengemas kini..."
+
+#: Youtube_settings.py:286
+msgid "Update yt-dlp now"
+msgstr "Kemas kini yt-dlp sekarang"
+
+#: Youtube_settings.py:355
+#: __init__.py:275
+msgid "Updating yt-dlp..."
+msgstr "Mengemas kini yt-dlp..."
+
+#: Youtube_settings.py:150
+msgid "Use &cookies (recommended to avoid block)"
+msgstr "Gunakan &kuki (disyorkan untuk mengelakkan sekatan)"
+
+#: Youtube_settings.py:179
+msgid "Use &custom user agent"
+msgstr "Gunakan &agen pengguna tersuai"
+
+#: Youtube_settings.py:229
+msgid "Use &proxy"
+msgstr "Gunakan &proksi"
+
+#: Youtube_settings.py:92
+msgid "Use download section"
+msgstr "Gunakan bahagian muat turun"
+
+#: Youtube_settings.py:184
+msgid "User &agent:"
+msgstr "&Agen pengguna:"
+
+#: downloadFail.py:67
+#: download_list.py:67
+#: search.py:35
+msgid "Video Title"
+msgstr "Tajuk Video"
+
+#: Trim.py:144
+msgid "Video duration: unknown; Overall period: 0 seconds"
+msgstr "Tempoh video: tidak diketahui; Tempoh keseluruhan: 0 saat"
+
+#: Trim.py:255
+msgid "Video duration: {duration}; Overall period: {period} seconds"
+msgstr "Tempoh video: {duration}; Tempoh keseluruhan: {period} saat"
+
+#: channel_core.py:63
+msgid "Videos"
+msgstr "Video"
+
+#: playlist.py:23
+msgid "Videos in {title}"
+msgstr "Video dalam {title}"
+
+#: __init__.py:592
+#: __init__.py:606
+msgid "You must be on a YouTube page to use this feature"
+msgstr "Anda mestilah berada di halaman YouTube untuk menggunakan ciri ini"
+
+#: channel_core.py:30
+msgid "Your favorite channel"
+msgstr "Saluran kegemaran anda"
+
+#: Trim.py:254
+msgid "invalid"
+msgstr "tidak sah"
+
+#: Trim.py:250
+msgid "invalid (negative)"
+msgstr "tidak sah (negatif)"
+
+#: search.py:53
+msgid "loading..."
+msgstr "memuatkan..."
+
+#: Trim.py:244
+msgid "unknown"
+msgstr "tidak diketahui"
+
+#: Youtube_settings.py:276
+msgid "yt-dlp Update"
+msgstr "Kemas Kini yt-dlp"
+
+#: Youtube_settings.py:365
+#: __init__.py:284
+msgid "yt-dlp updated successfully"
+msgstr "yt-dlp berjaya dikemas kini"
+
+#: Download_core.py:946
+msgid "yt-dlp.exe missing"
+msgstr "yt-dlp.exe hilang"
+
+#: channel_core.py:816
+#: search.py:256
+msgid "yt-dlp.exe not found."
+msgstr "yt-dlp.exe tidak ditemui."
+
+#: __init__.py:725
+msgid "{quality} kbps"
+msgstr "{quality} kbps"
+
+#: channel_core.py:350
+#: playlist.py:123
+#: search.py:197
+msgid "{}, showing {} of {} videos"
+msgstr "{}, menunjukkan {} daripada {} video"

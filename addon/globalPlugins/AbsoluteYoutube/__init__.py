@@ -29,7 +29,11 @@ import urllib.parse
 import controlTypes
 import logging
 
-from .utils import getLinkURL, getLinkName
+from .utils import (
+	getLinkURL, getLinkName, is_youtube_url, is_youtube_video_url,
+	is_channel_or_playlist_url, get_focused_youtube_link, remove_playlist_params,
+	extract_video_id_from_url
+)
 from .channel_core import ChannelPlaylistDialog
 from .channel_utils import ensure_channel_dir
 from . import search
@@ -88,6 +92,7 @@ def initConfiguration():
 		"GeoBypassIP": "string(default='')",
 		"UseSponsorBlock": "boolean(default=False)",
 		"SponsorBlockCategories": "string(default='all')",
+		"ImmediateDownload": "boolean(default=True)",
 	}
 	config.conf.spec[sectionName] = confspec
 
@@ -124,7 +129,19 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				remove_failed_download,
 				clear_failed_downloads,
 				load_failed_downloads,
-				save_failed_downloads
+				save_failed_downloads,
+				add_pending_download,
+				get_pending_downloads,
+				remove_pending_download_by_index,
+				clear_pending_downloads,
+				get_pending_file_path,
+				is_download_active,
+				start_next_pending,
+				getINI,
+				addDownloadToQueue,
+				_download_queue,
+				ConverterEXE,
+				Aria2cEXE
 			)
 			self.core_functions.update({
 				'initialize_folders': initialize_folders,
@@ -143,11 +160,30 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				'remove_failed_download': remove_failed_download,
 				'clear_failed_downloads': clear_failed_downloads,
 				'load_failed_downloads': load_failed_downloads,
-				'save_failed_downloads': save_failed_downloads
+				'save_failed_downloads': save_failed_downloads,
+				'add_pending_download': add_pending_download,
+				'get_pending_downloads': get_pending_downloads,
+				'remove_pending_download_by_index': remove_pending_download_by_index,
+				'clear_pending_downloads': clear_pending_downloads,
+				'get_pending_file_path': get_pending_file_path,
+				'is_download_active': is_download_active,
+				'start_next_pending': start_next_pending,
+				'getINI': getINI,
+				'addDownloadToQueue': addDownloadToQueue,
+				'_download_queue': _download_queue,
+				'ConverterEXE': ConverterEXE,
+				'Aria2cEXE': Aria2cEXE,
 			})
 		except ImportError as e:
 			ui.message(_("Error importing core functions: {str}").format(str=str(e)))
 			self.core_functions['log'](f"ImportError in Download_core: {e}")
+
+		# Verify critical keys exist
+		if 'get_pending_file_path' not in self.core_functions:
+			self.core_functions['log']("CRITICAL: get_pending_file_path missing from core_functions")
+			ui.message(_("Add-on initialization failed: missing pending file path function. Please restart NVDA."))
+		if 'getINI' not in self.core_functions:
+			self.core_functions['log']("CRITICAL: getINI missing from core_functions")
 
 		try:
 			self.core_functions['log']("Initializing AbsoluteYoutube plugin")
@@ -193,6 +229,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.channel_dialog = None
 		self.search_dialog = None
 		self.playlist_dialog = None
+		self.download_list_dialog = None
 
 	def terminate(self):
 		try:
@@ -250,19 +287,15 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			ui.message(_("Update failed: {str}").format(str=str(e)))
 			self.core_functions['log'](f"Error updating yt-dlp: {e}")
 
-	def _is_channel_or_playlist_url(self, url):
-		if not url:
-			return False
-		lower_url = url.lower()
-		channel_pattern = r'(youtube\.com/(@|channel/|c/|user/))'
-		playlist_pattern = r'(youtube\.com/playlist\?.*list=)'
-		return bool(re.search(channel_pattern, lower_url) or re.search(playlist_pattern, lower_url))
-
-	def _is_youtube_video_url(self, url):
-		if not url:
-			return False
-		lower_url = url.lower()
-		return any(x in lower_url for x in ["youtube.com/watch", "youtu.be/", "youtube.com/shorts/"])
+	def _get_page_title(self):
+		try:
+			title = api.getForegroundObject().name
+			unwanted_suffixes = [" - YouTube", "| YouTube", " - Google Chrome", " - Brave", " - Microsoft Edge"]
+			for suffix in unwanted_suffixes:
+				title = title.replace(suffix, "")
+			return title.strip()
+		except Exception:
+			return None
 
 	def _get_url_for_download(self):
 		if self.channel_dialog and self.channel_dialog.IsShown():
@@ -286,11 +319,19 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				if info:
 					return info[0], info[1], False
 
-		link_url = getLinkURL()
-		if link_url and any(x in link_url.lower() for x in ["youtube.com", "youtu.be"]):
-			return link_url, getLinkName(), True
-		url = self.core_functions.get('getCurrentDocumentURL', lambda: None)()
-		return url, None, False
+		focused_url, focused_title = get_focused_youtube_link()
+		if focused_url:
+			return focused_url, focused_title, True
+
+		doc_url = self.core_functions.get('getCurrentDocumentURL', lambda: None)()
+		if doc_url and is_youtube_url(doc_url):
+			page_title = self._get_page_title()
+			if page_title:
+				return doc_url, page_title, False
+			else:
+				return doc_url, None, False
+
+		return None, None, False
 
 	def _execute_tap_action(self):
 		try:
@@ -298,30 +339,50 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			if not url:
 				wx.CallAfter(ui.message, _("No YouTube URL found"))
 				return
+
+			if not config.conf[sectionName]["PlaylistMode"] and is_youtube_video_url(url):
+				url = remove_playlist_params(url)
+
 			if self._tap_count == 1:
-				self.core_functions.get('PlayWave', lambda x: None)('start')
-				wx.CallAfter(ui.message, _("Download MP3"))
-				if 'convertToMP' in self.core_functions:
-					self.core_functions['convertToMP']("mp3", self._get_current_download_path(), 
-													  config.conf[sectionName]["PlaylistMode"], url, title)
+				chosen_format = "mp3"
 			elif self._tap_count == 2:
-				self.core_functions.get('PlayWave', lambda x: None)('start')
-				wx.CallAfter(ui.message, _("Download MP4"))
-				if 'convertToMP' in self.core_functions:
-					self.core_functions['convertToMP']("mp4", self._get_current_download_path(), 
-													  config.conf[sectionName]["PlaylistMode"], url, title)
-			elif self._tap_count >= 3:
-				self.core_functions.get('PlayWave', lambda x: None)('start')
-				wx.CallAfter(ui.message, _("Download WAV"))
-				if 'convertToMP' in self.core_functions:
-					self.core_functions['convertToMP']("wav", self._get_current_download_path(), 
-													  config.conf[sectionName]["PlaylistMode"], url, title)
+				chosen_format = "mp4"
+			else:
+				chosen_format = "wav"
+
+			immediate_mode = config.conf[sectionName]["ImmediateDownload"]
+
+			final_title = title
+			if not final_title:
+				final_title = self._get_page_title()
+			if not final_title:
+				final_title = _("Unknown")
+
+			if immediate_mode:
+				active = self.core_functions.get('is_download_active', lambda: False)()
+				if not active:
+					self.core_functions.get('PlayWave', lambda x: None)('start')
+					wx.CallAfter(ui.message, _("Starting download: {format} - {title}").format(format=chosen_format.upper(), title=final_title))
+					self.core_functions['convertToMP'](chosen_format, self._get_current_download_path(), False, url, final_title)
+				else:
+					success = self.core_functions.get('add_pending_download', lambda *a: False)(url, final_title, chosen_format)
+					if success:
+						wx.CallAfter(ui.message, _("Added to download queue: {format} - {title}").format(format=chosen_format.upper(), title=final_title))
+					else:
+						wx.CallAfter(ui.message, _("Already in download queue"))
+			else:
+				success = self.core_functions.get('add_pending_download', lambda *a: False)(url, final_title, chosen_format)
+				if success:
+					wx.CallAfter(ui.message, _("Added to download list: {format} - {title}").format(format=chosen_format.upper(), title=final_title))
+				else:
+					wx.CallAfter(ui.message, _("Already in download list"))
+
 		except Exception as e:
 			self.core_functions['log'](f"Error in tap action: {e}")
 		finally:
 			self._tap_count = 0
 
-	@script(description=_("Download MP3 (single tap), MP4 (double tap), or WAV (triple tap)"), gesture="kb:NVDA+y")
+	@script(description=_("Download or queue video (single tap MP3, double tap MP4, triple tap WAV)"), gesture="kb:NVDA+y")
 	def script_downloadMP3OrMP4OrWAV(self, gesture):
 		current_time = time.time()
 		if current_time - self._last_tap_time > 0.6:
@@ -367,6 +428,16 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		finally:
 			self._tap_count = 0
 
+	@script(description=_("Toggle immediate download mode"), gesture="kb:NVDA+control+y")
+	def script_toggleImmediateDownload(self, gesture):
+		current_mode = config.conf[sectionName]["ImmediateDownload"]
+		new_mode = not current_mode
+		config.conf[sectionName]["ImmediateDownload"] = new_mode
+		if new_mode:
+			ui.message(_("Immediate download mode enabled"))
+		else:
+			ui.message(_("Immediate download mode disabled"))
+
 	def _open_channel_by_url(self, url):
 		if not url:
 			ui.message(_("Invalid channel URL"))
@@ -407,15 +478,37 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.core_functions['log'](f"Error creating short URL: {e}")
 			return None
 
+	def _open_download_list_dialog(self, menuInstance):
+		menuInstance.Close()
+		try:
+			from .download_list import DownloadListDialog
+			def show_dialog():
+				try:
+					gui.mainFrame.prePopup()
+					dlg = DownloadListDialog(gui.mainFrame, self.core_functions)
+					self.download_list_dialog = dlg
+					dlg.ShowModal()
+					self.download_list_dialog = None
+					gui.mainFrame.postPopup()
+				except Exception as e:
+					ui.message(_("Error opening download list dialog: {str}").format(str=str(e)))
+					self.core_functions['log'](f"Error in download list dialog: {e}")
+			wx.CallAfter(show_dialog)
+		except ImportError as e:
+			self.core_functions['log'](f"Error importing download_list: {e}")
+			ui.message(_("Error: Download list module not available"))
+
 	def _buildMenuItemsForFrame(self):
 		url_for_copy, title_for_copy, is_link = self._get_url_for_download()
 		doc_url = self.core_functions.get('getCurrentDocumentURL', lambda: None)()
-		is_youtube_doc = any(x in (doc_url or "").lower() for x in ["youtube.com", "youtu.be"])
+		is_youtube_doc = is_youtube_url(doc_url)
 
 		menu_items = []
 
-		if url_for_copy and any(x in url_for_copy.lower() for x in ["youtube.com", "youtu.be"]):
+		if url_for_copy and is_youtube_url(url_for_copy):
 			menu_items.append((_("Copy video Shorten URL"), lambda menu: self._copy_specific_short_url(menu, url_for_copy)))
+
+		menu_items.append((_("Download list manager"), lambda menu: self._open_download_list_dialog(menu)))
 
 		failed_downloads = self.core_functions.get('load_failed_downloads', lambda: [])()
 		if failed_downloads:
@@ -445,7 +538,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if not url:
 			ui.message(_("No YouTube URL found"))
 			return
-		if not any(x in url.lower() for x in ["youtube.com", "youtu.be"]):
+		if not is_youtube_url(url):
 			ui.message(_("Not a YouTube URL"))
 			return
 		short_url = self._create_short_youtube_url(url)
@@ -484,10 +577,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		menuInstance.Close()
 		doc_url = self.core_functions.get('getCurrentDocumentURL', lambda: None)()
 		link_url = getLinkURL()
-		if doc_url and self._is_channel_or_playlist_url(doc_url):
+		if doc_url and is_channel_or_playlist_url(doc_url):
 			url = doc_url.split('?')[0]
 			self._show_channel_dialog(url)
-		elif link_url and self._is_youtube_video_url(link_url):
+		elif link_url and is_youtube_video_url(link_url):
 			self._show_channel_dialog(None)
 		else:
 			self._show_channel_dialog(None)
@@ -495,7 +588,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def _capture_snapshot(self, menuInstance):
 		menuInstance.Close()
 		url = self.core_functions.get('getCurrentDocumentURL', lambda: None)()
-		if not url or ("youtube.com" not in url.lower() and "youtu.be" not in url.lower()):
+		if not url or not is_youtube_url(url):
 			ui.message(_("You must be on a YouTube page to use this feature"))
 			return
 		try:
@@ -509,7 +602,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def _open_trim_dialog(self, menuInstance):
 		menuInstance.Close()
 		url = self.core_functions.get('getCurrentDocumentURL', lambda: None)()
-		if not url or ("youtube.com" not in url.lower() and "youtu.be" not in url.lower()):
+		if not url or not is_youtube_url(url):
 			ui.message(_("You must be on a YouTube page to use this feature"))
 			return
 		self.core_functions['log']("Attempting to open Trim dialog")
