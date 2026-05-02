@@ -38,6 +38,7 @@ class VirtualVideoList(wx.ListCtrl):
 
 class AddChannelDialog(wx.Dialog):
 	def __init__(self, parent, default_name="", default_url=""):
+		# REMOVED: auto clipboard reading
 		super().__init__(parent, title=_("Add New Channel"), size=(500, 200))
 		self.default_name = default_name
 		self.default_url = default_url
@@ -57,9 +58,8 @@ class AddChannelDialog(wx.Dialog):
 		url_sizer = wx.BoxSizer(wx.HORIZONTAL)
 		url_label = wx.StaticText(panel, label=_("Channel URL:"))
 		url_sizer.Add(url_label, 0, wx.ALIGN_CENTER_VERTICAL | wx.RIGHT, 5)
-		clipboard_url = self._get_clipboard_url()
-		initial_url = clipboard_url if clipboard_url else default_url
-		self.url_ctrl = wx.TextCtrl(panel, value=initial_url)
+		# REMOVED: clipboard auto-paste, now requires manual entry
+		self.url_ctrl = wx.TextCtrl(panel, value=default_url)
 		url_sizer.Add(self.url_ctrl, 1, wx.ALL | wx.EXPAND, 5)
 		sizer.Add(url_sizer, 0, wx.EXPAND)
 
@@ -73,20 +73,6 @@ class AddChannelDialog(wx.Dialog):
 
 		panel.SetSizer(sizer)
 		self.CentreOnParent()
-
-	def _get_clipboard_url(self):
-		try:
-			if wx.TheClipboard.Open():
-				data = wx.TextDataObject()
-				if wx.TheClipboard.GetData(data):
-					text = data.GetText().strip()
-					if text:
-						return text
-		except Exception as e:
-			log(f"Error reading clipboard: {e}")
-		finally:
-			wx.TheClipboard.Close()
-		return ""
 
 	def on_ok(self, event):
 		self.name = self.name_ctrl.GetValue().strip()

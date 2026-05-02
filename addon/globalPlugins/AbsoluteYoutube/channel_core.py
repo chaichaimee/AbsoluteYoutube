@@ -1,4 +1,5 @@
 # channel_core.py
+
 import wx
 import gui
 import threading
@@ -806,113 +807,119 @@ class ChannelPlaylistDialog(wx.Dialog):
 			tones.beep(440, 100)
 			time.sleep(2)
 
+	# MOVED subprocess calls to background threads
 	def _fetch_and_save_channel(self, url, name_safe, filepath, content_type="videos"):
-		log(f"Fetching new channel: {url} -> {filepath} (type={content_type})")
+		def worker():
+			log(f"Fetching new channel: {url} -> {filepath} (type={content_type})")
 
-		wx.CallAfter(self._start_beep)
+			wx.CallAfter(self._start_beep)
 
-		if not os.path.exists(YouTubeEXE):
-			wx.CallAfter(self._stop_beep)
-			wx.CallAfter(ui.message, _("yt-dlp.exe not found."))
-			return
-
-		base_url = get_base_channel_url(url)
-		if not base_url:
-			base_url = url
-
-		if content_type == "playlists":
-			fetch_url = f"{base_url}/playlists"
-		elif content_type == "shorts":
-			fetch_url = f"{base_url}/shorts"
-		elif content_type == "streams":
-			fetch_url = f"{base_url}/streams"
-		elif content_type == "podcasts":
-			fetch_url = f"{base_url}/podcasts"
-		else:
-			fetch_url = f"{base_url}/videos"
-
-		cmd = [
-			YouTubeEXE,
-			"--flat-playlist",
-			"--dump-json",
-			"--ignore-errors",
-			"--no-warnings",
-			"--quiet",
-			"--extractor-args", "youtubetab:max_results=999999,youtubetab:lang=th,youtube:lang=th",
-			fetch_url
-		]
-
-		try:
-			process = subprocess.Popen(
-				cmd,
-				stdout=subprocess.PIPE,
-				stderr=subprocess.PIPE,
-				text=True,
-				encoding='utf-8',
-				errors='replace',
-				creationflags=subprocess.CREATE_NO_WINDOW
-			)
-
-			new_items = []
-			for line in process.stdout:
-				if self._closing or self._stop_fetch:
-					process.terminate()
-					return
-				if line.strip():
-					try:
-						info = json.loads(line)
-						if content_type == "playlists":
-							playlist_url = info.get('webpage_url') or info.get('url')
-							playlist_title = info.get('title', 'Untitled Playlist')
-							item = {
-								'is_playlist': True,
-								'url': playlist_url,
-								'title': playlist_title,
-								'duration': '',
-								'title_finalized': True
-							}
-						else:
-							video_url = info.get('webpage_url') or f"https://youtu.be/{info.get('id')}"
-							title = info.get('title', 'Untitled')
-							duration = info.get('duration')
-							duration_str = ""
-							if duration:
-								duration_sec = int(duration)
-								hours = duration_sec // 3600
-								minutes = (duration_sec % 3600) // 60
-								seconds = duration_sec % 60
-								if hours > 0:
-									duration_str = f"{hours:02d}:{minutes:02d}:{seconds:02d}"
-								else:
-									duration_str = f"{minutes:02d}:{seconds:02d}"
-							item = {
-								'is_playlist': False,
-								'url': video_url,
-								'title': title,
-								'duration': duration_str,
-								'title_finalized': False
-							}
-						new_items.append(item)
-					except json.JSONDecodeError:
-						continue
-
-			stderr = process.stderr.read()
-			if stderr:
-				log(f"yt-dlp stderr: {stderr}")
-
-			if new_items and not self._closing:
-				save_channel_videos(filepath, new_items, url, content_type)
-				wx.CallAfter(self._on_channel_added, name_safe, filepath, url, new_items, content_type)
-				wx.CallAfter(ui.message, _("Channel added successfully."))
-			elif not self._closing:
-				wx.CallAfter(self._show_info_message, _("No items found for this URL."))
-		except Exception as e:
-			log(f"Error fetching channel: {e}")
-			if not self._closing:
-				wx.CallAfter(self._show_info_message, _("Error fetching channel: {str}").format(str=str(e)))
-		finally:
-			if not self._closing:
+			if not os.path.exists(YouTubeEXE):
 				wx.CallAfter(self._stop_beep)
+				wx.CallAfter(ui.message, _("yt-dlp.exe not found."))
+				return
+
+			base_url = get_base_channel_url(url)
+			if not base_url:
+				base_url = url
+
+			if content_type == "playlists":
+				fetch_url = f"{base_url}/playlists"
+			elif content_type == "shorts":
+				fetch_url = f"{base_url}/shorts"
+			elif content_type == "streams":
+				fetch_url = f"{base_url}/streams"
+			elif content_type == "podcasts":
+				fetch_url = f"{base_url}/podcasts"
+			else:
+				fetch_url = f"{base_url}/videos"
+
+			cmd = [
+				YouTubeEXE,
+				"--flat-playlist",
+				"--dump-json",
+				"--ignore-errors",
+				"--no-warnings",
+				"--quiet",
+				"--extractor-args", "youtubetab:max_results=999999,youtubetab:lang=th,youtube:lang=th",
+				fetch_url
+			]
+
+			try:
+				process = subprocess.Popen(
+					cmd,
+					stdout=subprocess.PIPE,
+					stderr=subprocess.PIPE,
+					text=True,
+					encoding='utf-8',
+					errors='replace',
+					creationflags=subprocess.CREATE_NO_WINDOW
+				)
+
+				new_items = []
+				for line in process.stdout:
+					if self._closing or self._stop_fetch:
+						process.terminate()
+						return
+					if line.strip():
+						try:
+							info = json.loads(line)
+							if content_type == "playlists":
+								playlist_url = info.get('webpage_url') or info.get('url')
+								playlist_title = info.get('title', 'Untitled Playlist')
+								item = {
+									'is_playlist': True,
+									'url': playlist_url,
+									'title': playlist_title,
+									'duration': '',
+									'title_finalized': True
+								}
+							else:
+								video_url = info.get('webpage_url') or f"https://youtu.be/{info.get('id')}"
+								title = info.get('title', 'Untitled')
+								duration = info.get('duration')
+								duration_str = ""
+								if duration:
+									duration_sec = int(duration)
+									hours = duration_sec // 3600
+									minutes = (duration_sec % 3600) // 60
+									seconds = duration_sec % 60
+									if hours > 0:
+										duration_str = f"{hours:02d}:{minutes:02d}:{seconds:02d}"
+									else:
+										duration_str = f"{minutes:02d}:{seconds:02d}"
+								item = {
+									'is_playlist': False,
+									'url': video_url,
+									'title': title,
+									'duration': duration_str,
+									'title_finalized': False
+								}
+							new_items.append(item)
+						except json.JSONDecodeError:
+							continue
+
+				stderr = process.stderr.read()
+				if stderr:
+					log(f"yt-dlp stderr: {stderr}")
+
+				if new_items and not self._closing:
+					save_channel_videos(filepath, new_items, url, content_type)
+					wx.CallAfter(self._on_channel_added, name_safe, filepath, url, new_items, content_type)
+					wx.CallAfter(ui.message, _("Channel added successfully."))
+				elif not self._closing:
+					wx.CallAfter(self._show_info_message, _("No items found for this URL."))
+			except Exception as e:
+				log(f"Error fetching channel: {e}")
+				if not self._closing:
+					wx.CallAfter(self._show_info_message, _("Error fetching channel: {str}").format(str=str(e)))
+			finally:
+				if not self._closing:
+					wx.CallAfter(self._stop_beep)
+
+		thread = threading.Thread(target=worker, daemon=True)
+		self._bg_threads.append(thread)
+		thread.start()
 
 	def _show_info_message(self, msg):
 		if self._closing:

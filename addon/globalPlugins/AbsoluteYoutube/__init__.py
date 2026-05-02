@@ -195,9 +195,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			if 'start_worker_threads' in self.core_functions:
 				wx.CallAfter(self.core_functions['start_worker_threads'])
 			if config.conf[sectionName]["AutoUpdateYtDlp"]:
-				wx.CallAfter(self._auto_update_yt_dlp)
+				# Run in background thread
+				threading.Thread(target=self._auto_update_yt_dlp, daemon=True).start()
 			else:
-				wx.CallAfter(self._check_for_yt_dlp_update)
+				threading.Thread(target=self._check_for_yt_dlp_update, daemon=True).start()
 		except Exception as e:
 			ui.message(_("Error initializing AbsoluteYoutube: {str}").format(str=str(e)))
 			self.core_functions['log'](f"Error during initialization: {e}")
@@ -253,7 +254,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				return
 			current_version, latest_version = self.core_functions['check_yt_dlp_update']()
 			if current_version and latest_version and current_version != latest_version:
-				ui.message(_("A new version of yt-dlp is available: {latest}. Current: {current}. Please update in settings.").format(
+				wx.CallAfter(ui.message, _("A new version of yt-dlp is available: {latest}. Current: {current}. Please update in settings.").format(
 					latest=latest_version, current=current_version
 				))
 		except Exception as e:
@@ -268,11 +269,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				self._download_and_replace_yt_dlp()
 		except Exception as e:
 			self.core_functions['log'](f"Error during auto-update of yt-dlp: {e}")
-			ui.message(_("Error during auto-update of yt-dlp: {str}").format(str=str(e)))
+			wx.CallAfter(ui.message, _("Error during auto-update of yt-dlp: {str}").format(str=str(e)))
 
 	def _download_and_replace_yt_dlp(self):
 		try:
-			ui.message(_("Updating yt-dlp..."))
+			wx.CallAfter(ui.message, _("Updating yt-dlp..."))
 			req = urllib.request.Request(
 				"https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe",
 				headers={'User-Agent': 'Mozilla/5.0'}
@@ -281,10 +282,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			with urllib.request.urlopen(req) as response, open(temp_file, 'wb') as out_file:
 				out_file.write(response.read())
 			shutil.move(temp_file, YouTubeEXE)
-			ui.message(_("yt-dlp updated successfully"))
+			wx.CallAfter(ui.message, _("yt-dlp updated successfully"))
 			self.core_functions['log']("yt-dlp updated successfully")
 		except Exception as e:
-			ui.message(_("Update failed: {str}").format(str=str(e)))
+			wx.CallAfter(ui.message, _("Update failed: {str}").format(str=str(e)))
 			self.core_functions['log'](f"Error updating yt-dlp: {e}")
 
 	def _get_page_title(self):
