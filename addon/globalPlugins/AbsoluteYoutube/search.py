@@ -1,5 +1,4 @@
 # search.py
-
 import wx
 import gui
 import threading
@@ -17,18 +16,13 @@ import addonHandler
 import globalVars
 from gui import guiHelper
 
-from .Download_core import log, getINI, DownloadPath, PlayWave
+from .Download_core import log, getINI, DownloadPath, PlayWave, YouTubeEXE, convertToMP
 from .channel_utils import create_short_youtube_url
 
 addonHandler.initTranslation()
 
-AddOnPath = os.path.dirname(__file__)
-ToolsPath = os.path.join(AddOnPath, "Tools")
-YouTubeEXE = os.path.join(ToolsPath, "yt-dlp.exe")
-
 
 class VirtualSearchList(wx.ListCtrl):
-	"""Virtual list for displaying search results with two columns."""
 	def __init__(self, parent, video_source_callback, filtered_indices_callback):
 		style = wx.LC_REPORT | wx.LC_SINGLE_SEL | wx.LC_VIRTUAL
 		super().__init__(parent, style=style)
@@ -66,7 +60,6 @@ class SearchDialog(wx.Dialog):
 		self._fetch_stop = threading.Event()
 		self._fetch_semaphore = threading.BoundedSemaphore(5)
 
-		# For concurrent searching
 		self._process1 = None
 		self._process2 = None
 
@@ -74,9 +67,8 @@ class SearchDialog(wx.Dialog):
 		self.current_page = 0
 		self.total_pages = 0
 
-		# Counter for updating status label without excessive frequency
 		self._last_status_count = 0
-		self._status_update_threshold = 5  # Update every 5 items
+		self._status_update_threshold = 5
 
 		self._create_ui()
 		self._update_paging()
@@ -87,7 +79,6 @@ class SearchDialog(wx.Dialog):
 	def _create_ui(self):
 		mainSizer = wx.BoxSizer(wx.VERTICAL)
 
-		# Search row
 		searchSizer = wx.BoxSizer(wx.HORIZONTAL)
 		searchLabel = wx.StaticText(self, label=_("Search YouTube:"))
 		self.searchCtrl = wx.TextCtrl(self, style=wx.TE_PROCESS_ENTER)
@@ -115,7 +106,6 @@ class SearchDialog(wx.Dialog):
 
 		mainSizer.Add(self.list_ctrl, 1, wx.EXPAND | wx.ALL, 5)
 
-		# Paging controls
 		pageSizer = wx.BoxSizer(wx.HORIZONTAL)
 		pageLabel = wx.StaticText(self, label=_("Show items:"))
 		pageSizer.Add(pageLabel, 0, wx.ALIGN_CENTER_VERTICAL | wx.RIGHT, 5)
@@ -166,9 +156,6 @@ class SearchDialog(wx.Dialog):
 		self.goPageBtn.Bind(wx.EVT_BUTTON, self._on_go_to_page)
 		self.goPageText.Bind(wx.EVT_TEXT_ENTER, self._on_go_to_page)
 
-	# ----------------------------------------------------------------------
-	# Paging helpers
-	# ----------------------------------------------------------------------
 	def _get_page_indices(self, page_num):
 		start = page_num * self.page_size
 		end = start + self.page_size
@@ -236,9 +223,6 @@ class SearchDialog(wx.Dialog):
 		else:
 			ui.message(_("Page number out of range (1-{}).").format(self.total_pages))
 
-	# ----------------------------------------------------------------------
-	# Concurrent search: first 50 stream immediately, rest in background
-	# ----------------------------------------------------------------------
 	def _on_search_enter(self, event):
 		query = self.searchCtrl.GetValue().strip()
 		if not query:
@@ -257,7 +241,6 @@ class SearchDialog(wx.Dialog):
 			log(f"yt-dlp not found at {YouTubeEXE}")
 			return
 
-		# Clean up any previous processes
 		self._stop_search = True
 		self._fetch_stop.set()
 		if self._process1:
@@ -283,7 +266,6 @@ class SearchDialog(wx.Dialog):
 
 		def search_worker():
 			try:
-				# Process 1: first 50 items
 				cmd1 = [
 					YouTubeEXE,
 					"--flat-playlist",
@@ -308,7 +290,6 @@ class SearchDialog(wx.Dialog):
 					creationflags=subprocess.CREATE_NO_WINDOW
 				)
 
-				# Process 2: items 51-1000 (start immediately)
 				cmd2 = [
 					YouTubeEXE,
 					"--flat-playlist",
@@ -333,41 +314,44 @@ class SearchDialog(wx.Dialog):
 					creationflags=subprocess.CREATE_NO_WINDOW
 				)
 
-				# Function to read stdout from process and send each item
 				def read_process(proc, is_first):
-					for line in proc.stdout:
-						if self._stop_search:
-							proc.terminate()
-							return
-						if line.strip():
-							try:
-								info = json.loads(line)
-								video_url = info.get('webpage_url')
-								video_id = info.get('id')
-								if not video_url and video_id:
-									video_url = f"https://youtu.be/{video_id}"
-								title = info.get('title', 'Untitled')
-								video = {
-									'url': video_url,
-									'id': video_id,
-									'title': title,
-									'duration': ''
-								}
-								wx.CallAfter(self._append_single_video, video)
-							except json.JSONDecodeError:
-								continue
-					# Read stderr when process ends (for logging)
-					stderr = proc.stderr.read()
-					if stderr:
-						log(f"Process stderr: {stderr}")
+					try:
+						for line in proc.stdout:
+							if self._stop_search:
+								proc.terminate()
+								return
+							if line.strip():
+								try:
+									info = json.loads(line)
+									video_url = info.get('webpage_url')
+									video_id = info.get('id')
+									if not video_url and video_id:
+										video_url = f"https://youtu.be/{video_id}"
+									title = info.get('title', 'Untitled')
+									video = {
+										'url': video_url,
+										'id': video_id,
+										'title': title,
+										'duration': ''
+									}
+									wx.CallAfter(self._append_single_video, video)
+								except json.JSONDecodeError:
+									continue
+					except Exception as e:
+						log(f"Error reading process: {e}")
+					finally:
+						try:
+							stderr = proc.stderr.read()
+							if stderr:
+								log(f"Process stderr: {stderr}")
+						except:
+							pass
 
-				# Start threads for reading each process
 				t1 = threading.Thread(target=read_process, args=(self._process1, True), daemon=True)
 				t2 = threading.Thread(target=read_process, args=(self._process2, False), daemon=True)
 				t1.start()
 				t2.start()
 
-				# Wait for both to finish
 				t1.join()
 				t2.join()
 
@@ -380,7 +364,6 @@ class SearchDialog(wx.Dialog):
 		threading.Thread(target=search_worker, daemon=True).start()
 
 	def _append_single_video(self, video):
-		"""Add a single video to the list and refresh if visible."""
 		if self._stop_search:
 			return
 
@@ -388,7 +371,6 @@ class SearchDialog(wx.Dialog):
 		self.videos.append(video)
 		self.list_ctrl.SetItemCount(len(self.videos))
 
-		# Refresh only items on the current page
 		start = self.current_page * self.page_size
 		end = start + self.page_size - 1
 		if start <= video_index <= end:
@@ -396,20 +378,17 @@ class SearchDialog(wx.Dialog):
 			try:
 				self.list_ctrl.RefreshItem(display_index)
 			except:
-				pass  # Prevent errors if index is out of range
+				pass
 
-		# Update status label periodically
 		count = len(self.videos)
 		if count - self._last_status_count >= self._status_update_threshold:
 			self.status_label.SetLabel(_("Found {} videos...").format(count))
 			self._last_status_count = count
 
-		# Start fetching duration in background
 		if not self._fetch_stop.is_set():
 			threading.Thread(target=self._fetch_duration, args=(video_index,), daemon=True).start()
 
 	def _fetch_duration(self, video_index):
-		"""Fetch duration for a video using yt-dlp."""
 		with self._fetch_semaphore:
 			if self._fetch_stop.is_set() or self._stop_search:
 				return
@@ -500,9 +479,6 @@ class SearchDialog(wx.Dialog):
 		self.status_label.SetLabel(_("Search failed: {error}").format(error=error))
 		ui.message(_("Search failed."))
 
-	# ----------------------------------------------------------------------
-	# List event handlers
-	# ----------------------------------------------------------------------
 	def _on_item_selected(self, event):
 		event.Skip()
 
@@ -571,8 +547,8 @@ class SearchDialog(wx.Dialog):
 			self.plugin.core_functions['convertToMP'](format_type, save_path, False, url, title)
 			wx.CallAfter(ui.message, _("Adding {title} to download queue.").format(title=title))
 		else:
-			wx.CallAfter(ui.message, _("Download function not available."))
-			log("convertToMP not found in plugin.core_functions")
+			convertToMP(format_type, save_path, False, url, title)
+			wx.CallAfter(ui.message, _("Adding {title} to download queue.").format(title=title))
 
 	def _on_remove_video(self, video_idx):
 		del self.videos[video_idx]
@@ -594,8 +570,11 @@ class SearchDialog(wx.Dialog):
 				url = video.get('url')
 				if not url and video.get('id'):
 					url = f"https://youtu.be/{video['id']}"
-				if url and hasattr(self.plugin, 'core_functions') and 'convertToMP' in self.plugin.core_functions:
-					self.plugin.core_functions['convertToMP'](format_, save_path, False, url, video['title'])
+				if url:
+					if hasattr(self.plugin, 'core_functions') and 'convertToMP' in self.plugin.core_functions:
+						self.plugin.core_functions['convertToMP'](format_, save_path, False, url, video['title'])
+					else:
+						convertToMP(format_, save_path, False, url, video['title'])
 				time.sleep(0.1)
 			ui.message(_("Downloads started."))
 		dlg.Destroy()

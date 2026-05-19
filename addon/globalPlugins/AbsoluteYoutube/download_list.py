@@ -169,7 +169,6 @@ class DownloadListDialog(wx.Dialog):
 				ui.message(_("Added to download queue: {title}").format(title=item['title']))
 			else:
 				ui.message(_("Already in download queue"))
-				# If it's duplicated but still not active, try starting a queue
 				if not self.core_functions['is_download_active']():
 					self.core_functions['start_next_pending']()
 
@@ -210,7 +209,6 @@ class DownloadListDialog(wx.Dialog):
 			ui.message(_("Selected items added to download queue"))
 		else:
 			ui.message(_("No new items added (already in queue)"))
-			# If all items are duplicates but none are active, start a queue
 			if not self.core_functions['is_download_active']():
 				self.core_functions['start_next_pending']()
 
@@ -230,7 +228,6 @@ class DownloadListDialog(wx.Dialog):
 			ui.message(_("All items added to download queue"))
 		else:
 			ui.message(_("No items added (all already in queue)"))
-			# IMPORTANT: Even if there are no new items, if there are pending files in the system and no downloads are running, start a queue
 			if not self.core_functions['is_download_active']():
 				self.core_functions['start_next_pending']()
 

@@ -1,4 +1,5 @@
 # utils.py
+
 import re
 import glob
 import os
@@ -51,8 +52,16 @@ def is_youtube_url(url):
 	lower_url = url.lower()
 	return any(domain in lower_url for domain in ["youtube.com", "youtu.be"])
 
+def is_youtube_homepage(url):
+	if not url:
+		return False
+	lower_url = url.lower().rstrip('/')
+	return lower_url in ["https://www.youtube.com", "https://youtube.com", "http://www.youtube.com", "http://youtube.com", "https://www.youtube.com/", "https://youtube.com/"]
+
 def is_youtube_video_url(url):
 	if not url:
+		return False
+	if is_youtube_homepage(url):
 		return False
 	lower_url = url.lower()
 	return any(x in lower_url for x in ["youtube.com/watch", "youtu.be/", "youtube.com/shorts/"])
@@ -65,29 +74,29 @@ def is_channel_or_playlist_url(url):
 	playlist_pattern = r'(youtube\.com/playlist\?.*list=)'
 	return bool(re.search(channel_pattern, lower_url) or re.search(playlist_pattern, lower_url))
 
-def _find_link_in_parents(obj):
+def _find_link_in_parents(obj, max_depth=10):
 	current = obj
-	for _ in range(10):
+	for _ in range(max_depth):
 		if not current:
 			break
 		if current.role == controlTypes.Role.LINK:
 			url = getattr(current, 'value', None)
-			if url and is_youtube_url(url):
-				log.debug(f"Found LINK in parent: {url}")
+			if url and is_youtube_video_url(url):
+				log.debug(f"Found video LINK in parent: {url}")
 				return url, getattr(current, 'name', None)
 		current = current.parent
 	return None, None
 
-def _find_link_in_children(obj):
-	if not obj:
+def _find_link_in_children(obj, max_depth=5):
+	if not obj or max_depth == 0:
 		return None, None
 	for child in obj.children:
 		if child.role == controlTypes.Role.LINK:
 			url = getattr(child, 'value', None)
-			if url and is_youtube_url(url):
-				log.debug(f"Found LINK in child: {url}")
+			if url and is_youtube_video_url(url):
+				log.debug(f"Found video LINK in child: {url}")
 				return url, getattr(child, 'name', None)
-		sub_url, sub_title = _find_link_in_children(child)
+		sub_url, sub_title = _find_link_in_children(child, max_depth-1)
 		if sub_url:
 			return sub_url, sub_title
 	return None, None
@@ -95,61 +104,81 @@ def _find_link_in_children(obj):
 def get_url_from_object(obj):
 	if not obj:
 		return None, None
-	
+
 	if obj.role == controlTypes.Role.LINK:
 		url = getattr(obj, 'value', None)
 		if url and is_youtube_url(url):
+			if is_youtube_video_url(url):
+				title = getattr(obj, 'name', None)
+				log.debug(f"Using direct LINK video URL: {url}")
+				return url, title
+			elif not is_youtube_homepage(url):
+				log.debug(f"LINK has non-video YouTube URL: {url}, will search children first")
+			else:
+				log.debug(f"LINK has homepage URL, ignoring")
+
+	if obj.role == controlTypes.Role.DOCUMENT:
+		acc_value = getattr(obj, 'value', None)
+		if acc_value and is_youtube_video_url(acc_value):
 			title = getattr(obj, 'name', None)
-			log.debug(f"URL from LINK object: {url}")
-			return url, title
-	
+			log.debug(f"URL from DOCUMENT accValue: {acc_value}")
+			return acc_value, title
+
 	url = getattr(obj, 'value', None)
-	if url and is_youtube_url(url):
+	if url and is_youtube_video_url(url):
 		title = getattr(obj, 'name', None)
 		log.debug(f"URL from object value: {url}")
 		return url, title
-	
+
 	try:
 		ia2_attrs = getattr(obj, 'IAccessible2Attributes', {})
 		if isinstance(ia2_attrs, dict):
 			for key in ['href', 'url', 'data-url', 'data-video-url']:
-				if key in ia2_attrs and is_youtube_url(ia2_attrs[key]):
+				if key in ia2_attrs:
 					url = ia2_attrs[key]
-					title = getattr(obj, 'name', None)
-					log.debug(f"URL from IAccessible2 attr {key}: {url}")
-					return url, title
+					if is_youtube_video_url(url):
+						title = getattr(obj, 'name', None)
+						log.debug(f"URL from IAccessible2 attr {key}: {url}")
+						return url, title
 	except Exception:
 		pass
-	
+
 	child_url, child_title = _find_link_in_children(obj)
 	if child_url:
 		return child_url, child_title
-	
+
 	parent_url, parent_title = _find_link_in_parents(obj)
 	if parent_url:
 		return parent_url, parent_title
-	
+
+	if obj.role == controlTypes.Role.LINK:
+		url = getattr(obj, 'value', None)
+		if url and is_youtube_url(url) and not is_youtube_homepage(url):
+			title = getattr(obj, 'name', None)
+			log.debug(f"Fallback to non-video YouTube LINK: {url}")
+			return url, title
+
 	return None, None
 
 def get_focused_youtube_link():
-	nav_obj = api.getNavigatorObject()
-	url, title = get_url_from_object(nav_obj)
-	if url:
-		log.debug(f"Using navigator object URL via get_url_from_object: {url}")
-		return url, title
-	
 	focused = api.getFocusObject()
 	url, title = get_url_from_object(focused)
 	if url:
 		log.debug(f"Using focused object URL: {url}")
 		return url, title
-	
+
+	nav_obj = api.getNavigatorObject()
+	url, title = get_url_from_object(nav_obj)
+	if url:
+		log.debug(f"Using navigator object URL: {url}")
+		return url, title
+
 	legacy_url = getLinkURL()
-	if legacy_url and is_youtube_url(legacy_url):
+	if legacy_url and is_youtube_url(legacy_url) and not is_youtube_homepage(legacy_url):
 		legacy_title = getLinkName()
 		log.debug(f"Using legacy getLinkURL: {legacy_url}")
 		return legacy_url, legacy_title
-	
+
 	log.debug("get_focused_youtube_link: No YouTube URL found")
 	return None, None
 

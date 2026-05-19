@@ -22,11 +22,12 @@ from .Download_core import (
 	log,
 	YouTubeEXE,
 	ConverterPath,
-	_process_next_download,
 	setINI,
 	DownloadPath,
-	_download_queue
+	_download_queue,
+	clean_youtube_url
 )
+from .utils import is_youtube_video_url
 
 addonHandler.initTranslation()
 
@@ -64,7 +65,8 @@ class TrimDialog(wx.Dialog):
 		super().__init__(parent, title=_("Absolute YouTube Trim"), style=wx.DEFAULT_DIALOG_STYLE | wx.STAY_ON_TOP)
 		self.download_path = getINI("ResultFolder") or DownloadPath
 		self.parent = parent
-		self.initial_url = initial_url
+		# Clean the URL to ensure it's a proper video URL
+		self.initial_url = clean_youtube_url(initial_url, is_playlist=False) if initial_url else ""
 		self.video_duration = "00:00:00"
 		self.video_duration_seconds = 0
 		self.init_ui()
@@ -72,9 +74,8 @@ class TrimDialog(wx.Dialog):
 		self.urlCtrl.SetFocus()
 		self.startTimeCtrl.SetValue(config.conf[sectionName].get("TrimLastStartTime", "00:00:00"))
 
-		# Use end time from config only for matching previous URL
 		last_url = config.conf[sectionName].get("TrimLastURL", "")
-		if initial_url and initial_url == last_url:
+		if self.initial_url and self.initial_url == last_url:
 			end_time_value = config.conf[sectionName].get("TrimLastEndTime", "")
 		else:
 			end_time_value = ""
@@ -92,12 +93,10 @@ class TrimDialog(wx.Dialog):
 		self.qualityCtrl.SetStringSelection(f"{last_quality} kbps")
 		self.on_format_change(None)
 
-		# Use cached duration for previous URL, fetch new for new URL
-		if initial_url:
+		if self.initial_url:
 			last_url = config.conf[sectionName].get("TrimLastURL", "")
 			last_duration = config.conf[sectionName].get("TrimLastDuration", "")
-			if initial_url == last_url and last_duration:
-				# Use cached duration
+			if self.initial_url == last_url and last_duration:
 				self.video_duration = last_duration
 				try:
 					parts = last_duration.split(':')
@@ -114,10 +113,8 @@ class TrimDialog(wx.Dialog):
 					self.video_duration_seconds = 0
 				wx.CallAfter(self.update_duration_label)
 			else:
-				# New URL: fetch video duration
 				threading.Thread(target=self._fetch_video_duration, daemon=True).start()
 
-		# Bind ESC key to close dialog
 		self.Bind(wx.EVT_CHAR_HOOK, self.on_char_hook)
 
 	def on_char_hook(self, event):
@@ -196,8 +193,11 @@ class TrimDialog(wx.Dialog):
 		url = self.urlCtrl.GetValue().strip()
 		if not url:
 			return
+		clean_url = clean_youtube_url(url, is_playlist=False)
+		if not clean_url:
+			return
 		try:
-			cmd = [YouTubeEXE, "--get-duration", "--no-playlist", url]
+			cmd = [YouTubeEXE, "--get-duration", "--no-playlist", clean_url]
 			result = subprocess.run(
 				cmd,
 				stdout=subprocess.PIPE,
@@ -225,10 +225,8 @@ class TrimDialog(wx.Dialog):
 				self.video_duration_seconds = mins*60 + secs
 			else:
 				self.video_duration_seconds = float(parts[0])
-			# Save URL and duration for next time
 			config.conf[sectionName]["TrimLastURL"] = self.initial_url
 			config.conf[sectionName]["TrimLastDuration"] = duration_str
-			# Set end time to video duration if not set
 			if self.endTimeCtrl.GetValue() == "":
 				self.endTimeCtrl.SetValue(duration_str)
 		except ValueError:
@@ -261,7 +259,6 @@ class TrimDialog(wx.Dialog):
 
 	def on_format_change(self, event):
 		if self.qualityCtrl:
-			# Enable quality control only for MP3 format
 			self.qualityCtrl.Enable(self.mp3Radio.GetValue())
 
 	def _time_str_to_seconds(self, time_str):
@@ -282,20 +279,11 @@ class TrimDialog(wx.Dialog):
 			ui.message(_("Invalid URL or start time"))
 			return
 
-		# Remove playlist parameters for preview
-		parsed = urllib.parse.urlparse(url)
-		query_params = urllib.parse.parse_qs(parsed.query)
-		if 'list' in query_params:
-			del query_params['list']
-		if 'index' in query_params:
-			del query_params['index']
-		new_query = urllib.parse.urlencode(query_params, doseq=True)
-		clean_url = urllib.parse.urlunparse((
-			parsed.scheme, parsed.netloc, parsed.path,
-			parsed.params, new_query, parsed.fragment
-		))
-
-		preview_url = f"{clean_url}&t={int(start_seconds)}s"
+		clean_url = clean_youtube_url(url, is_playlist=False)
+		if '?' in clean_url:
+			preview_url = f"{clean_url}&t={int(start_seconds)}s"
+		else:
+			preview_url = f"{clean_url}?t={int(start_seconds)}s"
 		try:
 			os.startfile(preview_url)
 		except Exception:
@@ -305,6 +293,12 @@ class TrimDialog(wx.Dialog):
 		url = self.urlCtrl.GetValue().strip()
 		if not url:
 			ui.message(_("URL is required"))
+			return
+
+		clean_url = clean_youtube_url(url, is_playlist=False)
+		if not clean_url or not is_youtube_video_url(clean_url):
+			ui.message(_("Invalid YouTube video URL"))
+			log(f"Trim rejected URL: {clean_url}")
 			return
 
 		start_time_str = self.startTimeCtrl.GetValue()
@@ -333,20 +327,6 @@ class TrimDialog(wx.Dialog):
 
 		download_sections_arg = f"*{start_time_str}-{end_time_str}"
 
-		# Remove playlist parameters from URL
-		parsed = urllib.parse.urlparse(url)
-		query_params = urllib.parse.parse_qs(parsed.query)
-		if 'list' in query_params:
-			del query_params['list']
-		if 'index' in query_params:
-			del query_params['index']
-		new_query = urllib.parse.urlencode(query_params, doseq=True)
-		clean_url = urllib.parse.urlunparse((
-			parsed.scheme, parsed.netloc, parsed.path,
-			parsed.params, new_query, parsed.fragment
-		))
-
-		# Base command with common options to avoid bot detection
 		base_cmd = [
 			YouTubeEXE,
 			clean_url,
@@ -354,7 +334,6 @@ class TrimDialog(wx.Dialog):
 			"-o", f"{output_path}.%(ext)s",
 			"--ffmpeg-location", os.path.join(ConverterPath, "ffmpeg.exe"),
 			"--download-sections", download_sections_arg,
-			# Add options to avoid bot detection
 			"--no-check-certificate",
 			"--force-ipv4",
 			"--geo-bypass",
@@ -371,9 +350,9 @@ class TrimDialog(wx.Dialog):
 			base_cmd.extend([
 				"--extract-audio",
 				"--audio-format", "wav",
-				"--audio-quality", "0"  # Best quality for WAV
+				"--audio-quality", "0"
 			])
-		else:  # mp4
+		else:
 			base_cmd.extend([
 				"-f", "best[ext=mp4]/best",
 				"--merge-output-format", "mp4",

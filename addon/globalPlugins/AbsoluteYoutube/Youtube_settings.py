@@ -1,4 +1,5 @@
 # Youtube_settings.py
+
 import wx
 import gui
 import config
@@ -37,7 +38,6 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 	def makeSettings(self, settingsSizer):
 		helper = guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
 
-		# Destination folder selection
 		folderSizer = wx.StaticBoxSizer(wx.VERTICAL, self, label=_("Destination folder"))
 		folderBox = folderSizer.GetStaticBox()
 		folderHelper = guiHelper.BoxSizerHelper(self, sizer=folderSizer)
@@ -55,25 +55,21 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 			self.folderPathCtrl.SetValue(current_result_folder)
 		helper.addItem(folderSizer)
 
-		# Immediate download mode
 		self.immediateChk = helper.addItem(
 			wx.CheckBox(self, label=_("Start download immediately (NVDA+Y)"))
 		)
 		self.immediateChk.SetValue(getINI("ImmediateDownload"))
 
-		# Beep while converting
 		self.beepChk = helper.addItem(
 			wx.CheckBox(self, label=_("&Beep while converting"))
 		)
 		self.beepChk.SetValue(getINI("BeepWhileConverting"))
 
-		# Announce download completion
 		self.sayCompleteChk = helper.addItem(
 			wx.CheckBox(self, label=_("&Say download complete"))
 		)
 		self.sayCompleteChk.SetValue(getINI("SayDownloadComplete"))
 
-		# MP3 quality selection
 		qualityLabel = _("MP3 &quality (kbps):")
 		self.qualityChoice = helper.addLabeledControl(
 			qualityLabel,
@@ -87,13 +83,11 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 		except ValueError:
 			self.qualityChoice.SetSelection(0)
 
-		# Use multi-part download
 		self.multipartChk = helper.addItem(
 			wx.CheckBox(self, label=_("Use download section"))
 		)
 		self.multipartChk.SetValue(getINI("UseMultiPart"))
 
-		# Number of connections for multi-part download
 		connectionsLabel = _("&Number of connections:")
 		self.connectionsChoice = helper.addLabeledControl(
 			connectionsLabel,
@@ -107,31 +101,26 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 		except Exception:
 			self.connectionsChoice.SetSelection(7)
 
-		# Playlist mode
 		self.playlistModeChk = helper.addItem(
 			wx.CheckBox(self, label=_("Enable &playlist mode by default"))
 		)
 		self.playlistModeChk.SetValue(getINI("PlaylistMode"))
 
-		# Skip existing files
 		self.skipExistingChk = helper.addItem(
 			wx.CheckBox(self, label=_("Skip existing files"))
 		)
 		self.skipExistingChk.SetValue(getINI("SkipExisting"))
 
-		# Resume downloads on restart
 		self.resumeOnRestartChk = helper.addItem(
 			wx.CheckBox(self, label=_("Resume interrupted downloads on restart"))
 		)
 		self.resumeOnRestartChk.SetValue(getINI("ResumeOnRestart"))
 
-		# Enable logging
 		self.loggingChk = helper.addItem(
 			wx.CheckBox(self, label=_("Enable &logging"))
 		)
 		self.loggingChk.SetValue(getINI("Logging"))
 
-		# Max concurrent downloads
 		maxDownloadsLabel = _("&Max concurrent downloads (1-4):")
 		self.maxDownloadsSpin = helper.addLabeledControl(
 			maxDownloadsLabel,
@@ -140,18 +129,15 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 		)
 		self.maxDownloadsSpin.SetValue(getINI("MaxConcurrentDownloads"))
 
-		# --- Anti-Blocking Settings ---
 		antiBlockSizer = wx.StaticBoxSizer(wx.VERTICAL, self, label=_("Anti-blocking settings"))
 		antiBlockBox = antiBlockSizer.GetStaticBox()
 		antiBlockHelper = guiHelper.BoxSizerHelper(self, sizer=antiBlockSizer)
 
-		# Use cookies
 		self.useCookiesChk = antiBlockHelper.addItem(
 			wx.CheckBox(antiBlockBox, label=_("Use &cookies (recommended to avoid block)"))
 		)
 		self.useCookiesChk.SetValue(getINI("UseCookies"))
 
-		# Cookies file picker
 		cookiesSizer = wx.BoxSizer(wx.HORIZONTAL)
 		cookiesLabel = wx.StaticText(antiBlockBox, label=_("Cookies &file:"))
 		cookiesSizer.Add(cookiesLabel, 0, wx.ALIGN_CENTER_VERTICAL | wx.RIGHT, 5)
@@ -161,20 +147,16 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 		)
 		cookiesSizer.Add(self.cookiesFilePicker, 1, wx.EXPAND)
 
-		# Help button for cookies
 		self.cookiesHelpBtn = wx.Button(antiBlockBox, label=_("How to get cookies?"))
 		cookiesSizer.Add(self.cookiesHelpBtn, 0, wx.LEFT, 5)
 		antiBlockHelper.addItem(cookiesSizer)
 
-		# Set initial cookies file path
 		cookies_file = getINI("CookiesFile")
 		if cookies_file and os.path.exists(cookies_file):
 			self.cookiesFilePicker.SetPath(cookies_file)
 
-		# Bind cookies help button
 		self.cookiesHelpBtn.Bind(wx.EVT_BUTTON, self.on_cookies_help)
 
-		# Custom user agent
 		self.customUserAgentChk = antiBlockHelper.addItem(
 			wx.CheckBox(antiBlockBox, label=_("Use &custom user agent"))
 		)
@@ -186,7 +168,6 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 		)
 		self.userAgentText.SetValue(getINI("CustomUserAgent") or "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")
 
-		# Throttle rate
 		self.throttleRateSpin = antiBlockHelper.addLabeledControl(
 			_("&Throttle rate (KB/s, 0=unlimited):"),
 			wx.SpinCtrl,
@@ -194,7 +175,6 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 		)
 		self.throttleRateSpin.SetValue(getINI("ThrottleRate"))
 
-		# Sleep between requests
 		self.sleepRequestsSpin = antiBlockHelper.addLabeledControl(
 			_("&Sleep between requests (seconds):"),
 			wx.SpinCtrl,
@@ -202,7 +182,6 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 		)
 		self.sleepRequestsSpin.SetValue(getINI("SleepBetweenRequests"))
 
-		# Retry count
 		self.retryCountSpin = antiBlockHelper.addLabeledControl(
 			_("&Retry count:"),
 			wx.SpinCtrl,
@@ -210,7 +189,6 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 		)
 		self.retryCountSpin.SetValue(getINI("RetryCount"))
 
-		# Fragment retries
 		self.fragmentRetriesSpin = antiBlockHelper.addLabeledControl(
 			_("Fragment &retries:"),
 			wx.SpinCtrl,
@@ -218,13 +196,11 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 		)
 		self.fragmentRetriesSpin.SetValue(getINI("FragmentRetries"))
 
-		# Skip unavailable fragments
 		self.skipUnavailableChk = antiBlockHelper.addItem(
 			wx.CheckBox(antiBlockBox, label=_("Skip &unavailable fragments"))
 		)
 		self.skipUnavailableChk.SetValue(getINI("SkipUnavailableFragments"))
 
-		# Use proxy
 		self.useProxyChk = antiBlockHelper.addItem(
 			wx.CheckBox(antiBlockBox, label=_("Use &proxy"))
 		)
@@ -236,7 +212,6 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 		)
 		self.proxyText.SetValue(getINI("ProxyURL") or "")
 
-		# Geo bypass
 		self.geoBypassChk = antiBlockHelper.addItem(
 			wx.CheckBox(antiBlockBox, label=_("&Geo bypass"))
 		)
@@ -248,7 +223,6 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 		)
 		self.geoBypassCountryText.SetValue(getINI("GeoBypassCountry") or "US")
 
-		# Force IPv4/IPv6
 		self.forceIpv4Chk = antiBlockHelper.addItem(
 			wx.CheckBox(antiBlockBox, label=_("Force I&Pv4"))
 		)
@@ -259,20 +233,17 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 		)
 		self.forceIpv6Chk.SetValue(getINI("ForceIpv6"))
 
-		# Mark as watched
 		self.markWatchedChk = antiBlockHelper.addItem(
 			wx.CheckBox(antiBlockBox, label=_("&Mark as watched"))
 		)
 		self.markWatchedChk.SetValue(getINI("MarkWatched"))
 
-		# Reset to safe settings button
 		self.resetSafeBtn = wx.Button(antiBlockBox, label=_("Reset to &safe settings (recommended if blocked)"))
 		antiBlockHelper.addItem(self.resetSafeBtn)
 		self.resetSafeBtn.Bind(wx.EVT_BUTTON, self.on_reset_safe_settings)
 
 		helper.addItem(antiBlockSizer)
 
-		# yt-dlp update section
 		updateSizer = wx.StaticBoxSizer(wx.VERTICAL, self, label=_("yt-dlp Update"))
 		updateBox = updateSizer.GetStaticBox()
 		updateHelper = guiHelper.BoxSizerHelper(self, sizer=updateSizer)
@@ -293,7 +264,6 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 		updateHelper.addItem(updateBtnSizer)
 		helper.addItem(updateSizer)
 
-		# Bind events for enabling/disabling controls
 		self.useCookiesChk.Bind(wx.EVT_CHECKBOX, self.on_use_cookies_changed)
 		self.customUserAgentChk.Bind(wx.EVT_CHECKBOX, self.on_custom_user_agent_changed)
 		self.useProxyChk.Bind(wx.EVT_CHECKBOX, self.on_use_proxy_changed)

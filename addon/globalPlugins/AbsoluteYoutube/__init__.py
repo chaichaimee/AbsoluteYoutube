@@ -32,7 +32,7 @@ import logging
 from .utils import (
 	getLinkURL, getLinkName, is_youtube_url, is_youtube_video_url,
 	is_channel_or_playlist_url, get_focused_youtube_link, remove_playlist_params,
-	extract_video_id_from_url
+	extract_video_id_from_url, is_youtube_homepage
 )
 from .channel_core import ChannelPlaylistDialog
 from .channel_utils import ensure_channel_dir
@@ -97,7 +97,6 @@ def initConfiguration():
 	config.conf.spec[sectionName] = confspec
 
 initConfiguration()
-
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	scriptCategory = AddOnSummary
@@ -178,7 +177,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			ui.message(_("Error importing core functions: {str}").format(str=str(e)))
 			self.core_functions['log'](f"ImportError in Download_core: {e}")
 
-		# Verify critical keys exist
 		if 'get_pending_file_path' not in self.core_functions:
 			self.core_functions['log']("CRITICAL: get_pending_file_path missing from core_functions")
 			ui.message(_("Add-on initialization failed: missing pending file path function. Please restart NVDA."))
@@ -195,7 +193,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			if 'start_worker_threads' in self.core_functions:
 				wx.CallAfter(self.core_functions['start_worker_threads'])
 			if config.conf[sectionName]["AutoUpdateYtDlp"]:
-				# Run in background thread
 				threading.Thread(target=self._auto_update_yt_dlp, daemon=True).start()
 			else:
 				threading.Thread(target=self._check_for_yt_dlp_update, daemon=True).start()
@@ -203,12 +200,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			ui.message(_("Error initializing AbsoluteYoutube: {str}").format(str=str(e)))
 			self.core_functions['log'](f"Error during initialization: {e}")
 
-		try:
-			from .Youtube_settings import AudioYoutubeDownloadPanel
-			if AudioYoutubeDownloadPanel not in NVDASettingsDialog.categoryClasses:
-				NVDASettingsDialog.categoryClasses.append(AudioYoutubeDownloadPanel)
-		except ImportError as e:
-			self.core_functions['log'](f"Error importing AudioYoutubeDownloadPanel: {e}")
+		self._add_settings_panel()
 
 		try:
 			from .Trim import TrimDialog
@@ -231,6 +223,15 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.search_dialog = None
 		self.playlist_dialog = None
 		self.download_list_dialog = None
+
+	def _add_settings_panel(self):
+		try:
+			from .Youtube_settings import AudioYoutubeDownloadPanel
+			if AudioYoutubeDownloadPanel not in NVDASettingsDialog.categoryClasses:
+				NVDASettingsDialog.categoryClasses.append(AudioYoutubeDownloadPanel)
+				self.core_functions['log']("Settings panel added successfully")
+		except Exception as e:
+			self.core_functions['log'](f"Failed to add settings panel: {e}")
 
 	def terminate(self):
 		try:
@@ -298,6 +299,23 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		except Exception:
 			return None
 
+	def _is_on_youtube_video_page(self):
+		doc_url = self.core_functions.get('getCurrentDocumentURL', lambda: None)()
+		if doc_url and is_youtube_video_url(doc_url):
+			return True
+		url, _ = get_focused_youtube_link()
+		if url and is_youtube_video_url(url):
+			return True
+		try:
+			obj = api.getFocusObject()
+			if obj.role == controlTypes.Role.DOCUMENT:
+				acc_value = getattr(obj, 'value', None)
+				if acc_value and is_youtube_video_url(acc_value):
+					return True
+		except Exception:
+			pass
+		return False
+
 	def _get_url_for_download(self):
 		if self.channel_dialog and self.channel_dialog.IsShown():
 			focused = wx.Window.FindFocus()
@@ -321,16 +339,19 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					return info[0], info[1], False
 
 		focused_url, focused_title = get_focused_youtube_link()
-		if focused_url:
+		if focused_url and is_youtube_video_url(focused_url):
 			return focused_url, focused_title, True
 
 		doc_url = self.core_functions.get('getCurrentDocumentURL', lambda: None)()
-		if doc_url and is_youtube_url(doc_url):
+		if doc_url and is_youtube_video_url(doc_url):
 			page_title = self._get_page_title()
 			if page_title:
 				return doc_url, page_title, False
 			else:
 				return doc_url, None, False
+
+		if focused_url and is_youtube_url(focused_url) and not is_youtube_homepage(focused_url):
+			return focused_url, focused_title, True
 
 		return None, None, False
 
@@ -341,7 +362,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				wx.CallAfter(ui.message, _("No YouTube URL found"))
 				return
 
-			if not config.conf[sectionName]["PlaylistMode"] and is_youtube_video_url(url):
+			playlist_mode = config.conf[sectionName]["PlaylistMode"]
+
+			if not playlist_mode and is_youtube_video_url(url):
 				url = remove_playlist_params(url)
 
 			if self._tap_count == 1:
@@ -364,7 +387,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				if not active:
 					self.core_functions.get('PlayWave', lambda x: None)('start')
 					wx.CallAfter(ui.message, _("Starting download: {format} - {title}").format(format=chosen_format.upper(), title=final_title))
-					self.core_functions['convertToMP'](chosen_format, self._get_current_download_path(), False, url, final_title)
+					self.core_functions['convertToMP'](chosen_format, self._get_current_download_path(), playlist_mode, url, final_title)
 				else:
 					success = self.core_functions.get('add_pending_download', lambda *a: False)(url, final_title, chosen_format)
 					if success:
@@ -396,7 +419,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self._tap_timer.Stop()
 		self._tap_timer = wx.CallLater(500, self._execute_tap_action)
 
-	@script(description=_("Open context menu (single tap), download folder (double tap), Search Youtube (triple tap)"), gesture="kb:control+shift+y")
+	@script(description=_("Open context menu (single tap), open download folder (double tap), open search dialog (triple tap)"), gesture="kb:control+shift+y")
 	def script_contextMenuOrOpenFolder(self, gesture):
 		current_time = time.time()
 		if current_time - self._last_tap_time > 0.6:
@@ -429,7 +452,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		finally:
 			self._tap_count = 0
 
-	@script(description=_("Toggle immediate download mode"), gesture="kb:NVDA+control+y")
+	@script(description=_("Download immediately"), gesture="kb:NVDA+control+y")
 	def script_toggleImmediateDownload(self, gesture):
 		current_mode = config.conf[sectionName]["ImmediateDownload"]
 		new_mode = not current_mode
@@ -480,7 +503,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			return None
 
 	def _open_download_list_dialog(self, menuInstance):
-		menuInstance.Close()
+		if menuInstance:
+			menuInstance.Close()
 		try:
 			from .download_list import DownloadListDialog
 			def show_dialog():
@@ -501,41 +525,52 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def _buildMenuItemsForFrame(self):
 		url_for_copy, title_for_copy, is_link = self._get_url_for_download()
-		doc_url = self.core_functions.get('getCurrentDocumentURL', lambda: None)()
-		is_youtube_doc = is_youtube_url(doc_url)
+		is_on_video_page = self._is_on_youtube_video_page()
 
 		menu_items = []
 
 		if url_for_copy and is_youtube_url(url_for_copy):
-			menu_items.append((_("Copy video Shorten URL"), lambda menu: self._copy_specific_short_url(menu, url_for_copy)))
+			menu_items.append((_("Copy video Shorten URL"), lambda: self._copy_specific_short_url(url_for_copy)))
 
-		menu_items.append((_("Download list manager"), lambda menu: self._open_download_list_dialog(menu)))
+		menu_items.append((_("Download list manager"), lambda: self._open_download_list_dialog(None)))
 
 		failed_downloads = self.core_functions.get('load_failed_downloads', lambda: [])()
 		if failed_downloads:
-			menu_items.append((_("Download fail manager"), lambda menu: self._open_download_fail_dialog(menu)))
+			menu_items.append((_("Download fail manager"), lambda: self._open_download_fail_dialog(None)))
 		else:
-			menu_items.append((_("Download fail manager (no failed)"), lambda menu: self._open_download_fail_dialog(menu)))
+			menu_items.append((_("Download fail manager (no failed)"), lambda: self._open_download_fail_dialog(None)))
 
-		menu_items.append((_("Favorite channel"), lambda menu: self._open_channel_playlist_dialog(menu)))
+		menu_items.append((_("Favorite channel"), lambda: self._open_channel_playlist_dialog(None)))
 
-		if is_youtube_doc:
-			menu_items.append((_("Snapshot"), lambda menu: self._capture_snapshot(menu)))
+		if is_on_video_page:
+			menu_items.append((_("Snapshot"), lambda: self._capture_snapshot()))
+			menu_items.append((_("Trim setting"), lambda: self._open_trim_dialog()))
 
-		if is_youtube_doc:
-			menu_items.append((_("Trim setting"), lambda menu: self._open_trim_dialog(menu)))
+		menu_items.append((_("Search Youtube"), lambda: self._open_search_dialog(None)))
 
-		menu_items.append((_("Search Youtube"), lambda menu: self._open_search_dialog(menu)))
-
-		menu_items.append((_("Absolute YouTube setting"), lambda menu: self._open_youtube_settings(menu)))
+		menu_items.append((_("Absolute YouTube setting"), lambda: self._open_youtube_settings(None)))
 
 		return menu_items
 
 	def _openContextMenu(self):
-		showAbsoluteYoutubeMenu(self._buildMenuItemsForFrame)
+		def showMenu():
+			try:
+				frame = wx.Frame(gui.mainFrame, -1, "", pos=(0,0), size=(0,0))
+				frame.Show()
+				frame.Raise()
+				menu = wx.Menu()
+				for label, callback in self._buildMenuItemsForFrame():
+					menu_item = menu.Append(wx.ID_ANY, label)
+					menu.Bind(wx.EVT_MENU, lambda evt, cb=callback: core.callLater(0, cb), menu_item)
+				frame.PopupMenu(menu)
+				menu.Destroy()
+				frame.Destroy()
+			except Exception as e:
+				self.core_functions['log'](f"Error in context menu: {e}")
+				ui.message(_("Error displaying context menu"))
+		wx.CallAfter(showMenu)
 
-	def _copy_specific_short_url(self, menuInstance, url):
-		menuInstance.Close()
+	def _copy_specific_short_url(self, url):
 		if not url:
 			ui.message(_("No YouTube URL found"))
 			return
@@ -550,7 +585,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			ui.message(_("Could not create shortened URL"))
 
 	def _open_download_fail_dialog(self, menuInstance):
-		menuInstance.Close()
+		if menuInstance:
+			menuInstance.Close()
 		failed_downloads = self.core_functions.get('load_failed_downloads', lambda: [])()
 		if not failed_downloads:
 			ui.message(_("No failed downloads"))
@@ -575,7 +611,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.core_functions['log'](f"Error opening download fail dialog: {e}")
 
 	def _open_channel_playlist_dialog(self, menuInstance):
-		menuInstance.Close()
+		if menuInstance:
+			menuInstance.Close()
 		doc_url = self.core_functions.get('getCurrentDocumentURL', lambda: None)()
 		link_url = getLinkURL()
 		if doc_url and is_channel_or_playlist_url(doc_url):
@@ -586,10 +623,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		else:
 			self._show_channel_dialog(None)
 
-	def _capture_snapshot(self, menuInstance):
-		menuInstance.Close()
+	def _capture_snapshot(self):
 		url = self.core_functions.get('getCurrentDocumentURL', lambda: None)()
-		if not url or not is_youtube_url(url):
+		if not url or not is_youtube_video_url(url):
 			ui.message(_("You must be on a YouTube page to use this feature"))
 			return
 		try:
@@ -600,10 +636,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.core_functions['log'](f"Error importing Snapshot: {e}")
 			ui.message(_("Error: Snapshot module not available"))
 
-	def _open_trim_dialog(self, menuInstance):
-		menuInstance.Close()
+	def _open_trim_dialog(self):
 		url = self.core_functions.get('getCurrentDocumentURL', lambda: None)()
-		if not url or not is_youtube_url(url):
+		if not url or not is_youtube_video_url(url):
 			ui.message(_("You must be on a YouTube page to use this feature"))
 			return
 		self.core_functions['log']("Attempting to open Trim dialog")
@@ -611,16 +646,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			ui.message(_("Error: Trim module not available"))
 			self.core_functions['log']("TrimDialog not initialized")
 			return
-		url = None
-		for _ in range(3):
-			url = self.core_functions.get('getCurrentDocumentURL', lambda: None)()
-			if url:
-				break
-			time.sleep(0.5)
 		def show_dialog():
 			try:
 				gui.mainFrame.prePopup()
-				dlg = self.TrimDialog(gui.mainFrame, url or "")
+				dlg = self.TrimDialog(gui.mainFrame, url)
 				dlg.ShowModal()
 				dlg.Destroy()
 				gui.mainFrame.postPopup()
@@ -652,9 +681,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			ui.message(_("Error: Search module not available"))
 
 	def _open_youtube_settings(self, menuInstance):
-		menuInstance.Close()
+		if menuInstance:
+			menuInstance.Close()
 		try:
 			from .Youtube_settings import AudioYoutubeDownloadPanel
+			self.core_functions['log']("Opening settings dialog for Absolute YouTube")
 			wx.CallAfter(gui.mainFrame.popupSettingsDialog, NVDASettingsDialog, AudioYoutubeDownloadPanel)
 		except ImportError as e:
 			ui.message(_("Error importing settings panel: {str}").format(str=str(e)))

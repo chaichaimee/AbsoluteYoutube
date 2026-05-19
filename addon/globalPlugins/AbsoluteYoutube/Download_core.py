@@ -1,4 +1,7 @@
-# Download_core.py (Full replacement)
+# Download_core.py
+# Copyright (C) 2026 Chai Chaimee
+# Licensed under GNU General Public License. See COPYING.txt for details.
+
 import wx
 import os
 import json
@@ -37,7 +40,7 @@ if sys.version_info.major >= 3 and sys.version_info.minor >= 10:
 else:
 	AddOnPath = os.path.dirname(__file__)
 
-ToolsPath = os.path.join(AddOnPath, "Tools")
+ToolsPath = os.path.join(AddOnPath, "lib")
 SoundPath = os.path.join(AddOnPath, "sounds")
 AppData = os.path.join(os.path.expanduser('~'), 'AppData', 'Roaming')
 DownloadPath = None
@@ -171,10 +174,10 @@ def setINI(key, value):
 	config.conf[sectionName][key] = value
 
 
-def PlayWave(filename):
+def PlayWave(filename, force=False):
 	try:
 		path = os.path.join(SoundPath, filename + ".wav")
-		if os.path.exists(path) and getINI("BeepWhileConverting"):
+		if os.path.exists(path) and (force or getINI("BeepWhileConverting")):
 			winsound.PlaySound(path, winsound.SND_FILENAME | winsound.SND_ASYNC)
 	except Exception as e:
 		log(f"Error playing sound: {e}")
@@ -821,68 +824,92 @@ def run_download(item):
 
 		process = subprocess.Popen(
 			cmd,
-			stdout=subprocess.DEVNULL,
-			stderr=subprocess.DEVNULL,
+			stdout=subprocess.PIPE,
+			stderr=subprocess.PIPE,
 			stdin=subprocess.DEVNULL,
 			cwd=save_path,
 			startupinfo=si,
 			creationflags=subprocess.CREATE_NO_WINDOW
 		)
 		log(f"Process started with PID: {process.pid}")
-		timeout = 1800
-		try:
-			process.communicate(timeout=timeout)
-			return_code = process.returncode
-			if return_code == 0:
-				log(f"Download for ID {download_id} completed successfully.")
-				PlayWave('complete')
-				if getINI("SayDownloadComplete"):
-					wx.CallAfter(ui.message, _("Download complete"))
-				updateDownloadStatusInQueue(download_id, "completed")
-				remove_failed_download(url, title)
-			else:
-				log(f"Download for ID {download_id} failed with return code {return_code}.")
+
+		def monitor_process():
+			timeout = 1800
+			try:
+				process.communicate(timeout=timeout)
+				return_code = process.returncode
+				if return_code == 0:
+					log(f"Download for ID {download_id} completed successfully.")
+					if is_trimming:
+						PlayWave('complete', force=True)
+					else:
+						if getINI("BeepWhileConverting"):
+							PlayWave('complete')
+					if getINI("SayDownloadComplete"):
+						wx.CallAfter(ui.message, _("Download complete"))
+					updateDownloadStatusInQueue(download_id, "completed")
+					remove_failed_download(url, title)
+				else:
+					log(f"Download for ID {download_id} failed with return code {return_code}.")
+					PlayWave('failed')
+					wx.CallAfter(ui.message, _("Download failed"))
+					updateDownloadStatusInQueue(download_id, "failed")
+					duration = get_video_duration(url)
+					add_failed_download(url, title, file_format, duration)
+			except subprocess.TimeoutExpired:
+				log(f"Download for ID {download_id} timed out after {timeout} seconds.")
+				if process:
+					process.terminate()
+					try:
+						process.wait(timeout=5)
+					except subprocess.TimeoutExpired:
+						process.kill()
 				PlayWave('failed')
-				wx.CallAfter(ui.message, _("Download failed"))
+				wx.CallAfter(ui.message, _("Download failed due to timeout"))
 				updateDownloadStatusInQueue(download_id, "failed")
 				duration = get_video_duration(url)
 				add_failed_download(url, title, file_format, duration)
-		except subprocess.TimeoutExpired:
-			log(f"Download for ID {download_id} timed out after {timeout} seconds.")
-			if process:
-				process.terminate()
-				try:
-					process.wait(timeout=5)
-				except subprocess.TimeoutExpired:
-					process.kill()
-			PlayWave('failed')
-			wx.CallAfter(ui.message, _("Download failed due to timeout"))
-			updateDownloadStatusInQueue(download_id, "failed")
-			duration = get_video_duration(url)
-			add_failed_download(url, title, file_format, duration)
+			except Exception as e:
+				log(f"Error during download execution for ID {download_id}: {e}")
+				if process:
+					process.terminate()
+					try:
+						process.wait(timeout=5)
+					except subprocess.TimeoutExpired:
+						process.kill()
+				PlayWave('failed')
+				wx.CallAfter(ui.message, _("Download failed due to an error"))
+				updateDownloadStatusInQueue(download_id, "failed")
+				duration = get_video_duration(url)
+				add_failed_download(url, title, file_format, duration)
+			finally:
+				if not is_trimming:
+					_cleanup_temp_files(save_path, title, file_format)
+				removeCompletedOrFailedDownloadsFromQueue()
+				with _global_active_lock:
+					global _global_active_downloads
+					_global_active_downloads -= 1
+					if _global_active_downloads == 0:
+						wx.CallAfter(stopHeartbeat)
+				log(f"Download for ID {download_id} finished.")
+				wx.CallAfter(start_next_pending)
+
+		monitor_thread = threading.Thread(target=monitor_process, daemon=True)
+		monitor_thread.start()
+
 	except Exception as e:
-		log(f"Error during download execution for ID {download_id}: {e}")
+		log(f"Failed to start download process: {e}")
 		if process:
 			process.terminate()
-			try:
-				process.wait(timeout=5)
-			except subprocess.TimeoutExpired:
-				process.kill()
 		PlayWave('failed')
-		wx.CallAfter(ui.message, _("Download failed due to an error"))
+		wx.CallAfter(ui.message, _("Download failed to start"))
 		updateDownloadStatusInQueue(download_id, "failed")
 		duration = get_video_duration(url)
 		add_failed_download(url, title, file_format, duration)
-	finally:
-		if not is_trimming:
-			_cleanup_temp_files(save_path, title, file_format)
-		removeCompletedOrFailedDownloadsFromQueue()
 		with _global_active_lock:
 			_global_active_downloads -= 1
 			if _global_active_downloads == 0:
 				wx.CallAfter(stopHeartbeat)
-		log(f"Download for ID {download_id} finished.")
-		wx.CallAfter(start_next_pending)
 
 
 def convertToMP(mpFormat, savePath, isPlaylist=False, url=None, title=None):

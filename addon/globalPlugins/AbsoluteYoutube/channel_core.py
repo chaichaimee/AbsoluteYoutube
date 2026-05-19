@@ -1,5 +1,4 @@
 # channel_core.py
-
 import wx
 import gui
 import threading
@@ -807,7 +806,6 @@ class ChannelPlaylistDialog(wx.Dialog):
 			tones.beep(440, 100)
 			time.sleep(2)
 
-	# MOVED subprocess calls to background threads
 	def _fetch_and_save_channel(self, url, name_safe, filepath, content_type="videos"):
 		def worker():
 			log(f"Fetching new channel: {url} -> {filepath} (type={content_type})")
@@ -1252,6 +1250,12 @@ class ChannelPlaylistDialog(wx.Dialog):
 			self._save_timer.Stop()
 			self._save_timer = None
 		self._save_videos(immediate=True)
+		for thread in self._bg_threads:
+			if thread and thread.is_alive():
+				try:
+					thread.join(timeout=0.5)
+				except:
+					pass
 		try:
 			flush_video_cache()
 		except Exception:

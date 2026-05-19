@@ -7,10 +7,9 @@ import subprocess
 import threading
 import ui
 import wx
-import time
 import shutil
 import addonHandler
-from .Download_core import YouTubeEXE, log, PlayWave
+from .Download_core import YouTubeEXE, log, PlayWave, clean_youtube_url
 
 addonHandler.initTranslation()
 
@@ -33,7 +32,6 @@ def _find_next_snapshot_number(save_path):
 
 
 def capture_snapshot(video_url, download_path):
-	"""Capture full-size YouTube snapshot using yt-dlp to find and download the best thumbnail."""
 	if not os.path.exists(download_path):
 		try:
 			os.makedirs(download_path, exist_ok=True)
@@ -41,6 +39,10 @@ def capture_snapshot(video_url, download_path):
 			log(f"Error creating directory: {e}")
 			wx.CallAfter(ui.message, _("Error creating download folder"))
 			return
+
+	# Clean URL to remove playlist parameters and normalize
+	cleaned_url = clean_youtube_url(video_url, is_playlist=False)
+	log(f"Cleaned URL for snapshot: {cleaned_url}")
 
 	next_number = _find_next_snapshot_number(download_path)
 	output_filename = f"Snapshot {next_number}"
@@ -54,7 +56,7 @@ def capture_snapshot(video_url, download_path):
 		wx.CallAfter(ui.message, _("Snapshot file already exists"))
 		return
 
-	PlayWave("snapshot")
+	PlayWave("snapshot", force=True)
 	wx.CallAfter(ui.message, _("Capturing full-size snapshot..."))
 
 	def snapshot_worker():
@@ -63,7 +65,7 @@ def capture_snapshot(video_url, download_path):
 			wx.CallAfter(ui.message, _("Downloading thumbnail..."))
 			cmd = [
 				YouTubeEXE,
-				video_url,
+				cleaned_url,
 				"--write-thumbnail",
 				"--skip-download",
 				"--no-playlist",
@@ -71,6 +73,7 @@ def capture_snapshot(video_url, download_path):
 				"--convert-thumbnails", "jpg",
 				"-o", temp_output_path
 			]
+			log(f"Snapshot command: {cmd}")
 
 			process = subprocess.run(
 				cmd,
@@ -80,27 +83,44 @@ def capture_snapshot(video_url, download_path):
 				creationflags=subprocess.CREATE_NO_WINDOW
 			)
 
-			wx.CallAfter(ui.message, _("Processing snapshot..."))
 			if process.returncode != 0:
-				log(f"Snapshot capture failed: {process.stderr}")
+				log(f"Snapshot capture failed (returncode {process.returncode}): {process.stderr}")
 				wx.CallAfter(ui.message, _("Error: Failed to capture snapshot."))
 				PlayWave("error")
 				return
 
-			downloaded_files = glob.glob(os.path.join(temp_dir, f"{output_filename}*.jpg"))
+			wx.CallAfter(ui.message, _("Processing snapshot..."))
+
+			# Find downloaded thumbnail file (may be .jpg, .webp, .png)
+			downloaded_files = glob.glob(os.path.join(temp_dir, f"{output_filename}*"))
 			if not downloaded_files:
-				log("No JPEG thumbnail file found after download")
+				downloaded_files = glob.glob(os.path.join(temp_dir, "Snapshot*"))
+			log(f"Found files in temp dir: {downloaded_files}")
+
+			if not downloaded_files:
+				log("No thumbnail file found after download")
 				wx.CallAfter(ui.message, _("Error: No snapshot file created."))
 				PlayWave("error")
 				return
 
-			downloaded_file = downloaded_files[0]
+			# Prefer .jpg files
+			jpg_files = [f for f in downloaded_files if f.lower().endswith('.jpg')]
+			if jpg_files:
+				downloaded_file = jpg_files[0]
+			else:
+				downloaded_file = downloaded_files[0]
+				# If not jpg, rename to .jpg (yt-dlp should have converted, but safe)
+				if not downloaded_file.lower().endswith('.jpg'):
+					new_name = downloaded_file.rsplit('.', 1)[0] + '.jpg'
+					shutil.move(downloaded_file, new_name)
+					downloaded_file = new_name
 
 			shutil.move(downloaded_file, final_output_path)
 			success = True
+			log(f"Snapshot saved to {final_output_path}")
 
 		except Exception as e:
-			log(f"An unexpected error occurred during snapshot capture: {e}")
+			log(f"Unexpected error during snapshot capture: {e}")
 			wx.CallAfter(ui.message, _("An unexpected error occurred."))
 			PlayWave("error")
 		finally:
@@ -109,7 +129,7 @@ def capture_snapshot(video_url, download_path):
 
 			if success:
 				wx.CallAfter(ui.message, _("Full-size snapshot complete"))
-				PlayWave("complete")
+				PlayWave("complete", force=True)
 			else:
 				PlayWave("error")
 
