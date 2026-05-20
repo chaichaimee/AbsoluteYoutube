@@ -1,5 +1,4 @@
 # utils.py
-
 import re
 import glob
 import os
@@ -35,7 +34,6 @@ def getLinkURL():
 	if obj and obj.role == controlTypes.Role.LINK:
 		url = getattr(obj, 'value', None)
 		if url:
-			log.debug(f"getLinkURL: {url}")
 			url = urllib.parse.unquote(url)
 			return url[:-1] if url.endswith("/") else url
 	return ""
@@ -52,12 +50,6 @@ def is_youtube_url(url):
 	lower_url = url.lower()
 	return any(domain in lower_url for domain in ["youtube.com", "youtu.be"])
 
-def is_youtube_homepage(url):
-	if not url:
-		return False
-	lower_url = url.lower().rstrip('/')
-	return lower_url in ["https://www.youtube.com", "https://youtube.com", "http://www.youtube.com", "http://youtube.com", "https://www.youtube.com/", "https://youtube.com/"]
-
 def is_youtube_video_url(url):
 	if not url:
 		return False
@@ -65,6 +57,12 @@ def is_youtube_video_url(url):
 		return False
 	lower_url = url.lower()
 	return any(x in lower_url for x in ["youtube.com/watch", "youtu.be/", "youtube.com/shorts/"])
+
+def is_youtube_homepage(url):
+	if not url:
+		return False
+	lower_url = url.lower().rstrip('/')
+	return lower_url in ["https://www.youtube.com", "https://youtube.com", "http://www.youtube.com", "http://youtube.com", "https://www.youtube.com/", "https://youtube.com/"]
 
 def is_channel_or_playlist_url(url):
 	if not url:
@@ -81,8 +79,7 @@ def _find_link_in_parents(obj, max_depth=10):
 			break
 		if current.role == controlTypes.Role.LINK:
 			url = getattr(current, 'value', None)
-			if url and is_youtube_video_url(url):
-				log.debug(f"Found video LINK in parent: {url}")
+			if url and is_youtube_url(url):
 				return url, getattr(current, 'name', None)
 		current = current.parent
 	return None, None
@@ -93,8 +90,7 @@ def _find_link_in_children(obj, max_depth=5):
 	for child in obj.children:
 		if child.role == controlTypes.Role.LINK:
 			url = getattr(child, 'value', None)
-			if url and is_youtube_video_url(url):
-				log.debug(f"Found video LINK in child: {url}")
+			if url and is_youtube_url(url):
 				return url, getattr(child, 'name', None)
 		sub_url, sub_title = _find_link_in_children(child, max_depth-1)
 		if sub_url:
@@ -108,38 +104,19 @@ def get_url_from_object(obj):
 	if obj.role == controlTypes.Role.LINK:
 		url = getattr(obj, 'value', None)
 		if url and is_youtube_url(url):
-			if is_youtube_video_url(url):
-				title = getattr(obj, 'name', None)
-				log.debug(f"Using direct LINK video URL: {url}")
-				return url, title
-			elif not is_youtube_homepage(url):
-				log.debug(f"LINK has non-video YouTube URL: {url}, will search children first")
-			else:
-				log.debug(f"LINK has homepage URL, ignoring")
-
-	if obj.role == controlTypes.Role.DOCUMENT:
-		acc_value = getattr(obj, 'value', None)
-		if acc_value and is_youtube_video_url(acc_value):
-			title = getattr(obj, 'name', None)
-			log.debug(f"URL from DOCUMENT accValue: {acc_value}")
-			return acc_value, title
+			return url, getattr(obj, 'name', None)
 
 	url = getattr(obj, 'value', None)
-	if url and is_youtube_video_url(url):
-		title = getattr(obj, 'name', None)
-		log.debug(f"URL from object value: {url}")
-		return url, title
+	if url and is_youtube_url(url):
+		return url, getattr(obj, 'name', None)
 
 	try:
 		ia2_attrs = getattr(obj, 'IAccessible2Attributes', {})
 		if isinstance(ia2_attrs, dict):
 			for key in ['href', 'url', 'data-url', 'data-video-url']:
-				if key in ia2_attrs:
+				if key in ia2_attrs and is_youtube_url(ia2_attrs[key]):
 					url = ia2_attrs[key]
-					if is_youtube_video_url(url):
-						title = getattr(obj, 'name', None)
-						log.debug(f"URL from IAccessible2 attr {key}: {url}")
-						return url, title
+					return url, getattr(obj, 'name', None)
 	except Exception:
 		pass
 
@@ -151,35 +128,23 @@ def get_url_from_object(obj):
 	if parent_url:
 		return parent_url, parent_title
 
-	if obj.role == controlTypes.Role.LINK:
-		url = getattr(obj, 'value', None)
-		if url and is_youtube_url(url) and not is_youtube_homepage(url):
-			title = getattr(obj, 'name', None)
-			log.debug(f"Fallback to non-video YouTube LINK: {url}")
-			return url, title
-
 	return None, None
 
 def get_focused_youtube_link():
-	focused = api.getFocusObject()
-	url, title = get_url_from_object(focused)
-	if url:
-		log.debug(f"Using focused object URL: {url}")
-		return url, title
-
 	nav_obj = api.getNavigatorObject()
 	url, title = get_url_from_object(nav_obj)
 	if url:
-		log.debug(f"Using navigator object URL: {url}")
+		return url, title
+
+	focused = api.getFocusObject()
+	url, title = get_url_from_object(focused)
+	if url:
 		return url, title
 
 	legacy_url = getLinkURL()
-	if legacy_url and is_youtube_url(legacy_url) and not is_youtube_homepage(legacy_url):
-		legacy_title = getLinkName()
-		log.debug(f"Using legacy getLinkURL: {legacy_url}")
-		return legacy_url, legacy_title
+	if legacy_url and is_youtube_url(legacy_url):
+		return legacy_url, getLinkName()
 
-	log.debug("get_focused_youtube_link: No YouTube URL found")
 	return None, None
 
 def remove_playlist_params(url):
@@ -197,10 +162,8 @@ def remove_playlist_params(url):
 			parsed.scheme, parsed.netloc, parsed.path,
 			parsed.params, new_query, parsed.fragment
 		))
-		log.debug(f"Removed playlist params: {url} -> {clean_url}")
 		return clean_url
-	except Exception as e:
-		log.error(f"Error removing playlist params: {e}")
+	except Exception:
 		return url
 
 def extract_video_id_from_url(url):

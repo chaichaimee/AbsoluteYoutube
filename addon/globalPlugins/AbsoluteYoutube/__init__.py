@@ -339,11 +339,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					return info[0], info[1], False
 
 		focused_url, focused_title = get_focused_youtube_link()
-		if focused_url and is_youtube_video_url(focused_url):
+		if focused_url:
 			return focused_url, focused_title, True
 
 		doc_url = self.core_functions.get('getCurrentDocumentURL', lambda: None)()
-		if doc_url and is_youtube_video_url(doc_url):
+		if doc_url and is_youtube_url(doc_url):
 			page_title = self._get_page_title()
 			if page_title:
 				return doc_url, page_title, False
