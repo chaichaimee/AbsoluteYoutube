@@ -161,7 +161,8 @@ class DownloadListDialog(wx.Dialog):
 	def download_item(self, idx):
 		if 0 <= idx < len(self.pending_downloads):
 			item = self.pending_downloads[idx]
-			success = self.core_functions['add_pending_download'](item['url'], item['title'], item['format'])
+			is_playlist = item.get('is_playlist', False)
+			success = self.core_functions['add_pending_download'](item['url'], item['title'], item['format'], is_playlist)
 			if success:
 				self.delete_item(idx)
 				if not self.core_functions['is_download_active']():
@@ -198,7 +199,8 @@ class DownloadListDialog(wx.Dialog):
 		for idx in selected_indices:
 			if 0 <= idx < len(self.pending_downloads):
 				item = self.pending_downloads[idx]
-				success = self.core_functions['add_pending_download'](item['url'], item['title'], item['format'])
+				is_playlist = item.get('is_playlist', False)
+				success = self.core_functions['add_pending_download'](item['url'], item['title'], item['format'], is_playlist)
 				if success:
 					added_any = True
 		if added_any:
@@ -218,7 +220,8 @@ class DownloadListDialog(wx.Dialog):
 			return
 		added_any = False
 		for item in self.pending_downloads[:]:
-			success = self.core_functions['add_pending_download'](item['url'], item['title'], item['format'])
+			is_playlist = item.get('is_playlist', False)
+			success = self.core_functions['add_pending_download'](item['url'], item['title'], item['format'], is_playlist)
 			if success:
 				added_any = True
 		if added_any:

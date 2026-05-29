@@ -179,9 +179,14 @@ class DownloadFailDialog(wx.Dialog):
 			if not os.path.exists(save_path):
 				os.makedirs(save_path, exist_ok=True)
 			output_template = os.path.join(save_path, "%(title)s.%(ext)s")
+
+			is_playlist = 'playlist' in url.lower() or 'list=' in url.lower()
+			playlist_flag = "--yes-playlist" if is_playlist else "--no-playlist"
+			log(f"Downloading from fail: {url} is_playlist={is_playlist}")
+
 			if format_type == "mp3":
 				cmd = [
-					self.core_functions['YouTubeEXE'], "--no-playlist",
+					self.core_functions['YouTubeEXE'], playlist_flag,
 					"-x", "--audio-format", "mp3",
 					"--audio-quality", str(self.core_functions['getINI']("MP3Quality")),
 					"--ffmpeg-location", os.path.join(os.path.dirname(self.core_functions['YouTubeEXE']), "ffmpeg.exe"),
@@ -189,7 +194,7 @@ class DownloadFailDialog(wx.Dialog):
 				]
 			elif format_type == "wav":
 				cmd = [
-					self.core_functions['YouTubeEXE'], "--no-playlist",
+					self.core_functions['YouTubeEXE'], playlist_flag,
 					"-x", "--audio-format", "wav",
 					"--audio-quality", "0",
 					"--ffmpeg-location", os.path.join(os.path.dirname(self.core_functions['YouTubeEXE']), "ffmpeg.exe"),
@@ -197,7 +202,7 @@ class DownloadFailDialog(wx.Dialog):
 				]
 			else:
 				cmd = [
-					self.core_functions['YouTubeEXE'], "--no-playlist",
+					self.core_functions['YouTubeEXE'], playlist_flag,
 					"-f", "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/bv*+ba/b",
 					"--remux-video", "mp4",
 					"--ffmpeg-location", os.path.join(os.path.dirname(self.core_functions['YouTubeEXE']), "ffmpeg.exe"),
@@ -205,7 +210,7 @@ class DownloadFailDialog(wx.Dialog):
 				]
 			download_obj = {
 				"url": url, "title": title, "format": format_type,
-				"path": save_path, "cmd": cmd, "is_playlist": False
+				"path": save_path, "cmd": cmd, "is_playlist": is_playlist
 			}
 			download_id = self.core_functions['addDownloadToQueue'](download_obj)
 			self.core_functions['_download_queue'].put(download_obj)

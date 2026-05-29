@@ -28,6 +28,8 @@ _cache_lock = threading.Lock()
 _cache_dirty = False
 _cache_debounce_timer = None
 _internal_cache = None
+MAX_CACHE_SIZE_BYTES = 3 * 1024 * 1024
+CACHE_TARGET_SIZE_BYTES = 2 * 1024 * 1024
 
 def ensure_channel_dir():
 	if not os.path.exists(CHANNEL_DATA_DIR):
@@ -92,10 +94,51 @@ def load_video_cache():
 	if os.path.exists(VIDEO_CACHE_FILE):
 		try:
 			with open(VIDEO_CACHE_FILE, 'r', encoding='utf-8') as f:
-				return json.load(f)
+				cache_data = json.load(f)
+				if not isinstance(cache_data, dict):
+					log("Cache file corrupted, resetting.")
+					return {}
+				return cache_data
 		except Exception as e:
 			log(f"Error loading video cache: {e}")
 	return {}
+
+def _enforce_cache_size_limit():
+	global _internal_cache, _cache_dirty
+	if _internal_cache is None:
+		_internal_cache = {}
+		return
+
+	current_size = 0
+	try:
+		current_size = os.path.getsize(VIDEO_CACHE_FILE)
+	except OSError:
+		pass
+
+	if current_size > MAX_CACHE_SIZE_BYTES and _internal_cache:
+		log(f"Cache size {current_size} bytes exceeds limit {MAX_CACHE_SIZE_BYTES}. Trimming...")
+		sorted_items = sorted(
+			_internal_cache.items(),
+			key=lambda x: x[1].get('last_accessed', 0)
+		)
+		new_cache = {}
+		target_size_met = False
+		for url, info in sorted_items:
+			if not target_size_met:
+				new_cache[url] = info
+			try:
+				temp_size = len(json.dumps(new_cache).encode('utf-8'))
+				if temp_size < CACHE_TARGET_SIZE_BYTES:
+					continue
+				else:
+					target_size_met = True
+			except:
+				pass
+
+		_internal_cache = new_cache
+		_cache_dirty = True
+		log(f"Trimmed cache to {len(_internal_cache)} items.")
+		schedule_video_cache_save(delay=0.5)
 
 def _do_save_video_cache():
 	global _cache_dirty, _cache_debounce_timer, _internal_cache
@@ -103,6 +146,7 @@ def _do_save_video_cache():
 		if not _cache_dirty:
 			return
 		try:
+			_enforce_cache_size_limit()
 			os.makedirs(os.path.dirname(VIDEO_CACHE_FILE), exist_ok=True)
 			with open(VIDEO_CACHE_FILE, 'w', encoding='utf-8') as f:
 				json.dump(_internal_cache if _internal_cache else {}, f, ensure_ascii=False, indent=2)
@@ -124,14 +168,28 @@ def schedule_video_cache_save(delay=2.0):
 def update_video_cache(video_url, video_info):
 	global _cache_dirty
 	cache = _get_internal_cache()
-	cache[video_url] = video_info
+	if video_url not in cache:
+		cache[video_url] = {}
+
+	current_info = cache[video_url]
+	current_info.update(video_info)
+	current_info['last_accessed'] = __import__('time').time()
+	cache[video_url] = current_info
+
 	with _cache_lock:
 		_cache_dirty = True
 	schedule_video_cache_save()
 
 def get_video_from_cache(video_url):
 	cache = _get_internal_cache()
-	return cache.get(video_url)
+	entry = cache.get(video_url)
+	if entry:
+		entry['last_accessed'] = __import__('time').time()
+		with _cache_lock:
+			_cache_dirty = True
+		schedule_video_cache_save(delay=1.0)
+		return entry
+	return None
 
 def flush_video_cache():
 	global _cache_debounce_timer

@@ -740,7 +740,7 @@ def save_pending_downloads(pending_list):
 		json.dump(pending_list, f, ensure_ascii=False, indent=4)
 
 
-def add_pending_download(url, title, format_type):
+def add_pending_download(url, title, format_type, is_playlist=False):
 	with _pending_lock:
 		pending_list = load_pending_downloads()
 		for item in pending_list:
@@ -751,11 +751,12 @@ def add_pending_download(url, title, format_type):
 			'url': url,
 			'title': title,
 			'format': format_type,
+			'is_playlist': is_playlist,
 			'added_time': datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 		}
 		pending_list.append(new_item)
 		save_pending_downloads(pending_list)
-		log(f"Added to pending queue: {title}")
+		log(f"Added to pending queue: {title} (is_playlist={is_playlist})")
 		return True
 
 
@@ -791,8 +792,10 @@ def start_next_pending():
 			return False
 		next_item = pending_list.pop(0)
 		save_pending_downloads(pending_list)
+	
+	playlist_flag = next_item.get('is_playlist', False)
 	wx.CallAfter(ui.message, _("Starting next download from queue: {title}").format(title=next_item['title']))
-	convertToMP(next_item['format'], getINI("ResultFolder") or DownloadPath, False, next_item['url'], next_item['title'])
+	convertToMP(next_item['format'], getINI("ResultFolder") or DownloadPath, playlist_flag, next_item['url'], next_item['title'])
 	return True
 
 

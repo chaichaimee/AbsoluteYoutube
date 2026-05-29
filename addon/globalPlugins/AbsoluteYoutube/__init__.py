@@ -339,10 +339,22 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					return info[0], info[1], False
 
 		focused_url, focused_title = get_focused_youtube_link()
-		if focused_url:
-			return focused_url, focused_title, True
-
 		doc_url = self.core_functions.get('getCurrentDocumentURL', lambda: None)()
+
+		playlist_mode_enabled = config.conf[sectionName]["PlaylistMode"]
+
+		is_focused_playlist = focused_url and ('list=' in focused_url or '/playlist?' in focused_url)
+		is_current_page_playlist = doc_url and ('list=' in doc_url or '/playlist?' in doc_url)
+
+		if playlist_mode_enabled and (is_focused_playlist or is_current_page_playlist):
+			target_url = doc_url if is_current_page_playlist else focused_url
+			page_title = self._get_page_title()
+			title = page_title or focused_title or _("Playlist")
+			return target_url, title, True
+
+		if focused_url:
+			return focused_url, focused_title, False
+
 		if doc_url and is_youtube_url(doc_url):
 			page_title = self._get_page_title()
 			if page_title:
@@ -350,22 +362,21 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			else:
 				return doc_url, None, False
 
-		if focused_url and is_youtube_url(focused_url) and not is_youtube_homepage(focused_url):
-			return focused_url, focused_title, True
-
 		return None, None, False
 
 	def _execute_tap_action(self):
 		try:
-			url, title, is_link = self._get_url_for_download()
+			url, title, is_playlist = self._get_url_for_download()
 			if not url:
 				wx.CallAfter(ui.message, _("No YouTube URL found"))
 				return
 
-			playlist_mode = config.conf[sectionName]["PlaylistMode"]
-
-			if not playlist_mode and is_youtube_video_url(url):
-				url = remove_playlist_params(url)
+			if not is_playlist and is_youtube_homepage(url):
+				wx.CallAfter(ui.message, _("Cannot download from YouTube homepage. Please navigate to a video or playlist."))
+				return
+			if not is_playlist and url in ["https://www.youtube.com/feed/subscriptions", "https://www.youtube.com/feed/trending"]:
+				wx.CallAfter(ui.message, _("Cannot download from this YouTube page. Please select a specific video."))
+				return
 
 			if self._tap_count == 1:
 				chosen_format = "mp3"
@@ -387,15 +398,15 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				if not active:
 					self.core_functions.get('PlayWave', lambda x: None)('start')
 					wx.CallAfter(ui.message, _("Starting download: {format} - {title}").format(format=chosen_format.upper(), title=final_title))
-					self.core_functions['convertToMP'](chosen_format, self._get_current_download_path(), playlist_mode, url, final_title)
+					self.core_functions['convertToMP'](chosen_format, self._get_current_download_path(), is_playlist, url, final_title)
 				else:
-					success = self.core_functions.get('add_pending_download', lambda *a: False)(url, final_title, chosen_format)
+					success = self.core_functions.get('add_pending_download', lambda *a: False)(url, final_title, chosen_format, is_playlist)
 					if success:
 						wx.CallAfter(ui.message, _("Added to download queue: {format} - {title}").format(format=chosen_format.upper(), title=final_title))
 					else:
 						wx.CallAfter(ui.message, _("Already in download queue"))
 			else:
-				success = self.core_functions.get('add_pending_download', lambda *a: False)(url, final_title, chosen_format)
+				success = self.core_functions.get('add_pending_download', lambda *a: False)(url, final_title, chosen_format, is_playlist)
 				if success:
 					wx.CallAfter(ui.message, _("Added to download list: {format} - {title}").format(format=chosen_format.upper(), title=final_title))
 				else:
