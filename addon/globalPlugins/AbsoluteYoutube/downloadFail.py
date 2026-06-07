@@ -42,7 +42,8 @@ class DownloadFailDialog(wx.Dialog):
 		except ImportError as e:
 			ui.message(_("Error importing core functions: {str}").format(str=str(e)))
 			self.core_functions = {'log': lambda x: None}
-			self.core_functions['log'](f"ImportError in DownloadFailDialog: {e}")
+			if 'log' in self.core_functions:
+				self.core_functions['log'](f"ImportError in DownloadFailDialog: {e}")
 			raise
 
 		self.failed_downloads = self.core_functions['load_failed_downloads']()
@@ -165,31 +166,50 @@ class DownloadFailDialog(wx.Dialog):
 	def download_item(self, idx):
 		if 0 <= idx < len(self.failed_downloads):
 			item = self.failed_downloads[idx]
-			del self.failed_downloads[idx]
-			self.core_functions['save_failed_downloads'](self.failed_downloads)
-			self.start_download(item)
-			self.update_list()
+			success = self.start_download(item)
+			if success:
+				del self.failed_downloads[idx]
+				self.core_functions['save_failed_downloads'](self.failed_downloads)
+				self.update_list()
 
 	def start_download(self, item):
 		try:
 			url = item.get('url', '')
+			if not url:
+				self.core_functions['log']("Download fail: missing URL in item")
+				return False
+
 			title = item.get('title', 'Unknown')
 			format_type = item.get('format', 'mp3')
 			save_path = self.core_functions['getINI']("ResultFolder") or self.core_functions['DownloadPath']
+
+			if not save_path:
+				save_path = os.path.join(os.environ.get('APPDATA', ''), 'AbsoluteYoutube')
+
 			if not os.path.exists(save_path):
-				os.makedirs(save_path, exist_ok=True)
+				try:
+					os.makedirs(save_path, exist_ok=True)
+				except Exception as e:
+					self.core_functions['log'](f"Failed to create download folder: {e}")
+					ui.message(_("Cannot create download folder"))
+					return False
+
 			output_template = os.path.join(save_path, "%(title)s.%(ext)s")
 
 			is_playlist = 'playlist' in url.lower() or 'list=' in url.lower()
 			playlist_flag = "--yes-playlist" if is_playlist else "--no-playlist"
-			log(f"Downloading from fail: {url} is_playlist={is_playlist}")
+
+			self.core_functions['log'](f"Downloading from fail: {url} is_playlist={is_playlist}")
+
+			ffmpeg_path = os.path.join(os.path.dirname(self.core_functions['YouTubeEXE']), "ffmpeg.exe")
+			quality = str(self.core_functions['getINI']("MP3Quality"))
 
 			if format_type == "mp3":
 				cmd = [
 					self.core_functions['YouTubeEXE'], playlist_flag,
 					"-x", "--audio-format", "mp3",
-					"--audio-quality", str(self.core_functions['getINI']("MP3Quality")),
-					"--ffmpeg-location", os.path.join(os.path.dirname(self.core_functions['YouTubeEXE']), "ffmpeg.exe"),
+					"--audio-quality", quality,
+					"--ffmpeg-location", ffmpeg_path,
 					"-o", output_template, "--ignore-errors", "--no-warnings", "--quiet", url
 				]
 			elif format_type == "wav":
@@ -197,7 +217,7 @@ class DownloadFailDialog(wx.Dialog):
 					self.core_functions['YouTubeEXE'], playlist_flag,
 					"-x", "--audio-format", "wav",
 					"--audio-quality", "0",
-					"--ffmpeg-location", os.path.join(os.path.dirname(self.core_functions['YouTubeEXE']), "ffmpeg.exe"),
+					"--ffmpeg-location", ffmpeg_path,
 					"-o", output_template, "--ignore-errors", "--no-warnings", "--quiet", url
 				]
 			else:
@@ -205,19 +225,28 @@ class DownloadFailDialog(wx.Dialog):
 					self.core_functions['YouTubeEXE'], playlist_flag,
 					"-f", "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/bv*+ba/b",
 					"--remux-video", "mp4",
-					"--ffmpeg-location", os.path.join(os.path.dirname(self.core_functions['YouTubeEXE']), "ffmpeg.exe"),
+					"--ffmpeg-location", ffmpeg_path,
 					"-o", output_template, "--ignore-errors", "--no-warnings", "--quiet", url
 				]
+
 			download_obj = {
-				"url": url, "title": title, "format": format_type,
-				"path": save_path, "cmd": cmd, "is_playlist": is_playlist
+				"url": url,
+				"title": title,
+				"format": format_type,
+				"path": save_path,
+				"cmd": cmd,
+				"is_playlist": is_playlist
 			}
+
 			download_id = self.core_functions['addDownloadToQueue'](download_obj)
 			self.core_functions['_download_queue'].put(download_obj)
 			ui.message(_("Download started for: {title}").format(title=title))
+			return True
+
 		except Exception as e:
 			self.core_functions['log'](f"Error starting download for failed item: {e}")
 			ui.message(_("Error starting download"))
+			return False
 
 	def on_delete_selected(self, event):
 		selected_indices = []
@@ -244,31 +273,49 @@ class DownloadFailDialog(wx.Dialog):
 		if not selected_indices:
 			ui.message(_("No items selected"))
 			return
-		added_any = False
-		for idx in sorted(selected_indices, reverse=True):
+
+		items_to_remove = []
+		success_count = 0
+
+		for idx in selected_indices:
 			if 0 <= idx < len(self.failed_downloads):
 				item = self.failed_downloads[idx]
+				if self.start_download(item):
+					items_to_remove.append(idx)
+					success_count += 1
+
+		for idx in sorted(items_to_remove, reverse=True):
+			if 0 <= idx < len(self.failed_downloads):
 				del self.failed_downloads[idx]
-				self.start_download(item)
-				added_any = True
-		if added_any:
+
+		if items_to_remove:
 			self.core_functions['save_failed_downloads'](self.failed_downloads)
 			self.update_list()
-			ui.message(_("Selected downloads started"))
+
+		if success_count > 0:
+			ui.message(_("Started {count} download(s)").format(count=success_count))
 		else:
-			ui.message(_("No valid items selected"))
+			ui.message(_("No downloads could be started"))
 
 	def on_download_all(self, event):
 		if not self.failed_downloads:
 			ui.message(_("No failed downloads to process"))
 			return
-		items_to_download = self.failed_downloads[:]
-		self.core_functions['save_failed_downloads']([])
-		self.failed_downloads = []
-		self.update_list()
-		for item in items_to_download:
-			self.start_download(item)
-		wx.CallAfter(ui.message, _("All downloads started"))
+
+		items_to_process = self.failed_downloads[:]
+		success_items = []
+
+		for item in items_to_process:
+			if self.start_download(item):
+				success_items.append(item)
+
+		if success_items:
+			self.failed_downloads = [item for item in self.failed_downloads if item not in success_items]
+			self.core_functions['save_failed_downloads'](self.failed_downloads)
+			self.update_list()
+			ui.message(_("Started {count} download(s)").format(count=len(success_items)))
+		else:
+			ui.message(_("No downloads could be started"))
 
 	def on_clear_all(self, event):
 		if not self.failed_downloads:
