@@ -194,12 +194,15 @@ class DownloadFailDialog(wx.Dialog):
 					ui.message(_("Cannot create download folder"))
 					return False
 
-			output_template = os.path.join(save_path, "%(title)s.%(ext)s")
-
 			is_playlist = 'playlist' in url.lower() or 'list=' in url.lower()
-			playlist_flag = "--yes-playlist" if is_playlist else "--no-playlist"
 
-			self.core_functions['log'](f"Downloading from fail: {url} is_playlist={is_playlist}")
+			if is_playlist:
+				output_template = os.path.join(save_path, "%(playlist)s/%(title)s.%(ext)s")
+				playlist_flag = "--yes-playlist"
+				self.core_functions['log'](f"Downloading playlist from fail: {url}")
+			else:
+				output_template = os.path.join(save_path, "%(title)s.%(ext)s")
+				playlist_flag = "--no-playlist"
 
 			ffmpeg_path = os.path.join(os.path.dirname(self.core_functions['YouTubeEXE']), "ffmpeg.exe")
 			quality = str(self.core_functions['getINI']("MP3Quality"))
@@ -240,7 +243,11 @@ class DownloadFailDialog(wx.Dialog):
 
 			download_id = self.core_functions['addDownloadToQueue'](download_obj)
 			self.core_functions['_download_queue'].put(download_obj)
-			ui.message(_("Download started for: {title}").format(title=title))
+
+			if is_playlist:
+				ui.message(_("Playlist download started: {title}").format(title=title))
+			else:
+				ui.message(_("Download started for: {title}").format(title=title))
 			return True
 
 		except Exception as e:
