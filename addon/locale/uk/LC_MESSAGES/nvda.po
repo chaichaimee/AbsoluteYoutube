@@ -2,750 +2,387 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AbsoluteYoutube 2026.5.1\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-04-30 14:14+0700\n"
-"PO-Revision-Date: 2026-04-30 21:10+0700\n"
+"POT-Creation-Date: 2026-06-08 09:35+0300\n"
+"PO-Revision-Date: 2026-06-08 09:40+0300\n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: DevOn Addon\n"
+"X-Generator: Poedit 3.9\n"
+"X-Poedit-Basepath: ../../../globalPlugins\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: .\n"
 
-#: Youtube_settings.py:66
-msgid "&Beep while converting"
-msgstr "&Звуковий сигнал під час конвертації"
-
-#: Youtube_settings.py:44
-msgid "&Browse..."
-msgstr "&Огляд..."
-
-#: channel_dialogs.py:69
-#: channel_dialogs.py:133
-#: downloadFail.py:92
-msgid "&Cancel"
-msgstr "&Скасувати"
-
-#: downloadFail.py:84
-#: download_list.py:85
-msgid "&Clear All"
-msgstr "&Очистити все"
-
-#: channel_core.py:189
-#: playlist.py:89
-#: search.py:157
-msgid "&Close"
-msgstr "&Закрити"
-
-#: downloadFail.py:76
-#: download_list.py:81
-msgid "&Delete Selected"
-msgstr "&Видалити вибране"
-
-#: channel_core.py:181
-#: downloadFail.py:80
-#: download_list.py:81
-#: search.py:149
-msgid "&Download All"
-msgstr "&Завантажити все"
-
-#: playlist.py:85
-msgid "&Download All Videos in Playlist"
-msgstr "&Завантажити всі відео зі списку відтворення"
-
-#: download_list.py:77
-msgid "&Download Selected"
-msgstr "&Завантажити вибране"
-
-#: search.py:153
-msgid "&Download folder"
-msgstr "Папка &завантаження"
-
-#: Youtube_settings.py:241
-msgid "&Geo bypass"
-msgstr "&Обхід геообмежень"
-
-#: Youtube_settings.py:264
-msgid "&Mark as watched"
-msgstr "&Позначити як переглянуте"
-
-#: Youtube_settings.py:135
-msgid "&Max concurrent downloads (1-4):"
-msgstr "&Макс. одночасних завантажень (1-4):"
-
-#: Youtube_settings.py:97
-msgid "&Number of connections:"
-msgstr "&Кількість з'єднань:"
-
-#: channel_dialogs.py:67
-#: channel_dialogs.py:131
-#: downloadFail.py:88
-#: download_list.py:89
-msgid "&OK"
-msgstr "&Гаразд"
-
-#: Youtube_settings.py:207
-msgid "&Retry count:"
-msgstr "&Кількість спроб:"
-
-#: Youtube_settings.py:72
-msgid "&Say download complete"
-msgstr "&Оголошувати про завершення завантаження"
-
-#: Youtube_settings.py:199
-msgid "&Sleep between requests (seconds):"
-msgstr "&Пауза між запитами (секунди):"
-
-#: channel_core.py:185
-msgid "&Source"
-msgstr "&Джерело"
-
-#: Youtube_settings.py:191
-msgid "&Throttle rate (KB/s, 0=unlimited):"
-msgstr "&Обмеження швидкості (КБ/с, 0=без обмежень):"
-
-#: channel_core.py:1100
-msgid "A channel with this name already exists. Overwrite?"
-msgstr "Канал із такою назвою вже існує. Перезаписати?"
-
-#: __init__.py:256
-msgid "A new version of yt-dlp is available: {latest}. Current: {current}. Please update in settings."
-msgstr "Доступна нова версія yt-dlp: {latest}. Поточна: {current}. Будь ласка, оновіть у налаштуваннях."
-
-#: Download_core.py:32
-#: Youtube_settings.py:21
-#: __init__.py:44
+#: AbsoluteYoutube/Download_core.py:35 AbsoluteYoutube/Youtube_settings.py:22
+#: AbsoluteYoutube/__init__.py:44
 msgid "Absolute YouTube"
 msgstr "Absolute YouTube"
 
-#: Trim.py:64
-msgid "Absolute YouTube Trim"
-msgstr "Обрізка Absolute YouTube"
-
-#: __init__.py:529
-msgid "Absolute YouTube setting"
-msgstr "Налаштування Absolute YouTube"
-
-#: menu.py:18
-msgid "Absolute Youtube"
-msgstr "Absolute Youtube"
-
-#: channel_dialogs.py:41
-msgid "Add New Channel"
-msgstr "Додати новий канал"
-
-#: channel_core.py:112
-msgid "Add new channel"
-msgstr "Додати новий канал"
-
-#: __init__.py:184
-msgid "Add-on initialization failed: missing pending file path function. Please restart NVDA."
-msgstr "Помилка ініціалізації додатка: відсутня функція шляху до файлу. Будь ласка, перезапустіть NVDA."
-
-#: download_list.py:24
-msgid "Add-on internal error: missing components. Please restart NVDA."
-msgstr "Внутрішня помилка додатка: відсутні компоненти. Будь ласка, перезапустіть NVDA."
-
-#: download_list.py:69
-msgid "Added Time"
-msgstr "Час додавання"
-
-#: __init__.py:376
-msgid "Added to download list: {format} - {title}"
-msgstr "Додано до списку завантажень: {format} - {title}"
-
-#: __init__.py:370
-msgid "Added to download queue: {format} - {title}"
-msgstr "Додано до черги завантажень: {format} - {title}"
-
-#: download_list.py:169
-msgid "Added to download queue: {title}"
-msgstr "Додано до черги завантажень: {title}"
-
-#: Download_core.py:1097
-msgid "Adding link as {format} to download queue"
-msgstr "Додавання посилання як {format} до черги завантажень"
-
-#: channel_core.py:297
-#: search.py:591
-msgid "Adding {count} videos to download queue..."
-msgstr "Додавання {count} відео до черги завантажень..."
-
-#: channel_core.py:1358
-#: playlist.py:364
-#: search.py:572
-msgid "Adding {title} to download queue."
-msgstr "Додавання {title} до черги завантажень."
-
-#: search.py:123
-#: search.py:204
-msgid "All"
-msgstr "Усі"
-
-#: downloadFail.py:294
-msgid "All downloads started"
-msgstr "Усі завантаження розпочато"
-
-#: downloadFail.py:305
-msgid "All failed downloads cleared"
-msgstr "Усі невдалі завантаження очищено"
-
-#: download_list.py:230
-msgid "All items added to download queue"
-msgstr "Усі елементи додано до черги завантажень"
-
-#: download_list.py:249
-msgid "All pending downloads cleared"
-msgstr "Усі очікувані завантаження очищено"
-
-#: __init__.py:378
-msgid "Already in download list"
-msgstr "Вже у списку завантажень"
-
-#: __init__.py:372
-#: download_list.py:171
-msgid "Already in download queue"
-msgstr "Вже в черзі завантажень"
-
-#: Snapshot.py:104
-msgid "An unexpected error occurred."
-msgstr "Сталася неочікувана помилка."
-
-#: Youtube_settings.py:144
-msgid "Anti-blocking settings"
-msgstr "Налаштування антиблокування"
-
-#: channel_core.py:731
-msgid "Are you sure you want to delete saved data for '{name}'?"
-msgstr "Ви впевнені, що хочете видалити збережені дані для '{name}'?"
-
-#: Trim.py:164
-#: channel_dialogs.py:172
-msgid "Audio Quality"
-msgstr "Якість аудіо"
-
-#: Trim.py:177
-#: channel_dialogs.py:183
-#: search.py:681
-msgid "Cancel"
-msgstr "Скасувати"
-
-#: channel_core.py:292
-msgid "Cannot create download folder."
-msgstr "Не вдалося створити папку завантажень."
-
-#: Download_core.py:352
-#: Download_core.py:890
+#: AbsoluteYoutube/Download_core.py:355 AbsoluteYoutube/Download_core.py:920
 msgid "Cannot create folder"
 msgstr "Не вдалося створити папку"
 
-#: search.py:563
-msgid "Cannot determine URL for this video."
-msgstr "Не вдалося визначити URL-адресу для цього відео."
+#: AbsoluteYoutube/Download_core.py:468
+#, python-brace-format
+msgid ""
+"Found {count} interrupted downloads\n"
+"Resume all?"
+msgstr ""
+"Знайдено {count} перерваних завантажень\n"
+"Відновити все?"
 
-#: search.py:610
-msgid "Cannot open download folder."
-msgstr "Не вдалося відкрити папку завантажень."
+#: AbsoluteYoutube/Download_core.py:469
+msgid "Resume downloads"
+msgstr "Продовжити завантаження"
 
-#: channel_core.py:320
-msgid "Cannot open source folder."
-msgstr "Не вдалося відкрити папку джерела."
-
-#: Snapshot.py:58
-msgid "Capturing full-size snapshot..."
-msgstr "Зняття повноекранного знімка..."
-
-#: channel_core.py:713
-msgid "Channel URL updated."
-msgstr "URL-адресу каналу оновлено."
-
-#: channel_dialogs.py:58
-#: channel_dialogs.py:124
-msgid "Channel URL:"
-msgstr "URL каналу:"
-
-#: channel_core.py:906
-msgid "Channel added successfully."
-msgstr "Канал успішно додано."
-
-#: channel_core.py:743
-#: channel_core.py:746
-msgid "Channel deleted."
-msgstr "Канал видалено."
-
-#: channel_dialogs.py:51
-#: channel_dialogs.py:117
-msgid "Channel name:"
-msgstr "Назва каналу:"
-
-#: channel_core.py:633
-msgid "Channel pinned."
-msgstr "Канал закріплено."
-
-#: channel_core.py:1121
-msgid "Channel saved."
-msgstr "Канал збережено."
-
-#: channel_core.py:630
-msgid "Channel unpinned."
-msgstr "Відкріплено канал."
-
-#: channel_core.py:700
-msgid "Channel updated."
-msgstr "Канал оновлено."
-
-#: channel_core.py:100
-msgid "Channel:"
-msgstr "Канал:"
-
-#: channel_core.py:955
-msgid "Checking for new videos..."
-msgstr "Перевірка нових відео..."
-
-#: Download_core.py:601
+#: AbsoluteYoutube/Download_core.py:604
 msgid "Checking interrupted downloads..."
 msgstr "Перевірка перерваних завантажень..."
 
-#: downloadFail.py:162
-#: download_list.py:131
-msgid "Clear all"
-msgstr "Очистити все"
+#: AbsoluteYoutube/Download_core.py:675 AbsoluteYoutube/__init__.py:394
+#: AbsoluteYoutube/downloadFail.py:103 AbsoluteYoutube/downloadFail.py:104
+#: AbsoluteYoutube/downloadFail.py:105 AbsoluteYoutube/download_list.py:103
+msgid "Unknown"
+msgstr "Невідомо"
 
-#: channel_core.py:732
-msgid "Confirm Delete"
-msgstr "Підтвердити видалення"
+#: AbsoluteYoutube/Download_core.py:797
+#, python-brace-format
+msgid "Starting next download from queue: {title}"
+msgstr "Запуск наступного завантаження з черги: {title}"
 
-#: playlist.py:374
-msgid "Confirm Download"
-msgstr "Підтвердити завантаження"
-
-#: channel_core.py:1101
-msgid "Confirm Overwrite"
-msgstr "Підтвердити перезапис"
-
-#: channel_core.py:125
-msgid "Content type:"
-msgstr "Тип контенту:"
-
-#: Youtube_settings.py:156
-msgid "Cookies &file:"
-msgstr "&Файл кукі:"
-
-#: channel_core.py:1298
-msgid "Copy URL"
-msgstr "Копіювати URL"
-
-#: __init__.py:509
-#: playlist.py:314
-#: search.py:526
-msgid "Copy video Shorten URL"
-msgstr "Копіювати скорочену адресу відео"
-
-#: channel_core.py:1308
-#: playlist.py:320
-msgid "Correct title now"
-msgstr "Виправити назву зараз"
-
-#: channel_core.py:1366
-#: playlist.py:337
-msgid "Correcting title for selected video..."
-msgstr "Виправлення назви для вибраного відео..."
-
-#: playlist.py:354
-#: search.py:555
-msgid "Could not create short URL"
-msgstr "Не вдалося створити коротку адресу"
-
-#: __init__.py:549
-msgid "Could not create shortened URL"
-msgstr "Не вдалося створити скорочену адресу"
-
-#: Trim.py:302
-msgid "Could not open preview URL"
-msgstr "Не вдалося відкрити URL попереднього перегляду"
-
-#: __init__.py:713
-msgid "Cycle MP3 quality settings"
-msgstr "Циклічне перемикання якості MP3"
-
-#: channel_core.py:607
-#: downloadFail.py:146
-#: download_list.py:119
-msgid "Delete"
-msgstr "Видалити"
-
-#: downloadFail.py:153
-#: download_list.py:124
-msgid "Delete selected"
-msgstr "Видалити вибране"
-
-#: download_list.py:121
-msgid "Download"
-msgstr "Завантажити"
-
-#: channel_dialogs.py:155
-#: search.py:663
-msgid "Download All Videos"
-msgstr "Завантажити всі відео"
-
-#: downloadFail.py:16
-msgid "Download Fail Manager - Absolute YouTube"
-msgstr "Менеджер невдалих завантажень - Absolute YouTube"
-
-#: download_list.py:14
-msgid "Download List Manager - Absolute YouTube"
-msgstr "Менеджер списку завантажень - Absolute YouTube"
-
-#: channel_core.py:1311
-#: playlist.py:323
-#: search.py:532
-msgid "Download MP3"
-msgstr "Завантажити MP3"
-
-#: channel_core.py:1314
-#: playlist.py:326
-#: search.py:535
-msgid "Download MP4"
-msgstr "Завантажити MP4"
-
-#: channel_core.py:1317
-#: playlist.py:329
-#: search.py:538
-msgid "Download WAV"
-msgstr "Завантажити WAV"
-
-#: downloadFail.py:159
-#: download_list.py:129
-msgid "Download all"
-msgstr "Завантажити все"
-
-#: playlist.py:373
-msgid "Download all {count} videos in this playlist?"
-msgstr "Завантажити всі {count} відео у цьому списку відтворення?"
-
-#: Download_core.py:840
+#: AbsoluteYoutube/Download_core.py:852
 msgid "Download complete"
 msgstr "Завантаження завершено"
 
-#: channel_core.py:1305
-msgid "Download entire playlist"
-msgstr "Завантажити весь список відтворення"
-
-#: __init__.py:509
-msgid "Download fail manager"
-msgstr "Менеджер невдалих завантажень"
-
-#: __init__.py:517
-msgid "Download fail manager (no failed)"
-msgstr "Менеджер невдалих завантажень (немає помилок)"
-
-#: Download_core.py:846
+#: AbsoluteYoutube/Download_core.py:858
 msgid "Download failed"
 msgstr "Завантаження не вдалося"
 
-#: Download_core.py:872
-msgid "Download failed due to an error"
-msgstr "Завантаження не вдалося через помилку"
-
-#: Download_core.py:859
+#: AbsoluteYoutube/Download_core.py:871
 msgid "Download failed due to timeout"
 msgstr "Завантаження не вдалося через тайм-аут"
 
-#: downloadFail.py:149
-msgid "Download file"
-msgstr "Завантажити файл"
+#: AbsoluteYoutube/Download_core.py:884
+msgid "Download failed due to an error"
+msgstr "Завантаження не вдалося через помилку"
 
-#: search.py:612
-msgid "Download folder does not exist."
-msgstr "Папка завантажень не існує."
+#: AbsoluteYoutube/Download_core.py:908
+msgid "Download failed to start"
+msgstr "Не вдалося почати завантаження"
 
-#: channel_core.py:1346
-#: channel_core.py:1360
-#: playlist.py:366
-#: playlist.py:382
-#: search.py:574
-msgid "Download function not available."
-msgstr "Функція завантаження недоступна."
+#: AbsoluteYoutube/Download_core.py:933
+msgid "URL not found"
+msgstr "URL не знайдено"
 
-#: __init__.py:511
-msgid "Download list manager"
-msgstr "Менеджер списку завантажень"
-
-#: __init__.py:385
-msgid "Download or queue video (single tap MP3, double tap MP4, triple tap WAV)"
-msgstr "Завантажити або поставити в чергу (1 дотик MP3, 2 дотики MP4, 3 дотики WAV)"
-
-#: download_list.py:126
-msgid "Download selected"
-msgstr "Завантажити вибране"
-
-#: downloadFail.py:249
-msgid "Download started for: {title}"
-msgstr "Завантаження розпочато для: {title}"
-
-#: Snapshot.py:63
-msgid "Downloading thumbnail..."
-msgstr "Завантаження ескізу..."
-
-#: channel_core.py:310
-#: search.py:600
-msgid "Downloads started."
-msgstr "Завантаження розпочато."
-
-#: downloadFail.py:68
-#: search.py:36
-msgid "Duration"
-msgstr "Тривалість"
-
-#: channel_dialogs.py:105
-msgid "Edit Channel"
-msgstr "Редагувати канал"
-
-#: channel_core.py:116
-msgid "Edit channel"
-msgstr "Редагувати канал"
-
-#: channel_core.py:604
-msgid "Edit channel..."
-msgstr "Редагувати канал..."
-
-#: Youtube_settings.py:130
-msgid "Enable &logging"
-msgstr "Увімкнути &журналювання"
-
-#: Youtube_settings.py:112
-msgid "Enable &playlist mode by default"
-msgstr "Увімкнути режим &списків за замовчуванням"
-
-#: Trim.py:140
-msgid "End time:"
-msgstr "Час завершення:"
-
-#: search.py:104
-msgid "Enter a search query."
-msgstr "Введіть пошуковий запит."
-
-#: download_list.py:25
-msgid "Error"
-msgstr "Помилка"
-
-#: Snapshot.py:42
-msgid "Error creating download folder"
-msgstr "Помилка створення папки завантажень"
-
-#: channel_core.py:749
-msgid "Error deleting channel."
-msgstr "Помилка видалення каналу."
-
-#: __init__.py:271
-msgid "Error during auto-update of yt-dlp: {str}"
-msgstr "Помилка під час автооновлення yt-dlp: {str}"
-
-#: channel_core.py:912
-msgid "Error fetching channel: {str}"
-msgstr "Помилка отримання даних каналу: {str}"
-
-#: __init__.py:178
-#: downloadFail.py:44
-msgid "Error importing core functions: {str}"
-msgstr "Помилка імпорту основних функцій: {str}"
-
-#: __init__.py:659
-msgid "Error importing settings panel: {str}"
-msgstr "Помилка імпорту панелі налаштувань: {str}"
-
-#: __init__.py:202
-msgid "Error initializing AbsoluteYoutube: {str}"
-msgstr "Помилка ініціалізації AbsoluteYoutube: {str}"
-
-#: channel_core.py:774
-msgid "Error loading cache."
-msgstr "Помилка завантаження кешу."
-
-#: channel_core.py:503
-#: channel_core.py:675
-msgid "Error loading channel data."
-msgstr "Помилка завантаження даних каналу."
-
-#: __init__.py:455
-msgid "Error opening channel dialog"
-msgstr "Помилка відкриття діалогу каналу"
-
-#: __init__.py:701
-msgid "Error opening channel/playlist list: {str}"
-msgstr "Помилка відкриття списку каналів/відтворення: {str}"
-
-#: __init__.py:569
-#: __init__.py:573
-msgid "Error opening download fail dialog: {str}"
-msgstr "Помилка відкриття діалогу помилок завантаження: {str}"
-
-#: __init__.py:494
-msgid "Error opening download list dialog: {str}"
-msgstr "Помилка відкриття діалогу списку завантажень: {str}"
-
-#: __init__.py:421
-msgid "Error opening folder"
-msgstr "Помилка відкриття папки"
-
-#: channel_core.py:1280
-msgid "Error opening playlist."
-msgstr "Помилка відкриття списку відтворення."
-
-#: __init__.py:646
-msgid "Error opening search dialog: {str}"
-msgstr "Помилка відкриття діалогу пошуку: {str}"
-
-#: __init__.py:662
-msgid "Error opening settings dialog: {str}"
-msgstr "Помилка відкриття діалогу налаштувань: {str}"
-
-#: __init__.py:627
-msgid "Error opening trim dialog: {str}"
-msgstr "Помилка відкриття діалогу обрізки: {str}"
-
-#: Download_core.py:942
-msgid "Error processing URL"
-msgstr "Помилка обробки URL"
-
-#: downloadFail.py:253
-msgid "Error starting download"
-msgstr "Помилка запуску завантаження"
-
-#: channel_core.py:716
-msgid "Error updating channel URL."
-msgstr "Помилка оновлення URL каналу."
-
-#: channel_core.py:703
-msgid "Error updating channel."
-msgstr "Помилка оновлення каналу."
-
-#: __init__.py:499
-msgid "Error: Download list module not available"
-msgstr "Помилка: Модуль списку завантажень недоступний"
-
-#: __init__.py:559
-msgid "Error: DownloadFail module not available"
-msgstr "Помилка: Модуль помилок завантаження недоступний"
-
-#: Snapshot.py:86
-msgid "Error: Failed to capture snapshot."
-msgstr "Помилка: Не вдалося зробити знімок."
-
-#: Snapshot.py:93
-msgid "Error: No snapshot file created."
-msgstr "Помилка: Файл знімка не створено."
-
-#: __init__.py:651
-msgid "Error: Search module not available"
-msgstr "Помилка: Модуль пошуку недоступний"
-
-#: __init__.py:600
-msgid "Error: Snapshot module not available"
-msgstr "Помилка: Модуль знімків недоступний"
-
-#: __init__.py:610
-msgid "Error: Trim module not available"
-msgstr "Помилка: Модуль обрізки недоступний"
-
-#: Download_core.py:1067
-#: Trim.py:329
-msgid "Error: ffmpeg.exe not found."
-msgstr "Помилка: ffmpeg.exe не знайдено."
-
-#: Trim.py:326
-msgid "Error: yt-dlp.exe not found."
-msgstr "Помилка: yt-dlp.exe не знайдено."
-
-#: Youtube_settings.py:382
-msgid "Failed to create the specified folder. Please select a valid folder."
-msgstr "Не вдалося створити вказану папку. Виберіть дійсну папку."
-
-#: __init__.py:519
-msgid "Favorite channel"
-msgstr "Улюблений канал"
-
-#: channel_core.py:1063
-msgid "Fetched {count} items total."
-msgstr "Усього отримано {count} елементів."
-
-#: __init__.py:688
-msgid "Fetching channel information..."
-msgstr "Отримання інформації про канал..."
-
-#: channel_core.py:1108
-msgid "Fetching channel items..."
-msgstr "Отримання елементів каналу..."
-
-#: channel_core.py:955
-msgid "Fetching channel videos..."
-msgstr "Отримання відео каналу..."
-
-#: Trim.py:151
-#: channel_dialogs.py:162
-#: search.py:669
-msgid "File Format"
-msgstr "Формат файлу"
-
-#: Download_core.py:1072
-msgid "File already exists. Skipping download."
-msgstr "Файл уже існує. Завантаження пропущено."
-
-#: Download_core.py:923
+#: AbsoluteYoutube/Download_core.py:953
 msgid "File exists"
 msgstr "Файл існує"
 
-#: Youtube_settings.py:253
-msgid "Force I&Pv4"
-msgstr "Примусово I&Pv4"
+#: AbsoluteYoutube/Download_core.py:972
+msgid "Error processing URL"
+msgstr "Помилка обробки URL"
 
-#: Youtube_settings.py:258
-msgid "Force I&Pv6"
-msgstr "Примусово I&Pv6"
+#: AbsoluteYoutube/Download_core.py:976
+msgid "yt-dlp.exe missing"
+msgstr "yt-dlp.exe відсутній"
 
-#: download_list.py:68
-msgid "Format"
-msgstr "Формат"
+#: AbsoluteYoutube/Download_core.py:1097 AbsoluteYoutube/Trim.py:323
+msgid "Error: ffmpeg.exe not found."
+msgstr "Помилка: ffmpeg.exe не знайдено."
 
-#: Download_core.py:465
-msgid ""
-"Found {count} interrupted downloads\n"
-"Resume all?\n"
-msgstr ""
-"Знайдено {count} перерваних завантажень\n"
-"Продовжити всі?\n"
+#: AbsoluteYoutube/Download_core.py:1102
+msgid "File already exists. Skipping download."
+msgstr "Файл уже існує. Завантаження пропущено."
 
-#: search.py:490
-msgid "Found {count} videos for '{query}'."
-msgstr "Знайдено {count} відео для '{query}'."
+#: AbsoluteYoutube/Download_core.py:1105
+msgid "No valid multimedia link found."
+msgstr "Не знайдено дійсного мультимедійного посилання."
 
-#: search.py:404
-msgid "Found {} videos..."
-msgstr "Знайдено {} відео..."
+#: AbsoluteYoutube/Download_core.py:1127
+#, python-brace-format
+msgid "Adding link as {format} to download queue"
+msgstr "Додавання посилання як {format} до черги завантажень"
 
-#: Youtube_settings.py:215
-msgid "Fragment &retries:"
-msgstr "Повторні спроби &фрагментів:"
+#: AbsoluteYoutube/Download_core.py:1136
+msgid "Not a YouTube video or valid multimedia link"
+msgstr "Це не відео з YouTube або недійсне мультимедійне посилання"
 
-#: Snapshot.py:111
+#: AbsoluteYoutube/Snapshot.py:40
+msgid "Error creating download folder"
+msgstr "Помилка створення папки завантажень"
+
+#: AbsoluteYoutube/Snapshot.py:56
+msgid "Snapshot file already exists"
+msgstr "Файл знімка вже існує"
+
+#: AbsoluteYoutube/Snapshot.py:60
+msgid "Capturing full-size snapshot..."
+msgstr "Зняття повноекранного знімка..."
+
+#: AbsoluteYoutube/Snapshot.py:65
+msgid "Downloading thumbnail..."
+msgstr "Завантаження ескізу..."
+
+#: AbsoluteYoutube/Snapshot.py:88
+msgid "Error: Failed to capture snapshot."
+msgstr "Помилка: Не вдалося зробити знімок."
+
+#: AbsoluteYoutube/Snapshot.py:92
+msgid "Processing snapshot..."
+msgstr "Обробка знімка..."
+
+#: AbsoluteYoutube/Snapshot.py:102
+msgid "Error: No snapshot file created."
+msgstr "Помилка: Файл знімка не створено."
+
+#: AbsoluteYoutube/Snapshot.py:124
+msgid "An unexpected error occurred."
+msgstr "Сталася неочікувана помилка."
+
+#: AbsoluteYoutube/Snapshot.py:131
 msgid "Full-size snapshot complete"
 msgstr "Повноекранний знімок готовий"
 
-#: Youtube_settings.py:246
+#: AbsoluteYoutube/Trim.py:65
+msgid "Absolute YouTube Trim"
+msgstr "Обрізка Absolute YouTube"
+
+#: AbsoluteYoutube/Trim.py:129 AbsoluteYoutube/downloadFail.py:65
+msgid "URL"
+msgstr "URL"
+
+#: AbsoluteYoutube/Trim.py:136
+msgid "Start time:"
+msgstr "Час початку:"
+
+#: AbsoluteYoutube/Trim.py:137
+msgid "End time:"
+msgstr "Час завершення:"
+
+#: AbsoluteYoutube/Trim.py:141
+msgid "Video duration: unknown; Overall period: 0 seconds"
+msgstr "Тривалість відео: невідома; Загальний період: 0 секунд"
+
+#: AbsoluteYoutube/Trim.py:143
+msgid "Preview start"
+msgstr "Початок перегляду"
+
+#: AbsoluteYoutube/Trim.py:148 AbsoluteYoutube/channel_dialogs.py:148
+#: AbsoluteYoutube/search.py:648
+msgid "File Format"
+msgstr "Формат файлу"
+
+#: AbsoluteYoutube/Trim.py:161 AbsoluteYoutube/channel_dialogs.py:158
+msgid "Audio Quality"
+msgstr "Якість аудіо"
+
+#: AbsoluteYoutube/Trim.py:171 AbsoluteYoutube/channel_dialogs.py:167
+#: AbsoluteYoutube/search.py:659
+msgid "Start download"
+msgstr "Почати завантаження"
+
+#: AbsoluteYoutube/Trim.py:174 AbsoluteYoutube/channel_dialogs.py:169
+#: AbsoluteYoutube/search.py:660
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: AbsoluteYoutube/Trim.py:242
+msgid "unknown"
+msgstr "невідомо"
+
+#: AbsoluteYoutube/Trim.py:248
+msgid "invalid (negative)"
+msgstr "недійсний (від'ємний)"
+
+#: AbsoluteYoutube/Trim.py:252
+msgid "invalid"
+msgstr "недійсний"
+
+#: AbsoluteYoutube/Trim.py:253
+#, python-brace-format
+msgid "Video duration: {duration}; Overall period: {period} seconds"
+msgstr "Тривалість відео: {duration}; Загальний період: {period} секунд"
+
+#: AbsoluteYoutube/Trim.py:279
+msgid "Invalid URL or start time"
+msgstr "Недійсний URL або час початку"
+
+#: AbsoluteYoutube/Trim.py:290
+msgid "Could not open preview URL"
+msgstr "Не вдалося відкрити URL попереднього перегляду"
+
+#: AbsoluteYoutube/Trim.py:295
+msgid "URL is required"
+msgstr "Необхідно вказати URL"
+
+#: AbsoluteYoutube/Trim.py:300
+msgid "Invalid YouTube video URL"
+msgstr "Недійсний URL відео YouTube"
+
+#: AbsoluteYoutube/Trim.py:310
+msgid "Start time must be less than end time"
+msgstr "Час початку має бути меншим за час завершення"
+
+#: AbsoluteYoutube/Trim.py:320
+msgid "Error: yt-dlp.exe not found."
+msgstr "Помилка: yt-dlp.exe не знайдено."
+
+#: AbsoluteYoutube/Trim.py:326
+#, python-brace-format
+msgid "Trimming and downloading {format}..."
+msgstr "Обрізка та завантаження {format}..."
+
+#: AbsoluteYoutube/Youtube_settings.py:41
+msgid "Destination folder"
+msgstr "Папка призначення"
+
+#: AbsoluteYoutube/Youtube_settings.py:44
+msgid "&Browse..."
+msgstr "&Огляд..."
+
+#: AbsoluteYoutube/Youtube_settings.py:45
+msgid "Select a directory"
+msgstr "Виберіть папку"
+
+#: AbsoluteYoutube/Youtube_settings.py:59
+msgid "Start download immediately (NVDA+Y)"
+msgstr "Почати завантаження негайно (NVDA+Y)"
+
+#: AbsoluteYoutube/Youtube_settings.py:64
+msgid "&Beep while converting"
+msgstr "&Звуковий сигнал під час конвертації"
+
+#: AbsoluteYoutube/Youtube_settings.py:69
+msgid "&Say download complete"
+msgstr "&Оголошувати про завершення завантаження"
+
+#: AbsoluteYoutube/Youtube_settings.py:73
+msgid "MP3 &quality (kbps):"
+msgstr "&Якість MP3 (кбіт/с):"
+
+#: AbsoluteYoutube/Youtube_settings.py:87
+msgid "Use download section"
+msgstr "Використовувати розділ завантажень"
+
+#: AbsoluteYoutube/Youtube_settings.py:91
+msgid "&Number of connections:"
+msgstr "&Кількість з'єднань:"
+
+#: AbsoluteYoutube/Youtube_settings.py:105
+msgid "Enable &playlist mode by default"
+msgstr "Увімкнути режим &списків за замовчуванням"
+
+#: AbsoluteYoutube/Youtube_settings.py:110
+msgid "Skip existing files"
+msgstr "Пропускати існуючі файли"
+
+#: AbsoluteYoutube/Youtube_settings.py:115
+msgid "Resume interrupted downloads on restart"
+msgstr "Продовжувати перервані завантаження після перезапуску"
+
+#: AbsoluteYoutube/Youtube_settings.py:120
+msgid "Enable &logging"
+msgstr "Увімкнути &журналювання"
+
+#: AbsoluteYoutube/Youtube_settings.py:124
+msgid "&Max concurrent downloads (1-4):"
+msgstr "&Макс. одночасних завантажень (1-4):"
+
+#: AbsoluteYoutube/Youtube_settings.py:132
+msgid "Anti-blocking settings"
+msgstr "Налаштування антиблокування"
+
+#: AbsoluteYoutube/Youtube_settings.py:137
+msgid "Use &cookies (recommended to avoid block)"
+msgstr "Використовувати &кукі (рекомендовано для уникнення блокувань)"
+
+#: AbsoluteYoutube/Youtube_settings.py:142
+msgid "Cookies &file:"
+msgstr "&Файл кукі:"
+
+#: AbsoluteYoutube/Youtube_settings.py:150
+msgid "How to get cookies?"
+msgstr "Як отримати кукі?"
+
+#: AbsoluteYoutube/Youtube_settings.py:161
+msgid "Use &custom user agent"
+msgstr "Використовувати &власний User Agent"
+
+#: AbsoluteYoutube/Youtube_settings.py:166
+msgid "User &agent:"
+msgstr "User &agent:"
+
+#: AbsoluteYoutube/Youtube_settings.py:172
+msgid "&Throttle rate (KB/s, 0=unlimited):"
+msgstr "&Обмеження швидкості (КБ/с, 0=без обмежень):"
+
+#: AbsoluteYoutube/Youtube_settings.py:179
+msgid "&Sleep between requests (seconds):"
+msgstr "&Пауза між запитами (секунди):"
+
+#: AbsoluteYoutube/Youtube_settings.py:186
+msgid "&Retry count:"
+msgstr "&Кількість спроб:"
+
+#: AbsoluteYoutube/Youtube_settings.py:193
+msgid "Fragment &retries:"
+msgstr "Повторні спроби &фрагментів:"
+
+#: AbsoluteYoutube/Youtube_settings.py:200
+msgid "Skip &unavailable fragments"
+msgstr "Пропускати &недоступні фрагменти"
+
+#: AbsoluteYoutube/Youtube_settings.py:205
+msgid "Use &proxy"
+msgstr "Використовувати &проксі"
+
+#: AbsoluteYoutube/Youtube_settings.py:210
+msgid "Proxy &URL:"
+msgstr "&URL проксі:"
+
+#: AbsoluteYoutube/Youtube_settings.py:216
+msgid "&Geo bypass"
+msgstr "&Обхід геообмежень"
+
+#: AbsoluteYoutube/Youtube_settings.py:221
 msgid "Geo bypass &country:"
 msgstr "&Країна для обходу обмежень:"
 
-#: channel_core.py:174
-#: search.py:142
-msgid "Go"
-msgstr "Перейти"
+#: AbsoluteYoutube/Youtube_settings.py:227
+msgid "Force I&Pv4"
+msgstr "Примусово I&Pv4"
 
-#: channel_core.py:353
-#: search.py:200
-msgid "Go to page of {}:"
-msgstr "Перейти на сторінку {}:"
+#: AbsoluteYoutube/Youtube_settings.py:232
+msgid "Force I&Pv6"
+msgstr "Примусово I&Pv6"
 
-#: Youtube_settings.py:308
+#: AbsoluteYoutube/Youtube_settings.py:237
+msgid "&Mark as watched"
+msgstr "&Позначити як переглянуте"
+
+#: AbsoluteYoutube/Youtube_settings.py:241
+msgid "Reset to &safe settings (recommended if blocked)"
+msgstr "Скинути до &безпечних налаштувань (рекомендовано при блокуванні)"
+
+#: AbsoluteYoutube/Youtube_settings.py:247
+msgid "yt-dlp Update"
+msgstr "Оновлення yt-dlp"
+
+#: AbsoluteYoutube/Youtube_settings.py:252
+msgid "Auto-update yt-dlp on startup"
+msgstr "Автоматичне оновлення yt-dlp під час запуску"
+
+#: AbsoluteYoutube/Youtube_settings.py:257
+msgid "Update yt-dlp now"
+msgstr "Оновити yt-dlp зараз"
+
+#: AbsoluteYoutube/Youtube_settings.py:261
+msgid "Update status: Idle"
+msgstr "Статус оновлення: Очікування"
+
+#: AbsoluteYoutube/Youtube_settings.py:279
 msgid ""
 "How to get YouTube cookies:\n"
 "\n"
@@ -754,7 +391,8 @@ msgid ""
 "3. Click the extension icon and export cookies\n"
 "4. Save as cookies.txt and select it here\n"
 "\n"
-"Using cookies helps avoid blocks because YouTube sees you as a logged-in user.\n"
+"Using cookies helps avoid blocks because YouTube sees you as a logged-in "
+"user."
 msgstr ""
 "Як отримати кукі YouTube:\n"
 "\n"
@@ -763,574 +401,982 @@ msgstr ""
 "3. Натисніть на значок розширення та експортуйте кукі\n"
 "4. Збережіть як cookies.txt та виберіть цей файл тут\n"
 "\n"
-"Використання кукі допомагає уникнути блокувань, оскільки YouTube бачить вас як авторизованого користувача.\n"
+"Використання кукі допомагає уникнути блокувань, оскільки YouTube бачить вас "
+"як авторизованого користувача."
 
-#: Youtube_settings.py:316
+#: AbsoluteYoutube/Youtube_settings.py:286
 msgid "How to get cookies"
 msgstr "Як отримати кукі"
 
-#: Youtube_settings.py:165
-msgid "How to get cookies?"
-msgstr "Як отримати кукі?"
-
-#: __init__.py:439
-msgid "Immediate download mode disabled"
-msgstr "Режим негайного завантаження вимкнено"
-
-#: __init__.py:437
-msgid "Immediate download mode enabled"
-msgstr "Режим негайного завантаження увімкнено"
-
-#: Trim.py:282
-msgid "Invalid URL or start time"
-msgstr "Недійсний URL або час початку"
-
-#: __init__.py:443
-msgid "Invalid channel URL"
-msgstr "Недійсний URL каналу"
-
-#: __init__.py:423
-msgid "Invalid download folder"
-msgstr "Недійсна папка завантаження"
-
-#: downloadFail.py:187
-#: download_list.py:159
-msgid "Item deleted"
-msgstr "Елемент видалено"
-
-#: channel_core.py:1385
-#: search.py:580
-msgid "Item removed."
-msgstr "Елемент вилучено."
-
-#: channel_core.py:65
-msgid "Live"
-msgstr "Прямий ефір"
-
-#: channel_core.py:770
-msgid "Loaded {count} videos from cache."
-msgstr "Завантажено {count} відео з кешу."
-
-#: channel_core.py:488
-#: channel_core.py:939
-msgid "Loaded {count} videos from {name}."
-msgstr "Завантажено {count} відео з {name}."
-
-#: playlist.py:225
-msgid "Loaded {count} videos."
-msgstr "Завантажено {count} відео."
-
-#: playlist.py:51
-msgid "Loading playlist videos..."
-msgstr "Завантаження відео зі списку відтворення..."
-
-#: Youtube_settings.py:77
-msgid "MP3 &quality (kbps):"
-msgstr "&Якість MP3 (кбіт/с):"
-
-#: channel_core.py:599
-msgid "Move Down"
-msgstr "Перемістити вниз"
-
-#: channel_core.py:595
-msgid "Move Up"
-msgstr "Перемістити вгору"
-
-#: channel_core.py:165
-#: playlist.py:78
-#: search.py:133
-msgid "NextPage"
-msgstr "НастСторінка"
-
-#: __init__.py:340
-#: __init__.py:539
-msgid "No YouTube URL found"
-msgstr "URL-адресу YouTube не знайдено"
-
-#: channel_core.py:252
-msgid "No channel selected."
-msgstr "Канал не вибрано."
-
-#: __init__.py:555
-msgid "No failed downloads"
-msgstr "Немає невдалих завантажень"
-
-#: downloadFail.py:299
-msgid "No failed downloads to clear"
-msgstr "Немає невдалих завантажень для очищення"
-
-#: downloadFail.py:279
-msgid "No failed downloads to process"
-msgstr "Немає невдалих завантажень для обробки"
-
-#: download_list.py:232
-msgid "No items added (all already in queue)"
-msgstr "Жодного елемента не додано (всі вже в черзі)"
-
-#: channel_core.py:908
-msgid "No items found for this URL."
-msgstr "Для цієї адреси нічого не знайдено."
-
-#: channel_core.py:1067
-msgid "No items found."
-msgstr "Нічого не знайдено."
-
-#: downloadFail.py:264
-#: download_list.py:187
-#: download_list.py:196
-msgid "No items selected"
-msgstr "Жодного елемента не вибрано"
-
-#: download_list.py:212
-msgid "No new items added (already in queue)"
-msgstr "Нових елементів не додано (вже в черзі)"
-
-#: download_list.py:219
-msgid "No pending downloads"
-msgstr "Немає очікуваних завантажень"
-
-#: download_list.py:239
-msgid "No pending downloads to clear"
-msgstr "Немає очікуваних завантажень для очищення"
-
-#: search.py:487
-msgid "No results found for '{query}'."
-msgstr "За запитом '{query}' результатів не знайдено."
-
-#: search.py:488
-msgid "No results found."
-msgstr "Результатів не знайдено."
-
-#: channel_core.py:85
-msgid "No saved data for this channel."
-msgstr "Немає збережених даних для цього каналу."
-
-#: Download_core.py:1075
-msgid "No valid multimedia link found."
-msgstr "Не знайдено дійсного мультимедійного посилання."
-
-#: channel_core.py:278
-#: playlist.py:370
-#: search.py:584
-msgid "No videos to download."
-msgstr "Немає відео для завантаження."
-
-#: __init__.py:542
-msgid "Not a YouTube URL"
-msgstr "Це не посилання на YouTube"
-
-#: Download_core.py:1106
-msgid "Not a YouTube video or valid multimedia link"
-msgstr "Це не відео з YouTube або недійсне мультимедійне посилання"
-
-#: __init__.py:398
-msgid "Open context menu (single tap), download folder (double tap), Search Youtube (triple tap)"
-msgstr "Відкрити контекстне меню (1 дотик), папка завантажень (2 дотики), пошук YouTube (3 дотики)"
-
-#: channel_core.py:1301
-msgid "Open in browser"
-msgstr "Відкрити у браузері"
-
-#: channel_core.py:272
-#: search.py:237
-msgid "Page number out of range (1-{})."
-msgstr "Номер сторінки поза межами (1-{})."
-
-#: channel_core.py:349
-#: playlist.py:122
-#: search.py:196
-msgid "Page {}/{}"
-msgstr "Сторінка {}/{}"
-
-#: channel_core.py:591
-msgid "Pin"
-msgstr "Закріпити"
-
-#: playlist.py:317
-#: search.py:529
-msgid "Play on YouTube"
-msgstr "Відтворити на YouTube"
-
-#: channel_core.py:1344
-#: playlist.py:380
-msgid "Playlist download started."
-msgstr "Завантаження списку відтворення розпочато."
-
-#: __init__.py:711
-msgid "Playlist mode disabled"
-msgstr "Режим списків відтворення вимкнено"
-
-#: __init__.py:711
-msgid "Playlist mode enabled"
-msgstr "Режим списків відтворення увімкнено"
-
-#: channel_core.py:67
-msgid "Playlists"
-msgstr "Списки відтворення"
-
-#: channel_dialogs.py:98
-#: channel_dialogs.py:148
-msgid "Please enter a channel URL."
-msgstr "Будь ласка, введіть URL-адресу каналу."
-
-#: channel_dialogs.py:95
-#: channel_dialogs.py:145
-msgid "Please enter a channel name."
-msgstr "Будь ласка, введіть назву каналу."
-
-#: search.py:245
-msgid "Please enter a search term."
-msgstr "Будь ласка, введіть запит для пошуку."
-
-#: channel_core.py:266
-#: search.py:231
-msgid "Please enter a valid number."
-msgstr "Будь ласка, введіть коректне число."
-
-#: channel_core.py:66
-msgid "Podcasts"
-msgstr "Подкасти"
-
-#: Trim.py:146
-msgid "Preview start"
-msgstr "Початок перегляду"
-
-#: channel_core.py:161
-#: playlist.py:74
-#: search.py:129
-msgid "PreviousPage"
-msgstr "ПопСторінка"
-
-#: Snapshot.py:83
-msgid "Processing snapshot..."
-msgstr "Обробка знімка..."
-
-#: Youtube_settings.py:234
-msgid "Proxy &URL:"
-msgstr "&URL проксі:"
-
-#: channel_core.py:142
-msgid "Ready"
-msgstr "Готово"
-
-#: channel_core.py:1320
-#: search.py:542
-msgid "Remove from list"
-msgstr "Вилучити зі списку"
-
-#: Youtube_settings.py:269
-msgid "Reset to &safe settings (recommended if blocked)"
-msgstr "Скинути до &безпечних налаштувань (рекомендовано при блокуванні)"
-
-#: Youtube_settings.py:335
+#: AbsoluteYoutube/Youtube_settings.py:305
 msgid "Reset to safe settings. Remember to use cookies for best results."
-msgstr "Скинуто до безпечних налаштувань. Використовуйте кукі для кращих результатів."
+msgstr ""
+"Скинуто до безпечних налаштувань. Використовуйте кукі для кращих результатів."
 
-#: Download_core.py:466
-msgid "Resume downloads"
-msgstr "Продовжити завантаження"
-
-#: Youtube_settings.py:124
-msgid "Resume interrupted downloads on restart"
-msgstr "Продовжувати перервані завантаження після перезапуску"
-
-#: search.py:95
-msgid "Search"
-msgstr "Пошук"
-
-#: search.py:59
-msgid "Search YouTube"
-msgstr "Пошук в YouTube"
-
-#: search.py:92
-msgid "Search YouTube:"
-msgstr "Пошук в YouTube:"
-
-#: __init__.py:527
-msgid "Search Youtube"
-msgstr "Пошук в Youtube"
-
-#: search.py:252
-msgid "Search already in progress."
-msgstr "Пошук уже триває."
-
-#: search.py:492
-msgid "Search completed."
-msgstr "Пошук завершено."
-
-#: search.py:501
-msgid "Search failed."
-msgstr "Помилка пошуку."
-
-#: search.py:500
-msgid "Search failed: {error}"
-msgstr "Помилка пошуку: {error}"
-
-#: channel_core.py:135
-msgid "Search:"
-msgstr "Пошук:"
-
-#: search.py:282
-msgid "Searching..."
-msgstr "Пошук..."
-
-#: Youtube_settings.py:45
-msgid "Select a directory"
-msgstr "Виберіть папку"
-
-#: download_list.py:210
-msgid "Selected items added to download queue"
-msgstr "Вибрані елементи додано до черги завантажень"
-
-#: downloadFail.py:274
-#: download_list.py:187
-msgid "Selected items deleted"
-msgstr "Вибрані елементи видалено"
-
-#: __init__.py:547
-#: channel_core.py:1333
-#: playlist.py:352
-#: search.py:553
-msgid "Short URL copied to clipboard"
-msgstr "Коротку адресу скопійовано в буфер"
-
-#: channel_core.py:64
-msgid "Shorts"
-msgstr "Shorts"
-
-#: channel_core.py:153
-#: playlist.py:66
-#: search.py:120
-msgid "Show items:"
-msgstr "Показати елементи:"
-
-#: Youtube_settings.py:223
-msgid "Skip &unavailable fragments"
-msgstr "Пропускати &недоступні фрагменти"
-
-#: Youtube_settings.py:118
-msgid "Skip existing files"
-msgstr "Пропускати існуючі файли"
-
-#: __init__.py:522
-msgid "Snapshot"
-msgstr "Знімок"
-
-#: Snapshot.py:54
-msgid "Snapshot file already exists"
-msgstr "Файл знімка вже існує"
-
-#: Trim.py:174
-#: channel_dialogs.py:181
-#: search.py:680
-msgid "Start download"
-msgstr "Почати завантаження"
-
-#: Youtube_settings.py:60
-msgid "Start download immediately (NVDA+Y)"
-msgstr "Почати завантаження негайно (NVDA+Y)"
-
-#: Trim.py:316
-msgid "Start time must be less than end time"
-msgstr "Час початку має бути меншим за час завершення"
-
-#: Trim.py:139
-msgid "Start time:"
-msgstr "Час початку:"
-
-#: __init__.py:365
-msgid "Starting download: {format} - {title}"
-msgstr "Запуск завантаження: {format} - {title}"
-
-#: Download_core.py:791
-msgid "Starting next download from queue: {title}"
-msgstr "Запуск наступного завантаження з черги: {title}"
-
-#: channel_dialogs.py:15
-msgid "Title"
-msgstr "Назва"
-
-#: channel_core.py:1374
-#: playlist.py:342
-msgid "Title correction completed and locked."
-msgstr "Виправлення назви завершено та заблоковано."
-
-#: channel_core.py:538
-msgid "Title correction completed for {count} videos."
-msgstr "Виправлення назв завершено для {count} відео."
-
-#: channel_core.py:1376
-#: playlist.py:344
-msgid "Title correction failed."
-msgstr "Не вдалося виправити назву."
-
-#: __init__.py:431
-msgid "Toggle immediate download mode"
-msgstr "Перемкнути режим негайного завантаження"
-
-#: __init__.py:706
-msgid "Toggle playlist mode"
-msgstr "Перемкнути режим списків відтворення"
-
-#: __init__.py:525
-msgid "Trim setting"
-msgstr "Налаштування обрізки"
-
-#: Trim.py:332
-msgid "Trimming and downloading {format}..."
-msgstr "Обрізка та завантаження {format}..."
-
-#: Trim.py:132
-#: downloadFail.py:69
-msgid "URL"
-msgstr "URL"
-
-#: channel_core.py:1336
-msgid "URL copied to clipboard"
-msgstr "URL скопійовано в буфер"
-
-#: Trim.py:307
-msgid "URL is required"
-msgstr "Необхідно вказати URL"
-
-#: Download_core.py:903
-msgid "URL not found"
-msgstr "URL не знайдено"
-
-#: Download_core.py:672
-#: __init__.py:359
-#: downloadFail.py:110
-#: downloadFail.py:113
-#: downloadFail.py:114
-#: download_list.py:103
-msgid "Unknown"
-msgstr "Невідомо"
-
-#: channel_core.py:591
-msgid "Unpin"
-msgstr "Відкріпити"
-
-#: Youtube_settings.py:369
-#: __init__.py:287
-msgid "Update failed: {str}"
-msgstr "Оновлення не вдалося: {str}"
-
-#: Youtube_settings.py:290
-msgid "Update status: Idle"
-msgstr "Статус оновлення: Очікування"
-
-#: Youtube_settings.py:368
-msgid "Update status: Update failed: {str}"
-msgstr "Статус оновлення: Помилка: {str}"
-
-#: Youtube_settings.py:364
-msgid "Update status: Update successful"
-msgstr "Статус оновлення: Успішно"
-
-#: Youtube_settings.py:354
+#: AbsoluteYoutube/Youtube_settings.py:324
 msgid "Update status: Updating..."
 msgstr "Статус оновлення: Оновлюється..."
 
-#: Youtube_settings.py:286
-msgid "Update yt-dlp now"
-msgstr "Оновити yt-dlp зараз"
-
-#: Youtube_settings.py:355
-#: __init__.py:275
+#: AbsoluteYoutube/Youtube_settings.py:325 AbsoluteYoutube/__init__.py:277
 msgid "Updating yt-dlp..."
 msgstr "Оновлення yt-dlp..."
 
-#: Youtube_settings.py:150
-msgid "Use &cookies (recommended to avoid block)"
-msgstr "Використовувати &кукі (рекомендовано для уникнення блокувань)"
+#: AbsoluteYoutube/Youtube_settings.py:334
+msgid "Update status: Update successful"
+msgstr "Статус оновлення: Успішно"
 
-#: Youtube_settings.py:179
-msgid "Use &custom user agent"
-msgstr "Використовувати &власний User Agent"
-
-#: Youtube_settings.py:229
-msgid "Use &proxy"
-msgstr "Використовувати &проксі"
-
-#: Youtube_settings.py:92
-msgid "Use download section"
-msgstr "Використовувати розділ завантажень"
-
-#: Youtube_settings.py:184
-msgid "User &agent:"
-msgstr "User &agent:"
-
-#: downloadFail.py:67
-#: download_list.py:67
-#: search.py:35
-msgid "Video Title"
-msgstr "Назва відео"
-
-#: Trim.py:144
-msgid "Video duration: unknown; Overall period: 0 seconds"
-msgstr "Тривалість відео: невідома; Загальний період: 0 секунд"
-
-#: Trim.py:255
-msgid "Video duration: {duration}; Overall period: {period} seconds"
-msgstr "Тривалість відео: {duration}; Загальний період: {period} секунд"
-
-#: channel_core.py:63
-msgid "Videos"
-msgstr "Відео"
-
-#: playlist.py:23
-msgid "Videos in {title}"
-msgstr "Відео у {title}"
-
-#: __init__.py:592
-#: __init__.py:606
-msgid "You must be on a YouTube page to use this feature"
-msgstr "Ви повинні бути на сторінці YouTube, щоб використовувати цю функцію"
-
-#: channel_core.py:30
-msgid "Your favorite channel"
-msgstr "Ваш улюблений канал"
-
-#: Trim.py:254
-msgid "invalid"
-msgstr "недійсний"
-
-#: Trim.py:250
-msgid "invalid (negative)"
-msgstr "недійсний (від'ємний)"
-
-#: search.py:53
-msgid "loading..."
-msgstr "завантаження..."
-
-#: Trim.py:244
-msgid "unknown"
-msgstr "невідомо"
-
-#: Youtube_settings.py:276
-msgid "yt-dlp Update"
-msgstr "Оновлення yt-dlp"
-
-#: Youtube_settings.py:365
-#: __init__.py:284
+#: AbsoluteYoutube/Youtube_settings.py:335 AbsoluteYoutube/__init__.py:286
 msgid "yt-dlp updated successfully"
 msgstr "yt-dlp успішно оновлено"
 
-#: Download_core.py:946
-msgid "yt-dlp.exe missing"
-msgstr "yt-dlp.exe відсутній"
+#: AbsoluteYoutube/Youtube_settings.py:338
+#, python-brace-format
+msgid "Update status: Update failed: {str}"
+msgstr "Статус оновлення: Помилка: {str}"
 
-#: channel_core.py:816
-#: search.py:256
-msgid "yt-dlp.exe not found."
-msgstr "yt-dlp.exe не знайдено."
+#: AbsoluteYoutube/Youtube_settings.py:339 AbsoluteYoutube/__init__.py:289
+#, python-brace-format
+msgid "Update failed: {str}"
+msgstr "Оновлення не вдалося: {str}"
 
-#: __init__.py:725
+#: AbsoluteYoutube/Youtube_settings.py:352
+msgid "Failed to create the specified folder. Please select a valid folder."
+msgstr "Не вдалося створити вказану папку. Виберіть дійсну папку."
+
+#: AbsoluteYoutube/__init__.py:177 AbsoluteYoutube/downloadFail.py:43
+#, python-brace-format
+msgid "Error importing core functions: {str}"
+msgstr "Помилка імпорту основних функцій: {str}"
+
+#: AbsoluteYoutube/__init__.py:182
+msgid ""
+"Add-on initialization failed: missing pending file path function. Please "
+"restart NVDA."
+msgstr ""
+"Помилка ініціалізації додатка: відсутня функція шляху до файлу. Будь ласка, "
+"перезапустіть NVDA."
+
+#: AbsoluteYoutube/__init__.py:200
+#, python-brace-format
+msgid "Error initializing AbsoluteYoutube: {str}"
+msgstr "Помилка ініціалізації AbsoluteYoutube: {str}"
+
+#: AbsoluteYoutube/__init__.py:258
+#, python-brace-format
+msgid ""
+"A new version of yt-dlp is available: {latest}. Current: {current}. Please "
+"update in settings."
+msgstr ""
+"Доступна нова версія yt-dlp: {latest}. Поточна: {current}. Будь ласка, "
+"оновіть у налаштуваннях."
+
+#: AbsoluteYoutube/__init__.py:273
+#, python-brace-format
+msgid "Error during auto-update of yt-dlp: {str}"
+msgstr "Помилка під час автооновлення yt-dlp: {str}"
+
+#: AbsoluteYoutube/__init__.py:352
+msgid "Playlist"
+msgstr "Список відтворення"
+
+#: AbsoluteYoutube/__init__.py:371 AbsoluteYoutube/__init__.py:586
+msgid "No YouTube URL found"
+msgstr "URL-адресу YouTube не знайдено"
+
+#: AbsoluteYoutube/__init__.py:375
+msgid ""
+"Cannot download from YouTube homepage. Please navigate to a video or "
+"playlist."
+msgstr ""
+"Не вдається завантажити з домашньої сторінки YouTube. Будь ласка, перейдіть "
+"до відео або списку відтворення."
+
+#: AbsoluteYoutube/__init__.py:378
+msgid "Cannot download from this YouTube page. Please select a specific video."
+msgstr ""
+"Неможливо завантажити з цієї сторінки YouTube. Виберіть конкретне відео."
+
+#: AbsoluteYoutube/__init__.py:400
+#, python-brace-format
+msgid "Starting download: {format} - {title}"
+msgstr "Запуск завантаження: {format} - {title}"
+
+#: AbsoluteYoutube/__init__.py:405
+#, python-brace-format
+msgid "Added to download queue: {format} - {title}"
+msgstr "Додано до черги завантажень: {format} - {title}"
+
+#: AbsoluteYoutube/__init__.py:407 AbsoluteYoutube/download_list.py:172
+msgid "Already in download queue"
+msgstr "Вже в черзі завантажень"
+
+#: AbsoluteYoutube/__init__.py:411
+#, python-brace-format
+msgid "Added to download list: {format} - {title}"
+msgstr "Додано до списку завантажень: {format} - {title}"
+
+#: AbsoluteYoutube/__init__.py:413
+msgid "Already in download list"
+msgstr "Вже у списку завантажень"
+
+#: AbsoluteYoutube/__init__.py:420
+msgid ""
+"Download or queue video (single tap MP3, double tap MP4, triple tap WAV)"
+msgstr ""
+"Завантажити або поставити в чергу (1 дотик MP3, 2 дотики MP4, 3 дотики WAV)"
+
+#: AbsoluteYoutube/__init__.py:433
+msgid ""
+"Open context menu (single tap), open download folder (double tap), open "
+"search dialog (triple tap)"
+msgstr ""
+"Відкрити контекстне меню (одне натискання), відкрити папку завантажень "
+"(подвійне натискання), відкрити діалог пошуку (потрійне натискання)"
+
+#: AbsoluteYoutube/__init__.py:456
+msgid "Error opening folder"
+msgstr "Помилка відкриття папки"
+
+#: AbsoluteYoutube/__init__.py:458
+msgid "Invalid download folder"
+msgstr "Недійсна папка завантаження"
+
+#: AbsoluteYoutube/__init__.py:466
+msgid "Download immediately"
+msgstr "Завантажити негайно"
+
+#: AbsoluteYoutube/__init__.py:472
+msgid "Immediate download mode enabled"
+msgstr "Режим негайного завантаження увімкнено"
+
+#: AbsoluteYoutube/__init__.py:474
+msgid "Immediate download mode disabled"
+msgstr "Режим негайного завантаження вимкнено"
+
+#: AbsoluteYoutube/__init__.py:478
+msgid "Invalid channel URL"
+msgstr "Недійсний URL каналу"
+
+#: AbsoluteYoutube/__init__.py:490
+msgid "Error opening channel dialog"
+msgstr "Помилка відкриття діалогу каналу"
+
+#: AbsoluteYoutube/__init__.py:530
+#, python-brace-format
+msgid "Error opening download list dialog: {str}"
+msgstr "Помилка відкриття діалогу списку завантажень: {str}"
+
+#: AbsoluteYoutube/__init__.py:535
+msgid "Error: Download list module not available"
+msgstr "Помилка: Модуль списку завантажень недоступний"
+
+#: AbsoluteYoutube/__init__.py:544 AbsoluteYoutube/playlist.py:314
+#: AbsoluteYoutube/search.py:502
+msgid "Copy video Shorten URL"
+msgstr "Копіювати скорочену адресу відео"
+
+#: AbsoluteYoutube/__init__.py:546
+msgid "Download list manager"
+msgstr "Менеджер списку завантажень"
+
+#: AbsoluteYoutube/__init__.py:550
+msgid "Download fail manager"
+msgstr "Менеджер невдалих завантажень"
+
+#: AbsoluteYoutube/__init__.py:552
+msgid "Download fail manager (no failed)"
+msgstr "Менеджер невдалих завантажень (немає помилок)"
+
+#: AbsoluteYoutube/__init__.py:554
+msgid "Favorite channel"
+msgstr "Улюблений канал"
+
+#: AbsoluteYoutube/__init__.py:557
+msgid "Snapshot"
+msgstr "Знімок"
+
+#: AbsoluteYoutube/__init__.py:558
+msgid "Trim setting"
+msgstr "Налаштування обрізки"
+
+#: AbsoluteYoutube/__init__.py:560
+msgid "Search Youtube"
+msgstr "Пошук в Youtube"
+
+#: AbsoluteYoutube/__init__.py:562
+msgid "Absolute YouTube setting"
+msgstr "Налаштування Absolute YouTube"
+
+#: AbsoluteYoutube/__init__.py:581
+msgid "Error displaying context menu"
+msgstr "Помилка показу контекстного меню"
+
+#: AbsoluteYoutube/__init__.py:589
+msgid "Not a YouTube URL"
+msgstr "Це не посилання на YouTube"
+
+#: AbsoluteYoutube/__init__.py:594 AbsoluteYoutube/channel_core.py:1344
+#: AbsoluteYoutube/playlist.py:352 AbsoluteYoutube/search.py:529
+msgid "Short URL copied to clipboard"
+msgstr "Коротку адресу скопійовано в буфер"
+
+#: AbsoluteYoutube/__init__.py:596
+msgid "Could not create shortened URL"
+msgstr "Не вдалося створити скорочену адресу"
+
+#: AbsoluteYoutube/__init__.py:603
+msgid "No failed downloads"
+msgstr "Немає невдалих завантажень"
+
+#: AbsoluteYoutube/__init__.py:607
+msgid "Error: DownloadFail module not available"
+msgstr "Помилка: Модуль помилок завантаження недоступний"
+
+#: AbsoluteYoutube/__init__.py:617 AbsoluteYoutube/__init__.py:621
+#, python-brace-format
+msgid "Error opening download fail dialog: {str}"
+msgstr "Помилка відкриття діалогу помилок завантаження: {str}"
+
+#: AbsoluteYoutube/__init__.py:640 AbsoluteYoutube/__init__.py:653
+msgid "You must be on a YouTube page to use this feature"
+msgstr "Ви повинні бути на сторінці YouTube, щоб використовувати цю функцію"
+
+#: AbsoluteYoutube/__init__.py:648
+msgid "Error: Snapshot module not available"
+msgstr "Помилка: Модуль знімків недоступний"
+
+#: AbsoluteYoutube/__init__.py:657
+msgid "Error: Trim module not available"
+msgstr "Помилка: Модуль обрізки недоступний"
+
+#: AbsoluteYoutube/__init__.py:668
+#, python-brace-format
+msgid "Error opening trim dialog: {str}"
+msgstr "Помилка відкриття діалогу обрізки: {str}"
+
+#: AbsoluteYoutube/__init__.py:687
+#, python-brace-format
+msgid "Error opening search dialog: {str}"
+msgstr "Помилка відкриття діалогу пошуку: {str}"
+
+#: AbsoluteYoutube/__init__.py:692
+msgid "Error: Search module not available"
+msgstr "Помилка: Модуль пошуку недоступний"
+
+#: AbsoluteYoutube/__init__.py:702
+#, python-brace-format
+msgid "Error importing settings panel: {str}"
+msgstr "Помилка імпорту панелі налаштувань: {str}"
+
+#: AbsoluteYoutube/__init__.py:705
+#, python-brace-format
+msgid "Error opening settings dialog: {str}"
+msgstr "Помилка відкриття діалогу налаштувань: {str}"
+
+#: AbsoluteYoutube/__init__.py:731
+msgid "Fetching channel information..."
+msgstr "Отримання інформації про канал..."
+
+#: AbsoluteYoutube/__init__.py:744
+#, python-brace-format
+msgid "Error opening channel/playlist list: {str}"
+msgstr "Помилка відкриття списку каналів/відтворення: {str}"
+
+#: AbsoluteYoutube/__init__.py:749
+msgid "Toggle playlist mode"
+msgstr "Перемкнути режим списків відтворення"
+
+#: AbsoluteYoutube/__init__.py:754
+msgid "Playlist mode enabled"
+msgstr "Режим списків відтворення увімкнено"
+
+#: AbsoluteYoutube/__init__.py:754
+msgid "Playlist mode disabled"
+msgstr "Режим списків відтворення вимкнено"
+
+#: AbsoluteYoutube/__init__.py:756
+msgid "Cycle MP3 quality settings"
+msgstr "Циклічне перемикання якості MP3"
+
+#: AbsoluteYoutube/__init__.py:768
+#, python-brace-format
 msgid "{quality} kbps"
 msgstr "{quality} кбіт/с"
 
-#: channel_core.py:350
-#: playlist.py:123
-#: search.py:197
+#: AbsoluteYoutube/channel_core.py:30
+msgid "Your favorite channel"
+msgstr "Ваш улюблений канал"
+
+#: AbsoluteYoutube/channel_core.py:63
+msgid "Videos"
+msgstr "Відео"
+
+#: AbsoluteYoutube/channel_core.py:64
+msgid "Shorts"
+msgstr "Shorts"
+
+#: AbsoluteYoutube/channel_core.py:65
+msgid "Live"
+msgstr "Прямий ефір"
+
+#: AbsoluteYoutube/channel_core.py:66
+msgid "Podcasts"
+msgstr "Подкасти"
+
+#: AbsoluteYoutube/channel_core.py:67
+msgid "Playlists"
+msgstr "Списки відтворення"
+
+#: AbsoluteYoutube/channel_core.py:85
+msgid "No saved data for this channel."
+msgstr "Немає збережених даних для цього каналу."
+
+#: AbsoluteYoutube/channel_core.py:100
+msgid "Channel:"
+msgstr "Канал:"
+
+#: AbsoluteYoutube/channel_core.py:112
+msgid "Add new channel"
+msgstr "Додати новий канал"
+
+#: AbsoluteYoutube/channel_core.py:116
+msgid "Edit channel"
+msgstr "Редагувати канал"
+
+#: AbsoluteYoutube/channel_core.py:125
+msgid "Content type:"
+msgstr "Тип контенту:"
+
+#: AbsoluteYoutube/channel_core.py:135
+msgid "Search:"
+msgstr "Пошук:"
+
+#: AbsoluteYoutube/channel_core.py:142
+msgid "Ready"
+msgstr "Готово"
+
+#: AbsoluteYoutube/channel_core.py:153 AbsoluteYoutube/playlist.py:66
+#: AbsoluteYoutube/search.py:110
+msgid "Show items:"
+msgstr "Показати елементи:"
+
+#: AbsoluteYoutube/channel_core.py:161 AbsoluteYoutube/playlist.py:74
+#: AbsoluteYoutube/search.py:119
+msgid "PreviousPage"
+msgstr "ПопСторінка"
+
+#: AbsoluteYoutube/channel_core.py:165 AbsoluteYoutube/playlist.py:78
+#: AbsoluteYoutube/search.py:123
+msgid "NextPage"
+msgstr "НастСторінка"
+
+#: AbsoluteYoutube/channel_core.py:174 AbsoluteYoutube/search.py:132
+msgid "Go"
+msgstr "Перейти"
+
+#: AbsoluteYoutube/channel_core.py:181 AbsoluteYoutube/downloadFail.py:77
+#: AbsoluteYoutube/download_list.py:81 AbsoluteYoutube/search.py:139
+msgid "&Download All"
+msgstr "&Завантажити все"
+
+#: AbsoluteYoutube/channel_core.py:185
+msgid "&Source"
+msgstr "&Джерело"
+
+#: AbsoluteYoutube/channel_core.py:189 AbsoluteYoutube/playlist.py:89
+#: AbsoluteYoutube/search.py:147
+msgid "&Close"
+msgstr "&Закрити"
+
+#: AbsoluteYoutube/channel_core.py:252
+msgid "No channel selected."
+msgstr "Канал не вибрано."
+
+#: AbsoluteYoutube/channel_core.py:266 AbsoluteYoutube/search.py:218
+msgid "Please enter a valid number."
+msgstr "Будь ласка, введіть коректне число."
+
+#: AbsoluteYoutube/channel_core.py:272 AbsoluteYoutube/search.py:224
+#, python-brace-format
+msgid "Page number out of range (1-{})."
+msgstr "Номер сторінки поза межами (1-{})."
+
+#: AbsoluteYoutube/channel_core.py:278 AbsoluteYoutube/playlist.py:370
+#: AbsoluteYoutube/search.py:560
+msgid "No videos to download."
+msgstr "Немає відео для завантаження."
+
+#: AbsoluteYoutube/channel_core.py:292
+msgid "Cannot create download folder."
+msgstr "Не вдалося створити папку завантажень."
+
+#: AbsoluteYoutube/channel_core.py:297 AbsoluteYoutube/search.py:567
+#, python-brace-format
+msgid "Adding {count} videos to download queue..."
+msgstr "Додавання {count} відео до черги завантажень..."
+
+#: AbsoluteYoutube/channel_core.py:310 AbsoluteYoutube/search.py:579
+msgid "Downloads started."
+msgstr "Завантаження розпочато."
+
+#: AbsoluteYoutube/channel_core.py:320
+msgid "Cannot open source folder."
+msgstr "Не вдалося відкрити папку джерела."
+
+#: AbsoluteYoutube/channel_core.py:349 AbsoluteYoutube/playlist.py:122
+#: AbsoluteYoutube/search.py:183
+#, python-brace-format
+msgid "Page {}/{}"
+msgstr "Сторінка {}/{}"
+
+#: AbsoluteYoutube/channel_core.py:350 AbsoluteYoutube/playlist.py:123
+#: AbsoluteYoutube/search.py:184
+#, python-brace-format
 msgid "{}, showing {} of {} videos"
 msgstr "{}, показано {} з {} відео"
+
+#: AbsoluteYoutube/channel_core.py:353 AbsoluteYoutube/search.py:187
+#, python-brace-format
+msgid "Go to page of {}:"
+msgstr "Перейти на сторінку {}:"
+
+#: AbsoluteYoutube/channel_core.py:488 AbsoluteYoutube/channel_core.py:944
+#, python-brace-format
+msgid "Loaded {count} videos from {name}."
+msgstr "Завантажено {count} відео з {name}."
+
+#: AbsoluteYoutube/channel_core.py:503 AbsoluteYoutube/channel_core.py:675
+msgid "Error loading channel data."
+msgstr "Помилка завантаження даних каналу."
+
+#: AbsoluteYoutube/channel_core.py:538
+#, python-brace-format
+msgid "Title correction completed for {count} videos."
+msgstr "Виправлення назв завершено для {count} відео."
+
+#: AbsoluteYoutube/channel_core.py:591
+msgid "Unpin"
+msgstr "Відкріпити"
+
+#: AbsoluteYoutube/channel_core.py:591
+msgid "Pin"
+msgstr "Закріпити"
+
+#: AbsoluteYoutube/channel_core.py:595
+msgid "Move Up"
+msgstr "Перемістити вгору"
+
+#: AbsoluteYoutube/channel_core.py:599
+msgid "Move Down"
+msgstr "Перемістити вниз"
+
+#: AbsoluteYoutube/channel_core.py:604
+msgid "Edit channel..."
+msgstr "Редагувати канал..."
+
+#: AbsoluteYoutube/channel_core.py:607 AbsoluteYoutube/downloadFail.py:130
+#: AbsoluteYoutube/download_list.py:119
+msgid "Delete"
+msgstr "Видалити"
+
+#: AbsoluteYoutube/channel_core.py:630
+msgid "Channel unpinned."
+msgstr "Відкріплено канал."
+
+#: AbsoluteYoutube/channel_core.py:633
+msgid "Channel pinned."
+msgstr "Канал закріплено."
+
+#: AbsoluteYoutube/channel_core.py:700
+msgid "Channel updated."
+msgstr "Канал оновлено."
+
+#: AbsoluteYoutube/channel_core.py:703
+msgid "Error updating channel."
+msgstr "Помилка оновлення каналу."
+
+#: AbsoluteYoutube/channel_core.py:713
+msgid "Channel URL updated."
+msgstr "URL-адресу каналу оновлено."
+
+#: AbsoluteYoutube/channel_core.py:716
+msgid "Error updating channel URL."
+msgstr "Помилка оновлення URL каналу."
+
+#: AbsoluteYoutube/channel_core.py:731
+#, python-brace-format
+msgid "Are you sure you want to delete saved data for '{name}'?"
+msgstr "Ви впевнені, що хочете видалити збережені дані для '{name}'?"
+
+#: AbsoluteYoutube/channel_core.py:732
+msgid "Confirm Delete"
+msgstr "Підтвердити видалення"
+
+#: AbsoluteYoutube/channel_core.py:743 AbsoluteYoutube/channel_core.py:746
+msgid "Channel deleted."
+msgstr "Канал видалено."
+
+#: AbsoluteYoutube/channel_core.py:749
+msgid "Error deleting channel."
+msgstr "Помилка видалення каналу."
+
+#: AbsoluteYoutube/channel_core.py:770
+#, python-brace-format
+msgid "Loaded {count} videos from cache."
+msgstr "Завантажено {count} відео з кешу."
+
+#: AbsoluteYoutube/channel_core.py:774
+msgid "Error loading cache."
+msgstr "Помилка завантаження кешу."
+
+#: AbsoluteYoutube/channel_core.py:817 AbsoluteYoutube/search.py:240
+msgid "yt-dlp.exe not found."
+msgstr "yt-dlp.exe не знайдено."
+
+#: AbsoluteYoutube/channel_core.py:907
+msgid "Channel added successfully."
+msgstr "Канал успішно додано."
+
+#: AbsoluteYoutube/channel_core.py:909
+msgid "No items found for this URL."
+msgstr "Для цієї адреси нічого не знайдено."
+
+#: AbsoluteYoutube/channel_core.py:913
+#, python-brace-format
+msgid "Error fetching channel: {str}"
+msgstr "Помилка отримання даних каналу: {str}"
+
+#: AbsoluteYoutube/channel_core.py:960
+msgid "Checking for new videos..."
+msgstr "Перевірка нових відео..."
+
+#: AbsoluteYoutube/channel_core.py:960
+msgid "Fetching channel videos..."
+msgstr "Отримання відео каналу..."
+
+#: AbsoluteYoutube/channel_core.py:1068
+#, python-brace-format
+msgid "Fetched {count} items total."
+msgstr "Усього отримано {count} елементів."
+
+#: AbsoluteYoutube/channel_core.py:1072
+msgid "No items found."
+msgstr "Нічого не знайдено."
+
+#: AbsoluteYoutube/channel_core.py:1105
+msgid "A channel with this name already exists. Overwrite?"
+msgstr "Канал із такою назвою вже існує. Перезаписати?"
+
+#: AbsoluteYoutube/channel_core.py:1106
+msgid "Confirm Overwrite"
+msgstr "Підтвердити перезапис"
+
+#: AbsoluteYoutube/channel_core.py:1113
+msgid "Fetching channel items..."
+msgstr "Отримання елементів каналу..."
+
+#: AbsoluteYoutube/channel_core.py:1126
+msgid "Channel saved."
+msgstr "Канал збережено."
+
+#: AbsoluteYoutube/channel_core.py:1291
+msgid "Error opening playlist."
+msgstr "Помилка відкриття списку відтворення."
+
+#: AbsoluteYoutube/channel_core.py:1309
+msgid "Copy URL"
+msgstr "Копіювати URL"
+
+#: AbsoluteYoutube/channel_core.py:1312
+msgid "Open in browser"
+msgstr "Відкрити у браузері"
+
+#: AbsoluteYoutube/channel_core.py:1316
+msgid "Download entire playlist"
+msgstr "Завантажити весь список відтворення"
+
+#: AbsoluteYoutube/channel_core.py:1319 AbsoluteYoutube/playlist.py:320
+msgid "Correct title now"
+msgstr "Виправити назву зараз"
+
+#: AbsoluteYoutube/channel_core.py:1322 AbsoluteYoutube/playlist.py:323
+#: AbsoluteYoutube/search.py:508
+msgid "Download MP3"
+msgstr "Завантажити MP3"
+
+#: AbsoluteYoutube/channel_core.py:1325 AbsoluteYoutube/playlist.py:326
+#: AbsoluteYoutube/search.py:511
+msgid "Download MP4"
+msgstr "Завантажити MP4"
+
+#: AbsoluteYoutube/channel_core.py:1328 AbsoluteYoutube/playlist.py:329
+#: AbsoluteYoutube/search.py:514
+msgid "Download WAV"
+msgstr "Завантажити WAV"
+
+#: AbsoluteYoutube/channel_core.py:1331 AbsoluteYoutube/search.py:518
+msgid "Remove from list"
+msgstr "Вилучити зі списку"
+
+#: AbsoluteYoutube/channel_core.py:1347
+msgid "URL copied to clipboard"
+msgstr "URL скопійовано в буфер"
+
+#: AbsoluteYoutube/channel_core.py:1355 AbsoluteYoutube/playlist.py:380
+msgid "Playlist download started."
+msgstr "Завантаження списку відтворення розпочато."
+
+#: AbsoluteYoutube/channel_core.py:1357 AbsoluteYoutube/channel_core.py:1371
+#: AbsoluteYoutube/playlist.py:366 AbsoluteYoutube/playlist.py:382
+msgid "Download function not available."
+msgstr "Функція завантаження недоступна."
+
+#: AbsoluteYoutube/channel_core.py:1369 AbsoluteYoutube/playlist.py:364
+#: AbsoluteYoutube/search.py:548 AbsoluteYoutube/search.py:551
+#, python-brace-format
+msgid "Adding {title} to download queue."
+msgstr "Додавання {title} до черги завантажень."
+
+#: AbsoluteYoutube/channel_core.py:1377 AbsoluteYoutube/playlist.py:337
+msgid "Correcting title for selected video..."
+msgstr "Виправлення назви для вибраного відео..."
+
+#: AbsoluteYoutube/channel_core.py:1385 AbsoluteYoutube/playlist.py:342
+msgid "Title correction completed and locked."
+msgstr "Виправлення назви завершено та заблоковано."
+
+#: AbsoluteYoutube/channel_core.py:1387 AbsoluteYoutube/playlist.py:344
+msgid "Title correction failed."
+msgstr "Не вдалося виправити назву."
+
+#: AbsoluteYoutube/channel_core.py:1396 AbsoluteYoutube/search.py:556
+msgid "Item removed."
+msgstr "Елемент вилучено."
+
+#: AbsoluteYoutube/channel_dialogs.py:15
+msgid "Title"
+msgstr "Назва"
+
+#: AbsoluteYoutube/channel_dialogs.py:16
+msgid " "
+msgstr " "
+
+#: AbsoluteYoutube/channel_dialogs.py:42
+msgid "Add New Channel"
+msgstr "Додати новий канал"
+
+#: AbsoluteYoutube/channel_dialogs.py:52 AbsoluteYoutube/channel_dialogs.py:103
+msgid "Channel name:"
+msgstr "Назва каналу:"
+
+#: AbsoluteYoutube/channel_dialogs.py:59 AbsoluteYoutube/channel_dialogs.py:110
+msgid "Channel URL:"
+msgstr "URL каналу:"
+
+#: AbsoluteYoutube/channel_dialogs.py:67 AbsoluteYoutube/channel_dialogs.py:117
+#: AbsoluteYoutube/downloadFail.py:85 AbsoluteYoutube/download_list.py:89
+msgid "&OK"
+msgstr "&Гаразд"
+
+#: AbsoluteYoutube/channel_dialogs.py:69 AbsoluteYoutube/channel_dialogs.py:119
+#: AbsoluteYoutube/downloadFail.py:89
+msgid "&Cancel"
+msgstr "&Скасувати"
+
+#: AbsoluteYoutube/channel_dialogs.py:81 AbsoluteYoutube/channel_dialogs.py:131
+msgid "Please enter a channel name."
+msgstr "Будь ласка, введіть назву каналу."
+
+#: AbsoluteYoutube/channel_dialogs.py:84 AbsoluteYoutube/channel_dialogs.py:134
+msgid "Please enter a channel URL."
+msgstr "Будь ласка, введіть URL-адресу каналу."
+
+#: AbsoluteYoutube/channel_dialogs.py:91
+msgid "Edit Channel"
+msgstr "Редагувати канал"
+
+#: AbsoluteYoutube/channel_dialogs.py:141 AbsoluteYoutube/search.py:642
+msgid "Download All Videos"
+msgstr "Завантажити всі відео"
+
+#: AbsoluteYoutube/downloadFail.py:16
+msgid "Download Fail Manager - Absolute YouTube"
+msgstr "Менеджер невдалих завантажень - Absolute YouTube"
+
+#: AbsoluteYoutube/downloadFail.py:63 AbsoluteYoutube/download_list.py:67
+#: AbsoluteYoutube/search.py:29
+msgid "Video Title"
+msgstr "Назва відео"
+
+#: AbsoluteYoutube/downloadFail.py:64 AbsoluteYoutube/search.py:30
+msgid "Duration"
+msgstr "Тривалість"
+
+#: AbsoluteYoutube/downloadFail.py:69 AbsoluteYoutube/download_list.py:73
+msgid "&Delete Selected"
+msgstr "&Видалити вибране"
+
+#: AbsoluteYoutube/downloadFail.py:73 AbsoluteYoutube/download_list.py:77
+msgid "&Download Selected"
+msgstr "&Завантажити вибране"
+
+#: AbsoluteYoutube/downloadFail.py:81 AbsoluteYoutube/download_list.py:85
+msgid "&Clear All"
+msgstr "&Очистити все"
+
+#: AbsoluteYoutube/downloadFail.py:132
+msgid "Download file"
+msgstr "Завантажити файл"
+
+#: AbsoluteYoutube/downloadFail.py:135 AbsoluteYoutube/download_list.py:124
+msgid "Delete selected"
+msgstr "Видалити вибране"
+
+#: AbsoluteYoutube/downloadFail.py:137 AbsoluteYoutube/download_list.py:126
+msgid "Download selected"
+msgstr "Завантажити вибране"
+
+#: AbsoluteYoutube/downloadFail.py:141 AbsoluteYoutube/download_list.py:129
+msgid "Download all"
+msgstr "Завантажити все"
+
+#: AbsoluteYoutube/downloadFail.py:143 AbsoluteYoutube/download_list.py:131
+msgid "Clear all"
+msgstr "Очистити все"
+
+#: AbsoluteYoutube/downloadFail.py:164 AbsoluteYoutube/download_list.py:159
+msgid "Item deleted"
+msgstr "Елемент видалено"
+
+#: AbsoluteYoutube/downloadFail.py:194
+msgid "Cannot create download folder"
+msgstr "Не вдається створити папку для завантаження"
+
+#: AbsoluteYoutube/downloadFail.py:248
+#, python-brace-format
+msgid "Playlist download started: {title}"
+msgstr "Розпочато завантаження списку відтворення: {title}"
+
+#: AbsoluteYoutube/downloadFail.py:250
+#, python-brace-format
+msgid "Download started for: {title}"
+msgstr "Завантаження розпочато для: {title}"
+
+#: AbsoluteYoutube/downloadFail.py:255
+msgid "Error starting download"
+msgstr "Помилка запуску завантаження"
+
+#: AbsoluteYoutube/downloadFail.py:265 AbsoluteYoutube/downloadFail.py:281
+#: AbsoluteYoutube/download_list.py:183 AbsoluteYoutube/download_list.py:196
+msgid "No items selected"
+msgstr "Жодного елемента не вибрано"
+
+#: AbsoluteYoutube/downloadFail.py:272 AbsoluteYoutube/download_list.py:187
+msgid "Selected items deleted"
+msgstr "Вибрані елементи видалено"
+
+#: AbsoluteYoutube/downloadFail.py:303 AbsoluteYoutube/downloadFail.py:323
+#, python-brace-format
+msgid "Started {count} download(s)"
+msgstr "Розпочато {count} завантажень"
+
+#: AbsoluteYoutube/downloadFail.py:305 AbsoluteYoutube/downloadFail.py:325
+msgid "No downloads could be started"
+msgstr "Не вдалося почати завантаження"
+
+#: AbsoluteYoutube/downloadFail.py:309
+msgid "No failed downloads to process"
+msgstr "Немає невдалих завантажень для обробки"
+
+#: AbsoluteYoutube/downloadFail.py:329
+msgid "No failed downloads to clear"
+msgstr "Немає невдалих завантажень для очищення"
+
+#: AbsoluteYoutube/downloadFail.py:334
+msgid "All failed downloads cleared"
+msgstr "Усі невдалі завантаження очищено"
+
+#: AbsoluteYoutube/download_list.py:14
+msgid "Download List Manager - Absolute YouTube"
+msgstr "Менеджер списку завантажень - Absolute YouTube"
+
+#: AbsoluteYoutube/download_list.py:24
+msgid "Add-on internal error: missing components. Please restart NVDA."
+msgstr ""
+"Внутрішня помилка додатка: відсутні компоненти. Будь ласка, перезапустіть "
+"NVDA."
+
+#: AbsoluteYoutube/download_list.py:25
+msgid "Error"
+msgstr "Помилка"
+
+#: AbsoluteYoutube/download_list.py:68
+msgid "Format"
+msgstr "Формат"
+
+#: AbsoluteYoutube/download_list.py:69
+msgid "Added Time"
+msgstr "Час додавання"
+
+#: AbsoluteYoutube/download_list.py:121
+msgid "Download"
+msgstr "Завантажити"
+
+#: AbsoluteYoutube/download_list.py:170
+#, python-brace-format
+msgid "Added to download queue: {title}"
+msgstr "Додано до черги завантажень: {title}"
+
+#: AbsoluteYoutube/download_list.py:211
+msgid "Selected items added to download queue"
+msgstr "Вибрані елементи додано до черги завантажень"
+
+#: AbsoluteYoutube/download_list.py:213
+msgid "No new items added (already in queue)"
+msgstr "Нових елементів не додано (вже в черзі)"
+
+#: AbsoluteYoutube/download_list.py:219
+msgid "No pending downloads"
+msgstr "Немає очікуваних завантажень"
+
+#: AbsoluteYoutube/download_list.py:231
+msgid "All items added to download queue"
+msgstr "Усі елементи додано до черги завантажень"
+
+#: AbsoluteYoutube/download_list.py:233
+msgid "No items added (all already in queue)"
+msgstr "Жодного елемента не додано (всі вже в черзі)"
+
+#: AbsoluteYoutube/download_list.py:239
+msgid "No pending downloads to clear"
+msgstr "Немає очікуваних завантажень для очищення"
+
+#: AbsoluteYoutube/download_list.py:249
+msgid "All pending downloads cleared"
+msgstr "Усі очікувані завантаження очищено"
+
+#: AbsoluteYoutube/menu.py:18
+msgid "Absolute Youtube"
+msgstr "Absolute Youtube"
+
+#: AbsoluteYoutube/playlist.py:23
+#, python-brace-format
+msgid "Videos in {title}"
+msgstr "Відео у {title}"
+
+#: AbsoluteYoutube/playlist.py:51
+msgid "Loading playlist videos..."
+msgstr "Завантаження відео зі списку відтворення..."
+
+#: AbsoluteYoutube/playlist.py:85
+msgid "&Download All Videos in Playlist"
+msgstr "&Завантажити всі відео зі списку відтворення"
+
+#: AbsoluteYoutube/playlist.py:225
+#, python-brace-format
+msgid "Loaded {count} videos."
+msgstr "Завантажено {count} відео."
+
+#: AbsoluteYoutube/playlist.py:317 AbsoluteYoutube/search.py:505
+msgid "Play on YouTube"
+msgstr "Відтворити на YouTube"
+
+#: AbsoluteYoutube/playlist.py:354 AbsoluteYoutube/search.py:531
+msgid "Could not create short URL"
+msgstr "Не вдалося створити коротку адресу"
+
+#: AbsoluteYoutube/playlist.py:373
+#, python-brace-format
+msgid "Download all {count} videos in this playlist?"
+msgstr "Завантажити всі {count} відео у цьому списку відтворення?"
+
+#: AbsoluteYoutube/playlist.py:374
+msgid "Confirm Download"
+msgstr "Підтвердити завантаження"
+
+#: AbsoluteYoutube/search.py:47
+msgid "loading..."
+msgstr "завантаження..."
+
+#: AbsoluteYoutube/search.py:53
+msgid "Search YouTube"
+msgstr "Пошук в YouTube"
+
+#: AbsoluteYoutube/search.py:83
+msgid "Search YouTube:"
+msgstr "Пошук в YouTube:"
+
+#: AbsoluteYoutube/search.py:86
+msgid "Search"
+msgstr "Пошук"
+
+#: AbsoluteYoutube/search.py:95
+msgid "Enter a search query."
+msgstr "Введіть пошуковий запит."
+
+#: AbsoluteYoutube/search.py:113 AbsoluteYoutube/search.py:191
+msgid "All"
+msgstr "Усі"
+
+#: AbsoluteYoutube/search.py:143
+msgid "&Download folder"
+msgstr "Папка &завантаження"
+
+#: AbsoluteYoutube/search.py:229
+msgid "Please enter a search term."
+msgstr "Будь ласка, введіть запит для пошуку."
+
+#: AbsoluteYoutube/search.py:236
+msgid "Search already in progress."
+msgstr "Пошук уже триває."
+
+#: AbsoluteYoutube/search.py:265
+msgid "Searching..."
+msgstr "Пошук..."
+
+#: AbsoluteYoutube/search.py:385
+#, python-brace-format
+msgid "Found {} videos..."
+msgstr "Знайдено {} відео..."
+
+#: AbsoluteYoutube/search.py:466
+#, python-brace-format
+msgid "No results found for '{query}'."
+msgstr "За запитом '{query}' результатів не знайдено."
+
+#: AbsoluteYoutube/search.py:467
+msgid "No results found."
+msgstr "Результатів не знайдено."
+
+#: AbsoluteYoutube/search.py:469
+#, python-brace-format
+msgid "Found {count} videos for '{query}'."
+msgstr "Знайдено {count} відео для '{query}'."
+
+#: AbsoluteYoutube/search.py:471
+msgid "Search completed."
+msgstr "Пошук завершено."
+
+#: AbsoluteYoutube/search.py:479
+#, python-brace-format
+msgid "Search failed: {error}"
+msgstr "Помилка пошуку: {error}"
+
+#: AbsoluteYoutube/search.py:480
+msgid "Search failed."
+msgstr "Помилка пошуку."
+
+#: AbsoluteYoutube/search.py:539
+msgid "Cannot determine URL for this video."
+msgstr "Не вдалося визначити URL-адресу для цього відео."
+
+#: AbsoluteYoutube/search.py:589
+msgid "Cannot open download folder."
+msgstr "Не вдалося відкрити папку завантажень."
+
+#: AbsoluteYoutube/search.py:591
+msgid "Download folder does not exist."
+msgstr "Папка завантажень не існує."
+
+#~ msgid "Toggle immediate download mode"
+#~ msgstr "Перемкнути режим негайного завантаження"
