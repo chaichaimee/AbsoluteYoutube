@@ -80,6 +80,7 @@ def capture_snapshot(video_url, download_path):
 				stdout=subprocess.PIPE,
 				stderr=subprocess.PIPE,
 				text=True,
+				timeout=60,
 				creationflags=subprocess.CREATE_NO_WINDOW
 			)
 
@@ -134,3 +135,4 @@ def capture_snapshot(video_url, download_path):
 				PlayWave("error")
 
 	threading.Thread(target=snapshot_worker, daemon=True).start()
+

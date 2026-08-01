@@ -7,6 +7,7 @@ import os
 import ui
 from gui import guiHelper
 import addonHandler
+from .utils import is_real_playlist_url
 
 addonHandler.initTranslation()
 
@@ -194,7 +195,7 @@ class DownloadFailDialog(wx.Dialog):
 					ui.message(_("Cannot create download folder"))
 					return False
 
-			is_playlist = 'playlist' in url.lower() or 'list=' in url.lower()
+			is_playlist = 'playlist' in url.lower() or is_real_playlist_url(url)
 
 			if is_playlist:
 				output_template = os.path.join(save_path, "%(playlist)s/%(title)s.%(ext)s")
@@ -332,3 +333,4 @@ class DownloadFailDialog(wx.Dialog):
 		self.failed_downloads = []
 		self.update_list()
 		ui.message(_("All failed downloads cleared"))
+

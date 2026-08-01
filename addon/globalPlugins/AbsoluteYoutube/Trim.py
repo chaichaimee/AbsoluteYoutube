@@ -203,6 +203,7 @@ class TrimDialog(wx.Dialog):
 				stdout=subprocess.PIPE,
 				stderr=subprocess.PIPE,
 				text=True,
+				timeout=30,
 				creationflags=subprocess.CREATE_NO_WINDOW
 			)
 			if result.returncode == 0:
@@ -381,3 +382,4 @@ class TrimDialog(wx.Dialog):
 
 	def on_cancel(self, event):
 		self.Close()
+

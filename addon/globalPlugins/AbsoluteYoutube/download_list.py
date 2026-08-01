@@ -1,4 +1,5 @@
 # download_list.py
+
 import wx
 import gui
 import json
@@ -66,7 +67,8 @@ class DownloadListDialog(wx.Dialog):
 		self.list_ctrl = wx.ListCtrl(self, style=wx.LC_REPORT)
 		self.list_ctrl.InsertColumn(0, _("Video Title"), width=300)
 		self.list_ctrl.InsertColumn(1, _("Format"), width=60)
-		self.list_ctrl.InsertColumn(2, _("Added Time"), width=150)
+		self.list_ctrl.InsertColumn(2, _("Status"), width=90)
+		self.list_ctrl.InsertColumn(3, _("Added Time"), width=150)
 		mainSizer.Add(self.list_ctrl, 1, wx.EXPAND | wx.ALL, 5)
 
 		button_sizer = wx.BoxSizer(wx.HORIZONTAL)
@@ -102,8 +104,11 @@ class DownloadListDialog(wx.Dialog):
 		for i, item in enumerate(self.pending_downloads):
 			idx = self.list_ctrl.InsertItem(i, item.get('title', _('Unknown')))
 			self.list_ctrl.SetItem(idx, 1, item.get('format', 'mp3').upper())
-			self.list_ctrl.SetItem(idx, 2, item.get('added_time', ''))
-		for col in range(3):
+			status = item.get('status', 'waiting')
+			status_display = _("Downloading...") if status == 'downloading' else _("Waiting")
+			self.list_ctrl.SetItem(idx, 2, status_display)
+			self.list_ctrl.SetItem(idx, 3, item.get('added_time', ''))
+		for col in range(4):
 			self.list_ctrl.SetColumnWidth(col, wx.LIST_AUTOSIZE)
 
 	def on_context_menu(self, event):
@@ -161,6 +166,9 @@ class DownloadListDialog(wx.Dialog):
 	def download_item(self, idx):
 		if 0 <= idx < len(self.pending_downloads):
 			item = self.pending_downloads[idx]
+			if item.get('status') == 'downloading':
+				ui.message(_("This item is already downloading"))
+				return
 			is_playlist = item.get('is_playlist', False)
 			success = self.core_functions['add_pending_download'](item['url'], item['title'], item['format'], is_playlist)
 			if success:
@@ -196,15 +204,19 @@ class DownloadListDialog(wx.Dialog):
 			ui.message(_("No items selected"))
 			return
 		added_any = False
+		processed_indices = []
 		for idx in selected_indices:
 			if 0 <= idx < len(self.pending_downloads):
 				item = self.pending_downloads[idx]
+				if item.get('status') == 'downloading':
+					continue
 				is_playlist = item.get('is_playlist', False)
 				success = self.core_functions['add_pending_download'](item['url'], item['title'], item['format'], is_playlist)
 				if success:
 					added_any = True
+					processed_indices.append(idx)
 		if added_any:
-			for idx in sorted(selected_indices, reverse=True):
+			for idx in sorted(processed_indices, reverse=True):
 				self.delete_item(idx)
 			if not self.core_functions['is_download_active']():
 				self.core_functions['start_next_pending']()
@@ -218,8 +230,12 @@ class DownloadListDialog(wx.Dialog):
 		if not self.pending_downloads:
 			ui.message(_("No pending downloads"))
 			return
+		waiting_items = [item for item in self.pending_downloads if item.get('status') != 'downloading']
+		if not waiting_items:
+			ui.message(_("No pending downloads"))
+			return
 		added_any = False
-		for item in self.pending_downloads[:]:
+		for item in waiting_items:
 			is_playlist = item.get('is_playlist', False)
 			success = self.core_functions['add_pending_download'](item['url'], item['title'], item['format'], is_playlist)
 			if success:
@@ -247,3 +263,4 @@ class DownloadListDialog(wx.Dialog):
 					json.dump([], f)
 		self.update_list()
 		ui.message(_("All pending downloads cleared"))
+

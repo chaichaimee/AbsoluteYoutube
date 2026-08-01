@@ -32,7 +32,8 @@ import logging
 from .utils import (
 	getLinkURL, getLinkName, is_youtube_url, is_youtube_video_url,
 	is_channel_or_playlist_url, get_focused_youtube_link, remove_playlist_params,
-	extract_video_id_from_url, is_youtube_homepage
+	extract_video_id_from_url, is_youtube_homepage, is_real_playlist_url,
+	get_youtube_list_id, has_duration_text
 )
 from .channel_core import ChannelPlaylistDialog
 from .channel_utils import ensure_channel_dir
@@ -130,6 +131,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				load_failed_downloads,
 				save_failed_downloads,
 				add_pending_download,
+				mark_pending_download_downloading,
+				remove_pending_download_by_url,
 				get_pending_downloads,
 				remove_pending_download_by_index,
 				clear_pending_downloads,
@@ -161,6 +164,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				'load_failed_downloads': load_failed_downloads,
 				'save_failed_downloads': save_failed_downloads,
 				'add_pending_download': add_pending_download,
+				'mark_pending_download_downloading': mark_pending_download_downloading,
+				'remove_pending_download_by_url': remove_pending_download_by_url,
 				'get_pending_downloads': get_pending_downloads,
 				'remove_pending_download_by_index': remove_pending_download_by_index,
 				'clear_pending_downloads': clear_pending_downloads,
@@ -343,8 +348,18 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 		playlist_mode_enabled = config.conf[sectionName]["PlaylistMode"]
 
-		is_focused_playlist = focused_url and ('list=' in focused_url or '/playlist?' in focused_url)
-		is_current_page_playlist = doc_url and ('list=' in doc_url or '/playlist?' in doc_url)
+		focused_list_id = get_youtube_list_id(focused_url) if focused_url else None
+		focused_is_mix = bool(focused_list_id) and focused_list_id.upper().startswith("RD")
+
+		if focused_is_mix:
+			# The same "RD" mix list id is used for two different tiles:
+			#  - a normal video that also queues a Mix afterwards (its label ends with a duration)
+			#  - an actual Mix/Radio collection tile (no duration, since it isn't a single video)
+			is_focused_playlist = not has_duration_text(focused_title)
+		else:
+			is_focused_playlist = focused_url and ('/playlist?' in focused_url or is_real_playlist_url(focused_url))
+
+		is_current_page_playlist = doc_url and ('/playlist?' in doc_url or is_real_playlist_url(doc_url))
 
 		if playlist_mode_enabled and (is_focused_playlist or is_current_page_playlist):
 			target_url = doc_url if is_current_page_playlist else focused_url
@@ -398,6 +413,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				if not active:
 					self.core_functions.get('PlayWave', lambda x: None)('start')
 					wx.CallAfter(ui.message, _("Starting download: {format} - {title}").format(format=chosen_format.upper(), title=final_title))
+					# Register for visibility in the Download List Manager too,
+					# even though this path downloads immediately rather than
+					# waiting in the queue -- otherwise it never shows up there
+					# at all, including for playlist-mode downloads.
+					self.core_functions.get('add_pending_download', lambda *a: False)(url, final_title, chosen_format, is_playlist)
+					self.core_functions.get('mark_pending_download_downloading', lambda *a: False)(url, chosen_format)
 					self.core_functions['convertToMP'](chosen_format, self._get_current_download_path(), is_playlist, url, final_title)
 				else:
 					success = self.core_functions.get('add_pending_download', lambda *a: False)(url, final_title, chosen_format, is_playlist)
@@ -766,3 +787,4 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if 'setINI' in self.core_functions:
 			self.core_functions['setINI']("MP3Quality", new_quality)
 		ui.message(_("{quality} kbps").format(quality=new_quality))
+

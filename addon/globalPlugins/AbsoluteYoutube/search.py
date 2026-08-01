@@ -69,6 +69,7 @@ class SearchDialog(wx.Dialog):
 
 		self._last_status_count = 0
 		self._status_update_threshold = 5
+		self._destroyed = False
 
 		self._create_ui()
 		self._update_paging()
@@ -364,7 +365,7 @@ class SearchDialog(wx.Dialog):
 		threading.Thread(target=search_worker, daemon=True).start()
 
 	def _append_single_video(self, video):
-		if self._stop_search:
+		if self._destroyed or self._stop_search:
 			return
 
 		video_index = len(self.videos)
@@ -390,7 +391,7 @@ class SearchDialog(wx.Dialog):
 
 	def _fetch_duration(self, video_index):
 		with self._fetch_semaphore:
-			if self._fetch_stop.is_set() or self._stop_search:
+			if self._destroyed or self._fetch_stop.is_set() or self._stop_search:
 				return
 			if video_index >= len(self.videos):
 				return
@@ -442,7 +443,7 @@ class SearchDialog(wx.Dialog):
 				log(f"Error fetching duration for {url}: {e}")
 
 	def _update_duration(self, video_index, duration_str):
-		if video_index >= len(self.videos):
+		if self._destroyed or video_index >= len(self.videos):
 			return
 		self.videos[video_index]['duration'] = duration_str
 
@@ -456,7 +457,7 @@ class SearchDialog(wx.Dialog):
 				pass
 
 	def _on_search_complete(self, query):
-		if not self or not self.IsShown():
+		if self._destroyed:
 			return
 		self._is_searching = False
 		self._process1 = None
@@ -471,7 +472,7 @@ class SearchDialog(wx.Dialog):
 			ui.message(_("Search completed."))
 
 	def _on_search_failed(self, error):
-		if not self or not self.IsShown():
+		if self._destroyed:
 			return
 		self._is_searching = False
 		self._process1 = None
@@ -608,6 +609,7 @@ class SearchDialog(wx.Dialog):
 		event.Skip()
 
 	def _on_close(self, event):
+		self._destroyed = True
 		self._stop_search = True
 		self._fetch_stop.set()
 		if self._process1:
@@ -675,3 +677,4 @@ class DownloadAllFormatDialog(wx.Dialog):
 		else:
 			self.format = "wav"
 		self.EndModal(wx.ID_OK)
+

@@ -1,6 +1,4 @@
 # Download_core.py
-# Copyright (C) 2026 Chai Chaimee
-# Licensed under GNU General Public License. See COPYING.txt for details.
 
 import wx
 import os
@@ -511,7 +509,7 @@ def _cleanup_temp_files(save_path, title, file_format, check_count=2):
 def get_video_duration(url):
 	try:
 		cmd = [YouTubeEXE, "--get-duration", "--no-playlist", "--quiet", url]
-		result = subprocess.run(cmd, capture_output=True, text=True, encoding='utf-8', creationflags=subprocess.CREATE_NO_WINDOW)
+		result = subprocess.run(cmd, capture_output=True, text=True, encoding='utf-8', creationflags=subprocess.CREATE_NO_WINDOW, timeout=60)
 		if result.returncode == 0:
 			duration_str = result.stdout.strip()
 			if duration_str:
@@ -752,12 +750,36 @@ def add_pending_download(url, title, format_type, is_playlist=False):
 			'title': title,
 			'format': format_type,
 			'is_playlist': is_playlist,
+			'status': 'waiting',
 			'added_time': datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 		}
 		pending_list.append(new_item)
 		save_pending_downloads(pending_list)
 		log(f"Added to pending queue: {title} (is_playlist={is_playlist})")
 		return True
+
+
+def mark_pending_download_downloading(url, format_type):
+	with _pending_lock:
+		pending_list = load_pending_downloads()
+		changed = False
+		for item in pending_list:
+			if item.get('url') == url and item.get('format') == format_type:
+				item['status'] = 'downloading'
+				changed = True
+		if changed:
+			save_pending_downloads(pending_list)
+		return changed
+
+
+def remove_pending_download_by_url(url, format_type):
+	with _pending_lock:
+		pending_list = load_pending_downloads()
+		new_list = [item for item in pending_list if not (item.get('url') == url and item.get('format') == format_type)]
+		if len(new_list) != len(pending_list):
+			save_pending_downloads(new_list)
+			return True
+		return False
 
 
 def remove_pending_download_by_index(idx):
@@ -821,6 +843,23 @@ def run_download(item):
 
 	process = None
 	try:
+		# A flat 30-minute cap fails on longer content (podcasts, full episodes,
+		# multi-hour streams), and relying only on a successful duration lookup
+		# isn't safe either -- that lookup can itself fail for a given video.
+		# Default to a 3-hour floor so unknown-duration downloads are still
+		# covered, and scale further for anything known to be longer than that.
+		DEFAULT_TIMEOUT = 10800
+		timeout = DEFAULT_TIMEOUT
+		try:
+			duration_seconds = get_video_duration(url)
+			if duration_seconds:
+				timeout = max(DEFAULT_TIMEOUT, int(duration_seconds * 3) + 900)
+				log(f"Using duration-based timeout of {timeout}s for ID {download_id} (video duration {duration_seconds}s)")
+			else:
+				log(f"Could not determine video duration for ID {download_id}, using default timeout of {timeout}s")
+		except Exception as e:
+			log(f"Could not determine duration for timeout calculation, using default of {timeout}s: {e}")
+
 		si = subprocess.STARTUPINFO()
 		si.dwFlags |= subprocess.STARTF_USESHOWWINDOW
 		si.wShowWindow = subprocess.SW_HIDE
@@ -837,9 +876,8 @@ def run_download(item):
 		log(f"Process started with PID: {process.pid}")
 
 		def monitor_process():
-			timeout = 1800
 			try:
-				process.communicate(timeout=timeout)
+				stdout_data, stderr_data = process.communicate(timeout=timeout)
 				return_code = process.returncode
 				if return_code == 0:
 					log(f"Download for ID {download_id} completed successfully.")
@@ -853,9 +891,24 @@ def run_download(item):
 					updateDownloadStatusInQueue(download_id, "completed")
 					remove_failed_download(url, title)
 				else:
-					log(f"Download for ID {download_id} failed with return code {return_code}.")
+					stderr_text = (stderr_data or b'').decode('utf-8', errors='replace').strip()
+					stdout_text = (stdout_data or b'').decode('utf-8', errors='replace').strip()
+					log(f"Download for ID {download_id} failed with return code {return_code}. "
+						f"yt-dlp stderr: {stderr_text[-2000:] if stderr_text else '(empty)'} "
+						f"yt-dlp stdout: {stdout_text[-500:] if stdout_text else '(empty)'}")
 					PlayWave('failed')
-					wx.CallAfter(ui.message, _("Download failed"))
+					# yt-dlp can't download a video before it's actually aired: a
+					# scheduled Premiere or livestream isn't a real failure, it's just
+					# not available *yet*, so tell the person that instead of a
+					# generic "download failed" (no timeout would ever fix this).
+					premiere_match = re.search(r'Premieres? in ([^\n\r]+)', stderr_text)
+					live_match = re.search(r'This live event will begin in ([^\n\r]+)', stderr_text)
+					if premiere_match:
+						wx.CallAfter(ui.message, _("This video hasn't premiered yet. It starts in {time}.").format(time=premiere_match.group(1).strip()))
+					elif live_match:
+						wx.CallAfter(ui.message, _("This livestream hasn't started yet. It starts in {time}.").format(time=live_match.group(1).strip()))
+					else:
+						wx.CallAfter(ui.message, _("Download failed"))
 					updateDownloadStatusInQueue(download_id, "failed")
 					duration = get_video_duration(url)
 					add_failed_download(url, title, file_format, duration)
@@ -889,6 +942,7 @@ def run_download(item):
 				if not is_trimming:
 					_cleanup_temp_files(save_path, title, file_format)
 				removeCompletedOrFailedDownloadsFromQueue()
+				remove_pending_download_by_url(url, file_format)
 				with _global_active_lock:
 					global _global_active_downloads
 					_global_active_downloads -= 1
@@ -909,6 +963,7 @@ def run_download(item):
 		updateDownloadStatusInQueue(download_id, "failed")
 		duration = get_video_duration(url)
 		add_failed_download(url, title, file_format, duration)
+		remove_pending_download_by_url(url, file_format)
 		with _global_active_lock:
 			_global_active_downloads -= 1
 			if _global_active_downloads == 0:
@@ -1139,3 +1194,4 @@ def convertToMP(mpFormat, savePath, isPlaylist=False, url=None, title=None):
 def setSpeed(sp):
 	speech.setSpeechOption("rate", sp)
 	speech.speak(" ")
+

@@ -1,4 +1,5 @@
 # channel_core.py
+
 import wx
 import gui
 import threading
@@ -13,6 +14,7 @@ import tones
 import addonHandler
 import api
 from .Download_core import log, YouTubeEXE, convertToMP, getINI, DownloadPath, PlayWave
+from .utils import extract_video_id_from_url
 from .channel_utils import (
 	ensure_channel_dir, sanitize_filename, get_channel_filepath, save_channel_videos,
 	get_all_channel_files, merge_videos, create_short_youtube_url, load_pinned_order,
@@ -72,7 +74,7 @@ class ChannelPlaylistDialog(wx.Dialog):
 			self.channel_identifier = match.group(1) if match else 'unknown'
 		else:
 			self.channel_identifier = 'unknown'
-		self.filepath = get_channel_filepath(self.channel_identifier)
+		self.filepath = get_channel_filepath(self.channel_identifier, self.content_type)
 
 		self._create_ui()
 		self._populate_channel_combo()
@@ -216,27 +218,20 @@ class ChannelPlaylistDialog(wx.Dialog):
 		if self._pending_content_type is not None and self._pending_content_type != self.content_type:
 			self.content_type = self._pending_content_type
 			self._pending_content_type = None
-			if hasattr(self, 'filepath') and self.filepath:
-				self._save_content_type_to_file()
 			self.videos = []
-			self._refresh_display(reset_page=True)
-			if self.url:
-				self._start_fetch(silent=False)
+			self.filepath = get_channel_filepath(self.channel_identifier, self.content_type)
+			if os.path.exists(self.filepath):
+				self._load_from_file()
+				if self.url:
+					self._start_fetch(silent=True)
+			else:
+				self._refresh_display(reset_page=True)
+				self.status_label.SetLabel(_("No saved data for this content type yet."))
+				if self.url:
+					self._start_fetch(silent=False)
 		else:
 			self._pending_content_type = None
 		event.Skip()
-
-	def _save_content_type_to_file(self):
-		if self._closing or not self.filepath or not os.path.exists(self.filepath):
-			return
-		try:
-			with open(self.filepath, 'r', encoding='utf-8') as f:
-				data = json.load(f)
-			data['content_type'] = self.content_type
-			with open(self.filepath, 'w', encoding='utf-8') as f:
-				json.dump(data, f, ensure_ascii=False, indent=2)
-		except Exception as e:
-			log(f"Error saving content_type: {e}")
 
 	def _update_edit_button_state(self):
 		if self._closing:
@@ -476,21 +471,30 @@ class ChannelPlaylistDialog(wx.Dialog):
 			self.url = data.get('channel_url')
 			self.videos = data.get('videos', [])
 			saved_type = data.get('content_type')
-			if saved_type and saved_type in self.content_type_map:
-				self.content_type = saved_type
-				self.typeCombo.SetStringSelection(self.content_type_map[self.content_type][1])
+			# Picking a channel from this list always loads its "videos" file
+			# (get_all_channel_files picks that one as the representative
+			# path) -- so content_type is always "videos" here, regardless of
+			# a stale tag left over from before each type had its own file.
+			self.content_type = "videos"
+			self.typeCombo.SetStringSelection(self.content_type_map[self.content_type][1])
+			stale_tag = bool(saved_type and saved_type != "videos")
+			if stale_tag:
+				log(f"Correcting stale content_type tag '{saved_type}' -> 'videos' for {channel_name}")
 
 			for v in self.videos:
 				if 'title_finalized' not in v:
 					v['title_finalized'] = False
+			self.channel_identifier = channel_name
+			self.filepath = filepath
+			self._migrate_stray_playlist_items()
 			self._fix_channel_url_if_needed()
 			self._refresh_display(reset_page=True)
 			self.status_label.SetLabel(_("Loaded {count} videos from {name}.").format(
 				count=len(self.videos), name=channel_name))
-			self.channel_identifier = channel_name
-			self.filepath = filepath
 			self._fetch_complete = True
 			self._is_fetching = False
+			if stale_tag:
+				save_channel_videos(self.filepath, self.videos, self.url, self.content_type)
 
 			self._start_background_title_fetch()
 
@@ -514,28 +518,116 @@ class ChannelPlaylistDialog(wx.Dialog):
 		thread.start()
 
 	def _background_title_fetch_worker(self, indices):
-		batch_size = 20
+		# Fetching one video per yt-dlp process (plus a fixed sleep after every
+		# single one) doesn't scale to channels with thousands of videos: almost
+		# all of the wall-clock time is just process-startup overhead repeated
+		# thousands of times. Batch several video URLs into each yt-dlp call
+		# to cut the process count drastically. Batches run strictly one after
+		# another (not concurrently) so each batch's 20 titles are guaranteed
+		# fully corrected before the next batch starts.
+		BATCH_SIZE = 20
 		updated_count = 0
-		for i, idx in enumerate(indices):
-			if self._closing or self._stop_fetch:
-				break
-			if idx >= len(self.videos):
-				continue
-			video = self.videos[idx]
-			if video.get('title_finalized', False) or video.get('is_playlist', False):
-				continue
-			success = self._fetch_video_details(video)
-			if success:
-				updated_count += 1
+		try:
+			pending = [idx for idx in indices
+					   if idx < len(self.videos)
+					   and not self.videos[idx].get('title_finalized', False)
+					   and not self.videos[idx].get('is_playlist', False)]
+
+			batches = [pending[i:i + BATCH_SIZE] for i in range(0, len(pending), BATCH_SIZE)]
+
+			for batch_idx_list in batches:
+				if self._closing or self._stop_fetch:
+					break
+				batch_videos = [self.videos[i] for i in batch_idx_list if i < len(self.videos)]
+				try:
+					updated_count += self._fetch_video_details_batch(batch_videos)
+				except Exception as e:
+					log(f"Batch title fetch failed: {e}")
 				if not self._closing:
 					wx.CallAfter(self._refresh_display, False)
-			time.sleep(0.3)
-			if (i+1) % batch_size == 0 or i == len(indices)-1:
-				if not self._closing:
 					wx.CallAfter(self._save_videos, False)
-		self._background_title_fetch_running = False
-		if updated_count > 0 and not self._closing:
-			wx.CallAfter(ui.message, _("Title correction completed for {count} videos.").format(count=updated_count))
+		finally:
+			self._background_title_fetch_running = False
+			if updated_count > 0 and not self._closing:
+				wx.CallAfter(ui.message, _("Title correction completed for {count} videos.").format(count=updated_count))
+
+	def _fetch_video_details_batch(self, videos):
+		if self._closing or self._stop_fetch:
+			return 0
+
+		updated = 0
+		uncached_videos = []
+		for video in videos:
+			cached = get_video_from_cache(video['url'])
+			if cached and cached.get('title_finalized', False):
+				if cached['title'] != video['title']:
+					updated += 1
+				video['title'] = cached['title']
+				video['title_finalized'] = True
+			else:
+				uncached_videos.append(video)
+
+		if not uncached_videos or self._closing or self._stop_fetch:
+			return updated
+
+		url_to_video = {}
+		urls = []
+		for video in uncached_videos:
+			vid_id = extract_video_id_from_url(video['url'])
+			if vid_id:
+				url_to_video[vid_id] = video
+				urls.append(video['url'])
+
+		if not urls:
+			return updated
+
+		try:
+			cmd = [
+				YouTubeEXE, "--dump-json", "--no-playlist",
+				"--extractor-args", "youtubetab:lang=th,youtube:lang=th",
+				"--ignore-errors", "--no-warnings", "--quiet",
+			] + urls
+			process = subprocess.run(
+				cmd, capture_output=True, text=True,
+				timeout=max(30, 8 * len(urls)),
+				creationflags=subprocess.CREATE_NO_WINDOW
+			)
+			for line in (process.stdout or '').splitlines():
+				line = line.strip()
+				if not line:
+					continue
+				try:
+					info = json.loads(line)
+				except json.JSONDecodeError:
+					continue
+				vid_id = info.get('id')
+				video = url_to_video.get(vid_id)
+				if video is None:
+					continue
+				real_title = info.get('title', '')
+				if real_title:
+					if real_title != video['title']:
+						updated += 1
+						log(f"Updated title for {video['url']} to: {real_title}")
+					# Mark finalized even when the title didn't change: this is
+					# what stops the video from being re-fetched again on every
+					# future channel update.
+					video['title'] = real_title
+					video['title_finalized'] = True
+					update_video_cache(video['url'], {
+						'title': real_title,
+						'duration': video.get('duration', ''),
+						'title_finalized': True
+					})
+			if process.stderr:
+				log(f"yt-dlp stderr during batch title fetch ({len(urls)} videos): {process.stderr.strip()[-1000:]}")
+		except subprocess.TimeoutExpired:
+			log(f"Batch title fetch timed out for {len(urls)} videos")
+		except Exception as e:
+			log(f"Error during batch title fetch: {e}")
+
+		time.sleep(0.3)
+		return updated
 
 	def _fetch_video_details(self, video):
 		if self._closing or video.get('title_finalized', False):
@@ -562,7 +654,8 @@ class ChannelPlaylistDialog(wx.Dialog):
 			if process.returncode == 0 and process.stdout:
 				info = json.loads(process.stdout)
 				real_title = info.get('title', '')
-				if real_title and real_title != video['title']:
+				if real_title:
+					changed = real_title != video['title']
 					video['title'] = real_title
 					video['title_finalized'] = True
 					update_video_cache(video['url'], {
@@ -570,7 +663,8 @@ class ChannelPlaylistDialog(wx.Dialog):
 						'duration': video.get('duration', ''),
 						'title_finalized': True
 					})
-					log(f"Updated title for {video['url']} to: {real_title}")
+					if changed:
+						log(f"Updated title for {video['url']} to: {real_title}")
 					return True
 			return False
 		except Exception as e:
@@ -742,7 +836,7 @@ class ChannelPlaylistDialog(wx.Dialog):
 					self._refresh_display(reset_page=True)
 					self.status_label.SetLabel(_("Channel deleted."))
 					self.url = None
-					self.filepath = get_channel_filepath(self.channel_identifier)
+					self.filepath = get_channel_filepath(self.channel_identifier, self.content_type)
 				ui.message(_("Channel deleted."))
 			except Exception as e:
 				log(f"Delete error: {e}")
@@ -759,19 +853,74 @@ class ChannelPlaylistDialog(wx.Dialog):
 				self.url = data['channel_url']
 			self.videos = data.get('videos', [])
 			saved_type = data.get('content_type')
-			if saved_type and saved_type in self.content_type_map:
-				self.content_type = saved_type
-				self.typeCombo.SetStringSelection(self.content_type_map[self.content_type][1])
+			# self.filepath was already computed from self.content_type by the
+			# caller (init, or the content-type switch handler), so they're
+			# already consistent -- trust that instead of the file's internal
+			# tag, which can be stale from before each content type had its
+			# own file (a file tagged "playlists" from that era would
+			# otherwise keep forcing this tab back to Playlists every time).
+			stale_tag = bool(saved_type and saved_type != self.content_type)
+			if stale_tag:
+				log(f"Correcting stale content_type tag '{saved_type}' -> '{self.content_type}' in {self.filepath}")
 			for v in self.videos:
 				if 'title_finalized' not in v:
 					v['title_finalized'] = False
+			self._migrate_stray_playlist_items()
 			self._fix_channel_url_if_needed()
 			self._refresh_display(reset_page=True)
 			self.status_label.SetLabel(_("Loaded {count} videos from cache.").format(count=len(self.videos)))
 			self._start_background_title_fetch()
+			if stale_tag:
+				save_channel_videos(self.filepath, self.videos, self.url, self.content_type)
 		except Exception as e:
 			log(f"Error loading {self.filepath}: {e}")
 			self.status_label.SetLabel(_("Error loading cache."))
+
+	def _migrate_stray_playlist_items(self):
+		# Old channel files (from before each content type got its own file)
+		# could have playlist entries mixed into what's now the "videos" (or
+		# shorts/streams/podcasts) file, which then show up incorrectly when
+		# that type is displayed. Filter them out of the in-memory list right
+		# away (cheap, so the UI shows the right content immediately), but do
+		# the actual disk save + cache merge on a background thread -- for a
+		# legacy file where this affected many entries, merging them into the
+		# shared cache synchronously here was itself slow enough to look like
+		# a freeze/crash when selecting the channel.
+		if self._closing or self.content_type == "playlists":
+			return
+		try:
+			stray = [v for v in self.videos if v.get('is_playlist', False)]
+		except Exception as e:
+			log(f"Error scanning for stray playlist entries: {e}")
+			return
+		if not stray:
+			return
+		log(f"Splitting {len(stray)} stray playlist entries out of the '{self.content_type}' file for {self.channel_identifier}")
+		self.videos = [v for v in self.videos if not v.get('is_playlist', False)]
+
+		channel_identifier = self.channel_identifier
+		channel_url = self.url
+		current_type = self.content_type
+		current_filepath = self.filepath
+		cleaned_videos = list(self.videos)
+
+		def do_migration_save():
+			try:
+				playlists_filepath = get_channel_filepath(channel_identifier, "playlists")
+				existing_playlists = []
+				if os.path.exists(playlists_filepath):
+					try:
+						with open(playlists_filepath, 'r', encoding='utf-8') as f:
+							existing_playlists = json.load(f).get('videos', [])
+					except Exception as e:
+						log(f"Error reading existing playlists file during migration: {e}")
+				merged_playlists = merge_videos(existing_playlists, stray)
+				save_channel_videos(playlists_filepath, merged_playlists, channel_url, "playlists")
+				save_channel_videos(current_filepath, cleaned_videos, channel_url, current_type)
+			except Exception as e:
+				log(f"Error during playlist migration save: {e}")
+
+		threading.Thread(target=do_migration_save, daemon=True).start()
 
 	def _save_videos(self, immediate=False):
 		if self._closing:
@@ -986,10 +1135,21 @@ class ChannelPlaylistDialog(wx.Dialog):
 
 		log(f"Fetch URL: {fetch_url}")
 
+		if silent:
+			tones.beep(440, 100)
+
 		if not os.path.exists(YouTubeEXE):
 			wx.CallAfter(self._show_info_message, f"yt-dlp.exe not found at {YouTubeEXE}")
 			return
 
+		# Checking for new uploads never needs the whole channel history --
+		# new videos always appear at the top of the channel tab. Fetch a
+		# bounded batch and let merge_videos() (which already dedups reliably
+		# by exact URL) sort out what's actually new; don't try to guess a
+		# "we've caught up" boundary while reading, since a pinned or
+		# reordered video can make that guess wrong and silently mean no new
+		# video is ever detected.
+		max_results = 999999
 		cmd = [
 			YouTubeEXE,
 			"--flat-playlist",
@@ -997,10 +1157,12 @@ class ChannelPlaylistDialog(wx.Dialog):
 			"--ignore-errors",
 			"--no-warnings",
 			"--quiet",
-			"--extractor-args", "youtubetab:max_results=999999,youtubetab:lang=th,youtube:lang=th",
+			"--extractor-args", f"youtubetab:max_results={max_results},youtubetab:lang=th,youtube:lang=th",
 			fetch_url
 		]
 		log(f"Running command: {cmd}")
+
+		CHUNK_SIZE = 20
 
 		try:
 			process = subprocess.Popen(
@@ -1014,62 +1176,115 @@ class ChannelPlaylistDialog(wx.Dialog):
 			)
 
 			new_items = []
+
 			for line in process.stdout:
 				if self._closing or self._stop_fetch:
 					process.terminate()
 					return
 
-				if line.strip():
-					try:
-						info = json.loads(line)
-						if self.content_type == "playlists":
-							playlist_url = info.get('webpage_url') or info.get('url')
-							playlist_title = info.get('title', 'Untitled Playlist')
-							item = {
-								'is_playlist': True,
-								'url': playlist_url,
-								'title': playlist_title,
-								'duration': '',
-								'title_finalized': True
-							}
+				if not line.strip():
+					continue
+				try:
+					info = json.loads(line)
+				except json.JSONDecodeError:
+					continue
+
+				if self.content_type == "playlists":
+					item_url = info.get('webpage_url') or info.get('url')
+				else:
+					item_url = info.get('webpage_url') or f"https://youtu.be/{info.get('id')}"
+
+				if self.content_type == "playlists":
+					item = {
+						'is_playlist': True,
+						'url': item_url,
+						'title': info.get('title', 'Untitled Playlist'),
+						'duration': '',
+						'title_finalized': True
+					}
+				else:
+					title = info.get('title', 'Untitled')
+					duration = info.get('duration')
+					duration_str = ""
+					if duration:
+						duration_sec = int(duration)
+						hours = duration_sec // 3600
+						minutes = (duration_sec % 3600) // 60
+						seconds = duration_sec % 60
+						if hours > 0:
+							duration_str = f"{hours:02d}:{minutes:02d}:{seconds:02d}"
 						else:
-							video_url = info.get('webpage_url') or f"https://youtu.be/{info.get('id')}"
-							title = info.get('title', 'Untitled')
-							duration = info.get('duration')
-							duration_str = ""
-							if duration:
-								duration_sec = int(duration)
-								hours = duration_sec // 3600
-								minutes = (duration_sec % 3600) // 60
-								seconds = duration_sec % 60
-								if hours > 0:
-									duration_str = f"{hours:02d}:{minutes:02d}:{seconds:02d}"
-								else:
-									duration_str = f"{minutes:02d}:{seconds:02d}"
-							item = {
-								'is_playlist': False,
-								'url': video_url,
-								'title': title,
-								'duration': duration_str,
-								'title_finalized': False
-							}
-						new_items.append(item)
-					except json.JSONDecodeError:
-						continue
+							duration_str = f"{minutes:02d}:{seconds:02d}"
+					item = {
+						'is_playlist': False,
+						'url': item_url,
+						'title': title,
+						'duration': duration_str,
+						'title_finalized': False
+					}
+
+				new_items.append(item)
 
 			stderr = process.stderr.read()
 			if stderr:
 				log(f"yt-dlp stderr: {stderr}")
+			log(f"Listing fetch returned {len(new_items)} items (existing saved count: {len(self.videos)})")
 
+			old_by_url = {v['url'] for v in self.videos}
+			genuinely_new = [it for it in new_items if it['url'] not in old_by_url]
+			log(f"{len(genuinely_new)} of {len(new_items)} fetched items are not already in the saved list")
+			if new_items and not genuinely_new:
+				log(f"Sample fetched URL: {new_items[0]['url']} | Sample saved URL: {next(iter(old_by_url), None)}")
+
+			# Merge and show the new videos right away -- don't make them wait
+			# invisible behind title correction, which visits each video's own
+			# page and can take a long time for a big batch (multiple minutes
+			# for 100+ new videos). Title correction becomes a background
+			# refinement that runs afterward, updating titles progressively.
 			if new_items and not self._closing:
 				old_items = self.videos
 				self.videos = merge_videos(old_items, new_items)
+				log(f"After merge: {len(self.videos)} total videos saved (was {len(old_items)})")
 				wx.CallAfter(self._refresh_display, False)
 				wx.CallAfter(self.status_label.SetLabel, _("Fetched {count} items total.").format(count=len(self.videos)))
 				wx.CallAfter(self._save_videos, False)
-				wx.CallAfter(self._start_background_title_fetch)
+				wx.CallAfter(ui.message, _("{count} new items updated.").format(count=len(genuinely_new)))
 			elif not silent and not self._closing:
 				wx.CallAfter(self._show_info_message, _("No items found."))
+
+			if silent and not self._closing:
+				# Confirms the check itself is done, whether or not it found
+				# anything new -- otherwise a check that finds nothing new
+				# gives no feedback at all. Different pitch from the start
+				# tone so the two are distinguishable.
+				tones.beep(880, 150)
+				PlayWave('complete', force=True)
+
+			non_playlist_items = []
+			if genuinely_new:
+				# merge_videos() creates new dict objects rather than reusing
+				# the ones in new_items/genuinely_new, so title corrections
+				# must operate on the actual objects now living in
+				# self.videos, or the mutations would silently not stick.
+				videos_by_url = {v['url']: v for v in self.videos}
+				for it in genuinely_new:
+					if it.get('is_playlist', False):
+						continue
+					actual = videos_by_url.get(it['url'])
+					if actual is not None:
+						non_playlist_items.append(actual)
+			if non_playlist_items:
+				log(f"Starting title correction for {len(non_playlist_items)} new videos in {(len(non_playlist_items) + CHUNK_SIZE - 1) // CHUNK_SIZE} chunk(s)")
+			for i in range(0, len(non_playlist_items), CHUNK_SIZE):
+				if self._closing or self._stop_fetch:
+					break
+				chunk = non_playlist_items[i:i + CHUNK_SIZE]
+				log(f"Correcting titles for chunk {i // CHUNK_SIZE + 1} ({len(chunk)} videos)")
+				self._fetch_video_details_batch(chunk)
+				if not self._closing:
+					wx.CallAfter(self._refresh_display, False)
+					wx.CallAfter(self._save_videos, False)
+				time.sleep(0.3)
 		except Exception as e:
 			log(f"Exception in _fetch_videos: {e}")
 			if not self._closing:
@@ -1098,8 +1313,8 @@ class ChannelPlaylistDialog(wx.Dialog):
 			name = dlg.name
 			url = dlg.url
 			name_safe = sanitize_filename(name)
-			filepath = get_channel_filepath(name_safe)
 			content_type = self.content_type
+			filepath = get_channel_filepath(name_safe, content_type)
 
 			if os.path.exists(filepath):
 				confirm = wx.MessageDialog(self, _("A channel with this name already exists. Overwrite?"),
@@ -1173,7 +1388,7 @@ class ChannelPlaylistDialog(wx.Dialog):
 					"--ignore-errors",
 					"--no-warnings",
 					"--quiet",
-					"--extractor-args", "youtubetab:max_results=999999,youtubetab:lang=th,youtube:lang=th",
+					"--extractor-args", "youtubetab:max_results=150,youtubetab:lang=th,youtube:lang=th",
 					fetch_url
 				]
 				process = subprocess.Popen(
@@ -1193,17 +1408,19 @@ class ChannelPlaylistDialog(wx.Dialog):
 					try:
 						info = json.loads(line)
 						if content_type == "playlists":
-							playlist_url = info.get('webpage_url') or info.get('url')
-							playlist_title = info.get('title', 'Untitled Playlist')
+							item_url = info.get('webpage_url') or info.get('url')
+						else:
+							item_url = info.get('webpage_url') or f"https://youtu.be/{info.get('id')}"
+
+						if content_type == "playlists":
 							item = {
 								'is_playlist': True,
-								'url': playlist_url,
-								'title': playlist_title,
+								'url': item_url,
+								'title': info.get('title', 'Untitled Playlist'),
 								'duration': '',
 								'title_finalized': True
 							}
 						else:
-							video_url = info.get('webpage_url') or f"https://youtu.be/{info.get('id')}"
 							title = info.get('title', 'Untitled')
 							duration = info.get('duration')
 							duration_str = ""
@@ -1218,7 +1435,7 @@ class ChannelPlaylistDialog(wx.Dialog):
 									duration_str = f"{minutes:02d}:{seconds:02d}"
 							item = {
 								'is_playlist': False,
-								'url': video_url,
+								'url': item_url,
 								'title': title,
 								'duration': duration_str,
 								'title_finalized': False
@@ -1244,22 +1461,41 @@ class ChannelPlaylistDialog(wx.Dialog):
 		event.Skip()
 
 	def _on_close(self, event):
+		if self._closing:
+			# Already shutting down (e.g. Escape called Close(), which then
+			# fires this event again) -- don't re-enter.
+			event.Skip()
+			return
 		self._closing = True
 		self._stop_fetch = True
 		if self._save_timer:
 			self._save_timer.Stop()
 			self._save_timer = None
-		self._save_videos(immediate=True)
-		for thread in self._bg_threads:
-			if thread and thread.is_alive():
-				try:
-					thread.join(timeout=0.5)
-				except:
-					pass
-		try:
-			flush_video_cache()
-		except Exception:
-			pass
+
+		# Snapshot everything the save needs before Destroy() runs, then save
+		# on a background thread. Blocking the UI thread here waiting on
+		# thread.join() for every background thread ever started this session
+		# (fetches, title corrections, auto-update -- none of which can be
+		# force-killed) is what made Escape/Close hang and look like a crash
+		# on channels with thousands of videos. save_channel_videos() writes
+		# atomically now, so a save still in flight when the process exits
+		# can't leave a corrupted file behind either way.
+		videos_snapshot = list(self.videos)
+		filepath_snapshot = self.filepath
+		url_snapshot = self.url
+		content_type_snapshot = self.content_type
+
+		def save_and_flush():
+			try:
+				save_channel_videos(filepath_snapshot, videos_snapshot, url_snapshot, content_type_snapshot)
+			except Exception as e:
+				log(f"Error saving on close: {e}")
+			try:
+				flush_video_cache()
+			except Exception:
+				pass
+
+		threading.Thread(target=save_and_flush, daemon=True).start()
 		self.Destroy()
 
 	def _on_cancel(self, event):
@@ -1409,3 +1645,4 @@ class ChannelPlaylistDialog(wx.Dialog):
 		if vid.get('is_playlist', False):
 			return (vid['url'], vid['title'])
 		return (vid['url'], vid['title'])
+

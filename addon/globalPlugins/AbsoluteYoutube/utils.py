@@ -166,6 +166,47 @@ def remove_playlist_params(url):
 	except Exception:
 		return url
 
+_DURATION_TOKEN_PATTERN = re.compile(r'(?<!\d)\d{1,2}:\d{2}(?::\d{2})?(?!\d)')
+
+def has_duration_text(text):
+	"""Detects a video-length timestamp (e.g. '10:32' or '1:23:45') in a
+	thumbnail/link's accessible name. YouTube shows this for an actual single
+	video (even one that also queues a Mix afterwards), but never for a
+	Mix/Radio collection tile itself, since a collection has no single length."""
+	if not text:
+		return False
+	return bool(_DURATION_TOKEN_PATTERN.search(text))
+
+def get_youtube_list_id(url):
+	if not url:
+		return None
+	try:
+		parsed = urllib.parse.urlparse(url)
+		query_params = urllib.parse.parse_qs(parsed.query)
+		values = query_params.get('list')
+		if values:
+			return values[0]
+	except Exception:
+		pass
+	return None
+
+def is_real_playlist_url(url):
+	list_id = get_youtube_list_id(url)
+	if not list_id:
+		return False
+	upper_id = list_id.upper()
+	# These list-id prefixes are YouTube's own auto-attached context markers,
+	# not playlists the user deliberately chose to download in full:
+	#  - RD: Mix/Radio, auto-generated from a single video
+	#  - UU: a channel's full uploads feed, silently attached to video links
+	#    when browsing that channel's Videos tab -- this is what was causing
+	#    a "single video" download to actually pull in many videos from the
+	#    same channel
+	#  - LL / WL: the personal "Liked videos" / "Watch Later" lists
+	if upper_id.startswith("RD") or upper_id.startswith(("UU", "LL", "WL")):
+		return False
+	return True
+
 def extract_video_id_from_url(url):
 	if not url:
 		return None

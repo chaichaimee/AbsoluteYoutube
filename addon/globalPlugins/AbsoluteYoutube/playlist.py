@@ -14,6 +14,7 @@ import api
 from .Download_core import log, YouTubeEXE, convertToMP, getINI, DownloadPath, PlayWave
 from .channel_utils import create_short_youtube_url, update_video_cache, get_video_from_cache
 from .channel_dialogs import VirtualVideoList
+from .utils import extract_video_id_from_url
 
 addonHandler.initTranslation()
 
@@ -235,19 +236,117 @@ class PlaylistVideosDialog(wx.Dialog):
 		threading.Thread(target=self._background_title_fetch_worker, args=(videos_to_fetch,), daemon=True).start()
 
 	def _background_title_fetch_worker(self, indices):
-		for idx in indices:
+		# Same fix as the channel dialog: one yt-dlp process per video (plus a
+		# fixed sleep after each) doesn't scale to playlists with thousands of
+		# videos, since most of the time is process-startup overhead repeated
+		# per video. Batch several URLs into each yt-dlp call. Batches run one
+		# after another (not concurrently) so each batch fully finishes before
+		# the next one starts.
+		BATCH_SIZE = 20
+		try:
+			pending = [idx for idx in indices
+					   if idx < len(self.videos) and not self.videos[idx].get('title_finalized', False)]
+			batches = [pending[i:i + BATCH_SIZE] for i in range(0, len(pending), BATCH_SIZE)]
+
+			for batch in batches:
+				if self._stop_fetch:
+					break
+				try:
+					self._fetch_video_details_batch(batch)
+				except Exception as e:
+					log(f"Batch title fetch failed: {e}")
+				wx.CallAfter(self._refresh_display)
+		finally:
+			self._background_title_fetch_running = False
+
+	def _fetch_video_details_batch(self, batch_indices):
+		if self._stop_fetch:
+			return 0
+
+		updated = 0
+		uncached_indices = []
+		for idx in batch_indices:
 			if idx >= len(self.videos):
 				continue
 			video = self.videos[idx]
-			if video.get('title_finalized', False):
-				continue
-			success = self._fetch_video_details(video)
-			if success:
-				wx.CallAfter(self._update_title_in_ui, idx, video['title'])
-			time.sleep(0.5)
-		self._background_title_fetch_running = False
+			cached = get_video_from_cache(video['url'])
+			if cached and cached.get('title_finalized', False):
+				if cached['title'] != video['title']:
+					updated += 1
+				video['title'] = cached['title']
+				video['title_finalized'] = True
+			else:
+				uncached_indices.append(idx)
+
+		if not uncached_indices or self._stop_fetch:
+			return updated
+
+		url_to_idx = {}
+		urls = []
+		for idx in uncached_indices:
+			video_url = self.videos[idx]['url']
+			vid_id = extract_video_id_from_url(video_url)
+			if vid_id:
+				url_to_idx[vid_id] = idx
+				urls.append(video_url)
+
+		if not urls:
+			return updated
+
+		try:
+			cmd = [
+				YouTubeEXE, "--dump-json", "--no-playlist",
+				"--extractor-args", "youtubetab:lang=th,youtube:lang=th",
+				"--ignore-errors", "--no-warnings", "--quiet",
+			] + urls
+			process = subprocess.run(
+				cmd, capture_output=True, text=True,
+				timeout=max(30, 8 * len(urls)),
+				creationflags=subprocess.CREATE_NO_WINDOW
+			)
+			for line in (process.stdout or '').splitlines():
+				line = line.strip()
+				if not line:
+					continue
+				try:
+					info = json.loads(line)
+				except json.JSONDecodeError:
+					continue
+				vid_id = info.get('id')
+				idx = url_to_idx.get(vid_id)
+				if idx is None or idx >= len(self.videos):
+					continue
+				video = self.videos[idx]
+				real_title = info.get('title', '')
+				if real_title:
+					if real_title != video['title']:
+						updated += 1
+						log(f"Updated title for {video['url']} to: {real_title}")
+					# Finalize even when unchanged, or this video keeps
+					# getting re-fetched every time the playlist is reopened.
+					video['title'] = real_title
+					video['title_finalized'] = True
+					update_video_cache(video['url'], {
+						'title': real_title,
+						'duration': video.get('duration', ''),
+						'title_finalized': True
+					})
+			if process.stderr:
+				log(f"yt-dlp stderr during batch title fetch ({len(urls)} videos): {process.stderr.strip()[-1000:]}")
+		except subprocess.TimeoutExpired:
+			log(f"Batch title fetch timed out for {len(urls)} videos")
+		except Exception as e:
+			log(f"Error during batch title fetch: {e}")
+
+		time.sleep(0.3)
+		return updated
 
 	def _fetch_video_details(self, video):
+		cached = get_video_from_cache(video['url'])
+		if cached and cached.get('title_finalized', False):
+			video['title'] = cached['title']
+			video['title_finalized'] = True
+			return True
 		try:
 			cmd = [
 				YouTubeEXE, "--dump-json", "--no-playlist",
@@ -265,7 +364,8 @@ class PlaylistVideosDialog(wx.Dialog):
 			if process.returncode == 0 and process.stdout:
 				info = json.loads(process.stdout)
 				real_title = info.get('title', '')
-				if real_title and real_title != video['title']:
+				if real_title:
+					changed = real_title != video['title']
 					video['title'] = real_title
 					video['title_finalized'] = True
 					update_video_cache(video['url'], {
@@ -273,7 +373,8 @@ class PlaylistVideosDialog(wx.Dialog):
 						'duration': video.get('duration', ''),
 						'title_finalized': True
 					})
-					log(f"Updated title for {video['url']} to: {real_title}")
+					if changed:
+						log(f"Updated title for {video['url']} to: {real_title}")
 					return True
 			return False
 		except Exception as e:

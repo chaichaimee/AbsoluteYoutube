@@ -24,12 +24,24 @@ VIDEO_CACHE_FILE = os.path.join(
 	'ChaiChaimee', 'AbsoluteYoutube', 'video_cache.json'
 )
 
-_cache_lock = threading.Lock()
+_cache_lock = threading.RLock()
 _cache_dirty = False
 _cache_debounce_timer = None
 _internal_cache = None
 MAX_CACHE_SIZE_BYTES = 3 * 1024 * 1024
 CACHE_TARGET_SIZE_BYTES = 2 * 1024 * 1024
+
+def _atomic_write_json(filepath, data):
+	# Writing straight to the target file means a crash or forced process
+	# kill mid-write leaves a truncated/corrupt json file that fails to load
+	# next time. Write to a temp file first and os.replace() into place --
+	# that rename is atomic on both Windows and POSIX, so the target file is
+	# always either the complete old version or the complete new one.
+	os.makedirs(os.path.dirname(filepath), exist_ok=True)
+	tmp_path = filepath + f'.{os.getpid()}.tmp'
+	with open(tmp_path, 'w', encoding='utf-8') as f:
+		json.dump(data, f, ensure_ascii=False, indent=2)
+	os.replace(tmp_path, filepath)
 
 def ensure_channel_dir():
 	if not os.path.exists(CHANNEL_DATA_DIR):
@@ -45,9 +57,13 @@ def sanitize_filename(name):
 		name = 'unnamed'
 	return name
 
-def get_channel_filepath(channel_identifier):
-	filename = sanitize_filename(channel_identifier) + '.json'
-	return os.path.join(CHANNEL_DATA_DIR, filename)
+CONTENT_TYPES = ("videos", "shorts", "streams", "podcasts", "playlists")
+
+def get_channel_filepath(channel_identifier, content_type="videos"):
+	base_filename = sanitize_filename(channel_identifier)
+	if content_type and content_type != "videos":
+		base_filename += f"__{content_type}"
+	return os.path.join(CHANNEL_DATA_DIR, base_filename + '.json')
 
 def load_channel_videos(filepath):
 	if os.path.exists(filepath):
@@ -67,22 +83,31 @@ def save_channel_videos(filepath, videos, channel_url=None, content_type="videos
 	if playlist_data:
 		data['playlist_data'] = playlist_data
 	try:
-		os.makedirs(os.path.dirname(filepath), exist_ok=True)
-		with open(filepath, 'w', encoding='utf-8') as f:
-			json.dump(data, f, ensure_ascii=False, indent=2)
+		_atomic_write_json(filepath, data)
 		log(f"Saved {len(videos)} videos to {filepath}")
 	except Exception as e:
 		log(f"Error saving {filepath}: {e}")
 
 def get_all_channel_files():
+	# Each channel can now have a separate file per content type
+	# (name.json for videos, name__shorts.json, name__playlists.json, etc.)
+	# so they stop clobbering each other. The channel picker should still
+	# show one entry per channel though, so group by base name here and
+	# prefer the "videos" file as the representative path for that entry.
 	ensure_channel_dir()
-	files = []
+	suffix_pattern = re.compile(r'^(.*)__(' + '|'.join(t for t in CONTENT_TYPES if t != "videos") + r')$')
+	grouped = {}
 	for f in os.listdir(CHANNEL_DATA_DIR):
-		if f.endswith('.json'):
-			path = os.path.join(CHANNEL_DATA_DIR, f)
-			name = f[:-5]
-			files.append((name, path))
-	return files
+		if not f.endswith('.json'):
+			continue
+		name = f[:-5]
+		match = suffix_pattern.match(name)
+		base_name = match.group(1) if match else name
+		is_videos_file = match is None
+		path = os.path.join(CHANNEL_DATA_DIR, f)
+		if base_name not in grouped or is_videos_file:
+			grouped[base_name] = path
+	return list(grouped.items())
 
 def _get_internal_cache():
 	global _internal_cache
@@ -117,23 +142,28 @@ def _enforce_cache_size_limit():
 
 	if current_size > MAX_CACHE_SIZE_BYTES and _internal_cache:
 		log(f"Cache size {current_size} bytes exceeds limit {MAX_CACHE_SIZE_BYTES}. Trimming...")
+		# Keep the most-recently-accessed entries (proper LRU eviction) and
+		# stop once we hit the target size. Each entry's size is computed once
+		# and added to a running total -- O(N) overall. The previous version
+		# re-serialized the entire (growing) new_cache dict to JSON on every
+		# single item to check its size, which is O(N^2) and was freezing
+		# NVDA for tens of seconds once the cache grew large.
 		sorted_items = sorted(
 			_internal_cache.items(),
-			key=lambda x: x[1].get('last_accessed', 0)
+			key=lambda x: x[1].get('last_accessed', 0),
+			reverse=True
 		)
 		new_cache = {}
-		target_size_met = False
+		running_size = 2  # account for the surrounding {}
 		for url, info in sorted_items:
-			if not target_size_met:
-				new_cache[url] = info
 			try:
-				temp_size = len(json.dumps(new_cache).encode('utf-8'))
-				if temp_size < CACHE_TARGET_SIZE_BYTES:
-					continue
-				else:
-					target_size_met = True
-			except:
-				pass
+				entry_size = len(json.dumps({url: info}, ensure_ascii=False).encode('utf-8'))
+			except Exception:
+				entry_size = 0
+			if running_size + entry_size > CACHE_TARGET_SIZE_BYTES:
+				break
+			new_cache[url] = info
+			running_size += entry_size
 
 		_internal_cache = new_cache
 		_cache_dirty = True
@@ -147,9 +177,7 @@ def _do_save_video_cache():
 			return
 		try:
 			_enforce_cache_size_limit()
-			os.makedirs(os.path.dirname(VIDEO_CACHE_FILE), exist_ok=True)
-			with open(VIDEO_CACHE_FILE, 'w', encoding='utf-8') as f:
-				json.dump(_internal_cache if _internal_cache else {}, f, ensure_ascii=False, indent=2)
+			_atomic_write_json(VIDEO_CACHE_FILE, _internal_cache if _internal_cache else {})
 			_cache_dirty = False
 			log("Video cache saved (debounced)")
 		except Exception as e:
@@ -185,9 +213,6 @@ def get_video_from_cache(video_url):
 	entry = cache.get(video_url)
 	if entry:
 		entry['last_accessed'] = __import__('time').time()
-		with _cache_lock:
-			_cache_dirty = True
-		schedule_video_cache_save(delay=1.0)
 		return entry
 	return None
 
@@ -276,9 +301,7 @@ def load_pinned_order():
 
 def save_pinned_order(order_list):
 	try:
-		os.makedirs(os.path.dirname(PINNED_ORDER_FILE), exist_ok=True)
-		with open(PINNED_ORDER_FILE, 'w', encoding='utf-8') as f:
-			json.dump(order_list, f, indent=2)
+		_atomic_write_json(PINNED_ORDER_FILE, order_list)
 		log(f"Saved pinned order: {order_list}")
 	except Exception as e:
 		log(f"Error saving pinned order: {e}")
@@ -301,3 +324,4 @@ def get_base_channel_url(url):
 	base = url.split('?')[0]
 	base = re.sub(r'/(videos|shorts|streams|podcasts|playlists)$', '', base)
 	return base
+
