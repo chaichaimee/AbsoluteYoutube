@@ -565,20 +565,47 @@ class SearchDialog(wx.Dialog):
 		if dlg.ShowModal() == wx.ID_OK:
 			format_ = dlg.format
 			count = len(self.videos)
-			ui.message(_("Adding {count} videos to download queue...").format(count=count))
 			save_path = getINI("ResultFolder") or DownloadPath
-			for video in self.videos:
-				url = video.get('url')
-				if not url and video.get('id'):
-					url = f"https://youtu.be/{video['id']}"
-				if url:
-					if hasattr(self.plugin, 'core_functions') and 'convertToMP' in self.plugin.core_functions:
-						self.plugin.core_functions['convertToMP'](format_, save_path, False, url, video['title'])
-					else:
-						convertToMP(format_, save_path, False, url, video['title'])
-				time.sleep(0.1)
-			ui.message(_("Downloads started."))
+			self.download_all_btn.Enable(False)
+			ui.message(_("Adding {count} videos to download queue...").format(count=count))
+			threading.Thread(
+				target=self._queue_all_search_results,
+				args=(list(self.videos), format_, save_path),
+				daemon=True
+			).start()
 		dlg.Destroy()
+
+	def _queue_all_search_results(self, videosToQueue, format_, save_path):
+		# Runs on a single background thread instead of the previous
+		# per-video time.sleep(0.1) loop directly inside the button's event
+		# handler on the main thread -- the same watchdog-block/duplicate-
+		# click risk fixed for the favorite-channel dialog also applied
+		# here for a large search result set.
+		convertFunc = convertToMP
+		if hasattr(self.plugin, 'core_functions') and 'convertToMP' in self.plugin.core_functions:
+			convertFunc = self.plugin.core_functions['convertToMP']
+		queuedCount = 0
+		for video in videosToQueue:
+			url = video.get('url')
+			if not url and video.get('id'):
+				url = f"https://youtu.be/{video['id']}"
+			if not url:
+				continue
+			try:
+				convertFunc(format_, save_path, False, url, video['title'])
+				queuedCount += 1
+			except Exception as e:
+				log(f"Error queuing {url}: {e}")
+		wx.CallAfter(self._on_all_search_results_queued, queuedCount)
+
+	def _on_all_search_results_queued(self, queuedCount):
+		try:
+			self.download_all_btn.Enable(True)
+		except RuntimeError:
+			# The search dialog was closed while the batch was still being
+			# queued -- nothing left on screen to re-enable.
+			pass
+		ui.message(_("{count} downloads queued.").format(count=queuedCount))
 
 	def _on_download_folder(self, event):
 		folder = getINI("ResultFolder") or DownloadPath
@@ -677,4 +704,6 @@ class DownloadAllFormatDialog(wx.Dialog):
 		else:
 			self.format = "wav"
 		self.EndModal(wx.ID_OK)
+
+
 

@@ -1,5 +1,4 @@
 # channel_core.py
-
 import wx
 import gui
 import threading
@@ -288,22 +287,50 @@ class ChannelPlaylistDialog(wx.Dialog):
 					dlg.Destroy()
 					return
 
-			count = len(self.videos)
+			videosToQueue = [v for v in self.videos if not v.get('is_playlist', False)]
+			count = len(videosToQueue)
+			# Disable the button while the batch is being queued so a blind
+			# user who hears no immediate feedback on a large channel can't
+			# activate it again mid-run -- a second concurrent run over the
+			# same channel was the actual source of the "users competing to
+			# download" bottleneck reported against this dialog, not the
+			# per-video enqueue itself.
+			self.download_all_btn.Enable(False)
 			ui.message(_("Adding {count} videos to download queue...").format(count=count))
-			for video in self.videos:
-				if video.get('is_playlist', False):
-					continue
-				def download_one(vid):
-					try:
-						convertToMP(format_, save_path, False, vid['url'], vid['title'])
-					except Exception as e:
-						log(f"Error downloading {vid['url']}: {e}")
-
-				threading.Thread(target=download_one, args=(video,), daemon=True).start()
-				time.sleep(0.1)
-
-			ui.message(_("Downloads started."))
+			threading.Thread(
+				target=self._queue_all_videos,
+				args=(videosToQueue, format_, save_path),
+				daemon=True
+			).start()
 		dlg.Destroy()
+
+	def _queue_all_videos(self, videosToQueue, format_, save_path):
+		# Runs on a single background thread. The previous implementation
+		# spawned one OS thread per video (up to 1000+ for a large favorite
+		# channel) and put a time.sleep(0.1) directly inside the button's
+		# event handler on the main thread -- that alone froze NVDA's UI
+		# for well over a minute on a large channel, which is a watchdog
+		# risk, and the apparent "no response" during that freeze is what
+		# led users to press Download All again, sending the same channel's
+		# videos into the queue a second time in parallel. convertToMP()
+		# only validates the URL and builds the yt-dlp command before
+		# putting it on _download_queue; it does not perform the download
+		# itself, so this loop needs no artificial pacing -- actual
+		# concurrent downloads are already capped by the fixed-size worker
+		# pool started in start_worker_threads() (Download_core.py).
+		queuedCount = 0
+		for video in videosToQueue:
+			try:
+				convertToMP(format_, save_path, False, video['url'], video['title'])
+				queuedCount += 1
+			except Exception as e:
+				log(f"Error queuing {video.get('url')}: {e}")
+		wx.CallAfter(self._on_all_videos_queued, queuedCount)
+
+	def _on_all_videos_queued(self, queuedCount):
+		if not self._closing:
+			self.download_all_btn.Enable(True)
+		ui.message(_("{count} downloads queued.").format(count=queuedCount))
 
 	def _on_source(self, event):
 		if self._closing:
@@ -1645,4 +1672,6 @@ class ChannelPlaylistDialog(wx.Dialog):
 		if vid.get('is_playlist', False):
 			return (vid['url'], vid['title'])
 		return (vid['url'], vid['title'])
+
+
 

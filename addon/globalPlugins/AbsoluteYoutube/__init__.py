@@ -56,6 +56,8 @@ log = logging.getLogger("AbsoluteYoutube")
 def initConfiguration():
 	confspec = {
 		"BeepWhileConverting": "boolean(default=True)",
+		"ConvertingBeepVolume": "integer(default=50)",
+		"ProgressBeepIntervalSeconds": "integer(default=10)",
 		"ResultFolder": "string(default='')",
 		"MP3Quality": "integer(default=320)",
 		"TrimMP3Quality": "integer(default=320)",
@@ -70,11 +72,12 @@ def initConfiguration():
 		"TrimLastURL": "string(default='')",
 		"TrimLastDuration": "string(default='')",
 		"UseMultiPart": "boolean(default=True)",
-		"MultiPartConnections": "integer(default=8)",
+		"MultiPartConnections": "integer(default=16)",
 		"SayDownloadComplete": "boolean(default=True)",
 		"AutoUpdateYtDlp": "boolean(default=False)",
 		"UseCookies": "boolean(default=False)",
 		"CookiesFile": "string(default='')",
+		"AutoCookiesBrowser": "string(default='chrome')",
 		"UseCustomUserAgent": "boolean(default=False)",
 		"CustomUserAgent": "string(default='')",
 		"ThrottleRate": "integer(default=0)",
@@ -94,6 +97,7 @@ def initConfiguration():
 		"UseSponsorBlock": "boolean(default=False)",
 		"SponsorBlockCategories": "string(default='all')",
 		"ImmediateDownload": "boolean(default=True)",
+		"AnnounceDownloadProgress": "boolean(default=False)",
 	}
 	config.conf.spec[sectionName] = confspec
 
@@ -124,6 +128,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				shutdown_workers,
 				log as core_log,
 				check_yt_dlp_update,
+				get_yt_dlp_versions,
 				add_failed_download,
 				get_failed_downloads,
 				remove_failed_download,
@@ -157,6 +162,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				'start_worker_threads': start_worker_threads,
 				'shutdown_workers': shutdown_workers,
 				'check_yt_dlp_update': check_yt_dlp_update,
+				'get_yt_dlp_versions': get_yt_dlp_versions,
 				'add_failed_download': add_failed_download,
 				'get_failed_downloads': get_failed_downloads,
 				'remove_failed_download': remove_failed_download,
@@ -190,13 +196,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 		try:
 			self.core_functions['log']("Initializing AbsoluteYoutube plugin")
-			if 'initialize_folders' in self.core_functions:
-				self.core_functions['initialize_folders']()
-			ensure_channel_dir()
-			if 'resumeInterruptedDownloads' in self.core_functions:
-				wx.CallAfter(self.core_functions['resumeInterruptedDownloads'])
-			if 'start_worker_threads' in self.core_functions:
-				wx.CallAfter(self.core_functions['start_worker_threads'])
+			# Folder creation, JSON migration, and queue-state loading are
+			# real file I/O -- running them synchronously here would happen
+			# while NVDA is still constructing global plugins, which is
+			# exactly the kind of main-thread stall the watchdog watches
+			# for. core.callLater pushes the work to the next core pump
+			# cycle instead, after NVDA has finished booting.
+			core.callLater(100, self._deferredStartupInit)
 			if config.conf[sectionName]["AutoUpdateYtDlp"]:
 				threading.Thread(target=self._auto_update_yt_dlp, daemon=True).start()
 			else:
@@ -254,11 +260,24 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def _get_current_download_path(self):
 		return config.conf[sectionName]["ResultFolder"] or self.core_functions.get('DownloadPath', '')
 
+	def _deferredStartupInit(self):
+		try:
+			if 'initialize_folders' in self.core_functions:
+				self.core_functions['initialize_folders']()
+			ensure_channel_dir()
+			if 'resumeInterruptedDownloads' in self.core_functions:
+				self.core_functions['resumeInterruptedDownloads']()
+			if 'start_worker_threads' in self.core_functions:
+				self.core_functions['start_worker_threads']()
+		except Exception as e:
+			ui.message(_("Error initializing AbsoluteYoutube: {str}").format(str=str(e)))
+			self.core_functions['log'](f"Error during deferred startup init: {e}")
+
 	def _check_for_yt_dlp_update(self):
 		try:
-			if 'check_yt_dlp_update' not in self.core_functions:
+			if 'get_yt_dlp_versions' not in self.core_functions:
 				return
-			current_version, latest_version = self.core_functions['check_yt_dlp_update']()
+			current_version, latest_version = self.core_functions['get_yt_dlp_versions']()
 			if current_version and latest_version and current_version != latest_version:
 				wx.CallAfter(ui.message, _("A new version of yt-dlp is available: {latest}. Current: {current}. Please update in settings.").format(
 					latest=latest_version, current=current_version
@@ -268,9 +287,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def _auto_update_yt_dlp(self):
 		try:
-			if 'check_yt_dlp_update' not in self.core_functions:
+			if 'get_yt_dlp_versions' not in self.core_functions:
 				return
-			current_version, latest_version = self.core_functions['check_yt_dlp_update']()
+			current_version, latest_version = self.core_functions['get_yt_dlp_versions']()
 			if current_version and latest_version and current_version != latest_version:
 				self._download_and_replace_yt_dlp()
 		except Exception as e:
@@ -787,4 +806,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if 'setINI' in self.core_functions:
 			self.core_functions['setINI']("MP3Quality", new_quality)
 		ui.message(_("{quality} kbps").format(quality=new_quality))
+
+
+
+
+
+
 

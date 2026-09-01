@@ -6,21 +6,22 @@ import json
 import urllib.parse
 import threading
 import addonHandler
-import globalVars
-from .Download_core import log
+from .Download_core import log, getAddonConfigBaseDir
 
 addonHandler.initTranslation()
 
+_addonConfigBaseDir = getAddonConfigBaseDir()
+
 CHANNEL_DATA_DIR = os.path.join(
-	globalVars.appArgs.configPath,
+	_addonConfigBaseDir,
 	'ChaiChaimee', 'AbsoluteYoutube', 'Channel'
 )
 PINNED_ORDER_FILE = os.path.join(
-	globalVars.appArgs.configPath,
+	_addonConfigBaseDir,
 	'ChaiChaimee', 'AbsoluteYoutube', 'pinned_order.json'
 )
 VIDEO_CACHE_FILE = os.path.join(
-	globalVars.appArgs.configPath,
+	_addonConfigBaseDir,
 	'ChaiChaimee', 'AbsoluteYoutube', 'video_cache.json'
 )
 
@@ -324,4 +325,6 @@ def get_base_channel_url(url):
 	base = url.split('?')[0]
 	base = re.sub(r'/(videos|shorts|streams|podcasts|playlists)$', '', base)
 	return base
+
+
 
