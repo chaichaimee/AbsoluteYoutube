@@ -5,8 +5,8 @@ msgstr ""
 "POT-Creation-Date: 2026-09-05 09:36+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
-"Language-Team: English\n"
-"Language: en\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,104 +14,104 @@ msgstr ""
 
 #: Youtube_settings.py:270
 msgid "&Announce download progress"
-msgstr "&Announce download progress"
+msgstr "ダウンロードの進捗を読み上げる(&A)"
 
 #: Youtube_settings.py:229
 msgid "&Beep while converting"
-msgstr "&Beep while converting"
+msgstr "変換中にビープ音を鳴らす(&B)"
 
 #: Youtube_settings.py:76
 msgid "&Browse..."
-msgstr "&Browse..."
+msgstr "参照(&B)..."
 
 #: Youtube_settings.py:309
 msgid "&Browser for automatic cookies (used when cookies file is off):"
-msgstr "&Browser for automatic cookies (used when cookies file is off):"
+msgstr "自動クッキー用ブラウザ (クッキーファイルが無効な場合に使用)(&B):"
 
 #: channel_dialogs.py:69
 #: channel_dialogs.py:119
 #: downloadFail.py:90
 msgid "&Cancel"
-msgstr "&Cancel"
+msgstr "キャンセル(&C)"
 
 #: downloadFail.py:82
 #: download_list.py:87
 msgid "&Clear All"
-msgstr "&Clear All"
+msgstr "すべてクリア(&C)"
 
 #: channel_core.py:190
 #: playlist.py:90
 #: search.py:148
 msgid "&Close"
-msgstr "&Close"
+msgstr "閉じる(&C)"
 
 #: downloadFail.py:70
 #: download_list.py:75
 msgid "&Delete Selected"
-msgstr "&Delete Selected"
+msgstr "選択を削除(&D)"
 
 #: channel_core.py:182
 #: downloadFail.py:78
 #: download_list.py:83
 #: search.py:140
 msgid "&Download All"
-msgstr "&Download All"
+msgstr "すべてダウンロード(&D)"
 
 #: playlist.py:86
 msgid "&Download All Videos in Playlist"
-msgstr "&Download All Videos in Playlist"
+msgstr "プレイリスト内のすべての動画をダウンロード(&D)"
 
 #: downloadFail.py:74
 #: download_list.py:79
 msgid "&Download Selected"
-msgstr "&Download Selected"
+msgstr "選択項目をダウンロード(&D)"
 
 #: search.py:144
 msgid "&Download folder"
-msgstr "&Download folder"
+msgstr "ダウンロードフォルダ(&D)"
 
 #: Youtube_settings.py:346
 msgid "&Geo bypass"
-msgstr "&Geo bypass"
+msgstr "地域制限を回避(&G)"
 
 #: Youtube_settings.py:367
 msgid "&Mark as watched"
-msgstr "&Mark as watched"
+msgstr "視聴済みとしてマーク(&M)"
 
 #: Youtube_settings.py:133
 msgid "&Max concurrent downloads (1-4):"
-msgstr "&Max concurrent downloads (1-4):"
+msgstr "同時ダウンロード数の上限 (1〜4)(&M):"
 
 #: Youtube_settings.py:157
 msgid "&Number of connections:"
-msgstr "&Number of connections:"
+msgstr "接続数(&N):"
 
 #: channel_dialogs.py:67
 #: channel_dialogs.py:117
 #: downloadFail.py:86
 #: download_list.py:91
 msgid "&OK"
-msgstr "&OK"
+msgstr "OK(&O)"
 
 #: Youtube_settings.py:203
 msgid "&Retry count:"
-msgstr "&Retry count:"
+msgstr "再試行回数(&R):"
 
 #: Youtube_settings.py:265
 msgid "&Say download complete"
-msgstr "&Say download complete"
+msgstr "ダウンロード完了を読み上げる(&S)"
 
 #: Youtube_settings.py:196
 msgid "&Sleep between requests (seconds):"
-msgstr "&Sleep between requests (seconds):"
+msgstr "リクエスト間の待機時間 (秒)(&S):"
 
 #: channel_core.py:186
 msgid "&Source"
-msgstr "&Source"
+msgstr "ソース(&S)"
 
 #: Youtube_settings.py:176
 msgid "&Throttle rate (KB/s, 0=unlimited, step of 5):"
-msgstr "&Throttle rate (KB/s, 0=unlimited, step of 5):"
+msgstr "帯域制限 (KB/s、0=無制限、5刻み)(&T):"
 
 #: Download_core.py:1154
 msgid "0%"
@@ -119,11 +119,11 @@ msgstr "0%"
 
 #: channel_core.py:1347
 msgid "A channel with this name already exists. Overwrite?"
-msgstr "A channel with this name already exists. Overwrite?"
+msgstr "この名前のチャンネルはすでに存在します。上書きしますか？"
 
 #: __init__.py:282
 msgid "A new version of yt-dlp is available: {latest}. Current: {current}. Please update in settings."
-msgstr "A new version of yt-dlp is available: {latest}. Current: {current}. Please update in settings."
+msgstr "yt-dlpの新しいバージョンが利用可能です: {latest}。現在: {current}。設定からアップデートしてください。"
 
 #: Download_core.py:35
 #: Youtube_settings.py:35
@@ -133,11 +133,11 @@ msgstr "Absolute YouTube"
 
 #: Trim.py:65
 msgid "Absolute YouTube Trim"
-msgstr "Absolute YouTube Trim"
+msgstr "Absolute YouTube トリム"
 
 #: __init__.py:602
 msgid "Absolute YouTube setting"
-msgstr "Absolute YouTube setting"
+msgstr "Absolute YouTube 設定"
 
 #: menu.py:18
 msgid "Absolute Youtube"
@@ -145,110 +145,110 @@ msgstr "Absolute Youtube"
 
 #: channel_dialogs.py:42
 msgid "Add New Channel"
-msgstr "Add New Channel"
+msgstr "新しいチャンネルを追加"
 
 #: channel_core.py:113
 msgid "Add new channel"
-msgstr "Add new channel"
+msgstr "新しいチャンネルを追加"
 
 #: __init__.py:193
 msgid "Add-on initialization failed: missing pending file path function. Please restart NVDA."
-msgstr "Add-on initialization failed: missing pending file path function. Please restart NVDA."
+msgstr "アドオンの初期化に失敗しました: 保留中のファイルパス関数がありません。NVDAを再起動してください。"
 
 #: download_list.py:25
 msgid "Add-on internal error: missing components. Please restart NVDA."
-msgstr "Add-on internal error: missing components. Please restart NVDA."
+msgstr "アドオンの内部エラー: コンポーネントが見つかりません。NVDAを再起動してください。"
 
 #: download_list.py:71
 msgid "Added Time"
-msgstr "Added Time"
+msgstr "追加日時"
 
 #: __init__.py:451
 msgid "Added to download list: {format} - {title}"
-msgstr "Added to download list: {format} - {title}"
+msgstr "ダウンロードリストに追加しました: {format} - {title}"
 
 #: __init__.py:445
 msgid "Added to download queue: {format} - {title}"
-msgstr "Added to download queue: {format} - {title}"
+msgstr "ダウンロードキューに追加しました: {format} - {title}"
 
 #: download_list.py:178
 msgid "Added to download queue: {title}"
-msgstr "Added to download queue: {title}"
+msgstr "ダウンロードキューに追加しました: {title}"
 
 #: Download_core.py:1457
 msgid "Adding link as {format} to download queue"
-msgstr "Adding link as {format} to download queue"
+msgstr "リンクを {format} としてダウンロードキューに追加しています"
 
 #: channel_core.py:299
 #: search.py:570
 msgid "Adding {count} videos to download queue..."
-msgstr "Adding {count} videos to download queue..."
+msgstr "{count} 個の動画をダウンロードキューに追加しています..."
 
 #: channel_core.py:1632
 #: playlist.py:465
 #: search.py:549
 #: search.py:552
 msgid "Adding {title} to download queue."
-msgstr "Adding {title} to download queue."
+msgstr "{title} をダウンロードキューに追加しています。"
 
 #: search.py:114
 #: search.py:192
 msgid "All"
-msgstr "All"
+msgstr "すべて"
 
 #: downloadFail.py:335
 msgid "All failed downloads cleared"
-msgstr "All failed downloads cleared"
+msgstr "失敗したすべてのダウンロードをクリアしました"
 
 #: download_list.py:247
 msgid "All items added to download queue"
-msgstr "All items added to download queue"
+msgstr "すべてのアイテムをダウンロードキューに追加しました"
 
 #: download_list.py:265
 msgid "All pending downloads cleared"
-msgstr "All pending downloads cleared"
+msgstr "保留中のすべてのダウンロードをクリアしました"
 
 #: __init__.py:453
 msgid "Already in download list"
-msgstr "Already in download list"
+msgstr "すでにダウンロードリストにあります"
 
 #: __init__.py:447
 #: download_list.py:180
 msgid "Already in download queue"
-msgstr "Already in download queue"
+msgstr "すでにダウンロードキューにあります"
 
 #: Snapshot.py:125
 msgid "An unexpected error occurred."
-msgstr "An unexpected error occurred."
+msgstr "予期せぬエラーが発生しました。"
 
 #: Youtube_settings.py:276
 msgid "Anti-blocking settings"
-msgstr "Anti-blocking settings"
+msgstr "アンチブロッキング設定"
 
 #: channel_core.py:852
 msgid "Are you sure you want to delete saved data for '{name}'?"
-msgstr "Are you sure you want to delete saved data for '{name}'?"
+msgstr "'{name}' の保存されたデータを削除してもよろしいですか？"
 
 #: Youtube_settings.py:185
 msgid "At the maximum (10,000 KB/s = 10 MB/s), this limit essentially never binds -- YouTube's own per-connection serving speed and most home connections stay well under that, so the maximum behaves almost identically to leaving it at 0 (unlimited)."
-msgstr "At the maximum (10,000 KB/s = 10 MB/s), this limit essentially never binds -- YouTube's own per-connection serving speed and most home connections stay well under that, so the maximum behaves almost identically to leaving it at 0 (unlimited)."
+msgstr "最大値（10,000 KB/s = 10 MB/s）に設定した場合、YouTubeの接続ごとの配信速度や一般的な家庭の回線の多くはこれを大きく下回るため、実質的に制限がかかることはありません。したがって、最大値の設定は 0（無制限）のままにするのとほぼ同じ動作になります。"
 
 #: Trim.py:161
 #: channel_dialogs.py:158
 msgid "Audio Quality"
-msgstr "Audio Quality"
+msgstr "音質"
 
 #: Youtube_settings.py:382
 msgid "Auto-update yt-dlp on startup"
-msgstr "Auto-update yt-dlp on startup"
+msgstr "起動時にyt-dlpを自動更新する"
 
 #: Youtube_settings.py:239
 msgid "Beep &volume (%):"
-msgstr "Beep &volume (%):"
+msgstr "ビープ音の音量(&V) (%):"
 
 #: Youtube_settings.py:255
 msgid "Beep e&very (seconds):"
-msgstr "Beep e&very (seconds):"
+msgstr "ビープ音を鳴らす間隔(&E) (秒):"
 
 #: Youtube_settings.py:306
 #: Youtube_settings.py:427
@@ -257,605 +257,605 @@ msgstr "Brave"
 
 #: Youtube_settings.py:473
 msgid "Browser still running"
-msgstr "Browser still running"
+msgstr "ブラウザが実行中です"
 
 #: Trim.py:174
 #: channel_dialogs.py:169
 #: search.py:689
 msgid "Cancel"
-msgstr "Cancel"
+msgstr "キャンセル"
 
 #: downloadFail.py:195
 msgid "Cannot create download folder"
-msgstr "Cannot create download folder"
+msgstr "ダウンロードフォルダを作成できません"
 
 #: channel_core.py:286
 msgid "Cannot create download folder."
-msgstr "Cannot create download folder."
+msgstr "ダウンロードフォルダを作成できません。"
 
 #: Download_core.py:510
 msgid "Cannot create folder"
-msgstr "Cannot create folder"
+msgstr "フォルダを作成できません"
 
 #: search.py:540
 msgid "Cannot determine URL for this video."
-msgstr "Cannot determine URL for this video."
+msgstr "この動画のURLを特定できません。"
 
 #: __init__.py:409
 msgid "Cannot download from YouTube homepage. Please navigate to a video or playlist."
-msgstr "Cannot download from YouTube homepage. Please navigate to a video or playlist."
+msgstr "YouTubeのホームページからはダウンロードできません。動画またはプレイリストに移動してください。"
 
 #: __init__.py:412
 msgid "Cannot download from this YouTube page. Please select a specific video."
-msgstr "Cannot download from this YouTube page. Please select a specific video."
+msgstr "このYouTubeページからはダウンロードできません。特定の動画を選択してください。"
 
 #: search.py:617
 msgid "Cannot open download folder."
-msgstr "Cannot open download folder."
+msgstr "ダウンロードフォルダを開けません。"
 
 #: channel_core.py:342
 msgid "Cannot open source folder."
-msgstr "Cannot open source folder."
+msgstr "ソースフォルダを開けません。"
 
 #: Snapshot.py:60
 msgid "Capturing full-size snapshot..."
-msgstr "Capturing full-size snapshot..."
+msgstr "フルサイズのスナップショットを取得中..."
 
 #: channel_core.py:834
 msgid "Channel URL updated."
-msgstr "Channel URL updated."
+msgstr "チャンネルURLが更新されました。"
 
 #: channel_dialogs.py:59
 #: channel_dialogs.py:110
 msgid "Channel URL:"
-msgstr "Channel URL:"
+msgstr "チャンネル URL:"
 
 #: channel_core.py:1083
 msgid "Channel added successfully."
-msgstr "Channel added successfully."
+msgstr "チャンネルが正常に追加されました。"
 
 #: channel_core.py:864
 #: channel_core.py:867
 msgid "Channel deleted."
-msgstr "Channel deleted."
+msgstr "チャンネルが削除されました。"
 
 #: channel_dialogs.py:52
 #: channel_dialogs.py:103
 msgid "Channel name:"
-msgstr "Channel name:"
+msgstr "チャンネル名:"
 
 #: channel_core.py:754
 msgid "Channel pinned."
-msgstr "Channel pinned."
+msgstr "チャンネルがピン留めされました。"
 
 #: channel_core.py:1368
 msgid "Channel saved."
-msgstr "Channel saved."
+msgstr "チャンネルが保存されました。"
 
 #: channel_core.py:751
 msgid "Channel unpinned."
-msgstr "Channel unpinned."
+msgstr "チャンネルのピン留めが解除されました。"
 
 #: channel_core.py:821
 msgid "Channel updated."
-msgstr "Channel updated."
+msgstr "チャンネルが更新されました。"
 
 #: channel_core.py:101
 msgid "Channel:"
-msgstr "Channel:"
+msgstr "チャンネル:"
 
 #: channel_core.py:1136
 msgid "Checking for new videos..."
-msgstr "Checking for new videos..."
+msgstr "新しい動画を確認中..."
 
 #: Download_core.py:688
 msgid "Checking interrupted downloads..."
-msgstr "Checking interrupted downloads..."
+msgstr "中断されたダウンロードを確認中..."
 
 #: downloadFail.py:144
 #: download_list.py:136
 msgid "Clear all"
-msgstr "Clear all"
+msgstr "すべてクリア"
 
 #: channel_core.py:853
 msgid "Confirm Delete"
-msgstr "Confirm Delete"
+msgstr "削除の確認"
 
 #: playlist.py:475
 msgid "Confirm Download"
-msgstr "Confirm Download"
+msgstr "ダウンロードの確認"
 
 #: channel_core.py:1348
 msgid "Confirm Overwrite"
-msgstr "Confirm Overwrite"
+msgstr "上書きの確認"
 
 #: channel_core.py:126
 msgid "Content type:"
-msgstr "Content type:"
+msgstr "コンテンツの種類:"
 
 #: Download_core.py:972
 #: Download_core.py:994
 msgid "Converting"
-msgstr "Converting"
+msgstr "変換中"
 
 #: Youtube_settings.py:579
 #: Youtube_settings.py:598
 msgid "Cookie export failed: {str}"
-msgstr "Cookie export failed: {str}"
+msgstr "Cookie のエクスポートに失敗しました: {str}"
 
 #: Youtube_settings.py:589
 msgid "Cookie export timed out"
-msgstr "Cookie export timed out"
+msgstr "Cookie のエクスポートがタイムアウトしました"
 
 #: Youtube_settings.py:286
 msgid "Cookies &file:"
-msgstr "Cookies &file:"
+msgstr "Cookie ファイル(&F):"
 
 #: Youtube_settings.py:621
 msgid "Cookies exported successfully to {path}. Anti-blocking is now active."
-msgstr "Cookies exported successfully to {path}. Anti-blocking is now active."
+msgstr "Cookie が {path} に正常にエクスポートされました。アンチブロックが有効になっています。"
 
 #: channel_core.py:1572
 msgid "Copy URL"
-msgstr "Copy URL"
+msgstr "URLをコピー"
 
 #: __init__.py:584
 #: playlist.py:415
 #: search.py:503
 msgid "Copy video Shorten URL"
-msgstr "Copy video Shorten URL"
+msgstr "動画の短縮URLをコピー"
 
 #: channel_core.py:1582
 #: playlist.py:421
 msgid "Correct title now"
-msgstr "Correct title now"
+msgstr "今すぐタイトルを修正"
 
 #: channel_core.py:1640
 #: playlist.py:438
 msgid "Correcting title for selected video..."
-msgstr "Correcting title for selected video..."
+msgstr "選択した動画のタイトルを修正中..."
 
 #: playlist.py:455
 #: search.py:532
 msgid "Could not create short URL"
-msgstr "Could not create short URL"
+msgstr "短縮URLを作成できませんでした"
 
 #: __init__.py:636
 msgid "Could not create shortened URL"
-msgstr "Could not create shortened URL"
+msgstr "短縮URLを作成できませんでした"
 
 #: Youtube_settings.py:563
 msgid "Could not decrypt {browser}'s cookies (DPAPI decryption failed). This usually means yt-dlp needs updating to support this browser's newer cookie encryption. Try 'Update yt-dlp now' below, then export again, or export from Firefox instead, which does not use this encryption. If it still fails, use the manual cookies.txt method."
-msgstr "Could not decrypt {browser}'s cookies (DPAPI decryption failed). This usually means yt-dlp needs updating to support this browser's newer cookie encryption. Try 'Update yt-dlp now' below, then export again, or export from Firefox instead, which does not use this encryption. If it still fails, use the manual cookies.txt method."
+msgstr "{browser}のクッキーを復号化できませんでした（DPAPIの復号に失敗しました）。通常これは、このブラウザの新しいクッキー暗号化をサポートするためにyt-dlpをアップデートする必要があることを意味します。下の「今すぐyt-dlpをアップデート」を試してから再度エクスポートするか、代わりにこの暗号化を使用していないFirefoxからエクスポートしてください。それでも失敗する場合は、手動のcookies.txt方法を使用してください。"
 
 #: Youtube_settings.py:571
 msgid "Could not decrypt {browser}'s cookies (DPAPI decryption failed). This usually means yt-dlp needs updating. Try 'Update yt-dlp now' below, then export again. If it still fails, use the manual cookies.txt method instead."
-msgstr "Could not decrypt {browser}'s cookies (DPAPI decryption failed). This usually means yt-dlp needs updating. Try 'Update yt-dlp now' below, then export again. If it still fails, use the manual cookies.txt method instead."
+msgstr "{browser}のクッキーを復号化できませんでした（DPAPIの復号に失敗しました）。通常これは、yt-dlpをアップデートする必要があることを意味します。下の「今すぐyt-dlpをアップデート」を試してから再度エクスポートしてください。それでも失敗する場合は、代わりに手動のcookies.txt方法を使用してください。"
 
 #: Trim.py:291
 msgid "Could not open preview URL"
-msgstr "Could not open preview URL"
+msgstr "プレビューURLを開けませんでした"
 
 #: Youtube_settings.py:545
 msgid "Could not read the {browser} cookie database. Close {browser} completely and try exporting again."
-msgstr "Could not read the {browser} cookie database. Close {browser} completely and try exporting again."
+msgstr "{browser}のクッキーデータベースを読み込めませんでした。{browser}を完全に終了してから、再度エクスポートを試してください。"
 
 #: __init__.py:796
 msgid "Cycle MP3 quality settings"
-msgstr "Cycle MP3 quality settings"
+msgstr "MP3の音質設定を切り替え"
 
 #: channel_core.py:728
 #: downloadFail.py:131
 #: download_list.py:124
 msgid "Delete"
-msgstr "Delete"
+msgstr "削除"
 
 #: downloadFail.py:136
 #: download_list.py:129
 msgid "Delete selected"
-msgstr "Delete selected"
+msgstr "選択項目を削除"
 
 #: Youtube_settings.py:73
 msgid "Destination folder"
-msgstr "Destination folder"
+msgstr "保存先フォルダ"
 
 #: download_list.py:126
 msgid "Download"
-msgstr "Download"
+msgstr "ダウンロード"
 
 #: channel_dialogs.py:141
 #: search.py:671
 msgid "Download All Videos"
-msgstr "Download All Videos"
+msgstr "すべての動画をダウンロード"
 
 #: Youtube_settings.py:91
 msgid "Download Behavior"
-msgstr "Download Behavior"
+msgstr "ダウンロードの動作"
 
 #: downloadFail.py:17
 msgid "Download Fail Manager - Absolute YouTube"
-msgstr "Download Fail Manager - Absolute YouTube"
+msgstr "ダウンロード失敗マネージャー - Absolute YouTube"
 
 #: download_list.py:15
 msgid "Download List Manager - Absolute YouTube"
-msgstr "Download List Manager - Absolute YouTube"
+msgstr "ダウンロードリストマネージャー - Absolute YouTube"
 
 #: channel_core.py:1585
 #: playlist.py:424
 #: search.py:509
 msgid "Download MP3"
-msgstr "Download MP3"
+msgstr "MP3をダウンロード"
 
 #: channel_core.py:1588
 #: playlist.py:427
 #: search.py:512
 msgid "Download MP4"
-msgstr "Download MP4"
+msgstr "MP4をダウンロード"
 
 #: channel_core.py:1591
 #: playlist.py:430
 #: search.py:515
 msgid "Download WAV"
-msgstr "Download WAV"
+msgstr "WAVをダウンロード"
 
 #: downloadFail.py:142
 #: download_list.py:134
 msgid "Download all"
-msgstr "Download all"
+msgstr "すべてダウンロード"
 
 #: playlist.py:474
 msgid "Download all {count} videos in this playlist?"
-msgstr "Download all {count} videos in this playlist?"
+msgstr "このプレイリストのすべての動画 {count} 件をダウンロードしますか？"
 
 #: Download_core.py:1194
 msgid "Download complete"
-msgstr "Download complete"
+msgstr "ダウンロード完了"
 
 #: channel_core.py:1579
 msgid "Download entire playlist"
-msgstr "Download entire playlist"
+msgstr "プレイリスト全体をダウンロード"
 
 #: __init__.py:590
 msgid "Download fail manager"
-msgstr "Download fail manager"
+msgstr "失敗したダウンロードの管理"
 
 #: __init__.py:592
 msgid "Download fail manager (no failed)"
-msgstr "Download fail manager (no failed)"
+msgstr "失敗したダウンロードの管理 (失敗なし)"
 
 #: Download_core.py:1232
 msgid "Download failed"
-msgstr "Download failed"
+msgstr "ダウンロード失敗"
 
 #: Download_core.py:1256
 msgid "Download failed due to an error"
-msgstr "Download failed due to an error"
+msgstr "エラーのためダウンロードに失敗しました"
 
 #: Download_core.py:1244
 msgid "Download failed due to timeout"
-msgstr "Download failed due to timeout"
+msgstr "タイムアウトのためダウンロードに失敗しました"
 
 #: Download_core.py:1290
 msgid "Download failed to start"
-msgstr "Download failed to start"
+msgstr "ダウンロードを開始できませんでした"
 
 #: Download_core.py:1230
 msgid "Download failed: YouTube blocked this request. Try exporting cookies from your browser in the Anti-blocking settings."
-msgstr "Download failed: YouTube blocked this request. Try exporting cookies from your browser in the Anti-blocking settings."
+msgstr "ダウンロード失敗: YouTubeがこのリクエストをブロックしました。アンチブロック設定でブラウザからクッキーをエクスポートしてください。"
 
 #: downloadFail.py:133
 msgid "Download file"
-msgstr "Download file"
+msgstr "ファイルをダウンロード"
 
 #: search.py:619
 msgid "Download folder does not exist."
-msgstr "Download folder does not exist."
+msgstr "ダウンロードフォルダーが存在しません。"
 
 #: channel_core.py:1620
 #: channel_core.py:1634
 #: playlist.py:467
 #: playlist.py:483
 msgid "Download function not available."
-msgstr "Download function not available."
+msgstr "ダウンロード機能は利用できません。"
 
 #: __init__.py:506
 msgid "Download immediately"
-msgstr "Download immediately"
+msgstr "すぐにダウンロード"
 
 #: __init__.py:586
 msgid "Download list manager"
-msgstr "Download list manager"
+msgstr "ダウンロードリスト管理"
 
 #: __init__.py:460
 msgid "Download or queue video (single tap MP3, double tap MP4, triple tap WAV)"
-msgstr "Download or queue video (single tap MP3, double tap MP4, triple tap WAV)"
+msgstr "動画のダウンロードまたはキューに追加 (1回タップでMP3、2回タップでMP4、3回タップでWAV)"
 
 #: downloadFail.py:138
 #: download_list.py:131
 msgid "Download selected"
-msgstr "Download selected"
+msgstr "選択した項目をダウンロード"
 
 #: downloadFail.py:251
 msgid "Download started for: {title}"
-msgstr "Download started for: {title}"
+msgstr "ダウンロードを開始しました: {title}"
 
 #: Snapshot.py:65
 msgid "Downloading thumbnail..."
-msgstr "Downloading thumbnail..."
+msgstr "サムネイルをダウンロード中..."
 
 #: download_list.py:108
 msgid "Downloading..."
-msgstr "Downloading..."
+msgstr "ダウンロード中..."
 
 #: downloadFail.py:65
 #: search.py:30
 msgid "Duration"
-msgstr "Duration"
+msgstr "再生時間"
 
 #: channel_dialogs.py:91
 msgid "Edit Channel"
-msgstr "Edit Channel"
+msgstr "チャンネルの編集"
 
 #: channel_core.py:117
 msgid "Edit channel"
-msgstr "Edit channel"
+msgstr "チャンネルを編集"
 
 #: channel_core.py:725
 msgid "Edit channel..."
-msgstr "Edit channel..."
+msgstr "チャンネルの編集..."
 
 #: Youtube_settings.py:116
 msgid "Enable &logging"
-msgstr "Enable &logging"
+msgstr "ログ記録を有効にする(&l)"
 
 #: Youtube_settings.py:101
 msgid "Enable &playlist mode by default"
-msgstr "Enable &playlist mode by default"
+msgstr "デフォルトでプレイリストモードを有効にする(&p)"
 
 #: Trim.py:137
 msgid "End time:"
-msgstr "End time:"
+msgstr "終了時刻:"
 
 #: search.py:96
 msgid "Enter a search query."
-msgstr "Enter a search query."
+msgstr "検索キーワードを入力してください。"
 
 #: download_list.py:26
 msgid "Error"
-msgstr "Error"
+msgstr "エラー"
 
 #: Snapshot.py:40
 msgid "Error creating download folder"
-msgstr "Error creating download folder"
+msgstr "ダウンロードフォルダーの作成エラー"
 
 #: channel_core.py:870
 msgid "Error deleting channel."
-msgstr "Error deleting channel."
+msgstr "チャンネルの削除エラー"
 
 #: __init__.py:621
 msgid "Error displaying context menu"
-msgstr "Error displaying context menu"
+msgstr "コンテキストメニューの表示エラー"
 
 #: __init__.py:297
 msgid "Error during auto-update of yt-dlp: {str}"
-msgstr "Error during auto-update of yt-dlp: {str}"
+msgstr "yt-dlpの自動更新中のエラー: {str}"
 
 #: channel_core.py:1089
 msgid "Error fetching channel: {str}"
-msgstr "Error fetching channel: {str}"
+msgstr "チャンネルの取得エラー: {str}"
 
 #: __init__.py:188
 #: downloadFail.py:44
 msgid "Error importing core functions: {str}"
-msgstr "Error importing core functions: {str}"
+msgstr "コア機能のインポートエラー: {str}"
 
 #: __init__.py:742
 msgid "Error importing settings panel: {str}"
-msgstr "Error importing settings panel: {str}"
+msgstr "設定パネルのインポートエラー: {str}"
 
 #: __init__.py:211
 #: __init__.py:273
 msgid "Error initializing AbsoluteYoutube: {str}"
-msgstr "Error initializing AbsoluteYoutube: {str}"
+msgstr "AbsoluteYoutubeの初期化エラー: {str}"
 
 #: channel_core.py:904
 msgid "Error loading cache."
-msgstr "Error loading cache."
+msgstr "キャッシュの読み込みエラー。"
 
 #: channel_core.py:534
 #: channel_core.py:796
 msgid "Error loading channel data."
-msgstr "Error loading channel data."
+msgstr "チャンネルデータの読み込みエラー。"
 
 #: __init__.py:530
 msgid "Error opening channel dialog"
-msgstr "Error opening channel dialog"
+msgstr "チャンネルダイアログを開くエラー"
 
 #: __init__.py:784
 msgid "Error opening channel/playlist list: {str}"
-msgstr "Error opening channel/playlist list: {str}"
+msgstr "チャンネル/プレイリストリストを開くエラー: {str}"
 
 #: __init__.py:657
 #: __init__.py:661
 msgid "Error opening download fail dialog: {str}"
-msgstr "Error opening download fail dialog: {str}"
+msgstr "ダウンロード失敗ダイアログを開くエラー: {str}"
 
 #: __init__.py:570
 msgid "Error opening download list dialog: {str}"
-msgstr "Error opening download list dialog: {str}"
+msgstr "ダウンロードリストダイアログを開くエラー: {str}"
 
 #: __init__.py:496
 msgid "Error opening folder"
-msgstr "Error opening folder"
+msgstr "フォルダーを開くエラー"
 
 #: channel_core.py:1554
 msgid "Error opening playlist."
-msgstr "Error opening playlist."
+msgstr "プレイリストを開くエラー"
 
 #: __init__.py:727
 msgid "Error opening search dialog: {str}"
-msgstr "Error opening search dialog: {str}"
+msgstr "検索ダイアログを開くエラー: {str}"
 
 #: __init__.py:745
 msgid "Error opening settings dialog: {str}"
-msgstr "Error opening settings dialog: {str}"
+msgstr "設定ダイアログを開くエラー: {str}"
 
 #: __init__.py:708
 msgid "Error opening trim dialog: {str}"
-msgstr "Error opening trim dialog: {str}"
+msgstr "トリミングダイアログを開くエラー: {str}"
 
 #: Download_core.py:1332
 msgid "Error processing URL"
-msgstr "Error processing URL"
+msgstr "URLの処理エラー"
 
 #: downloadFail.py:256
 msgid "Error starting download"
-msgstr "Error starting download"
+msgstr "ダウンロードの開始エラー"
 
 #: channel_core.py:837
 msgid "Error updating channel URL."
-msgstr "Error updating channel URL."
+msgstr "チャンネルURLの更新エラー"
 
 #: channel_core.py:824
 msgid "Error updating channel."
-msgstr "Error updating channel."
+msgstr "チャンネルの更新エラー"
 
 #: __init__.py:575
 msgid "Error: Download list module not available"
-msgstr "Error: Download list module not available"
+msgstr "エラー: ダウンロードリストモジュールが利用できません"
 
 #: __init__.py:647
 msgid "Error: DownloadFail module not available"
-msgstr "Error: DownloadFail module not available"
+msgstr "エラー: DownloadFail モジュールが利用できません"
 
 #: Snapshot.py:89
 msgid "Error: Failed to capture snapshot."
-msgstr "Error: Failed to capture snapshot."
+msgstr "エラー: スナップショットの取得に失敗しました。"
 
 #: Snapshot.py:103
 msgid "Error: No snapshot file created."
-msgstr "Error: No snapshot file created."
+msgstr "エラー: スナップショットファイルが作成されませんでした。"
 
 #: __init__.py:732
 msgid "Error: Search module not available"
-msgstr "Error: Search module not available"
+msgstr "エラー: 検索モジュールが利用できません"
 
 #: __init__.py:688
 msgid "Error: Snapshot module not available"
-msgstr "Error: Snapshot module not available"
+msgstr "エラー: スナップショットモジュールが利用できません"
 
 #: __init__.py:697
 msgid "Error: Trim module not available"
-msgstr "Error: Trim module not available"
+msgstr "エラー: トリミングモジュールが利用できません"
 
 #: Download_core.py:1427
 #: Trim.py:324
 msgid "Error: ffmpeg.exe not found."
-msgstr "Error: ffmpeg.exe not found."
+msgstr "エラー: ffmpeg.exe が見つかりません。"
 
 #: Trim.py:321
 msgid "Error: yt-dlp.exe not found."
-msgstr "Error: yt-dlp.exe not found."
+msgstr "エラー: yt-dlp.exe が見つかりません。"
 
 #: Youtube_settings.py:449
 msgid "Export YouTube Cookies"
-msgstr "Export YouTube Cookies"
+msgstr "YouTube クッキーのエクスポート"
 
 #: Youtube_settings.py:319
 msgid "Export YouTube Cookies (Anti-Block)"
-msgstr "Export YouTube Cookies (Anti-Block)"
+msgstr "YouTube クッキーのエクスポート (アンチブロック)"
 
 #: Youtube_settings.py:480
 msgid "Exporting cookies from {browser}..."
-msgstr "Exporting cookies from {browser}..."
+msgstr "{browser} からクッキーをエクスポートしています..."
 
 #: Youtube_settings.py:738
 msgid "Failed to create the specified folder. Please select a valid folder."
-msgstr "Failed to create the specified folder. Please select a valid folder."
+msgstr "指定されたフォルダーを作成できませんでした。有効なフォルダーを選択してください。"
 
 #: __init__.py:594
 msgid "Favorite channel"
-msgstr "Favorite channel"
+msgstr "お気に入りチャンネル"
 
 #: channel_core.py:1276
 msgid "Fetched {count} items total."
-msgstr "Fetched {count} items total."
+msgstr "合計 {count} 件を取得しました。"
 
 #: __init__.py:771
 msgid "Fetching channel information..."
-msgstr "Fetching channel information..."
+msgstr "チャンネル情報を取得しています..."
 
 #: channel_core.py:1355
 msgid "Fetching channel items..."
-msgstr "Fetching channel items..."
+msgstr "チャンネル項目を取得しています..."
 
 #: channel_core.py:1136
 msgid "Fetching channel videos..."
-msgstr "Fetching channel videos..."
+msgstr "チャンネル動画を取得しています..."
 
 #: Trim.py:148
 #: channel_dialogs.py:148
 #: search.py:677
 msgid "File Format"
-msgstr "File Format"
+msgstr "ファイル形式"
 
 #: Download_core.py:1432
 msgid "File already exists. Skipping download."
-msgstr "File already exists. Skipping download."
+msgstr "ファイルはすでに存在します。ダウンロードをスキップします。"
 
 #: Download_core.py:1318
 msgid "File exists"
-msgstr "File exists"
+msgstr "ファイルが存在します"
 
 #: Youtube_settings.py:357
 msgid "Force I&Pv4"
-msgstr "Force I&Pv4"
+msgstr "IPv4を強制(&P)"
 
 #: Youtube_settings.py:362
 msgid "Force I&Pv6"
-msgstr "Force I&Pv6"
+msgstr "IPv6を強制(&P)"
 
 #: download_list.py:69
 msgid "Format"
-msgstr "Format"
+msgstr "形式"
 
 #: Download_core.py:590
 msgid ""
 "Found {count} interrupted downloads\n"
 "Resume all?\n"
-msgstr ""
-"Found {count} interrupted downloads\n"
-"Resume all?\n"
+"\n"
+"\n"
+msgstr "中断されたダウンロードが {count} 件見つかりました。\\nすべて再開しますか？"
 
 #: search.py:470
 msgid "Found {count} videos for '{query}'."
-msgstr "Found {count} videos for '{query}'."
+msgstr "「{query}」の動画が {count} 件見つかりました。"
 
 #: search.py:386
 msgid "Found {} videos..."
-msgstr "Found {} videos..."
+msgstr "{} 件の動画が見つかりました..."
 
 #: Youtube_settings.py:210
 msgid "Fragment &retries:"
-msgstr "Fragment &retries:"
+msgstr "断片と再試行(&R):"
 
 #: Snapshot.py:132
 msgid "Full-size snapshot complete"
-msgstr "Full-size snapshot complete"
+msgstr "フルサイズスナップショットが完了しました"
 
 #: Youtube_settings.py:351
 msgid "Geo bypass &country:"
-msgstr "Geo bypass &country:"
+msgstr "地域バイパスの国(&C):"
 
 #: channel_core.py:175
 #: search.py:133
 msgid "Go"
-msgstr "Go"
+msgstr "移動"
 
 #: channel_core.py:375
 #: search.py:188
 msgid "Go to page of {}:"
-msgstr "Go to page of {}:"
+msgstr "{} のページへ移動:"
 
 #: Youtube_settings.py:306
 #: Youtube_settings.py:427
@@ -875,85 +875,76 @@ msgid ""
 "4. Save as cookies.txt and select it here\n"
 "\n"
 "Using cookies helps avoid blocks because YouTube sees you as a logged-in user.\n"
-msgstr ""
-"How to get YouTube cookies:\n"
 "\n"
-"Option 1 (automatic): Use the 'Export YouTube Cookies (Anti-Block)' button below. Close your browser first, then press it and pick your browser from the list.\n"
 "\n"
-"Option 2 (manual):\n"
-"1. Install 'Get cookies.txt' extension in Chrome or Firefox\n"
-"2. Login to YouTube in your browser\n"
-"3. Click the extension icon and export cookies\n"
-"4. Save as cookies.txt and select it here\n"
-"\n"
-"Using cookies helps avoid blocks because YouTube sees you as a logged-in user.\n"
+msgstr "YouTube Cookieの取得方法:\\n\\nオプション1（自動）: 以下の「YouTube Cookieのエクスポート（ブロック回避）」ボタンを使用します。まずブラウザを閉じてからボタンを押し、リストからブラウザを選択してください。\\n\\nオプション2（手動）:\\n1. ChromeまたはFirefoxに「Get cookies.txt」拡張機能をインストールします\\n2. ブラウザでYouTubeにログインします\\n3. 拡張機能のアイコンをクリックしてCookieをエクスポートします\\n4. cookies.txtとして保存し、ここで選択します\\n\\nCookieを使用すると、YouTubeがログイン済みユーザーとして認識するため、ブロックを回避しやすくなります。"
 
 #: Youtube_settings.py:423
 msgid "How to get cookies"
-msgstr "How to get cookies"
+msgstr "Cookieの取得方法"
 
 #: Youtube_settings.py:294
 msgid "How to get cookies?"
-msgstr "How to get cookies?"
+msgstr "Cookieの取得方法"
 
 #: __init__.py:514
 msgid "Immediate download mode disabled"
-msgstr "Immediate download mode disabled"
+msgstr "即時ダウンロードモードが無効になりました"
 
 #: __init__.py:512
 msgid "Immediate download mode enabled"
-msgstr "Immediate download mode enabled"
+msgstr "即時ダウンロードモードが有効になりました"
 
 #: Trim.py:280
 msgid "Invalid URL or start time"
-msgstr "Invalid URL or start time"
+msgstr "無効なURLまたは開始時間です"
 
 #: Trim.py:301
 msgid "Invalid YouTube video URL"
-msgstr "Invalid YouTube video URL"
+msgstr "無効なYouTube動画URLです"
 
 #: __init__.py:518
 msgid "Invalid channel URL"
-msgstr "Invalid channel URL"
+msgstr "無効なチャンネルURLです"
 
 #: __init__.py:498
 msgid "Invalid download folder"
-msgstr "Invalid download folder"
+msgstr "無効なダウンロードフォルダーです"
 
 #: downloadFail.py:165
 #: download_list.py:164
 msgid "Item deleted"
-msgstr "Item deleted"
+msgstr "項目が削除されました"
 
 #: channel_core.py:1659
 #: search.py:557
 msgid "Item removed."
-msgstr "Item removed."
+msgstr "項目が削除されました。"
 
 #: channel_core.py:66
 msgid "Live"
-msgstr "Live"
+msgstr "ライブ"
 
 #: channel_core.py:898
 msgid "Loaded {count} videos from cache."
-msgstr "Loaded {count} videos from cache."
+msgstr "キャッシュから {count} 個の動画を読み込みました。"
 
 #: channel_core.py:519
 #: channel_core.py:1120
 msgid "Loaded {count} videos from {name}."
-msgstr "Loaded {count} videos from {name}."
+msgstr "{name} から {count} 個の動画を読み込みました。"
 
 #: playlist.py:226
 msgid "Loaded {count} videos."
-msgstr "Loaded {count} videos."
+msgstr "{count} 件の動画を読み込みました。"
 
 #: playlist.py:52
 msgid "Loading playlist videos..."
-msgstr "Loading playlist videos..."
+msgstr "プレイリストの動画を読み込み中..."
 
 #: Youtube_settings.py:120
 msgid "MP3 &quality (kbps):"
-msgstr "MP3 &quality (kbps):"
+msgstr "MP3 の音質 (kbps)(&Q):"
 
 #: Youtube_settings.py:306
 #: Youtube_settings.py:427
@@ -962,11 +953,11 @@ msgstr "Microsoft Edge"
 
 #: channel_core.py:720
 msgid "Move Down"
-msgstr "Move Down"
+msgstr "下に移動"
 
 #: channel_core.py:716
 msgid "Move Up"
-msgstr "Move Up"
+msgstr "上に移動"
 
 #: Youtube_settings.py:306
 #: Youtube_settings.py:427
@@ -977,107 +968,107 @@ msgstr "Mozilla Firefox"
 #: playlist.py:79
 #: search.py:124
 msgid "NextPage"
-msgstr "NextPage"
+msgstr "次のページ"
 
 #: __init__.py:405
 #: __init__.py:626
 msgid "No YouTube URL found"
-msgstr "No YouTube URL found"
+msgstr "YouTube の URL が見つかりません"
 
 #: channel_core.py:246
 msgid "No channel selected."
-msgstr "No channel selected."
+msgstr "チャンネルが選択されていません。"
 
 #: downloadFail.py:306
 #: downloadFail.py:326
 msgid "No downloads could be started"
-msgstr "No downloads could be started"
+msgstr "ダウンロードを開始できませんでした"
 
 #: __init__.py:643
 msgid "No failed downloads"
-msgstr "No failed downloads"
+msgstr "失敗したダウンロードはありません"
 
 #: downloadFail.py:330
 msgid "No failed downloads to clear"
-msgstr "No failed downloads to clear"
+msgstr "クリアする失敗したダウンロードはありません"
 
 #: downloadFail.py:310
 msgid "No failed downloads to process"
-msgstr "No failed downloads to process"
+msgstr "処理する失敗したダウンロードはありません"
 
 #: download_list.py:249
 msgid "No items added (all already in queue)"
-msgstr "No items added (all already in queue)"
+msgstr "追加されたアイテムはありません (すべてキューに存在します)"
 
 #: channel_core.py:1085
 msgid "No items found for this URL."
-msgstr "No items found for this URL."
+msgstr "この URL のアイテムは見つかりませんでした。"
 
 #: channel_core.py:1280
 msgid "No items found."
-msgstr "No items found."
+msgstr "アイテムが見つかりません。"
 
 #: downloadFail.py:266
 #: downloadFail.py:282
 #: download_list.py:191
 #: download_list.py:204
 msgid "No items selected"
-msgstr "No items selected"
+msgstr "アイテムが選択されていません"
 
 #: download_list.py:225
 msgid "No new items added (already in queue)"
-msgstr "No new items added (already in queue)"
+msgstr "新しいアイテムは追加されませんでした (すでにキューに存在します)"
 
 #: download_list.py:231
 #: download_list.py:235
 msgid "No pending downloads"
-msgstr "No pending downloads"
+msgstr "保留中のダウンロードはありません"
 
 #: download_list.py:255
 msgid "No pending downloads to clear"
-msgstr "No pending downloads to clear"
+msgstr "クリアする保留中のダウンロードはありません"
 
 #: search.py:467
 msgid "No results found for '{query}'."
-msgstr "No results found for '{query}'."
+msgstr "'{query}' の結果が見つかりませんでした。"
 
 #: search.py:468
 msgid "No results found."
-msgstr "No results found."
+msgstr "該当する結果が見つかりません。"
 
 #: channel_core.py:86
 msgid "No saved data for this channel."
-msgstr "No saved data for this channel."
+msgstr "このチャンネルの保存されたデータはありません。"
 
 #: channel_core.py:228
 msgid "No saved data for this content type yet."
-msgstr "No saved data for this content type yet."
+msgstr "このコンテンツタイプの保存されたデータはまだありません。"
 
 #: Download_core.py:1435
 msgid "No valid multimedia link found."
-msgstr "No valid multimedia link found."
+msgstr "有効なマルチメディアリンクが見つかりません。"
 
 #: channel_core.py:272
 #: playlist.py:471
 #: search.py:561
 msgid "No videos to download."
-msgstr "No videos to download."
+msgstr "ダウンロードする動画がありません。"
 
 #: __init__.py:629
 msgid "Not a YouTube URL"
-msgstr "Not a YouTube URL"
+msgstr "YouTubeのURLではありません"
 
 #: Download_core.py:1468
 msgid "Not a YouTube video or valid multimedia link"
-msgstr "Not a YouTube video or valid multimedia link"
+msgstr "YouTubeの動画または有効なマルチメディアリンクではありません"
 
 #: __init__.py:473
 msgid "Open context menu (single tap), open download folder (double tap), open search dialog (triple tap)"
-msgstr "Open context menu (single tap), open download folder (double tap), open search dialog (triple tap)"
+msgstr "コンテキストメニューを開く（シングルタップ）、ダウンロードフォルダを開く（ダブルタップ）、検索ダイアログを開く（トリプルタップ）"
 
 #: channel_core.py:1575
 msgid "Open in browser"
-msgstr "Open in browser"
+msgstr "ブラウザで開く"
 
 #: Youtube_settings.py:306
 #: Youtube_settings.py:427
@@ -1087,292 +1078,292 @@ msgstr "Opera"
 #: channel_core.py:266
 #: search.py:225
 msgid "Page number out of range (1-{})."
-msgstr "Page number out of range (1-{})."
+msgstr "ページ番号が範囲外です (1-{})。"
 
 #: channel_core.py:371
 #: playlist.py:123
 #: search.py:184
 msgid "Page {}/{}"
-msgstr "Page {}/{}"
+msgstr "ページ {}/{}"
 
 #: channel_core.py:712
 msgid "Pin"
-msgstr "Pin"
+msgstr "固定"
 
 #: playlist.py:418
 #: search.py:506
 msgid "Play on YouTube"
-msgstr "Play on YouTube"
+msgstr "YouTubeで再生"
 
 #: __init__.py:386
 msgid "Playlist"
-msgstr "Playlist"
+msgstr "プレイリスト"
 
 #: channel_core.py:1618
 #: playlist.py:481
 msgid "Playlist download started."
-msgstr "Playlist download started."
+msgstr "プレイリストのダウンロードを開始しました。"
 
 #: downloadFail.py:249
 msgid "Playlist download started: {title}"
-msgstr "Playlist download started: {title}"
+msgstr "プレイリストのダウンロードを開始しました: {title}"
 
 #: __init__.py:794
 msgid "Playlist mode disabled"
-msgstr "Playlist mode disabled"
+msgstr "プレイリストモードが無効になりました"
 
 #: __init__.py:794
 msgid "Playlist mode enabled"
-msgstr "Playlist mode enabled"
+msgstr "プレイリストモードが有効になりました"
 
 #: channel_core.py:68
 msgid "Playlists"
-msgstr "Playlists"
+msgstr "プレイリスト"
 
 #: channel_dialogs.py:84
 #: channel_dialogs.py:134
 msgid "Please enter a channel URL."
-msgstr "Please enter a channel URL."
+msgstr "チャンネルのURLを入力してください。"
 
 #: channel_dialogs.py:81
 #: channel_dialogs.py:131
 msgid "Please enter a channel name."
-msgstr "Please enter a channel name."
+msgstr "チャンネル名を入力してください。"
 
 #: search.py:230
 msgid "Please enter a search term."
-msgstr "Please enter a search term."
+msgstr "検索キーワードを入力してください。"
 
 #: channel_core.py:260
 #: search.py:219
 msgid "Please enter a valid number."
-msgstr "Please enter a valid number."
+msgstr "有効な数値を入力してください。"
 
 #: channel_core.py:67
 msgid "Podcasts"
-msgstr "Podcasts"
+msgstr "ポッドキャスト"
 
 #: Trim.py:143
 msgid "Preview start"
-msgstr "Preview start"
+msgstr "プレビュー開始"
 
 #: channel_core.py:162
 #: playlist.py:75
 #: search.py:120
 msgid "PreviousPage"
-msgstr "PreviousPage"
+msgstr "前のページ"
 
 #: Snapshot.py:93
 msgid "Processing snapshot..."
-msgstr "Processing snapshot..."
+msgstr "スナップショットを処理中..."
 
 #: Youtube_settings.py:340
 msgid "Proxy &URL:"
-msgstr "Proxy &URL:"
+msgstr "プロキシ URL(&U):"
 
 #: channel_core.py:143
 msgid "Ready"
-msgstr "Ready"
+msgstr "準備完了"
 
 #: channel_core.py:1594
 #: search.py:519
 msgid "Remove from list"
-msgstr "Remove from list"
+msgstr "リストから削除"
 
 #: Youtube_settings.py:371
 msgid "Reset to &safe settings (recommended if blocked)"
-msgstr "Reset to &safe settings (recommended if blocked)"
+msgstr "安全な設定にリセット (ブロックされた場合に推奨) (&s)"
 
 #: Youtube_settings.py:641
 msgid "Reset to safe settings. Remember to use cookies for best results."
-msgstr "Reset to safe settings. Remember to use cookies for best results."
+msgstr "安全な設定にリセットします。最良の結果を得るためにクッキーを使用することを忘れないでください。"
 
 #: Download_core.py:591
 msgid "Resume downloads"
-msgstr "Resume downloads"
+msgstr "ダウンロードを再開"
 
 #: Youtube_settings.py:111
 msgid "Resume interrupted downloads on restart"
-msgstr "Resume interrupted downloads on restart"
+msgstr "再起動時に中断されたダウンロードを再開する"
 
 #: search.py:87
 msgid "Search"
-msgstr "Search"
+msgstr "検索"
 
 #: search.py:53
 msgid "Search YouTube"
-msgstr "Search YouTube"
+msgstr "YouTubeを検索"
 
 #: search.py:84
 msgid "Search YouTube:"
-msgstr "Search YouTube:"
+msgstr "YouTubeを検索:"
 
 #: __init__.py:600
 msgid "Search Youtube"
-msgstr "Search Youtube"
+msgstr "YouTubeを検索"
 
 #: search.py:237
 msgid "Search already in progress."
-msgstr "Search already in progress."
+msgstr "検索はすでに実行中です。"
 
 #: search.py:472
 msgid "Search completed."
-msgstr "Search completed."
+msgstr "検索が完了しました。"
 
 #: search.py:481
 msgid "Search failed."
-msgstr "Search failed."
+msgstr "検索に失敗しました。"
 
 #: search.py:480
 msgid "Search failed: {error}"
-msgstr "Search failed: {error}"
+msgstr "検索に失敗しました: {error}"
 
 #: channel_core.py:136
 msgid "Search:"
-msgstr "Search:"
+msgstr "検索:"
 
 #: search.py:266
 msgid "Searching..."
-msgstr "Searching..."
+msgstr "検索中..."
 
 #: Youtube_settings.py:77
 msgid "Select a directory"
-msgstr "Select a directory"
+msgstr "ディレクトリの選択"
 
 #: Youtube_settings.py:444
 msgid ""
 "Select the browser you are currently logged into YouTube with.\n"
 "Close that browser first if possible -- yt-dlp usually cannot read its cookie database while the browser is still running.\n"
-msgstr ""
-"Select the browser you are currently logged into YouTube with.\n"
-"Close that browser first if possible -- yt-dlp usually cannot read its cookie database while the browser is still running.\n"
+"\n"
+"\n"
+msgstr "現在YouTubeにログインしているブラウザーを選択してください。\\n可能であれば、あらかじめそのブラウザーを閉じておいてください。通常、ブラウザーが起動したままだとyt-dlpはクッキーデータベースを読み込めません。"
 
 #: download_list.py:223
 msgid "Selected items added to download queue"
-msgstr "Selected items added to download queue"
+msgstr "選択したアイテムをダウンロードキューに追加しました"
 
 #: downloadFail.py:273
 #: download_list.py:195
 msgid "Selected items deleted"
-msgstr "Selected items deleted"
+msgstr "選択したアイテムを削除しました"
 
 #: __init__.py:634
 #: channel_core.py:1607
 #: playlist.py:453
 #: search.py:530
 msgid "Short URL copied to clipboard"
-msgstr "Short URL copied to clipboard"
+msgstr "短縮URLをクリップボードにコピーしました"
 
 #: channel_core.py:65
 msgid "Shorts"
-msgstr "Shorts"
+msgstr "ショート"
 
 #: channel_core.py:154
 #: playlist.py:67
 #: search.py:111
 msgid "Show items:"
-msgstr "Show items:"
+msgstr "表示アイテム:"
 
 #: Youtube_settings.py:217
 msgid "Skip &unavailable fragments"
-msgstr "Skip &unavailable fragments"
+msgstr "利用不可のフラグメントをスキップ(&u)"
 
 #: Youtube_settings.py:106
 msgid "Skip existing files"
-msgstr "Skip existing files"
+msgstr "既存のファイルをスキップ"
 
 #: __init__.py:597
 msgid "Snapshot"
-msgstr "Snapshot"
+msgstr "スナップショット"
 
 #: Snapshot.py:56
 msgid "Snapshot file already exists"
-msgstr "Snapshot file already exists"
+msgstr "スナップショットファイルはすでに存在します"
 
 #: Youtube_settings.py:224
 msgid "Sound && Status Announcements"
-msgstr "Sound && Status Announcements"
+msgstr "サウンドとステータスの通知(&S)"
 
 #: Youtube_settings.py:148
 msgid "Speed && Connections"
-msgstr "Speed && Connections"
+msgstr "速度と接続(&S)"
 
 #: Trim.py:171
 #: channel_dialogs.py:167
 #: search.py:688
 msgid "Start download"
-msgstr "Start download"
+msgstr "ダウンロードを開始"
 
 #: Youtube_settings.py:96
 msgid "Start download immediately (NVDA+Y)"
-msgstr "Start download immediately (NVDA+Y)"
+msgstr "すぐにダウンロードを開始 (NVDA+Y)"
 
 #: Trim.py:311
 msgid "Start time must be less than end time"
-msgstr "Start time must be less than end time"
+msgstr "開始時間は終了時間より前である必要があります"
 
 #: Trim.py:136
 msgid "Start time:"
-msgstr "Start time:"
+msgstr "開始時刻:"
 
 #: downloadFail.py:304
 #: downloadFail.py:324
 msgid "Started {count} download(s)"
-msgstr "Started {count} download(s)"
+msgstr "{count} 件のダウンロードを開始しました"
 
 #: __init__.py:434
 msgid "Starting download: {format} - {title}"
-msgstr "Starting download: {format} - {title}"
+msgstr "ダウンロードを開始します: {format} - {title}"
 
 #: Download_core.py:855
 msgid "Starting next download from queue: {title}"
-msgstr "Starting next download from queue: {title}"
+msgstr "キューから次のダウンロードを開始します: {title}"
 
 #: download_list.py:70
 msgid "Status"
-msgstr "Status"
+msgstr "ステータス"
 
 #: download_list.py:170
 msgid "This item is already downloading"
-msgstr "This item is already downloading"
+msgstr "このアイテムはすでにダウンロード中です"
 
 #: Download_core.py:1228
 msgid "This livestream hasn't started yet. It starts in {time}."
-msgstr "This livestream hasn't started yet. It starts in {time}."
+msgstr "このライブ配信はまだ始まっていません。{time}後に始まります。"
 
 #: Download_core.py:1226
 msgid "This video hasn't premiered yet. It starts in {time}."
-msgstr "This video hasn't premiered yet. It starts in {time}."
+msgstr "この動画はまだプレミア公開されていません。{time}後に始まります。"
 
 #: channel_dialogs.py:15
 msgid "Title"
-msgstr "Title"
+msgstr "タイトル"
 
 #: channel_core.py:1648
 #: playlist.py:443
 msgid "Title correction completed and locked."
-msgstr "Title correction completed and locked."
+msgstr "タイトルの修正が完了し、ロックされました。"
 
 #: channel_core.py:579
 msgid "Title correction completed for {count} videos."
-msgstr "Title correction completed for {count} videos."
+msgstr "{count}件の動画のタイトル修正が完了しました。"
 
 #: channel_core.py:1650
 #: playlist.py:445
 msgid "Title correction failed."
-msgstr "Title correction failed."
+msgstr "タイトルの修正に失敗しました。"
 
 #: __init__.py:789
 msgid "Toggle playlist mode"
-msgstr "Toggle playlist mode"
+msgstr "プレイリストモードの切り替え"
 
 #: __init__.py:598
 msgid "Trim setting"
-msgstr "Trim setting"
+msgstr "トリム設定"
 
 #: Trim.py:327
 msgid "Trimming and downloading {format}..."
-msgstr "Trimming and downloading {format}..."
+msgstr "{format}をトリミングしてダウンロードしています..."
 
 #: Trim.py:129
 #: downloadFail.py:66
@@ -1381,15 +1372,15 @@ msgstr "URL"
 
 #: channel_core.py:1610
 msgid "URL copied to clipboard"
-msgstr "URL copied to clipboard"
+msgstr "URLをクリップボードにコピーしました"
 
 #: Trim.py:296
 msgid "URL is required"
-msgstr "URL is required"
+msgstr "URLが必要です"
 
 #: Download_core.py:1306
 msgid "URL not found"
-msgstr "URL not found"
+msgstr "URLが見つかりません"
 
 #: Download_core.py:745
 #: __init__.py:428
@@ -1398,158 +1389,157 @@ msgstr "URL not found"
 #: downloadFail.py:106
 #: download_list.py:105
 msgid "Unknown"
-msgstr "Unknown"
+msgstr "不明"
 
 #: channel_core.py:712
 msgid "Unpin"
-msgstr "Unpin"
+msgstr "固定を解除"
 
 #: Youtube_settings.py:718
 #: __init__.py:313
 msgid "Update failed: {str}"
-msgstr "Update failed: {str}"
+msgstr "更新に失敗しました: {str}"
 
 #: Youtube_settings.py:391
 msgid "Update status: Idle"
-msgstr "Update status: Idle"
+msgstr "更新ステータス: 待機中"
 
 #: Youtube_settings.py:717
 msgid "Update status: Update failed: {str}"
-msgstr "Update status: Update failed: {str}"
+msgstr "更新ステータス: 更新に失敗しました: {str}"
 
 #: Youtube_settings.py:713
 msgid "Update status: Update successful"
-msgstr "Update status: Update successful"
+msgstr "更新ステータス: 更新成功"
 
 #: Youtube_settings.py:703
 msgid "Update status: Updating..."
-msgstr "Update status: Updating..."
+msgstr "更新ステータス: 更新中..."
 
 #: Youtube_settings.py:387
 msgid "Update yt-dlp now"
-msgstr "Update yt-dlp now"
+msgstr "今すぐ yt-dlp を更新"
 
 #: Youtube_settings.py:704
 #: __init__.py:301
 msgid "Updating yt-dlp..."
-msgstr "Updating yt-dlp..."
+msgstr "yt-dlp を更新しています..."
 
 #: Youtube_settings.py:281
 msgid "Use &cookies (recommended to avoid block)"
-msgstr "Use &cookies (recommended to avoid block)"
+msgstr "クッキーを使用する (&C) (ブロックを避けるため推奨)"
 
 #: Youtube_settings.py:324
 msgid "Use &custom user agent"
-msgstr "Use &custom user agent"
+msgstr "カスタムユーザーエージェントを使用する (&C)"
 
 #: Youtube_settings.py:335
 msgid "Use &proxy"
-msgstr "Use &proxy"
+msgstr "プロキシを使用する (&P)"
 
 #: Youtube_settings.py:153
 msgid "Use download section"
-msgstr "Use download section"
+msgstr "ダウンロードセクションを使用する"
 
 #: Youtube_settings.py:329
 msgid "User &agent:"
-msgstr "User &agent:"
+msgstr "ユーザーエージェント (&A):"
 
 #: downloadFail.py:64
 #: download_list.py:68
 #: search.py:29
 msgid "Video Title"
-msgstr "Video Title"
+msgstr "動画のタイトル"
 
 #: Trim.py:141
 msgid "Video duration: unknown; Overall period: 0 seconds"
-msgstr "Video duration: unknown; Overall period: 0 seconds"
+msgstr "動画の長さ: 不明; 全体の期間: 0秒"
 
 #: Trim.py:254
 msgid "Video duration: {duration}; Overall period: {period} seconds"
-msgstr "Video duration: {duration}; Overall period: {period} seconds"
+msgstr "動画の長さ: {duration}; 全体の期間: {period}秒"
 
 #: channel_core.py:64
 msgid "Videos"
-msgstr "Videos"
+msgstr "動画"
 
 #: playlist.py:24
 msgid "Videos in {title}"
-msgstr "Videos in {title}"
+msgstr "{title} 内の動画"
 
 #: download_list.py:108
 msgid "Waiting"
-msgstr "Waiting"
+msgstr "待機中"
 
 #: __init__.py:680
 #: __init__.py:693
 msgid "You must be on a YouTube page to use this feature"
-msgstr "You must be on a YouTube page to use this feature"
+msgstr "この機能を使用するにはYouTubeのページを開いている必要があります"
 
 #: channel_core.py:31
 msgid "Your favorite channel"
-msgstr "Your favorite channel"
+msgstr "お気に入りのチャンネル"
 
 #: Trim.py:253
 msgid "invalid"
-msgstr "invalid"
+msgstr "無効"
 
 #: Trim.py:249
 msgid "invalid (negative)"
-msgstr "invalid (negative)"
+msgstr "無効（負）"
 
 #: search.py:47
 msgid "loading..."
-msgstr "loading..."
+msgstr "読み込み中..."
 
 #: Trim.py:243
 msgid "unknown"
-msgstr "unknown"
+msgstr "不明"
 
 #: Youtube_settings.py:578
 msgid "unknown error"
-msgstr "unknown error"
+msgstr "不明なエラー"
 
 #: Youtube_settings.py:377
 msgid "yt-dlp Update"
-msgstr "yt-dlp Update"
+msgstr "yt-dlp のアップデート"
 
 #: Youtube_settings.py:714
 #: __init__.py:310
 msgid "yt-dlp updated successfully"
-msgstr "yt-dlp updated successfully"
+msgstr "yt-dlp が正常にアップデートされました"
 
 #: Download_core.py:1335
 #: Youtube_settings.py:460
 msgid "yt-dlp.exe missing"
-msgstr "yt-dlp.exe missing"
+msgstr "yt-dlp.exe がありません"
 
 #: channel_core.py:993
 #: search.py:241
 msgid "yt-dlp.exe not found."
-msgstr "yt-dlp.exe not found."
+msgstr "yt-dlp.exe が見つかりません。"
 
 #: Youtube_settings.py:466
 msgid ""
 "{browser} appears to still be running. The cookie database is usually locked while the browser is open, so the export will likely fail with a database error.\n"
 "\n"
 "Close {browser} completely, then click OK to continue anyway or Cancel to stop and close it first.\n"
-msgstr ""
-"{browser} appears to still be running. The cookie database is usually locked while the browser is open, so the export will likely fail with a database error.\n"
 "\n"
-"Close {browser} completely, then click OK to continue anyway or Cancel to stop and close it first.\n"
+"\n"
+msgstr "{browser} がまだ実行中のようです。ブラウザが開いている間はクッキーデータベースがロックされていることが多いため、エクスポートがデータベースエラーで失敗する可能性が高くなります。\\n\\n{browser} を完全に終了してから、そのまま続行する場合は [OK] を、終了してからやり直す場合は [キャンセル] をクリックしてください。"
 
 #: channel_core.py:333
 #: search.py:608
 msgid "{count} downloads queued."
-msgstr "{count} downloads queued."
+msgstr "{count}件のダウンロードをキューに追加しました。"
 
 #: channel_core.py:1278
 msgid "{count} new items updated."
-msgstr "{count} new items updated."
+msgstr "{count}件の新しい項目を更新しました。"
 
 #: Download_core.py:1002
 msgid "{mb} MB downloaded"
-msgstr "{mb} MB downloaded"
+msgstr "{mb} MB ダウンロード済み"
 
 #: Download_core.py:987
 msgid "{percent}%"
@@ -1563,4 +1553,4 @@ msgstr "{quality} kbps"
 #: playlist.py:124
 #: search.py:185
 msgid "{}, showing {} of {} videos"
-msgstr "{}, showing {} of {} videos"
+msgstr "{}, 全{3}件中{2}件目を表示中"

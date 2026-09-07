@@ -5,8 +5,8 @@ msgstr ""
 "POT-Creation-Date: 2026-09-05 09:36+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
-"Language-Team: English\n"
-"Language: en\n"
+"Language-Team: German\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,77 +14,77 @@ msgstr ""
 
 #: Youtube_settings.py:270
 msgid "&Announce download progress"
-msgstr "&Announce download progress"
+msgstr "&Download-Fortschritt ansagen"
 
 #: Youtube_settings.py:229
 msgid "&Beep while converting"
-msgstr "&Beep while converting"
+msgstr "Bei der &Umwandlung Piepton ausgeben"
 
 #: Youtube_settings.py:76
 msgid "&Browse..."
-msgstr "&Browse..."
+msgstr "&Durchsuchen..."
 
 #: Youtube_settings.py:309
 msgid "&Browser for automatic cookies (used when cookies file is off):"
-msgstr "&Browser for automatic cookies (used when cookies file is off):"
+msgstr "&Browser für automatische Cookies (wird verwendet, wenn die Cookie-Datei deaktiviert ist):"
 
 #: channel_dialogs.py:69
 #: channel_dialogs.py:119
 #: downloadFail.py:90
 msgid "&Cancel"
-msgstr "&Cancel"
+msgstr "&Abbrechen"
 
 #: downloadFail.py:82
 #: download_list.py:87
 msgid "&Clear All"
-msgstr "&Clear All"
+msgstr "&Alle löschen"
 
 #: channel_core.py:190
 #: playlist.py:90
 #: search.py:148
 msgid "&Close"
-msgstr "&Close"
+msgstr "&Schließen"
 
 #: downloadFail.py:70
 #: download_list.py:75
 msgid "&Delete Selected"
-msgstr "&Delete Selected"
+msgstr "&Ausgewählte löschen"
 
 #: channel_core.py:182
 #: downloadFail.py:78
 #: download_list.py:83
 #: search.py:140
 msgid "&Download All"
-msgstr "&Download All"
+msgstr "A&lle herunterladen"
 
 #: playlist.py:86
 msgid "&Download All Videos in Playlist"
-msgstr "&Download All Videos in Playlist"
+msgstr "Alle Videos in Play&list herunterladen"
 
 #: downloadFail.py:74
 #: download_list.py:79
 msgid "&Download Selected"
-msgstr "&Download Selected"
+msgstr "Ausge&wählte herunterladen"
 
 #: search.py:144
 msgid "&Download folder"
-msgstr "&Download folder"
+msgstr "Down&load-Ordner"
 
 #: Youtube_settings.py:346
 msgid "&Geo bypass"
-msgstr "&Geo bypass"
+msgstr "&Geoblocking umgehen"
 
 #: Youtube_settings.py:367
 msgid "&Mark as watched"
-msgstr "&Mark as watched"
+msgstr "Als g&esehen markieren"
 
 #: Youtube_settings.py:133
 msgid "&Max concurrent downloads (1-4):"
-msgstr "&Max concurrent downloads (1-4):"
+msgstr "Max. an&zahl gleichzeitiger Downloads (1-4):"
 
 #: Youtube_settings.py:157
 msgid "&Number of connections:"
-msgstr "&Number of connections:"
+msgstr "&Anzahl der Verbindungen:"
 
 #: channel_dialogs.py:67
 #: channel_dialogs.py:117
@@ -95,23 +95,23 @@ msgstr "&OK"
 
 #: Youtube_settings.py:203
 msgid "&Retry count:"
-msgstr "&Retry count:"
+msgstr "&Wiederholungsversuche:"
 
 #: Youtube_settings.py:265
 msgid "&Say download complete"
-msgstr "&Say download complete"
+msgstr "&Download-Ende ansagen"
 
 #: Youtube_settings.py:196
 msgid "&Sleep between requests (seconds):"
-msgstr "&Sleep between requests (seconds):"
+msgstr "P&ause zwischen Anfragen (Sekunden):"
 
 #: channel_core.py:186
 msgid "&Source"
-msgstr "&Source"
+msgstr "&Quelle"
 
 #: Youtube_settings.py:176
 msgid "&Throttle rate (KB/s, 0=unlimited, step of 5):"
-msgstr "&Throttle rate (KB/s, 0=unlimited, step of 5):"
+msgstr "&Drosselungsrate (KB/s, 0=unbegrenzt, Schrittweite 5):"
 
 #: Download_core.py:1154
 msgid "0%"
@@ -119,11 +119,11 @@ msgstr "0%"
 
 #: channel_core.py:1347
 msgid "A channel with this name already exists. Overwrite?"
-msgstr "A channel with this name already exists. Overwrite?"
+msgstr "Ein Kanal mit diesem Namen existiert bereits. Überschreiben?"
 
 #: __init__.py:282
 msgid "A new version of yt-dlp is available: {latest}. Current: {current}. Please update in settings."
-msgstr "A new version of yt-dlp is available: {latest}. Current: {current}. Please update in settings."
+msgstr "Eine neue Version von yt-dlp ist verfügbar: {latest}. Aktuell: {current}. Bitte in den Einstellungen aktualisieren."
 
 #: Download_core.py:35
 #: Youtube_settings.py:35
@@ -133,11 +133,11 @@ msgstr "Absolute YouTube"
 
 #: Trim.py:65
 msgid "Absolute YouTube Trim"
-msgstr "Absolute YouTube Trim"
+msgstr "Absolute YouTube zuschneiden"
 
 #: __init__.py:602
 msgid "Absolute YouTube setting"
-msgstr "Absolute YouTube setting"
+msgstr "Absolute YouTube-Einstellung"
 
 #: menu.py:18
 msgid "Absolute Youtube"
@@ -145,110 +145,110 @@ msgstr "Absolute Youtube"
 
 #: channel_dialogs.py:42
 msgid "Add New Channel"
-msgstr "Add New Channel"
+msgstr "Neuen Kanal hinzufügen"
 
 #: channel_core.py:113
 msgid "Add new channel"
-msgstr "Add new channel"
+msgstr "Neuen Kanal hinzufügen"
 
 #: __init__.py:193
 msgid "Add-on initialization failed: missing pending file path function. Please restart NVDA."
-msgstr "Add-on initialization failed: missing pending file path function. Please restart NVDA."
+msgstr "Add-On-Initialisierung fehlgeschlagen: Funktion für ausstehenden Dateipfad fehlt. Bitte NVDA neu starten."
 
 #: download_list.py:25
 msgid "Add-on internal error: missing components. Please restart NVDA."
-msgstr "Add-on internal error: missing components. Please restart NVDA."
+msgstr "Interner Add-On-Fehler: Fehlende Komponenten. Bitte NVDA neu starten."
 
 #: download_list.py:71
 msgid "Added Time"
-msgstr "Added Time"
+msgstr "Hinzugefügte Zeit"
 
 #: __init__.py:451
 msgid "Added to download list: {format} - {title}"
-msgstr "Added to download list: {format} - {title}"
+msgstr "Zur Download-Liste hinzugefügt: {format} - {title}"
 
 #: __init__.py:445
 msgid "Added to download queue: {format} - {title}"
-msgstr "Added to download queue: {format} - {title}"
+msgstr "Zur Download-Warteschlange hinzugefügt: {format} - {title}"
 
 #: download_list.py:178
 msgid "Added to download queue: {title}"
-msgstr "Added to download queue: {title}"
+msgstr "Zur Download-Warteschlange hinzugefügt: {title}"
 
 #: Download_core.py:1457
 msgid "Adding link as {format} to download queue"
-msgstr "Adding link as {format} to download queue"
+msgstr "Füge Link als {format} zur Download-Warteschlange hinzu"
 
 #: channel_core.py:299
 #: search.py:570
 msgid "Adding {count} videos to download queue..."
-msgstr "Adding {count} videos to download queue..."
+msgstr "Füge {count} Videos zur Download-Warteschlange hinzu..."
 
 #: channel_core.py:1632
 #: playlist.py:465
 #: search.py:549
 #: search.py:552
 msgid "Adding {title} to download queue."
-msgstr "Adding {title} to download queue."
+msgstr "Füge {title} zur Download-Warteschlange hinzu."
 
 #: search.py:114
 #: search.py:192
 msgid "All"
-msgstr "All"
+msgstr "Alle"
 
 #: downloadFail.py:335
 msgid "All failed downloads cleared"
-msgstr "All failed downloads cleared"
+msgstr "Alle fehlgeschlagenen Downloads gelöscht"
 
 #: download_list.py:247
 msgid "All items added to download queue"
-msgstr "All items added to download queue"
+msgstr "Alle Elemente zur Download-Warteschlange hinzugefügt"
 
 #: download_list.py:265
 msgid "All pending downloads cleared"
-msgstr "All pending downloads cleared"
+msgstr "Alle ausstehenden Downloads gelöscht"
 
 #: __init__.py:453
 msgid "Already in download list"
-msgstr "Already in download list"
+msgstr "Bereits in der Download-Liste"
 
 #: __init__.py:447
 #: download_list.py:180
 msgid "Already in download queue"
-msgstr "Already in download queue"
+msgstr "Bereits in der Download-Warteschlange"
 
 #: Snapshot.py:125
 msgid "An unexpected error occurred."
-msgstr "An unexpected error occurred."
+msgstr "Ein unerwarteter Fehler ist aufgetreten."
 
 #: Youtube_settings.py:276
 msgid "Anti-blocking settings"
-msgstr "Anti-blocking settings"
+msgstr "Anti-Blockierungs-Einstellungen"
 
 #: channel_core.py:852
 msgid "Are you sure you want to delete saved data for '{name}'?"
-msgstr "Are you sure you want to delete saved data for '{name}'?"
+msgstr "Sind Sie sicher, dass Sie die gespeicherten Daten für „{name}“ löschen möchten?"
 
 #: Youtube_settings.py:185
 msgid "At the maximum (10,000 KB/s = 10 MB/s), this limit essentially never binds -- YouTube's own per-connection serving speed and most home connections stay well under that, so the maximum behaves almost identically to leaving it at 0 (unlimited)."
-msgstr "At the maximum (10,000 KB/s = 10 MB/s), this limit essentially never binds -- YouTube's own per-connection serving speed and most home connections stay well under that, so the maximum behaves almost identically to leaving it at 0 (unlimited)."
+msgstr "Beim Maximum (10.000 KB/s = 10 MB/s) greift dieses Limit im Wesentlichen nie – die Übertragungsgeschwindigkeit von YouTube pro Verbindung und die meisten Heimanschlüsse bleiben deutlich darunter, sodass sich das Maximum nahezu identisch verhält, wie es auf 0 (unbegrenzt) zu belassen."
 
 #: Trim.py:161
 #: channel_dialogs.py:158
 msgid "Audio Quality"
-msgstr "Audio Quality"
+msgstr "Audioqualität"
 
 #: Youtube_settings.py:382
 msgid "Auto-update yt-dlp on startup"
-msgstr "Auto-update yt-dlp on startup"
+msgstr "yt-dlp beim Start automatisch aktualisieren"
 
 #: Youtube_settings.py:239
 msgid "Beep &volume (%):"
-msgstr "Beep &volume (%):"
+msgstr "Piepton-&Lautstärke (%):"
 
 #: Youtube_settings.py:255
 msgid "Beep e&very (seconds):"
-msgstr "Beep e&very (seconds):"
+msgstr "Piepton al&le (Sekunden):"
 
 #: Youtube_settings.py:306
 #: Youtube_settings.py:427
@@ -257,563 +257,563 @@ msgstr "Brave"
 
 #: Youtube_settings.py:473
 msgid "Browser still running"
-msgstr "Browser still running"
+msgstr "Browser läuft noch"
 
 #: Trim.py:174
 #: channel_dialogs.py:169
 #: search.py:689
 msgid "Cancel"
-msgstr "Cancel"
+msgstr "Abbrechen"
 
 #: downloadFail.py:195
 msgid "Cannot create download folder"
-msgstr "Cannot create download folder"
+msgstr "Download-Ordner kann nicht erstellt werden"
 
 #: channel_core.py:286
 msgid "Cannot create download folder."
-msgstr "Cannot create download folder."
+msgstr "Download-Ordner kann nicht erstellt werden."
 
 #: Download_core.py:510
 msgid "Cannot create folder"
-msgstr "Cannot create folder"
+msgstr "Ordner kann nicht erstellt werden"
 
 #: search.py:540
 msgid "Cannot determine URL for this video."
-msgstr "Cannot determine URL for this video."
+msgstr "URL für dieses Video konnte nicht ermittelt werden."
 
 #: __init__.py:409
 msgid "Cannot download from YouTube homepage. Please navigate to a video or playlist."
-msgstr "Cannot download from YouTube homepage. Please navigate to a video or playlist."
+msgstr "Download von der YouTube-Startseite nicht möglich. Bitte rufen Sie ein Video oder eine Playlist auf."
 
 #: __init__.py:412
 msgid "Cannot download from this YouTube page. Please select a specific video."
-msgstr "Cannot download from this YouTube page. Please select a specific video."
+msgstr "Download von dieser YouTube-Seite nicht möglich. Bitte wählen Sie ein bestimmtes Video aus."
 
 #: search.py:617
 msgid "Cannot open download folder."
-msgstr "Cannot open download folder."
+msgstr "Download-Ordner kann nicht geöffnet werden."
 
 #: channel_core.py:342
 msgid "Cannot open source folder."
-msgstr "Cannot open source folder."
+msgstr "Quellordner kann nicht geöffnet werden."
 
 #: Snapshot.py:60
 msgid "Capturing full-size snapshot..."
-msgstr "Capturing full-size snapshot..."
+msgstr "Erstelle Momentaufnahme in Originalgröße..."
 
 #: channel_core.py:834
 msgid "Channel URL updated."
-msgstr "Channel URL updated."
+msgstr "Kanal-URL aktualisiert."
 
 #: channel_dialogs.py:59
 #: channel_dialogs.py:110
 msgid "Channel URL:"
-msgstr "Channel URL:"
+msgstr "Kanal-URL:"
 
 #: channel_core.py:1083
 msgid "Channel added successfully."
-msgstr "Channel added successfully."
+msgstr "Kanal erfolgreich hinzugefügt."
 
 #: channel_core.py:864
 #: channel_core.py:867
 msgid "Channel deleted."
-msgstr "Channel deleted."
+msgstr "Kanal gelöscht."
 
 #: channel_dialogs.py:52
 #: channel_dialogs.py:103
 msgid "Channel name:"
-msgstr "Channel name:"
+msgstr "Kanalname:"
 
 #: channel_core.py:754
 msgid "Channel pinned."
-msgstr "Channel pinned."
+msgstr "Kanal angeheftet."
 
 #: channel_core.py:1368
 msgid "Channel saved."
-msgstr "Channel saved."
+msgstr "Kanal gespeichert."
 
 #: channel_core.py:751
 msgid "Channel unpinned."
-msgstr "Channel unpinned."
+msgstr "Kanal gelöst."
 
 #: channel_core.py:821
 msgid "Channel updated."
-msgstr "Channel updated."
+msgstr "Kanal aktualisiert."
 
 #: channel_core.py:101
 msgid "Channel:"
-msgstr "Channel:"
+msgstr "Kanal:"
 
 #: channel_core.py:1136
 msgid "Checking for new videos..."
-msgstr "Checking for new videos..."
+msgstr "Suche nach neuen Videos..."
 
 #: Download_core.py:688
 msgid "Checking interrupted downloads..."
-msgstr "Checking interrupted downloads..."
+msgstr "Unterbrochene Downloads werden überprüft..."
 
 #: downloadFail.py:144
 #: download_list.py:136
 msgid "Clear all"
-msgstr "Clear all"
+msgstr "Alle löschen"
 
 #: channel_core.py:853
 msgid "Confirm Delete"
-msgstr "Confirm Delete"
+msgstr "Löschen bestätigen"
 
 #: playlist.py:475
 msgid "Confirm Download"
-msgstr "Confirm Download"
+msgstr "Download bestätigen"
 
 #: channel_core.py:1348
 msgid "Confirm Overwrite"
-msgstr "Confirm Overwrite"
+msgstr "Überschreiben bestätigen"
 
 #: channel_core.py:126
 msgid "Content type:"
-msgstr "Content type:"
+msgstr "Inhalts-Typ:"
 
 #: Download_core.py:972
 #: Download_core.py:994
 msgid "Converting"
-msgstr "Converting"
+msgstr "Konvertiere"
 
 #: Youtube_settings.py:579
 #: Youtube_settings.py:598
 msgid "Cookie export failed: {str}"
-msgstr "Cookie export failed: {str}"
+msgstr "Cookie-Export fehlgeschlagen: {str}"
 
 #: Youtube_settings.py:589
 msgid "Cookie export timed out"
-msgstr "Cookie export timed out"
+msgstr "Zeitüberschreitung beim Cookie-Export"
 
 #: Youtube_settings.py:286
 msgid "Cookies &file:"
-msgstr "Cookies &file:"
+msgstr "Cookies &Datei:"
 
 #: Youtube_settings.py:621
 msgid "Cookies exported successfully to {path}. Anti-blocking is now active."
-msgstr "Cookies exported successfully to {path}. Anti-blocking is now active."
+msgstr "Cookies erfolgreich nach {path} exportiert. Anti-Blockierung ist jetzt aktiv."
 
 #: channel_core.py:1572
 msgid "Copy URL"
-msgstr "Copy URL"
+msgstr "URL kopieren"
 
 #: __init__.py:584
 #: playlist.py:415
 #: search.py:503
 msgid "Copy video Shorten URL"
-msgstr "Copy video Shorten URL"
+msgstr "Kurzen Video-URL kopieren"
 
 #: channel_core.py:1582
 #: playlist.py:421
 msgid "Correct title now"
-msgstr "Correct title now"
+msgstr "Titel jetzt korrigieren"
 
 #: channel_core.py:1640
 #: playlist.py:438
 msgid "Correcting title for selected video..."
-msgstr "Correcting title for selected video..."
+msgstr "Titel für ausgewähltes Video wird korrigiert..."
 
 #: playlist.py:455
 #: search.py:532
 msgid "Could not create short URL"
-msgstr "Could not create short URL"
+msgstr "Kurz-URL konnte nicht erstellt werden"
 
 #: __init__.py:636
 msgid "Could not create shortened URL"
-msgstr "Could not create shortened URL"
+msgstr "Gekürzte URL konnte nicht erstellt werden"
 
 #: Youtube_settings.py:563
 msgid "Could not decrypt {browser}'s cookies (DPAPI decryption failed). This usually means yt-dlp needs updating to support this browser's newer cookie encryption. Try 'Update yt-dlp now' below, then export again, or export from Firefox instead, which does not use this encryption. If it still fails, use the manual cookies.txt method."
-msgstr "Could not decrypt {browser}'s cookies (DPAPI decryption failed). This usually means yt-dlp needs updating to support this browser's newer cookie encryption. Try 'Update yt-dlp now' below, then export again, or export from Firefox instead, which does not use this encryption. If it still fails, use the manual cookies.txt method."
+msgstr "Cookies von {browser} konnten nicht entschlüsselt werden (DPAPI-Entschlüsselung fehlgeschlagen). Dies bedeutet gewöhnlich, dass yt-dlp aktualisiert werden muss, um die neuere Cookie-Verschlüsselung dieses Browsers zu unterstützen. Versuchen Sie unten „yt-dlp jetzt aktualisieren“ und exportieren Sie erneut, oder exportieren Sie stattdessen aus Firefox, da dieser diese Verschlüsselung nicht verwendet. Falls es weiterhin fehlschlägt, verwenden Sie die manuelle cookies.txt-Methode."
 
 #: Youtube_settings.py:571
 msgid "Could not decrypt {browser}'s cookies (DPAPI decryption failed). This usually means yt-dlp needs updating. Try 'Update yt-dlp now' below, then export again. If it still fails, use the manual cookies.txt method instead."
-msgstr "Could not decrypt {browser}'s cookies (DPAPI decryption failed). This usually means yt-dlp needs updating. Try 'Update yt-dlp now' below, then export again. If it still fails, use the manual cookies.txt method instead."
+msgstr "Cookies von {browser} konnten nicht entschlüsselt werden (DPAPI-Entschlüsselung fehlgeschlagen). Dies bedeutet gewöhnlich, dass yt-dlp aktualisiert werden muss. Versuchen Sie unten „yt-dlp jetzt aktualisieren“ und exportieren Sie erneut. Falls es weiterhin fehlschlägt, verwenden Sie stattdessen die manuelle cookies.txt-Methode."
 
 #: Trim.py:291
 msgid "Could not open preview URL"
-msgstr "Could not open preview URL"
+msgstr "Vorschauliste konnte nicht geöffnet werden"
 
 #: Youtube_settings.py:545
 msgid "Could not read the {browser} cookie database. Close {browser} completely and try exporting again."
-msgstr "Could not read the {browser} cookie database. Close {browser} completely and try exporting again."
+msgstr "Cookie-Datenbank von {browser} konnte nicht gelesen werden. Schließen Sie {browser} vollständig und versuchen Sie den Export erneut."
 
 #: __init__.py:796
 msgid "Cycle MP3 quality settings"
-msgstr "Cycle MP3 quality settings"
+msgstr "MP3-Qualitätseinstellungen durchschalten"
 
 #: channel_core.py:728
 #: downloadFail.py:131
 #: download_list.py:124
 msgid "Delete"
-msgstr "Delete"
+msgstr "Löschen"
 
 #: downloadFail.py:136
 #: download_list.py:129
 msgid "Delete selected"
-msgstr "Delete selected"
+msgstr "Ausgewählte löschen"
 
 #: Youtube_settings.py:73
 msgid "Destination folder"
-msgstr "Destination folder"
+msgstr "Zielordner"
 
 #: download_list.py:126
 msgid "Download"
-msgstr "Download"
+msgstr "Herunterladen"
 
 #: channel_dialogs.py:141
 #: search.py:671
 msgid "Download All Videos"
-msgstr "Download All Videos"
+msgstr "Alle Videos herunterladen"
 
 #: Youtube_settings.py:91
 msgid "Download Behavior"
-msgstr "Download Behavior"
+msgstr "Download-Verhalten"
 
 #: downloadFail.py:17
 msgid "Download Fail Manager - Absolute YouTube"
-msgstr "Download Fail Manager - Absolute YouTube"
+msgstr "Download-Fehler-Manager - Absolute YouTube"
 
 #: download_list.py:15
 msgid "Download List Manager - Absolute YouTube"
-msgstr "Download List Manager - Absolute YouTube"
+msgstr "Download-Listen-Manager - Absolute YouTube"
 
 #: channel_core.py:1585
 #: playlist.py:424
 #: search.py:509
 msgid "Download MP3"
-msgstr "Download MP3"
+msgstr "MP3 herunterladen"
 
 #: channel_core.py:1588
 #: playlist.py:427
 #: search.py:512
 msgid "Download MP4"
-msgstr "Download MP4"
+msgstr "MP4 herunterladen"
 
 #: channel_core.py:1591
 #: playlist.py:430
 #: search.py:515
 msgid "Download WAV"
-msgstr "Download WAV"
+msgstr "WAV herunterladen"
 
 #: downloadFail.py:142
 #: download_list.py:134
 msgid "Download all"
-msgstr "Download all"
+msgstr "Alle herunterladen"
 
 #: playlist.py:474
 msgid "Download all {count} videos in this playlist?"
-msgstr "Download all {count} videos in this playlist?"
+msgstr "Alle {count} Videos in dieser Playlist herunterladen?"
 
 #: Download_core.py:1194
 msgid "Download complete"
-msgstr "Download complete"
+msgstr "Download abgeschlossen"
 
 #: channel_core.py:1579
 msgid "Download entire playlist"
-msgstr "Download entire playlist"
+msgstr "Gesamte Playlist herunterladen"
 
 #: __init__.py:590
 msgid "Download fail manager"
-msgstr "Download fail manager"
+msgstr "Manager für fehlgeschlagene Downloads"
 
 #: __init__.py:592
 msgid "Download fail manager (no failed)"
-msgstr "Download fail manager (no failed)"
+msgstr "Manager für fehlgeschlagene Downloads (keine Fehler)"
 
 #: Download_core.py:1232
 msgid "Download failed"
-msgstr "Download failed"
+msgstr "Download fehlgeschlagen"
 
 #: Download_core.py:1256
 msgid "Download failed due to an error"
-msgstr "Download failed due to an error"
+msgstr "Download wegen eines Fehlers fehlgeschlagen"
 
 #: Download_core.py:1244
 msgid "Download failed due to timeout"
-msgstr "Download failed due to timeout"
+msgstr "Download wegen Zeitüberschreitung fehlgeschlagen"
 
 #: Download_core.py:1290
 msgid "Download failed to start"
-msgstr "Download failed to start"
+msgstr "Download konnte nicht gestartet werden"
 
 #: Download_core.py:1230
 msgid "Download failed: YouTube blocked this request. Try exporting cookies from your browser in the Anti-blocking settings."
-msgstr "Download failed: YouTube blocked this request. Try exporting cookies from your browser in the Anti-blocking settings."
+msgstr "Download fehlgeschlagen: YouTube hat diese Anfrage blockiert. Versuchen Sie, Cookies in den Anti-Blockierungs-Einstellungen aus Ihrem Browser zu exportieren."
 
 #: downloadFail.py:133
 msgid "Download file"
-msgstr "Download file"
+msgstr "Datei herunterladen"
 
 #: search.py:619
 msgid "Download folder does not exist."
-msgstr "Download folder does not exist."
+msgstr "Der Download-Ordner ist nicht vorhanden."
 
 #: channel_core.py:1620
 #: channel_core.py:1634
 #: playlist.py:467
 #: playlist.py:483
 msgid "Download function not available."
-msgstr "Download function not available."
+msgstr "Download-Funktion nicht verfügbar."
 
 #: __init__.py:506
 msgid "Download immediately"
-msgstr "Download immediately"
+msgstr "Sofort herunterladen"
 
 #: __init__.py:586
 msgid "Download list manager"
-msgstr "Download list manager"
+msgstr "Download-Listen-Manager"
 
 #: __init__.py:460
 msgid "Download or queue video (single tap MP3, double tap MP4, triple tap WAV)"
-msgstr "Download or queue video (single tap MP3, double tap MP4, triple tap WAV)"
+msgstr "Video herunterladen oder in die Warteschlange einreihen (einfach tippen MP3, doppelt tippen MP4, dreifach tippen WAV)"
 
 #: downloadFail.py:138
 #: download_list.py:131
 msgid "Download selected"
-msgstr "Download selected"
+msgstr "Ausgewählte herunterladen"
 
 #: downloadFail.py:251
 msgid "Download started for: {title}"
-msgstr "Download started for: {title}"
+msgstr "Download gestartet für: {title}"
 
 #: Snapshot.py:65
 msgid "Downloading thumbnail..."
-msgstr "Downloading thumbnail..."
+msgstr "Miniaturbild wird heruntergeladen..."
 
 #: download_list.py:108
 msgid "Downloading..."
-msgstr "Downloading..."
+msgstr "Wird heruntergeladen..."
 
 #: downloadFail.py:65
 #: search.py:30
 msgid "Duration"
-msgstr "Duration"
+msgstr "Dauer"
 
 #: channel_dialogs.py:91
 msgid "Edit Channel"
-msgstr "Edit Channel"
+msgstr "Kanal bearbeiten"
 
 #: channel_core.py:117
 msgid "Edit channel"
-msgstr "Edit channel"
+msgstr "Kanal bearbeiten"
 
 #: channel_core.py:725
 msgid "Edit channel..."
-msgstr "Edit channel..."
+msgstr "Kanal bearbeiten..."
 
 #: Youtube_settings.py:116
 msgid "Enable &logging"
-msgstr "Enable &logging"
+msgstr "&Protokollierung aktivieren"
 
 #: Youtube_settings.py:101
 msgid "Enable &playlist mode by default"
-msgstr "Enable &playlist mode by default"
+msgstr "&Wiedergabelistenmodus standardmäßig aktivieren"
 
 #: Trim.py:137
 msgid "End time:"
-msgstr "End time:"
+msgstr "Endzeit:"
 
 #: search.py:96
 msgid "Enter a search query."
-msgstr "Enter a search query."
+msgstr "Geben Sie einen Suchbegriff ein."
 
 #: download_list.py:26
 msgid "Error"
-msgstr "Error"
+msgstr "Fehler"
 
 #: Snapshot.py:40
 msgid "Error creating download folder"
-msgstr "Error creating download folder"
+msgstr "Fehler beim Erstellen des Download-Ordners"
 
 #: channel_core.py:870
 msgid "Error deleting channel."
-msgstr "Error deleting channel."
+msgstr "Fehler beim Löschen des Kanals."
 
 #: __init__.py:621
 msgid "Error displaying context menu"
-msgstr "Error displaying context menu"
+msgstr "Fehler beim Anzeigen des Kontextmenüs"
 
 #: __init__.py:297
 msgid "Error during auto-update of yt-dlp: {str}"
-msgstr "Error during auto-update of yt-dlp: {str}"
+msgstr "Fehler während der automatischen Aktualisierung von yt-dlp: {str}"
 
 #: channel_core.py:1089
 msgid "Error fetching channel: {str}"
-msgstr "Error fetching channel: {str}"
+msgstr "Fehler beim Abrufen des Kanals: {str}"
 
 #: __init__.py:188
 #: downloadFail.py:44
 msgid "Error importing core functions: {str}"
-msgstr "Error importing core functions: {str}"
+msgstr "Fehler beim Importieren der Kernfunktionen: {str}"
 
 #: __init__.py:742
 msgid "Error importing settings panel: {str}"
-msgstr "Error importing settings panel: {str}"
+msgstr "Fehler beim Importieren des Einstellungsbereichs: {str}"
 
 #: __init__.py:211
 #: __init__.py:273
 msgid "Error initializing AbsoluteYoutube: {str}"
-msgstr "Error initializing AbsoluteYoutube: {str}"
+msgstr "Fehler beim Initialisieren von AbsoluteYoutube: {str}"
 
 #: channel_core.py:904
 msgid "Error loading cache."
-msgstr "Error loading cache."
+msgstr "Fehler beim Laden des Caches."
 
 #: channel_core.py:534
 #: channel_core.py:796
 msgid "Error loading channel data."
-msgstr "Error loading channel data."
+msgstr "Fehler beim Laden der Kanaldaten."
 
 #: __init__.py:530
 msgid "Error opening channel dialog"
-msgstr "Error opening channel dialog"
+msgstr "Fehler beim Öffnen des Kanaldialogs"
 
 #: __init__.py:784
 msgid "Error opening channel/playlist list: {str}"
-msgstr "Error opening channel/playlist list: {str}"
+msgstr "Fehler beim Öffnen der Kanal-/Playgelist-Liste: {str}"
 
 #: __init__.py:657
 #: __init__.py:661
 msgid "Error opening download fail dialog: {str}"
-msgstr "Error opening download fail dialog: {str}"
+msgstr "Fehler beim Öffnen des Dialogs für fehlgeschlagene Downloads: {str}"
 
 #: __init__.py:570
 msgid "Error opening download list dialog: {str}"
-msgstr "Error opening download list dialog: {str}"
+msgstr "Fehler beim Öffnen der Download-Liste: {str}"
 
 #: __init__.py:496
 msgid "Error opening folder"
-msgstr "Error opening folder"
+msgstr "Fehler beim Öffnen des Ordners"
 
 #: channel_core.py:1554
 msgid "Error opening playlist."
-msgstr "Error opening playlist."
+msgstr "Fehler beim Öffnen der Wiedergabeliste."
 
 #: __init__.py:727
 msgid "Error opening search dialog: {str}"
-msgstr "Error opening search dialog: {str}"
+msgstr "Fehler beim Öffnen des Suchdialogs: {str}"
 
 #: __init__.py:745
 msgid "Error opening settings dialog: {str}"
-msgstr "Error opening settings dialog: {str}"
+msgstr "Fehler beim Öffnen des Einstellungsdialogs: {str}"
 
 #: __init__.py:708
 msgid "Error opening trim dialog: {str}"
-msgstr "Error opening trim dialog: {str}"
+msgstr "Fehler beim Öffnen des Bearbeitungsdialogs: {str}"
 
 #: Download_core.py:1332
 msgid "Error processing URL"
-msgstr "Error processing URL"
+msgstr "Fehler beim Verarbeiten der URL"
 
 #: downloadFail.py:256
 msgid "Error starting download"
-msgstr "Error starting download"
+msgstr "Fehler beim Starten des Downloads"
 
 #: channel_core.py:837
 msgid "Error updating channel URL."
-msgstr "Error updating channel URL."
+msgstr "Fehler beim Aktualisieren der Kanal-URL."
 
 #: channel_core.py:824
 msgid "Error updating channel."
-msgstr "Error updating channel."
+msgstr "Fehler beim Aktualisieren des Kanals."
 
 #: __init__.py:575
 msgid "Error: Download list module not available"
-msgstr "Error: Download list module not available"
+msgstr "Fehler: Download-Listen-Modul nicht verfügbar"
 
 #: __init__.py:647
 msgid "Error: DownloadFail module not available"
-msgstr "Error: DownloadFail module not available"
+msgstr "Fehler: Modul für fehlgeschlagene Downloads nicht verfügbar"
 
 #: Snapshot.py:89
 msgid "Error: Failed to capture snapshot."
-msgstr "Error: Failed to capture snapshot."
+msgstr "Fehler: Snapshot konnte nicht erstellt werden."
 
 #: Snapshot.py:103
 msgid "Error: No snapshot file created."
-msgstr "Error: No snapshot file created."
+msgstr "Fehler: Keine Snapshot-Datei erstellt."
 
 #: __init__.py:732
 msgid "Error: Search module not available"
-msgstr "Error: Search module not available"
+msgstr "Fehler: Suchmodul nicht verfügbar"
 
 #: __init__.py:688
 msgid "Error: Snapshot module not available"
-msgstr "Error: Snapshot module not available"
+msgstr "Fehler: Snapshot-Modul nicht verfügbar"
 
 #: __init__.py:697
 msgid "Error: Trim module not available"
-msgstr "Error: Trim module not available"
+msgstr "Fehler: Bearbeitungsmodul nicht verfügbar"
 
 #: Download_core.py:1427
 #: Trim.py:324
 msgid "Error: ffmpeg.exe not found."
-msgstr "Error: ffmpeg.exe not found."
+msgstr "Fehler: ffmpeg.exe nicht gefunden."
 
 #: Trim.py:321
 msgid "Error: yt-dlp.exe not found."
-msgstr "Error: yt-dlp.exe not found."
+msgstr "Fehler: yt-dlp.exe nicht gefunden."
 
 #: Youtube_settings.py:449
 msgid "Export YouTube Cookies"
-msgstr "Export YouTube Cookies"
+msgstr "YouTube-Cookies exportieren"
 
 #: Youtube_settings.py:319
 msgid "Export YouTube Cookies (Anti-Block)"
-msgstr "Export YouTube Cookies (Anti-Block)"
+msgstr "YouTube-Cookies exportieren (Anti-Blockierung)"
 
 #: Youtube_settings.py:480
 msgid "Exporting cookies from {browser}..."
-msgstr "Exporting cookies from {browser}..."
+msgstr "Cookies von {browser} werden exportiert..."
 
 #: Youtube_settings.py:738
 msgid "Failed to create the specified folder. Please select a valid folder."
-msgstr "Failed to create the specified folder. Please select a valid folder."
+msgstr "Das angegebene Verzeichnis konnte nicht erstellt werden. Bitte wählen Sie ein gültiges Verzeichnis."
 
 #: __init__.py:594
 msgid "Favorite channel"
-msgstr "Favorite channel"
+msgstr "Favoritenkanal"
 
 #: channel_core.py:1276
 msgid "Fetched {count} items total."
-msgstr "Fetched {count} items total."
+msgstr "Insgesamt {count} Einträge abgerufen."
 
 #: __init__.py:771
 msgid "Fetching channel information..."
-msgstr "Fetching channel information..."
+msgstr "Kanalinformationen werden abgerufen..."
 
 #: channel_core.py:1355
 msgid "Fetching channel items..."
-msgstr "Fetching channel items..."
+msgstr "Kanaleinträge werden abgerufen..."
 
 #: channel_core.py:1136
 msgid "Fetching channel videos..."
-msgstr "Fetching channel videos..."
+msgstr "Kanalvideos werden abgerufen..."
 
 #: Trim.py:148
 #: channel_dialogs.py:148
 #: search.py:677
 msgid "File Format"
-msgstr "File Format"
+msgstr "Dateiformat"
 
 #: Download_core.py:1432
 msgid "File already exists. Skipping download."
-msgstr "File already exists. Skipping download."
+msgstr "Datei existiert bereits. Download wird übersprungen."
 
 #: Download_core.py:1318
 msgid "File exists"
-msgstr "File exists"
+msgstr "Datei existiert bereits"
 
 #: Youtube_settings.py:357
 msgid "Force I&Pv4"
-msgstr "Force I&Pv4"
+msgstr "IPv4 erzwingen"
 
 #: Youtube_settings.py:362
 msgid "Force I&Pv6"
-msgstr "Force I&Pv6"
+msgstr "IPv6 erzwingen"
 
 #: download_list.py:69
 msgid "Format"
@@ -823,39 +823,39 @@ msgstr "Format"
 msgid ""
 "Found {count} interrupted downloads\n"
 "Resume all?\n"
-msgstr ""
-"Found {count} interrupted downloads\n"
-"Resume all?\n"
+"\n"
+"\n"
+msgstr "{count} unterbrochene Downloads gefunden.\\nAlle fortsetzen?"
 
 #: search.py:470
 msgid "Found {count} videos for '{query}'."
-msgstr "Found {count} videos for '{query}'."
+msgstr "{count} Videos für '{query}' gefunden."
 
 #: search.py:386
 msgid "Found {} videos..."
-msgstr "Found {} videos..."
+msgstr "{} Videos gefunden..."
 
 #: Youtube_settings.py:210
 msgid "Fragment &retries:"
-msgstr "Fragment &retries:"
+msgstr "Installieren Sie die Erweiterung „Get cookies.txt“ in Chrome oder Firefox"
 
 #: Snapshot.py:132
 msgid "Full-size snapshot complete"
-msgstr "Full-size snapshot complete"
+msgstr "Melden Sie sich in Ihrem Browser bei YouTube an"
 
 #: Youtube_settings.py:351
 msgid "Geo bypass &country:"
-msgstr "Geo bypass &country:"
+msgstr "Klicken Sie auf das Erweiterungssymbol und exportieren Sie die Cookies"
 
 #: channel_core.py:175
 #: search.py:133
 msgid "Go"
-msgstr "Go"
+msgstr "Speichern Sie diese als cookies.txt und wählen Sie sie hier aus"
 
 #: channel_core.py:375
 #: search.py:188
 msgid "Go to page of {}:"
-msgstr "Go to page of {}:"
+msgstr "Gehe zu Seite von {}:"
 
 #: Youtube_settings.py:306
 #: Youtube_settings.py:427
@@ -875,60 +875,51 @@ msgid ""
 "4. Save as cookies.txt and select it here\n"
 "\n"
 "Using cookies helps avoid blocks because YouTube sees you as a logged-in user.\n"
-msgstr ""
-"How to get YouTube cookies:\n"
 "\n"
-"Option 1 (automatic): Use the 'Export YouTube Cookies (Anti-Block)' button below. Close your browser first, then press it and pick your browser from the list.\n"
 "\n"
-"Option 2 (manual):\n"
-"1. Install 'Get cookies.txt' extension in Chrome or Firefox\n"
-"2. Login to YouTube in your browser\n"
-"3. Click the extension icon and export cookies\n"
-"4. Save as cookies.txt and select it here\n"
-"\n"
-"Using cookies helps avoid blocks because YouTube sees you as a logged-in user.\n"
+msgstr "So erhalten Sie YouTube-Cookies:"
 
 #: Youtube_settings.py:423
 msgid "How to get cookies"
-msgstr "How to get cookies"
+msgstr "So erhalten Sie Cookies"
 
 #: Youtube_settings.py:294
 msgid "How to get cookies?"
-msgstr "How to get cookies?"
+msgstr "Wie erhalte ich Cookies?"
 
 #: __init__.py:514
 msgid "Immediate download mode disabled"
-msgstr "Immediate download mode disabled"
+msgstr "Sofortiger Download-Modus deaktiviert"
 
 #: __init__.py:512
 msgid "Immediate download mode enabled"
-msgstr "Immediate download mode enabled"
+msgstr "Sofortiger Download-Modus aktiviert"
 
 #: Trim.py:280
 msgid "Invalid URL or start time"
-msgstr "Invalid URL or start time"
+msgstr "Ungültige URL oder Startzeit"
 
 #: Trim.py:301
 msgid "Invalid YouTube video URL"
-msgstr "Invalid YouTube video URL"
+msgstr "Ungültige YouTube-Video-URL"
 
 #: __init__.py:518
 msgid "Invalid channel URL"
-msgstr "Invalid channel URL"
+msgstr "Ungültige Kanal-URL"
 
 #: __init__.py:498
 msgid "Invalid download folder"
-msgstr "Invalid download folder"
+msgstr "Ungültiger Download-Ordner"
 
 #: downloadFail.py:165
 #: download_list.py:164
 msgid "Item deleted"
-msgstr "Item deleted"
+msgstr "Element gelöscht"
 
 #: channel_core.py:1659
 #: search.py:557
 msgid "Item removed."
-msgstr "Item removed."
+msgstr "Element entfernt."
 
 #: channel_core.py:66
 msgid "Live"
@@ -936,24 +927,24 @@ msgstr "Live"
 
 #: channel_core.py:898
 msgid "Loaded {count} videos from cache."
-msgstr "Loaded {count} videos from cache."
+msgstr "{count} Videos aus Cache geladen."
 
 #: channel_core.py:519
 #: channel_core.py:1120
 msgid "Loaded {count} videos from {name}."
-msgstr "Loaded {count} videos from {name}."
+msgstr "{count} Videos von {name} geladen."
 
 #: playlist.py:226
 msgid "Loaded {count} videos."
-msgstr "Loaded {count} videos."
+msgstr "{count} Videos geladen."
 
 #: playlist.py:52
 msgid "Loading playlist videos..."
-msgstr "Loading playlist videos..."
+msgstr "Playlist-Videos werden geladen..."
 
 #: Youtube_settings.py:120
 msgid "MP3 &quality (kbps):"
-msgstr "MP3 &quality (kbps):"
+msgstr "MP3-&Qualität (kbps):"
 
 #: Youtube_settings.py:306
 #: Youtube_settings.py:427
@@ -962,11 +953,11 @@ msgstr "Microsoft Edge"
 
 #: channel_core.py:720
 msgid "Move Down"
-msgstr "Move Down"
+msgstr "Nach unten verschieben"
 
 #: channel_core.py:716
 msgid "Move Up"
-msgstr "Move Up"
+msgstr "Nach oben verschieben"
 
 #: Youtube_settings.py:306
 #: Youtube_settings.py:427
@@ -977,107 +968,107 @@ msgstr "Mozilla Firefox"
 #: playlist.py:79
 #: search.py:124
 msgid "NextPage"
-msgstr "NextPage"
+msgstr "Nächste Seite"
 
 #: __init__.py:405
 #: __init__.py:626
 msgid "No YouTube URL found"
-msgstr "No YouTube URL found"
+msgstr "Keine YouTube-URL gefunden"
 
 #: channel_core.py:246
 msgid "No channel selected."
-msgstr "No channel selected."
+msgstr "Kein Kanal ausgewählt."
 
 #: downloadFail.py:306
 #: downloadFail.py:326
 msgid "No downloads could be started"
-msgstr "No downloads could be started"
+msgstr "Es konnten keine Downloads gestartet werden"
 
 #: __init__.py:643
 msgid "No failed downloads"
-msgstr "No failed downloads"
+msgstr "Keine fehlgeschlagenen Downloads"
 
 #: downloadFail.py:330
 msgid "No failed downloads to clear"
-msgstr "No failed downloads to clear"
+msgstr "Keine fehlgeschlagenen Downloads zum Löschen"
 
 #: downloadFail.py:310
 msgid "No failed downloads to process"
-msgstr "No failed downloads to process"
+msgstr "Keine fehlgeschlagenen Downloads zu verarbeiten"
 
 #: download_list.py:249
 msgid "No items added (all already in queue)"
-msgstr "No items added (all already in queue)"
+msgstr "Keine Elemente hinzugefügt (alle bereits in der Warteschlange)"
 
 #: channel_core.py:1085
 msgid "No items found for this URL."
-msgstr "No items found for this URL."
+msgstr "Keine Elemente für diese URL gefunden."
 
 #: channel_core.py:1280
 msgid "No items found."
-msgstr "No items found."
+msgstr "Keine Elemente gefunden."
 
 #: downloadFail.py:266
 #: downloadFail.py:282
 #: download_list.py:191
 #: download_list.py:204
 msgid "No items selected"
-msgstr "No items selected"
+msgstr "Keine Elemente ausgewählt"
 
 #: download_list.py:225
 msgid "No new items added (already in queue)"
-msgstr "No new items added (already in queue)"
+msgstr "Keine neuen Elemente hinzugefügt (bereits in der Warteschlange)"
 
 #: download_list.py:231
 #: download_list.py:235
 msgid "No pending downloads"
-msgstr "No pending downloads"
+msgstr "Keine ausstehenden Downloads"
 
 #: download_list.py:255
 msgid "No pending downloads to clear"
-msgstr "No pending downloads to clear"
+msgstr "Keine ausstehenden Downloads zum Löschen"
 
 #: search.py:467
 msgid "No results found for '{query}'."
-msgstr "No results found for '{query}'."
+msgstr "Keine Ergebnisse gefunden für „{query}“."
 
 #: search.py:468
 msgid "No results found."
-msgstr "No results found."
+msgstr "Keine Ergebnisse gefunden."
 
 #: channel_core.py:86
 msgid "No saved data for this channel."
-msgstr "No saved data for this channel."
+msgstr "Keine gespeicherten Daten für diesen Kanal."
 
 #: channel_core.py:228
 msgid "No saved data for this content type yet."
-msgstr "No saved data for this content type yet."
+msgstr "Bislang keine gespeicherten Daten für diesen Inhaltstyp."
 
 #: Download_core.py:1435
 msgid "No valid multimedia link found."
-msgstr "No valid multimedia link found."
+msgstr "Kein gültiger Multimedia-Link gefunden."
 
 #: channel_core.py:272
 #: playlist.py:471
 #: search.py:561
 msgid "No videos to download."
-msgstr "No videos to download."
+msgstr "Keine Videos zum Herunterladen."
 
 #: __init__.py:629
 msgid "Not a YouTube URL"
-msgstr "Not a YouTube URL"
+msgstr "Keine YouTube-URL"
 
 #: Download_core.py:1468
 msgid "Not a YouTube video or valid multimedia link"
-msgstr "Not a YouTube video or valid multimedia link"
+msgstr "Weder ein YouTube-Video noch ein gültiger Multimedia-Link"
 
 #: __init__.py:473
 msgid "Open context menu (single tap), open download folder (double tap), open search dialog (triple tap)"
-msgstr "Open context menu (single tap), open download folder (double tap), open search dialog (triple tap)"
+msgstr "Kontextmenü öffnen (einfaches Tippen), Download-Ordner öffnen (doppeltes Tippen), Suchdialog öffnen (dreifaches Tippen)"
 
 #: channel_core.py:1575
 msgid "Open in browser"
-msgstr "Open in browser"
+msgstr "Im Browser öffnen"
 
 #: Youtube_settings.py:306
 #: Youtube_settings.py:427
@@ -1087,66 +1078,66 @@ msgstr "Opera"
 #: channel_core.py:266
 #: search.py:225
 msgid "Page number out of range (1-{})."
-msgstr "Page number out of range (1-{})."
+msgstr "Seitenzahl außerhalb des gültigen Bereichs (1-{})."
 
 #: channel_core.py:371
 #: playlist.py:123
 #: search.py:184
 msgid "Page {}/{}"
-msgstr "Page {}/{}"
+msgstr "Seite {}/{}"
 
 #: channel_core.py:712
 msgid "Pin"
-msgstr "Pin"
+msgstr "Fixieren"
 
 #: playlist.py:418
 #: search.py:506
 msgid "Play on YouTube"
-msgstr "Play on YouTube"
+msgstr "Auf YouTube wiedergeben"
 
 #: __init__.py:386
 msgid "Playlist"
-msgstr "Playlist"
+msgstr "Wiedergabeliste"
 
 #: channel_core.py:1618
 #: playlist.py:481
 msgid "Playlist download started."
-msgstr "Playlist download started."
+msgstr "Download der Wiedergabeliste gestartet."
 
 #: downloadFail.py:249
 msgid "Playlist download started: {title}"
-msgstr "Playlist download started: {title}"
+msgstr "Download der Wiedergabeliste gestartet: {title}"
 
 #: __init__.py:794
 msgid "Playlist mode disabled"
-msgstr "Playlist mode disabled"
+msgstr "Wiedergabelistenmodus deaktiviert"
 
 #: __init__.py:794
 msgid "Playlist mode enabled"
-msgstr "Playlist mode enabled"
+msgstr "Wiedergabelistenmodus aktiviert"
 
 #: channel_core.py:68
 msgid "Playlists"
-msgstr "Playlists"
+msgstr "Wiedergabelisten"
 
 #: channel_dialogs.py:84
 #: channel_dialogs.py:134
 msgid "Please enter a channel URL."
-msgstr "Please enter a channel URL."
+msgstr "Bitte geben Sie eine Kanal-URL ein."
 
 #: channel_dialogs.py:81
 #: channel_dialogs.py:131
 msgid "Please enter a channel name."
-msgstr "Please enter a channel name."
+msgstr "Bitte geben Sie einen Kanalnamen ein."
 
 #: search.py:230
 msgid "Please enter a search term."
-msgstr "Please enter a search term."
+msgstr "Bitte geben Sie einen Suchbegriff ein."
 
 #: channel_core.py:260
 #: search.py:219
 msgid "Please enter a valid number."
-msgstr "Please enter a valid number."
+msgstr "Bitte geben Sie eine gültige Zahl ein."
 
 #: channel_core.py:67
 msgid "Podcasts"
@@ -1154,114 +1145,114 @@ msgstr "Podcasts"
 
 #: Trim.py:143
 msgid "Preview start"
-msgstr "Preview start"
+msgstr "Vorschau starten"
 
 #: channel_core.py:162
 #: playlist.py:75
 #: search.py:120
 msgid "PreviousPage"
-msgstr "PreviousPage"
+msgstr "Vorherige Seite"
 
 #: Snapshot.py:93
 msgid "Processing snapshot..."
-msgstr "Processing snapshot..."
+msgstr "Snapshot wird verarbeitet..."
 
 #: Youtube_settings.py:340
 msgid "Proxy &URL:"
-msgstr "Proxy &URL:"
+msgstr "&Proxy-URL:"
 
 #: channel_core.py:143
 msgid "Ready"
-msgstr "Ready"
+msgstr "Bereit"
 
 #: channel_core.py:1594
 #: search.py:519
 msgid "Remove from list"
-msgstr "Remove from list"
+msgstr "Aus Liste entfernen"
 
 #: Youtube_settings.py:371
 msgid "Reset to &safe settings (recommended if blocked)"
-msgstr "Reset to &safe settings (recommended if blocked)"
+msgstr "Auf si&chere Einstellungen zurücksetzen (empfohlen bei Blockierung)"
 
 #: Youtube_settings.py:641
 msgid "Reset to safe settings. Remember to use cookies for best results."
-msgstr "Reset to safe settings. Remember to use cookies for best results."
+msgstr "Auf sichere Einstellungen zurücksetzen. Denken Sie daran, Cookies für beste Ergebnisse zu verwenden."
 
 #: Download_core.py:591
 msgid "Resume downloads"
-msgstr "Resume downloads"
+msgstr "Downloads fortsetzen"
 
 #: Youtube_settings.py:111
 msgid "Resume interrupted downloads on restart"
-msgstr "Resume interrupted downloads on restart"
+msgstr "Unterbrochene Downloads beim Neustart fortsetzen"
 
 #: search.py:87
 msgid "Search"
-msgstr "Search"
+msgstr "Suchen"
 
 #: search.py:53
 msgid "Search YouTube"
-msgstr "Search YouTube"
+msgstr "YouTube durchsuchen"
 
 #: search.py:84
 msgid "Search YouTube:"
-msgstr "Search YouTube:"
+msgstr "YouTube durchsuchen:"
 
 #: __init__.py:600
 msgid "Search Youtube"
-msgstr "Search Youtube"
+msgstr "Youtube durchsuchen"
 
 #: search.py:237
 msgid "Search already in progress."
-msgstr "Search already in progress."
+msgstr "Suche läuft bereits."
 
 #: search.py:472
 msgid "Search completed."
-msgstr "Search completed."
+msgstr "Suche abgeschlossen."
 
 #: search.py:481
 msgid "Search failed."
-msgstr "Search failed."
+msgstr "Suche fehlgeschlagen."
 
 #: search.py:480
 msgid "Search failed: {error}"
-msgstr "Search failed: {error}"
+msgstr "Suche fehlgeschlagen: {error}"
 
 #: channel_core.py:136
 msgid "Search:"
-msgstr "Search:"
+msgstr "Suchen:"
 
 #: search.py:266
 msgid "Searching..."
-msgstr "Searching..."
+msgstr "Suche läuft..."
 
 #: Youtube_settings.py:77
 msgid "Select a directory"
-msgstr "Select a directory"
+msgstr "Verzeichnis auswählen"
 
 #: Youtube_settings.py:444
 msgid ""
 "Select the browser you are currently logged into YouTube with.\n"
 "Close that browser first if possible -- yt-dlp usually cannot read its cookie database while the browser is still running.\n"
-msgstr ""
-"Select the browser you are currently logged into YouTube with.\n"
-"Close that browser first if possible -- yt-dlp usually cannot read its cookie database while the browser is still running.\n"
+"\n"
+"\n"
+msgstr "Wählen Sie den Browser aus, bei dem Sie aktuell bei YouTube angemeldet sind.\\nSchließen Sie diesen Browser nach Möglichkeit zuerst – yt-dlp kann dessen Cookie-Datenbank normalerweise nicht lesen, während der Browser noch ausgeführt wird."
 
 #: download_list.py:223
 msgid "Selected items added to download queue"
-msgstr "Selected items added to download queue"
+msgstr "Ausgewählte Elemente zur Warteschlange hinzugefügt"
 
 #: downloadFail.py:273
 #: download_list.py:195
 msgid "Selected items deleted"
-msgstr "Selected items deleted"
+msgstr "Ausgewählte Elemente gelöscht"
 
 #: __init__.py:634
 #: channel_core.py:1607
 #: playlist.py:453
 #: search.py:530
 msgid "Short URL copied to clipboard"
-msgstr "Short URL copied to clipboard"
+msgstr "Kurze URL in die Zwischenablage kopiert"
 
 #: channel_core.py:65
 msgid "Shorts"
@@ -1271,62 +1262,62 @@ msgstr "Shorts"
 #: playlist.py:67
 #: search.py:111
 msgid "Show items:"
-msgstr "Show items:"
+msgstr "Elemente anzeigen:"
 
 #: Youtube_settings.py:217
 msgid "Skip &unavailable fragments"
-msgstr "Skip &unavailable fragments"
+msgstr "Nicht verfügbare Fragmente überspringen"
 
 #: Youtube_settings.py:106
 msgid "Skip existing files"
-msgstr "Skip existing files"
+msgstr "Vorhandene Dateien überspringen"
 
 #: __init__.py:597
 msgid "Snapshot"
-msgstr "Snapshot"
+msgstr "Schnappschuss"
 
 #: Snapshot.py:56
 msgid "Snapshot file already exists"
-msgstr "Snapshot file already exists"
+msgstr "Schnappschuss-Datei existiert bereits"
 
 #: Youtube_settings.py:224
 msgid "Sound && Status Announcements"
-msgstr "Sound && Status Announcements"
+msgstr "Ton- && Statusansagen"
 
 #: Youtube_settings.py:148
 msgid "Speed && Connections"
-msgstr "Speed && Connections"
+msgstr "Geschwindigkeit && Verbindungen"
 
 #: Trim.py:171
 #: channel_dialogs.py:167
 #: search.py:688
 msgid "Start download"
-msgstr "Start download"
+msgstr "Download starten"
 
 #: Youtube_settings.py:96
 msgid "Start download immediately (NVDA+Y)"
-msgstr "Start download immediately (NVDA+Y)"
+msgstr "Download sofort starten (NVDA+Y)"
 
 #: Trim.py:311
 msgid "Start time must be less than end time"
-msgstr "Start time must be less than end time"
+msgstr "Die Startzeit muss vor der Endzeit liegen"
 
 #: Trim.py:136
 msgid "Start time:"
-msgstr "Start time:"
+msgstr "Startzeit:"
 
 #: downloadFail.py:304
 #: downloadFail.py:324
 msgid "Started {count} download(s)"
-msgstr "Started {count} download(s)"
+msgstr "{count} Download(s) gestartet"
 
 #: __init__.py:434
 msgid "Starting download: {format} - {title}"
-msgstr "Starting download: {format} - {title}"
+msgstr "Download wird gestartet: {format} - {title}"
 
 #: Download_core.py:855
 msgid "Starting next download from queue: {title}"
-msgstr "Starting next download from queue: {title}"
+msgstr "Nächster Download aus der Warteschlange wird gestartet: {title}"
 
 #: download_list.py:70
 msgid "Status"
@@ -1334,45 +1325,45 @@ msgstr "Status"
 
 #: download_list.py:170
 msgid "This item is already downloading"
-msgstr "This item is already downloading"
+msgstr "Dieses Element wird bereits heruntergeladen"
 
 #: Download_core.py:1228
 msgid "This livestream hasn't started yet. It starts in {time}."
-msgstr "This livestream hasn't started yet. It starts in {time}."
+msgstr "Dieser Livestream hat noch nicht begonnen. Er beginnt in {time}."
 
 #: Download_core.py:1226
 msgid "This video hasn't premiered yet. It starts in {time}."
-msgstr "This video hasn't premiered yet. It starts in {time}."
+msgstr "Dieses Video hat noch keine Premiere. Es beginnt in {time}."
 
 #: channel_dialogs.py:15
 msgid "Title"
-msgstr "Title"
+msgstr "Titel"
 
 #: channel_core.py:1648
 #: playlist.py:443
 msgid "Title correction completed and locked."
-msgstr "Title correction completed and locked."
+msgstr "Titelkorrektur abgeschlossen und gesperrt."
 
 #: channel_core.py:579
 msgid "Title correction completed for {count} videos."
-msgstr "Title correction completed for {count} videos."
+msgstr "Titelkorrektur für {count} Videos abgeschlossen."
 
 #: channel_core.py:1650
 #: playlist.py:445
 msgid "Title correction failed."
-msgstr "Title correction failed."
+msgstr "Titelkorrektur fehlgeschlagen."
 
 #: __init__.py:789
 msgid "Toggle playlist mode"
-msgstr "Toggle playlist mode"
+msgstr "Playlist-Modus umschalten"
 
 #: __init__.py:598
 msgid "Trim setting"
-msgstr "Trim setting"
+msgstr "Schneideeinstellung"
 
 #: Trim.py:327
 msgid "Trimming and downloading {format}..."
-msgstr "Trimming and downloading {format}..."
+msgstr "Schneiden und Herunterladen von {format}..."
 
 #: Trim.py:129
 #: downloadFail.py:66
@@ -1381,15 +1372,15 @@ msgstr "URL"
 
 #: channel_core.py:1610
 msgid "URL copied to clipboard"
-msgstr "URL copied to clipboard"
+msgstr "URL in Zwischenablage kopiert"
 
 #: Trim.py:296
 msgid "URL is required"
-msgstr "URL is required"
+msgstr "URL ist erforderlich"
 
 #: Download_core.py:1306
 msgid "URL not found"
-msgstr "URL not found"
+msgstr "URL nicht gefunden"
 
 #: Download_core.py:745
 #: __init__.py:428
@@ -1398,75 +1389,75 @@ msgstr "URL not found"
 #: downloadFail.py:106
 #: download_list.py:105
 msgid "Unknown"
-msgstr "Unknown"
+msgstr "Unbekannt"
 
 #: channel_core.py:712
 msgid "Unpin"
-msgstr "Unpin"
+msgstr "Fixierung aufheben"
 
 #: Youtube_settings.py:718
 #: __init__.py:313
 msgid "Update failed: {str}"
-msgstr "Update failed: {str}"
+msgstr "Aktualisierung fehlgeschlagen: {str}"
 
 #: Youtube_settings.py:391
 msgid "Update status: Idle"
-msgstr "Update status: Idle"
+msgstr "Aktualisierungsstatus: Inaktiv"
 
 #: Youtube_settings.py:717
 msgid "Update status: Update failed: {str}"
-msgstr "Update status: Update failed: {str}"
+msgstr "Aktualisierungsstatus: Aktualisierung fehlgeschlagen: {str}"
 
 #: Youtube_settings.py:713
 msgid "Update status: Update successful"
-msgstr "Update status: Update successful"
+msgstr "Aktualisierungsstatus: Aktualisierung erfolgreich"
 
 #: Youtube_settings.py:703
 msgid "Update status: Updating..."
-msgstr "Update status: Updating..."
+msgstr "Aktualisierungsstatus: Aktualisierung läuft..."
 
 #: Youtube_settings.py:387
 msgid "Update yt-dlp now"
-msgstr "Update yt-dlp now"
+msgstr "yt-dlp jetzt aktualisieren"
 
 #: Youtube_settings.py:704
 #: __init__.py:301
 msgid "Updating yt-dlp..."
-msgstr "Updating yt-dlp..."
+msgstr "yt-dlp wird aktualisiert..."
 
 #: Youtube_settings.py:281
 msgid "Use &cookies (recommended to avoid block)"
-msgstr "Use &cookies (recommended to avoid block)"
+msgstr "&Cookies verwenden (empfohlen, um Sperren zu vermeiden)"
 
 #: Youtube_settings.py:324
 msgid "Use &custom user agent"
-msgstr "Use &custom user agent"
+msgstr "&Benutzerdefinierten User-Agent verwenden"
 
 #: Youtube_settings.py:335
 msgid "Use &proxy"
-msgstr "Use &proxy"
+msgstr "&Proxy verwenden"
 
 #: Youtube_settings.py:153
 msgid "Use download section"
-msgstr "Use download section"
+msgstr "Download-Bereich verwenden"
 
 #: Youtube_settings.py:329
 msgid "User &agent:"
-msgstr "User &agent:"
+msgstr "User-&Agent:"
 
 #: downloadFail.py:64
 #: download_list.py:68
 #: search.py:29
 msgid "Video Title"
-msgstr "Video Title"
+msgstr "Videotitel"
 
 #: Trim.py:141
 msgid "Video duration: unknown; Overall period: 0 seconds"
-msgstr "Video duration: unknown; Overall period: 0 seconds"
+msgstr "Videodauer: unbekannt; Gesamtdauer: 0 Sekunden"
 
 #: Trim.py:254
 msgid "Video duration: {duration}; Overall period: {period} seconds"
-msgstr "Video duration: {duration}; Overall period: {period} seconds"
+msgstr "Videodauer: {duration}; Gesamtdauer: {period} Sekunden"
 
 #: channel_core.py:64
 msgid "Videos"
@@ -1478,78 +1469,77 @@ msgstr "Videos in {title}"
 
 #: download_list.py:108
 msgid "Waiting"
-msgstr "Waiting"
+msgstr "Warten"
 
 #: __init__.py:680
 #: __init__.py:693
 msgid "You must be on a YouTube page to use this feature"
-msgstr "You must be on a YouTube page to use this feature"
+msgstr "Sie müssen sich auf einer YouTube-Seite befinden, um diese Funktion nutzen zu können"
 
 #: channel_core.py:31
 msgid "Your favorite channel"
-msgstr "Your favorite channel"
+msgstr "Ihr Lieblingskanal"
 
 #: Trim.py:253
 msgid "invalid"
-msgstr "invalid"
+msgstr "ungültig"
 
 #: Trim.py:249
 msgid "invalid (negative)"
-msgstr "invalid (negative)"
+msgstr "ungültig (negativ)"
 
 #: search.py:47
 msgid "loading..."
-msgstr "loading..."
+msgstr "Lade..."
 
 #: Trim.py:243
 msgid "unknown"
-msgstr "unknown"
+msgstr "unbekannt"
 
 #: Youtube_settings.py:578
 msgid "unknown error"
-msgstr "unknown error"
+msgstr "Unbekannter Fehler"
 
 #: Youtube_settings.py:377
 msgid "yt-dlp Update"
-msgstr "yt-dlp Update"
+msgstr "yt-dlp-Aktualisierung"
 
 #: Youtube_settings.py:714
 #: __init__.py:310
 msgid "yt-dlp updated successfully"
-msgstr "yt-dlp updated successfully"
+msgstr "yt-dlp erfolgreich aktualisiert"
 
 #: Download_core.py:1335
 #: Youtube_settings.py:460
 msgid "yt-dlp.exe missing"
-msgstr "yt-dlp.exe missing"
+msgstr "yt-dlp.exe fehlt"
 
 #: channel_core.py:993
 #: search.py:241
 msgid "yt-dlp.exe not found."
-msgstr "yt-dlp.exe not found."
+msgstr "yt-dlp.exe nicht gefunden."
 
 #: Youtube_settings.py:466
 msgid ""
 "{browser} appears to still be running. The cookie database is usually locked while the browser is open, so the export will likely fail with a database error.\n"
 "\n"
 "Close {browser} completely, then click OK to continue anyway or Cancel to stop and close it first.\n"
-msgstr ""
-"{browser} appears to still be running. The cookie database is usually locked while the browser is open, so the export will likely fail with a database error.\n"
 "\n"
-"Close {browser} completely, then click OK to continue anyway or Cancel to stop and close it first.\n"
+"\n"
+msgstr "{browser} scheint noch zu laufen. Die Cookie-Datenbank ist normalerweise gesperrt, solange der Browser geöffnet ist, daher schlägt der Export wahrscheinlich mit einem Datenbankfehler fehl.\\n\\nSchließen Sie {browser} vollständig und klicken Sie dann auf „OK“, um trotzdem fortzufahren, oder auf „Abbrechen“, um den Vorgang abzubrechen und den Browser zuerst zu schließen."
 
 #: channel_core.py:333
 #: search.py:608
 msgid "{count} downloads queued."
-msgstr "{count} downloads queued."
+msgstr "{count} Downloads in der Warteschlange."
 
 #: channel_core.py:1278
 msgid "{count} new items updated."
-msgstr "{count} new items updated."
+msgstr "{count} neue Elemente aktualisiert."
 
 #: Download_core.py:1002
 msgid "{mb} MB downloaded"
-msgstr "{mb} MB downloaded"
+msgstr "{mb} MB heruntergeladen"
 
 #: Download_core.py:987
 msgid "{percent}%"
@@ -1557,10 +1547,10 @@ msgstr "{percent}%"
 
 #: __init__.py:808
 msgid "{quality} kbps"
-msgstr "{quality} kbps"
+msgstr "{quality} kBit/s"
 
 #: channel_core.py:372
 #: playlist.py:124
 #: search.py:185
 msgid "{}, showing {} of {} videos"
-msgstr "{}, showing {} of {} videos"
+msgstr "{}, zeige {} von {} Videos"

@@ -1,0 +1,1556 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AbsoluteYoutube 2026.9.0\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-09-05 09:36+0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: Ukrainian\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: Youtube_settings.py:270
+msgid "&Announce download progress"
+msgstr "&Оголошувати прогрес завантаження"
+
+#: Youtube_settings.py:229
+msgid "&Beep while converting"
+msgstr "&Пищати під час конвертування"
+
+#: Youtube_settings.py:76
+msgid "&Browse..."
+msgstr "&Огляд..."
+
+#: Youtube_settings.py:309
+msgid "&Browser for automatic cookies (used when cookies file is off):"
+msgstr "&Браузер для автоматичних файлів cookies (використовується, коли файл cookies вимкнено):"
+
+#: channel_dialogs.py:69
+#: channel_dialogs.py:119
+#: downloadFail.py:90
+msgid "&Cancel"
+msgstr "&Скасувати"
+
+#: downloadFail.py:82
+#: download_list.py:87
+msgid "&Clear All"
+msgstr "&Очистити все"
+
+#: channel_core.py:190
+#: playlist.py:90
+#: search.py:148
+msgid "&Close"
+msgstr "&Закрити"
+
+#: downloadFail.py:70
+#: download_list.py:75
+msgid "&Delete Selected"
+msgstr "&Видалити вибране"
+
+#: channel_core.py:182
+#: downloadFail.py:78
+#: download_list.py:83
+#: search.py:140
+msgid "&Download All"
+msgstr "&Завантажити все"
+
+#: playlist.py:86
+msgid "&Download All Videos in Playlist"
+msgstr "&Завантажити всі відео у плейлисті"
+
+#: downloadFail.py:74
+#: download_list.py:79
+msgid "&Download Selected"
+msgstr "&Завантажити вибране"
+
+#: search.py:144
+msgid "&Download folder"
+msgstr "&Папка завантаження"
+
+#: Youtube_settings.py:346
+msgid "&Geo bypass"
+msgstr "&Геообхід"
+
+#: Youtube_settings.py:367
+msgid "&Mark as watched"
+msgstr "&Позначити як переглянуте"
+
+#: Youtube_settings.py:133
+msgid "&Max concurrent downloads (1-4):"
+msgstr "&Максимум паралельних завантажень (1-4):"
+
+#: Youtube_settings.py:157
+msgid "&Number of connections:"
+msgstr "&Кількість з'єднань:"
+
+#: channel_dialogs.py:67
+#: channel_dialogs.py:117
+#: downloadFail.py:86
+#: download_list.py:91
+msgid "&OK"
+msgstr "&ОК"
+
+#: Youtube_settings.py:203
+msgid "&Retry count:"
+msgstr "&Кількість спроб повтору:"
+
+#: Youtube_settings.py:265
+msgid "&Say download complete"
+msgstr "&Повідомляти про завершення завантаження"
+
+#: Youtube_settings.py:196
+msgid "&Sleep between requests (seconds):"
+msgstr "&Пауза між запитами (секунди):"
+
+#: channel_core.py:186
+msgid "&Source"
+msgstr "&Джерело"
+
+#: Youtube_settings.py:176
+msgid "&Throttle rate (KB/s, 0=unlimited, step of 5):"
+msgstr "&Швидкість обмеження (КБ/с, 0=необмежено, крок 5):"
+
+#: Download_core.py:1154
+msgid "0%"
+msgstr "0%"
+
+#: channel_core.py:1347
+msgid "A channel with this name already exists. Overwrite?"
+msgstr "Канал з такою назвою вже існує. Перезаписати?"
+
+#: __init__.py:282
+msgid "A new version of yt-dlp is available: {latest}. Current: {current}. Please update in settings."
+msgstr "Доступна нова версія yt-dlp: {latest}. Поточна: {current}. Будь ласка, оновіть у налаштуваннях."
+
+#: Download_core.py:35
+#: Youtube_settings.py:35
+#: __init__.py:45
+msgid "Absolute YouTube"
+msgstr "Абсолютний YouTube"
+
+#: Trim.py:65
+msgid "Absolute YouTube Trim"
+msgstr "Абсолютне обрізання YouTube"
+
+#: __init__.py:602
+msgid "Absolute YouTube setting"
+msgstr "Налаштування Absolute YouTube"
+
+#: menu.py:18
+msgid "Absolute Youtube"
+msgstr "Абсолютний Youtube"
+
+#: channel_dialogs.py:42
+msgid "Add New Channel"
+msgstr "Додати новий канал"
+
+#: channel_core.py:113
+msgid "Add new channel"
+msgstr "Додати новий канал"
+
+#: __init__.py:193
+msgid "Add-on initialization failed: missing pending file path function. Please restart NVDA."
+msgstr "Не вдалося ініціалізувати доповнення: відсутня функція шляху до очікуваного файлу. Будь ласка, перезапустіть NVDA."
+
+#: download_list.py:25
+msgid "Add-on internal error: missing components. Please restart NVDA."
+msgstr "Внутрішня помилка доповнення: відсутні компоненти. Будь ласка, перезапустіть NVDA."
+
+#: download_list.py:71
+msgid "Added Time"
+msgstr "Час додавання"
+
+#: __init__.py:451
+msgid "Added to download list: {format} - {title}"
+msgstr "Додано до списку завантажень: {format} - {title}"
+
+#: __init__.py:445
+msgid "Added to download queue: {format} - {title}"
+msgstr "Додано до черги завантажень: {format} - {title}"
+
+#: download_list.py:178
+msgid "Added to download queue: {title}"
+msgstr "Додано до черги завантажень: {title}"
+
+#: Download_core.py:1457
+msgid "Adding link as {format} to download queue"
+msgstr "Додавання посилання як {format} до черги завантажень"
+
+#: channel_core.py:299
+#: search.py:570
+msgid "Adding {count} videos to download queue..."
+msgstr "Додавання відео ({count}) до черги завантажень..."
+
+#: channel_core.py:1632
+#: playlist.py:465
+#: search.py:549
+#: search.py:552
+msgid "Adding {title} to download queue."
+msgstr "Додавання {title} до черги завантажень."
+
+#: search.py:114
+#: search.py:192
+msgid "All"
+msgstr "Усі"
+
+#: downloadFail.py:335
+msgid "All failed downloads cleared"
+msgstr "Усі невдалі завантаження очищено"
+
+#: download_list.py:247
+msgid "All items added to download queue"
+msgstr "Усі елементи додано до черги завантажень"
+
+#: download_list.py:265
+msgid "All pending downloads cleared"
+msgstr "Усі очікувані завантаження очищено"
+
+#: __init__.py:453
+msgid "Already in download list"
+msgstr "Вже в списку завантажень"
+
+#: __init__.py:447
+#: download_list.py:180
+msgid "Already in download queue"
+msgstr "Вже в черзі завантажень"
+
+#: Snapshot.py:125
+msgid "An unexpected error occurred."
+msgstr "Сталася непередбачувана помилка."
+
+#: Youtube_settings.py:276
+msgid "Anti-blocking settings"
+msgstr "Налаштування обходу блокувань"
+
+#: channel_core.py:852
+msgid "Are you sure you want to delete saved data for '{name}'?"
+msgstr "Ви справді хочете видалити збережені дані для «{name}»?"
+
+#: Youtube_settings.py:185
+msgid "At the maximum (10,000 KB/s = 10 MB/s), this limit essentially never binds -- YouTube's own per-connection serving speed and most home connections stay well under that, so the maximum behaves almost identically to leaving it at 0 (unlimited)."
+msgstr "За максимального значення (10 000 КБ/с = 10 МБ/с) це обмеження практично ніколи не діє — власна швидкість передачі даних YouTube та більшість домашніх підключень залишаються значно нижчими за нього, тому максимум поводиться майже так само, як і значення 0 (необмежено)."
+
+#: Trim.py:161
+#: channel_dialogs.py:158
+msgid "Audio Quality"
+msgstr "Якість аудіо"
+
+#: Youtube_settings.py:382
+msgid "Auto-update yt-dlp on startup"
+msgstr "Автоматично оновлювати yt-dlp під час запуску"
+
+#: Youtube_settings.py:239
+msgid "Beep &volume (%):"
+msgstr "Звуковий сигнал і гучність (%):"
+
+#: Youtube_settings.py:255
+msgid "Beep e&very (seconds):"
+msgstr "Звуковий сигнал к&ожні (секунди):"
+
+#: Youtube_settings.py:306
+#: Youtube_settings.py:427
+msgid "Brave"
+msgstr "Brave"
+
+#: Youtube_settings.py:473
+msgid "Browser still running"
+msgstr "Браузер усе ще працює"
+
+#: Trim.py:174
+#: channel_dialogs.py:169
+#: search.py:689
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: downloadFail.py:195
+msgid "Cannot create download folder"
+msgstr "Не вдається створити папку завантажень"
+
+#: channel_core.py:286
+msgid "Cannot create download folder."
+msgstr "Не вдається створити папку завантажень."
+
+#: Download_core.py:510
+msgid "Cannot create folder"
+msgstr "Не вдається створити папку"
+
+#: search.py:540
+msgid "Cannot determine URL for this video."
+msgstr "Не вдається визначити URL-адресу для цього відео."
+
+#: __init__.py:409
+msgid "Cannot download from YouTube homepage. Please navigate to a video or playlist."
+msgstr "Не вдається завантажити з головної сторінки YouTube. Перейдіть до відео або плейлиста."
+
+#: __init__.py:412
+msgid "Cannot download from this YouTube page. Please select a specific video."
+msgstr "Не вдається завантажити з цієї сторінки YouTube. Виберіть конкретне відео."
+
+#: search.py:617
+msgid "Cannot open download folder."
+msgstr "Не вдається відкрити папку завантажень."
+
+#: channel_core.py:342
+msgid "Cannot open source folder."
+msgstr "Не вдається відкрити вихідну папку."
+
+#: Snapshot.py:60
+msgid "Capturing full-size snapshot..."
+msgstr "Знімок повного розміру створюється..."
+
+#: channel_core.py:834
+msgid "Channel URL updated."
+msgstr "URL каналу оновлено."
+
+#: channel_dialogs.py:59
+#: channel_dialogs.py:110
+msgid "Channel URL:"
+msgstr "URL каналу:"
+
+#: channel_core.py:1083
+msgid "Channel added successfully."
+msgstr "Канал успішно додано."
+
+#: channel_core.py:864
+#: channel_core.py:867
+msgid "Channel deleted."
+msgstr "Канал видалено."
+
+#: channel_dialogs.py:52
+#: channel_dialogs.py:103
+msgid "Channel name:"
+msgstr "Назва каналу:"
+
+#: channel_core.py:754
+msgid "Channel pinned."
+msgstr "Канал закріплено."
+
+#: channel_core.py:1368
+msgid "Channel saved."
+msgstr "Канал збережено."
+
+#: channel_core.py:751
+msgid "Channel unpinned."
+msgstr "Канал відкріплено."
+
+#: channel_core.py:821
+msgid "Channel updated."
+msgstr "Канал оновлено."
+
+#: channel_core.py:101
+msgid "Channel:"
+msgstr "Канал:"
+
+#: channel_core.py:1136
+msgid "Checking for new videos..."
+msgstr "Перевірка наявності нових відео..."
+
+#: Download_core.py:688
+msgid "Checking interrupted downloads..."
+msgstr "Перевірка перерваних завантажень..."
+
+#: downloadFail.py:144
+#: download_list.py:136
+msgid "Clear all"
+msgstr "Очистити все"
+
+#: channel_core.py:853
+msgid "Confirm Delete"
+msgstr "Підтвердження видалення"
+
+#: playlist.py:475
+msgid "Confirm Download"
+msgstr "Підтвердити завантаження"
+
+#: channel_core.py:1348
+msgid "Confirm Overwrite"
+msgstr "Підтвердити перезапис"
+
+#: channel_core.py:126
+msgid "Content type:"
+msgstr "Тип контенту:"
+
+#: Download_core.py:972
+#: Download_core.py:994
+msgid "Converting"
+msgstr "Конвертування"
+
+#: Youtube_settings.py:579
+#: Youtube_settings.py:598
+msgid "Cookie export failed: {str}"
+msgstr "Помилка експорту файлів cookie: {str}"
+
+#: Youtube_settings.py:589
+msgid "Cookie export timed out"
+msgstr "Час очікування експорту файлів cookie вичерпано"
+
+#: Youtube_settings.py:286
+msgid "Cookies &file:"
+msgstr "Файл cookies &amp;:"
+
+#: Youtube_settings.py:621
+msgid "Cookies exported successfully to {path}. Anti-blocking is now active."
+msgstr "Cookies успішно експортовано до {path}. Захист від блокування тепер активний."
+
+#: channel_core.py:1572
+msgid "Copy URL"
+msgstr "Копіювати URL"
+
+#: __init__.py:584
+#: playlist.py:415
+#: search.py:503
+msgid "Copy video Shorten URL"
+msgstr "Копіювати скорочену URL-адресу відео"
+
+#: channel_core.py:1582
+#: playlist.py:421
+msgid "Correct title now"
+msgstr "Виправити назву зараз"
+
+#: channel_core.py:1640
+#: playlist.py:438
+msgid "Correcting title for selected video..."
+msgstr "Виправлення назви для вибраного відео..."
+
+#: playlist.py:455
+#: search.py:532
+msgid "Could not create short URL"
+msgstr "Не вдалося створити коротку URL-адресу"
+
+#: __init__.py:636
+msgid "Could not create shortened URL"
+msgstr "Не вдалося створити скорочену URL-адресу"
+
+#: Youtube_settings.py:563
+msgid "Could not decrypt {browser}'s cookies (DPAPI decryption failed). This usually means yt-dlp needs updating to support this browser's newer cookie encryption. Try 'Update yt-dlp now' below, then export again, or export from Firefox instead, which does not use this encryption. If it still fails, use the manual cookies.txt method."
+msgstr "Не вдалося розшифрувати cookies браузера {browser} (помилка розшифрування DPAPI). Зазвичай це означає, що потрібно оновити yt-dlp для підтримки новішого шифрування cookies цього браузера. Спробуйте «Оновити yt-dlp зараз» нижче й експортуйте знову, або скористайтеся Firefox, який не використовує таке шифрування. Якщо це не допоможе, застосуйте ручний метод cookies.txt."
+
+#: Youtube_settings.py:571
+msgid "Could not decrypt {browser}'s cookies (DPAPI decryption failed). This usually means yt-dlp needs updating. Try 'Update yt-dlp now' below, then export again. If it still fails, use the manual cookies.txt method instead."
+msgstr "Не вдалося розшифрувати cookies браузера {browser} (помилка розшифрування DPAPI). Зазвичай це означає, що потрібно оновити yt-dlp. Спробуйте «Оновити yt-dlp зараз» нижче й експортуйте знову. Якщо це не допоможе, скористайтеся ручним методом cookies.txt."
+
+#: Trim.py:291
+msgid "Could not open preview URL"
+msgstr "Не вдалося відкрити URL попереднього перегляду"
+
+#: Youtube_settings.py:545
+msgid "Could not read the {browser} cookie database. Close {browser} completely and try exporting again."
+msgstr "Не вдалося прочитати базу даних cookies браузера {browser}. Повністю закрийте {browser} і спробуйте експортувати знову."
+
+#: __init__.py:796
+msgid "Cycle MP3 quality settings"
+msgstr "Перемикати налаштування якості MP3"
+
+#: channel_core.py:728
+#: downloadFail.py:131
+#: download_list.py:124
+msgid "Delete"
+msgstr "Видалити"
+
+#: downloadFail.py:136
+#: download_list.py:129
+msgid "Delete selected"
+msgstr "Видалити вибране"
+
+#: Youtube_settings.py:73
+msgid "Destination folder"
+msgstr "Цільова папка"
+
+#: download_list.py:126
+msgid "Download"
+msgstr "Завантажити"
+
+#: channel_dialogs.py:141
+#: search.py:671
+msgid "Download All Videos"
+msgstr "Завантажити всі відео"
+
+#: Youtube_settings.py:91
+msgid "Download Behavior"
+msgstr "Поведінка завантаження"
+
+#: downloadFail.py:17
+msgid "Download Fail Manager - Absolute YouTube"
+msgstr "Менеджер невдалих завантажень - Absolute YouTube"
+
+#: download_list.py:15
+msgid "Download List Manager - Absolute YouTube"
+msgstr "Менеджер списку завантажень - Absolute YouTube"
+
+#: channel_core.py:1585
+#: playlist.py:424
+#: search.py:509
+msgid "Download MP3"
+msgstr "Завантажити MP3"
+
+#: channel_core.py:1588
+#: playlist.py:427
+#: search.py:512
+msgid "Download MP4"
+msgstr "Завантажити MP4"
+
+#: channel_core.py:1591
+#: playlist.py:430
+#: search.py:515
+msgid "Download WAV"
+msgstr "Завантажити WAV"
+
+#: downloadFail.py:142
+#: download_list.py:134
+msgid "Download all"
+msgstr "Завантажити все"
+
+#: playlist.py:474
+msgid "Download all {count} videos in this playlist?"
+msgstr "Завантажити всі {count} відео з цього плейлиста?"
+
+#: Download_core.py:1194
+msgid "Download complete"
+msgstr "Завантаження завершено"
+
+#: channel_core.py:1579
+msgid "Download entire playlist"
+msgstr "Завантажити весь плейлист"
+
+#: __init__.py:590
+msgid "Download fail manager"
+msgstr "Менеджер невдалих завантажень"
+
+#: __init__.py:592
+msgid "Download fail manager (no failed)"
+msgstr "Менеджер невдалих завантажень (немає невдалих)"
+
+#: Download_core.py:1232
+msgid "Download failed"
+msgstr "Завантаження не вдалося"
+
+#: Download_core.py:1256
+msgid "Download failed due to an error"
+msgstr "Завантаження не вдалося через помилку"
+
+#: Download_core.py:1244
+msgid "Download failed due to timeout"
+msgstr "Завантаження не вдалося через перевищення часу очікування"
+
+#: Download_core.py:1290
+msgid "Download failed to start"
+msgstr "Не вдалося розпочати завантаження"
+
+#: Download_core.py:1230
+msgid "Download failed: YouTube blocked this request. Try exporting cookies from your browser in the Anti-blocking settings."
+msgstr "Завантаження не вдалося: YouTube заблокував цей запит. Спробуйте експортувати куки з браузера в налаштуваннях захисту від блокування."
+
+#: downloadFail.py:133
+msgid "Download file"
+msgstr "Завантажити файл"
+
+#: search.py:619
+msgid "Download folder does not exist."
+msgstr "Папка завантажень не існує."
+
+#: channel_core.py:1620
+#: channel_core.py:1634
+#: playlist.py:467
+#: playlist.py:483
+msgid "Download function not available."
+msgstr "Функція завантаження недоступна."
+
+#: __init__.py:506
+msgid "Download immediately"
+msgstr "Завантажити негайно"
+
+#: __init__.py:586
+msgid "Download list manager"
+msgstr "Менеджер списку завантажень"
+
+#: __init__.py:460
+msgid "Download or queue video (single tap MP3, double tap MP4, triple tap WAV)"
+msgstr "Завантажити або поставити відео в чергу (один тап — MP3, два тапи — MP4, три тапи — WAV)"
+
+#: downloadFail.py:138
+#: download_list.py:131
+msgid "Download selected"
+msgstr "Завантажити вибране"
+
+#: downloadFail.py:251
+msgid "Download started for: {title}"
+msgstr "Завантаження розпочато для: {title}"
+
+#: Snapshot.py:65
+msgid "Downloading thumbnail..."
+msgstr "Завантаження мініатюри..."
+
+#: download_list.py:108
+msgid "Downloading..."
+msgstr "Завантаження..."
+
+#: downloadFail.py:65
+#: search.py:30
+msgid "Duration"
+msgstr "Тривалість"
+
+#: channel_dialogs.py:91
+msgid "Edit Channel"
+msgstr "Редагувати канал"
+
+#: channel_core.py:117
+msgid "Edit channel"
+msgstr "Редагувати канал"
+
+#: channel_core.py:725
+msgid "Edit channel..."
+msgstr "Редагувати канал..."
+
+#: Youtube_settings.py:116
+msgid "Enable &logging"
+msgstr "Увімкнути &ведення журналу"
+
+#: Youtube_settings.py:101
+msgid "Enable &playlist mode by default"
+msgstr "Увімкнути режим &плейлиста за замовчуванням"
+
+#: Trim.py:137
+msgid "End time:"
+msgstr "Час закінчення:"
+
+#: search.py:96
+msgid "Enter a search query."
+msgstr "Введіть пошуковий запит."
+
+#: download_list.py:26
+msgid "Error"
+msgstr "Помилка"
+
+#: Snapshot.py:40
+msgid "Error creating download folder"
+msgstr "Помилка створення папки завантаження"
+
+#: channel_core.py:870
+msgid "Error deleting channel."
+msgstr "Помилка видалення каналу."
+
+#: __init__.py:621
+msgid "Error displaying context menu"
+msgstr "Помилка відображення контекстного меню"
+
+#: __init__.py:297
+msgid "Error during auto-update of yt-dlp: {str}"
+msgstr "Помилка під час автоматичного оновлення yt-dlp: {str}"
+
+#: channel_core.py:1089
+msgid "Error fetching channel: {str}"
+msgstr "Помилка отримання каналу: {str}"
+
+#: __init__.py:188
+#: downloadFail.py:44
+msgid "Error importing core functions: {str}"
+msgstr "Помилка імпорту основних функцій: {str}"
+
+#: __init__.py:742
+msgid "Error importing settings panel: {str}"
+msgstr "Помилка імпорту панелі налаштувань: {str}"
+
+#: __init__.py:211
+#: __init__.py:273
+msgid "Error initializing AbsoluteYoutube: {str}"
+msgstr "Помилка ініціалізації AbsoluteYoutube: {str}"
+
+#: channel_core.py:904
+msgid "Error loading cache."
+msgstr "Помилка завантаження кешу."
+
+#: channel_core.py:534
+#: channel_core.py:796
+msgid "Error loading channel data."
+msgstr "Помилка завантаження даних каналу."
+
+#: __init__.py:530
+msgid "Error opening channel dialog"
+msgstr "Помилка відкриття діалогу каналу"
+
+#: __init__.py:784
+msgid "Error opening channel/playlist list: {str}"
+msgstr "Помилка відкриття списку каналів/плейлиста: {str}"
+
+#: __init__.py:657
+#: __init__.py:661
+msgid "Error opening download fail dialog: {str}"
+msgstr "Помилка відкриття діалогу невдалих завантажень: {str}"
+
+#: __init__.py:570
+msgid "Error opening download list dialog: {str}"
+msgstr "Помилка відкриття діалогу списку завантажень: {str}"
+
+#: __init__.py:496
+msgid "Error opening folder"
+msgstr "Помилка відкриття теки"
+
+#: channel_core.py:1554
+msgid "Error opening playlist."
+msgstr "Помилка відкриття плейлиста."
+
+#: __init__.py:727
+msgid "Error opening search dialog: {str}"
+msgstr "Помилка відкриття діалогу пошуку: {str}"
+
+#: __init__.py:745
+msgid "Error opening settings dialog: {str}"
+msgstr "Помилка відкриття діалогу налаштувань: {str}"
+
+#: __init__.py:708
+msgid "Error opening trim dialog: {str}"
+msgstr "Помилка відкриття діалогу обрізання: {str}"
+
+#: Download_core.py:1332
+msgid "Error processing URL"
+msgstr "Помилка обробки URL-адреси"
+
+#: downloadFail.py:256
+msgid "Error starting download"
+msgstr "Помилка запуску завантаження"
+
+#: channel_core.py:837
+msgid "Error updating channel URL."
+msgstr "Помилка оновлення URL-адреси каналу."
+
+#: channel_core.py:824
+msgid "Error updating channel."
+msgstr "Помилка оновлення каналу."
+
+#: __init__.py:575
+msgid "Error: Download list module not available"
+msgstr "Помилка: модуль списку завантажень недоступний"
+
+#: __init__.py:647
+msgid "Error: DownloadFail module not available"
+msgstr "Помилка: модуль DownloadFail недоступний"
+
+#: Snapshot.py:89
+msgid "Error: Failed to capture snapshot."
+msgstr "Помилка: не вдалося створити знімок."
+
+#: Snapshot.py:103
+msgid "Error: No snapshot file created."
+msgstr "Помилка: файл знімка не створено."
+
+#: __init__.py:732
+msgid "Error: Search module not available"
+msgstr "Помилка: модуль пошуку недоступний"
+
+#: __init__.py:688
+msgid "Error: Snapshot module not available"
+msgstr "Помилка: модуль створення знімків недоступний"
+
+#: __init__.py:697
+msgid "Error: Trim module not available"
+msgstr "Помилка: модуль обрізання недоступний"
+
+#: Download_core.py:1427
+#: Trim.py:324
+msgid "Error: ffmpeg.exe not found."
+msgstr "Помилку: ffmpeg.exe не знайдено."
+
+#: Trim.py:321
+msgid "Error: yt-dlp.exe not found."
+msgstr "Помилку: yt-dlp.exe не знайдено."
+
+#: Youtube_settings.py:449
+msgid "Export YouTube Cookies"
+msgstr "Експортувати файли cookie YouTube"
+
+#: Youtube_settings.py:319
+msgid "Export YouTube Cookies (Anti-Block)"
+msgstr "Експортувати файли cookie YouTube (антиблокування)"
+
+#: Youtube_settings.py:480
+msgid "Exporting cookies from {browser}..."
+msgstr "Екшпорт файлів cookie з браузера {browser}..."
+
+#: Youtube_settings.py:738
+msgid "Failed to create the specified folder. Please select a valid folder."
+msgstr "Не вдалося створити вказану папки. Будь ласка, виберіть дійсну папку."
+
+#: __init__.py:594
+msgid "Favorite channel"
+msgstr "Улюблений канал"
+
+#: channel_core.py:1276
+msgid "Fetched {count} items total."
+msgstr "Отримано елементів: {count}."
+
+#: __init__.py:771
+msgid "Fetching channel information..."
+msgstr "Отримання інформації про канал..."
+
+#: channel_core.py:1355
+msgid "Fetching channel items..."
+msgstr "Отримання елементів каналу..."
+
+#: channel_core.py:1136
+msgid "Fetching channel videos..."
+msgstr "Отримання відео каналу..."
+
+#: Trim.py:148
+#: channel_dialogs.py:148
+#: search.py:677
+msgid "File Format"
+msgstr "Формат файлу"
+
+#: Download_core.py:1432
+msgid "File already exists. Skipping download."
+msgstr "Файл уже існує. Завантаження пропущено."
+
+#: Download_core.py:1318
+msgid "File exists"
+msgstr "Файл існує"
+
+#: Youtube_settings.py:357
+msgid "Force I&Pv4"
+msgstr "Примусово використовувати I&Pv4"
+
+#: Youtube_settings.py:362
+msgid "Force I&Pv6"
+msgstr "Примусово використовувати I&Pv6"
+
+#: download_list.py:69
+msgid "Format"
+msgstr "Формат"
+
+#: Download_core.py:590
+msgid ""
+"Found {count} interrupted downloads\n"
+"Resume all?\n"
+"\n"
+"\n"
+msgstr "Знайдено перерваних завантажень: {count}"
+
+#: search.py:470
+msgid "Found {count} videos for '{query}'."
+msgstr "Знайдено відео ({count}) за запитом '{query}'."
+
+#: search.py:386
+msgid "Found {} videos..."
+msgstr "Знайдено відео: {}..."
+
+#: Youtube_settings.py:210
+msgid "Fragment &retries:"
+msgstr "&Кількість спроб фрагмента:"
+
+#: Snapshot.py:132
+msgid "Full-size snapshot complete"
+msgstr "Повноекранний знімок завершено"
+
+#: Youtube_settings.py:351
+msgid "Geo bypass &country:"
+msgstr "Обхід геолокації, &країна:"
+
+#: channel_core.py:175
+#: search.py:133
+msgid "Go"
+msgstr "Перейти"
+
+#: channel_core.py:375
+#: search.py:188
+msgid "Go to page of {}:"
+msgstr "Перейти на сторінку {}:"
+
+#: Youtube_settings.py:306
+#: Youtube_settings.py:427
+msgid "Google Chrome"
+msgstr "Google Chrome"
+
+#: Youtube_settings.py:411
+msgid ""
+"How to get YouTube cookies:\n"
+"\n"
+"Option 1 (automatic): Use the 'Export YouTube Cookies (Anti-Block)' button below. Close your browser first, then press it and pick your browser from the list.\n"
+"\n"
+"Option 2 (manual):\n"
+"1. Install 'Get cookies.txt' extension in Chrome or Firefox\n"
+"2. Login to YouTube in your browser\n"
+"3. Click the extension icon and export cookies\n"
+"4. Save as cookies.txt and select it here\n"
+"\n"
+"Using cookies helps avoid blocks because YouTube sees you as a logged-in user.\n"
+"\n"
+"\n"
+msgstr "Як отримати файли cookie YouTube:\\n\\nВаріант 1 (автоматичний): скористайтеся кнопкою «Експортувати файли cookie YouTube (антиблокування)» нижче. Спочатку закрийте браузер, потім натисніть її та виберіть свій браузер зі списку.\\n\\nВаріант 2 (ручний):\\n1. Установіть розширення «Get cookies.txt» у Chrome або Firefox\\n2. Увійдіть у свій обліковий запис YouTube у браузері\\n3. Клацніть значок розширення та експортуйте файли cookie\\n4. Збережіть як cookies.txt і виберіть цей файл тут\\n\\nВикористання файлів cookie допомагає уникнути блокувань, оскільки YouTube бачить вас як авторизованого користувача.\\n"
+
+#: Youtube_settings.py:423
+msgid "How to get cookies"
+msgstr "Як отримати файли cookie"
+
+#: Youtube_settings.py:294
+msgid "How to get cookies?"
+msgstr "Як отримати файли cookie?"
+
+#: __init__.py:514
+msgid "Immediate download mode disabled"
+msgstr "Режим негайного завантаження вимкнено"
+
+#: __init__.py:512
+msgid "Immediate download mode enabled"
+msgstr "Режим негайного завантаження увімкнено"
+
+#: Trim.py:280
+msgid "Invalid URL or start time"
+msgstr "Недійсна URL-адреса або час початку"
+
+#: Trim.py:301
+msgid "Invalid YouTube video URL"
+msgstr "Недійсна URL-адреса відео на YouTube"
+
+#: __init__.py:518
+msgid "Invalid channel URL"
+msgstr "Недійсна URL-адреса каналу"
+
+#: __init__.py:498
+msgid "Invalid download folder"
+msgstr "Недійсна папка завантаження"
+
+#: downloadFail.py:165
+#: download_list.py:164
+msgid "Item deleted"
+msgstr "Елемент видалено"
+
+#: channel_core.py:1659
+#: search.py:557
+msgid "Item removed."
+msgstr "Елемент видалено."
+
+#: channel_core.py:66
+msgid "Live"
+msgstr "Наживо"
+
+#: channel_core.py:898
+msgid "Loaded {count} videos from cache."
+msgstr "Завантажено відео з кешу: {count}."
+
+#: channel_core.py:519
+#: channel_core.py:1120
+msgid "Loaded {count} videos from {name}."
+msgstr "Завантажено відео з {name}: {count}."
+
+#: playlist.py:226
+msgid "Loaded {count} videos."
+msgstr "Завантажено відео: {count}."
+
+#: playlist.py:52
+msgid "Loading playlist videos..."
+msgstr "Завантаження відео з плейлиста..."
+
+#: Youtube_settings.py:120
+msgid "MP3 &quality (kbps):"
+msgstr "MP3 та якість (кбіт/с):"
+
+#: Youtube_settings.py:306
+#: Youtube_settings.py:427
+msgid "Microsoft Edge"
+msgstr "Microsoft Edge"
+
+#: channel_core.py:720
+msgid "Move Down"
+msgstr "Перемістити вниз"
+
+#: channel_core.py:716
+msgid "Move Up"
+msgstr "Перемістити вгору"
+
+#: Youtube_settings.py:306
+#: Youtube_settings.py:427
+msgid "Mozilla Firefox"
+msgstr "Mozilla Firefox"
+
+#: channel_core.py:166
+#: playlist.py:79
+#: search.py:124
+msgid "NextPage"
+msgstr "Наступна сторінка"
+
+#: __init__.py:405
+#: __init__.py:626
+msgid "No YouTube URL found"
+msgstr "Не знайдено URL YouTube"
+
+#: channel_core.py:246
+msgid "No channel selected."
+msgstr "Канал не вибрано."
+
+#: downloadFail.py:306
+#: downloadFail.py:326
+msgid "No downloads could be started"
+msgstr "Не вдалося запустити жодного завантаження"
+
+#: __init__.py:643
+msgid "No failed downloads"
+msgstr "Немає невдалих завантажень"
+
+#: downloadFail.py:330
+msgid "No failed downloads to clear"
+msgstr "Немає невдалих завантажень для очищення"
+
+#: downloadFail.py:310
+msgid "No failed downloads to process"
+msgstr "Немає невдалих завантажень для обробки"
+
+#: download_list.py:249
+msgid "No items added (all already in queue)"
+msgstr "Елементів не додано (усі вже в черзі)"
+
+#: channel_core.py:1085
+msgid "No items found for this URL."
+msgstr "Не знайдено елементів за цим URL."
+
+#: channel_core.py:1280
+msgid "No items found."
+msgstr "Елементів не знайдено."
+
+#: downloadFail.py:266
+#: downloadFail.py:282
+#: download_list.py:191
+#: download_list.py:204
+msgid "No items selected"
+msgstr "Елементи не вибрано"
+
+#: download_list.py:225
+msgid "No new items added (already in queue)"
+msgstr "Нових елементів не додано (вже в черзі)"
+
+#: download_list.py:231
+#: download_list.py:235
+msgid "No pending downloads"
+msgstr "Немає очікуваних завантажень"
+
+#: download_list.py:255
+msgid "No pending downloads to clear"
+msgstr "Немає очікуваних завантажень для очищення"
+
+#: search.py:467
+msgid "No results found for '{query}'."
+msgstr "За запитом '{query}' нічого не знайдено."
+
+#: search.py:468
+msgid "No results found."
+msgstr "Нічого не знайдено."
+
+#: channel_core.py:86
+msgid "No saved data for this channel."
+msgstr "Немає збережених даних для цього каналу."
+
+#: channel_core.py:228
+msgid "No saved data for this content type yet."
+msgstr "Для цього типу контенту ще немає збережених даних."
+
+#: Download_core.py:1435
+msgid "No valid multimedia link found."
+msgstr "Не знайдено дійсного мультимедійного посилання."
+
+#: channel_core.py:272
+#: playlist.py:471
+#: search.py:561
+msgid "No videos to download."
+msgstr "Немає відео для завантаження."
+
+#: __init__.py:629
+msgid "Not a YouTube URL"
+msgstr "Не є URL-адресою YouTube"
+
+#: Download_core.py:1468
+msgid "Not a YouTube video or valid multimedia link"
+msgstr "Не є відео YouTube або дійсним мультимедійним посиланням"
+
+#: __init__.py:473
+msgid "Open context menu (single tap), open download folder (double tap), open search dialog (triple tap)"
+msgstr "Відкрити контекстне меню (один дотик), відкрити папку завантажень (подвійний дотик), відкрити діалог пошуку (потрійний дотик)"
+
+#: channel_core.py:1575
+msgid "Open in browser"
+msgstr "Відкрити в браузері"
+
+#: Youtube_settings.py:306
+#: Youtube_settings.py:427
+msgid "Opera"
+msgstr "Opera"
+
+#: channel_core.py:266
+#: search.py:225
+msgid "Page number out of range (1-{})."
+msgstr "Номер сторінки поза діапазоном (1-{})."
+
+#: channel_core.py:371
+#: playlist.py:123
+#: search.py:184
+msgid "Page {}/{}"
+msgstr "Сторінка {}/{}"
+
+#: channel_core.py:712
+msgid "Pin"
+msgstr "Закріпити"
+
+#: playlist.py:418
+#: search.py:506
+msgid "Play on YouTube"
+msgstr "Відтворити на YouTube"
+
+#: __init__.py:386
+msgid "Playlist"
+msgstr "Плейлист"
+
+#: channel_core.py:1618
+#: playlist.py:481
+msgid "Playlist download started."
+msgstr "Завантаження плейлиста розпочато."
+
+#: downloadFail.py:249
+msgid "Playlist download started: {title}"
+msgstr "Завантаження плейлиста розпочато: {title}"
+
+#: __init__.py:794
+msgid "Playlist mode disabled"
+msgstr "Режим плейлиста вимкнено"
+
+#: __init__.py:794
+msgid "Playlist mode enabled"
+msgstr "Режим плейлиста увімкнено"
+
+#: channel_core.py:68
+msgid "Playlists"
+msgstr "Плейлисти"
+
+#: channel_dialogs.py:84
+#: channel_dialogs.py:134
+msgid "Please enter a channel URL."
+msgstr "Введіть URL-адресу каналу."
+
+#: channel_dialogs.py:81
+#: channel_dialogs.py:131
+msgid "Please enter a channel name."
+msgstr "Введіть назву каналу."
+
+#: search.py:230
+msgid "Please enter a search term."
+msgstr "Введіть пошуковий запит."
+
+#: channel_core.py:260
+#: search.py:219
+msgid "Please enter a valid number."
+msgstr "Введіть дійсне число."
+
+#: channel_core.py:67
+msgid "Podcasts"
+msgstr "Подкасти"
+
+#: Trim.py:143
+msgid "Preview start"
+msgstr "Початок попереднього перегляду"
+
+#: channel_core.py:162
+#: playlist.py:75
+#: search.py:120
+msgid "PreviousPage"
+msgstr "Попередня сторінка"
+
+#: Snapshot.py:93
+msgid "Processing snapshot..."
+msgstr "Обробка знімка..."
+
+#: Youtube_settings.py:340
+msgid "Proxy &URL:"
+msgstr "&URL проксі:"
+
+#: channel_core.py:143
+msgid "Ready"
+msgstr "Готово"
+
+#: channel_core.py:1594
+#: search.py:519
+msgid "Remove from list"
+msgstr "Видалити зі списку"
+
+#: Youtube_settings.py:371
+msgid "Reset to &safe settings (recommended if blocked)"
+msgstr "Скинути до &безпечних налаштувань (рекомендовано, якщо заблоковано)"
+
+#: Youtube_settings.py:641
+msgid "Reset to safe settings. Remember to use cookies for best results."
+msgstr "Скинути до безпечних налаштувань. Не забудьте використовувати файли cookie для найкращих результатів."
+
+#: Download_core.py:591
+msgid "Resume downloads"
+msgstr "Відновити завантаження"
+
+#: Youtube_settings.py:111
+msgid "Resume interrupted downloads on restart"
+msgstr "Відновлювати перервані завантаження під час перезапуску"
+
+#: search.py:87
+msgid "Search"
+msgstr "Пошук"
+
+#: search.py:53
+msgid "Search YouTube"
+msgstr "Шукати на YouTube"
+
+#: search.py:84
+msgid "Search YouTube:"
+msgstr "Шукати на YouTube:"
+
+#: __init__.py:600
+msgid "Search Youtube"
+msgstr "Шукати на Youtube"
+
+#: search.py:237
+msgid "Search already in progress."
+msgstr "Пошук уже виконується."
+
+#: search.py:472
+msgid "Search completed."
+msgstr "Пошук завершено."
+
+#: search.py:481
+msgid "Search failed."
+msgstr "Пошук не вдалося виконати."
+
+#: search.py:480
+msgid "Search failed: {error}"
+msgstr "Пошук не вдався: {error}"
+
+#: channel_core.py:136
+msgid "Search:"
+msgstr "Пошук:"
+
+#: search.py:266
+msgid "Searching..."
+msgstr "Пошук..."
+
+#: Youtube_settings.py:77
+msgid "Select a directory"
+msgstr "Виберіть каталог"
+
+#: Youtube_settings.py:444
+msgid ""
+"Select the browser you are currently logged into YouTube with.\n"
+"Close that browser first if possible -- yt-dlp usually cannot read its cookie database while the browser is still running.\n"
+"\n"
+"\n"
+msgstr "Виберіть браузер, у якому ви зараз увійшли на YouTube.\\nЯкщо можливо, спершу закрийте цей браузер — yt-dlp зазвичай не може прочитати його базу даних файлів cookie, поки браузер запущено."
+
+#: download_list.py:223
+msgid "Selected items added to download queue"
+msgstr "Вибрані елементи додано до черги завантаження"
+
+#: downloadFail.py:273
+#: download_list.py:195
+msgid "Selected items deleted"
+msgstr "Вибрані елементи видалено"
+
+#: __init__.py:634
+#: channel_core.py:1607
+#: playlist.py:453
+#: search.py:530
+msgid "Short URL copied to clipboard"
+msgstr "Коротку URL-адресу скопійовано до буфера обміну"
+
+#: channel_core.py:65
+msgid "Shorts"
+msgstr "Shorts"
+
+#: channel_core.py:154
+#: playlist.py:67
+#: search.py:111
+msgid "Show items:"
+msgstr "Показувати елементи:"
+
+#: Youtube_settings.py:217
+msgid "Skip &unavailable fragments"
+msgstr "Пропускати &недоступні фрагменти"
+
+#: Youtube_settings.py:106
+msgid "Skip existing files"
+msgstr "Пропускати наявні файли"
+
+#: __init__.py:597
+msgid "Snapshot"
+msgstr "Знімок екрана"
+
+#: Snapshot.py:56
+msgid "Snapshot file already exists"
+msgstr "Файл знімка вже існує"
+
+#: Youtube_settings.py:224
+msgid "Sound && Status Announcements"
+msgstr "Звуки && сповіщення про статус"
+
+#: Youtube_settings.py:148
+msgid "Speed && Connections"
+msgstr "Швидкість && з'єднання"
+
+#: Trim.py:171
+#: channel_dialogs.py:167
+#: search.py:688
+msgid "Start download"
+msgstr "Почати завантаження"
+
+#: Youtube_settings.py:96
+msgid "Start download immediately (NVDA+Y)"
+msgstr "Почати завантаження негайно (NVDA+Y)"
+
+#: Trim.py:311
+msgid "Start time must be less than end time"
+msgstr "Час початку має бути меншим за час закінчення"
+
+#: Trim.py:136
+msgid "Start time:"
+msgstr "Час початку:"
+
+#: downloadFail.py:304
+#: downloadFail.py:324
+msgid "Started {count} download(s)"
+msgstr "Запущено завантажень: {count}"
+
+#: __init__.py:434
+msgid "Starting download: {format} - {title}"
+msgstr "Початок завантаження: {format} - {title}"
+
+#: Download_core.py:855
+msgid "Starting next download from queue: {title}"
+msgstr "Початок наступного завантаження з черги: {title}"
+
+#: download_list.py:70
+msgid "Status"
+msgstr "Стан"
+
+#: download_list.py:170
+msgid "This item is already downloading"
+msgstr "Цей елемент уже завантажується"
+
+#: Download_core.py:1228
+msgid "This livestream hasn't started yet. It starts in {time}."
+msgstr "Ця пряма трансляція ще не почалася. Вона почнеться через {time}."
+
+#: Download_core.py:1226
+msgid "This video hasn't premiered yet. It starts in {time}."
+msgstr "Цe відео ще не має прем'єри. Вона почнеться через {time}."
+
+#: channel_dialogs.py:15
+msgid "Title"
+msgstr "Назва"
+
+#: channel_core.py:1648
+#: playlist.py:443
+msgid "Title correction completed and locked."
+msgstr "Виправлення назви завершено та заблоковано."
+
+#: channel_core.py:579
+msgid "Title correction completed for {count} videos."
+msgstr "Виправлення назви завершено для відео: {count}."
+
+#: channel_core.py:1650
+#: playlist.py:445
+msgid "Title correction failed."
+msgstr "Не вдалося виправити назву."
+
+#: __init__.py:789
+msgid "Toggle playlist mode"
+msgstr "Перемкнути режим списку відтворення"
+
+#: __init__.py:598
+msgid "Trim setting"
+msgstr "Налаштування обрізання"
+
+#: Trim.py:327
+msgid "Trimming and downloading {format}..."
+msgstr "Обрізання та завантаження {format}..."
+
+#: Trim.py:129
+#: downloadFail.py:66
+msgid "URL"
+msgstr "URL"
+
+#: channel_core.py:1610
+msgid "URL copied to clipboard"
+msgstr "URL-адресу скопійовано до буфера обміну"
+
+#: Trim.py:296
+msgid "URL is required"
+msgstr "Потрібна URL-адреса"
+
+#: Download_core.py:1306
+msgid "URL not found"
+msgstr "URL-адресу не знайдено"
+
+#: Download_core.py:745
+#: __init__.py:428
+#: downloadFail.py:104
+#: downloadFail.py:105
+#: downloadFail.py:106
+#: download_list.py:105
+msgid "Unknown"
+msgstr "Невідомо"
+
+#: channel_core.py:712
+msgid "Unpin"
+msgstr "Відкріпити"
+
+#: Youtube_settings.py:718
+#: __init__.py:313
+msgid "Update failed: {str}"
+msgstr "Не вдалося оновити: {str}"
+
+#: Youtube_settings.py:391
+msgid "Update status: Idle"
+msgstr "Статус оновлення: Неактивно"
+
+#: Youtube_settings.py:717
+msgid "Update status: Update failed: {str}"
+msgstr "Статус оновлення: Помилка оновлення: {str}"
+
+#: Youtube_settings.py:713
+msgid "Update status: Update successful"
+msgstr "Статус оновлення: Оновлення успішне"
+
+#: Youtube_settings.py:703
+msgid "Update status: Updating..."
+msgstr "Статус оновлення: Оновлення..."
+
+#: Youtube_settings.py:387
+msgid "Update yt-dlp now"
+msgstr "Оновити yt-dlp зараз"
+
+#: Youtube_settings.py:704
+#: __init__.py:301
+msgid "Updating yt-dlp..."
+msgstr "Оновлення yt-dlp..."
+
+#: Youtube_settings.py:281
+msgid "Use &cookies (recommended to avoid block)"
+msgstr "Використовувати &cookies (рекомендовано для уникнення блокування)"
+
+#: Youtube_settings.py:324
+msgid "Use &custom user agent"
+msgstr "Використовувати &власний агент користувача"
+
+#: Youtube_settings.py:335
+msgid "Use &proxy"
+msgstr "Використовувати &проксі"
+
+#: Youtube_settings.py:153
+msgid "Use download section"
+msgstr "Використовувати розділ завантаження"
+
+#: Youtube_settings.py:329
+msgid "User &agent:"
+msgstr "Агент &користувача:"
+
+#: downloadFail.py:64
+#: download_list.py:68
+#: search.py:29
+msgid "Video Title"
+msgstr "Назва відео"
+
+#: Trim.py:141
+msgid "Video duration: unknown; Overall period: 0 seconds"
+msgstr "Тривалість відео: невідомо; Загальний період: 0 секунд"
+
+#: Trim.py:254
+msgid "Video duration: {duration}; Overall period: {period} seconds"
+msgstr "Тривалість відео: {duration}; Загальний період: {period} секунд"
+
+#: channel_core.py:64
+msgid "Videos"
+msgstr "Відео"
+
+#: playlist.py:24
+msgid "Videos in {title}"
+msgstr "Відео в {title}"
+
+#: download_list.py:108
+msgid "Waiting"
+msgstr "Очікування"
+
+#: __init__.py:680
+#: __init__.py:693
+msgid "You must be on a YouTube page to use this feature"
+msgstr "Щоб користуватися цією функцією, ви повинні перебувати на сторінці YouTube"
+
+#: channel_core.py:31
+msgid "Your favorite channel"
+msgstr "Ваш улюблений канал"
+
+#: Trim.py:253
+msgid "invalid"
+msgstr "недійсний"
+
+#: Trim.py:249
+msgid "invalid (negative)"
+msgstr "недійсний (від'ємний)"
+
+#: search.py:47
+msgid "loading..."
+msgstr "завантаження..."
+
+#: Trim.py:243
+msgid "unknown"
+msgstr "невідомо"
+
+#: Youtube_settings.py:578
+msgid "unknown error"
+msgstr "невідома помилка"
+
+#: Youtube_settings.py:377
+msgid "yt-dlp Update"
+msgstr "Оновлення yt-dlp"
+
+#: Youtube_settings.py:714
+#: __init__.py:310
+msgid "yt-dlp updated successfully"
+msgstr "yt-dlp успішно оновлено"
+
+#: Download_core.py:1335
+#: Youtube_settings.py:460
+msgid "yt-dlp.exe missing"
+msgstr "відсутній yt-dlp.exe"
+
+#: channel_core.py:993
+#: search.py:241
+msgid "yt-dlp.exe not found."
+msgstr "Файл yt-dlp.exe не знайдено."
+
+#: Youtube_settings.py:466
+msgid ""
+"{browser} appears to still be running. The cookie database is usually locked while the browser is open, so the export will likely fail with a database error.\n"
+"\n"
+"Close {browser} completely, then click OK to continue anyway or Cancel to stop and close it first.\n"
+"\n"
+"\n"
+msgstr "Схоже, {browser} досі працює. База даних файлів cookie зазвичай заблокована, коли браузер відкритий, тому експорт, імовірно, завершиться помилкою бази даних.\\n\\nПовністю закрийте {browser}, а потім натисніть «OK», щоб продовжити попри все, або «Скасувати», щоб зупинитися та спочатку закрити його."
+
+#: channel_core.py:333
+#: search.py:608
+msgid "{count} downloads queued."
+msgstr "У черзі завантажень: {count}."
+
+#: channel_core.py:1278
+msgid "{count} new items updated."
+msgstr "Оновлено нових елементів: {count}."
+
+#: Download_core.py:1002
+msgid "{mb} MB downloaded"
+msgstr "Завантажено МБ: {mb}"
+
+#: Download_core.py:987
+msgid "{percent}%"
+msgstr "{percent}%"
+
+#: __init__.py:808
+msgid "{quality} kbps"
+msgstr "{quality} кбіт/с"
+
+#: channel_core.py:372
+#: playlist.py:124
+#: search.py:185
+msgid "{}, showing {} of {} videos"
+msgstr "{}, показано відео: {} з {}"
