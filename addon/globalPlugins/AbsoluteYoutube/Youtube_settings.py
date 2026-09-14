@@ -17,7 +17,7 @@ import addonHandler
 
 addonHandler.initTranslation()
 
-from .Download_core import YouTubeEXE, log, PlayStartBeep, getAddonConfigBaseDir, _kill_process_tree
+from .Download_core import YouTubeEXE, log, PlayStartBeep, getAddonConfigBaseDir, _kill_process_tree, download_and_replace_yt_dlp_binary, download_and_replace_deno_binary
 
 def _safeWidgetCall(func, *args, **kwargs):
 	# A background thread's wx.CallAfter callback can still be pending
@@ -342,17 +342,6 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 		)
 		self.proxyText.SetValue(getINI("ProxyURL") or "")
 
-		self.geoBypassChk = antiBlockHelper.addItem(
-			wx.CheckBox(antiBlockBox, label=_("&Geo bypass"))
-		)
-		self.geoBypassChk.SetValue(getINI("GeoBypass"))
-
-		self.geoBypassCountryText = antiBlockHelper.addLabeledControl(
-			_("Geo bypass &country:"),
-			wx.TextCtrl
-		)
-		self.geoBypassCountryText.SetValue(getINI("GeoBypassCountry") or "US")
-
 		self.forceIpv4Chk = antiBlockHelper.addItem(
 			wx.CheckBox(antiBlockBox, label=_("Force I&Pv4"))
 		)
@@ -393,6 +382,21 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 
 		updateHelper.addItem(updateBtnSizer)
 		helper.addItem(updateSizer)
+
+		denoSizer = wx.StaticBoxSizer(wx.VERTICAL, self, label=_("JavaScript Runtime (Deno)"))
+		denoBox = denoSizer.GetStaticBox()
+		denoHelper = guiHelper.BoxSizerHelper(self, sizer=denoSizer)
+
+		denoBtnSizer = wx.BoxSizer(wx.HORIZONTAL)
+		self.denoUpdateBtn = wx.Button(denoBox, label=_("Update Deno now"))
+		self.denoUpdateBtn.Bind(wx.EVT_BUTTON, self.on_update_deno)
+		denoBtnSizer.Add(self.denoUpdateBtn, 0, wx.ALL, 5)
+
+		self.denoUpdateStatusLabel = wx.StaticText(denoBox, label=_("Update status: Idle"))
+		denoBtnSizer.Add(self.denoUpdateStatusLabel, 0, wx.ALL | wx.ALIGN_CENTER_VERTICAL, 5)
+
+		denoHelper.addItem(denoBtnSizer)
+		helper.addItem(denoSizer)
 
 		self.useCookiesChk.Bind(wx.EVT_CHECKBOX, self.on_use_cookies_changed)
 		self.customUserAgentChk.Bind(wx.EVT_CHECKBOX, self.on_custom_user_agent_changed)
@@ -702,14 +706,15 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 			try:
 				wx.CallAfter(_safeWidgetCall, self.updateStatusLabel.SetLabel, _("Update status: Updating..."))
 				ui.message(_("Updating yt-dlp..."))
-				req = urllib.request.Request(
-					"https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe",
-					headers={'User-Agent': 'Mozilla/5.0'}
-				)
-				temp_file = os.path.join(tempfile.gettempdir(), f"yt-dlp_{uuid.uuid4().hex}.exe")
-				with urllib.request.urlopen(req) as response, open(temp_file, 'wb') as out_file:
-					out_file.write(response.read())
-				shutil.move(temp_file, YouTubeEXE)
+				# download_and_replace_yt_dlp_binary() also clears yt-dlp's
+				# own extraction cache after replacing the binary -- see the
+				# comment on that function in Download_core.py. This used to
+				# be a separate inline copy of the download-and-replace
+				# logic that didn't do that, so clicking this button and the
+				# add-on's own auto-update-on-startup path could silently
+				# drift out of sync the same way build_ytdlp_command() once
+				# did between convertToMP() and the Download Fail Manager.
+				download_and_replace_yt_dlp_binary()
 				wx.CallAfter(_safeWidgetCall, self.updateStatusLabel.SetLabel, _("Update status: Update successful"))
 				ui.message(_("yt-dlp updated successfully"))
 				log("yt-dlp updated successfully")
@@ -717,6 +722,21 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 				wx.CallAfter(_safeWidgetCall, self.updateStatusLabel.SetLabel, _("Update status: Update failed: {str}").format(str=str(e)))
 				ui.message(_("Update failed: {str}").format(str=str(e)))
 				log(f"Error updating yt-dlp: {e}")
+		threading.Thread(target=update_thread, daemon=True).start()
+
+	def on_update_deno(self, event):
+		def update_thread():
+			try:
+				wx.CallAfter(_safeWidgetCall, self.denoUpdateStatusLabel.SetLabel, _("Update status: Updating..."))
+				ui.message(_("Updating Deno..."))
+				download_and_replace_deno_binary()
+				wx.CallAfter(_safeWidgetCall, self.denoUpdateStatusLabel.SetLabel, _("Update status: Update successful"))
+				ui.message(_("Deno updated successfully"))
+				log("deno.exe updated successfully")
+			except Exception as e:
+				wx.CallAfter(_safeWidgetCall, self.denoUpdateStatusLabel.SetLabel, _("Update status: Update failed: {str}").format(str=str(e)))
+				ui.message(_("Update failed: {str}").format(str=str(e)))
+				log(f"Error updating deno.exe: {e}")
 		threading.Thread(target=update_thread, daemon=True).start()
 
 	def onSave(self):
@@ -769,9 +789,6 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 		setINI("SkipUnavailableFragments", self.skipUnavailableChk.GetValue())
 		setINI("UseProxy", self.useProxyChk.GetValue())
 		setINI("ProxyURL", self.proxyText.GetValue())
-		setINI("GeoBypass", self.geoBypassChk.GetValue())
-		setINI("GeoBypassCountry", self.geoBypassCountryText.GetValue())
 		setINI("ForceIpv4", self.forceIpv4Chk.GetValue())
 		setINI("ForceIpv6", self.forceIpv6Chk.GetValue())
 		setINI("MarkWatched", self.markWatchedChk.GetValue())
-

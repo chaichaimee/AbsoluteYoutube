@@ -18,7 +18,8 @@ class DownloadListDialog(wx.Dialog):
 
 		required_keys = ['getINI', 'DownloadPath', 'log', 'get_pending_file_path',
 						 'add_pending_download', 'start_next_pending', 'is_download_active',
-						 'get_pending_downloads', 'remove_pending_download_by_index', 'clear_pending_downloads']
+						 'get_pending_downloads', 'remove_pending_download_by_index', 'clear_pending_downloads',
+						 'promote_pending_download_to_front', 'promote_pending_downloads_to_front']
 		missing_keys = [k for k in required_keys if k not in self.core_functions]
 		if missing_keys:
 			self.log_error(f"Missing core functions: {missing_keys}")
@@ -169,17 +170,21 @@ class DownloadListDialog(wx.Dialog):
 			if item.get('status') == 'downloading':
 				ui.message(_("This item is already downloading"))
 				return
-			is_playlist = item.get('is_playlist', False)
-			success = self.core_functions['add_pending_download'](item['url'], item['title'], item['format'], is_playlist)
-			if success:
-				self.delete_item(idx)
-				if not self.core_functions['is_download_active']():
-					self.core_functions['start_next_pending']()
-				ui.message(_("Added to download queue: {title}").format(title=item['title']))
-			else:
-				ui.message(_("Already in download queue"))
-				if not self.core_functions['is_download_active']():
-					self.core_functions['start_next_pending']()
+			# Move this specific item to the front of the pending queue and
+			# start it immediately if nothing is downloading right now.
+			# This used to call add_pending_download(item['url'], ...) --
+			# that function's job is adding a brand-new candidate, and it
+			# refuses (returns False) if a matching url+format is already
+			# in the pending list. Since `item` was read out of that very
+			# list, the check always found itself, so the actual
+			# "start it now" branch below could never run; the button
+			# always fell through to "Already in download queue" without
+			# ever moving or starting anything.
+			self.core_functions['promote_pending_download_to_front'](idx)
+			if not self.core_functions['is_download_active']():
+				self.core_functions['start_next_pending']()
+			self.update_list()
+			ui.message(_("Starting download: {title}").format(title=item['title']))
 
 	def on_delete_selected(self, event):
 		selected_indices = []
@@ -203,28 +208,21 @@ class DownloadListDialog(wx.Dialog):
 		if not selected_indices:
 			ui.message(_("No items selected"))
 			return
-		added_any = False
-		processed_indices = []
-		for idx in selected_indices:
-			if 0 <= idx < len(self.pending_downloads):
-				item = self.pending_downloads[idx]
-				if item.get('status') == 'downloading':
-					continue
-				is_playlist = item.get('is_playlist', False)
-				success = self.core_functions['add_pending_download'](item['url'], item['title'], item['format'], is_playlist)
-				if success:
-					added_any = True
-					processed_indices.append(idx)
-		if added_any:
-			for idx in sorted(processed_indices, reverse=True):
-				self.delete_item(idx)
-			if not self.core_functions['is_download_active']():
-				self.core_functions['start_next_pending']()
-			ui.message(_("Selected items added to download queue"))
-		else:
-			ui.message(_("No new items added (already in queue)"))
-			if not self.core_functions['is_download_active']():
-				self.core_functions['start_next_pending']()
+		downloadable_indices = [
+			idx for idx in selected_indices
+			if 0 <= idx < len(self.pending_downloads) and self.pending_downloads[idx].get('status') != 'downloading'
+		]
+		if not downloadable_indices:
+			ui.message(_("Selected item(s) already downloading"))
+			return
+		# Same fix as download_item(): move the selected items to the front
+		# of the pending queue instead of trying to re-add them, which
+		# always failed the duplicate check against themselves.
+		self.core_functions['promote_pending_downloads_to_front'](downloadable_indices)
+		if not self.core_functions['is_download_active']():
+			self.core_functions['start_next_pending']()
+		self.update_list()
+		ui.message(_("Selected items moved to the front of the download queue"))
 
 	def on_download_all(self, event):
 		if not self.pending_downloads:
@@ -234,21 +232,27 @@ class DownloadListDialog(wx.Dialog):
 		if not waiting_items:
 			ui.message(_("No pending downloads"))
 			return
-		added_any = False
-		for item in waiting_items:
-			is_playlist = item.get('is_playlist', False)
-			success = self.core_functions['add_pending_download'](item['url'], item['title'], item['format'], is_playlist)
-			if success:
-				added_any = True
-		if added_any:
-			self.on_clear_all(None)
-			if not self.core_functions['is_download_active']():
-				self.core_functions['start_next_pending']()
-			ui.message(_("All items added to download queue"))
-		else:
-			ui.message(_("No items added (all already in queue)"))
-			if not self.core_functions['is_download_active']():
-				self.core_functions['start_next_pending']()
+		# Every waiting item is already sitting in the pending queue in its
+		# existing order; "Download all" only needs to make sure the queue
+		# starts draining now instead of waiting idle. Each finished
+		# download already calls start_next_pending() again on its own
+		# (see run_download()'s cleanup in Download_core.py), so one kick
+		# here is enough for the rest to follow automatically as download
+		# slots free up.
+		#
+		# This used to call add_pending_download() per item -- which always
+		# failed the same self-duplicate check as download_item() above --
+		# and then, if that had ever succeeded, on_clear_all(), which wipes
+		# the entire pending_downloads.json. That combination meant the
+		# button either silently did nothing (the actual observed behavior,
+		# because the duplicate check never let it proceed) or, had that
+		# check ever behaved differently, would have deleted every pending
+		# item outright, including ones that failed to "re-add" -- a
+		# destructive operation with no confirmation step, per 5.3.
+		if not self.core_functions['is_download_active']():
+			self.core_functions['start_next_pending']()
+		self.update_list()
+		ui.message(_("Starting {count} pending download(s)").format(count=len(waiting_items)))
 
 	def on_clear_all(self, event):
 		if not self.pending_downloads:
@@ -263,4 +267,3 @@ class DownloadListDialog(wx.Dialog):
 					json.dump([], f)
 		self.update_list()
 		ui.message(_("All pending downloads cleared"))
-

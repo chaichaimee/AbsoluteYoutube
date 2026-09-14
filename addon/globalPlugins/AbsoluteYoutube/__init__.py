@@ -46,8 +46,6 @@ AddOnSummary = _("Absolute YouTube")
 AddOnName = "AbsoluteYoutube"
 
 AddOnPath = os.path.dirname(__file__)
-ToolsPath = os.path.join(AddOnPath, "Tools")
-YouTubeEXE = os.path.join(ToolsPath, "yt-dlp.exe")
 
 sectionName = AddOnName
 
@@ -91,9 +89,6 @@ def initConfiguration():
 		"MarkWatched": "boolean(default=True)",
 		"ForceIpv4": "boolean(default=False)",
 		"ForceIpv6": "boolean(default=False)",
-		"GeoBypass": "boolean(default=True)",
-		"GeoBypassCountry": "string(default='US')",
-		"GeoBypassIP": "string(default='')",
 		"UseSponsorBlock": "boolean(default=False)",
 		"SponsorBlockCategories": "string(default='all')",
 		"ImmediateDownload": "boolean(default=True)",
@@ -111,7 +106,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 		self.core_functions = {
 			'log': lambda msg: log.info(msg),
-			'YouTubeEXE': YouTubeEXE,
 		}
 
 		try:
@@ -129,6 +123,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				log as core_log,
 				check_yt_dlp_update,
 				get_yt_dlp_versions,
+				download_and_replace_yt_dlp_binary,
 				add_failed_download,
 				get_failed_downloads,
 				remove_failed_download,
@@ -141,6 +136,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				get_pending_downloads,
 				remove_pending_download_by_index,
 				clear_pending_downloads,
+				promote_pending_download_to_front,
+				promote_pending_downloads_to_front,
 				get_pending_file_path,
 				is_download_active,
 				start_next_pending,
@@ -148,7 +145,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				addDownloadToQueue,
 				_download_queue,
 				ConverterEXE,
-				Aria2cEXE
+				Aria2cEXE,
+				YouTubeEXE,
+				js_runtime_args
 			)
 			self.core_functions.update({
 				'initialize_folders': initialize_folders,
@@ -163,6 +162,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				'shutdown_workers': shutdown_workers,
 				'check_yt_dlp_update': check_yt_dlp_update,
 				'get_yt_dlp_versions': get_yt_dlp_versions,
+				'download_and_replace_yt_dlp_binary': download_and_replace_yt_dlp_binary,
 				'add_failed_download': add_failed_download,
 				'get_failed_downloads': get_failed_downloads,
 				'remove_failed_download': remove_failed_download,
@@ -175,6 +175,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				'get_pending_downloads': get_pending_downloads,
 				'remove_pending_download_by_index': remove_pending_download_by_index,
 				'clear_pending_downloads': clear_pending_downloads,
+				'promote_pending_download_to_front': promote_pending_download_to_front,
+				'promote_pending_downloads_to_front': promote_pending_downloads_to_front,
 				'get_pending_file_path': get_pending_file_path,
 				'is_download_active': is_download_active,
 				'start_next_pending': start_next_pending,
@@ -183,6 +185,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				'_download_queue': _download_queue,
 				'ConverterEXE': ConverterEXE,
 				'Aria2cEXE': Aria2cEXE,
+				'YouTubeEXE': YouTubeEXE,
+				'js_runtime_args': js_runtime_args,
 			})
 		except ImportError as e:
 			ui.message(_("Error importing core functions: {str}").format(str=str(e)))
@@ -299,14 +303,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def _download_and_replace_yt_dlp(self):
 		try:
 			wx.CallAfter(ui.message, _("Updating yt-dlp..."))
-			req = urllib.request.Request(
-				"https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe",
-				headers={'User-Agent': 'Mozilla/5.0'}
-			)
-			temp_file = os.path.join(tempfile.gettempdir(), f"yt-dlp_{uuid.uuid4().hex}.exe")
-			with urllib.request.urlopen(req) as response, open(temp_file, 'wb') as out_file:
-				out_file.write(response.read())
-			shutil.move(temp_file, YouTubeEXE)
+			self.core_functions['download_and_replace_yt_dlp_binary']()
 			wx.CallAfter(ui.message, _("yt-dlp updated successfully"))
 			self.core_functions['log']("yt-dlp updated successfully")
 		except Exception as e:
@@ -747,7 +744,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def _get_channel_url_from_video(self, video_url):
 		try:
-			cmd = [YouTubeEXE, "--print", "channel_url", "--no-playlist", video_url]
+			youtube_exe = self.core_functions.get('YouTubeEXE')
+			if not youtube_exe or not os.path.exists(youtube_exe):
+				self.core_functions['log']("Cannot extract channel URL: yt-dlp.exe path unavailable")
+				return None
+			cmd = [youtube_exe, "--print", "channel_url", "--no-playlist"] + self.core_functions.get('js_runtime_args', lambda: [])() + [video_url]
 			process = subprocess.run(
 				cmd,
 				capture_output=True,
@@ -806,10 +807,3 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if 'setINI' in self.core_functions:
 			self.core_functions['setINI']("MP3Quality", new_quality)
 		ui.message(_("{quality} kbps").format(quality=new_quality))
-
-
-
-
-
-
-

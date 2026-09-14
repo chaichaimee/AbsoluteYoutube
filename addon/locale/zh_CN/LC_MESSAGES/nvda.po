@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: AbsoluteYoutube 2026.9.0\n"
+"Project-Id-Version: AbsoluteYoutube 2026.9.12\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-09-05 09:36+0700\n"
+"POT-Creation-Date: 2026-09-14 07:42+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Chinese (Simplified)\n"
@@ -30,12 +30,12 @@ msgstr "&自动获取Cookie的浏览器（在未指定Cookie文件时使用）:"
 
 #: channel_dialogs.py:69
 #: channel_dialogs.py:119
-#: downloadFail.py:90
+#: downloadFail.py:96
 msgid "&Cancel"
 msgstr "取消(&C)"
 
-#: downloadFail.py:82
-#: download_list.py:87
+#: downloadFail.py:88
+#: download_list.py:88
 msgid "&Clear All"
 msgstr "&全部清除"
 
@@ -45,14 +45,14 @@ msgstr "&全部清除"
 msgid "&Close"
 msgstr "关闭(&C)"
 
-#: downloadFail.py:70
-#: download_list.py:75
+#: downloadFail.py:76
+#: download_list.py:76
 msgid "&Delete Selected"
 msgstr "&删除所选"
 
 #: channel_core.py:182
-#: downloadFail.py:78
-#: download_list.py:83
+#: downloadFail.py:84
+#: download_list.py:84
 #: search.py:140
 msgid "&Download All"
 msgstr "&全部下载"
@@ -61,8 +61,8 @@ msgstr "&全部下载"
 msgid "&Download All Videos in Playlist"
 msgstr "&下载播放列表中的所有视频"
 
-#: downloadFail.py:74
-#: download_list.py:79
+#: downloadFail.py:80
+#: download_list.py:80
 msgid "&Download Selected"
 msgstr "&下载所选"
 
@@ -70,11 +70,7 @@ msgstr "&下载所选"
 msgid "&Download folder"
 msgstr "&下载文件夹"
 
-#: Youtube_settings.py:346
-msgid "&Geo bypass"
-msgstr "&绕过地理限制"
-
-#: Youtube_settings.py:367
+#: Youtube_settings.py:356
 msgid "&Mark as watched"
 msgstr "&标记为已观看"
 
@@ -88,8 +84,8 @@ msgstr "&连接数:"
 
 #: channel_dialogs.py:67
 #: channel_dialogs.py:117
-#: downloadFail.py:86
-#: download_list.py:91
+#: downloadFail.py:92
+#: download_list.py:92
 msgid "&OK"
 msgstr "确定(&O)"
 
@@ -113,7 +109,7 @@ msgstr "&来源"
 msgid "&Throttle rate (KB/s, 0=unlimited, step of 5):"
 msgstr "&限速 (KB/s, 0=不限速, 步长为5):"
 
-#: Download_core.py:1154
+#: Download_core.py:1551
 msgid "0%"
 msgstr "0%"
 
@@ -121,7 +117,7 @@ msgstr "0%"
 msgid "A channel with this name already exists. Overwrite?"
 msgstr "已存在同名频道。是否覆盖？"
 
-#: __init__.py:282
+#: __init__.py:286
 msgid "A new version of yt-dlp is available: {latest}. Current: {current}. Please update in settings."
 msgstr "yt-dlp 有新版本可用：{latest}。当前版本：{current}。请在设置中更新。"
 
@@ -135,11 +131,11 @@ msgstr "绝对 YouTube"
 msgid "Absolute YouTube Trim"
 msgstr "绝对 YouTube 剪辑"
 
-#: __init__.py:602
+#: __init__.py:599
 msgid "Absolute YouTube setting"
 msgstr "绝对 YouTube 设置"
 
-#: menu.py:18
+#: menu.py:14
 msgid "Absolute Youtube"
 msgstr "绝对 Youtube"
 
@@ -151,31 +147,27 @@ msgstr "添加新频道"
 msgid "Add new channel"
 msgstr "添加新频道"
 
-#: __init__.py:193
+#: __init__.py:197
 msgid "Add-on initialization failed: missing pending file path function. Please restart NVDA."
 msgstr "插件初始化失败：缺少挂起的文件路径函数。请重新启动 NVDA。"
 
-#: download_list.py:25
+#: download_list.py:26
 msgid "Add-on internal error: missing components. Please restart NVDA."
 msgstr "插件内部错误：缺少组件。请重新启动 NVDA。"
 
-#: download_list.py:71
+#: download_list.py:72
 msgid "Added Time"
 msgstr "添加时间"
 
-#: __init__.py:451
+#: __init__.py:448
 msgid "Added to download list: {format} - {title}"
 msgstr "已添加到下载列表：{format} - {title}"
 
-#: __init__.py:445
+#: __init__.py:442
 msgid "Added to download queue: {format} - {title}"
 msgstr "已添加到下载队列：{format} - {title}"
 
-#: download_list.py:178
-msgid "Added to download queue: {title}"
-msgstr "已添加到下载队列：{title}"
-
-#: Download_core.py:1457
+#: Download_core.py:2000
 msgid "Adding link as {format} to download queue"
 msgstr "正在将链接作为 {format} 添加到下载队列"
 
@@ -196,24 +188,19 @@ msgstr "正在将 {title} 添加到下载队列。"
 msgid "All"
 msgstr "全部"
 
-#: downloadFail.py:335
+#: downloadFail.py:326
 msgid "All failed downloads cleared"
 msgstr "已清除所有失败的下载"
 
-#: download_list.py:247
-msgid "All items added to download queue"
-msgstr "所有项目均已添加到下载队列"
-
-#: download_list.py:265
+#: download_list.py:269
 msgid "All pending downloads cleared"
 msgstr "已清除所有挂起的下载"
 
-#: __init__.py:453
+#: __init__.py:450
 msgid "Already in download list"
 msgstr "已在下载列表中"
 
-#: __init__.py:447
-#: download_list.py:180
+#: __init__.py:444
 msgid "Already in download queue"
 msgstr "已在下载队列中"
 
@@ -238,7 +225,7 @@ msgstr "在最大值（10,000 KB/s = 10 MB/s）下，此限制基本上不会生
 msgid "Audio Quality"
 msgstr "音频质量"
 
-#: Youtube_settings.py:382
+#: Youtube_settings.py:371
 msgid "Auto-update yt-dlp on startup"
 msgstr "启动时自动更新 yt-dlp"
 
@@ -251,11 +238,11 @@ msgid "Beep e&very (seconds):"
 msgstr "提示音&间隔 (秒)："
 
 #: Youtube_settings.py:306
-#: Youtube_settings.py:427
+#: Youtube_settings.py:431
 msgid "Brave"
 msgstr "Brave"
 
-#: Youtube_settings.py:473
+#: Youtube_settings.py:477
 msgid "Browser still running"
 msgstr "浏览器仍在运行"
 
@@ -265,7 +252,7 @@ msgstr "浏览器仍在运行"
 msgid "Cancel"
 msgstr "取消"
 
-#: downloadFail.py:195
+#: downloadFail.py:206
 msgid "Cannot create download folder"
 msgstr "无法创建下载文件夹"
 
@@ -273,7 +260,7 @@ msgstr "无法创建下载文件夹"
 msgid "Cannot create download folder."
 msgstr "无法创建下载文件夹。"
 
-#: Download_core.py:510
+#: Download_core.py:811
 msgid "Cannot create folder"
 msgstr "无法创建文件夹"
 
@@ -281,11 +268,11 @@ msgstr "无法创建文件夹"
 msgid "Cannot determine URL for this video."
 msgstr "无法确定此视频的 URL。"
 
-#: __init__.py:409
+#: __init__.py:406
 msgid "Cannot download from YouTube homepage. Please navigate to a video or playlist."
 msgstr "无法从 YouTube 主页下载。请导航至视频或播放列表。"
 
-#: __init__.py:412
+#: __init__.py:409
 msgid "Cannot download from this YouTube page. Please select a specific video."
 msgstr "无法从此 YouTube 页面下载。请选择特定视频。"
 
@@ -348,12 +335,12 @@ msgstr "频道："
 msgid "Checking for new videos..."
 msgstr "正在检查新视频..."
 
-#: Download_core.py:688
+#: Download_core.py:989
 msgid "Checking interrupted downloads..."
 msgstr "正在检查中断的下载..."
 
-#: downloadFail.py:144
-#: download_list.py:136
+#: downloadFail.py:150
+#: download_list.py:137
 msgid "Clear all"
 msgstr "全部清除"
 
@@ -373,17 +360,17 @@ msgstr "确认覆盖"
 msgid "Content type:"
 msgstr "内容类型："
 
-#: Download_core.py:972
-#: Download_core.py:994
+#: Download_core.py:1369
+#: Download_core.py:1391
 msgid "Converting"
 msgstr "正在转换"
 
-#: Youtube_settings.py:579
-#: Youtube_settings.py:598
+#: Youtube_settings.py:583
+#: Youtube_settings.py:602
 msgid "Cookie export failed: {str}"
 msgstr "Cookie 导出失败：{str}"
 
-#: Youtube_settings.py:589
+#: Youtube_settings.py:593
 msgid "Cookie export timed out"
 msgstr "Cookie 导出超时"
 
@@ -391,7 +378,7 @@ msgstr "Cookie 导出超时"
 msgid "Cookies &file:"
 msgstr "Cookie 文件(&F):"
 
-#: Youtube_settings.py:621
+#: Youtube_settings.py:625
 msgid "Cookies exported successfully to {path}. Anti-blocking is now active."
 msgstr "已成功将 Cookie 导出至 {path}。反屏蔽功能现已激活。"
 
@@ -399,7 +386,7 @@ msgstr "已成功将 Cookie 导出至 {path}。反屏蔽功能现已激活。"
 msgid "Copy URL"
 msgstr "复制网址"
 
-#: __init__.py:584
+#: __init__.py:581
 #: playlist.py:415
 #: search.py:503
 msgid "Copy video Shorten URL"
@@ -420,15 +407,15 @@ msgstr "正在纠正所选视频的标题..."
 msgid "Could not create short URL"
 msgstr "无法创建短网址"
 
-#: __init__.py:636
+#: __init__.py:633
 msgid "Could not create shortened URL"
 msgstr "无法创建缩短的网址"
 
-#: Youtube_settings.py:563
+#: Youtube_settings.py:567
 msgid "Could not decrypt {browser}'s cookies (DPAPI decryption failed). This usually means yt-dlp needs updating to support this browser's newer cookie encryption. Try 'Update yt-dlp now' below, then export again, or export from Firefox instead, which does not use this encryption. If it still fails, use the manual cookies.txt method."
 msgstr "无法解密 {browser} 的 Cookie（DPAPI 解密失败）。这通常意味着需要更新 yt-dlp 以支持该浏览器的较新 Cookie 加密。请尝试下方“立即更新 yt-dlp”然后再次导出，或者改用不使用此加密的 Firefox 导出。如果仍然失败，请使用手动 cookies.txt 方法。"
 
-#: Youtube_settings.py:571
+#: Youtube_settings.py:575
 msgid "Could not decrypt {browser}'s cookies (DPAPI decryption failed). This usually means yt-dlp needs updating. Try 'Update yt-dlp now' below, then export again. If it still fails, use the manual cookies.txt method instead."
 msgstr "无法解密 {browser} 的 Cookie（DPAPI 解密失败）。这通常意味着需要更新 yt-dlp。请尝试下方的“立即更新 yt-dlp”然后再次导出。如果仍然失败，请改用手动 cookies.txt 方法。"
 
@@ -436,30 +423,34 @@ msgstr "无法解密 {browser} 的 Cookie（DPAPI 解密失败）。这通常意
 msgid "Could not open preview URL"
 msgstr "无法打开预览网址"
 
-#: Youtube_settings.py:545
+#: Youtube_settings.py:549
 msgid "Could not read the {browser} cookie database. Close {browser} completely and try exporting again."
 msgstr "无法读取 {browser} 的 Cookie 数据库。请完全关闭 {browser} 后重试导出。"
 
-#: __init__.py:796
+#: __init__.py:797
 msgid "Cycle MP3 quality settings"
 msgstr "循环切换 MP3 音质设置"
 
 #: channel_core.py:728
-#: downloadFail.py:131
-#: download_list.py:124
+#: downloadFail.py:137
+#: download_list.py:125
 msgid "Delete"
 msgstr "删除"
 
-#: downloadFail.py:136
-#: download_list.py:129
+#: downloadFail.py:142
+#: download_list.py:130
 msgid "Delete selected"
 msgstr "删除所选项"
+
+#: Youtube_settings.py:734
+msgid "Deno updated successfully"
+msgstr "在 Chrome 或 Firefox 中安装“Get cookies.txt”扩展程序"
 
 #: Youtube_settings.py:73
 msgid "Destination folder"
 msgstr "目标文件夹"
 
-#: download_list.py:126
+#: download_list.py:127
 msgid "Download"
 msgstr "下载"
 
@@ -498,8 +489,8 @@ msgstr "下载 MP4"
 msgid "Download WAV"
 msgstr "下载 WAV"
 
-#: downloadFail.py:142
-#: download_list.py:134
+#: downloadFail.py:148
+#: download_list.py:135
 msgid "Download all"
 msgstr "全部下载"
 
@@ -507,7 +498,7 @@ msgstr "全部下载"
 msgid "Download all {count} videos in this playlist?"
 msgstr "下载此播放列表中的所有 {count} 个视频？"
 
-#: Download_core.py:1194
+#: Download_core.py:1591
 msgid "Download complete"
 msgstr "下载完成"
 
@@ -515,35 +506,51 @@ msgstr "下载完成"
 msgid "Download entire playlist"
 msgstr "下载整个播放列表"
 
-#: __init__.py:590
+#: __init__.py:587
 msgid "Download fail manager"
 msgstr "下载失败管理器"
 
-#: __init__.py:592
+#: __init__.py:589
 msgid "Download fail manager (no failed)"
 msgstr "下载失败管理器（无失败项）"
 
-#: Download_core.py:1232
+#: Download_core.py:1681
 msgid "Download failed"
 msgstr "下载失败"
 
-#: Download_core.py:1256
+#: Download_core.py:1705
 msgid "Download failed due to an error"
 msgstr "由于发生错误，下载失败"
 
-#: Download_core.py:1244
+#: Download_core.py:1693
 msgid "Download failed due to timeout"
 msgstr "由于超时，下载失败"
 
-#: Download_core.py:1290
+#: Download_core.py:1739
 msgid "Download failed to start"
 msgstr "下载启动失败"
 
-#: Download_core.py:1230
+#: Download_core.py:1656
 msgid "Download failed: YouTube blocked this request. Try exporting cookies from your browser in the Anti-blocking settings."
 msgstr "下载失败：YouTube 已阻止此请求。请尝试在防拦截设置中从浏览器导出 Cookie。"
 
-#: downloadFail.py:133
+#: Download_core.py:1679
+msgid "Download failed: YouTube reports this video is unavailable"
+msgstr "在浏览器中登录 YouTube"
+
+#: Download_core.py:1669
+msgid "Download failed: the downloaded JavaScript runtime isn't working. Try deleting the bin folder in your AbsoluteYoutube config directory so it re-downloads."
+msgstr "点击扩展程序图标并导出 Cookie"
+
+#: Download_core.py:1677
+msgid "Download failed: this may be because yt-dlp is outdated (current {current}, latest {latest}). Try updating yt-dlp in settings."
+msgstr "保存为 cookies.txt 并在此处选择它"
+
+#: Download_core.py:1672
+msgid "Download failed: yt-dlp needs a JavaScript runtime, which this add-on is downloading automatically in the background. Please wait a moment and try again."
+msgstr "下载失败：yt-dlp 需要 JavaScript 运行时，本插件正在后台自动下载。请稍候再试。"
+
+#: downloadFail.py:139
 msgid "Download file"
 msgstr "下载文件"
 
@@ -558,24 +565,24 @@ msgstr "下载文件夹不存在。"
 msgid "Download function not available."
 msgstr "下载功能不可用。"
 
-#: __init__.py:506
+#: __init__.py:503
 msgid "Download immediately"
 msgstr "立即下载"
 
-#: __init__.py:586
+#: __init__.py:583
 msgid "Download list manager"
 msgstr "下载列表管理器"
 
-#: __init__.py:460
+#: __init__.py:457
 msgid "Download or queue video (single tap MP3, double tap MP4, triple tap WAV)"
 msgstr "下载或排队视频（单击下载 MP3，双击下载 MP4，三击下载 WAV）"
 
-#: downloadFail.py:138
-#: download_list.py:131
+#: downloadFail.py:144
+#: download_list.py:132
 msgid "Download selected"
 msgstr "下载所选"
 
-#: downloadFail.py:251
+#: downloadFail.py:247
 msgid "Download started for: {title}"
 msgstr "开始下载：{title}"
 
@@ -583,11 +590,11 @@ msgstr "开始下载：{title}"
 msgid "Downloading thumbnail..."
 msgstr "正在下载缩略图..."
 
-#: download_list.py:108
+#: download_list.py:109
 msgid "Downloading..."
 msgstr "正在下载..."
 
-#: downloadFail.py:65
+#: downloadFail.py:71
 #: search.py:30
 msgid "Duration"
 msgstr "时长"
@@ -620,7 +627,7 @@ msgstr "结束时间："
 msgid "Enter a search query."
 msgstr "输入搜索词。"
 
-#: download_list.py:26
+#: download_list.py:27
 msgid "Error"
 msgstr "错误"
 
@@ -632,11 +639,11 @@ msgstr "创建下载文件夹时出错"
 msgid "Error deleting channel."
 msgstr "删除频道时出错。"
 
-#: __init__.py:621
+#: __init__.py:618
 msgid "Error displaying context menu"
 msgstr "显示上下文菜单时出错"
 
-#: __init__.py:297
+#: __init__.py:301
 msgid "Error during auto-update of yt-dlp: {str}"
 msgstr "自动更新 yt-dlp 时出错：{str}"
 
@@ -644,17 +651,17 @@ msgstr "自动更新 yt-dlp 时出错：{str}"
 msgid "Error fetching channel: {str}"
 msgstr "获取频道时出错：{str}"
 
-#: __init__.py:188
-#: downloadFail.py:44
+#: __init__.py:192
+#: downloadFail.py:50
 msgid "Error importing core functions: {str}"
 msgstr "导入核心功能时出错：{str}"
 
-#: __init__.py:742
+#: __init__.py:739
 msgid "Error importing settings panel: {str}"
 msgstr "导入设置面板时出错：{str}"
 
-#: __init__.py:211
-#: __init__.py:273
+#: __init__.py:215
+#: __init__.py:277
 msgid "Error initializing AbsoluteYoutube: {str}"
 msgstr "初始化 AbsoluteYoutube 时出错：{str}"
 
@@ -667,24 +674,24 @@ msgstr "加载缓存出错。"
 msgid "Error loading channel data."
 msgstr "加载频道数据出错。"
 
-#: __init__.py:530
+#: __init__.py:527
 msgid "Error opening channel dialog"
 msgstr "打开频道对话框时出错"
 
-#: __init__.py:784
+#: __init__.py:785
 msgid "Error opening channel/playlist list: {str}"
 msgstr "打开频道/播放列表列表时出错：{str}"
 
-#: __init__.py:657
-#: __init__.py:661
+#: __init__.py:654
+#: __init__.py:658
 msgid "Error opening download fail dialog: {str}"
 msgstr "打开下载失败对话框时出错：{str}"
 
-#: __init__.py:570
+#: __init__.py:567
 msgid "Error opening download list dialog: {str}"
 msgstr "打开下载列表对话框时出错：{str}"
 
-#: __init__.py:496
+#: __init__.py:493
 msgid "Error opening folder"
 msgstr "打开文件夹出错"
 
@@ -692,23 +699,23 @@ msgstr "打开文件夹出错"
 msgid "Error opening playlist."
 msgstr "打开播放列表出错。"
 
-#: __init__.py:727
+#: __init__.py:724
 msgid "Error opening search dialog: {str}"
 msgstr "打开搜索对话框时出错：{str}"
 
-#: __init__.py:745
+#: __init__.py:742
 msgid "Error opening settings dialog: {str}"
 msgstr "打开设置对话框时出错：{str}"
 
-#: __init__.py:708
+#: __init__.py:705
 msgid "Error opening trim dialog: {str}"
 msgstr "打开修剪对话框时出错：{str}"
 
-#: Download_core.py:1332
+#: Download_core.py:1945
 msgid "Error processing URL"
 msgstr "处理 URL 时出错"
 
-#: downloadFail.py:256
+#: downloadFail.py:252
 msgid "Error starting download"
 msgstr "启动下载出错"
 
@@ -720,11 +727,11 @@ msgstr "更新频道 URL 时出错。"
 msgid "Error updating channel."
 msgstr "更新频道时出错。"
 
-#: __init__.py:575
+#: __init__.py:572
 msgid "Error: Download list module not available"
 msgstr "错误：下载列表模块不可用"
 
-#: __init__.py:647
+#: __init__.py:644
 msgid "Error: DownloadFail module not available"
 msgstr "错误：DownloadFail 模块不可用"
 
@@ -736,19 +743,19 @@ msgstr "错误：捕获快照失败。"
 msgid "Error: No snapshot file created."
 msgstr "错误：未创建快照文件。"
 
-#: __init__.py:732
+#: __init__.py:729
 msgid "Error: Search module not available"
 msgstr "错误：搜索模块不可用"
 
-#: __init__.py:688
+#: __init__.py:685
 msgid "Error: Snapshot module not available"
 msgstr "错误：快照模块不可用"
 
-#: __init__.py:697
+#: __init__.py:694
 msgid "Error: Trim module not available"
 msgstr "Error: Trim module not available"
 
-#: Download_core.py:1427
+#: Download_core.py:1970
 #: Trim.py:324
 msgid "Error: ffmpeg.exe not found."
 msgstr "错误：未找到 ffmpeg.exe。"
@@ -757,7 +764,7 @@ msgstr "错误：未找到 ffmpeg.exe。"
 msgid "Error: yt-dlp.exe not found."
 msgstr "错误：未找到 yt-dlp.exe。"
 
-#: Youtube_settings.py:449
+#: Youtube_settings.py:453
 msgid "Export YouTube Cookies"
 msgstr "导出 YouTube Cookie"
 
@@ -765,15 +772,15 @@ msgstr "导出 YouTube Cookie"
 msgid "Export YouTube Cookies (Anti-Block)"
 msgstr "导出 YouTube Cookie（防屏蔽）"
 
-#: Youtube_settings.py:480
+#: Youtube_settings.py:484
 msgid "Exporting cookies from {browser}..."
 msgstr "正在从 {browser} 导出 Cookie..."
 
-#: Youtube_settings.py:738
+#: Youtube_settings.py:758
 msgid "Failed to create the specified folder. Please select a valid folder."
 msgstr "创建指定文件夹失败。请选择一个有效的文件夹。"
 
-#: __init__.py:594
+#: __init__.py:591
 msgid "Favorite channel"
 msgstr "喜爱频道"
 
@@ -781,7 +788,7 @@ msgstr "喜爱频道"
 msgid "Fetched {count} items total."
 msgstr "共获取到 {count} 个项目。"
 
-#: __init__.py:771
+#: __init__.py:772
 msgid "Fetching channel information..."
 msgstr "正在获取频道信息..."
 
@@ -799,33 +806,33 @@ msgstr "正在获取频道视频..."
 msgid "File Format"
 msgstr "文件格式"
 
-#: Download_core.py:1432
+#: Download_core.py:1975
 msgid "File already exists. Skipping download."
 msgstr "文件已存在。跳过下载。"
 
-#: Download_core.py:1318
+#: Download_core.py:1931
 msgid "File exists"
 msgstr "文件已存在"
 
-#: Youtube_settings.py:357
+#: Youtube_settings.py:346
 msgid "Force I&Pv4"
 msgstr "强制使用 I&Pv4"
 
-#: Youtube_settings.py:362
+#: Youtube_settings.py:351
 msgid "Force I&Pv6"
 msgstr "强制使用 I&Pv6"
 
-#: download_list.py:69
+#: download_list.py:70
 msgid "Format"
 msgstr "格式"
 
-#: Download_core.py:590
+#: Download_core.py:891
 msgid ""
 "Found {count} interrupted downloads\n"
 "Resume all?\n"
 "\n"
 "\n"
-msgstr "发现 {count} 个中断的下载"
+msgstr "找到 {count} 个中断的下载"
 
 #: search.py:470
 msgid "Found {count} videos for '{query}'."
@@ -843,10 +850,6 @@ msgstr "片段重试次数(&R)："
 msgid "Full-size snapshot complete"
 msgstr "全尺寸快照已完成"
 
-#: Youtube_settings.py:351
-msgid "Geo bypass &country:"
-msgstr "地理位置绕过国家(&C)："
-
 #: channel_core.py:175
 #: search.py:133
 msgid "Go"
@@ -858,11 +861,11 @@ msgid "Go to page of {}:"
 msgstr "转到 {} 的页面："
 
 #: Youtube_settings.py:306
-#: Youtube_settings.py:427
+#: Youtube_settings.py:431
 msgid "Google Chrome"
 msgstr "Google Chrome"
 
-#: Youtube_settings.py:411
+#: Youtube_settings.py:415
 msgid ""
 "How to get YouTube cookies:\n"
 "\n"
@@ -877,9 +880,9 @@ msgid ""
 "Using cookies helps avoid blocks because YouTube sees you as a logged-in user.\n"
 "\n"
 "\n"
-msgstr "如何获取 YouTube Cookie：\\n\\n选项 1（自动）：使用下方的“导出 YouTube Cookies (反屏蔽)”按钮。请先关闭浏览器，然后点击该按钮并在列表中选择您的浏览器。\\n\\n选项 2（手动）：\\n1. 在 Chrome 或 Firefox 中安装“Get cookies.txt”扩展程序\\n2. 在浏览器中登录 YouTube\\n3. 点击扩展程序图标并导出 Cookie\\n4. 保存为 cookies.txt 并在此处选择它\\n\\n使用 Cookie 有助于避免被屏蔽，因为 YouTube 会将您识别为已登录用户。\\n"
+msgstr "如何获取 YouTube Cookie："
 
-#: Youtube_settings.py:423
+#: Youtube_settings.py:427
 msgid "How to get cookies"
 msgstr "如何获取 Cookie"
 
@@ -887,11 +890,11 @@ msgstr "如何获取 Cookie"
 msgid "How to get cookies?"
 msgstr "如何获取 Cookie？"
 
-#: __init__.py:514
+#: __init__.py:511
 msgid "Immediate download mode disabled"
 msgstr "即时下载模式已禁用"
 
-#: __init__.py:512
+#: __init__.py:509
 msgid "Immediate download mode enabled"
 msgstr "即时下载模式已启用"
 
@@ -903,16 +906,16 @@ msgstr "无效的 URL 或开始时间"
 msgid "Invalid YouTube video URL"
 msgstr "无效的 YouTube 视频 URL"
 
-#: __init__.py:518
+#: __init__.py:515
 msgid "Invalid channel URL"
 msgstr "无效的频道 URL"
 
-#: __init__.py:498
+#: __init__.py:495
 msgid "Invalid download folder"
 msgstr "无效的下载文件夹"
 
-#: downloadFail.py:165
-#: download_list.py:164
+#: downloadFail.py:177
+#: download_list.py:165
 msgid "Item deleted"
 msgstr "项目已删除"
 
@@ -920,6 +923,10 @@ msgstr "项目已删除"
 #: search.py:557
 msgid "Item removed."
 msgstr "项目已移除。"
+
+#: Youtube_settings.py:386
+msgid "JavaScript Runtime (Deno)"
+msgstr "JavaScript 运行时 (Deno)"
 
 #: channel_core.py:66
 msgid "Live"
@@ -947,7 +954,7 @@ msgid "MP3 &quality (kbps):"
 msgstr "MP3 品质 (&Q) (kbps):"
 
 #: Youtube_settings.py:306
-#: Youtube_settings.py:427
+#: Youtube_settings.py:431
 msgid "Microsoft Edge"
 msgstr "Microsoft Edge"
 
@@ -960,7 +967,7 @@ msgid "Move Up"
 msgstr "上移"
 
 #: Youtube_settings.py:306
-#: Youtube_settings.py:427
+#: Youtube_settings.py:431
 msgid "Mozilla Firefox"
 msgstr "Mozilla Firefox"
 
@@ -970,8 +977,8 @@ msgstr "Mozilla Firefox"
 msgid "NextPage"
 msgstr "下一页"
 
-#: __init__.py:405
-#: __init__.py:626
+#: __init__.py:402
+#: __init__.py:623
 msgid "No YouTube URL found"
 msgstr "未找到 YouTube网址"
 
@@ -979,26 +986,22 @@ msgstr "未找到 YouTube网址"
 msgid "No channel selected."
 msgstr "未选择频道。"
 
-#: downloadFail.py:306
-#: downloadFail.py:326
+#: downloadFail.py:298
+#: downloadFail.py:318
 msgid "No downloads could be started"
 msgstr "无法启动任何下载"
 
-#: __init__.py:643
+#: __init__.py:640
 msgid "No failed downloads"
 msgstr "没有失败的下载"
 
-#: downloadFail.py:330
+#: downloadFail.py:322
 msgid "No failed downloads to clear"
 msgstr "没有可清除的失败下载"
 
-#: downloadFail.py:310
+#: downloadFail.py:302
 msgid "No failed downloads to process"
 msgstr "没有可处理的失败下载"
-
-#: download_list.py:249
-msgid "No items added (all already in queue)"
-msgstr "未添加任何项目（全部已在队列中）"
 
 #: channel_core.py:1085
 msgid "No items found for this URL."
@@ -1008,23 +1011,19 @@ msgstr "未找到此网址对应的项目。"
 msgid "No items found."
 msgstr "未找到项目。"
 
-#: downloadFail.py:266
+#: downloadFail.py:262
 #: downloadFail.py:282
-#: download_list.py:191
-#: download_list.py:204
+#: download_list.py:196
+#: download_list.py:209
 msgid "No items selected"
 msgstr "未选择项目"
 
-#: download_list.py:225
-msgid "No new items added (already in queue)"
-msgstr "未添加任何新项目（已在队列中）"
-
-#: download_list.py:231
-#: download_list.py:235
+#: download_list.py:229
+#: download_list.py:233
 msgid "No pending downloads"
 msgstr "没有等待中的下载"
 
-#: download_list.py:255
+#: download_list.py:259
 msgid "No pending downloads to clear"
 msgstr "没有待清理的下载"
 
@@ -1044,7 +1043,7 @@ msgstr "此频道无保存的数据。"
 msgid "No saved data for this content type yet."
 msgstr "此内容类型尚无保存的数据。"
 
-#: Download_core.py:1435
+#: Download_core.py:1978
 msgid "No valid multimedia link found."
 msgstr "未找到有效的多媒体链接。"
 
@@ -1054,15 +1053,15 @@ msgstr "未找到有效的多媒体链接。"
 msgid "No videos to download."
 msgstr "没有可下载的视频。"
 
-#: __init__.py:629
+#: __init__.py:626
 msgid "Not a YouTube URL"
 msgstr "不是 YouTube 网址"
 
-#: Download_core.py:1468
+#: Download_core.py:2011
 msgid "Not a YouTube video or valid multimedia link"
 msgstr "不是 YouTube 视频或有效的多媒体链接"
 
-#: __init__.py:473
+#: __init__.py:470
 msgid "Open context menu (single tap), open download folder (double tap), open search dialog (triple tap)"
 msgstr "单击打开上下文菜单，双击打开下载文件夹，三击打开搜索对话框"
 
@@ -1071,7 +1070,7 @@ msgid "Open in browser"
 msgstr "在浏览器中打开"
 
 #: Youtube_settings.py:306
-#: Youtube_settings.py:427
+#: Youtube_settings.py:431
 msgid "Opera"
 msgstr "欧朋"
 
@@ -1095,7 +1094,7 @@ msgstr "固定"
 msgid "Play on YouTube"
 msgstr "在 YouTube 上播放"
 
-#: __init__.py:386
+#: __init__.py:383
 msgid "Playlist"
 msgstr "播放列表"
 
@@ -1104,15 +1103,15 @@ msgstr "播放列表"
 msgid "Playlist download started."
 msgstr "播放列表下载已开始。"
 
-#: downloadFail.py:249
+#: downloadFail.py:245
 msgid "Playlist download started: {title}"
 msgstr "播放列表下载已开始：{title}"
 
-#: __init__.py:794
+#: __init__.py:795
 msgid "Playlist mode disabled"
 msgstr "播放列表模式已禁用"
 
-#: __init__.py:794
+#: __init__.py:795
 msgid "Playlist mode enabled"
 msgstr "播放列表模式已启用"
 
@@ -1170,15 +1169,15 @@ msgstr "就绪"
 msgid "Remove from list"
 msgstr "从列表中移除"
 
-#: Youtube_settings.py:371
+#: Youtube_settings.py:360
 msgid "Reset to &safe settings (recommended if blocked)"
 msgstr "重置为安全设置(&s)（若被屏蔽建议使用）"
 
-#: Youtube_settings.py:641
+#: Youtube_settings.py:645
 msgid "Reset to safe settings. Remember to use cookies for best results."
 msgstr "重置为安全设置。请记住使用 Cookie 以获得最佳效果。"
 
-#: Download_core.py:591
+#: Download_core.py:892
 msgid "Resume downloads"
 msgstr "恢复下载"
 
@@ -1198,7 +1197,7 @@ msgstr "搜索 YouTube"
 msgid "Search YouTube:"
 msgstr "搜索 YouTube："
 
-#: __init__.py:600
+#: __init__.py:597
 msgid "Search Youtube"
 msgstr "搜索 Youtube"
 
@@ -1230,24 +1229,28 @@ msgstr "正在搜索..."
 msgid "Select a directory"
 msgstr "选择目录"
 
-#: Youtube_settings.py:444
+#: Youtube_settings.py:448
 msgid ""
 "Select the browser you are currently logged into YouTube with.\n"
 "Close that browser first if possible -- yt-dlp usually cannot read its cookie database while the browser is still running.\n"
 "\n"
 "\n"
-msgstr "请选择您当前登录 YouTube 的浏览器。\\n如果可能，请先关闭该浏览器——yt-dlp 通常无法在浏览器运行时读取其 Cookie 数据库。"
+msgstr "请选择您当前已登录 YouTube 的浏览器。"
 
-#: download_list.py:223
-msgid "Selected items added to download queue"
-msgstr "选定的项目已添加到下载队列"
+#: download_list.py:216
+msgid "Selected item(s) already downloading"
+msgstr "所选项目已在下载中"
 
 #: downloadFail.py:273
-#: download_list.py:195
+#: download_list.py:200
 msgid "Selected items deleted"
 msgstr "选定的项目已删除"
 
-#: __init__.py:634
+#: download_list.py:225
+msgid "Selected items moved to the front of the download queue"
+msgstr "所选项目已移至下载队列前端"
+
+#: __init__.py:631
 #: channel_core.py:1607
 #: playlist.py:453
 #: search.py:530
@@ -1272,7 +1275,7 @@ msgstr "跳过不可用(&U)片段"
 msgid "Skip existing files"
 msgstr "跳过现有文件"
 
-#: __init__.py:597
+#: __init__.py:594
 msgid "Snapshot"
 msgstr "快照"
 
@@ -1306,32 +1309,40 @@ msgstr "开始时间必须小于结束时间"
 msgid "Start time:"
 msgstr "开始时间："
 
-#: downloadFail.py:304
-#: downloadFail.py:324
+#: downloadFail.py:296
+#: downloadFail.py:316
 msgid "Started {count} download(s)"
 msgstr "已开始 {count} 个下载"
 
-#: __init__.py:434
+#: __init__.py:431
 msgid "Starting download: {format} - {title}"
 msgstr "正在开始下载：{format} - {title}"
 
-#: Download_core.py:855
+#: download_list.py:187
+msgid "Starting download: {title}"
+msgstr "开始下载：{title}"
+
+#: Download_core.py:1201
 msgid "Starting next download from queue: {title}"
 msgstr "正在从队列开始下一个下载：{title}"
 
-#: download_list.py:70
+#: download_list.py:255
+msgid "Starting {count} pending download(s)"
+msgstr "正在开始 {count} 个挂起的下载"
+
+#: download_list.py:71
 msgid "Status"
 msgstr "状态"
 
-#: download_list.py:170
+#: download_list.py:171
 msgid "This item is already downloading"
 msgstr "此项目已在下载中"
 
-#: Download_core.py:1228
+#: Download_core.py:1654
 msgid "This livestream hasn't started yet. It starts in {time}."
 msgstr "此直播尚未开始。将于 {time} 后开始。"
 
-#: Download_core.py:1226
+#: Download_core.py:1652
 msgid "This video hasn't premiered yet. It starts in {time}."
 msgstr "此视频尚未首播。将于 {time} 后开始。"
 
@@ -1353,11 +1364,11 @@ msgstr "已完成 {count} 个视频的标题更正。"
 msgid "Title correction failed."
 msgstr "标题更正失败。"
 
-#: __init__.py:789
+#: __init__.py:790
 msgid "Toggle playlist mode"
 msgstr "切换播放列表模式"
 
-#: __init__.py:598
+#: __init__.py:595
 msgid "Trim setting"
 msgstr "剪辑设置"
 
@@ -1366,7 +1377,7 @@ msgid "Trimming and downloading {format}..."
 msgstr "正在剪辑并下载 {format}..."
 
 #: Trim.py:129
-#: downloadFail.py:66
+#: downloadFail.py:72
 msgid "URL"
 msgstr "URL"
 
@@ -1378,16 +1389,16 @@ msgstr "URL 已复制到剪贴板"
 msgid "URL is required"
 msgstr "URL 是必需的"
 
-#: Download_core.py:1306
+#: Download_core.py:1919
 msgid "URL not found"
 msgstr "未找到 URL"
 
-#: Download_core.py:745
-#: __init__.py:428
-#: downloadFail.py:104
-#: downloadFail.py:105
-#: downloadFail.py:106
-#: download_list.py:105
+#: Download_core.py:1057
+#: __init__.py:425
+#: downloadFail.py:110
+#: downloadFail.py:111
+#: downloadFail.py:112
+#: download_list.py:106
 msgid "Unknown"
 msgstr "未知"
 
@@ -1395,33 +1406,46 @@ msgstr "未知"
 msgid "Unpin"
 msgstr "取消固定"
 
-#: Youtube_settings.py:718
-#: __init__.py:313
+#: Youtube_settings.py:391
+msgid "Update Deno now"
+msgstr "立即更新 Deno"
+
+#: Youtube_settings.py:723
+#: Youtube_settings.py:738
+#: __init__.py:310
 msgid "Update failed: {str}"
 msgstr "更新失败：{str}"
 
-#: Youtube_settings.py:391
+#: Youtube_settings.py:380
+#: Youtube_settings.py:395
 msgid "Update status: Idle"
 msgstr "更新状态：空闲"
 
-#: Youtube_settings.py:717
+#: Youtube_settings.py:722
+#: Youtube_settings.py:737
 msgid "Update status: Update failed: {str}"
 msgstr "更新状态：更新失败：{str}"
 
-#: Youtube_settings.py:713
+#: Youtube_settings.py:718
+#: Youtube_settings.py:733
 msgid "Update status: Update successful"
 msgstr "更新状态：更新成功"
 
-#: Youtube_settings.py:703
+#: Youtube_settings.py:707
+#: Youtube_settings.py:730
 msgid "Update status: Updating..."
 msgstr "更新状态：正在更新..."
 
-#: Youtube_settings.py:387
+#: Youtube_settings.py:376
 msgid "Update yt-dlp now"
 msgstr "立即更新 yt-dlp"
 
-#: Youtube_settings.py:704
-#: __init__.py:301
+#: Youtube_settings.py:731
+msgid "Updating Deno..."
+msgstr "正在更新 Deno..."
+
+#: Youtube_settings.py:708
+#: __init__.py:305
 msgid "Updating yt-dlp..."
 msgstr "正在更新 yt-dlp..."
 
@@ -1445,8 +1469,8 @@ msgstr "使用下载部分"
 msgid "User &agent:"
 msgstr "用户代理(&a)："
 
-#: downloadFail.py:64
-#: download_list.py:68
+#: downloadFail.py:70
+#: download_list.py:69
 #: search.py:29
 msgid "Video Title"
 msgstr "视频标题"
@@ -1467,12 +1491,12 @@ msgstr "视频"
 msgid "Videos in {title}"
 msgstr "{title} 中的视频"
 
-#: download_list.py:108
+#: download_list.py:109
 msgid "Waiting"
 msgstr "等待中"
 
-#: __init__.py:680
-#: __init__.py:693
+#: __init__.py:677
+#: __init__.py:690
 msgid "You must be on a YouTube page to use this feature"
 msgstr "您必须处于 YouTube 页面才能使用此功能"
 
@@ -1496,21 +1520,21 @@ msgstr "正在加载..."
 msgid "unknown"
 msgstr "未知"
 
-#: Youtube_settings.py:578
+#: Youtube_settings.py:582
 msgid "unknown error"
 msgstr "未知错误"
 
-#: Youtube_settings.py:377
+#: Youtube_settings.py:366
 msgid "yt-dlp Update"
 msgstr "yt-dlp 更新"
 
-#: Youtube_settings.py:714
-#: __init__.py:310
+#: Youtube_settings.py:719
+#: __init__.py:307
 msgid "yt-dlp updated successfully"
 msgstr "yt-dlp 更新成功"
 
-#: Download_core.py:1335
-#: Youtube_settings.py:460
+#: Download_core.py:1948
+#: Youtube_settings.py:464
 msgid "yt-dlp.exe missing"
 msgstr "缺少 yt-dlp.exe"
 
@@ -1519,14 +1543,14 @@ msgstr "缺少 yt-dlp.exe"
 msgid "yt-dlp.exe not found."
 msgstr "未找到 yt-dlp.exe。"
 
-#: Youtube_settings.py:466
+#: Youtube_settings.py:470
 msgid ""
 "{browser} appears to still be running. The cookie database is usually locked while the browser is open, so the export will likely fail with a database error.\n"
 "\n"
 "Close {browser} completely, then click OK to continue anyway or Cancel to stop and close it first.\n"
 "\n"
 "\n"
-msgstr "{browser} 似乎仍在运行。浏览器打开时通常会锁定 Cookie 数据库，因此导出操作可能会因数据库错误而失败。"
+msgstr "{browser} 似乎仍在运行。由于浏览器打开时 Cookie 数据库通常处于锁定状态，导出可能会因数据库错误而失败。"
 
 #: channel_core.py:333
 #: search.py:608
@@ -1537,15 +1561,15 @@ msgstr "已将 {count} 个下载加入队列。"
 msgid "{count} new items updated."
 msgstr "已更新 {count} 个新项目。"
 
-#: Download_core.py:1002
+#: Download_core.py:1399
 msgid "{mb} MB downloaded"
 msgstr "已下载 {mb} MB"
 
-#: Download_core.py:987
+#: Download_core.py:1384
 msgid "{percent}%"
 msgstr "{percent}%"
 
-#: __init__.py:808
+#: __init__.py:809
 msgid "{quality} kbps"
 msgstr "{quality} kbps"
 

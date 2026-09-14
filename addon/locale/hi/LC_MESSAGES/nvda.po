@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: AbsoluteYoutube 2026.9.0\n"
+"Project-Id-Version: AbsoluteYoutube 2026.9.12\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-09-05 09:36+0700\n"
+"POT-Creation-Date: 2026-09-14 07:42+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Hindi\n"
@@ -30,12 +30,12 @@ msgstr "&स्वचालित कुकीज़ के लिए ब्र�
 
 #: channel_dialogs.py:69
 #: channel_dialogs.py:119
-#: downloadFail.py:90
+#: downloadFail.py:96
 msgid "&Cancel"
 msgstr "&रद्द करें"
 
-#: downloadFail.py:82
-#: download_list.py:87
+#: downloadFail.py:88
+#: download_list.py:88
 msgid "&Clear All"
 msgstr "सभी &साफ़ करें"
 
@@ -45,14 +45,14 @@ msgstr "सभी &साफ़ करें"
 msgid "&Close"
 msgstr "&बंद करें"
 
-#: downloadFail.py:70
-#: download_list.py:75
+#: downloadFail.py:76
+#: download_list.py:76
 msgid "&Delete Selected"
 msgstr "चयनित &हटाएं"
 
 #: channel_core.py:182
-#: downloadFail.py:78
-#: download_list.py:83
+#: downloadFail.py:84
+#: download_list.py:84
 #: search.py:140
 msgid "&Download All"
 msgstr "सभी &डाउनलोड करें"
@@ -61,8 +61,8 @@ msgstr "सभी &डाउनलोड करें"
 msgid "&Download All Videos in Playlist"
 msgstr "प्लेलिस्ट के सभी वीडियो &डाउनलोड करें"
 
-#: downloadFail.py:74
-#: download_list.py:79
+#: downloadFail.py:80
+#: download_list.py:80
 msgid "&Download Selected"
 msgstr "चयनित &डाउनलोड करें"
 
@@ -70,11 +70,7 @@ msgstr "चयनित &डाउनलोड करें"
 msgid "&Download folder"
 msgstr "&डाउनलोड फ़ोल्डर"
 
-#: Youtube_settings.py:346
-msgid "&Geo bypass"
-msgstr "&भौगोलिक बाईपास"
-
-#: Youtube_settings.py:367
+#: Youtube_settings.py:356
 msgid "&Mark as watched"
 msgstr "देखा गया के रूप में &चिह्नित करें"
 
@@ -88,8 +84,8 @@ msgstr "कनेक्शन की &संख्या:"
 
 #: channel_dialogs.py:67
 #: channel_dialogs.py:117
-#: downloadFail.py:86
-#: download_list.py:91
+#: downloadFail.py:92
+#: download_list.py:92
 msgid "&OK"
 msgstr "&ठीक है"
 
@@ -113,7 +109,7 @@ msgstr "&स्रोत"
 msgid "&Throttle rate (KB/s, 0=unlimited, step of 5):"
 msgstr "थ्रॉटल दर (KB/s, 0=असीमित, 5 का चरण):"
 
-#: Download_core.py:1154
+#: Download_core.py:1551
 msgid "0%"
 msgstr "0%"
 
@@ -121,7 +117,7 @@ msgstr "0%"
 msgid "A channel with this name already exists. Overwrite?"
 msgstr "इस नाम का चैनल पहले से मौजूद है। क्या आप अधिलेखित (ओवरराइट) करना चाहते हैं?"
 
-#: __init__.py:282
+#: __init__.py:286
 msgid "A new version of yt-dlp is available: {latest}. Current: {current}. Please update in settings."
 msgstr "yt-dlp का एक नया संस्करण उपलब्ध है: {latest}। वर्तमान: {current}। कृपया सेटिंग्स में अपडेट करें।"
 
@@ -135,11 +131,11 @@ msgstr "एब्सोल्यूट यूट्यूब"
 msgid "Absolute YouTube Trim"
 msgstr "एब्सोल्यूट यूट्यूब ट्रिम"
 
-#: __init__.py:602
+#: __init__.py:599
 msgid "Absolute YouTube setting"
 msgstr "एब्सोल्यूट यूट्यूब सेटिंग"
 
-#: menu.py:18
+#: menu.py:14
 msgid "Absolute Youtube"
 msgstr "एब्सोल्यूट यूट्यूब"
 
@@ -151,31 +147,27 @@ msgstr "नया चैनल जोड़ें"
 msgid "Add new channel"
 msgstr "नया चैनल जोड़ें"
 
-#: __init__.py:193
+#: __init__.py:197
 msgid "Add-on initialization failed: missing pending file path function. Please restart NVDA."
 msgstr "एड-ऑन आरंभीकरण विफल: लंबित फ़ाइल पथ फ़ंक्शन अनुपस्थित है। कृपया NVDA को पुनरारंभ करें।"
 
-#: download_list.py:25
+#: download_list.py:26
 msgid "Add-on internal error: missing components. Please restart NVDA."
 msgstr "एड-ऑन आंतरिक त्रुटि: घटक अनुपस्थित हैं। कृपया NVDA को पुनरारंभ करें।"
 
-#: download_list.py:71
+#: download_list.py:72
 msgid "Added Time"
 msgstr "जोड़ने का समय"
 
-#: __init__.py:451
+#: __init__.py:448
 msgid "Added to download list: {format} - {title}"
 msgstr "डाउनलोड सूची में जोड़ा गया: {format} - {title}"
 
-#: __init__.py:445
+#: __init__.py:442
 msgid "Added to download queue: {format} - {title}"
 msgstr "डाउनलोड कतार में जोड़ा गया: {format} - {title}"
 
-#: download_list.py:178
-msgid "Added to download queue: {title}"
-msgstr "डाउनलोड कतार में जोड़ा गया: {title}"
-
-#: Download_core.py:1457
+#: Download_core.py:2000
 msgid "Adding link as {format} to download queue"
 msgstr "डाउनलोड कतार में {format} के रूप में लिंक जोड़ा जा रहा है"
 
@@ -196,24 +188,19 @@ msgstr "डाउनलोड कतार में {title} जोड़ा ज
 msgid "All"
 msgstr "सभी"
 
-#: downloadFail.py:335
+#: downloadFail.py:326
 msgid "All failed downloads cleared"
 msgstr "सभी असफल डाउनलोड साफ़ किए गए"
 
-#: download_list.py:247
-msgid "All items added to download queue"
-msgstr "सभी आइटम डाउनलोड कतार में जोड़े गए"
-
-#: download_list.py:265
+#: download_list.py:269
 msgid "All pending downloads cleared"
 msgstr "सभी लंबित डाउनलोड साफ़ किए गए"
 
-#: __init__.py:453
+#: __init__.py:450
 msgid "Already in download list"
 msgstr "पहले से ही डाउनलोड सूची में है"
 
-#: __init__.py:447
-#: download_list.py:180
+#: __init__.py:444
 msgid "Already in download queue"
 msgstr "पहले से ही डाउनलोड कतार में है"
 
@@ -238,7 +225,7 @@ msgstr "अधिकतम (10,000 KB/s = 10 MB/s) पर, यह सीमा �
 msgid "Audio Quality"
 msgstr "ऑडियो गुणवत्ता"
 
-#: Youtube_settings.py:382
+#: Youtube_settings.py:371
 msgid "Auto-update yt-dlp on startup"
 msgstr "स्टार्टअप पर yt-dlp को स्वतः-अपडेट करें"
 
@@ -251,11 +238,11 @@ msgid "Beep e&very (seconds):"
 msgstr "हर (सेकंड) बीप करें:"
 
 #: Youtube_settings.py:306
-#: Youtube_settings.py:427
+#: Youtube_settings.py:431
 msgid "Brave"
 msgstr "Brave"
 
-#: Youtube_settings.py:473
+#: Youtube_settings.py:477
 msgid "Browser still running"
 msgstr "ब्राउज़र अभी भी चल रहा है"
 
@@ -265,7 +252,7 @@ msgstr "ब्राउज़र अभी भी चल रहा है"
 msgid "Cancel"
 msgstr "रद्द करें"
 
-#: downloadFail.py:195
+#: downloadFail.py:206
 msgid "Cannot create download folder"
 msgstr "डाउनलोड फ़ोल्डर नहीं बनाया जा सकता"
 
@@ -273,7 +260,7 @@ msgstr "डाउनलोड फ़ोल्डर नहीं बनाया
 msgid "Cannot create download folder."
 msgstr "डाउनलोड फ़ोल्डर नहीं बनाया जा सकता।"
 
-#: Download_core.py:510
+#: Download_core.py:811
 msgid "Cannot create folder"
 msgstr "फ़ोल्डर नहीं बनाया जा सकता"
 
@@ -281,11 +268,11 @@ msgstr "फ़ोल्डर नहीं बनाया जा सकता"
 msgid "Cannot determine URL for this video."
 msgstr "इस वीडियो के लिए यूआरएल निर्धारित नहीं किया जा सकता।"
 
-#: __init__.py:409
+#: __init__.py:406
 msgid "Cannot download from YouTube homepage. Please navigate to a video or playlist."
 msgstr "यूट्यूब होमपेज से डाउनलोड नहीं किया जा सकता। कृपया किसी वीडियो या प्लेलिस्ट पर जाएं।"
 
-#: __init__.py:412
+#: __init__.py:409
 msgid "Cannot download from this YouTube page. Please select a specific video."
 msgstr "इस यूट्यूब पेज से डाउनलोड नहीं किया जा सकता। कृपया कोई विशिष्ट वीडियो चुनें।"
 
@@ -348,12 +335,12 @@ msgstr "चैनल:"
 msgid "Checking for new videos..."
 msgstr "नए वीडियो की जाँच की जा रही है..."
 
-#: Download_core.py:688
+#: Download_core.py:989
 msgid "Checking interrupted downloads..."
 msgstr "अधूरी डाउनलोडिंग की जाँच की जा रही है..."
 
-#: downloadFail.py:144
-#: download_list.py:136
+#: downloadFail.py:150
+#: download_list.py:137
 msgid "Clear all"
 msgstr "सभी साफ़ करें"
 
@@ -373,17 +360,17 @@ msgstr "ओवरराइट की पुष्टि करें"
 msgid "Content type:"
 msgstr "सामग्री का प्रकार:"
 
-#: Download_core.py:972
-#: Download_core.py:994
+#: Download_core.py:1369
+#: Download_core.py:1391
 msgid "Converting"
 msgstr "कनवर्ट किया जा रहा है"
 
-#: Youtube_settings.py:579
-#: Youtube_settings.py:598
+#: Youtube_settings.py:583
+#: Youtube_settings.py:602
 msgid "Cookie export failed: {str}"
 msgstr "कुकी निर्यात विफल: {str}"
 
-#: Youtube_settings.py:589
+#: Youtube_settings.py:593
 msgid "Cookie export timed out"
 msgstr "कुकी निर्यात का समय समाप्त हो गया"
 
@@ -391,7 +378,7 @@ msgstr "कुकी निर्यात का समय समाप्त �
 msgid "Cookies &file:"
 msgstr "कुकीज़ फ़ाइल (&f):"
 
-#: Youtube_settings.py:621
+#: Youtube_settings.py:625
 msgid "Cookies exported successfully to {path}. Anti-blocking is now active."
 msgstr "कुकीज़ सफलतापूर्वक {path} पर निर्यात कर दी गईं। एंटी-ब्लॉकिंग अब सक्रिय है।"
 
@@ -399,7 +386,7 @@ msgstr "कुकीज़ सफलतापूर्वक {path} पर न�
 msgid "Copy URL"
 msgstr "URL कॉपी करें"
 
-#: __init__.py:584
+#: __init__.py:581
 #: playlist.py:415
 #: search.py:503
 msgid "Copy video Shorten URL"
@@ -420,15 +407,15 @@ msgstr "चयनित वीडियो के लिए शीर्षक �
 msgid "Could not create short URL"
 msgstr "छोटा URL नहीं बनाया जा सका"
 
-#: __init__.py:636
+#: __init__.py:633
 msgid "Could not create shortened URL"
 msgstr "संक्षिप्त URL नहीं बनाया जा सका"
 
-#: Youtube_settings.py:563
+#: Youtube_settings.py:567
 msgid "Could not decrypt {browser}'s cookies (DPAPI decryption failed). This usually means yt-dlp needs updating to support this browser's newer cookie encryption. Try 'Update yt-dlp now' below, then export again, or export from Firefox instead, which does not use this encryption. If it still fails, use the manual cookies.txt method."
 msgstr "{browser} की कुकीज़ डिक्रिप्ट नहीं की जा सकीं (DPAPI डिक्रिप्शन विफल)। इसका आमतौर पर मतलब है कि इस ब्राउज़र के नए कुकी एन्क्रिप्शन का समर्थन करने के लिए yt-dlp को अपडेट करने की आवश्यकता है। नीचे दिए गए 'yt-dlp को अभी अपडेट करें' को आज़माएं, फिर से निर्यात करें, या इसके बजाय Firefox से निर्यात करें, जो इस एन्क्रिप्शन का उपयोग नहीं करता है। यदि यह अभी भी विफल रहता है, तो मैनुअल cookies.txt विधि का उपयोग करें।"
 
-#: Youtube_settings.py:571
+#: Youtube_settings.py:575
 msgid "Could not decrypt {browser}'s cookies (DPAPI decryption failed). This usually means yt-dlp needs updating. Try 'Update yt-dlp now' below, then export again. If it still fails, use the manual cookies.txt method instead."
 msgstr "{browser} की कुकीज़ डिक्रिप्ट नहीं की जा सकीं (DPAPI डिक्रिप्शन विफल)। इसका आमतौर पर मतलब है कि yt-dlp को अपडेट करने की आवश्यकता है। नीचे दिए गए 'yt-dlp को अभी अपडेट करें' को आज़माएं, फिर से निर्यात करें। यदि यह अभी भी विफल रहता है, तो इसके बजाय मैनुअल cookies.txt विधि का उपयोग करें।"
 
@@ -436,30 +423,34 @@ msgstr "{browser} की कुकीज़ डिक्रिप्ट नह�
 msgid "Could not open preview URL"
 msgstr "पूर्वावलोकन URL नहीं खोला जा सका"
 
-#: Youtube_settings.py:545
+#: Youtube_settings.py:549
 msgid "Could not read the {browser} cookie database. Close {browser} completely and try exporting again."
 msgstr "{browser} कुकी डेटाबेस नहीं पढ़ा जा सका। {browser} को पूरी तरह से बंद करें और फिर से निर्यात करने का प्रयास करें।"
 
-#: __init__.py:796
+#: __init__.py:797
 msgid "Cycle MP3 quality settings"
 msgstr "MP3 गुणवत्ता सेटिंग्स बदलें"
 
 #: channel_core.py:728
-#: downloadFail.py:131
-#: download_list.py:124
+#: downloadFail.py:137
+#: download_list.py:125
 msgid "Delete"
 msgstr "हटाएं"
 
-#: downloadFail.py:136
-#: download_list.py:129
+#: downloadFail.py:142
+#: download_list.py:130
 msgid "Delete selected"
 msgstr "चयनित हटाएं"
+
+#: Youtube_settings.py:734
+msgid "Deno updated successfully"
+msgstr "Chrome या Firefox में 'Get cookies.txt' एक्सटेंशन इंस्टॉल करें"
 
 #: Youtube_settings.py:73
 msgid "Destination folder"
 msgstr "गंतव्य फ़ोल्डर"
 
-#: download_list.py:126
+#: download_list.py:127
 msgid "Download"
 msgstr "डाउनलोड"
 
@@ -498,8 +489,8 @@ msgstr "MP4 डाउनलोड करें"
 msgid "Download WAV"
 msgstr "WAV डाउनलोड करें"
 
-#: downloadFail.py:142
-#: download_list.py:134
+#: downloadFail.py:148
+#: download_list.py:135
 msgid "Download all"
 msgstr "सभी डाउनलोड करें"
 
@@ -507,7 +498,7 @@ msgstr "सभी डाउनलोड करें"
 msgid "Download all {count} videos in this playlist?"
 msgstr "इस प्लेलिस्ट के सभी {count} वीडियो डाउनलोड करें?"
 
-#: Download_core.py:1194
+#: Download_core.py:1591
 msgid "Download complete"
 msgstr "डाउनलोड पूरा हुआ"
 
@@ -515,35 +506,51 @@ msgstr "डाउनलोड पूरा हुआ"
 msgid "Download entire playlist"
 msgstr "पूरी प्लेलिस्ट डाउनलोड करें"
 
-#: __init__.py:590
+#: __init__.py:587
 msgid "Download fail manager"
 msgstr "विफल डाउनलोड प्रबंधक"
 
-#: __init__.py:592
+#: __init__.py:589
 msgid "Download fail manager (no failed)"
 msgstr "विफल डाउनलोड प्रबंधक (कोई विफल नहीं)"
 
-#: Download_core.py:1232
+#: Download_core.py:1681
 msgid "Download failed"
 msgstr "डाउनलोड विफल"
 
-#: Download_core.py:1256
+#: Download_core.py:1705
 msgid "Download failed due to an error"
 msgstr "एक त्रुटि के कारण डाउनलोड विफल"
 
-#: Download_core.py:1244
+#: Download_core.py:1693
 msgid "Download failed due to timeout"
 msgstr "समय-समाप्ति के कारण डाउनलोड विफल"
 
-#: Download_core.py:1290
+#: Download_core.py:1739
 msgid "Download failed to start"
 msgstr "डाउनलोड शुरू होने में विफल"
 
-#: Download_core.py:1230
+#: Download_core.py:1656
 msgid "Download failed: YouTube blocked this request. Try exporting cookies from your browser in the Anti-blocking settings."
 msgstr "डाउनलोड विफल: YouTube ने इस अनुरोध को अवरुद्ध कर दिया है। एंटी-ब्लॉकिंग सेटिंग्स में अपने ब्राउज़र से कुकीज़ निर्यात करने का प्रयास करें।"
 
-#: downloadFail.py:133
+#: Download_core.py:1679
+msgid "Download failed: YouTube reports this video is unavailable"
+msgstr "अपने ब्राउज़र में YouTube में लॉगिन करें"
+
+#: Download_core.py:1669
+msgid "Download failed: the downloaded JavaScript runtime isn't working. Try deleting the bin folder in your AbsoluteYoutube config directory so it re-downloads."
+msgstr "एक्सटेंशन आइकन पर क्लिक करें और कुकीज़ एक्सपोर्ट करें"
+
+#: Download_core.py:1677
+msgid "Download failed: this may be because yt-dlp is outdated (current {current}, latest {latest}). Try updating yt-dlp in settings."
+msgstr "cookies.txt के रूप में सहेजें और इसे यहां चुनें"
+
+#: Download_core.py:1672
+msgid "Download failed: yt-dlp needs a JavaScript runtime, which this add-on is downloading automatically in the background. Please wait a moment and try again."
+msgstr "डाउनलोड विफल: yt-dlp को एक JavaScript रनटाइम की आवश्यकता है, जिसे यह एड-ऑन पृष्ठभूमि में स्वचालित रूप से डाउनलोड कर रहा है। कृपया थोड़ी देर प्रतीक्षा करें और पुनः प्रयास करें।"
+
+#: downloadFail.py:139
 msgid "Download file"
 msgstr "फ़ाइल डाउनलोड करें"
 
@@ -558,24 +565,24 @@ msgstr "डाउनलोड फ़ोल्डर मौजूद नहीं
 msgid "Download function not available."
 msgstr "डाउनलोड फ़ंक्शन उपलब्ध नहीं है।"
 
-#: __init__.py:506
+#: __init__.py:503
 msgid "Download immediately"
 msgstr "तुरंत डाउनलोड करें"
 
-#: __init__.py:586
+#: __init__.py:583
 msgid "Download list manager"
 msgstr "डाउनलोड सूची प्रबंधक"
 
-#: __init__.py:460
+#: __init__.py:457
 msgid "Download or queue video (single tap MP3, double tap MP4, triple tap WAV)"
 msgstr "वीडियो डाउनलोड करें या कतार में रखें (एक बार टैप करने पर MP3, दो बार टैप करने पर MP4, तीन बार टैप करने पर WAV)"
 
-#: downloadFail.py:138
-#: download_list.py:131
+#: downloadFail.py:144
+#: download_list.py:132
 msgid "Download selected"
 msgstr "चयनित डाउनलोड करें"
 
-#: downloadFail.py:251
+#: downloadFail.py:247
 msgid "Download started for: {title}"
 msgstr "इसके लिए डाउनलोड शुरू हो गया है: {title}"
 
@@ -583,11 +590,11 @@ msgstr "इसके लिए डाउनलोड शुरू हो गय�
 msgid "Downloading thumbnail..."
 msgstr "थंबनेल डाउनलोड हो रहा है..."
 
-#: download_list.py:108
+#: download_list.py:109
 msgid "Downloading..."
 msgstr "डाउनलोड हो रहा है..."
 
-#: downloadFail.py:65
+#: downloadFail.py:71
 #: search.py:30
 msgid "Duration"
 msgstr "अवधि"
@@ -620,7 +627,7 @@ msgstr "समाप्ति समय:"
 msgid "Enter a search query."
 msgstr "खोज क्वेरी दर्ज करें।"
 
-#: download_list.py:26
+#: download_list.py:27
 msgid "Error"
 msgstr "त्रुटि"
 
@@ -632,11 +639,11 @@ msgstr "डाउनलोड फ़ोल्डर बनाने में �
 msgid "Error deleting channel."
 msgstr "चैनल हटाने में त्रुटि।"
 
-#: __init__.py:621
+#: __init__.py:618
 msgid "Error displaying context menu"
 msgstr "संदर्भ मेनू प्रदर्शित करने में त्रुटि"
 
-#: __init__.py:297
+#: __init__.py:301
 msgid "Error during auto-update of yt-dlp: {str}"
 msgstr "yt-dlp के स्वतः-अद्यतन के दौरान त्रुटि: {str}"
 
@@ -644,17 +651,17 @@ msgstr "yt-dlp के स्वतः-अद्यतन के दौरान 
 msgid "Error fetching channel: {str}"
 msgstr "चैनल लाने में त्रुटि: {str}"
 
-#: __init__.py:188
-#: downloadFail.py:44
+#: __init__.py:192
+#: downloadFail.py:50
 msgid "Error importing core functions: {str}"
 msgstr "कोर फ़ंक्शंस आयात करने में त्रुटि: {str}"
 
-#: __init__.py:742
+#: __init__.py:739
 msgid "Error importing settings panel: {str}"
 msgstr "सेटिंग्स पैनल आयात करने में त्रुटि: {str}"
 
-#: __init__.py:211
-#: __init__.py:273
+#: __init__.py:215
+#: __init__.py:277
 msgid "Error initializing AbsoluteYoutube: {str}"
 msgstr "AbsoluteYoutube प्रारंभ करने में त्रुटि: {str}"
 
@@ -667,24 +674,24 @@ msgstr "कैश लोड करने में त्रुटि।"
 msgid "Error loading channel data."
 msgstr "चैनल डेटा लोड करने में त्रुटि।"
 
-#: __init__.py:530
+#: __init__.py:527
 msgid "Error opening channel dialog"
 msgstr "चैनल संवाद खोलने में त्रुटि"
 
-#: __init__.py:784
+#: __init__.py:785
 msgid "Error opening channel/playlist list: {str}"
 msgstr "चैनल/प्लेलिस्ट सूची खोलने में त्रुटि: {str}"
 
-#: __init__.py:657
-#: __init__.py:661
+#: __init__.py:654
+#: __init__.py:658
 msgid "Error opening download fail dialog: {str}"
 msgstr "डाउनलोड विफल संवाद खोलने में त्रुटि: {str}"
 
-#: __init__.py:570
+#: __init__.py:567
 msgid "Error opening download list dialog: {str}"
 msgstr "डाउनलोड सूची संवाद खोलने में त्रुटि: {str}"
 
-#: __init__.py:496
+#: __init__.py:493
 msgid "Error opening folder"
 msgstr "फ़ोल्डर खोलने में त्रुटि"
 
@@ -692,23 +699,23 @@ msgstr "फ़ोल्डर खोलने में त्रुटि"
 msgid "Error opening playlist."
 msgstr "प्लेलिस्ट खोलने में त्रुटि।"
 
-#: __init__.py:727
+#: __init__.py:724
 msgid "Error opening search dialog: {str}"
 msgstr "खोज संवाद खोलने में त्रुटि: {str}"
 
-#: __init__.py:745
+#: __init__.py:742
 msgid "Error opening settings dialog: {str}"
 msgstr "सेटिंग्स संवाद खोलने में त्रुटि: {str}"
 
-#: __init__.py:708
+#: __init__.py:705
 msgid "Error opening trim dialog: {str}"
 msgstr "ट्रिम संवाद खोलने में त्रुटि: {str}"
 
-#: Download_core.py:1332
+#: Download_core.py:1945
 msgid "Error processing URL"
 msgstr "यूआरएल प्रोसेस करने में त्रुटि"
 
-#: downloadFail.py:256
+#: downloadFail.py:252
 msgid "Error starting download"
 msgstr "डाउनलोड शुरू करने में त्रुटि"
 
@@ -720,11 +727,11 @@ msgstr "चैनल यूआरएल अपडेट करने में �
 msgid "Error updating channel."
 msgstr "चैनल अपडेट करने में त्रुटि।"
 
-#: __init__.py:575
+#: __init__.py:572
 msgid "Error: Download list module not available"
 msgstr "त्रुटि: डाउनलोड सूची मॉड्यूल उपलब्ध नहीं है"
 
-#: __init__.py:647
+#: __init__.py:644
 msgid "Error: DownloadFail module not available"
 msgstr "त्रुटि: डाउनलोडविफल मॉड्यूल उपलब्ध नहीं है"
 
@@ -736,19 +743,19 @@ msgstr "त्रुटि: स्नैपशॉट कैप्चर कर�
 msgid "Error: No snapshot file created."
 msgstr "त्रुटि: कोई स्नैपशॉट फ़ाइल नहीं बनाई गई।"
 
-#: __init__.py:732
+#: __init__.py:729
 msgid "Error: Search module not available"
 msgstr "त्रुटि: खोज मॉड्यूल उपलब्ध नहीं है"
 
-#: __init__.py:688
+#: __init__.py:685
 msgid "Error: Snapshot module not available"
 msgstr "त्रुटि: स्नैपशॉट मॉड्यूल उपलब्ध नहीं है"
 
-#: __init__.py:697
+#: __init__.py:694
 msgid "Error: Trim module not available"
 msgstr "त्रुटि: ट्रिम मॉड्यूल उपलब्ध नहीं है"
 
-#: Download_core.py:1427
+#: Download_core.py:1970
 #: Trim.py:324
 msgid "Error: ffmpeg.exe not found."
 msgstr "त्रुटि: ffmpeg.exe नहीं मिला।"
@@ -757,7 +764,7 @@ msgstr "त्रुटि: ffmpeg.exe नहीं मिला।"
 msgid "Error: yt-dlp.exe not found."
 msgstr "त्रुटि: yt-dlp.exe नहीं मिला।"
 
-#: Youtube_settings.py:449
+#: Youtube_settings.py:453
 msgid "Export YouTube Cookies"
 msgstr "यूट्यूब कुकीज़ निर्यात करें"
 
@@ -765,15 +772,15 @@ msgstr "यूट्यूब कुकीज़ निर्यात करे
 msgid "Export YouTube Cookies (Anti-Block)"
 msgstr "यूट्यूब कुकीज़ निर्यात करें (एंटी-ब्लॉक)"
 
-#: Youtube_settings.py:480
+#: Youtube_settings.py:484
 msgid "Exporting cookies from {browser}..."
 msgstr "{browser} से कुकीज़ निर्यात की जा रही हैं..."
 
-#: Youtube_settings.py:738
+#: Youtube_settings.py:758
 msgid "Failed to create the specified folder. Please select a valid folder."
 msgstr "निर्दिष्ट फ़ोल्डर बनाने में विफल। कृपया एक वैध फ़ोल्डर चुनें।"
 
-#: __init__.py:594
+#: __init__.py:591
 msgid "Favorite channel"
 msgstr "पसंदीदा चैनल"
 
@@ -781,7 +788,7 @@ msgstr "पसंदीदा चैनल"
 msgid "Fetched {count} items total."
 msgstr "कुल {count} आइटम प्राप्त किए गए।"
 
-#: __init__.py:771
+#: __init__.py:772
 msgid "Fetching channel information..."
 msgstr "चैनल की जानकारी प्राप्त की जा रही है..."
 
@@ -799,33 +806,33 @@ msgstr "चैनल के वीडियो प्राप्त किए �
 msgid "File Format"
 msgstr "फ़ाइल स्वरूप"
 
-#: Download_core.py:1432
+#: Download_core.py:1975
 msgid "File already exists. Skipping download."
 msgstr "फ़ाइल पहले से मौजूद है। डाउनलोड छोड़ा जा रहा है।"
 
-#: Download_core.py:1318
+#: Download_core.py:1931
 msgid "File exists"
 msgstr "फ़ाइल मौजूद है"
 
-#: Youtube_settings.py:357
+#: Youtube_settings.py:346
 msgid "Force I&Pv4"
 msgstr "I&Pv4 को बाध्य करें"
 
-#: Youtube_settings.py:362
+#: Youtube_settings.py:351
 msgid "Force I&Pv6"
 msgstr "I&Pv6 को बाध्य करें"
 
-#: download_list.py:69
+#: download_list.py:70
 msgid "Format"
 msgstr "स्वरूप"
 
-#: Download_core.py:590
+#: Download_core.py:891
 msgid ""
 "Found {count} interrupted downloads\n"
 "Resume all?\n"
 "\n"
 "\n"
-msgstr "{count} रुके हुए डाउनलोड मिले। क्या सभी फिर से शुरू करें?"
+msgstr "{count} बाधित डाउनलोड मिले"
 
 #: search.py:470
 msgid "Found {count} videos for '{query}'."
@@ -843,10 +850,6 @@ msgstr "क्रोम या फ़ायरफ़ॉक्स में 'Get 
 msgid "Full-size snapshot complete"
 msgstr "अपने ब्राउज़र में यूट्यूब पर लॉगिन करें"
 
-#: Youtube_settings.py:351
-msgid "Geo bypass &country:"
-msgstr "एक्सटेंशन आइकन पर क्लिक करें और कुकीज़ निर्यात करें"
-
 #: channel_core.py:175
 #: search.py:133
 msgid "Go"
@@ -858,11 +861,11 @@ msgid "Go to page of {}:"
 msgstr "{} के पृष्ठ पर जाएं:"
 
 #: Youtube_settings.py:306
-#: Youtube_settings.py:427
+#: Youtube_settings.py:431
 msgid "Google Chrome"
 msgstr "गूगल क्रोम"
 
-#: Youtube_settings.py:411
+#: Youtube_settings.py:415
 msgid ""
 "How to get YouTube cookies:\n"
 "\n"
@@ -877,9 +880,9 @@ msgid ""
 "Using cookies helps avoid blocks because YouTube sees you as a logged-in user.\n"
 "\n"
 "\n"
-msgstr "यूट्यूब कुकीज़ कैसे प्राप्त करें:"
+msgstr "YouTube कुकीज़ कैसे प्राप्त करें:"
 
-#: Youtube_settings.py:423
+#: Youtube_settings.py:427
 msgid "How to get cookies"
 msgstr "कुकीज़ कैसे प्राप्त करें"
 
@@ -887,11 +890,11 @@ msgstr "कुकीज़ कैसे प्राप्त करें"
 msgid "How to get cookies?"
 msgstr "कुकीज़ कैसे प्राप्त करें?"
 
-#: __init__.py:514
+#: __init__.py:511
 msgid "Immediate download mode disabled"
 msgstr "तत्काल डाउनलोड मोड अक्षम किया गया"
 
-#: __init__.py:512
+#: __init__.py:509
 msgid "Immediate download mode enabled"
 msgstr "तत्काल डाउनलोड मोड सक्षम किया गया"
 
@@ -903,16 +906,16 @@ msgstr "अमान्य यूआरएल या प्रारंभ स�
 msgid "Invalid YouTube video URL"
 msgstr "अमान्य यूट्यूब वीडियो यूआरएल"
 
-#: __init__.py:518
+#: __init__.py:515
 msgid "Invalid channel URL"
 msgstr "अमान्य चैनल यूआरएल"
 
-#: __init__.py:498
+#: __init__.py:495
 msgid "Invalid download folder"
 msgstr "अमान्य डाउनलोड फ़ोल्डर"
 
-#: downloadFail.py:165
-#: download_list.py:164
+#: downloadFail.py:177
+#: download_list.py:165
 msgid "Item deleted"
 msgstr "आइटम हटाया गया"
 
@@ -920,6 +923,10 @@ msgstr "आइटम हटाया गया"
 #: search.py:557
 msgid "Item removed."
 msgstr "आइटम हटा दिया गया।"
+
+#: Youtube_settings.py:386
+msgid "JavaScript Runtime (Deno)"
+msgstr "JavaScript रनटाइम (Deno)"
 
 #: channel_core.py:66
 msgid "Live"
@@ -947,7 +954,7 @@ msgid "MP3 &quality (kbps):"
 msgstr "MP3 और गुणवत्ता (kbps):"
 
 #: Youtube_settings.py:306
-#: Youtube_settings.py:427
+#: Youtube_settings.py:431
 msgid "Microsoft Edge"
 msgstr "माइक्रोसॉफ्ट एज"
 
@@ -960,7 +967,7 @@ msgid "Move Up"
 msgstr "ऊपर ले जाएं"
 
 #: Youtube_settings.py:306
-#: Youtube_settings.py:427
+#: Youtube_settings.py:431
 msgid "Mozilla Firefox"
 msgstr "मोज़िला फ़ायरफ़ॉक्स"
 
@@ -970,8 +977,8 @@ msgstr "मोज़िला फ़ायरफ़ॉक्स"
 msgid "NextPage"
 msgstr "अगला पेज"
 
-#: __init__.py:405
-#: __init__.py:626
+#: __init__.py:402
+#: __init__.py:623
 msgid "No YouTube URL found"
 msgstr "कोई यूट्यूब URL नहीं मिला"
 
@@ -979,26 +986,22 @@ msgstr "कोई यूट्यूब URL नहीं मिला"
 msgid "No channel selected."
 msgstr "कोई चैनल चयनित नहीं है।"
 
-#: downloadFail.py:306
-#: downloadFail.py:326
+#: downloadFail.py:298
+#: downloadFail.py:318
 msgid "No downloads could be started"
 msgstr "कोई डाउनलोड शुरू नहीं किया जा सका"
 
-#: __init__.py:643
+#: __init__.py:640
 msgid "No failed downloads"
 msgstr "कोई विफल डाउनलोड नहीं"
 
-#: downloadFail.py:330
+#: downloadFail.py:322
 msgid "No failed downloads to clear"
 msgstr "साफ़ करने के लिए कोई विफल डाउनलोड नहीं"
 
-#: downloadFail.py:310
+#: downloadFail.py:302
 msgid "No failed downloads to process"
 msgstr "प्रोसेस करने के लिए कोई विफल डाउनलोड नहीं"
-
-#: download_list.py:249
-msgid "No items added (all already in queue)"
-msgstr "कोई आइटम नहीं जोड़ा गया (सभी पहले से कतार में हैं)"
 
 #: channel_core.py:1085
 msgid "No items found for this URL."
@@ -1008,23 +1011,19 @@ msgstr "इस URL के लिए कोई आइटम नहीं मि�
 msgid "No items found."
 msgstr "कोई आइटम नहीं मिला।"
 
-#: downloadFail.py:266
+#: downloadFail.py:262
 #: downloadFail.py:282
-#: download_list.py:191
-#: download_list.py:204
+#: download_list.py:196
+#: download_list.py:209
 msgid "No items selected"
 msgstr "कोई आइटम चयनित नहीं"
 
-#: download_list.py:225
-msgid "No new items added (already in queue)"
-msgstr "कोई नया आइटम नहीं जोड़ा गया (पहले से कतार में है)"
-
-#: download_list.py:231
-#: download_list.py:235
+#: download_list.py:229
+#: download_list.py:233
 msgid "No pending downloads"
 msgstr "कोई लंबित डाउनलोड नहीं"
 
-#: download_list.py:255
+#: download_list.py:259
 msgid "No pending downloads to clear"
 msgstr "साफ़ करने के लिए कोई लंबित डाउनलोड नहीं"
 
@@ -1044,7 +1043,7 @@ msgstr "इस चैनल के लिए कोई सहेजा गया
 msgid "No saved data for this content type yet."
 msgstr "इस सामग्री प्रकार के लिए अभी तक कोई सहेजा गया डेटा नहीं है।"
 
-#: Download_core.py:1435
+#: Download_core.py:1978
 msgid "No valid multimedia link found."
 msgstr "कोई मान्य मल्टीमीडिया लिंक नहीं मिला।"
 
@@ -1054,15 +1053,15 @@ msgstr "कोई मान्य मल्टीमीडिया लिंक
 msgid "No videos to download."
 msgstr "डाउनलोड करने के लिए कोई वीडियो नहीं हैं।"
 
-#: __init__.py:629
+#: __init__.py:626
 msgid "Not a YouTube URL"
 msgstr "यह YouTube URL नहीं है"
 
-#: Download_core.py:1468
+#: Download_core.py:2011
 msgid "Not a YouTube video or valid multimedia link"
 msgstr "यह YouTube वीडियो या मान्य मल्टीमीडिया लिंक नहीं है"
 
-#: __init__.py:473
+#: __init__.py:470
 msgid "Open context menu (single tap), open download folder (double tap), open search dialog (triple tap)"
 msgstr "संदर्भ मेनू खोलें (एक बार टैप करें), डाउनलोड फ़ोल्डर खोलें (दो बार टैप करें), खोज संवाद खोलें (तीन बार टैप करें)"
 
@@ -1071,7 +1070,7 @@ msgid "Open in browser"
 msgstr "ब्राउज़र में खोलें"
 
 #: Youtube_settings.py:306
-#: Youtube_settings.py:427
+#: Youtube_settings.py:431
 msgid "Opera"
 msgstr "ओपेरा"
 
@@ -1095,7 +1094,7 @@ msgstr "पिन करें"
 msgid "Play on YouTube"
 msgstr "YouTube पर चलाएं"
 
-#: __init__.py:386
+#: __init__.py:383
 msgid "Playlist"
 msgstr "प्लेलिस्ट"
 
@@ -1104,15 +1103,15 @@ msgstr "प्लेलिस्ट"
 msgid "Playlist download started."
 msgstr "प्लेलिस्ट डाउनलोड शुरू हो गई है।"
 
-#: downloadFail.py:249
+#: downloadFail.py:245
 msgid "Playlist download started: {title}"
 msgstr "प्लेलिस्ट डाउनलोड शुरू हो गई: {title}"
 
-#: __init__.py:794
+#: __init__.py:795
 msgid "Playlist mode disabled"
 msgstr "प्लेलिस्ट मोड अक्षम किया गया"
 
-#: __init__.py:794
+#: __init__.py:795
 msgid "Playlist mode enabled"
 msgstr "प्लेलिस्ट मोड सक्षम किया गया"
 
@@ -1170,15 +1169,15 @@ msgstr "तैयार"
 msgid "Remove from list"
 msgstr "सूची से हटाएं"
 
-#: Youtube_settings.py:371
+#: Youtube_settings.py:360
 msgid "Reset to &safe settings (recommended if blocked)"
 msgstr "सुरक्षित सेटिंग्स पर रीसेट करें (ब्लॉक होने पर अनुशंसित) (&s)"
 
-#: Youtube_settings.py:641
+#: Youtube_settings.py:645
 msgid "Reset to safe settings. Remember to use cookies for best results."
 msgstr "सुरक्षित सेटिंग्स पर रीसेट करें। सर्वोत्तम परिणामों के लिए कुकीज़ का उपयोग करना याद रखें।"
 
-#: Download_core.py:591
+#: Download_core.py:892
 msgid "Resume downloads"
 msgstr "डाउनलोड फिर से शुरू करें"
 
@@ -1198,7 +1197,7 @@ msgstr "यूट्यूब खोजें"
 msgid "Search YouTube:"
 msgstr "यूट्यूब खोजें:"
 
-#: __init__.py:600
+#: __init__.py:597
 msgid "Search Youtube"
 msgstr "यूट्यूब खोजें"
 
@@ -1230,24 +1229,28 @@ msgstr "खोज रहा है..."
 msgid "Select a directory"
 msgstr "एक निर्देशिका चुनें"
 
-#: Youtube_settings.py:444
+#: Youtube_settings.py:448
 msgid ""
 "Select the browser you are currently logged into YouTube with.\n"
 "Close that browser first if possible -- yt-dlp usually cannot read its cookie database while the browser is still running.\n"
 "\n"
 "\n"
-msgstr "उस ब्राउज़र का चयन करें जिसमें आप वर्तमान में YouTube में लॉग इन हैं।\\nयदि संभव हो तो पहले उस ब्राउज़र को बंद करें -- जब ब्राउज़र चल रहा हो तो yt-dlp आमतौर पर उसकी कुकी डेटाबेस नहीं पढ़ सकता है।"
+msgstr "वह ब्राउज़र चुनें जिसमें आप वर्तमान में YouTube में लॉग इन हैं।"
 
-#: download_list.py:223
-msgid "Selected items added to download queue"
-msgstr "चयनित आइटम डाउनलोड कतार में जोड़े गए"
+#: download_list.py:216
+msgid "Selected item(s) already downloading"
+msgstr "चयनित आइटम पहले से ही डाउनलोड हो रहे हैं"
 
 #: downloadFail.py:273
-#: download_list.py:195
+#: download_list.py:200
 msgid "Selected items deleted"
 msgstr "चयनित आइटम हटाए गए"
 
-#: __init__.py:634
+#: download_list.py:225
+msgid "Selected items moved to the front of the download queue"
+msgstr "चयनित आइटम डाउनलोड कतार के सबसे आगे ले जाए गए"
+
+#: __init__.py:631
 #: channel_core.py:1607
 #: playlist.py:453
 #: search.py:530
@@ -1272,7 +1275,7 @@ msgstr "अनुपलब्ध अंश छोड़ें (&u)"
 msgid "Skip existing files"
 msgstr "मौजूद फ़ाइलें छोड़ें"
 
-#: __init__.py:597
+#: __init__.py:594
 msgid "Snapshot"
 msgstr "स्नैपशॉट"
 
@@ -1306,32 +1309,40 @@ msgstr "प्रारंभ समय समाप्ति समय से �
 msgid "Start time:"
 msgstr "प्रारंभ समय:"
 
-#: downloadFail.py:304
-#: downloadFail.py:324
+#: downloadFail.py:296
+#: downloadFail.py:316
 msgid "Started {count} download(s)"
 msgstr "{count} डाउनलोड शुरू किए गए"
 
-#: __init__.py:434
+#: __init__.py:431
 msgid "Starting download: {format} - {title}"
 msgstr "डाउनलोड शुरू हो रहा है: {format} - {title}"
 
-#: Download_core.py:855
+#: download_list.py:187
+msgid "Starting download: {title}"
+msgstr "डाउनलोड शुरू हो रहा है: {title}"
+
+#: Download_core.py:1201
 msgid "Starting next download from queue: {title}"
 msgstr "कतार से अगला डाउनलोड शुरू हो रहा है: {title}"
 
-#: download_list.py:70
+#: download_list.py:255
+msgid "Starting {count} pending download(s)"
+msgstr "{count} लंबित डाउनलोड शुरू हो रहे हैं"
+
+#: download_list.py:71
 msgid "Status"
 msgstr "स्थिति"
 
-#: download_list.py:170
+#: download_list.py:171
 msgid "This item is already downloading"
 msgstr "यह आइटम पहले से डाउनलोड हो रहा है"
 
-#: Download_core.py:1228
+#: Download_core.py:1654
 msgid "This livestream hasn't started yet. It starts in {time}."
 msgstr "यह लाइवस्ट्रीम अभी शुरू नहीं हुआ है। यह {time} में शुरू होगा।"
 
-#: Download_core.py:1226
+#: Download_core.py:1652
 msgid "This video hasn't premiered yet. It starts in {time}."
 msgstr "यह वीडियो अभी प्रीमियर नहीं हुआ है। यह {time} में शुरू होगा।"
 
@@ -1353,11 +1364,11 @@ msgstr "{count} वीडियो के लिए शीर्षक सुध
 msgid "Title correction failed."
 msgstr "शीर्षक सुधार विफल रहा।"
 
-#: __init__.py:789
+#: __init__.py:790
 msgid "Toggle playlist mode"
 msgstr "प्लेलिस्ट मोड टॉगल करें"
 
-#: __init__.py:598
+#: __init__.py:595
 msgid "Trim setting"
 msgstr "ट्रिम सेटिंग"
 
@@ -1366,7 +1377,7 @@ msgid "Trimming and downloading {format}..."
 msgstr "{format} ट्रिम और डाउनलोड हो रहा है..."
 
 #: Trim.py:129
-#: downloadFail.py:66
+#: downloadFail.py:72
 msgid "URL"
 msgstr "URL"
 
@@ -1378,16 +1389,16 @@ msgstr "यूआरएल क्लिपबोर्ड पर कॉपी �
 msgid "URL is required"
 msgstr "यूआरएल आवश्यक है"
 
-#: Download_core.py:1306
+#: Download_core.py:1919
 msgid "URL not found"
 msgstr "यूआरएल नहीं मिला"
 
-#: Download_core.py:745
-#: __init__.py:428
-#: downloadFail.py:104
-#: downloadFail.py:105
-#: downloadFail.py:106
-#: download_list.py:105
+#: Download_core.py:1057
+#: __init__.py:425
+#: downloadFail.py:110
+#: downloadFail.py:111
+#: downloadFail.py:112
+#: download_list.py:106
 msgid "Unknown"
 msgstr "अज्ञात"
 
@@ -1395,33 +1406,46 @@ msgstr "अज्ञात"
 msgid "Unpin"
 msgstr "पिन हटाएं"
 
-#: Youtube_settings.py:718
-#: __init__.py:313
+#: Youtube_settings.py:391
+msgid "Update Deno now"
+msgstr "Deno को अभी अपडेट करें"
+
+#: Youtube_settings.py:723
+#: Youtube_settings.py:738
+#: __init__.py:310
 msgid "Update failed: {str}"
 msgstr "अपडेट विफल: {str}"
 
-#: Youtube_settings.py:391
+#: Youtube_settings.py:380
+#: Youtube_settings.py:395
 msgid "Update status: Idle"
 msgstr "अपडेट स्थिति: निष्क्रिय"
 
-#: Youtube_settings.py:717
+#: Youtube_settings.py:722
+#: Youtube_settings.py:737
 msgid "Update status: Update failed: {str}"
 msgstr "अपडेट स्थिति: अपडेट विफल: {str}"
 
-#: Youtube_settings.py:713
+#: Youtube_settings.py:718
+#: Youtube_settings.py:733
 msgid "Update status: Update successful"
 msgstr "अपडेट स्थिति: अपडेट सफल"
 
-#: Youtube_settings.py:703
+#: Youtube_settings.py:707
+#: Youtube_settings.py:730
 msgid "Update status: Updating..."
 msgstr "अपडेट स्थिति: अपडेट हो रहा है..."
 
-#: Youtube_settings.py:387
+#: Youtube_settings.py:376
 msgid "Update yt-dlp now"
 msgstr "yt-dlp को अभी अपडेट करें"
 
-#: Youtube_settings.py:704
-#: __init__.py:301
+#: Youtube_settings.py:731
+msgid "Updating Deno..."
+msgstr "Deno को अपडेट किया जा रहा है..."
+
+#: Youtube_settings.py:708
+#: __init__.py:305
 msgid "Updating yt-dlp..."
 msgstr "yt-dlp अपडेट हो रहा है..."
 
@@ -1445,8 +1469,8 @@ msgstr "डाउनलोड अनुभाग का उपयोग कर�
 msgid "User &agent:"
 msgstr "यूज़र &एजेंट:"
 
-#: downloadFail.py:64
-#: download_list.py:68
+#: downloadFail.py:70
+#: download_list.py:69
 #: search.py:29
 msgid "Video Title"
 msgstr "वीडियो शीर्षक"
@@ -1467,12 +1491,12 @@ msgstr "वीडियो"
 msgid "Videos in {title}"
 msgstr "{title} में वीडियो"
 
-#: download_list.py:108
+#: download_list.py:109
 msgid "Waiting"
 msgstr "प्रतीक्षा की जा रही है"
 
-#: __init__.py:680
-#: __init__.py:693
+#: __init__.py:677
+#: __init__.py:690
 msgid "You must be on a YouTube page to use this feature"
 msgstr "इस सुविधा का उपयोग करने के लिए आपको YouTube पृष्ठ पर होना चाहिए"
 
@@ -1496,21 +1520,21 @@ msgstr "लोड हो रहा है..."
 msgid "unknown"
 msgstr "अज्ञात"
 
-#: Youtube_settings.py:578
+#: Youtube_settings.py:582
 msgid "unknown error"
 msgstr "अज्ञात त्रुटि"
 
-#: Youtube_settings.py:377
+#: Youtube_settings.py:366
 msgid "yt-dlp Update"
 msgstr "yt-dlp अपडेट"
 
-#: Youtube_settings.py:714
-#: __init__.py:310
+#: Youtube_settings.py:719
+#: __init__.py:307
 msgid "yt-dlp updated successfully"
 msgstr "yt-dlp सफलतापूर्वक अपडेट हो गया"
 
-#: Download_core.py:1335
-#: Youtube_settings.py:460
+#: Download_core.py:1948
+#: Youtube_settings.py:464
 msgid "yt-dlp.exe missing"
 msgstr "yt-dlp.exe गायब है"
 
@@ -1519,14 +1543,14 @@ msgstr "yt-dlp.exe गायब है"
 msgid "yt-dlp.exe not found."
 msgstr "yt-dlp.exe नहीं मिला।"
 
-#: Youtube_settings.py:466
+#: Youtube_settings.py:470
 msgid ""
 "{browser} appears to still be running. The cookie database is usually locked while the browser is open, so the export will likely fail with a database error.\n"
 "\n"
 "Close {browser} completely, then click OK to continue anyway or Cancel to stop and close it first.\n"
 "\n"
 "\n"
-msgstr "ऐसा प्रतीत होता है कि {browser} अभी भी चल रहा है। जब ब्राउज़र खुला होता है, तो कुकी डेटाबेस आमतौर पर लॉक रहता है, इसलिए डेटाबेस त्रुटि के कारण निर्यात विफल होने की संभावना है।"
+msgstr "ऐसा प्रतीत होता है कि {browser} अभी भी चल रहा है। जब ब्राउज़र खुला होता है तो कुकी डेटाबेस आमतौर पर लॉक रहता है, इसलिए एक्सपोर्ट संभवतः डेटाबेस त्रुटि के साथ विफल हो जाएगा।"
 
 #: channel_core.py:333
 #: search.py:608
@@ -1537,15 +1561,15 @@ msgstr "{count} डाउनलोड कतार में हैं।"
 msgid "{count} new items updated."
 msgstr "{count} नई वस्तुएं अपडेट की गईं।"
 
-#: Download_core.py:1002
+#: Download_core.py:1399
 msgid "{mb} MB downloaded"
 msgstr "{mb} MB डाउनलोड हुआ"
 
-#: Download_core.py:987
+#: Download_core.py:1384
 msgid "{percent}%"
 msgstr "{percent}%"
 
-#: __init__.py:808
+#: __init__.py:809
 msgid "{quality} kbps"
 msgstr "{quality} kbps"
 

@@ -6,10 +6,6 @@ import tones
 from logHandler import log
 
 addonHandler.initTranslation()
-try:
-	_ = addonHandler.getTranslation()
-except:
-	def _(x): return x
 
 _instance = None
 
@@ -34,7 +30,13 @@ class AbsoluteYoutubeMenu(wx.Frame):
 		self.refreshList()
 
 		self.listBox.Bind(wx.EVT_LISTBOX_DCLICK, self.onSelect)
-		self.listBox.Bind(wx.EVT_CHAR_HOOK, self.onKey)
+		# EVT_CHAR_HOOK must be bound to the owning Frame, not a child
+		# control -- binding it to self.listBox let IsDialogMessage swallow
+		# Escape/Enter before onKey ever saw them, the same confirmed
+		# failure mode already fixed elsewhere in this add-on's dialogs
+		# (see downloadFail.py / download_list.py, which both bind it to
+		# self).
+		self.Bind(wx.EVT_CHAR_HOOK, self.onKey)
 
 		self.Bind(wx.EVT_CLOSE, self.onClose)
 		self.Show()
@@ -46,7 +48,7 @@ class AbsoluteYoutubeMenu(wx.Frame):
 		rawItems = self.itemsFunc()
 		self.currentItems = rawItems
 		self.listBox.Clear()
-		for label, _ in rawItems:
+		for label, _callback in rawItems:
 			self.listBox.Append(label)
 		if self.listBox.GetCount() > 0:
 			self.listBox.SetSelection(0)

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: AbsoluteYoutube 2026.9.0\n"
+"Project-Id-Version: AbsoluteYoutube 2026.9.12\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-09-05 09:36+0700\n"
+"POT-Creation-Date: 2026-09-14 07:42+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Indonesian\n"
@@ -30,12 +30,12 @@ msgstr "&Peramban untuk kuki otomatis (digunakan saat berkas kuki mati):"
 
 #: channel_dialogs.py:69
 #: channel_dialogs.py:119
-#: downloadFail.py:90
+#: downloadFail.py:96
 msgid "&Cancel"
 msgstr "&Batal"
 
-#: downloadFail.py:82
-#: download_list.py:87
+#: downloadFail.py:88
+#: download_list.py:88
 msgid "&Clear All"
 msgstr "&Bersihkan Semua"
 
@@ -45,14 +45,14 @@ msgstr "&Bersihkan Semua"
 msgid "&Close"
 msgstr "&Tutup"
 
-#: downloadFail.py:70
-#: download_list.py:75
+#: downloadFail.py:76
+#: download_list.py:76
 msgid "&Delete Selected"
 msgstr "&Hapus yang Dipilih"
 
 #: channel_core.py:182
-#: downloadFail.py:78
-#: download_list.py:83
+#: downloadFail.py:84
+#: download_list.py:84
 #: search.py:140
 msgid "&Download All"
 msgstr "&Unduh Semua"
@@ -61,8 +61,8 @@ msgstr "&Unduh Semua"
 msgid "&Download All Videos in Playlist"
 msgstr "&Unduh Semua Video dalam Daftar Putar"
 
-#: downloadFail.py:74
-#: download_list.py:79
+#: downloadFail.py:80
+#: download_list.py:80
 msgid "&Download Selected"
 msgstr "&Unduh yang Dipilih"
 
@@ -70,11 +70,7 @@ msgstr "&Unduh yang Dipilih"
 msgid "&Download folder"
 msgstr "&Folder unduhan"
 
-#: Youtube_settings.py:346
-msgid "&Geo bypass"
-msgstr "&Pintas geografis"
-
-#: Youtube_settings.py:367
+#: Youtube_settings.py:356
 msgid "&Mark as watched"
 msgstr "&Tandai sebagai sudah ditonton"
 
@@ -88,8 +84,8 @@ msgstr "&Jumlah koneksi:"
 
 #: channel_dialogs.py:67
 #: channel_dialogs.py:117
-#: downloadFail.py:86
-#: download_list.py:91
+#: downloadFail.py:92
+#: download_list.py:92
 msgid "&OK"
 msgstr "&OK"
 
@@ -113,7 +109,7 @@ msgstr "&Sumber"
 msgid "&Throttle rate (KB/s, 0=unlimited, step of 5):"
 msgstr "&Kecepatan pembatas (KB/d, 0=tanpa batas, kelipatan 5):"
 
-#: Download_core.py:1154
+#: Download_core.py:1551
 msgid "0%"
 msgstr "0%"
 
@@ -121,7 +117,7 @@ msgstr "0%"
 msgid "A channel with this name already exists. Overwrite?"
 msgstr "Saluran dengan nama ini sudah ada. Timpa?"
 
-#: __init__.py:282
+#: __init__.py:286
 msgid "A new version of yt-dlp is available: {latest}. Current: {current}. Please update in settings."
 msgstr "Versi baru yt-dlp tersedia: {latest}. Saat ini: {current}. Silakan perbarui di pengaturan."
 
@@ -135,11 +131,11 @@ msgstr "YouTube Absolut"
 msgid "Absolute YouTube Trim"
 msgstr "Pangkas YouTube Absolut"
 
-#: __init__.py:602
+#: __init__.py:599
 msgid "Absolute YouTube setting"
 msgstr "Pengaturan YouTube Absolut"
 
-#: menu.py:18
+#: menu.py:14
 msgid "Absolute Youtube"
 msgstr "YouTube Absolut"
 
@@ -151,31 +147,27 @@ msgstr "Tambah Saluran Baru"
 msgid "Add new channel"
 msgstr "Tambah saluran baru"
 
-#: __init__.py:193
+#: __init__.py:197
 msgid "Add-on initialization failed: missing pending file path function. Please restart NVDA."
 msgstr "Inisialisasi pengaya gagal: fungsi jalur berkas tertunda hilang. Silakan mulai ulang NVDA."
 
-#: download_list.py:25
+#: download_list.py:26
 msgid "Add-on internal error: missing components. Please restart NVDA."
 msgstr "Kesalahan internal pengaya: komponen hilang. Silakan mulai ulang NVDA."
 
-#: download_list.py:71
+#: download_list.py:72
 msgid "Added Time"
 msgstr "Waktu Ditambahkan"
 
-#: __init__.py:451
+#: __init__.py:448
 msgid "Added to download list: {format} - {title}"
 msgstr "Ditambahkan ke daftar unduhan: {format} - {title}"
 
-#: __init__.py:445
+#: __init__.py:442
 msgid "Added to download queue: {format} - {title}"
 msgstr "Ditambahkan ke antrean unduhan: {format} - {title}"
 
-#: download_list.py:178
-msgid "Added to download queue: {title}"
-msgstr "Ditambahkan ke antrean unduhan: {title}"
-
-#: Download_core.py:1457
+#: Download_core.py:2000
 msgid "Adding link as {format} to download queue"
 msgstr "Menambahkan tautan sebagai {format} ke antrean unduhan"
 
@@ -196,24 +188,19 @@ msgstr "Menambahkan {title} ke antrean unduhan."
 msgid "All"
 msgstr "Semua"
 
-#: downloadFail.py:335
+#: downloadFail.py:326
 msgid "All failed downloads cleared"
 msgstr "Semua unduhan yang gagal dibersihkan"
 
-#: download_list.py:247
-msgid "All items added to download queue"
-msgstr "Semua item ditambahkan ke antrean unduhan"
-
-#: download_list.py:265
+#: download_list.py:269
 msgid "All pending downloads cleared"
 msgstr "Semua unduhan tertunda dibersihkan"
 
-#: __init__.py:453
+#: __init__.py:450
 msgid "Already in download list"
 msgstr "Sudah ada di dalam daftar unduhan"
 
-#: __init__.py:447
-#: download_list.py:180
+#: __init__.py:444
 msgid "Already in download queue"
 msgstr "Sudah ada di dalam antrean unduhan"
 
@@ -238,7 +225,7 @@ msgstr "Pada batas maksimum (10.000 KB/s = 10 MB/s), batas ini pada dasarnya tid
 msgid "Audio Quality"
 msgstr "Kualitas Audio"
 
-#: Youtube_settings.py:382
+#: Youtube_settings.py:371
 msgid "Auto-update yt-dlp on startup"
 msgstr "Perbarui otomatis yt-dlp saat pengaktifan"
 
@@ -251,11 +238,11 @@ msgid "Beep e&very (seconds):"
 msgstr "Bunyi bip se&tiap (detik):"
 
 #: Youtube_settings.py:306
-#: Youtube_settings.py:427
+#: Youtube_settings.py:431
 msgid "Brave"
 msgstr "Brave"
 
-#: Youtube_settings.py:473
+#: Youtube_settings.py:477
 msgid "Browser still running"
 msgstr "Peramban masih berjalan"
 
@@ -265,7 +252,7 @@ msgstr "Peramban masih berjalan"
 msgid "Cancel"
 msgstr "Batal"
 
-#: downloadFail.py:195
+#: downloadFail.py:206
 msgid "Cannot create download folder"
 msgstr "Tidak dapat membuat folder unduhan"
 
@@ -273,7 +260,7 @@ msgstr "Tidak dapat membuat folder unduhan"
 msgid "Cannot create download folder."
 msgstr "Tidak dapat membuat folder unduhan."
 
-#: Download_core.py:510
+#: Download_core.py:811
 msgid "Cannot create folder"
 msgstr "Tidak dapat membuat folder"
 
@@ -281,11 +268,11 @@ msgstr "Tidak dapat membuat folder"
 msgid "Cannot determine URL for this video."
 msgstr "Tidak dapat menentukan URL untuk video ini."
 
-#: __init__.py:409
+#: __init__.py:406
 msgid "Cannot download from YouTube homepage. Please navigate to a video or playlist."
 msgstr "Tidak dapat mengunduh dari beranda YouTube. Silakan navigasikan ke video atau daftar putar."
 
-#: __init__.py:412
+#: __init__.py:409
 msgid "Cannot download from this YouTube page. Please select a specific video."
 msgstr "Tidak dapat mengunduh dari halaman YouTube ini. Silakan pilih video tertentu."
 
@@ -348,12 +335,12 @@ msgstr "Saluran:"
 msgid "Checking for new videos..."
 msgstr "Memeriksa video baru..."
 
-#: Download_core.py:688
+#: Download_core.py:989
 msgid "Checking interrupted downloads..."
 msgstr "Memeriksa unduhan yang terganggu..."
 
-#: downloadFail.py:144
-#: download_list.py:136
+#: downloadFail.py:150
+#: download_list.py:137
 msgid "Clear all"
 msgstr "Bersihkan semua"
 
@@ -373,17 +360,17 @@ msgstr "Konfirmasi Timpa"
 msgid "Content type:"
 msgstr "Jenis konten:"
 
-#: Download_core.py:972
-#: Download_core.py:994
+#: Download_core.py:1369
+#: Download_core.py:1391
 msgid "Converting"
 msgstr "Mengonversi"
 
-#: Youtube_settings.py:579
-#: Youtube_settings.py:598
+#: Youtube_settings.py:583
+#: Youtube_settings.py:602
 msgid "Cookie export failed: {str}"
 msgstr "Ekspor kuki gagal: {str}"
 
-#: Youtube_settings.py:589
+#: Youtube_settings.py:593
 msgid "Cookie export timed out"
 msgstr "Ekspor kuki habis waktu"
 
@@ -391,7 +378,7 @@ msgstr "Ekspor kuki habis waktu"
 msgid "Cookies &file:"
 msgstr "Kuki &berkas:"
 
-#: Youtube_settings.py:621
+#: Youtube_settings.py:625
 msgid "Cookies exported successfully to {path}. Anti-blocking is now active."
 msgstr "Kuki berhasil diekspor ke {path}. Anti-pemblokiran kini aktif."
 
@@ -399,7 +386,7 @@ msgstr "Kuki berhasil diekspor ke {path}. Anti-pemblokiran kini aktif."
 msgid "Copy URL"
 msgstr "Salin URL"
 
-#: __init__.py:584
+#: __init__.py:581
 #: playlist.py:415
 #: search.py:503
 msgid "Copy video Shorten URL"
@@ -420,15 +407,15 @@ msgstr "Mengoreksi judul untuk video yang dipilih..."
 msgid "Could not create short URL"
 msgstr "Tidak dapat membuat URL pendek"
 
-#: __init__.py:636
+#: __init__.py:633
 msgid "Could not create shortened URL"
 msgstr "Tidak dapat membuat URL yang diperpendek"
 
-#: Youtube_settings.py:563
+#: Youtube_settings.py:567
 msgid "Could not decrypt {browser}'s cookies (DPAPI decryption failed). This usually means yt-dlp needs updating to support this browser's newer cookie encryption. Try 'Update yt-dlp now' below, then export again, or export from Firefox instead, which does not use this encryption. If it still fails, use the manual cookies.txt method."
 msgstr "Tidak dapat mendeskripsi koin {browser} (dekripsi DPAPI gagal). Ini biasanya berarti yt-dlp perlu diperbarui untuk mendukung enkripsi koin yang lebih baru dari peramban ini. Coba 'Perbarui yt-dlp sekarang' di bawah, lalu ekspor lagi, atau ekspor dari Firefox sebagai gantinya, yang tidak menggunakan enkripsi ini. Jika masih gagal, gunakan metode cookies.txt manual."
 
-#: Youtube_settings.py:571
+#: Youtube_settings.py:575
 msgid "Could not decrypt {browser}'s cookies (DPAPI decryption failed). This usually means yt-dlp needs updating. Try 'Update yt-dlp now' below, then export again. If it still fails, use the manual cookies.txt method instead."
 msgstr "Tidak dapat mendeskripsi koin {browser} (dekripsi DPAPI gagal). Ini biasanya berarti yt-dlp perlu diperbarui. Coba 'Perbarui yt-dlp sekarang' di bawah, lalu ekspor lagi. Jika masih gagal, gunakan metode cookies.txt manual sebagai gantinya."
 
@@ -436,30 +423,34 @@ msgstr "Tidak dapat mendeskripsi koin {browser} (dekripsi DPAPI gagal). Ini bias
 msgid "Could not open preview URL"
 msgstr "Tidak dapat membuka URL pratinjau"
 
-#: Youtube_settings.py:545
+#: Youtube_settings.py:549
 msgid "Could not read the {browser} cookie database. Close {browser} completely and try exporting again."
 msgstr "Tidak dapat membaca database koin {browser}. Tutup {browser} sepenuhnya dan coba ekspor lagi."
 
-#: __init__.py:796
+#: __init__.py:797
 msgid "Cycle MP3 quality settings"
 msgstr "Siklus pengaturan kualitas MP3"
 
 #: channel_core.py:728
-#: downloadFail.py:131
-#: download_list.py:124
+#: downloadFail.py:137
+#: download_list.py:125
 msgid "Delete"
 msgstr "Hapus"
 
-#: downloadFail.py:136
-#: download_list.py:129
+#: downloadFail.py:142
+#: download_list.py:130
 msgid "Delete selected"
 msgstr "Hapus yang dipilih"
+
+#: Youtube_settings.py:734
+msgid "Deno updated successfully"
+msgstr "Deno berhasil diperbarui"
 
 #: Youtube_settings.py:73
 msgid "Destination folder"
 msgstr "Folder tujuan"
 
-#: download_list.py:126
+#: download_list.py:127
 msgid "Download"
 msgstr "Unduh"
 
@@ -498,8 +489,8 @@ msgstr "Unduh MP4"
 msgid "Download WAV"
 msgstr "Unduh WAV"
 
-#: downloadFail.py:142
-#: download_list.py:134
+#: downloadFail.py:148
+#: download_list.py:135
 msgid "Download all"
 msgstr "Unduh semua"
 
@@ -507,7 +498,7 @@ msgstr "Unduh semua"
 msgid "Download all {count} videos in this playlist?"
 msgstr "Unduh semua {count} video dalam daftar putar ini?"
 
-#: Download_core.py:1194
+#: Download_core.py:1591
 msgid "Download complete"
 msgstr "Unduh selesai"
 
@@ -515,35 +506,51 @@ msgstr "Unduh selesai"
 msgid "Download entire playlist"
 msgstr "Unduh seluruh daftar putar"
 
-#: __init__.py:590
+#: __init__.py:587
 msgid "Download fail manager"
 msgstr "Pengelola unduhan gagal"
 
-#: __init__.py:592
+#: __init__.py:589
 msgid "Download fail manager (no failed)"
 msgstr "Pengelola unduhan gagal (tidak ada yang gagal)"
 
-#: Download_core.py:1232
+#: Download_core.py:1681
 msgid "Download failed"
 msgstr "Unduhan gagal"
 
-#: Download_core.py:1256
+#: Download_core.py:1705
 msgid "Download failed due to an error"
 msgstr "Unduhan gagal karena galat"
 
-#: Download_core.py:1244
+#: Download_core.py:1693
 msgid "Download failed due to timeout"
 msgstr "Unduhan gagal karena habis waktu"
 
-#: Download_core.py:1290
+#: Download_core.py:1739
 msgid "Download failed to start"
 msgstr "Unduhan gagal dimulai"
 
-#: Download_core.py:1230
+#: Download_core.py:1656
 msgid "Download failed: YouTube blocked this request. Try exporting cookies from your browser in the Anti-blocking settings."
 msgstr "Unduhan gagal: YouTube memblokir permintaan ini. Coba ekspor kuki dari peramban Anda di pengaturan anti-pemblokiran."
 
-#: downloadFail.py:133
+#: Download_core.py:1679
+msgid "Download failed: YouTube reports this video is unavailable"
+msgstr "Unduhan gagal: YouTube melaporkan video ini tidak tersedia"
+
+#: Download_core.py:1669
+msgid "Download failed: the downloaded JavaScript runtime isn't working. Try deleting the bin folder in your AbsoluteYoutube config directory so it re-downloads."
+msgstr "Unduhan gagal: runtime JavaScript yang diunduh tidak berfungsi. Coba hapus folder bin di direktori konfigurasi AbsoluteYoutube Anda agar diunduh ulang."
+
+#: Download_core.py:1677
+msgid "Download failed: this may be because yt-dlp is outdated (current {current}, latest {latest}). Try updating yt-dlp in settings."
+msgstr "Unduhan gagal: ini mungkin karena yt-dlp sudah kedaluwarsa (saat ini {current}, terbaru {latest}). Coba perbarui yt-dlp di pengaturan."
+
+#: Download_core.py:1672
+msgid "Download failed: yt-dlp needs a JavaScript runtime, which this add-on is downloading automatically in the background. Please wait a moment and try again."
+msgstr "Unduhan gagal: yt-dlp memerlukan runtime JavaScript, yang sedang diunduh secara otomatis oleh add-on ini di latar belakang. Harap tunggu sebentar dan coba lagi."
+
+#: downloadFail.py:139
 msgid "Download file"
 msgstr "Unduh berkas"
 
@@ -558,24 +565,24 @@ msgstr "Folder unduhan tidak ada."
 msgid "Download function not available."
 msgstr "Fungsi unduh tidak tersedia."
 
-#: __init__.py:506
+#: __init__.py:503
 msgid "Download immediately"
 msgstr "Unduh sekarang"
 
-#: __init__.py:586
+#: __init__.py:583
 msgid "Download list manager"
 msgstr "Pengelola daftar unduh"
 
-#: __init__.py:460
+#: __init__.py:457
 msgid "Download or queue video (single tap MP3, double tap MP4, triple tap WAV)"
 msgstr "Unduh atau antrekan video (ketuk sekali MP3, ketuk dua kali MP4, ketuk tiga kali WAV)"
 
-#: downloadFail.py:138
-#: download_list.py:131
+#: downloadFail.py:144
+#: download_list.py:132
 msgid "Download selected"
 msgstr "Unduh yang dipilih"
 
-#: downloadFail.py:251
+#: downloadFail.py:247
 msgid "Download started for: {title}"
 msgstr "Unduhan dimulai untuk: {title}"
 
@@ -583,11 +590,11 @@ msgstr "Unduhan dimulai untuk: {title}"
 msgid "Downloading thumbnail..."
 msgstr "Mengunduh gambar mini..."
 
-#: download_list.py:108
+#: download_list.py:109
 msgid "Downloading..."
 msgstr "Mengunduh..."
 
-#: downloadFail.py:65
+#: downloadFail.py:71
 #: search.py:30
 msgid "Duration"
 msgstr "Durasi"
@@ -620,7 +627,7 @@ msgstr "Waktu selesai:"
 msgid "Enter a search query."
 msgstr "Masukkan kueri pencarian."
 
-#: download_list.py:26
+#: download_list.py:27
 msgid "Error"
 msgstr "Galat"
 
@@ -632,11 +639,11 @@ msgstr "Kesalahan saat membuat folder unduhan"
 msgid "Error deleting channel."
 msgstr "Kesalahan saat menghapus saluran."
 
-#: __init__.py:621
+#: __init__.py:618
 msgid "Error displaying context menu"
 msgstr "Kesalahan saat menampilkan menu konteks"
 
-#: __init__.py:297
+#: __init__.py:301
 msgid "Error during auto-update of yt-dlp: {str}"
 msgstr "Kesalahan selama pemutakhiran otomatis yt-dlp: {str}"
 
@@ -644,17 +651,17 @@ msgstr "Kesalahan selama pemutakhiran otomatis yt-dlp: {str}"
 msgid "Error fetching channel: {str}"
 msgstr "Kesalahan saat mengambil saluran: {str}"
 
-#: __init__.py:188
-#: downloadFail.py:44
+#: __init__.py:192
+#: downloadFail.py:50
 msgid "Error importing core functions: {str}"
 msgstr "Kesalahan saat mengimpor fungsi inti: {str}"
 
-#: __init__.py:742
+#: __init__.py:739
 msgid "Error importing settings panel: {str}"
 msgstr "Kesalahan saat mengimpor panel pengaturan: {str}"
 
-#: __init__.py:211
-#: __init__.py:273
+#: __init__.py:215
+#: __init__.py:277
 msgid "Error initializing AbsoluteYoutube: {str}"
 msgstr "Kesalahan saat menginisialisasi AbsoluteYoutube: {str}"
 
@@ -667,24 +674,24 @@ msgstr "Kesalahan saat memuat tembolok."
 msgid "Error loading channel data."
 msgstr "Kesalahan saat memuat data saluran."
 
-#: __init__.py:530
+#: __init__.py:527
 msgid "Error opening channel dialog"
 msgstr "Galat saat membuka dialog saluran"
 
-#: __init__.py:784
+#: __init__.py:785
 msgid "Error opening channel/playlist list: {str}"
 msgstr "Galat saat membuka daftar saluran/daftar putar: {str}"
 
-#: __init__.py:657
-#: __init__.py:661
+#: __init__.py:654
+#: __init__.py:658
 msgid "Error opening download fail dialog: {str}"
 msgstr "Galat saat membuka dialog unduhan gagal: {str}"
 
-#: __init__.py:570
+#: __init__.py:567
 msgid "Error opening download list dialog: {str}"
 msgstr "Galat saat membuka dialog daftar unduhan: {str}"
 
-#: __init__.py:496
+#: __init__.py:493
 msgid "Error opening folder"
 msgstr "Galat saat membuka folder"
 
@@ -692,23 +699,23 @@ msgstr "Galat saat membuka folder"
 msgid "Error opening playlist."
 msgstr "Galat saat membuka daftar putar."
 
-#: __init__.py:727
+#: __init__.py:724
 msgid "Error opening search dialog: {str}"
 msgstr "Galat saat membuka dialog pencarian: {str}"
 
-#: __init__.py:745
+#: __init__.py:742
 msgid "Error opening settings dialog: {str}"
 msgstr "Galat saat membuka dialog pengaturan: {str}"
 
-#: __init__.py:708
+#: __init__.py:705
 msgid "Error opening trim dialog: {str}"
 msgstr "Galat saat membuka dialog pemotongan: {str}"
 
-#: Download_core.py:1332
+#: Download_core.py:1945
 msgid "Error processing URL"
 msgstr "Galat saat memproses URL"
 
-#: downloadFail.py:256
+#: downloadFail.py:252
 msgid "Error starting download"
 msgstr "Galat saat memulai unduhan"
 
@@ -720,11 +727,11 @@ msgstr "Galat saat memperbarui URL saluran."
 msgid "Error updating channel."
 msgstr "Galat saat memperbarui saluran."
 
-#: __init__.py:575
+#: __init__.py:572
 msgid "Error: Download list module not available"
 msgstr "Galat: Modul daftar unduhan tidak tersedia"
 
-#: __init__.py:647
+#: __init__.py:644
 msgid "Error: DownloadFail module not available"
 msgstr "Galat: Modul unduhan gagal tidak tersedia"
 
@@ -736,19 +743,19 @@ msgstr "Galat: Gagal mengambil cuplikan layar."
 msgid "Error: No snapshot file created."
 msgstr "Galat: Tidak ada berkas cuplikan layar yang dibuat."
 
-#: __init__.py:732
+#: __init__.py:729
 msgid "Error: Search module not available"
 msgstr "Galat: Modul pencarian tidak tersedia"
 
-#: __init__.py:688
+#: __init__.py:685
 msgid "Error: Snapshot module not available"
 msgstr "Galat: Modul cuplikan layar tidak tersedia"
 
-#: __init__.py:697
+#: __init__.py:694
 msgid "Error: Trim module not available"
 msgstr "Galat: Modul pemotongan tidak tersedia"
 
-#: Download_core.py:1427
+#: Download_core.py:1970
 #: Trim.py:324
 msgid "Error: ffmpeg.exe not found."
 msgstr "Kesalahan: ffmpeg.exe tidak ditemukan."
@@ -757,7 +764,7 @@ msgstr "Kesalahan: ffmpeg.exe tidak ditemukan."
 msgid "Error: yt-dlp.exe not found."
 msgstr "Kesalahan: yt-dlp.exe tidak ditemukan."
 
-#: Youtube_settings.py:449
+#: Youtube_settings.py:453
 msgid "Export YouTube Cookies"
 msgstr "Ekspor Cookie YouTube"
 
@@ -765,15 +772,15 @@ msgstr "Ekspor Cookie YouTube"
 msgid "Export YouTube Cookies (Anti-Block)"
 msgstr "Ekspor Cookie YouTube (Anti-Blokir)"
 
-#: Youtube_settings.py:480
+#: Youtube_settings.py:484
 msgid "Exporting cookies from {browser}..."
 msgstr "Mengekspor cookie dari {browser}..."
 
-#: Youtube_settings.py:738
+#: Youtube_settings.py:758
 msgid "Failed to create the specified folder. Please select a valid folder."
 msgstr "Gagal membuat folder yang ditentukan. Pilih folder yang valid."
 
-#: __init__.py:594
+#: __init__.py:591
 msgid "Favorite channel"
 msgstr "Saluran favorit"
 
@@ -781,7 +788,7 @@ msgstr "Saluran favorit"
 msgid "Fetched {count} items total."
 msgstr "Total {count} item diambil."
 
-#: __init__.py:771
+#: __init__.py:772
 msgid "Fetching channel information..."
 msgstr "Mengambil informasi saluran..."
 
@@ -799,33 +806,33 @@ msgstr "Mengambil video saluran..."
 msgid "File Format"
 msgstr "Format Berkas"
 
-#: Download_core.py:1432
+#: Download_core.py:1975
 msgid "File already exists. Skipping download."
 msgstr "Berkas sudah ada. Lewati unduhan."
 
-#: Download_core.py:1318
+#: Download_core.py:1931
 msgid "File exists"
 msgstr "Berkas sudah ada"
 
-#: Youtube_settings.py:357
+#: Youtube_settings.py:346
 msgid "Force I&Pv4"
 msgstr "Paksa I&Pv4"
 
-#: Youtube_settings.py:362
+#: Youtube_settings.py:351
 msgid "Force I&Pv6"
 msgstr "Paksa I&Pv6"
 
-#: download_list.py:69
+#: download_list.py:70
 msgid "Format"
 msgstr "Format"
 
-#: Download_core.py:590
+#: Download_core.py:891
 msgid ""
 "Found {count} interrupted downloads\n"
 "Resume all?\n"
 "\n"
 "\n"
-msgstr "Ditemukan {count} unduhan yang terganggu. Lanjutkan semua?"
+msgstr "Ditemukan {count} unduhan yang terganggu\\nLanjutkan semua?"
 
 #: search.py:470
 msgid "Found {count} videos for '{query}'."
@@ -843,10 +850,6 @@ msgstr "Pasang ekstensi 'Get cookies.txt' di Chrome atau Firefox"
 msgid "Full-size snapshot complete"
 msgstr "Masuk ke YouTube di browser Anda"
 
-#: Youtube_settings.py:351
-msgid "Geo bypass &country:"
-msgstr "Klik ikon ekstensi dan ekspor cookie"
-
 #: channel_core.py:175
 #: search.py:133
 msgid "Go"
@@ -858,11 +861,11 @@ msgid "Go to page of {}:"
 msgstr "Buka halaman {}:"
 
 #: Youtube_settings.py:306
-#: Youtube_settings.py:427
+#: Youtube_settings.py:431
 msgid "Google Chrome"
 msgstr "Google Chrome"
 
-#: Youtube_settings.py:411
+#: Youtube_settings.py:415
 msgid ""
 "How to get YouTube cookies:\n"
 "\n"
@@ -877,9 +880,9 @@ msgid ""
 "Using cookies helps avoid blocks because YouTube sees you as a logged-in user.\n"
 "\n"
 "\n"
-msgstr "Cara mendapatkan kuku YouTube:"
+msgstr "Cara mendapatkan kuku YouTube:\\n\\nOpsi 1 (otomatis): Gunakan tombol 'Ekspor Kuki YouTube (Anti-Blokir)' di bawah ini. Tutup browser Anda terlebih dahulu, lalu tekan tombol tersebut dan pilih browser Anda dari daftar.\\n\\nOpsi 2 (manual):\\n1. Pasang ekstensi 'Get cookies.txt' di Chrome atau Firefox\\n2. Masuk ke YouTube di browser Anda\\n3. Klik ikon ekstensi dan ekspor kuki\\n4. Simpan sebagai cookies.txt dan pilih di sini\\n\\nMenggunakan kuki membantu menghindari blokir karena YouTube melihat Anda sebagai pengguna yang sudah masuk."
 
-#: Youtube_settings.py:423
+#: Youtube_settings.py:427
 msgid "How to get cookies"
 msgstr "Cara mendapatkan cookie"
 
@@ -887,11 +890,11 @@ msgstr "Cara mendapatkan cookie"
 msgid "How to get cookies?"
 msgstr "Cara mendapatkan cookie?"
 
-#: __init__.py:514
+#: __init__.py:511
 msgid "Immediate download mode disabled"
 msgstr "Mode unduh langsung dinonaktifkan"
 
-#: __init__.py:512
+#: __init__.py:509
 msgid "Immediate download mode enabled"
 msgstr "Mode unduh langsung diaktifkan"
 
@@ -903,16 +906,16 @@ msgstr "URL atau waktu mulai tidak valid"
 msgid "Invalid YouTube video URL"
 msgstr "URL video YouTube tidak valid"
 
-#: __init__.py:518
+#: __init__.py:515
 msgid "Invalid channel URL"
 msgstr "URL saluran tidak valid"
 
-#: __init__.py:498
+#: __init__.py:495
 msgid "Invalid download folder"
 msgstr "Folder unduhan tidak valid"
 
-#: downloadFail.py:165
-#: download_list.py:164
+#: downloadFail.py:177
+#: download_list.py:165
 msgid "Item deleted"
 msgstr "Item dihapus"
 
@@ -920,6 +923,10 @@ msgstr "Item dihapus"
 #: search.py:557
 msgid "Item removed."
 msgstr "Item disingkirkan."
+
+#: Youtube_settings.py:386
+msgid "JavaScript Runtime (Deno)"
+msgstr "Runtime JavaScript (Deno)"
 
 #: channel_core.py:66
 msgid "Live"
@@ -947,7 +954,7 @@ msgid "MP3 &quality (kbps):"
 msgstr "MP3 &kualitas (kbps):"
 
 #: Youtube_settings.py:306
-#: Youtube_settings.py:427
+#: Youtube_settings.py:431
 msgid "Microsoft Edge"
 msgstr "Microsoft Edge"
 
@@ -960,7 +967,7 @@ msgid "Move Up"
 msgstr "Pindah ke Atas"
 
 #: Youtube_settings.py:306
-#: Youtube_settings.py:427
+#: Youtube_settings.py:431
 msgid "Mozilla Firefox"
 msgstr "Mozilla Firefox"
 
@@ -970,8 +977,8 @@ msgstr "Mozilla Firefox"
 msgid "NextPage"
 msgstr "HalamanBerikutnya"
 
-#: __init__.py:405
-#: __init__.py:626
+#: __init__.py:402
+#: __init__.py:623
 msgid "No YouTube URL found"
 msgstr "URL YouTube tidak ditemukan"
 
@@ -979,26 +986,22 @@ msgstr "URL YouTube tidak ditemukan"
 msgid "No channel selected."
 msgstr "Tidak ada saluran yang dipilih."
 
-#: downloadFail.py:306
-#: downloadFail.py:326
+#: downloadFail.py:298
+#: downloadFail.py:318
 msgid "No downloads could be started"
 msgstr "Tidak ada unduhan yang dapat dimulai"
 
-#: __init__.py:643
+#: __init__.py:640
 msgid "No failed downloads"
 msgstr "Tidak ada unduhan yang gagal"
 
-#: downloadFail.py:330
+#: downloadFail.py:322
 msgid "No failed downloads to clear"
 msgstr "Tidak ada unduhan gagal untuk dibersihkan"
 
-#: downloadFail.py:310
+#: downloadFail.py:302
 msgid "No failed downloads to process"
 msgstr "Tidak ada unduhan gagal untuk diproses"
-
-#: download_list.py:249
-msgid "No items added (all already in queue)"
-msgstr "Tidak ada item yang ditambahkan (semua sudah ada di antrean)"
 
 #: channel_core.py:1085
 msgid "No items found for this URL."
@@ -1008,23 +1011,19 @@ msgstr "Tidak ada item yang ditemukan untuk URL ini."
 msgid "No items found."
 msgstr "Tidak ada item yang ditemukan."
 
-#: downloadFail.py:266
+#: downloadFail.py:262
 #: downloadFail.py:282
-#: download_list.py:191
-#: download_list.py:204
+#: download_list.py:196
+#: download_list.py:209
 msgid "No items selected"
 msgstr "Tidak ada item yang dipilih"
 
-#: download_list.py:225
-msgid "No new items added (already in queue)"
-msgstr "Tidak ada item baru yang ditambahkan (sudah ada di antrean)"
-
-#: download_list.py:231
-#: download_list.py:235
+#: download_list.py:229
+#: download_list.py:233
 msgid "No pending downloads"
 msgstr "Tidak ada unduhan tertunda"
 
-#: download_list.py:255
+#: download_list.py:259
 msgid "No pending downloads to clear"
 msgstr "Tidak ada unduhan tertunda untuk dibersihkan"
 
@@ -1044,7 +1043,7 @@ msgstr "Tidak ada data tersimpan untuk saluran ini."
 msgid "No saved data for this content type yet."
 msgstr "Belum ada data tersimpan untuk jenis konten ini."
 
-#: Download_core.py:1435
+#: Download_core.py:1978
 msgid "No valid multimedia link found."
 msgstr "Tidak ditemukan tautan multimedia yang valid."
 
@@ -1054,15 +1053,15 @@ msgstr "Tidak ditemukan tautan multimedia yang valid."
 msgid "No videos to download."
 msgstr "Tidak ada video untuk diunduh."
 
-#: __init__.py:629
+#: __init__.py:626
 msgid "Not a YouTube URL"
 msgstr "Bukan URL YouTube"
 
-#: Download_core.py:1468
+#: Download_core.py:2011
 msgid "Not a YouTube video or valid multimedia link"
 msgstr "Bukan video YouTube atau tautan multimedia yang valid"
 
-#: __init__.py:473
+#: __init__.py:470
 msgid "Open context menu (single tap), open download folder (double tap), open search dialog (triple tap)"
 msgstr "Buka menu konteks (ketuk sekali), buka folder unduhan (ketuk dua kali), buka dialog pencarian (ketuk tiga kali)"
 
@@ -1071,7 +1070,7 @@ msgid "Open in browser"
 msgstr "Buka di peramban"
 
 #: Youtube_settings.py:306
-#: Youtube_settings.py:427
+#: Youtube_settings.py:431
 msgid "Opera"
 msgstr "Opera"
 
@@ -1095,7 +1094,7 @@ msgstr "Sematkan"
 msgid "Play on YouTube"
 msgstr "Putar di YouTube"
 
-#: __init__.py:386
+#: __init__.py:383
 msgid "Playlist"
 msgstr "Daftar putar"
 
@@ -1104,15 +1103,15 @@ msgstr "Daftar putar"
 msgid "Playlist download started."
 msgstr "Unduhan daftar putar dimulai."
 
-#: downloadFail.py:249
+#: downloadFail.py:245
 msgid "Playlist download started: {title}"
 msgstr "Unduhan daftar putar dimulai: {title}"
 
-#: __init__.py:794
+#: __init__.py:795
 msgid "Playlist mode disabled"
 msgstr "Mode daftar putar dinonaktifkan"
 
-#: __init__.py:794
+#: __init__.py:795
 msgid "Playlist mode enabled"
 msgstr "Mode daftar putar diaktifkan"
 
@@ -1170,15 +1169,15 @@ msgstr "Siap"
 msgid "Remove from list"
 msgstr "Hapus dari daftar"
 
-#: Youtube_settings.py:371
+#: Youtube_settings.py:360
 msgid "Reset to &safe settings (recommended if blocked)"
 msgstr "Reset ke pengaturan &aman (disarankan jika diblokir)"
 
-#: Youtube_settings.py:641
+#: Youtube_settings.py:645
 msgid "Reset to safe settings. Remember to use cookies for best results."
 msgstr "Reset ke pengaturan aman. Ingat untuk menggunakan kuki untuk hasil terbaik."
 
-#: Download_core.py:591
+#: Download_core.py:892
 msgid "Resume downloads"
 msgstr "Lanjutkan unduhan"
 
@@ -1198,7 +1197,7 @@ msgstr "Cari YouTube"
 msgid "Search YouTube:"
 msgstr "Cari YouTube:"
 
-#: __init__.py:600
+#: __init__.py:597
 msgid "Search Youtube"
 msgstr "Cari Youtube"
 
@@ -1230,24 +1229,28 @@ msgstr "Mencari..."
 msgid "Select a directory"
 msgstr "Pilih direktori"
 
-#: Youtube_settings.py:444
+#: Youtube_settings.py:448
 msgid ""
 "Select the browser you are currently logged into YouTube with.\n"
 "Close that browser first if possible -- yt-dlp usually cannot read its cookie database while the browser is still running.\n"
 "\n"
 "\n"
-msgstr "Pilih peramban yang sedang Anda gunakan untuk masuk ke YouTube.\\nTutup peramban tersebut terlebih dahulu jika memungkinkan -- yt-dlp biasanya tidak dapat membaca basis data kuki saat peramban masih berjalan."
+msgstr "Pilih browser tempat Anda sedang masuk ke YouTube.\\nTutup browser tersebut terlebih dahulu jika memungkinkan -- yt-dlp biasanya tidak dapat membaca database kukinya saat browser masih berjalan."
 
-#: download_list.py:223
-msgid "Selected items added to download queue"
-msgstr "Item yang dipilih ditambahkan ke antrean unduhan"
+#: download_list.py:216
+msgid "Selected item(s) already downloading"
+msgstr "Item yang dipilih sudah diunduh"
 
 #: downloadFail.py:273
-#: download_list.py:195
+#: download_list.py:200
 msgid "Selected items deleted"
 msgstr "Item yang dipilih dihapus"
 
-#: __init__.py:634
+#: download_list.py:225
+msgid "Selected items moved to the front of the download queue"
+msgstr "Item yang dipilih dipindahkan ke antrean unduhan terdepan"
+
+#: __init__.py:631
 #: channel_core.py:1607
 #: playlist.py:453
 #: search.py:530
@@ -1272,7 +1275,7 @@ msgstr "Lewati fragmen yang &tidak tersedia"
 msgid "Skip existing files"
 msgstr "Lewati berkas yang sudah ada"
 
-#: __init__.py:597
+#: __init__.py:594
 msgid "Snapshot"
 msgstr "Tangkapan layar"
 
@@ -1306,32 +1309,40 @@ msgstr "Waktu mulai harus lebih kecil dari waktu selesai"
 msgid "Start time:"
 msgstr "Waktu mulai:"
 
-#: downloadFail.py:304
-#: downloadFail.py:324
+#: downloadFail.py:296
+#: downloadFail.py:316
 msgid "Started {count} download(s)"
 msgstr "Memulai {count} unduhan"
 
-#: __init__.py:434
+#: __init__.py:431
 msgid "Starting download: {format} - {title}"
 msgstr "Memulai unduhan: {format} - {title}"
 
-#: Download_core.py:855
+#: download_list.py:187
+msgid "Starting download: {title}"
+msgstr "Memulai unduhan: {title}"
+
+#: Download_core.py:1201
 msgid "Starting next download from queue: {title}"
 msgstr "Memulai unduhan berikutnya dari antrean: {title}"
 
-#: download_list.py:70
+#: download_list.py:255
+msgid "Starting {count} pending download(s)"
+msgstr "Memulai {count} unduhan yang tertunda"
+
+#: download_list.py:71
 msgid "Status"
 msgstr "Status"
 
-#: download_list.py:170
+#: download_list.py:171
 msgid "This item is already downloading"
 msgstr "Item ini sudah diunduh"
 
-#: Download_core.py:1228
+#: Download_core.py:1654
 msgid "This livestream hasn't started yet. It starts in {time}."
 msgstr "Siaran langsung ini belum dimulai. Dimulai dalam {time}."
 
-#: Download_core.py:1226
+#: Download_core.py:1652
 msgid "This video hasn't premiered yet. It starts in {time}."
 msgstr "Video ini belum ditayangkan perdana. Dimulai dalam {time}."
 
@@ -1353,11 +1364,11 @@ msgstr "Koreksi judul selesai untuk {count} video."
 msgid "Title correction failed."
 msgstr "Koreksi judul gagal."
 
-#: __init__.py:789
+#: __init__.py:790
 msgid "Toggle playlist mode"
 msgstr "Alihkan mode daftar putar"
 
-#: __init__.py:598
+#: __init__.py:595
 msgid "Trim setting"
 msgstr "Pengaturan pemotongan"
 
@@ -1366,7 +1377,7 @@ msgid "Trimming and downloading {format}..."
 msgstr "Memotong dan mengunduh {format}..."
 
 #: Trim.py:129
-#: downloadFail.py:66
+#: downloadFail.py:72
 msgid "URL"
 msgstr "URL"
 
@@ -1378,16 +1389,16 @@ msgstr "URL disalin ke papan klip"
 msgid "URL is required"
 msgstr "URL wajib diisi"
 
-#: Download_core.py:1306
+#: Download_core.py:1919
 msgid "URL not found"
 msgstr "URL tidak ditemukan"
 
-#: Download_core.py:745
-#: __init__.py:428
-#: downloadFail.py:104
-#: downloadFail.py:105
-#: downloadFail.py:106
-#: download_list.py:105
+#: Download_core.py:1057
+#: __init__.py:425
+#: downloadFail.py:110
+#: downloadFail.py:111
+#: downloadFail.py:112
+#: download_list.py:106
 msgid "Unknown"
 msgstr "Tidak diketahui"
 
@@ -1395,33 +1406,46 @@ msgstr "Tidak diketahui"
 msgid "Unpin"
 msgstr "Lepas Sematan"
 
-#: Youtube_settings.py:718
-#: __init__.py:313
+#: Youtube_settings.py:391
+msgid "Update Deno now"
+msgstr "Perbarui Deno sekarang"
+
+#: Youtube_settings.py:723
+#: Youtube_settings.py:738
+#: __init__.py:310
 msgid "Update failed: {str}"
 msgstr "Pembaruan gagal: {str}"
 
-#: Youtube_settings.py:391
+#: Youtube_settings.py:380
+#: Youtube_settings.py:395
 msgid "Update status: Idle"
 msgstr "Status pembaruan: Siaga"
 
-#: Youtube_settings.py:717
+#: Youtube_settings.py:722
+#: Youtube_settings.py:737
 msgid "Update status: Update failed: {str}"
 msgstr "Status pembaruan: Pembaruan gagal: {str}"
 
-#: Youtube_settings.py:713
+#: Youtube_settings.py:718
+#: Youtube_settings.py:733
 msgid "Update status: Update successful"
 msgstr "Status pembaruan: Pembaruan berhasil"
 
-#: Youtube_settings.py:703
+#: Youtube_settings.py:707
+#: Youtube_settings.py:730
 msgid "Update status: Updating..."
 msgstr "Status pembaruan: Memperbarui..."
 
-#: Youtube_settings.py:387
+#: Youtube_settings.py:376
 msgid "Update yt-dlp now"
 msgstr "Perbarui yt-dlp sekarang"
 
-#: Youtube_settings.py:704
-#: __init__.py:301
+#: Youtube_settings.py:731
+msgid "Updating Deno..."
+msgstr "Memperbarui Deno..."
+
+#: Youtube_settings.py:708
+#: __init__.py:305
 msgid "Updating yt-dlp..."
 msgstr "Memperbarui yt-dlp..."
 
@@ -1445,8 +1469,8 @@ msgstr "Gunakan bagian unduhan"
 msgid "User &agent:"
 msgstr "&Agen pengguna:"
 
-#: downloadFail.py:64
-#: download_list.py:68
+#: downloadFail.py:70
+#: download_list.py:69
 #: search.py:29
 msgid "Video Title"
 msgstr "Judul video"
@@ -1467,12 +1491,12 @@ msgstr "Video"
 msgid "Videos in {title}"
 msgstr "Video di {title}"
 
-#: download_list.py:108
+#: download_list.py:109
 msgid "Waiting"
 msgstr "Menunggu"
 
-#: __init__.py:680
-#: __init__.py:693
+#: __init__.py:677
+#: __init__.py:690
 msgid "You must be on a YouTube page to use this feature"
 msgstr "Anda harus berada di halaman YouTube untuk menggunakan fitur ini"
 
@@ -1496,21 +1520,21 @@ msgstr "memuat..."
 msgid "unknown"
 msgstr "tidak diketahui"
 
-#: Youtube_settings.py:578
+#: Youtube_settings.py:582
 msgid "unknown error"
 msgstr "galat tidak diketahui"
 
-#: Youtube_settings.py:377
+#: Youtube_settings.py:366
 msgid "yt-dlp Update"
 msgstr "Pembaruan yt-dlp"
 
-#: Youtube_settings.py:714
-#: __init__.py:310
+#: Youtube_settings.py:719
+#: __init__.py:307
 msgid "yt-dlp updated successfully"
 msgstr "yt-dlp berhasil diperbarui"
 
-#: Download_core.py:1335
-#: Youtube_settings.py:460
+#: Download_core.py:1948
+#: Youtube_settings.py:464
 msgid "yt-dlp.exe missing"
 msgstr "yt-dlp.exe tidak ada"
 
@@ -1519,14 +1543,14 @@ msgstr "yt-dlp.exe tidak ada"
 msgid "yt-dlp.exe not found."
 msgstr "yt-dlp.exe tidak ditemukan."
 
-#: Youtube_settings.py:466
+#: Youtube_settings.py:470
 msgid ""
 "{browser} appears to still be running. The cookie database is usually locked while the browser is open, so the export will likely fail with a database error.\n"
 "\n"
 "Close {browser} completely, then click OK to continue anyway or Cancel to stop and close it first.\n"
 "\n"
 "\n"
-msgstr "{browser} tampaknya masih berjalan. Basis data cookie biasanya dikunci saat peramban terbuka, sehingga ekspor kemungkinan besar akan gagal karena galat basis data.\\n\\nTutup {browser} sepenuhnya, lalu klik OK untuk tetap melanjutkan atau Batal untuk menghentikan dan menutupnya terlebih dahulu."
+msgstr "{browser} tampaknya masih berjalan. Database kuki biasanya terkunci saat browser terbuka, sehingga ekspor kemungkinan besar akan gagal dengan error database.\\n\\nTutup {browser} sepenuhnya, lalu klik OK untuk tetap melanjutkan atau Batal untuk menghentikan dan menutupnya terlebih dahulu."
 
 #: channel_core.py:333
 #: search.py:608
@@ -1537,15 +1561,15 @@ msgstr "{count} unduhan dalam antrean."
 msgid "{count} new items updated."
 msgstr "{count} item baru diperbarui."
 
-#: Download_core.py:1002
+#: Download_core.py:1399
 msgid "{mb} MB downloaded"
 msgstr "{mb} MB diunduh"
 
-#: Download_core.py:987
+#: Download_core.py:1384
 msgid "{percent}%"
 msgstr "{percent}%"
 
-#: __init__.py:808
+#: __init__.py:809
 msgid "{quality} kbps"
 msgstr "{quality} kbps"
 

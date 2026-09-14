@@ -48,15 +48,12 @@ sectionName = AddOnName
 
 _download_queue = Queue()
 
-YouTubeEXE = os.path.join(ToolsPath, "yt-dlp.exe")
-ConverterEXE = os.path.join(ToolsPath, "ffmpeg.exe")
-ConverterPath = ToolsPath
-
 _global_state_lock = threading.Lock()
 _global_active_downloads = 0
 _global_active_lock = threading.Lock()
 _num_workers = 1
 _pending_lock = threading.Lock()
+_failed_lock = threading.Lock()
 
 def clean_youtube_url(url, is_playlist=False):
 	if not url or ("youtube.com" not in url and "youtu.be" not in url):
@@ -99,9 +96,92 @@ def getStateFilePath():
 
 StateFilePath = getStateFilePath()
 FAILED_DOWNLOADS_FILE = os.path.join(os.path.dirname(StateFilePath), 'AbsoluteYoutubeFail.json')
-Aria2cDir = os.path.join(os.path.dirname(StateFilePath), 'bin')
+# SharedBinDir is deliberately one level above this add-on's own config
+# folder -- userConfig\ChaiChaimee\bin\, not
+# userConfig\ChaiChaimee\AbsoluteYoutube\bin\ -- so it acts as a shared
+# library hub any of Chai's "ChaiChaimee"-namespaced add-ons can point to
+# for auxiliary binaries (yt-dlp, Deno, aria2c, and optionally a newer
+# ffmpeg -- see ConverterEXE below), instead of every add-on downloading
+# and keeping its own separate copy of the same tools.
+SharedBinDir = os.path.join(os.path.dirname(os.path.dirname(StateFilePath)), 'bin')
+# Kept as an alias (rather than renaming every call site) since this name
+# was already used throughout this module before the shared-hub folder
+# existed; it is exactly SharedBinDir now, not a separate directory.
+Aria2cDir = SharedBinDir
 Aria2cEXE = os.path.join(Aria2cDir, 'aria2c.exe')
 Aria2cReleaseAPI = "https://api.github.com/repos/aria2/aria2/releases/latest"
+DenoDir = SharedBinDir
+DenoEXE = os.path.join(DenoDir, 'deno.exe')
+DenoReleaseAPI = "https://api.github.com/repos/denoland/deno/releases/latest"
+YouTubeEXE = os.path.join(SharedBinDir, "yt-dlp.exe")
+YtDlpReleaseAPI = "https://api.github.com/repos/yt-dlp/yt-dlp/releases/latest"
+# ffmpeg now follows the same "shared bin\ hub is the real home" model as
+# yt-dlp/Deno/aria2c, but seeded from the bundled 58MB copy instead of a
+# fresh download -- current upstream ffmpeg builds have grown to roughly
+# 200MB, which would be a needless download for every fresh install when
+# the smaller, already-bundled build does the job just as well.
+BundledConverterEXE = os.path.join(ToolsPath, "ffmpeg.exe")
+SharedConverterEXE = os.path.join(SharedBinDir, "ffmpeg.exe")
+
+def _migrate_bundled_ffmpeg_to_shared_bin():
+	# Runs once, synchronously, at module import -- unlike the yt-dlp/
+	# Deno/aria2c fetches, this never touches the network (it only moves
+	# or deletes a file already sitting on local disk), so there is no
+	# watchdog/blocking concern (Section 5.1) that would require deferring
+	# it to a background thread.
+	#
+	# Uses api.log directly rather than this module's own log() helper:
+	# log() (and the getINI()/makePrintable() it depends on) is defined
+	# much further down in this file, and this function runs at import
+	# time before that definition is reached -- calling log() here would
+	# raise NameError on the very first run.
+	#
+	# Two cases:
+	# 1. First run / first update after this migration existed: bin\ has
+	#    no ffmpeg.exe yet, but lib\ (this add-on's own bundled copy)
+	#    does -- move it into the shared hub and use that from now on, so
+	#    every "ChaiChaimee"-namespaced add-on that also needs ffmpeg can
+	#    point at the same shared copy instead of bundling its own.
+	# 2. A later add-on update re-bundles ffmpeg.exe into lib\ again (as
+	#    part of the installed package) while bin\ already has one from
+	#    a previous run -- delete the freshly-reinstalled lib\ copy so
+	#    ffmpeg.exe doesn't end up existing in both places at once, with
+	#    bin\ remaining the single source of truth either way.
+	try:
+		if not os.path.exists(SharedBinDir):
+			os.makedirs(SharedBinDir, exist_ok=True)
+		if not os.path.exists(SharedConverterEXE) and os.path.exists(BundledConverterEXE):
+			shutil.move(BundledConverterEXE, SharedConverterEXE)
+			api.log.info(f"AbsoluteYoutube: Migrated bundled ffmpeg.exe to shared bin: {SharedConverterEXE}")
+		elif os.path.exists(SharedConverterEXE) and os.path.exists(BundledConverterEXE):
+			os.remove(BundledConverterEXE)
+			api.log.info(f"AbsoluteYoutube: Removed duplicate bundled ffmpeg.exe from {BundledConverterEXE} (already present in shared bin)")
+	except Exception as e:
+		api.log.error(f"AbsoluteYoutube: Error migrating ffmpeg.exe to shared bin: {e}")
+
+_migrate_bundled_ffmpeg_to_shared_bin()
+# bin\ is the path used from here on regardless of which branch above ran
+# (or whether neither did, e.g. on a system where nothing was ever
+# bundled and nothing has been fetched into the shared hub either --
+# see the pre-delivery note on that edge case).
+ConverterEXE = SharedConverterEXE
+ConverterPath = os.path.dirname(ConverterEXE)
+
+def js_runtime_args():
+	# Shared by every yt-dlp invocation that talks to YouTube -- the main
+	# download command (build_ytdlp_command), and the two metadata-only
+	# probes below (get_video_duration, get_estimated_filesize) that were
+	# found to be missing this during the same investigation that added it
+	# to build_ytdlp_command: without it, a metadata-only call fails the
+	# same "no JS runtime" way a full download did, which silently shows
+	# up as "Duration: Unknown" rather than an obvious error, since these
+	# two callers already treat any failure as "value unavailable" rather
+	# than surfacing it. Returns an empty list (not a hard requirement)
+	# when deno.exe hasn't finished its background download yet, so none
+	# of these callers behave any worse than before Deno support existed.
+	if os.path.exists(DenoEXE):
+		return ["--js-runtimes", f"deno:{DenoEXE}"]
+	return []
 
 def _migrate_old_json_files():
 	try:
@@ -189,6 +269,99 @@ def PlayWave(filename, force=False):
 			winsound.PlaySound(path, winsound.SND_FILENAME | winsound.SND_ASYNC)
 	except Exception as e:
 		log(f"Error playing sound: {e}")
+
+def download_and_replace_yt_dlp_binary():
+	# Single source of truth for the actual "fetch latest yt-dlp.exe and put
+	# it in place" work. This used to be implemented twice -- once in
+	# __init__.py for the on-startup auto-update path, once again inline in
+	# Youtube_settings.py's "Update yt-dlp now" button -- which is exactly
+	# the kind of duplication that already bit this add-on once before with
+	# build_ytdlp_command(): a fix applied to one copy (clearing yt-dlp's
+	# own extraction cache after replacing the binary, below) would
+	# silently not apply to the other. Those two callers, and now also
+	# ensure_yt_dlp_available() below (the first-run fetch into the shared
+	# bin\ hub), all call this and only handle their own UI/speech/retry
+	# feedback around it.
+	req = urllib.request.Request(
+		"https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe",
+		headers={'User-Agent': 'Mozilla/5.0'}
+	)
+	temp_file = os.path.join(tempfile.gettempdir(), f"yt-dlp_{uuid.uuid4().hex}.exe")
+	with urllib.request.urlopen(req) as response, open(temp_file, 'wb') as out_file:
+		out_file.write(response.read())
+	shutil.move(temp_file, YouTubeEXE)
+	# yt-dlp caches per-player-version extraction results (signature and
+	# n-parameter decryption functions, PO token data) in its own cache
+	# directory, entirely separate from yt-dlp.exe itself. Replacing the
+	# binary does not clear this cache, so a build that ships a fix for a
+	# broken/changed YouTube player can still keep using stale cached
+	# extraction results left over from before the update and fail the
+	# exact same way it did before updating -- yt-dlp's own documentation
+	# names this as the most common cause of a false "video unavailable"
+	# that updating the binary alone doesn't resolve. `--rm-cache-dir` is
+	# yt-dlp's own command for finding and clearing that directory
+	# correctly, rather than this add-on guessing the path itself.
+	try:
+		# creationflags=CREATE_NO_WINDOW is required here, matching every
+		# other yt-dlp subprocess call in this file (get_yt_dlp_versions,
+		# the trim/probe calls, and run_download's Popen). Without it, this
+		# specific call was the one place that launched yt-dlp.exe (a
+		# console app) with no flag suppressing its console window, so a
+		# real conhost window popped up and briefly took the foreground.
+		# NVDA's own foreground-window handling has a known slow path for a
+		# freshly-appeared console window (_getConhostAPILevel), which is
+		# exactly what the watchdog logged as a freeze right after this
+		# call ran -- self-inflicted by this omission, not anything wrong
+		# with --rm-cache-dir itself.
+		subprocess.run(
+			[YouTubeEXE, "--rm-cache-dir"],
+			capture_output=True, timeout=30, check=False,
+			creationflags=subprocess.CREATE_NO_WINDOW
+		)
+		log("yt-dlp cache directory cleared after update")
+	except Exception as cache_error:
+		log(f"Could not clear yt-dlp cache directory after update: {cache_error}")
+
+def ensure_yt_dlp_available(statusCallback=None):
+	# Same shape as ensure_aria2c_available()/ensure_deno_available(): a
+	# fast exists-check that's a no-op once yt-dlp.exe is present, and a
+	# background-thread fetch (never blocking NVDA's startup) otherwise.
+	#
+	# yt-dlp.exe moved here, into the shared bin\ hub (SharedBinDir),
+	# rather than staying bundled inside this add-on's own lib\ folder the
+	# way ffmpeg still does (see ConverterEXE above) -- unlike ffmpeg,
+	# yt-dlp needs to be replaced far more often (it ships new releases
+	# frequently to keep up with YouTube's own changes, as this add-on's
+	# whole JS-runtime saga demonstrated), and a copy bundled inside the
+	# add-on's own install folder gets silently reset back to whatever
+	# shipped in the package every time the add-on itself is
+	# reinstalled/updated -- exactly the durability aria2c and Deno
+	# already got right by living under the add-on's config directory
+	# instead. This also means a fresh install now fetches yt-dlp.exe on
+	# first load rather than shipping it in the package at all.
+	if os.path.exists(YouTubeEXE):
+		if statusCallback:
+			wx.CallAfter(statusCallback, True)
+		return
+	def _worker():
+		maxRetries = 3
+		backoffSeconds = 2
+		for attempt in range(1, maxRetries + 1):
+			try:
+				download_and_replace_yt_dlp_binary()
+				log(f"yt-dlp.exe downloaded successfully to {YouTubeEXE}")
+				if statusCallback:
+					wx.CallAfter(statusCallback, True)
+				return
+			except Exception as e:
+				log(f"Error downloading yt-dlp.exe (attempt {attempt}/{maxRetries}): {e}")
+				if attempt < maxRetries:
+					time.sleep(backoffSeconds)
+					backoffSeconds *= 2
+		log("yt-dlp.exe download failed after all retries; YouTube downloads will stay unavailable until the next add-on load.")
+		if statusCallback:
+			wx.CallAfter(statusCallback, False)
+	threading.Thread(target=_worker, daemon=True).start()
 
 def get_yt_dlp_versions():
 	# Blocking network + subprocess work, deliberately not wrapped in its
@@ -293,6 +466,125 @@ def ensure_aria2c_available(statusCallback=None):
 			wx.CallAfter(statusCallback, True)
 		return
 	threading.Thread(target=_download_aria2c_worker, args=(statusCallback,), daemon=True).start()
+
+def _fetch_and_install_deno():
+	# The actual fetch-extract-validate-replace work, factored out so
+	# _download_deno_worker() (retrying, skip-if-present, used at add-on
+	# startup) and download_and_replace_deno_binary() (single-attempt,
+	# always-refetch, used by the "Update Deno now" button) share one
+	# implementation instead of drifting into two copies -- exactly the
+	# mistake this add-on already made once with the yt-dlp binary
+	# replace logic (see download_and_replace_yt_dlp_binary()'s comment)
+	# and once with the download-command builder itself
+	# (build_ytdlp_command()'s comment). Raises on any failure; callers
+	# decide how to log/retry/report that.
+	releaseReq = urllib.request.Request(
+		DenoReleaseAPI,
+		headers={'User-Agent': 'Mozilla/5.0'}
+	)
+	with urllib.request.urlopen(releaseReq, timeout=15) as response:
+		releaseData = json.loads(response.read().decode())
+	assetUrl = None
+	for asset in releaseData.get('assets', []):
+		assetName = asset.get('name', '').lower()
+		# Deno's own release assets include both "deno-*" (the full CLI,
+		# which bundles the JS engine yt-dlp needs) and
+		# "denort-*"/"libdenort-*" (a runtime-only/embeddable variant).
+		# yt-dlp's own EJS wiki explicitly says to fetch "deno", not
+		# "denort", when pulling from Deno's GitHub releases -- an
+		# exact-name match here (rather than a substring check) avoids
+		# accidentally matching one of those other variants.
+		if assetName == 'deno-x86_64-pc-windows-msvc.zip':
+			assetUrl = asset.get('browser_download_url')
+			break
+	if not assetUrl:
+		raise RuntimeError("No matching win-x64 deno release asset found")
+	tmpZipPath = os.path.join(DenoDir, f"deno_download_{uuid.uuid4().hex}.tmp")
+	try:
+		zipReq = urllib.request.Request(assetUrl, headers={'User-Agent': 'Mozilla/5.0'})
+		with urllib.request.urlopen(zipReq, timeout=120) as response, open(tmpZipPath, 'wb') as f:
+			shutil.copyfileobj(response, f)
+		with zipfile.ZipFile(tmpZipPath, 'r') as archive:
+			exeEntryName = next((n for n in archive.namelist() if n.lower().endswith("deno.exe")), None)
+			if not exeEntryName:
+				raise RuntimeError("deno.exe not found inside downloaded release archive")
+			extractedBytes = archive.read(exeEntryName)
+		# A real deno.exe build is tens of megabytes; anything far smaller
+		# almost certainly means a truncated download or an HTML error
+		# page saved as if it were the archive.
+		if len(extractedBytes) < 10000000:
+			raise RuntimeError(f"extracted deno.exe looked too small ({len(extractedBytes)} bytes)")
+		tmpExePath = DenoEXE + ".tmp"
+		with open(tmpExePath, 'wb') as f:
+			f.write(extractedBytes)
+		os.replace(tmpExePath, DenoEXE)
+	finally:
+		try:
+			if os.path.exists(tmpZipPath):
+				os.remove(tmpZipPath)
+		except Exception:
+			pass
+
+def download_and_replace_deno_binary():
+	# Single-attempt, always-refetch entry point for the manual
+	# "Update Deno now" button. Unlike _download_deno_worker() below, this
+	# does not skip when deno.exe already exists (updating an existing
+	# binary is the entire point) and does not retry internally -- the
+	# button's own caller (Youtube_settings.py) already wraps this in its
+	# own try/except for UI feedback, matching how
+	# download_and_replace_yt_dlp_binary()'s caller works.
+	_fetch_and_install_deno()
+	log(f"deno.exe updated successfully to {DenoEXE}")
+
+def _download_deno_worker(statusCallback=None):
+	# Mirrors _download_aria2c_worker() above exactly -- background-thread
+	# fetch of an auxiliary binary into this add-on's own bin folder,
+	# no-op after the first successful run, survives add-on updates since
+	# it lives under the add-on's config directory rather than its
+	# install directory.
+	#
+	# This exists because a live --verbose yt-dlp trace (captured through
+	# this add-on's own diagnostic logging, not a guess) showed yt-dlp
+	# printing, verbatim: "WARNING: [youtube] No supported JavaScript
+	# runtime could be found... YouTube extraction without a JS runtime
+	# has been deprecated, and some formats may be missing." -- and yt-dlp
+	# has required an external JS runtime for full YouTube support since
+	# version 2025.11.12. Deno is the runtime yt-dlp itself recommends and
+	# is the only one enabled by default. Without it, yt-dlp falls back to
+	# a small set of player clients that don't need a JS runtime, and if
+	# YouTube happens to be rejecting those specific clients (as confirmed
+	# happening here), there is no working fallback left at all --
+	# reordering or excluding player_client values cannot fix that, only
+	# a working JS runtime can.
+	if os.path.exists(DenoEXE):
+		return
+	maxRetries = 3
+	backoffSeconds = 2
+	for attempt in range(1, maxRetries + 1):
+		try:
+			_fetch_and_install_deno()
+			log(f"deno.exe downloaded successfully to {DenoEXE}")
+			if statusCallback:
+				wx.CallAfter(statusCallback, True)
+			return
+		except Exception as e:
+			log(f"Error downloading deno.exe (attempt {attempt}/{maxRetries}): {e}")
+			if attempt < maxRetries:
+				time.sleep(backoffSeconds)
+				backoffSeconds *= 2
+	log("deno.exe download failed after all retries; YouTube downloads needing a JS runtime will keep failing until the next add-on load.")
+	if statusCallback:
+		wx.CallAfter(statusCallback, False)
+
+def ensure_deno_available(statusCallback=None):
+	# Same unconditional-safety shape as ensure_aria2c_available(): a fast
+	# exists-check when deno.exe is already present, otherwise a
+	# background-thread fetch that never blocks NVDA's startup.
+	if os.path.exists(DenoEXE):
+		if statusCallback:
+			wx.CallAfter(statusCallback, True)
+		return
+	threading.Thread(target=_download_deno_worker, args=(statusCallback,), daemon=True).start()
 
 def check_yt_dlp_update(callback=None):
 	# Main-thread-safe entry point: always hands the blocking work in
@@ -424,6 +716,15 @@ def initialize_folders():
 		saveState([])
 	if getINI("UseMultiPart"):
 		ensure_aria2c_available()
+	# Unlike aria2c (only needed for multipart), a JS runtime affects every
+	# single YouTube download regardless of any other setting, so this is
+	# unconditional.
+	ensure_deno_available()
+	# Also unconditional: yt-dlp.exe now lives in the shared bin\ hub
+	# rather than being bundled with the add-on package (see
+	# ensure_yt_dlp_available()'s comment), so a fresh install has to
+	# fetch it before any download of any kind can work at all.
+	ensure_yt_dlp_available()
 	try:
 		_num_workers = getINI("MaxConcurrentDownloads")
 		if _num_workers < 1:
@@ -625,7 +926,7 @@ def _cleanup_temp_files(save_path, title, file_format, check_count=2):
 
 def get_video_duration(url):
 	try:
-		cmd = [YouTubeEXE, "--get-duration", "--no-playlist", "--quiet", url]
+		cmd = [YouTubeEXE, "--get-duration", "--no-playlist", "--quiet"] + js_runtime_args() + [url]
 		result = subprocess.run(cmd, capture_output=True, text=True, encoding='utf-8', creationflags=subprocess.CREATE_NO_WINDOW, timeout=60)
 		if result.returncode == 0:
 			duration_str = result.stdout.strip()
@@ -733,40 +1034,53 @@ def get_failed_downloads():
 	return load_failed_downloads()
 
 def add_failed_download(url, title, format_type, duration=None):
-	try:
-		failed_list = load_failed_downloads()
-		for item in failed_list:
-			if item.get('url') == url and item.get('title') == title:
-				return
-		failed_item = {
-			'url': url,
-			'title': title,
-			'format': format_type,
-			'duration': duration or _("Unknown"),
-			'timestamp': datetime.datetime.now().isoformat()
-		}
-		failed_list.append(failed_item)
-		save_failed_downloads(failed_list)
-	except Exception:
-		pass
+	# _failed_lock guards this read-modify-write cycle the same way
+	# _pending_lock guards pending_downloads.json. Without it, this call
+	# (reached from worker_loop on a background thread every time a
+	# download finally gives up) can race with the Download Fail Manager
+	# dialog running on the main thread -- e.g. the user clicking "Clear
+	# all" or "Download all" at the moment another item fails. Both sides
+	# were doing their own unsynchronized load-then-save on the same file,
+	# so whichever write landed second silently overwrote the other's
+	# change, which could make a deleted item reappear or make a newly
+	# failed item never actually get recorded.
+	with _failed_lock:
+		try:
+			failed_list = load_failed_downloads()
+			for item in failed_list:
+				if item.get('url') == url and item.get('title') == title:
+					return
+			failed_item = {
+				'url': url,
+				'title': title,
+				'format': format_type,
+				'duration': duration or _("Unknown"),
+				'timestamp': datetime.datetime.now().isoformat()
+			}
+			failed_list.append(failed_item)
+			save_failed_downloads(failed_list)
+		except Exception:
+			pass
 
 def remove_failed_download(url, title):
-	try:
-		failed_list = load_failed_downloads()
-		new_list = [item for item in failed_list if not (item.get('url') == url and item.get('title') == title)]
-		if len(new_list) < len(failed_list):
-			save_failed_downloads(new_list)
-			return True
-		return False
-	except Exception:
-		return False
+	with _failed_lock:
+		try:
+			failed_list = load_failed_downloads()
+			new_list = [item for item in failed_list if not (item.get('url') == url and item.get('title') == title)]
+			if len(new_list) < len(failed_list):
+				save_failed_downloads(new_list)
+				return True
+			return False
+		except Exception:
+			return False
 
 def clear_failed_downloads():
-	try:
-		save_failed_downloads([])
-		return True
-	except Exception:
-		return False
+	with _failed_lock:
+		try:
+			save_failed_downloads([])
+			return True
+		except Exception:
+			return False
 
 def get_pending_file_path():
 	base = getAddonConfigBaseDir()
@@ -835,6 +1149,38 @@ def remove_pending_download_by_index(idx):
 			return True
 		return False
 
+def promote_pending_download_to_front(idx):
+	# Used by the "Download" action on a single item in the Download List
+	# Manager (download_list.py). The pending queue is a plain FIFO list
+	# drained one item at a time by start_next_pending() -- see the
+	# comment on that function -- so "download this one now" means moving
+	# it to position 0 rather than mutating its status in place.
+	with _pending_lock:
+		pending_list = load_pending_downloads()
+		if not (0 <= idx < len(pending_list)):
+			return False
+		item = pending_list.pop(idx)
+		pending_list.insert(0, item)
+		save_pending_downloads(pending_list)
+		return True
+
+def promote_pending_downloads_to_front(indices):
+	# Batch version of promote_pending_download_to_front() for "Download
+	# selected". The selected items are pulled out as a block, in their
+	# original relative order, and reinserted at the front of the queue
+	# ahead of everything else; start_next_pending() then pops them one at
+	# a time as download slots free up.
+	with _pending_lock:
+		pending_list = load_pending_downloads()
+		valid_indices = sorted(i for i in set(indices) if 0 <= i < len(pending_list))
+		if not valid_indices:
+			return False
+		valid_index_set = set(valid_indices)
+		block = [pending_list[i] for i in valid_indices]
+		remaining = [item for i, item in enumerate(pending_list) if i not in valid_index_set]
+		save_pending_downloads(block + remaining)
+		return True
+
 def clear_pending_downloads():
 	with _pending_lock:
 		save_pending_downloads([])
@@ -868,6 +1214,57 @@ _DOWNLOADER_ERROR_MARKERS = (
 	"remote end closed connection", "eof occurred in violation of protocol",
 	"read timed out", "temporary failure in name resolution",
 )
+
+# "This video is not available" is yt-dlp's own extractor-level message and
+# is genuinely ambiguous: a real deleted/private/region-blocked video says
+# this, but so does a perfectly normal, existing video when the installed
+# yt-dlp.exe is too old to correctly parse YouTube's current player
+# response -- this is one of the most common yt-dlp support complaints, and
+# is the confirmed shape seen here: six unrelated, still-existing videos all
+# failed with the identical message in the same run, which a handful of
+# genuinely-removed videos would not do. The fix isn't to guess in the
+# add-on's own logic which case it is; it's to surface the yt-dlp version
+# comparison this add-on already has (get_yt_dlp_versions) so the user gets
+# an actionable distinction instead of a bare "Download failed."
+_EXTRACTOR_UNAVAILABLE_MARKERS = (
+	"this video is not available", "video unavailable",
+)
+
+_ytdlp_version_cache = {"current": None, "latest": None, "timestamp": 0}
+_YTDLP_VERSION_CACHE_TTL = 3600
+
+def _looks_like_extractor_unavailable_error(stderr_text):
+	lowered = (stderr_text or "").lower()
+	return any(marker in lowered for marker in _EXTRACTOR_UNAVAILABLE_MARKERS)
+
+# Confirmed via a live --verbose trace from this add-on's own logging (not
+# a guess): with no JS runtime installed, yt-dlp's own debug output prints
+# "JS runtimes: none" and lists every JS Challenge Provider as
+# "(unavailable)", then falls back to a small no-JS-needed client set --
+# which in that trace was down to exactly two clients, both already
+# blocked by YouTube, leaving no working path at all. yt-dlp has required
+# an external JS runtime (Deno recommended) for full YouTube support since
+# 2025.11.12; this checks for that exact signature so the failure message
+# can point at the real fix (install a JS runtime) instead of leaving the
+# user to guess between "video is gone" and "yt-dlp is broken."
+def _looks_like_missing_js_runtime(stderr_text):
+	lowered = (stderr_text or "").lower()
+	return "js runtimes: none" in lowered
+
+def _get_cached_yt_dlp_versions():
+	# get_yt_dlp_versions() hits the GitHub releases API on top of a
+	# subprocess call; calling it once per failed item in a large failed
+	# batch (this run failed 6 items back to back) would both add
+	# noticeable latency to every failure and risk GitHub's unauthenticated
+	# rate limit. A short-lived cache (same TTL pattern as _bandwidth_cache
+	# above) means a whole batch of failures only triggers one real check.
+	now = time.time()
+	if _ytdlp_version_cache["current"] is None or (now - _ytdlp_version_cache["timestamp"]) > _YTDLP_VERSION_CACHE_TTL:
+		current_version, latest_version = get_yt_dlp_versions()
+		_ytdlp_version_cache["current"] = current_version
+		_ytdlp_version_cache["latest"] = latest_version
+		_ytdlp_version_cache["timestamp"] = now
+	return _ytdlp_version_cache["current"], _ytdlp_version_cache["latest"]
 
 def estimate_optimal_connections(user_setting):
 	now = time.time()
@@ -1052,7 +1449,7 @@ def get_estimated_filesize(url, file_format):
 			cmd += ["-f", "bestaudio/best"]
 		else:
 			cmd += ["-f", "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/bv*+ba/b"]
-		cmd += ["--print", "filesize,filesize_approx", url]
+		cmd += ["--print", "filesize,filesize_approx"] + js_runtime_args() + [url]
 		result = subprocess.run(cmd, capture_output=True, text=True, encoding='utf-8',
 								creationflags=subprocess.CREATE_NO_WINDOW, timeout=60)
 		if result.returncode == 0:
@@ -1195,6 +1592,33 @@ def run_download(item):
 					updateDownloadStatusInQueue(download_id, "completed")
 					remove_failed_download(url, title)
 				else:
+					# yt-dlp's own stderr was previously only pattern-matched
+					# in memory (against _DOWNLOADER_ERROR_MARKERS) and then
+					# discarded once this function returned -- the temp file
+					# it was read from is deleted in the finally block below.
+					# That left no way to see what yt-dlp actually reported
+					# for a permanent failure, which is exactly the
+					# information needed to answer "why did this fail" from
+					# a log.txt review. Logging a bounded excerpt (per the
+					# output-length-safety principle applied to logs rather
+					# than speech) makes the real cause visible in the next
+					# session's log instead of only being guessable.
+					#
+					# With --verbose now enabled (see build_ytdlp_command),
+					# a failing run's stderr is a full step-by-step trace
+					# rather than a single line, and the step that actually
+					# explains the failure (which player client was tried,
+					# whether cookies loaded, the real HTTP response) is
+					# usually near the start, not the end -- a tail-only
+					# excerpt would cut exactly the part we need. Keeping a
+					# head slice and a tail slice covers both "failed early"
+					# and "failed late" cases without logging the whole
+					# trace on every single failure.
+					if len(stderr_text) > 6000:
+						stderr_excerpt = stderr_text[:3000] + "\n...[truncated]...\n" + stderr_text[-3000:]
+					else:
+						stderr_excerpt = stderr_text
+					log(f"yt-dlp exited with code {return_code} for '{title}': {stderr_excerpt}")
 					retry_count = item.get("_multipart_retry_count", 0)
 					is_retryable_error = _looks_like_downloader_error(stderr_text)
 					aria2c_itself_failed = "aria2c" in stderr_text.lower()
@@ -1222,12 +1646,37 @@ def run_download(item):
 						premiere_match = re.search(r'Premieres? in ([^\n\r]+)', stderr_text)
 						live_match = re.search(r'This live event will begin in ([^\n\r]+)', stderr_text)
 						is_forbidden = "http error 403" in stderr_text.lower()
+						is_extractor_unavailable = _looks_like_extractor_unavailable_error(stderr_text)
+						is_missing_js_runtime = _looks_like_missing_js_runtime(stderr_text)
 						if premiere_match:
 							core.callLater(0, ui.message, _("This video hasn't premiered yet. It starts in {time}.").format(time=premiere_match.group(1).strip()))
 						elif live_match:
 							core.callLater(0, ui.message, _("This livestream hasn't started yet. It starts in {time}.").format(time=live_match.group(1).strip()))
 						elif is_forbidden:
 							core.callLater(0, ui.message, _("Download failed: YouTube blocked this request. Try exporting cookies from your browser in the Anti-blocking settings."))
+						elif is_extractor_unavailable and is_missing_js_runtime:
+							if os.path.exists(DenoEXE):
+								# The --js-runtimes flag was included in the
+								# command (DenoEXE exists) but yt-dlp still
+								# reported no runtime -- that means the
+								# downloaded deno.exe itself isn't working
+								# right (corrupted, wrong architecture, or
+								# blocked from running), not that it's simply
+								# missing. Worth a distinct message so this
+								# doesn't get mistaken for the plain
+								# not-yet-downloaded case.
+								log(f"yt-dlp reported '{title}' as unavailable with no working JS runtime even though deno.exe exists at {DenoEXE} and --js-runtimes was passed; the downloaded binary itself may be broken.")
+								core.callLater(0, ui.message, _("Download failed: the downloaded JavaScript runtime isn't working. Try deleting the bin folder in your AbsoluteYoutube config directory so it re-downloads."))
+							else:
+								log(f"yt-dlp reported '{title}' as unavailable with no JS runtime installed (yt-dlp's own debug output shows 'JS runtimes: none'); yt-dlp has required an external JS runtime for reliable YouTube extraction since version 2025.11.12. deno.exe is being fetched automatically in the background.")
+								core.callLater(0, ui.message, _("Download failed: yt-dlp needs a JavaScript runtime, which this add-on is downloading automatically in the background. Please wait a moment and try again."))
+						elif is_extractor_unavailable:
+							ytdlp_current, ytdlp_latest = _get_cached_yt_dlp_versions()
+							if ytdlp_current and ytdlp_latest and ytdlp_current != ytdlp_latest:
+								log(f"yt-dlp reported '{title}' as unavailable while running an outdated build (current {ytdlp_current}, latest {ytdlp_latest}); an outdated yt-dlp misreporting valid videos as unavailable is a common cause of this exact message, separate from the video actually being gone.")
+								core.callLater(0, ui.message, _("Download failed: this may be because yt-dlp is outdated (current {current}, latest {latest}). Try updating yt-dlp in settings.").format(current=ytdlp_current, latest=ytdlp_latest))
+							else:
+								core.callLater(0, ui.message, _("Download failed: YouTube reports this video is unavailable"))
 						else:
 							core.callLater(0, ui.message, _("Download failed"))
 						updateDownloadStatusInQueue(download_id, "failed")
@@ -1293,6 +1742,170 @@ def run_download(item):
 		with _global_active_lock:
 			_global_active_downloads -= 1
 
+def build_ytdlp_command(targetUrl, savePath, mpFormat, isPlaylist=False, title=None):
+	# Single source of truth for yt-dlp command construction. convertToMP()
+	# below and the Download Fail Manager's retry path (downloadFail.py)
+	# both call this now instead of each building their own command --
+	# downloadFail.py previously built a separate, stripped-down command
+	# with none of the anti-blocking/quality options here (cookies,
+	# proxy, geo-bypass, throttle, sleep-interval, sponsorblock,
+	# multipart, etc.). Whatever combination of those a video actually
+	# needed to succeed the first time is exactly what a retry from the
+	# Download Fail Manager was silently missing, so a retry could fail
+	# again for the identical reason with no way for the user to tell why.
+	#
+	# The playlist folder name deliberately does NOT use yt-dlp's own
+	# "%(playlist)s" template placeholder anymore. That placeholder is
+	# resolved by yt-dlp from the real YouTube playlist title, which is
+	# not under this add-on's control and can be arbitrarily long (a
+	# confirmed real case: an album playlist whose title alone ran to
+	# well over 100 characters) -- combined with a per-track filename as
+	# well, that regularly pushed the full path past Windows' 260-
+	# character MAX_PATH limit, which surfaces as a confusing
+	# "No such file or directory" / LockingUnsupportedError from yt-dlp
+	# rather than any obvious "path too long" message. Using this add-on's
+	# own already-available `title` (the short, display-friendly title
+	# already used for the queue/UI/speech) instead, sanitized and capped
+	# to a safe length, keeps the folder name predictable and short
+	# regardless of how long the real YouTube playlist title is.
+	if isPlaylist:
+		safe_playlist_folder = validFilename(title or "Playlist")[:60].strip() or "Playlist"
+		output_template = os.path.join(savePath, safe_playlist_folder, "%(title)s.%(ext)s")
+	else:
+		output_template = os.path.join(savePath, "%(title)s.%(ext)s")
+	use_multipart = getINI("UseMultiPart") and os.path.exists(Aria2cEXE)
+	connections = getINI("MultiPartConnections")
+	base_cmd = [
+		YouTubeEXE, "--yes-playlist" if isPlaylist else "--no-playlist",
+		# --windows-filenames replaces characters yt-dlp's default
+		# sanitizing would otherwise let through but that Windows itself
+		# rejects (trailing dots/spaces, reserved device names like CON/
+		# PRN, control characters) -- safe unconditionally since this
+		# add-on only ever targets Windows (see Section 0/2.1). --trim-
+		# filenames caps the length of the last path segment (the
+		# per-video "%(title)s.%(ext)s" this add-on still lets yt-dlp
+		# resolve) so one unusually long individual video title within an
+		# otherwise short playlist folder can't reproduce the same
+		# MAX_PATH failure by itself. It's deliberately NOT relied on for
+		# the playlist folder name above -- yt-dlp's own issue tracker
+		# documents --trim-filenames behaving unpredictably (in some
+		# reported cases writing into the wrong directory entirely) when
+		# the output template still has an earlier, unresolved templated
+		# directory segment ahead of the trimmed one; there is no such
+		# segment left here since the playlist folder is now a plain,
+		# already-resolved string.
+		"--windows-filenames", "--trim-filenames", "100",
+		# --no-warnings was dropped deliberately: with it present, yt-dlp's
+		# WARNING-level messages (e.g. "YouTube is forcing SABR streaming
+		# for this client" / "Some <client> https formats have been
+		# skipped") never reach stderr at all, so the stderr this add-on
+		# captures and logs on failure only ever showed the final generic
+		# "This video is not available" with none of the detail that would
+		# explain it. --quiet on its own already keeps normal progress
+		# output out of the way; it doesn't suppress warnings/errors, so
+		# this only adds diagnostic detail to the next log.txt, it doesn't
+		# change what the user hears.
+		"--ignore-errors", "--quiet", "--no-check-certificate",
+		# --verbose added deliberately for the same reason --no-warnings was
+		# dropped above: every failure captured in log.txt so far shows
+		# only the single final "This video is not available" line with
+		# nothing before it, meaning the failure is happening before yt-dlp
+		# even reaches format selection (where the earlier SABR/warning
+		# theory would have applied) -- there's nothing left to diagnose
+		# without seeing yt-dlp's own step-by-step trace (which player
+		# client it tried, whether cookies loaded, what the actual HTTP
+		# response was). --verbose writes this to stderr alongside
+		# everything else already captured here; it does not change
+		# anything the user hears, since this add-on never reads process
+		# output aloud -- only the bounded excerpt logged on failure grows.
+		"--verbose",
+		# The extractor-args player_client override that used to sit here
+		# is gone for good -- two rounds of --verbose evidence showed
+		# excluding specific clients only ever made things worse (down to
+		# "No player clients have been requested" when both guessed-bad
+		# clients were excluded at once). The actual, confirmed cause,
+		# straight from yt-dlp's own WARNING text in that same trace: "No
+		# supported JavaScript runtime could be found... YouTube extraction
+		# without a JS runtime has been deprecated." No player_client
+		# juggling fixes a missing JS runtime; only a JS runtime does.
+		"--fragment-retries", str(getINI("FragmentRetries")),
+		"--retries", str(getINI("RetryCount"))
+	]
+	# --js-runtimes deno:<path> is yt-dlp's own documented flag for this --
+	# its exact name and RUNTIME[:PATH] syntax come directly from the
+	# WARNING message yt-dlp itself prints when no runtime is configured,
+	# not a guess. js_runtime_args() (shared with the metadata-only probes
+	# below) omits this entirely if deno.exe hasn't finished downloading
+	# yet, in which case yt-dlp just falls back to its no-runtime behavior
+	# exactly as before -- never worse than the pre-Deno baseline.
+	base_cmd.extend(js_runtime_args())
+	use_auto_cookies = not getINI("UseCookies")
+	if use_auto_cookies:
+		autoCookiesBrowser = getINI("AutoCookiesBrowser") or "chrome"
+		base_cmd.extend(["--cookies-from-browser", autoCookiesBrowser])
+	if getINI("UseCookies") and getINI("CookiesFile"):
+		cookies_file = getINI("CookiesFile")
+		if os.path.exists(cookies_file):
+			base_cmd.extend(["--cookies", cookies_file])
+	if getINI("UseCustomUserAgent") and getINI("CustomUserAgent"):
+		base_cmd.extend(["--user-agent", getINI("CustomUserAgent")])
+	if getINI("UseProxy") and getINI("ProxyURL"):
+		base_cmd.extend(["--proxy", getINI("ProxyURL")])
+	# --geo-bypass/--geo-bypass-country/--geo-bypass-ip were removed here.
+	# yt-dlp's own documentation confirms these only spoof an
+	# X-Forwarded-For header, and YouTube does not trust that header for
+	# geo decisions -- connecting IP is all that matters. Since this
+	# add-on only ever targets YouTube, the flags were a pure no-op on
+	# every single download, kept sending them (and a "Geo bypass"
+	# checkbox defaulting to on in Settings) was actively misleading: a
+	# user could reasonably believe it was helping with region-restricted
+	# videos when it never did anything at all.
+	if getINI("ForceIpv4"): base_cmd.append("--force-ipv4")
+	if getINI("ForceIpv6"): base_cmd.append("--force-ipv6")
+	if getINI("ThrottleRate") > 0:
+		base_cmd.extend(["--limit-rate", f"{getINI('ThrottleRate')}K"])
+	if getINI("SleepBetweenRequests") > 0:
+		base_cmd.extend(["--sleep-interval", str(getINI("SleepBetweenRequests"))])
+	if getINI("UseSponsorBlock"):
+		base_cmd.extend(["--sponsorblock-api", "https://sponsor.ajay.app", "--sponsorblock-mark", getINI("SponsorBlockCategories")])
+	if getINI("AbortOnError"): base_cmd.append("--abort-on-error")
+	if getINI("SkipUnavailableFragments"): base_cmd.append("--skip-unavailable-fragments")
+	if getINI("MarkWatched"): base_cmd.append("--mark-watched")
+	safe_connections = min(connections, 16)
+	if mpFormat == "mp3":
+		cmd = base_cmd + [
+			"-x", "--audio-format", "mp3",
+			"--audio-quality", str(getINI("MP3Quality")),
+			"--ffmpeg-location", ConverterEXE,
+			"-o", output_template, targetUrl
+		]
+		if use_multipart:
+			aria2_args = f"-x{safe_connections} -j{safe_connections} -s{safe_connections} -k1M --disk-cache=32M --file-allocation=none --allow-overwrite=true --max-tries=3 --retry-wait=5 --quiet --console-log-level=error"
+			cmd.extend(["--external-downloader", Aria2cEXE, "--external-downloader-args", f"aria2c:{aria2_args}"])
+	elif mpFormat == "wav":
+		cmd = base_cmd + [
+			"-x", "--audio-format", "wav",
+			"--audio-quality", "0",
+			"--ffmpeg-location", ConverterEXE,
+			"-o", output_template, targetUrl
+		]
+		if use_multipart:
+			aria2_args = f"-x{safe_connections} -j{safe_connections} -s{safe_connections} -k1M --disk-cache=32M --file-allocation=none --allow-overwrite=true --max-tries=3 --retry-wait=5 --quiet --console-log-level=error"
+			cmd.extend(["--external-downloader", Aria2cEXE, "--external-downloader-args", f"aria2c:{aria2_args}"])
+	else:
+		cmd = base_cmd + [
+			"-f", "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/bv*+ba/b",
+			"--remux-video", "mp4",
+			"--ffmpeg-location", ConverterEXE,
+			"-o", output_template, targetUrl
+		]
+		if use_multipart:
+			aria2_args = f"-x{safe_connections} -j{safe_connections} -s{safe_connections} -k1M --disk-cache=32M --file-allocation=none --allow-overwrite=true --max-tries=3 --retry-wait=5 --quiet --console-log-level=error"
+			cmd.extend(["--external-downloader", Aria2cEXE, "--external-downloader-args", f"aria2c:{aria2_args}"])
+		else:
+			cmd.extend(["--concurrent-fragments", str(safe_connections)])
+	return cmd, use_multipart, safe_connections
+
 def convertToMP(mpFormat, savePath, isPlaylist=False, url=None, title=None):
 	if not createFolder(savePath):
 		return
@@ -1342,77 +1955,7 @@ def convertToMP(mpFormat, savePath, isPlaylist=False, url=None, title=None):
 		# firing twice in quick succession for the common case (this
 		# function queues the item, then worker_loop picks it up and
 		# beeps again within milliseconds).
-		output_template = os.path.join(savePath, "%(playlist)s/%(title)s.%(ext)s") if isPlaylist else os.path.join(savePath, "%(title)s.%(ext)s")
-		use_multipart = getINI("UseMultiPart") and os.path.exists(Aria2cEXE)
-		connections = getINI("MultiPartConnections")
-		base_cmd = [
-			YouTubeEXE, "--yes-playlist" if isPlaylist else "--no-playlist",
-			"--ignore-errors", "--no-warnings", "--quiet", "--no-check-certificate",
-			"--fragment-retries", str(getINI("FragmentRetries")),
-			"--retries", str(getINI("RetryCount"))
-		]
-		use_auto_cookies = not getINI("UseCookies")
-		if use_auto_cookies:
-			autoCookiesBrowser = getINI("AutoCookiesBrowser") or "chrome"
-			base_cmd.extend(["--cookies-from-browser", autoCookiesBrowser])
-		if getINI("UseCookies") and getINI("CookiesFile"):
-			cookies_file = getINI("CookiesFile")
-			if os.path.exists(cookies_file):
-				base_cmd.extend(["--cookies", cookies_file])
-		if getINI("UseCustomUserAgent") and getINI("CustomUserAgent"):
-			base_cmd.extend(["--user-agent", getINI("CustomUserAgent")])
-		if getINI("UseProxy") and getINI("ProxyURL"):
-			base_cmd.extend(["--proxy", getINI("ProxyURL")])
-		if getINI("GeoBypass"):
-			base_cmd.append("--geo-bypass")
-			if getINI("GeoBypassCountry"):
-				base_cmd.extend(["--geo-bypass-country", getINI("GeoBypassCountry")])
-			if getINI("GeoBypassIP"):
-				base_cmd.extend(["--geo-bypass-ip", getINI("GeoBypassIP")])
-		if getINI("ForceIpv4"): base_cmd.append("--force-ipv4")
-		if getINI("ForceIpv6"): base_cmd.append("--force-ipv6")
-		if getINI("ThrottleRate") > 0:
-			base_cmd.extend(["--limit-rate", f"{getINI('ThrottleRate')}K"])
-		if getINI("SleepBetweenRequests") > 0:
-			base_cmd.extend(["--sleep-interval", str(getINI("SleepBetweenRequests"))])
-		if getINI("UseSponsorBlock"):
-			base_cmd.extend(["--sponsorblock-api", "https://sponsor.ajay.app", "--sponsorblock-mark", getINI("SponsorBlockCategories")])
-		if getINI("AbortOnError"): base_cmd.append("--abort-on-error")
-		if getINI("SkipUnavailableFragments"): base_cmd.append("--skip-unavailable-fragments")
-		if getINI("MarkWatched"): base_cmd.append("--mark-watched")
-		safe_connections = min(connections, 16)
-		if mpFormat == "mp3":
-			cmd = base_cmd + [
-				"-x", "--audio-format", "mp3",
-				"--audio-quality", str(getINI("MP3Quality")),
-				"--ffmpeg-location", ConverterEXE,
-				"-o", output_template, current_url
-			]
-			if use_multipart:
-				aria2_args = f"-x{safe_connections} -j{safe_connections} -s{safe_connections} -k1M --disk-cache=32M --file-allocation=none --allow-overwrite=true --max-tries=3 --retry-wait=5 --quiet --console-log-level=error"
-				cmd.extend(["--external-downloader", Aria2cEXE, "--external-downloader-args", f"aria2c:{aria2_args}"])
-		elif mpFormat == "wav":
-			cmd = base_cmd + [
-				"-x", "--audio-format", "wav",
-				"--audio-quality", "0",
-				"--ffmpeg-location", ConverterEXE,
-				"-o", output_template, current_url
-			]
-			if use_multipart:
-				aria2_args = f"-x{safe_connections} -j{safe_connections} -s{safe_connections} -k1M --disk-cache=32M --file-allocation=none --allow-overwrite=true --max-tries=3 --retry-wait=5 --quiet --console-log-level=error"
-				cmd.extend(["--external-downloader", Aria2cEXE, "--external-downloader-args", f"aria2c:{aria2_args}"])
-		else:
-			cmd = base_cmd + [
-				"-f", "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/bv*+ba/b",
-				"--remux-video", "mp4",
-				"--ffmpeg-location", ConverterEXE,
-				"-o", output_template, current_url
-			]
-			if use_multipart:
-				aria2_args = f"-x{safe_connections} -j{safe_connections} -s{safe_connections} -k1M --disk-cache=32M --file-allocation=none --allow-overwrite=true --max-tries=3 --retry-wait=5 --quiet --console-log-level=error"
-				cmd.extend(["--external-downloader", Aria2cEXE, "--external-downloader-args", f"aria2c:{aria2_args}"])
-			else:
-				cmd.extend(["--concurrent-fragments", str(safe_connections)])
+		cmd, use_multipart, safe_connections = build_ytdlp_command(current_url, savePath, mpFormat, isPlaylist, sanitized_title)
 		download_obj = {
 			"url": current_url, "title": sanitized_title, "format": mpFormat,
 			"path": savePath, "cmd": cmd, "is_playlist": isPlaylist,
@@ -1470,6 +2013,3 @@ def convertToMP(mpFormat, savePath, isPlaylist=False, url=None, title=None):
 def setSpeed(sp):
 	speech.setSpeechOption("rate", sp)
 	speech.speak(" ")
-
-
-

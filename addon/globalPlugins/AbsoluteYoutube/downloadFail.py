@@ -27,7 +27,10 @@ class DownloadFailDialog(wx.Dialog):
 				log,
 				YouTubeEXE,
 				load_failed_downloads,
-				save_failed_downloads
+				save_failed_downloads,
+				remove_failed_download,
+				clear_failed_downloads,
+				build_ytdlp_command
 			)
 			self.core_functions = {
 				'getINI': getINI,
@@ -38,7 +41,10 @@ class DownloadFailDialog(wx.Dialog):
 				'log': log,
 				'YouTubeEXE': YouTubeEXE,
 				'load_failed_downloads': load_failed_downloads,
-				'save_failed_downloads': save_failed_downloads
+				'save_failed_downloads': save_failed_downloads,
+				'remove_failed_download': remove_failed_download,
+				'clear_failed_downloads': clear_failed_downloads,
+				'build_ytdlp_command': build_ytdlp_command
 			}
 		except ImportError as e:
 			ui.message(_("Error importing core functions: {str}").format(str=str(e)))
@@ -158,9 +164,15 @@ class DownloadFailDialog(wx.Dialog):
 		return handler
 
 	def delete_item(self, idx):
+		# Removal goes through remove_failed_download(), which takes
+		# Download_core's own _failed_lock -- matching-by-url/title also
+		# sidesteps this dialog's snapshot (self.failed_downloads) having
+		# gone stale relative to the file if a background download failed
+		# or completed in between this dialog opening and the user acting,
+		# which an index-based delete straight into a raw save would not.
 		if 0 <= idx < len(self.failed_downloads):
-			del self.failed_downloads[idx]
-			self.core_functions['save_failed_downloads'](self.failed_downloads)
+			item = self.failed_downloads[idx]
+			self.core_functions['remove_failed_download'](item.get('url', ''), item.get('title', ''))
 			self.update_list()
 			ui.message(_("Item deleted"))
 
@@ -169,8 +181,7 @@ class DownloadFailDialog(wx.Dialog):
 			item = self.failed_downloads[idx]
 			success = self.start_download(item)
 			if success:
-				del self.failed_downloads[idx]
-				self.core_functions['save_failed_downloads'](self.failed_downloads)
+				self.core_functions['remove_failed_download'](item.get('url', ''), item.get('title', ''))
 				self.update_list()
 
 	def start_download(self, item):
@@ -196,42 +207,25 @@ class DownloadFailDialog(wx.Dialog):
 					return False
 
 			is_playlist = 'playlist' in url.lower() or is_real_playlist_url(url)
-
 			if is_playlist:
-				output_template = os.path.join(save_path, "%(playlist)s/%(title)s.%(ext)s")
-				playlist_flag = "--yes-playlist"
 				self.core_functions['log'](f"Downloading playlist from fail: {url}")
-			else:
-				output_template = os.path.join(save_path, "%(title)s.%(ext)s")
-				playlist_flag = "--no-playlist"
 
-			ffmpeg_path = os.path.join(os.path.dirname(self.core_functions['YouTubeEXE']), "ffmpeg.exe")
-			quality = str(self.core_functions['getINI']("MP3Quality"))
-
-			if format_type == "mp3":
-				cmd = [
-					self.core_functions['YouTubeEXE'], playlist_flag,
-					"-x", "--audio-format", "mp3",
-					"--audio-quality", quality,
-					"--ffmpeg-location", ffmpeg_path,
-					"-o", output_template, "--ignore-errors", "--no-warnings", "--quiet", url
-				]
-			elif format_type == "wav":
-				cmd = [
-					self.core_functions['YouTubeEXE'], playlist_flag,
-					"-x", "--audio-format", "wav",
-					"--audio-quality", "0",
-					"--ffmpeg-location", ffmpeg_path,
-					"-o", output_template, "--ignore-errors", "--no-warnings", "--quiet", url
-				]
-			else:
-				cmd = [
-					self.core_functions['YouTubeEXE'], playlist_flag,
-					"-f", "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/bv*+ba/b",
-					"--remux-video", "mp4",
-					"--ffmpeg-location", ffmpeg_path,
-					"-o", output_template, "--ignore-errors", "--no-warnings", "--quiet", url
-				]
+			# cmd is built by the exact same function convertToMP() uses for
+			# a brand-new download (see Download_core.build_ytdlp_command),
+			# so a retry from this dialog carries every configured
+			# anti-blocking/quality option -- cookies-from-browser, a
+			# cookies file, proxy, geo-bypass, force-ipv4/6, throttle rate,
+			# sleep-interval, SponsorBlock, abort-on-error,
+			# skip-unavailable-fragments, mark-watched, and multipart via
+			# aria2c -- instead of the separate, stripped-down command this
+			# dialog used to build with none of them. If the original
+			# failure happened because a video needed one of those options
+			# (most commonly cookies to pass YouTube's bot-check), the old
+			# command here was guaranteed to fail again for the identical
+			# reason every single time it was retried from this dialog.
+			cmd, use_multipart, requested_connections = self.core_functions['build_ytdlp_command'](
+				url, save_path, format_type, is_playlist, title
+			)
 
 			download_obj = {
 				"url": url,
@@ -239,10 +233,12 @@ class DownloadFailDialog(wx.Dialog):
 				"format": format_type,
 				"path": save_path,
 				"cmd": cmd,
-				"is_playlist": is_playlist
+				"is_playlist": is_playlist,
+				"is_multipart": use_multipart,
+				"requested_connections": requested_connections
 			}
 
-			download_id = self.core_functions['addDownloadToQueue'](download_obj)
+			self.core_functions['addDownloadToQueue'](download_obj)
 			self.core_functions['_download_queue'].put(download_obj)
 
 			if is_playlist:
@@ -265,10 +261,14 @@ class DownloadFailDialog(wx.Dialog):
 		if not selected_indices:
 			ui.message(_("No items selected"))
 			return
-		for idx in sorted(selected_indices, reverse=True):
+		# Each removal is matched by url/title through remove_failed_download()
+		# (lock-protected in Download_core), rather than deleting by index out
+		# of this dialog's in-memory snapshot and writing the whole list back
+		# -- see the comment in delete_item() for why that raw save was unsafe.
+		for idx in selected_indices:
 			if 0 <= idx < len(self.failed_downloads):
-				del self.failed_downloads[idx]
-		self.core_functions['save_failed_downloads'](self.failed_downloads)
+				item = self.failed_downloads[idx]
+				self.core_functions['remove_failed_download'](item.get('url', ''), item.get('title', ''))
 		self.update_list()
 		ui.message(_("Selected items deleted"))
 
@@ -282,23 +282,15 @@ class DownloadFailDialog(wx.Dialog):
 			ui.message(_("No items selected"))
 			return
 
-		items_to_remove = []
 		success_count = 0
-
 		for idx in selected_indices:
 			if 0 <= idx < len(self.failed_downloads):
 				item = self.failed_downloads[idx]
 				if self.start_download(item):
-					items_to_remove.append(idx)
+					self.core_functions['remove_failed_download'](item.get('url', ''), item.get('title', ''))
 					success_count += 1
 
-		for idx in sorted(items_to_remove, reverse=True):
-			if 0 <= idx < len(self.failed_downloads):
-				del self.failed_downloads[idx]
-
-		if items_to_remove:
-			self.core_functions['save_failed_downloads'](self.failed_downloads)
-			self.update_list()
+		self.update_list()
 
 		if success_count > 0:
 			ui.message(_("Started {count} download(s)").format(count=success_count))
@@ -311,17 +303,17 @@ class DownloadFailDialog(wx.Dialog):
 			return
 
 		items_to_process = self.failed_downloads[:]
-		success_items = []
+		success_count = 0
 
 		for item in items_to_process:
 			if self.start_download(item):
-				success_items.append(item)
+				self.core_functions['remove_failed_download'](item.get('url', ''), item.get('title', ''))
+				success_count += 1
 
-		if success_items:
-			self.failed_downloads = [item for item in self.failed_downloads if item not in success_items]
-			self.core_functions['save_failed_downloads'](self.failed_downloads)
-			self.update_list()
-			ui.message(_("Started {count} download(s)").format(count=len(success_items)))
+		self.update_list()
+
+		if success_count > 0:
+			ui.message(_("Started {count} download(s)").format(count=success_count))
 		else:
 			ui.message(_("No downloads could be started"))
 
@@ -329,8 +321,6 @@ class DownloadFailDialog(wx.Dialog):
 		if not self.failed_downloads:
 			ui.message(_("No failed downloads to clear"))
 			return
-		self.core_functions['save_failed_downloads']([])
-		self.failed_downloads = []
+		self.core_functions['clear_failed_downloads']()
 		self.update_list()
 		ui.message(_("All failed downloads cleared"))
-
