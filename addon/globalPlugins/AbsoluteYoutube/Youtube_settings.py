@@ -17,7 +17,7 @@ import addonHandler
 
 addonHandler.initTranslation()
 
-from .Download_core import YouTubeEXE, log, PlayStartBeep, getAddonConfigBaseDir, _kill_process_tree, download_and_replace_yt_dlp_binary, download_and_replace_deno_binary
+from .Download_core import YouTubeEXE, log, PlayStartBeep, getAddonConfigBaseDir, getINI, setINI, _kill_process_tree, download_and_replace_yt_dlp_binary, download_and_replace_deno_binary
 
 def _safeWidgetCall(func, *args, **kwargs):
 	# A background thread's wx.CallAfter callback can still be pending
@@ -35,14 +35,6 @@ def _safeWidgetCall(func, *args, **kwargs):
 AddOnSummary = _("Absolute YouTube")
 AddOnName = "AbsoluteYoutube"
 sectionName = AddOnName
-
-
-def getINI(key):
-	return config.conf[sectionName][key]
-
-
-def setINI(key, value):
-	config.conf[sectionName][key] = value
 
 
 def _isProcessRunning(processName):
@@ -705,7 +697,7 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 		def update_thread():
 			try:
 				wx.CallAfter(_safeWidgetCall, self.updateStatusLabel.SetLabel, _("Update status: Updating..."))
-				ui.message(_("Updating yt-dlp..."))
+				wx.CallAfter(ui.message, _("Updating yt-dlp..."))
 				# download_and_replace_yt_dlp_binary() also clears yt-dlp's
 				# own extraction cache after replacing the binary -- see the
 				# comment on that function in Download_core.py. This used to
@@ -716,11 +708,11 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 				# did between convertToMP() and the Download Fail Manager.
 				download_and_replace_yt_dlp_binary()
 				wx.CallAfter(_safeWidgetCall, self.updateStatusLabel.SetLabel, _("Update status: Update successful"))
-				ui.message(_("yt-dlp updated successfully"))
+				wx.CallAfter(ui.message, _("yt-dlp updated successfully"))
 				log("yt-dlp updated successfully")
 			except Exception as e:
 				wx.CallAfter(_safeWidgetCall, self.updateStatusLabel.SetLabel, _("Update status: Update failed: {str}").format(str=str(e)))
-				ui.message(_("Update failed: {str}").format(str=str(e)))
+				wx.CallAfter(ui.message, _("Update failed: {str}").format(str=str(e)))
 				log(f"Error updating yt-dlp: {e}")
 		threading.Thread(target=update_thread, daemon=True).start()
 
@@ -728,14 +720,14 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 		def update_thread():
 			try:
 				wx.CallAfter(_safeWidgetCall, self.denoUpdateStatusLabel.SetLabel, _("Update status: Updating..."))
-				ui.message(_("Updating Deno..."))
+				wx.CallAfter(ui.message, _("Updating Deno..."))
 				download_and_replace_deno_binary()
 				wx.CallAfter(_safeWidgetCall, self.denoUpdateStatusLabel.SetLabel, _("Update status: Update successful"))
-				ui.message(_("Deno updated successfully"))
+				wx.CallAfter(ui.message, _("Deno updated successfully"))
 				log("deno.exe updated successfully")
 			except Exception as e:
 				wx.CallAfter(_safeWidgetCall, self.denoUpdateStatusLabel.SetLabel, _("Update status: Update failed: {str}").format(str=str(e)))
-				ui.message(_("Update failed: {str}").format(str=str(e)))
+				wx.CallAfter(ui.message, _("Update failed: {str}").format(str=str(e)))
 				log(f"Error updating deno.exe: {e}")
 		threading.Thread(target=update_thread, daemon=True).start()
 

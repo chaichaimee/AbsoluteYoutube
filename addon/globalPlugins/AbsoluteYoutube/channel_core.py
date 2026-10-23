@@ -1,4 +1,5 @@
 # channel_core.py
+
 import wx
 import gui
 import threading
@@ -379,7 +380,7 @@ class ChannelPlaylistDialog(wx.Dialog):
 			return
 		try:
 			self.page_size = int(self.pageSizeCombo.GetStringSelection())
-		except:
+		except Exception:
 			self.page_size = 50
 		self.current_page = 0
 		self._update_paging()
@@ -979,7 +980,7 @@ class ChannelPlaylistDialog(wx.Dialog):
 
 	def _beep_loop(self):
 		while self._beep_active and not self._closing:
-			tones.beep(440, 100)
+			wx.CallAfter(tones.beep, 440, 100)
 			time.sleep(2)
 
 	def _fetch_and_save_channel(self, url, name_safe, filepath, content_type="videos"):
@@ -1163,7 +1164,7 @@ class ChannelPlaylistDialog(wx.Dialog):
 		log(f"Fetch URL: {fetch_url}")
 
 		if silent:
-			tones.beep(440, 100)
+			wx.CallAfter(tones.beep, 440, 100)
 
 		if not os.path.exists(YouTubeEXE):
 			wx.CallAfter(self._show_info_message, f"yt-dlp.exe not found at {YouTubeEXE}")
@@ -1284,7 +1285,7 @@ class ChannelPlaylistDialog(wx.Dialog):
 				# anything new -- otherwise a check that finds nothing new
 				# gives no feedback at all. Different pitch from the start
 				# tone so the two are distinguishable.
-				tones.beep(880, 150)
+				wx.CallAfter(tones.beep, 880, 150)
 				PlayWave('complete', force=True)
 
 			non_playlist_items = []
@@ -1468,7 +1469,7 @@ class ChannelPlaylistDialog(wx.Dialog):
 								'title_finalized': False
 							}
 						new_items.append(item)
-					except:
+					except Exception:
 						continue
 
 				if new_items and not self._closing:

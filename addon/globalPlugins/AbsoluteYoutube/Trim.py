@@ -72,18 +72,20 @@ class TrimDialog(wx.Dialog):
 		self.init_ui()
 		self.urlCtrl.SetValue(self.initial_url)
 		self.urlCtrl.SetFocus()
-		self.startTimeCtrl.SetValue(config.conf[sectionName].get("TrimLastStartTime", "00:00:00"))
+		self.startTimeCtrl.SetValue(getINI("TrimLastStartTime"))
 
-		last_url = config.conf[sectionName].get("TrimLastURL", "")
+		last_url = getINI("TrimLastURL")
 		if self.initial_url and self.initial_url == last_url:
-			end_time_value = config.conf[sectionName].get("TrimLastEndTime", "")
+			end_time_value = getINI("TrimLastEndTime")
 		else:
 			end_time_value = ""
 		self.endTimeCtrl.SetValue(end_time_value)
 
 		wx.CallAfter(self.update_duration_label)
-		last_format = config.conf[sectionName].get("TrimLastFormat", "mp3")
-		last_quality = config.conf[sectionName].get("TrimLastQuality", getINI("TrimMP3Quality"))
+		last_format = getINI("TrimLastFormat")
+		last_quality = getINI("TrimLastQuality")
+		if last_quality < 0:
+			last_quality = getINI("TrimMP3Quality")
 		if last_format == "mp4":
 			self.mp4Radio.SetValue(True)
 		elif last_format == "wav":
@@ -94,8 +96,8 @@ class TrimDialog(wx.Dialog):
 		self.on_format_change(None)
 
 		if self.initial_url:
-			last_url = config.conf[sectionName].get("TrimLastURL", "")
-			last_duration = config.conf[sectionName].get("TrimLastDuration", "")
+			last_url = getINI("TrimLastURL")
+			last_duration = getINI("TrimLastDuration")
 			if self.initial_url == last_url and last_duration:
 				self.video_duration = last_duration
 				try:
@@ -226,8 +228,8 @@ class TrimDialog(wx.Dialog):
 				self.video_duration_seconds = mins*60 + secs
 			else:
 				self.video_duration_seconds = float(parts[0])
-			config.conf[sectionName]["TrimLastURL"] = self.initial_url
-			config.conf[sectionName]["TrimLastDuration"] = duration_str
+			setINI("TrimLastURL", self.initial_url)
+			setINI("TrimLastDuration", duration_str)
 			if self.endTimeCtrl.GetValue() == "":
 				self.endTimeCtrl.SetValue(duration_str)
 		except ValueError:
@@ -373,11 +375,11 @@ class TrimDialog(wx.Dialog):
 		download_obj["id"] = download_id
 		_download_queue.put(download_obj)
 
-		config.conf[sectionName]["TrimLastFormat"] = file_format
-		config.conf[sectionName]["TrimLastQuality"] = quality_kbps
-		config.conf[sectionName]["TrimLastStartTime"] = start_time_str
-		config.conf[sectionName]["TrimLastEndTime"] = end_time_str
-		config.conf[sectionName]["TrimLastURL"] = clean_url
+		setINI("TrimLastFormat", file_format)
+		setINI("TrimLastQuality", quality_kbps)
+		setINI("TrimLastStartTime", start_time_str)
+		setINI("TrimLastEndTime", end_time_str)
+		setINI("TrimLastURL", clean_url)
 		self.Close()
 
 	def on_cancel(self, event):

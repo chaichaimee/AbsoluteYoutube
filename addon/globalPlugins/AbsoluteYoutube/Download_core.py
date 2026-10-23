@@ -42,7 +42,13 @@ else:
 
 ToolsPath = os.path.join(AddOnPath, "lib")
 SoundPath = os.path.join(AddOnPath, "sounds")
-AppData = os.path.join(os.path.expanduser('~'), 'AppData', 'Roaming')
+def _roamingAppData():
+	appData = os.environ.get("APPDATA")
+	if appData:
+		return appData
+	return os.path.join(os.environ.get("USERPROFILE", ""), "AppData", "Roaming")
+
+AppData = _roamingAppData()
 DownloadPath = None
 sectionName = AddOnName
 
@@ -84,18 +90,20 @@ def getAddonConfigBaseDir():
 	try:
 		import globalVars
 		if globalVars.appArgs.secure:
-			return os.path.join(os.path.expanduser('~'), 'AppData', 'Roaming', 'nvda')
+			return os.path.join(_roamingAppData(), 'nvda')
 		return config.getUserDefaultConfigPath()
 	except Exception:
-		return os.path.join(os.path.expanduser('~'), 'AppData', 'Roaming', 'nvda')
+		return os.path.join(_roamingAppData(), 'nvda')
 
-def getStateFilePath():
+def getSettingsFilePath():
 	base = getAddonConfigBaseDir()
 	new_dir = os.path.join(base, 'ChaiChaimee', 'AbsoluteYoutube')
 	return os.path.join(new_dir, 'AbsoluteYoutube.json')
 
-StateFilePath = getStateFilePath()
+SettingsFilePath = getSettingsFilePath()
+StateFilePath = os.path.join(os.path.dirname(SettingsFilePath), 'AbsoluteYoutubeQueue.json')
 FAILED_DOWNLOADS_FILE = os.path.join(os.path.dirname(StateFilePath), 'AbsoluteYoutubeFail.json')
+VIDEO_HISTORY_FILE = os.path.join(os.path.dirname(StateFilePath), 'VideoHistory.json')
 # SharedBinDir is deliberately one level above this add-on's own config
 # folder -- userConfig\ChaiChaimee\bin\, not
 # userConfig\ChaiChaimee\AbsoluteYoutube\bin\ -- so it acts as a shared
@@ -256,11 +264,301 @@ def load_failed_downloads():
 def save_failed_downloads(failed_list):
 	_safe_write_json(FAILED_DOWNLOADS_FILE, failed_list)
 
+VIDEO_HISTORY_MAX = 500
+_historyLock = threading.Lock()
+
+def _historyKey(url):
+	text = (url or "").strip()
+	parsed = urllib.parse.urlparse(text)
+	videoId = urllib.parse.parse_qs(parsed.query).get("v", [None])[0]
+	if not videoId and "youtu.be" in parsed.netloc:
+		videoId = parsed.path.strip("/") or None
+	return videoId or text
+
+def _historyAddEntry(entries, entry, maxItems):
+	key = _historyKey(entry["url"])
+	pinned = False
+	keptTitle = ""
+	remaining = []
+	for existing in entries:
+		if _historyKey(existing.get("url")) == key:
+			pinned = bool(existing.get("pinned"))
+			keptTitle = existing.get("title") or ""
+		else:
+			remaining.append(existing)
+	newEntry = dict(entry)
+	newEntry["pinned"] = pinned
+	newEntry["title"] = keptTitle or entry.get("title") or ""
+	result = [newEntry] + remaining
+	while len(result) > maxItems:
+		for pos in range(len(result) - 1, 0, -1):
+			if not result[pos].get("pinned"):
+				del result[pos]
+				break
+		else:
+			del result[-1]
+	return result
+
+def load_video_history():
+	for candidate in (VIDEO_HISTORY_FILE, VIDEO_HISTORY_FILE + ".bak"):
+		if not os.path.exists(candidate):
+			continue
+		try:
+			with open(candidate, 'r', encoding='utf-8') as f:
+				data = json.load(f)
+		except (OSError, ValueError) as e:
+			log(f"Error loading video history ({candidate}): {e}")
+			continue
+		if isinstance(data, list):
+			return [e for e in data if isinstance(e, dict) and e.get("url")]
+	return []
+
+def record_video_history(url, title, formatType, isPlaylist=False):
+	if not url:
+		return
+	entry = {
+		"url": str(url),
+		"title": str(title or ""),
+		"format": str(formatType or "mp3"),
+		"is_playlist": bool(isPlaylist),
+		"added_time": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+	}
+	with _historyLock:
+		entries = load_video_history()
+		_safe_write_json(VIDEO_HISTORY_FILE, _historyAddEntry(entries, entry, VIDEO_HISTORY_MAX))
+
+def remove_video_history_entries(urls):
+	keys = {_historyKey(u) for u in urls}
+	with _historyLock:
+		entries = load_video_history()
+		kept = [e for e in entries if _historyKey(e.get("url")) not in keys]
+		if len(kept) == len(entries):
+			return 0
+		_safe_write_json(VIDEO_HISTORY_FILE, kept)
+		return len(entries) - len(kept)
+
+def toggle_video_history_pin(urls):
+	keys = {_historyKey(u) for u in urls}
+	changed = []
+	with _historyLock:
+		entries = load_video_history()
+		for e in entries:
+			if _historyKey(e.get("url")) in keys:
+				e["pinned"] = not e.get("pinned")
+				changed.append((e["url"], e["pinned"]))
+		if changed:
+			_safe_write_json(VIDEO_HISTORY_FILE, entries)
+	return changed
+
+def clear_video_history():
+	with _historyLock:
+		return _safe_write_json(VIDEO_HISTORY_FILE, [])
+
+_SETTING_DEFAULTS = {
+	"BeepWhileConverting": True,
+	"ConvertingBeepVolume": 50,
+	"ProgressBeepIntervalSeconds": 10,
+	"ResultFolder": "",
+	"MP3Quality": 320,
+	"TrimMP3Quality": 320,
+	"Logging": False,
+	"PlaylistMode": False,
+	"SkipExisting": True,
+	"ResumeOnRestart": True,
+	"MaxConcurrentDownloads": 1,
+	"TrimLastFormat": "mp3",
+	"TrimLastStartTime": "00:00:00",
+	"TrimLastEndTime": "00:00:00",
+	"TrimLastURL": "",
+	"TrimLastDuration": "",
+	"TrimLastQuality": -1,
+	"UseMultiPart": True,
+	"MultiPartConnections": 16,
+	"SayDownloadComplete": True,
+	"AutoUpdateYtDlp": False,
+	"UseCookies": True,
+	"CookiesFile": "",
+	"AutoCookiesBrowser": "chrome",
+	"UseCustomUserAgent": False,
+	"CustomUserAgent": "",
+	"ThrottleRate": 0,
+	"SleepBetweenRequests": 0,
+	"RetryCount": 3,
+	"FragmentRetries": 10,
+	"SkipUnavailableFragments": True,
+	"AbortOnError": False,
+	"UseProxy": False,
+	"ProxyURL": "",
+	"MarkWatched": True,
+	"ForceIpv4": False,
+	"ForceIpv6": False,
+	"UseSponsorBlock": False,
+	"SponsorBlockCategories": "all",
+	"ImmediateDownload": True,
+	"AnnounceDownloadProgress": False,
+}
+
+_SETTINGS_SCHEMA_VERSION = 2
+
+_settingsLock = threading.RLock()
+_settingsCache = None
+_settingsLoading = False
+_settingsPersistBlocked = False
+
+# The settings store deliberately logs through api.log and never through
+# log(): log() itself calls getINI("Logging"), so using it while the store
+# is still loading would recurse straight back into the loader.
+
+def _coerceSetting(key, value):
+	default = _SETTING_DEFAULTS[key]
+	if isinstance(default, bool):
+		if isinstance(value, bool):
+			return value
+		if isinstance(value, str) and value.strip().lower() in ("true", "false"):
+			return value.strip().lower() == "true"
+		raise ValueError(key)
+	if isinstance(default, int):
+		if isinstance(value, bool):
+			raise ValueError(key)
+		if isinstance(value, int):
+			return value
+		if isinstance(value, str):
+			return int(value.strip())
+		raise ValueError(key)
+	if isinstance(value, str):
+		return value
+	raise ValueError(key)
+
+def _readLegacyIniValues():
+	# Only keys that are explicitly present in the base profile are taken,
+	# so a user who never changed a setting keeps the new default.
+	try:
+		section = config.conf.profiles[0].get(AddOnName)
+	except (AttributeError, IndexError, KeyError) as e:
+		api.log.error(f"AbsoluteYoutube: could not read legacy settings from nvda.ini: {e}")
+		return {}
+	if not section:
+		return {}
+	found = {}
+	for key in _SETTING_DEFAULTS:
+		if key not in section:
+			continue
+		try:
+			found[key] = _coerceSetting(key, section[key])
+		except (ValueError, TypeError):
+			api.log.warning(f"AbsoluteYoutube: ignored invalid legacy value for {key}")
+	return found
+
+def _readSettingsDocument():
+	if os.path.exists(SettingsFilePath):
+		try:
+			with open(SettingsFilePath, 'r', encoding='utf-8') as f:
+				return json.load(f)
+		except (OSError, ValueError) as e:
+			api.log.error(f"AbsoluteYoutube: settings file unreadable ({SettingsFilePath}): {e}")
+	bakPath = SettingsFilePath + ".bak"
+	if os.path.exists(bakPath):
+		try:
+			with open(bakPath, 'r', encoding='utf-8') as f:
+				bakDoc = json.load(f)
+			if isinstance(bakDoc, dict):
+				api.log.warning("AbsoluteYoutube: restored settings from backup copy")
+				return bakDoc
+		except (OSError, ValueError) as e:
+			api.log.error(f"AbsoluteYoutube: settings backup unreadable: {e}")
+	return None
+
+def _persistSettings(settings):
+	return _safe_write_json(SettingsFilePath, {"schemaVersion": _SETTINGS_SCHEMA_VERSION, "settings": settings})
+
+def _buildSettingsCache():
+	global _settingsPersistBlocked
+	settings = dict(_SETTING_DEFAULTS)
+	doc = _readSettingsDocument()
+	storedSettings = None
+	storedVersion = 0
+	legacyQueue = None
+	if isinstance(doc, list):
+		# Older builds kept the download queue itself in AbsoluteYoutube.json.
+		legacyQueue = doc
+	elif isinstance(doc, dict) and isinstance(doc.get("settings"), dict):
+		storedSettings = doc["settings"]
+		storedVersion = doc.get("schemaVersion")
+		if not isinstance(storedVersion, int) or isinstance(storedVersion, bool):
+			storedVersion = 0
+
+	if legacyQueue is not None:
+		if os.path.exists(StateFilePath):
+			api.log.warning("AbsoluteYoutube: queue file already exists, old queue data stays in the .bak copy")
+		elif _safe_write_json(StateFilePath, legacyQueue):
+			api.log.info(f"AbsoluteYoutube: moved download queue to {StateFilePath}")
+		else:
+			# Writing settings over this file now would destroy the only copy of the queue.
+			_settingsPersistBlocked = True
+			api.log.error("AbsoluteYoutube: could not move the download queue, settings will not be saved this session")
+
+	if storedSettings is not None:
+		for key in _SETTING_DEFAULTS:
+			if key not in storedSettings:
+				continue
+			try:
+				settings[key] = _coerceSetting(key, storedSettings[key])
+			except (ValueError, TypeError):
+				api.log.warning(f"AbsoluteYoutube: invalid stored value for {key}, using default")
+		if storedVersion < _SETTINGS_SCHEMA_VERSION:
+			# One-time upgrade: cookies are now on by default to avoid blocked
+			# downloads, and an older saved "off" must not keep overriding that.
+			# The version stamp is rewritten, so a later manual opt-out sticks.
+			settings["UseCookies"] = True
+			api.log.info("AbsoluteYoutube: settings upgrade enabled UseCookies")
+			if not _settingsPersistBlocked:
+				_persistSettings(settings)
+		return settings
+
+	legacyValues = _readLegacyIniValues()
+	settings.update(legacyValues)
+	settings["UseCookies"] = True
+	api.log.info(f"AbsoluteYoutube: migrated {len(legacyValues)} setting(s) from nvda.ini to {SettingsFilePath}")
+	if not _settingsPersistBlocked:
+		_persistSettings(settings)
+	return settings
+
+def _ensureSettingsLoaded():
+	global _settingsCache, _settingsLoading
+	if _settingsCache is not None:
+		return
+	with _settingsLock:
+		if _settingsCache is not None or _settingsLoading:
+			return
+		_settingsLoading = True
+		try:
+			_settingsCache = _buildSettingsCache()
+		finally:
+			_settingsLoading = False
+
 def getINI(key):
-	return config.conf[sectionName][key]
+	_ensureSettingsLoaded()
+	with _settingsLock:
+		if _settingsCache is None:
+			return _SETTING_DEFAULTS[key]
+		return _settingsCache[key]
 
 def setINI(key, value):
-	config.conf[sectionName][key] = value
+	if key not in _SETTING_DEFAULTS:
+		raise KeyError(key)
+	_ensureSettingsLoaded()
+	try:
+		coerced = _coerceSetting(key, value)
+	except (ValueError, TypeError):
+		api.log.error(f"AbsoluteYoutube: rejected invalid value for setting {key}")
+		return
+	with _settingsLock:
+		if _settingsCache is None or _settingsCache[key] == coerced:
+			return
+		_settingsCache[key] = coerced
+		if _settingsPersistBlocked:
+			return
+		_persistSettings(_settingsCache)
 
 def PlayWave(filename, force=False):
 	try:
@@ -751,6 +1049,8 @@ def clearState():
 	_safe_write_json(StateFilePath, [])
 
 def addDownloadToQueue(download_obj):
+	if not download_obj.get("trimming"):
+		record_video_history(download_obj.get("url"), download_obj.get("title"), download_obj.get("format"), download_obj.get("is_playlist", False))
 	with _global_state_lock:
 		queue = loadState()
 		download_obj["id"] = str(uuid.uuid4())
@@ -886,10 +1186,52 @@ def checkFileExists(savePath, title, extension, is_trimming=False):
 		return True
 	return False
 
-def promptResumeDownloads(downloads_list):
+class _ResumeDownloadsDialog(wx.Dialog):
+
+	def __init__(self, message, onAnswer):
+		super().__init__(gui.mainFrame, title=_("Resume downloads"))
+		self._onAnswer = onAnswer
+		self._answered = False
+		mainSizer = wx.BoxSizer(wx.VERTICAL)
+		mainSizer.Add(wx.StaticText(self, label=message), 0, wx.ALL, 10)
+		buttonSizer = wx.BoxSizer(wx.HORIZONTAL)
+		yesButton = wx.Button(self, wx.ID_YES, _("&Yes"))
+		noButton = wx.Button(self, wx.ID_NO, _("&No"))
+		buttonSizer.Add(yesButton, 0, wx.ALL, 5)
+		buttonSizer.Add(noButton, 0, wx.ALL, 5)
+		mainSizer.Add(buttonSizer, 0, wx.ALIGN_CENTER | wx.ALL, 5)
+		self.SetSizerAndFit(mainSizer)
+		self.CentreOnScreen()
+		yesButton.SetDefault()
+		yesButton.Bind(wx.EVT_BUTTON, lambda evt: self._finish(True))
+		noButton.Bind(wx.EVT_BUTTON, lambda evt: self._finish(False))
+		self.Bind(wx.EVT_CLOSE, lambda evt: self._finish(False))
+		self.Bind(wx.EVT_CHAR_HOOK, self._onCharHook)
+
+	def _onCharHook(self, evt):
+		if evt.GetKeyCode() == wx.WXK_ESCAPE:
+			self._finish(False)
+			return
+		evt.Skip()
+
+	def _finish(self, answer):
+		if self._answered:
+			return
+		self._answered = True
+		onAnswer = self._onAnswer
+		self._onAnswer = None
+		self.Hide()
+		gui.mainFrame.postPopup()
+		self.Destroy()
+		onAnswer(answer)
+
+def promptResumeDownloads(downloads_list, onAnswer):
 	count = len(downloads_list)
 	msg = _("Found {count} interrupted downloads\nResume all?").format(count=count)
-	return gui.messageBox(msg, _("Resume downloads"), wx.YES_NO) == wx.YES
+	gui.mainFrame.prePopup()
+	dialog = _ResumeDownloadsDialog(msg, onAnswer)
+	dialog.Show()
+	dialog.Raise()
 
 def _cleanup_temp_files(save_path, title, file_format, check_count=2):
 	def _worker():
@@ -993,14 +1335,17 @@ def resumeInterruptedDownloads():
 		updateDownloadStatusInQueue(item.get("id"), "queued")
 		if item.get("format") in ["mp3", "wav"]:
 			_cleanup_temp_files(item.get("path", ""), item.get("title", ""), item.get("format", ""))
-	if not promptResumeDownloads(downloads_to_resume):
+	def _onResumeAnswer(shouldResume):
+		if not shouldResume:
+			for item in downloads_to_resume:
+				updateDownloadStatusInQueue(item.get("id"), "cancelled")
+			clearState()
+			return
 		for item in downloads_to_resume:
-			updateDownloadStatusInQueue(item.get("id"), "cancelled")
-		clearState()
-		return
-	for item in downloads_to_resume:
-		updateDownloadStatusInQueue(item.get("id"), "queued")
-		_download_queue.put(item)
+			updateDownloadStatusInQueue(item.get("id"), "queued")
+			_download_queue.put(item)
+
+	promptResumeDownloads(downloads_to_resume, _onResumeAnswer)
 
 def start_worker_threads():
 	global _num_workers
@@ -1034,6 +1379,7 @@ def get_failed_downloads():
 	return load_failed_downloads()
 
 def add_failed_download(url, title, format_type, duration=None):
+	record_video_history(url, title, format_type)
 	# _failed_lock guards this read-modify-write cycle the same way
 	# _pending_lock guards pending_downloads.json. Without it, this call
 	# (reached from worker_loop on a background thread every time a
@@ -1117,6 +1463,7 @@ def add_pending_download(url, title, format_type, is_playlist=False):
 		}
 		pending_list.append(new_item)
 		save_pending_downloads(pending_list)
+		record_video_history(url, title, format_type, is_playlist)
 		return True
 
 def mark_pending_download_downloading(url, format_type):
@@ -1340,6 +1687,25 @@ def _fallback_to_native_downloader(cmd, connections):
 def _looks_like_downloader_error(stderr_text):
 	lowered = (stderr_text or "").lower()
 	return any(marker in lowered for marker in _DOWNLOADER_ERROR_MARKERS)
+
+def _looks_like_cookie_extract_failure(stderr_text):
+	lowered = (stderr_text or "").lower()
+	if "cookie database" in lowered and "could not copy" in lowered:
+		return True
+	return "failed to decrypt" in lowered and "cookie" in lowered
+
+def _strip_browser_cookies(cmd):
+	stripped = []
+	skipNext = False
+	for part in cmd:
+		if skipNext:
+			skipNext = False
+			continue
+		if part == "--cookies-from-browser":
+			skipNext = True
+			continue
+		stripped.append(part)
+	return stripped
 
 def _poll_download_progress(save_path, total_bytes, process, stop_event, needs_extraction, announce_enabled):
 	# Beeping was removed from this function -- see _progress_beep_heartbeat
@@ -1622,7 +1988,16 @@ def run_download(item):
 					retry_count = item.get("_multipart_retry_count", 0)
 					is_retryable_error = _looks_like_downloader_error(stderr_text)
 					aria2c_itself_failed = "aria2c" in stderr_text.lower()
-					if is_multipart_download and retry_count < 2 and is_retryable_error:
+					cookie_extract_failed = _looks_like_cookie_extract_failure(stderr_text) and "--cookies-from-browser" in item["cmd"]
+					if cookie_extract_failed:
+						# The browser locks its cookie database while it is
+						# running; retry once without browser cookies so the
+						# download does not fail outright.
+						log(f"Browser cookie extraction failed for '{title}', retrying without browser cookies")
+						item["cmd"] = _strip_browser_cookies(item["cmd"])
+						updateDownloadStatusInQueue(download_id, "queued")
+						_download_queue.put(item)
+					elif is_multipart_download and retry_count < 2 and is_retryable_error:
 						if aria2c_itself_failed and retry_count >= 1:
 							fallback_connections = max(1, item.get("requested_connections") or 4)
 							item["cmd"] = _fallback_to_native_downloader(item["cmd"], fallback_connections)

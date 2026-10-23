@@ -1,4 +1,5 @@
 # search.py
+
 import wx
 import gui
 import threading
@@ -194,7 +195,7 @@ class SearchDialog(wx.Dialog):
 		else:
 			try:
 				self.page_size = int(selection)
-			except:
+			except Exception:
 				self.page_size = 50
 		self.current_page = 0
 		self._update_paging()
@@ -247,12 +248,12 @@ class SearchDialog(wx.Dialog):
 		if self._process1:
 			try:
 				self._process1.terminate()
-			except:
+			except Exception:
 				pass
 		if self._process2:
 			try:
 				self._process2.terminate()
-			except:
+			except Exception:
 				pass
 
 		self.videos = []
@@ -345,7 +346,7 @@ class SearchDialog(wx.Dialog):
 							stderr = proc.stderr.read()
 							if stderr:
 								log(f"Process stderr: {stderr}")
-						except:
+						except Exception:
 							pass
 
 				t1 = threading.Thread(target=read_process, args=(self._process1, True), daemon=True)
@@ -378,7 +379,7 @@ class SearchDialog(wx.Dialog):
 			display_index = video_index - start
 			try:
 				self.list_ctrl.RefreshItem(display_index)
-			except:
+			except Exception:
 				pass
 
 		count = len(self.videos)
@@ -453,7 +454,7 @@ class SearchDialog(wx.Dialog):
 			display_index = video_index - start
 			try:
 				self.list_ctrl.RefreshItem(display_index)
-			except:
+			except Exception:
 				pass
 
 	def _on_search_complete(self, query):
@@ -625,12 +626,12 @@ class SearchDialog(wx.Dialog):
 			if self._process1:
 				try:
 					self._process1.terminate()
-				except:
+				except Exception:
 					pass
 			if self._process2:
 				try:
 					self._process2.terminate()
-				except:
+				except Exception:
 					pass
 			self.Close()
 		event.Skip()
@@ -642,12 +643,12 @@ class SearchDialog(wx.Dialog):
 		if self._process1:
 			try:
 				self._process1.terminate()
-			except:
+			except Exception:
 				pass
 		if self._process2:
 			try:
 				self._process2.terminate()
-			except:
+			except Exception:
 				pass
 		self.Destroy()
 

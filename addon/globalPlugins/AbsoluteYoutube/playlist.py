@@ -126,7 +126,7 @@ class PlaylistVideosDialog(wx.Dialog):
 	def _on_page_size_change(self, event):
 		try:
 			self.page_size = int(self.pageSizeCombo.GetStringSelection())
-		except:
+		except Exception:
 			self.page_size = 50
 		self.current_page = 0
 		self._update_paging()

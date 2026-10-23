@@ -38,6 +38,8 @@ from .utils import (
 from .channel_core import ChannelPlaylistDialog
 from .channel_utils import ensure_channel_dir
 from . import search
+from . import update
+from .Download_core import getINI, setINI
 from .menu import showAbsoluteYoutubeMenu
 
 addonHandler.initTranslation()
@@ -50,53 +52,6 @@ AddOnPath = os.path.dirname(__file__)
 sectionName = AddOnName
 
 log = logging.getLogger("AbsoluteYoutube")
-
-def initConfiguration():
-	confspec = {
-		"BeepWhileConverting": "boolean(default=True)",
-		"ConvertingBeepVolume": "integer(default=50)",
-		"ProgressBeepIntervalSeconds": "integer(default=10)",
-		"ResultFolder": "string(default='')",
-		"MP3Quality": "integer(default=320)",
-		"TrimMP3Quality": "integer(default=320)",
-		"Logging": "boolean(default=False)",
-		"PlaylistMode": "boolean(default=False)",
-		"SkipExisting": "boolean(default=True)",
-		"ResumeOnRestart": "boolean(default=True)",
-		"MaxConcurrentDownloads": "integer(default=1)",
-		"TrimLastFormat": "string(default='mp3')",
-		"TrimLastStartTime": "string(default='00:00:00')",
-		"TrimLastEndTime": "string(default='00:00:00')",
-		"TrimLastURL": "string(default='')",
-		"TrimLastDuration": "string(default='')",
-		"UseMultiPart": "boolean(default=True)",
-		"MultiPartConnections": "integer(default=16)",
-		"SayDownloadComplete": "boolean(default=True)",
-		"AutoUpdateYtDlp": "boolean(default=False)",
-		"UseCookies": "boolean(default=False)",
-		"CookiesFile": "string(default='')",
-		"AutoCookiesBrowser": "string(default='chrome')",
-		"UseCustomUserAgent": "boolean(default=False)",
-		"CustomUserAgent": "string(default='')",
-		"ThrottleRate": "integer(default=0)",
-		"SleepBetweenRequests": "integer(default=0)",
-		"RetryCount": "integer(default=3)",
-		"FragmentRetries": "integer(default=10)",
-		"SkipUnavailableFragments": "boolean(default=True)",
-		"AbortOnError": "boolean(default=False)",
-		"UseProxy": "boolean(default=False)",
-		"ProxyURL": "string(default='')",
-		"MarkWatched": "boolean(default=True)",
-		"ForceIpv4": "boolean(default=False)",
-		"ForceIpv6": "boolean(default=False)",
-		"UseSponsorBlock": "boolean(default=False)",
-		"SponsorBlockCategories": "string(default='all')",
-		"ImmediateDownload": "boolean(default=True)",
-		"AnnounceDownloadProgress": "boolean(default=False)",
-	}
-	config.conf.spec[sectionName] = confspec
-
-initConfiguration()
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	scriptCategory = AddOnSummary
@@ -207,7 +162,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			# for. core.callLater pushes the work to the next core pump
 			# cycle instead, after NVDA has finished booting.
 			core.callLater(100, self._deferredStartupInit)
-			if config.conf[sectionName]["AutoUpdateYtDlp"]:
+			if getINI("AutoUpdateYtDlp"):
 				threading.Thread(target=self._auto_update_yt_dlp, daemon=True).start()
 			else:
 				threading.Thread(target=self._check_for_yt_dlp_update, daemon=True).start()
@@ -234,10 +189,14 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self._tap_count = 0
 		self._last_tap_time = 0
 		self._tap_timer = None
+		self._multiTapState = {}
 		self.channel_dialog = None
 		self.search_dialog = None
 		self.playlist_dialog = None
+		self.history_dialog = None
 		self.download_list_dialog = None
+
+		update.start()
 
 	def _add_settings_panel(self):
 		try:
@@ -249,6 +208,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.core_functions['log'](f"Failed to add settings panel: {e}")
 
 	def terminate(self):
+		update.stop()
+		for tapState in self._multiTapState.values():
+			tapTimer = tapState.get("timer")
+			if tapTimer and tapTimer.IsRunning():
+				tapTimer.Stop()
+		self._multiTapState.clear()
 		try:
 			from .Youtube_settings import AudioYoutubeDownloadPanel
 			if AudioYoutubeDownloadPanel in NVDASettingsDialog.categoryClasses:
@@ -262,7 +227,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.core_functions['log'](f"Error during shutdown: {e}")
 
 	def _get_current_download_path(self):
-		return config.conf[sectionName]["ResultFolder"] or self.core_functions.get('DownloadPath', '')
+		return getINI("ResultFolder") or self.core_functions.get('DownloadPath', '')
 
 	def _deferredStartupInit(self):
 		try:
@@ -338,6 +303,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		return False
 
 	def _get_url_for_download(self):
+		if self.history_dialog and self.history_dialog.IsShown():
+			focused = wx.Window.FindFocus()
+			if focused and self.history_dialog.IsDescendant(focused):
+				info = self.history_dialog.get_selected_download_info()
+				if info:
+					return info[0], info[1], info[2]
+
 		if self.channel_dialog and self.channel_dialog.IsShown():
 			focused = wx.Window.FindFocus()
 			if focused and self.channel_dialog.IsDescendant(focused):
@@ -362,7 +334,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		focused_url, focused_title = get_focused_youtube_link()
 		doc_url = self.core_functions.get('getCurrentDocumentURL', lambda: None)()
 
-		playlist_mode_enabled = config.conf[sectionName]["PlaylistMode"]
+		playlist_mode_enabled = getINI("PlaylistMode")
 
 		focused_list_id = get_youtube_list_id(focused_url) if focused_url else None
 		focused_is_mix = bool(focused_list_id) and focused_list_id.upper().startswith("RD")
@@ -416,7 +388,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			else:
 				chosen_format = "wav"
 
-			immediate_mode = config.conf[sectionName]["ImmediateDownload"]
+			immediate_mode = getINI("ImmediateDownload")
 
 			final_title = title
 			if not final_title:
@@ -500,11 +472,55 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		finally:
 			self._tap_count = 0
 
-	@script(description=_("Download immediately"), gesture="kb:NVDA+control+y")
+	def _registerTap(self, name, handler):
+		state = self._multiTapState.setdefault(name, {"count": 0, "last": 0.0, "timer": None})
+		now = time.time()
+		if now - state["last"] > 0.6:
+			state["count"] = 0
+		state["count"] += 1
+		state["last"] = now
+		if state["timer"] and state["timer"].IsRunning():
+			state["timer"].Stop()
+		state["timer"] = wx.CallLater(500, self._fireTap, name, handler)
+
+	def _fireTap(self, name, handler):
+		state = self._multiTapState[name]
+		tapCount = state["count"]
+		state["count"] = 0
+		try:
+			handler(tapCount)
+		except Exception as e:
+			self.core_functions['log'](f"Error in multi-tap action {name}: {e}")
+
+	@script(description=_("Cycle MP3 quality (single tap), toggle download immediately (double tap), toggle playlist mode (triple tap)"), gesture="kb:alt+windows+y")
+	def script_qualityImmediatePlaylist(self, gesture):
+		self._registerTap("qualityImmediatePlaylist", self._runQualityImmediatePlaylist)
+
+	def _runQualityImmediatePlaylist(self, tapCount):
+		if tapCount == 1:
+			self.script_cycleMP3Quality(None)
+		elif tapCount == 2:
+			self.script_toggleImmediateDownload(None)
+		else:
+			self.script_togglePlaylistMode(None)
+
+	@script(description=_("Open download list (single tap), download fail manager (double tap), video history report (triple tap)"), gesture="kb:NVDA+control+y")
+	def script_openManagers(self, gesture):
+		self._registerTap("openManagers", self._runOpenManagers)
+
+	def _runOpenManagers(self, tapCount):
+		if tapCount == 1:
+			self._open_download_list_dialog(None)
+		elif tapCount == 2:
+			self._open_download_fail_dialog(None)
+		else:
+			self._open_history_dialog(None)
+
+	@script(description=_("Toggle download immediately"))
 	def script_toggleImmediateDownload(self, gesture):
-		current_mode = config.conf[sectionName]["ImmediateDownload"]
+		current_mode = getINI("ImmediateDownload")
 		new_mode = not current_mode
-		config.conf[sectionName]["ImmediateDownload"] = new_mode
+		setINI("ImmediateDownload", new_mode)
 		if new_mode:
 			ui.message(_("Immediate download mode enabled"))
 		else:
@@ -588,6 +604,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		else:
 			menu_items.append((_("Download fail manager (no failed)"), lambda: self._open_download_fail_dialog(None)))
 
+		menu_items.append((_("Video History Report"), lambda: self._open_history_dialog(None)))
+
 		menu_items.append((_("Favorite channel"), lambda: self._open_channel_playlist_dialog(None)))
 
 		if is_on_video_page:
@@ -657,6 +675,34 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		except Exception as e:
 			ui.message(_("Error opening download fail dialog: {str}").format(str=str(e)))
 			self.core_functions['log'](f"Error opening download fail dialog: {e}")
+
+	def _open_history_dialog(self, menuInstance):
+		if menuInstance:
+			menuInstance.Close()
+		try:
+			from .Download_core import load_video_history
+			from .video_history import VideoHistoryDialog
+		except ImportError as e:
+			self.core_functions['log'](f"Error importing video history: {e}")
+			ui.message(_("Error: Video history module not available"))
+			return
+		if not load_video_history():
+			ui.message(_("No video history yet"))
+			return
+		def show_dialog():
+			gui.mainFrame.prePopup()
+			try:
+				dlg = VideoHistoryDialog(gui.mainFrame)
+				self.history_dialog = dlg
+				dlg.ShowModal()
+				dlg.Destroy()
+			except Exception as e:
+				ui.message(_("Error opening video history: {str}").format(str=str(e)))
+				self.core_functions['log'](f"Error in video history dialog: {e}")
+			finally:
+				self.history_dialog = None
+				gui.mainFrame.postPopup()
+		wx.CallAfter(show_dialog)
 
 	def _open_channel_playlist_dialog(self, menuInstance):
 		if menuInstance:
@@ -787,17 +833,17 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					self.channel_dialog = None
 		wx.CallAfter(show_dialog)
 
-	@script(description=_("Toggle playlist mode"), gesture="kb:NVDA+shift+y")
+	@script(description=_("Toggle playlist mode"))
 	def script_togglePlaylistMode(self, gesture):
-		current_mode = config.conf[sectionName]["PlaylistMode"]
+		current_mode = getINI("PlaylistMode")
 		if 'setINI' in self.core_functions:
 			self.core_functions['setINI']("PlaylistMode", not current_mode)
 		ui.message(_("Playlist mode enabled") if not current_mode else _("Playlist mode disabled"))
 
-	@script(description=_("Cycle MP3 quality settings"), gesture="kb:alt+windows+y")
+	@script(description=_("Cycle MP3 quality settings"))
 	def script_cycleMP3Quality(self, gesture):
 		mp3_quality_cycle = [128, 192, 256, 320]
-		current_quality = config.conf[sectionName]["MP3Quality"]
+		current_quality = getINI("MP3Quality")
 		try:
 			current_index = mp3_quality_cycle.index(current_quality)
 			new_index = (current_index + 1) % len(mp3_quality_cycle)
