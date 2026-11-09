@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: AbsoluteYoutube 2026.9.12\n"
+"Project-Id-Version: AbsoluteYoutube 2026.11.0\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-09-14 07:42+0700\n"
+"POT-Creation-Date: 2026-11-09 09:52+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Thai\n"
@@ -10,21 +10,21 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: DevOn Addon\n"
+"X-Generator: ChaiBot Addon\n"
 
-#: Youtube_settings.py:270
+#: Youtube_settings.py:313
 msgid "&Announce download progress"
 msgstr "&ประกาศความคืบหน้าการดาวน์โหลด"
 
-#: Youtube_settings.py:229
+#: Youtube_settings.py:272
 msgid "&Beep while converting"
 msgstr "&ส่งเสียงบี๊บขณะแปลง"
 
-#: Youtube_settings.py:76
+#: Youtube_settings.py:69
 msgid "&Browse..."
 msgstr "&เรียกดู..."
 
-#: Youtube_settings.py:309
+#: Youtube_settings.py:352
 msgid "&Browser for automatic cookies (used when cookies file is off):"
 msgstr "&เบราว์เซอร์สำหรับคุกกี้อัตโนมัติ (ใช้เมื่อปิดไฟล์คุกกี้):"
 
@@ -39,9 +39,9 @@ msgstr "&ยกเลิก"
 msgid "&Clear All"
 msgstr "&ล้างทั้งหมด"
 
-#: channel_core.py:190
+#: channel_core.py:191
 #: playlist.py:90
-#: search.py:148
+#: search.py:149
 msgid "&Close"
 msgstr "&ปิด"
 
@@ -50,10 +50,14 @@ msgstr "&ปิด"
 msgid "&Delete Selected"
 msgstr "&ลบรายการที่เลือก"
 
-#: channel_core.py:182
+#: video_history.py:48
+msgid "&Download"
+msgstr "ดาวน์โหลด(&D)"
+
+#: channel_core.py:183
 #: downloadFail.py:84
 #: download_list.py:84
-#: search.py:140
+#: search.py:141
 msgid "&Download All"
 msgstr "&ดาวน์โหลดทั้งหมด"
 
@@ -66,19 +70,27 @@ msgstr "&ดาวน์โหลดวิดีโอทั้งหมดใ�
 msgid "&Download Selected"
 msgstr "&ดาวน์โหลดรายการที่เลือก"
 
-#: search.py:144
+#: search.py:145
 msgid "&Download folder"
 msgstr "&โฟลเดอร์ดาวน์โหลด"
 
-#: Youtube_settings.py:356
+#: update.py:173
+msgid "&Later"
+msgstr "ภายหลัง(&L)"
+
+#: Youtube_settings.py:399
 msgid "&Mark as watched"
 msgstr "&ทำเครื่องหมายว่าดูแล้ว"
 
-#: Youtube_settings.py:133
+#: Youtube_settings.py:152
 msgid "&Max concurrent downloads (1-4):"
 msgstr "&จำนวนดาวน์โหลดพร้อมกันสูงสุด (1-4):"
 
-#: Youtube_settings.py:157
+#: Download_core.py:1209
+msgid "&No"
+msgstr "ไ&ม่ใช่"
+
+#: Youtube_settings.py:200
 msgid "&Number of connections:"
 msgstr "&จำนวนการเชื่อมต่อ:"
 
@@ -89,41 +101,66 @@ msgstr "&จำนวนการเชื่อมต่อ:"
 msgid "&OK"
 msgstr "&ตกลง"
 
-#: Youtube_settings.py:203
+#: video_history.py:49
+msgid "&Open URL"
+msgstr "เปิด URL(&O)"
+
+#: video_history.py:50
+msgid "&Pin or unpin"
+msgstr "ปักหมุดหรือไม่ปักหมุด(&P)"
+
+#: video_history.py:51
+msgid "&Remove"
+msgstr "ลบ(&R)"
+
+#: Youtube_settings.py:246
 msgid "&Retry count:"
 msgstr "&จำนวนครั้งที่ลองใหม่:"
 
-#: Youtube_settings.py:265
+#: Youtube_settings.py:308
 msgid "&Say download complete"
 msgstr "&แจ้งเมื่อดาวน์โหลดเสร็จ"
 
-#: Youtube_settings.py:196
+#: Youtube_settings.py:239
 msgid "&Sleep between requests (seconds):"
 msgstr "&หน่วงเวลาระหว่างคำขอ (วินาที):"
 
-#: channel_core.py:186
+#: channel_core.py:187
 msgid "&Source"
 msgstr "&แหล่งที่มา"
 
-#: Youtube_settings.py:176
+#: Youtube_settings.py:219
 msgid "&Throttle rate (KB/s, 0=unlimited, step of 5):"
 msgstr "&จำกัดความเร็ว (KB/s, 0=ไม่จำกัด, เพิ่มทีละ 5):"
 
-#: Download_core.py:1551
+#: update.py:171
+msgid "&Update now"
+msgstr "อัปเดตทันที(&U)"
+
+#: Download_core.py:1208
+msgid "&Yes"
+msgstr "&ใช่"
+
+#: subtitleWatcher.py:408
+#: subtitleWatcher.py:416
+msgid "...truncated"
+msgstr "...ถูกตัดทอน"
+
+#: Download_core.py:2014
 msgid "0%"
 msgstr "0%"
 
-#: channel_core.py:1347
+#: channel_core.py:1348
 msgid "A channel with this name already exists. Overwrite?"
 msgstr "มีช่องนี้อยู่แล้ว ต้องการเขียนทับหรือไม่"
 
-#: __init__.py:286
+#: addonCore.py:260
 msgid "A new version of yt-dlp is available: {latest}. Current: {current}. Please update in settings."
 msgstr "มี yt-dlp เวอร์ชันใหม่: {latest} ปัจจุบัน: {current} โปรดอัปเดตในการตั้งค่า"
 
 #: Download_core.py:35
-#: Youtube_settings.py:35
-#: __init__.py:45
+#: Youtube_settings.py:36
+#: addonCore.py:47
 msgid "Absolute YouTube"
 msgstr "แอบโซลูท ยูทูป"
 
@@ -131,7 +168,7 @@ msgstr "แอบโซลูท ยูทูป"
 msgid "Absolute YouTube Trim"
 msgstr "ตัดต่อแอบโซลูท ยูทูป"
 
-#: __init__.py:599
+#: addonCore.py:646
 msgid "Absolute YouTube setting"
 msgstr "การตั้งค่าแอบโซลูท ยูทูป"
 
@@ -139,15 +176,23 @@ msgstr "การตั้งค่าแอบโซลูท ยูทูป"
 msgid "Absolute Youtube"
 msgstr "แอบโซลูท ยูทูป"
 
+#: adSkip.py:428
+msgid "Ad skipped"
+msgstr "ข้ามโฆษณาแล้ว"
+
 #: channel_dialogs.py:42
 msgid "Add New Channel"
 msgstr "เพิ่มช่องใหม่"
 
-#: channel_core.py:113
+#: Youtube_settings.py:99
+msgid "Add item numbers to file names in playlist mode"
+msgstr "เพิ่มหมายเลขรายการลงในชื่อไฟล์ในโหมดเพลย์ลิสต์"
+
+#: channel_core.py:114
 msgid "Add new channel"
 msgstr "เพิ่มช่องใหม่"
 
-#: __init__.py:197
+#: addonCore.py:152
 msgid "Add-on initialization failed: missing pending file path function. Please restart NVDA."
 msgstr "การเริ่มต้นส่วนเสริมล้มเหลว: ไม่พบฟังก์ชันเส้นทางไฟล์ที่รอดำเนินการ โปรดรีสตาร์ท NVDA"
 
@@ -159,32 +204,32 @@ msgstr "ข้อผิดพลาดภายในของส่วนเส
 msgid "Added Time"
 msgstr "เวลาที่เพิ่ม"
 
-#: __init__.py:448
+#: addonCore.py:429
 msgid "Added to download list: {format} - {title}"
 msgstr "เพิ่มไปยังรายการดาวน์โหลดแล้ว: {format} - {title}"
 
-#: __init__.py:442
+#: addonCore.py:423
 msgid "Added to download queue: {format} - {title}"
 msgstr "เพิ่มไปยังคิวการดาวน์โหลดแล้ว: {format} - {title}"
 
-#: Download_core.py:2000
+#: Download_core.py:2600
 msgid "Adding link as {format} to download queue"
 msgstr "กำลังเพิ่มลิงก์เป็น {format} ไปยังคิวการดาวน์โหลด"
 
-#: channel_core.py:299
-#: search.py:570
+#: channel_core.py:300
+#: search.py:571
 msgid "Adding {count} videos to download queue..."
 msgstr "กำลังเพิ่มวิดีโอ {count} รายการไปยังคิวการดาวน์โหลด..."
 
-#: channel_core.py:1632
+#: channel_core.py:1633
 #: playlist.py:465
-#: search.py:549
-#: search.py:552
+#: search.py:550
+#: search.py:553
 msgid "Adding {title} to download queue."
 msgstr "กำลังเพิ่ม {title} ไปยังคิวการดาวน์โหลด"
 
-#: search.py:114
-#: search.py:192
+#: search.py:115
+#: search.py:193
 msgid "All"
 msgstr "ทั้งหมด"
 
@@ -196,11 +241,11 @@ msgstr "ล้างรายการดาวน์โหลดที่ล้
 msgid "All pending downloads cleared"
 msgstr "ล้างรายการดาวน์โหลดที่รอดำเนินการทั้งหมดแล้ว"
 
-#: __init__.py:450
+#: addonCore.py:431
 msgid "Already in download list"
 msgstr "อยู่ในรายการดาวน์โหลดแล้ว"
 
-#: __init__.py:444
+#: addonCore.py:425
 msgid "Already in download queue"
 msgstr "อยู่ในคิวดาวน์โหลดแล้ว"
 
@@ -208,47 +253,59 @@ msgstr "อยู่ในคิวดาวน์โหลดแล้ว"
 msgid "An unexpected error occurred."
 msgstr "เกิดข้อผิดพลาดที่ไม่คาดคิด"
 
-#: Youtube_settings.py:276
+#: Youtube_settings.py:319
 msgid "Anti-blocking settings"
 msgstr "การตั้งค่าป้องกันการบล็อก"
 
-#: channel_core.py:852
+#: channel_core.py:853
 msgid "Are you sure you want to delete saved data for '{name}'?"
 msgstr "คุณแน่ใจหรือไม่ว่าต้องการลบข้อมูลที่บันทึกไว้สำหรับ '{name}'?"
 
-#: Youtube_settings.py:185
+#: Youtube_settings.py:228
 msgid "At the maximum (10,000 KB/s = 10 MB/s), this limit essentially never binds -- YouTube's own per-connection serving speed and most home connections stay well under that, so the maximum behaves almost identically to leaving it at 0 (unlimited)."
 msgstr "ที่ขีดจำกัดสูงสุด (10,000 KB/s = 10 MB/s) ขีดจำกัดนี้แทบจะไม่มีผลเลย เนื่องจากความเร็วในการให้บริการของ YouTube เองและการเชื่อมต่ออินเทอร์เน็ตตามบ้านส่วนใหญ่ต่ำกว่านั้นมาก ดังนั้นค่าสูงสุดจึงทำงานแทบจะเหมือนกับการตั้งค่าไว้ที่ 0 (ไม่จำกัด)"
 
-#: Trim.py:161
+#: Trim.py:163
 #: channel_dialogs.py:158
 msgid "Audio Quality"
 msgstr "คุณภาพเสียง"
 
-#: Youtube_settings.py:371
+#: Youtube_settings.py:414
 msgid "Auto-update yt-dlp on startup"
 msgstr "อัปเดต yt-dlp โดยอัตโนมัติเมื่อเริ่มต้นทำงาน"
 
-#: Youtube_settings.py:239
+#: addonCore.py:875
+msgid "Automatic subtitle reading disabled"
+msgstr "ปิดการอ่านคำบรรยายอัตโนมัติแล้ว"
+
+#: addonCore.py:875
+msgid "Automatic subtitle reading enabled"
+msgstr "เปิดการอ่านคำบรรยายอัตโนมัติแล้ว"
+
+#: Youtube_settings.py:282
 msgid "Beep &volume (%):"
 msgstr "เสียงบี๊บและระดับเสียง (%):"
 
-#: Youtube_settings.py:255
+#: Youtube_settings.py:298
 msgid "Beep e&very (seconds):"
 msgstr "เสียงบี๊บทุกๆ (วินาที):"
 
-#: Youtube_settings.py:306
-#: Youtube_settings.py:431
+#: Youtube_settings.py:349
+#: Youtube_settings.py:474
 msgid "Brave"
 msgstr "Brave"
 
-#: Youtube_settings.py:477
+#: Youtube_settings.py:520
 msgid "Browser still running"
 msgstr "เบราว์เซอร์ยังคงทำงานอยู่"
 
-#: Trim.py:174
+#: video_history.py:57
+msgid "C&lose"
+msgstr "ปิด(&L)"
+
+#: Trim.py:176
 #: channel_dialogs.py:169
-#: search.py:689
+#: search.py:690
 msgid "Cancel"
 msgstr "ยกเลิก"
 
@@ -256,31 +313,31 @@ msgstr "ยกเลิก"
 msgid "Cannot create download folder"
 msgstr "ไม่สามารถสร้างโฟลเดอร์ดาวน์โหลดได้"
 
-#: channel_core.py:286
+#: channel_core.py:287
 msgid "Cannot create download folder."
 msgstr "ไม่สามารถสร้างโฟลเดอร์ดาวน์โหลด"
 
-#: Download_core.py:811
+#: Download_core.py:1121
 msgid "Cannot create folder"
 msgstr "ไม่สามารถสร้างโฟลเดอร์ได้"
 
-#: search.py:540
+#: search.py:541
 msgid "Cannot determine URL for this video."
 msgstr "ไม่สามารถระบุ URL สำหรับวิดีโอนี้ได้"
 
-#: __init__.py:406
+#: addonCore.py:387
 msgid "Cannot download from YouTube homepage. Please navigate to a video or playlist."
 msgstr "ไม่สามารถดาวน์โหลดจากหน้าแรกของ YouTube ได้ โปรดไปที่หน้าวิดีโอหรือเพลย์ลิสต์"
 
-#: __init__.py:409
+#: addonCore.py:390
 msgid "Cannot download from this YouTube page. Please select a specific video."
 msgstr "ไม่สามารถดาวน์โหลดจากหน้า YouTube นี้ได้ โปรดเลือกวิดีโอเฉพาะ"
 
-#: search.py:617
+#: search.py:618
 msgid "Cannot open download folder."
 msgstr "ไม่สามารถเปิดโฟลเดอร์ดาวน์โหลดได้"
 
-#: channel_core.py:342
+#: channel_core.py:343
 msgid "Cannot open source folder."
 msgstr "ไม่สามารถเปิดโฟลเดอร์ต้นทางได้"
 
@@ -288,7 +345,7 @@ msgstr "ไม่สามารถเปิดโฟลเดอร์ต้น
 msgid "Capturing full-size snapshot..."
 msgstr "กำลังบันทึกภาพหน้าจอขนาดเต็ม..."
 
-#: channel_core.py:834
+#: channel_core.py:835
 msgid "Channel URL updated."
 msgstr "อัปเดต URL ของช่องแล้ว"
 
@@ -297,12 +354,12 @@ msgstr "อัปเดต URL ของช่องแล้ว"
 msgid "Channel URL:"
 msgstr "URL ของช่อง:"
 
-#: channel_core.py:1083
+#: channel_core.py:1084
 msgid "Channel added successfully."
 msgstr "เพิ่มช่องสำเร็จแล้ว"
 
-#: channel_core.py:864
-#: channel_core.py:867
+#: channel_core.py:865
+#: channel_core.py:868
 msgid "Channel deleted."
 msgstr "ลบช่องแล้ว"
 
@@ -311,40 +368,46 @@ msgstr "ลบช่องแล้ว"
 msgid "Channel name:"
 msgstr "ชื่อช่อง:"
 
-#: channel_core.py:754
+#: channel_core.py:755
 msgid "Channel pinned."
 msgstr "ปักหมุดช่องแล้ว"
 
-#: channel_core.py:1368
+#: channel_core.py:1369
 msgid "Channel saved."
 msgstr "บันทึกช่องแล้ว"
 
-#: channel_core.py:751
+#: channel_core.py:752
 msgid "Channel unpinned."
 msgstr "เลิกปักหมุดช่องแล้ว"
 
-#: channel_core.py:821
+#: channel_core.py:822
 msgid "Channel updated."
 msgstr "อัปเดตช่องแล้ว"
 
-#: channel_core.py:101
+#: channel_core.py:102
 msgid "Channel:"
 msgstr "ช่อง:"
 
-#: channel_core.py:1136
+#: channel_core.py:1137
 msgid "Checking for new videos..."
 msgstr "กำลังตรวจสอบวิดีโอใหม่..."
 
-#: Download_core.py:989
+#: Download_core.py:1387
 msgid "Checking interrupted downloads..."
 msgstr "กำลังตรวจสอบการดาวน์โหลดที่ถูกขัดจังหวะ..."
 
+#: video_history.py:52
+msgid "Clear &all"
+msgstr "ล้างทั้งหมด(&A)"
+
 #: downloadFail.py:150
 #: download_list.py:137
+#: video_history.py:127
+#: video_history.py:191
 msgid "Clear all"
 msgstr "ล้างทั้งหมด"
 
-#: channel_core.py:853
+#: channel_core.py:854
 msgid "Confirm Delete"
 msgstr "ยืนยันการลบ"
 
@@ -352,86 +415,106 @@ msgstr "ยืนยันการลบ"
 msgid "Confirm Download"
 msgstr "ยืนยันการดาวน์โหลด"
 
-#: channel_core.py:1348
+#: channel_core.py:1349
 msgid "Confirm Overwrite"
 msgstr "ยืนยันการเขียนทับ"
 
-#: channel_core.py:126
+#: channel_core.py:127
 msgid "Content type:"
 msgstr "ประเภทเนื้อหา:"
 
-#: Download_core.py:1369
-#: Download_core.py:1391
+#: Download_core.py:1826
+#: Download_core.py:1848
 msgid "Converting"
 msgstr "กำลังแปลง"
 
-#: Youtube_settings.py:583
-#: Youtube_settings.py:602
+#: Youtube_settings.py:626
+#: Youtube_settings.py:645
 msgid "Cookie export failed: {str}"
 msgstr "การส่งออกคุกกี้ล้มเหลว: {str}"
 
-#: Youtube_settings.py:593
+#: Youtube_settings.py:636
 msgid "Cookie export timed out"
 msgstr "การส่งออกคุกกี้หมดเวลา"
 
-#: Youtube_settings.py:286
+#: Youtube_settings.py:329
 msgid "Cookies &file:"
 msgstr "คุกกี้ &ไฟล์"
 
-#: Youtube_settings.py:625
+#: Youtube_settings.py:668
 msgid "Cookies exported successfully to {path}. Anti-blocking is now active."
 msgstr "ส่งออกคุกกี้ไปยัง {path} เรียบร้อยแล้ว ขณะนี้ระบบป้องกันการบล็อกทำงานอยู่"
 
-#: channel_core.py:1572
+#: channel_core.py:1573
 msgid "Copy URL"
 msgstr "คัดลอก URL"
 
-#: __init__.py:581
+#: addonCore.py:626
 #: playlist.py:415
-#: search.py:503
+#: search.py:504
 msgid "Copy video Shorten URL"
 msgstr "คัดลอก URL วิดีโอแบบย่อ"
 
-#: channel_core.py:1582
+#: channel_core.py:1583
 #: playlist.py:421
 msgid "Correct title now"
 msgstr "แก้ไขชื่อตอนนี้"
 
-#: channel_core.py:1640
+#: channel_core.py:1641
 #: playlist.py:438
 msgid "Correcting title for selected video..."
 msgstr "กำลังแก้ไขชื่อสำหรับวิดีโอที่เลือก..."
 
+#: adSkip.py:393
+msgid "Could not click the skip button."
+msgstr "ไม่สามารถคลิกปุ่มข้ามได้"
+
 #: playlist.py:455
-#: search.py:532
+#: search.py:533
 msgid "Could not create short URL"
 msgstr "ไม่สามารถสร้าง URL ย่อได้"
 
-#: __init__.py:633
+#: addonCore.py:680
 msgid "Could not create shortened URL"
 msgstr "ไม่สามารถสร้าง URL ย่อได้"
 
-#: Youtube_settings.py:567
+#: Youtube_settings.py:610
 msgid "Could not decrypt {browser}'s cookies (DPAPI decryption failed). This usually means yt-dlp needs updating to support this browser's newer cookie encryption. Try 'Update yt-dlp now' below, then export again, or export from Firefox instead, which does not use this encryption. If it still fails, use the manual cookies.txt method."
 msgstr "ไม่สามารถถอดรหัสคุกกี้ของ {browser} ได้ (การถอดรหัส DPAPI ล้มเหลว) โดยปกติหมายความว่าต้องอัปเดต yt-dlp เพื่อรองรับการเข้ารหัสคุกกี้แบบใหม่ของเบราว์เซอร์นี้ ลองเลือก 'อัปเดต yt-dlp ตอนนี้' ด้านล่างแล้วส่งออกอีกครั้ง หรือส่งออก1จาก Firefox แทนซึ่งไม่ได้ใช้การเข้ารหัสนี้ หากยังคงล้มเหลว ให้ใช้วิธี cookies.txt แบบกำหนดเอง"
 
-#: Youtube_settings.py:575
+#: Youtube_settings.py:618
 msgid "Could not decrypt {browser}'s cookies (DPAPI decryption failed). This usually means yt-dlp needs updating. Try 'Update yt-dlp now' below, then export again. If it still fails, use the manual cookies.txt method instead."
 msgstr "ไม่สามารถถอดรหัสคุกกี้ของ {browser} ได้ (การถอดรหัส DPAPI ล้มเหลว) โดยปกติหมายความว่าต้องอัปเดต yt-dlp ลองเลือก 'อัปเดต yt-dlp ตอนนี้' ด้านล่างแล้วส่งออกอีกครั้ง หากยังคงล้มเหลว ให้ใช้วิธี cookies.txt แบบกำหนดเองแทน"
 
-#: Trim.py:291
+#: update.py:255
+msgid "Could not download the update. Opening the releases page."
+msgstr "ไม่สามารถดาวน์โหลดการอัปเดตได้ กำลังเปิดหน้าเผยแพร่"
+
+#: Trim.py:293
 msgid "Could not open preview URL"
 msgstr "ไม่สามารถเปิด URL ตัวอย่างได้"
 
-#: Youtube_settings.py:549
+#: video_history.py:161
+msgid "Could not open the URL"
+msgstr "ไม่สามารถเปิด URL ได้"
+
+#: Youtube_settings.py:592
 msgid "Could not read the {browser} cookie database. Close {browser} completely and try exporting again."
 msgstr "ไม่สามารถอ่านฐานข้อมูลคุกกี้ของ {browser} ได้ ปิด {browser} ให้สนิทแล้วลองส่งออกอีกครั้ง"
 
-#: __init__.py:797
+#: addonCore.py:504
+msgid "Cycle MP3 quality (single tap), toggle download immediately (double tap), toggle playlist mode (triple tap)"
+msgstr "สลับคุณภาพ MP3 (แตะครั้งเดียว), สลับการดาวน์โหลดทันที (แตะสองครั้ง), สลับโหมดเพลย์ลิสต์ (แตะสามครั้ง)"
+
+#: addonCore.py:887
 msgid "Cycle MP3 quality settings"
 msgstr "วนลูปการตั้งค่าคุณภาพ MP3"
 
-#: channel_core.py:728
+#: video_history.py:41
+msgid "Date"
+msgstr "วันที่"
+
+#: channel_core.py:729
 #: downloadFail.py:137
 #: download_list.py:125
 msgid "Delete"
@@ -442,24 +525,25 @@ msgstr "ลบ"
 msgid "Delete selected"
 msgstr "ลบรายการที่เลือก"
 
-#: Youtube_settings.py:734
+#: Youtube_settings.py:781
 msgid "Deno updated successfully"
-msgstr "ติดตั้งส่วนขยาย 'Get cookies.txt' ใน Chrome หรือ Firefox"
+msgstr "อัปเดต Deno สำเร็จแล้ว"
 
-#: Youtube_settings.py:73
+#: Youtube_settings.py:66
 msgid "Destination folder"
 msgstr "โฟลเดอร์ปลายทาง"
 
 #: download_list.py:127
+#: video_history.py:119
 msgid "Download"
 msgstr "ดาวน์โหลด"
 
 #: channel_dialogs.py:141
-#: search.py:671
+#: search.py:672
 msgid "Download All Videos"
 msgstr "ดาวน์โหลดวิดีโอทั้งหมด"
 
-#: Youtube_settings.py:91
+#: Youtube_settings.py:84
 msgid "Download Behavior"
 msgstr "พฤติกรรมการดาวน์โหลด"
 
@@ -471,21 +555,21 @@ msgstr "ตัวจัดการการดาวน์โหลดล้ม
 msgid "Download List Manager - Absolute YouTube"
 msgstr "ตัวจัดการรายการดาวน์โหลด - Absolute YouTube"
 
-#: channel_core.py:1585
+#: channel_core.py:1586
 #: playlist.py:424
-#: search.py:509
+#: search.py:510
 msgid "Download MP3"
 msgstr "ดาวน์โหลด MP3"
 
-#: channel_core.py:1588
+#: channel_core.py:1589
 #: playlist.py:427
-#: search.py:512
+#: search.py:513
 msgid "Download MP4"
 msgstr "ดาวน์โหลด MP4"
 
-#: channel_core.py:1591
+#: channel_core.py:1592
 #: playlist.py:430
-#: search.py:515
+#: search.py:516
 msgid "Download WAV"
 msgstr "ดาวน์โหลด WAV"
 
@@ -498,55 +582,55 @@ msgstr "ดาวน์โหลดทั้งหมด"
 msgid "Download all {count} videos in this playlist?"
 msgstr "ดาวน์โหลดวิดีโอทั้งหมด {count} รายการในเพลย์ลิสต์นี้หรือไม่"
 
-#: Download_core.py:1591
+#: Download_core.py:2058
 msgid "Download complete"
 msgstr "ดาวน์โหลดเสร็จสิ้น"
 
-#: channel_core.py:1579
+#: channel_core.py:1580
 msgid "Download entire playlist"
 msgstr "ดาวน์โหลดเพลย์ลิสต์ทั้งหมด"
 
-#: __init__.py:587
+#: addonCore.py:632
 msgid "Download fail manager"
 msgstr "ตัวจัดการการดาวน์โหลดที่ล้มเหลว"
 
-#: __init__.py:589
+#: addonCore.py:634
 msgid "Download fail manager (no failed)"
 msgstr "ตัวจัดการการดาวน์โหลดที่ล้มเหลว (ไม่มีรายการที่ล้มเหลว)"
 
-#: Download_core.py:1681
+#: Download_core.py:2168
 msgid "Download failed"
 msgstr "ดาวน์โหลดไม่สำเร็จ"
 
-#: Download_core.py:1705
+#: Download_core.py:2192
 msgid "Download failed due to an error"
 msgstr "ดาวน์โหลดไม่สำเร็จเนื่องจากเกิดข้อผิดพลาด"
 
-#: Download_core.py:1693
+#: Download_core.py:2180
 msgid "Download failed due to timeout"
 msgstr "ดาวน์โหลดไม่สำเร็จเนื่องจากหมดเวลา"
 
-#: Download_core.py:1739
+#: Download_core.py:2226
 msgid "Download failed to start"
 msgstr "เริ่มต้นการดาวน์โหลดไม่สำเร็จ"
 
-#: Download_core.py:1656
+#: Download_core.py:2143
 msgid "Download failed: YouTube blocked this request. Try exporting cookies from your browser in the Anti-blocking settings."
 msgstr "ดาวน์โหลดไม่สำเร็จ: YouTube บล็อกคำขอนี้ ลองส่งออกคุกกี้จากเบราว์เซอร์ของคุณในการตั้งค่าป้องกันการบล็อก"
 
-#: Download_core.py:1679
+#: Download_core.py:2166
 msgid "Download failed: YouTube reports this video is unavailable"
-msgstr "เข้าสู่ระบบ YouTube ในเบราว์เซอร์ของคุณ"
+msgstr "ดาวน์โหลดล้มเหลว: YouTube รายงานว่าวิดีโอนี้ไม่พร้อมใช้งาน"
 
-#: Download_core.py:1669
+#: Download_core.py:2156
 msgid "Download failed: the downloaded JavaScript runtime isn't working. Try deleting the bin folder in your AbsoluteYoutube config directory so it re-downloads."
-msgstr "คลิกไอคอนส่วนขยายและส่งออกคุกกี้"
+msgstr "ดาวน์โหลดล้มเหลว: JavaScript runtime ที่ดาวน์โหลดไว้ไม่ทำงาน ลองลบโฟลเดอร์ bin ในไดเรกทอรีการกำหนดค่าของ AbsoluteYoutube เพื่อให้ดาวน์โหลดใหม่"
 
-#: Download_core.py:1677
+#: Download_core.py:2164
 msgid "Download failed: this may be because yt-dlp is outdated (current {current}, latest {latest}). Try updating yt-dlp in settings."
-msgstr "บันทึกเป็น cookies.txt และเลือกไฟล์ที่นี่"
+msgstr "ดาวน์โหลดล้มเหลว: อาจเป็นเพราะ yt-dlp ล้าสมัย (ปัจจุบัน {current}, ล่าสุด {latest}) ลองอัปเดต yt-dlp ในการตั้งค่า"
 
-#: Download_core.py:1672
+#: Download_core.py:2159
 msgid "Download failed: yt-dlp needs a JavaScript runtime, which this add-on is downloading automatically in the background. Please wait a moment and try again."
 msgstr "ดาวน์โหลดไม่สำเร็จ: yt-dlp ต้องการรันไทม์ JavaScript ซึ่งส่วนเสริมนี้กำลังดาวน์โหลดให้อัตโนมัติในเบื้องหลัง โปรดรอสักครู่แล้วลองอีกครั้ง"
 
@@ -554,28 +638,28 @@ msgstr "ดาวน์โหลดไม่สำเร็จ: yt-dlp ต้อ
 msgid "Download file"
 msgstr "ดาวน์โหลดไฟล์"
 
-#: search.py:619
+#: search.py:620
 msgid "Download folder does not exist."
 msgstr "ไม่พบโฟลเดอร์ดาวน์โหลด"
 
-#: channel_core.py:1620
-#: channel_core.py:1634
+#: channel_core.py:1621
+#: channel_core.py:1635
 #: playlist.py:467
 #: playlist.py:483
 msgid "Download function not available."
 msgstr "ฟังก์ชันการดาวน์โหลดไม่พร้อมใช้งาน"
 
-#: __init__.py:503
-msgid "Download immediately"
-msgstr "ดาวน์โหลดทันที"
-
-#: __init__.py:583
+#: addonCore.py:628
 msgid "Download list manager"
 msgstr "ตัวจัดการรายการดาวน์โหลด"
 
-#: __init__.py:457
+#: addonCore.py:438
 msgid "Download or queue video (single tap MP3, double tap MP4, triple tap WAV)"
 msgstr "ดาวน์โหลดหรือคิววิดีโอ (แตะครั้งเดียว MP3, แตะสองครั้ง MP4, แตะสามครั้ง WAV)"
+
+#: video_history.py:146
+msgid "Download requested for {count} item(s)"
+msgstr "ขอ Dดาวน์โหลดสำหรับ {count} รายการ"
 
 #: downloadFail.py:144
 #: download_list.py:132
@@ -590,12 +674,16 @@ msgstr "เริ่มดาวน์โหลดสำหรับ: {title}"
 msgid "Downloading thumbnail..."
 msgstr "กำลังดาวน์โหลดภาพย่อ..."
 
+#: update.py:244
+msgid "Downloading {name} {version}"
+msgstr "กำลังดาวน์โหลด {name} {version}"
+
 #: download_list.py:109
 msgid "Downloading..."
 msgstr "กำลังดาวน์โหลด..."
 
 #: downloadFail.py:71
-#: search.py:30
+#: search.py:31
 msgid "Duration"
 msgstr "ระยะเวลา"
 
@@ -603,27 +691,27 @@ msgstr "ระยะเวลา"
 msgid "Edit Channel"
 msgstr "แก้ไขช่อง"
 
-#: channel_core.py:117
+#: channel_core.py:118
 msgid "Edit channel"
 msgstr "แก้ไขช่อง"
 
-#: channel_core.py:725
+#: channel_core.py:726
 msgid "Edit channel..."
 msgstr "แก้ไขช่อง..."
 
-#: Youtube_settings.py:116
+#: Youtube_settings.py:114
 msgid "Enable &logging"
 msgstr "เปิดใช้งานการบันทึกประวัติการทำงาน &logging"
 
-#: Youtube_settings.py:101
+#: Youtube_settings.py:94
 msgid "Enable &playlist mode by default"
 msgstr "เปิดใช้งานโหมดเพลย์ลิสต์เป็นค่าเริ่มต้น &playlist mode by default"
 
-#: Trim.py:137
+#: Trim.py:139
 msgid "End time:"
 msgstr "เวลาสิ้นสุด:"
 
-#: search.py:96
+#: search.py:97
 msgid "Enter a search query."
 msgstr "ป้อนคำค้นหา"
 
@@ -635,83 +723,87 @@ msgstr "ข้อผิดพลาด"
 msgid "Error creating download folder"
 msgstr "เกิดข้อผิดพลาดในการสร้างโฟลเดอร์ดาวน์โหลด"
 
-#: channel_core.py:870
+#: channel_core.py:871
 msgid "Error deleting channel."
 msgstr "เกิดข้อผิดพลาดในการลบช่อง"
 
-#: __init__.py:618
+#: addonCore.py:665
 msgid "Error displaying context menu"
 msgstr "เกิดข้อผิดพลาดในการแสดงเมนูบริบท"
 
-#: __init__.py:301
+#: addonCore.py:275
 msgid "Error during auto-update of yt-dlp: {str}"
 msgstr "เกิดข้อผิดพลาดระหว่างการอัปเดต yt-dlp อัตโนมัติ: {str}"
 
-#: channel_core.py:1089
+#: channel_core.py:1090
 msgid "Error fetching channel: {str}"
 msgstr "เกิดข้อผิดพลาดในการดึงข้อมูลช่อง: {str}"
 
-#: __init__.py:192
+#: addonCore.py:147
 #: downloadFail.py:50
 msgid "Error importing core functions: {str}"
 msgstr "เกิดข้อผิดพลาดในการนำเข้าฟังก์ชันหลัก: {str}"
 
-#: __init__.py:739
+#: addonCore.py:814
 msgid "Error importing settings panel: {str}"
 msgstr "เกิดข้อผิดพลาดในการนำเข้าแผงการตั้งค่า: {str}"
 
-#: __init__.py:215
-#: __init__.py:277
+#: addonCore.py:170
+#: addonCore.py:251
 msgid "Error initializing AbsoluteYoutube: {str}"
 msgstr "เกิดข้อผิดพลาดในการเริ่มต้น AbsoluteYoutube: {str}"
 
-#: channel_core.py:904
+#: channel_core.py:905
 msgid "Error loading cache."
 msgstr "เกิดข้อผิดพลาดในการโหลดแคช"
 
-#: channel_core.py:534
-#: channel_core.py:796
+#: channel_core.py:535
+#: channel_core.py:797
 msgid "Error loading channel data."
 msgstr "เกิดข้อผิดพลาดในการโหลดข้อมูลช่อง"
 
-#: __init__.py:527
+#: addonCore.py:572
 msgid "Error opening channel dialog"
 msgstr "เกิดข้อผิดพลาดในการเปิดกล่องโต้ตอบช่อง"
 
-#: __init__.py:785
+#: addonCore.py:860
 msgid "Error opening channel/playlist list: {str}"
 msgstr "เกิดข้อผิดพลาดในการเปิดรายชื่อช่อง/เพลย์ลิสต์: {str}"
 
-#: __init__.py:654
-#: __init__.py:658
+#: addonCore.py:701
+#: addonCore.py:705
 msgid "Error opening download fail dialog: {str}"
 msgstr "เกิดข้อผิดพลาดในการเปิดกล่องโต้ตอบรายการดาวน์โหลดที่ล้มเหลว: {str}"
 
-#: __init__.py:567
+#: addonCore.py:612
 msgid "Error opening download list dialog: {str}"
 msgstr "เกิดข้อผิดพลาดในการเปิดกล่องโต้ตอบรายการดาวน์โหลด: {str}"
 
-#: __init__.py:493
+#: addonCore.py:474
 msgid "Error opening folder"
 msgstr "เกิดข้อผิดพลาดในการเปิดโฟลเดอร์"
 
-#: channel_core.py:1554
+#: channel_core.py:1555
 msgid "Error opening playlist."
 msgstr "เกิดข้อผิดพลาดในการเปิดเพลย์ลิสต์"
 
-#: __init__.py:724
+#: addonCore.py:799
 msgid "Error opening search dialog: {str}"
 msgstr "เกิดข้อผิดพลาดในการเปิดกล่องโต้ตอบการค้นหา: {str}"
 
-#: __init__.py:742
+#: addonCore.py:817
 msgid "Error opening settings dialog: {str}"
 msgstr "เกิดข้อผิดพลาดในการเปิดกล่องโต้ตอบการตั้งค่า: {str}"
 
-#: __init__.py:705
+#: addonCore.py:780
 msgid "Error opening trim dialog: {str}"
 msgstr "เกิดข้อผิดพลาดในการเปิดกล่องโต้ตอบตัดแต่ง: {str}"
 
-#: Download_core.py:1945
+#: addonCore.py:729
+msgid "Error opening video history: {str}"
+msgstr "ข้อผิดพลาดในการเปิดประวัติวิดีโอ: {str}"
+
+#: Download_core.py:2545
 msgid "Error processing URL"
 msgstr "เกิดข้อผิดพลาดในการประมวลผล URL"
 
@@ -719,19 +811,19 @@ msgstr "เกิดข้อผิดพลาดในการประมว
 msgid "Error starting download"
 msgstr "เกิดข้อผิดพลาดในการเริ่มดาวน์โหลด"
 
-#: channel_core.py:837
+#: channel_core.py:838
 msgid "Error updating channel URL."
 msgstr "เกิดข้อผิดพลาดในการอัปเดต URL ของช่อง"
 
-#: channel_core.py:824
+#: channel_core.py:825
 msgid "Error updating channel."
 msgstr "เกิดข้อผิดพลาดในการอัปเดตช่อง"
 
-#: __init__.py:572
+#: addonCore.py:617
 msgid "Error: Download list module not available"
 msgstr "ข้อผิดพลาด: โมดูลรายการดาวน์โหลดไม่พร้อมใช้งาน"
 
-#: __init__.py:644
+#: addonCore.py:691
 msgid "Error: DownloadFail module not available"
 msgstr "ข้อผิดพลาด: โมดูลดาวน์โหลดที่ล้มเหลวไม่พร้อมใช้งาน"
 
@@ -743,106 +835,111 @@ msgstr "ข้อผิดพลาด: ไม่สามารถบันท�
 msgid "Error: No snapshot file created."
 msgstr "ข้อผิดพลาด: ไม่มีการสร้างไฟล์ภาพหน้าจอ"
 
-#: __init__.py:729
+#: addonCore.py:804
 msgid "Error: Search module not available"
 msgstr "ข้อผิดพลาด: โมดูลการค้นหาไม่พร้อมใช้งาน"
 
-#: __init__.py:685
+#: addonCore.py:760
 msgid "Error: Snapshot module not available"
 msgstr "ข้อผิดพลาด: ไม่พบโมดูลสแนปชอต"
 
-#: __init__.py:694
+#: addonCore.py:769
 msgid "Error: Trim module not available"
 msgstr "ข้อผิดพลาด: ไม่พบโมดูลตัดต่อ"
 
-#: Download_core.py:1970
-#: Trim.py:324
+#: addonCore.py:716
+msgid "Error: Video history module not available"
+msgstr "ข้อผิดพลาด: ไม่พบโมดูลประวัติวิดีโอ"
+
+#: Download_core.py:2570
+#: Trim.py:326
 msgid "Error: ffmpeg.exe not found."
 msgstr "ข้อผิดพลาด: ไม่พบไฟล์ ffmpeg.exe"
 
-#: Trim.py:321
+#: Trim.py:323
 msgid "Error: yt-dlp.exe not found."
 msgstr "ข้อผิดพลาด: ไม่พบไฟล์ yt-dlp.exe"
 
-#: Youtube_settings.py:453
+#: Youtube_settings.py:496
 msgid "Export YouTube Cookies"
 msgstr "ส่งออกคุกกี้ YouTube"
 
-#: Youtube_settings.py:319
+#: Youtube_settings.py:362
 msgid "Export YouTube Cookies (Anti-Block)"
 msgstr "ส่งออกคุกกี้ YouTube (ป้องกันการบล็อก)"
 
-#: Youtube_settings.py:484
+#: Youtube_settings.py:527
 msgid "Exporting cookies from {browser}..."
 msgstr "กำลังส่งออกคุกกี้จาก {browser}..."
 
-#: Youtube_settings.py:758
+#: Youtube_settings.py:805
 msgid "Failed to create the specified folder. Please select a valid folder."
 msgstr "สร้างโฟลเดอร์ที่ระบุไม่สำเร็จ โปรดเลือกโฟลเดอร์ที่ถูกต้อง"
 
-#: __init__.py:591
+#: addonCore.py:638
 msgid "Favorite channel"
 msgstr "ช่องโปรด"
 
-#: channel_core.py:1276
+#: channel_core.py:1277
 msgid "Fetched {count} items total."
 msgstr "ดึงข้อมูลทั้งหมด {count} รายการแล้ว"
 
-#: __init__.py:772
+#: addonCore.py:847
 msgid "Fetching channel information..."
 msgstr "กำลังดึงข้อมูลช่อง..."
 
-#: channel_core.py:1355
+#: channel_core.py:1356
 msgid "Fetching channel items..."
 msgstr "กำลังดึงรายการของช่อง..."
 
-#: channel_core.py:1136
+#: channel_core.py:1137
 msgid "Fetching channel videos..."
 msgstr "กำลังดึงวิดีโอของช่อง..."
 
-#: Trim.py:148
+#: Trim.py:150
 #: channel_dialogs.py:148
-#: search.py:677
+#: search.py:678
 msgid "File Format"
 msgstr "รูปแบบไฟล์"
 
-#: Download_core.py:1975
+#: Download_core.py:2575
 msgid "File already exists. Skipping download."
 msgstr "มีไฟล์นี้อยู่แล้ว ข้ามการดาวน์โหลด"
 
-#: Download_core.py:1931
+#: Download_core.py:2531
 msgid "File exists"
 msgstr "มีไฟล์อยู่แล้ว"
 
-#: Youtube_settings.py:346
+#: Youtube_settings.py:389
 msgid "Force I&Pv4"
 msgstr "บังคับใช้ I&Pv4"
 
-#: Youtube_settings.py:351
+#: Youtube_settings.py:394
 msgid "Force I&Pv6"
 msgstr "บังคับใช้ I&Pv6"
 
 #: download_list.py:70
+#: video_history.py:40
 msgid "Format"
 msgstr "รูปแบบ"
 
-#: Download_core.py:891
+#: Download_core.py:1240
 msgid ""
 "Found {count} interrupted downloads\n"
-"Resume all?\n"
-"\n"
-"\n"
-msgstr "พบการดาวน์โหลดที่ค้างอยู่ {count} รายการ"
+"Resume all?"
+msgstr ""
+"พบการดาวน์โหลดที่ถูกขัดจังหวะ {count} รายการ\n"
+"ต้องการดำเนินการต่อทั้งหมดหรือไม่?"
 
-#: search.py:470
+#: search.py:471
 msgid "Found {count} videos for '{query}'."
-msgstr "พบบิดeo {count} รายการสำหรับ '{query}'"
+msgstr "พบวิดีโอ {count} รายการสำหรับ '{query}'"
 
-#: search.py:386
+#: search.py:387
 msgid "Found {} videos..."
 msgstr "กำลังค้นหาวิดีโอ {} รายการ..."
 
-#: Youtube_settings.py:210
+#: Youtube_settings.py:253
 msgid "Fragment &retries:"
 msgstr "จำนวนครั้งที่จะลองเชื่อมต่อใหม่ (&r):"
 
@@ -850,22 +947,22 @@ msgstr "จำนวนครั้งที่จะลองเชื่อม
 msgid "Full-size snapshot complete"
 msgstr "บันทึกภาพหน้าจอแบบเต็มขนาดเสร็จสมบูรณ์"
 
-#: channel_core.py:175
-#: search.py:133
+#: channel_core.py:176
+#: search.py:134
 msgid "Go"
 msgstr "ไป"
 
-#: channel_core.py:375
-#: search.py:188
+#: channel_core.py:376
+#: search.py:189
 msgid "Go to page of {}:"
 msgstr "ไปที่หน้าของ {}:"
 
-#: Youtube_settings.py:306
-#: Youtube_settings.py:431
+#: Youtube_settings.py:349
+#: Youtube_settings.py:474
 msgid "Google Chrome"
 msgstr "Google Chrome"
 
-#: Youtube_settings.py:415
+#: Youtube_settings.py:458
 msgid ""
 "How to get YouTube cookies:\n"
 "\n"
@@ -877,40 +974,49 @@ msgid ""
 "3. Click the extension icon and export cookies\n"
 "4. Save as cookies.txt and select it here\n"
 "\n"
-"Using cookies helps avoid blocks because YouTube sees you as a logged-in user.\n"
+"Using cookies helps avoid blocks because YouTube sees you as a logged-in user."
+msgstr ""
+"วิธีรับคุกกี้ YouTube:\n"
 "\n"
+"วิธีที่ 1 (อัตโนมัติ): ใช้ปุ่ม 'ส่งออกคุกกี้ YouTube (ป้องกันการบล็อก)' ด้านล่าง ปิดเบราว์เซอร์ของคุณก่อน จากนั้นกดปุ่มและเลือกเบราว์เซอร์ของคุณจากรายการ\n"
 "\n"
-msgstr "วิธีรับคุกกี้ YouTube:"
+"วิธีที่ 2 (ด้วยตนเอง):\n"
+"1. ติดตั้งส่วนขยาย 'Get cookies.txt' ใน Chrome หรือ Firefox\n"
+"2. ลงชื่อเข้าใช้ YouTube ในเบราว์เซอร์ของคุณ\n"
+"3. คลิกไอคอนส่วนขยายและส่งออกคุกกี้\n"
+"4. บันทึกเป็น cookies.txt และเลือกที่นี่\n"
+"\n"
+"การใช้คุกกี้ช่วยหลีกเลี่ยงการถูกบล็อกเพราะ YouTube จะมองว่าคุณเป็นผู้ใช้ที่เข้าสู่ระบบแล้ว"
 
-#: Youtube_settings.py:427
+#: Youtube_settings.py:470
 msgid "How to get cookies"
 msgstr "วิธีรับคุกกี้"
 
-#: Youtube_settings.py:294
+#: Youtube_settings.py:337
 msgid "How to get cookies?"
 msgstr "วิธีรับคุกกี้?"
 
-#: __init__.py:511
+#: addonCore.py:556
 msgid "Immediate download mode disabled"
 msgstr "ปิดใช้งานโหมดดาวน์โหลดทันที"
 
-#: __init__.py:509
+#: addonCore.py:554
 msgid "Immediate download mode enabled"
 msgstr "เปิดใช้งานโหมดดาวน์โหลดทันที"
 
-#: Trim.py:280
+#: Trim.py:282
 msgid "Invalid URL or start time"
 msgstr "URL หรือเวลาเริ่มต้นไม่ถูกต้อง"
 
-#: Trim.py:301
+#: Trim.py:303
 msgid "Invalid YouTube video URL"
 msgstr "URL วิดีโอ YouTube ไม่ถูกต้อง"
 
-#: __init__.py:515
+#: addonCore.py:560
 msgid "Invalid channel URL"
 msgstr "URL ช่องไม่ถูกต้อง"
 
-#: __init__.py:495
+#: addonCore.py:476
 msgid "Invalid download folder"
 msgstr "โฟลเดอร์ดาวน์โหลดไม่ถูกต้อง"
 
@@ -919,25 +1025,29 @@ msgstr "โฟลเดอร์ดาวน์โหลดไม่ถูกต
 msgid "Item deleted"
 msgstr "ลบรายการแล้ว"
 
-#: channel_core.py:1659
-#: search.py:557
+#: video_history.py:183
+msgid "Item removed"
+msgstr "ลบรายการแล้ว"
+
+#: channel_core.py:1660
+#: search.py:558
 msgid "Item removed."
 msgstr "เอา item ออกแล้ว"
 
-#: Youtube_settings.py:386
+#: Youtube_settings.py:429
 msgid "JavaScript Runtime (Deno)"
 msgstr "รันไทม์ JavaScript (Deno)"
 
-#: channel_core.py:66
+#: channel_core.py:67
 msgid "Live"
 msgstr "ถ่ายทอดสด"
 
-#: channel_core.py:898
+#: channel_core.py:899
 msgid "Loaded {count} videos from cache."
 msgstr "โหลดวิดีโอ {count} รายการจากแคช"
 
-#: channel_core.py:519
-#: channel_core.py:1120
+#: channel_core.py:520
+#: channel_core.py:1121
 msgid "Loaded {count} videos from {name}."
 msgstr "โหลดวิดีโอ {count} รายการจาก {name}"
 
@@ -949,40 +1059,40 @@ msgstr "โหลดวิดีโอ {count} รายการแล้ว"
 msgid "Loading playlist videos..."
 msgstr "กำลังโหลดวิดีโอในเพลย์ลิสต์..."
 
-#: Youtube_settings.py:120
+#: Youtube_settings.py:139
 msgid "MP3 &quality (kbps):"
 msgstr "MP3 และคุณภาพ (kbps):"
 
-#: Youtube_settings.py:306
-#: Youtube_settings.py:431
+#: Youtube_settings.py:349
+#: Youtube_settings.py:474
 msgid "Microsoft Edge"
 msgstr "Microsoft Edge"
 
-#: channel_core.py:720
+#: channel_core.py:721
 msgid "Move Down"
 msgstr "ย้ายลง"
 
-#: channel_core.py:716
+#: channel_core.py:717
 msgid "Move Up"
 msgstr "ย้ายขึ้น"
 
-#: Youtube_settings.py:306
-#: Youtube_settings.py:431
+#: Youtube_settings.py:349
+#: Youtube_settings.py:474
 msgid "Mozilla Firefox"
 msgstr "Mozilla Firefox"
 
-#: channel_core.py:166
+#: channel_core.py:167
 #: playlist.py:79
-#: search.py:124
+#: search.py:125
 msgid "NextPage"
 msgstr "หน้าถัดไป"
 
-#: __init__.py:402
-#: __init__.py:623
+#: addonCore.py:383
+#: addonCore.py:670
 msgid "No YouTube URL found"
 msgstr "ไม่พบ URL ของ YouTube"
 
-#: channel_core.py:246
+#: channel_core.py:247
 msgid "No channel selected."
 msgstr "ยังไม่ได้เลือกช่อง"
 
@@ -991,7 +1101,7 @@ msgstr "ยังไม่ได้เลือกช่อง"
 msgid "No downloads could be started"
 msgstr "ไม่สามารถเริ่มการดาวน์โหลดใดๆ ได้"
 
-#: __init__.py:640
+#: addonCore.py:687
 msgid "No failed downloads"
 msgstr "ไม่มีรายการดาวน์โหลดที่ล้มเหลว"
 
@@ -1003,11 +1113,15 @@ msgstr "ไม่มีรายการดาวน์โหลดที่ล
 msgid "No failed downloads to process"
 msgstr "ไม่มีรายการดาวน์โหลดที่ล้มเหลวให้ดำเนินการ"
 
-#: channel_core.py:1085
+#: video_history.py:187
+msgid "No history to clear"
+msgstr "ไม่มีประวัติให้ล้าง"
+
+#: channel_core.py:1086
 msgid "No items found for this URL."
 msgstr "ไม่พบรายการสำหรับ URL นี้"
 
-#: channel_core.py:1280
+#: channel_core.py:1281
 msgid "No items found."
 msgstr "ไม่พบรายการ"
 
@@ -1015,6 +1129,10 @@ msgstr "ไม่พบรายการ"
 #: downloadFail.py:282
 #: download_list.py:196
 #: download_list.py:209
+#: video_history.py:135
+#: video_history.py:151
+#: video_history.py:166
+#: video_history.py:179
 msgid "No items selected"
 msgstr "ไม่ได้เลือกรายการ"
 
@@ -1027,78 +1145,105 @@ msgstr "ไม่มีรายการดาวน์โหลดที่ร
 msgid "No pending downloads to clear"
 msgstr "ไม่มีรายการดาวน์โหลดค้างที่ต้องล้าง"
 
-#: search.py:467
+#: search.py:468
 msgid "No results found for '{query}'."
 msgstr "ไม่พบผลลัพธ์สำหรับ '{query}'"
 
-#: search.py:468
+#: search.py:469
 msgid "No results found."
 msgstr "ไม่พบผลลัพธ์"
 
-#: channel_core.py:86
+#: channel_core.py:87
 msgid "No saved data for this channel."
 msgstr "ไม่มีข้อมูลที่บันทึกไว้สำหรับช่องนี้"
 
-#: channel_core.py:228
+#: channel_core.py:229
 msgid "No saved data for this content type yet."
 msgstr "ยังไม่มีข้อมูลที่บันทึกไว้สำหรับประเภทเนื้อหานี้"
 
-#: Download_core.py:1978
+#: adSkip.py:395
+msgid "No skip button found."
+msgstr "ไม่พบปุ่มข้าม"
+
+#: Download_core.py:2578
 msgid "No valid multimedia link found."
 msgstr "ไม่พบลิงก์มัลติมีเดียที่ถูกต้อง"
 
-#: channel_core.py:272
+#: addonCore.py:719
+msgid "No video history yet"
+msgstr "ยังไม่มีประวัติวิดีโอ"
+
+#: channel_core.py:273
 #: playlist.py:471
-#: search.py:561
+#: search.py:562
 msgid "No videos to download."
 msgstr "ไม่มีวิดีโอให้ดาวน์โหลด"
 
-#: __init__.py:626
+#: addonCore.py:673
 msgid "Not a YouTube URL"
 msgstr "ไม่ใช่ URL ของ YouTube"
 
-#: Download_core.py:2011
+#: Download_core.py:2611
 msgid "Not a YouTube video or valid multimedia link"
 msgstr "ไม่ใช่วิดีโอ YouTube หรือลิงก์มัลติมีเดียที่ถูกต้อง"
 
-#: __init__.py:470
+#: video_history.py:120
+msgid "Open URL"
+msgstr "เปิด URL"
+
+#: addonCore.py:451
 msgid "Open context menu (single tap), open download folder (double tap), open search dialog (triple tap)"
 msgstr "เปิดเมนูบริบท (แตะครั้งเดียว), เปิดโฟลเดอร์ดาวน์โหลด (แตะสองครั้ง), เปิดกล่องโต้ตอบค้นหา (แตะสามครั้ง)"
 
-#: channel_core.py:1575
+#: addonCore.py:516
+msgid "Open download list (single tap), download fail manager (double tap), video history report (triple tap)"
+msgstr "เปิดรายการดาวน์โหลด (แตะครั้งเดียว), ตัวจัดการการดาวน์โหลดที่ล้มเหลว (แตะสองครั้ง), รายงานประวัติวิดีโอ (แตะสามครั้ง)"
+
+#: channel_core.py:1576
 msgid "Open in browser"
 msgstr "เปิดในเบราว์เซอร์"
 
-#: Youtube_settings.py:306
-#: Youtube_settings.py:431
+#: Youtube_settings.py:349
+#: Youtube_settings.py:474
 msgid "Opera"
 msgstr "Opera"
 
-#: channel_core.py:266
-#: search.py:225
+#: channel_core.py:267
+#: search.py:226
 msgid "Page number out of range (1-{})."
 msgstr "หมายเลขหน้าอยู่นอกช่วง (1-{})."
 
-#: channel_core.py:371
+#: channel_core.py:372
 #: playlist.py:123
-#: search.py:184
+#: search.py:185
 msgid "Page {}/{}"
 msgstr "หน้า {}/{}"
 
-#: channel_core.py:712
+#: channel_core.py:713
+#: video_history.py:122
 msgid "Pin"
 msgstr "ปักหมุด"
 
+#: video_history.py:173
+msgid "Pin state changed for {count} items"
+msgstr "เปลี่ยนสถานะการปักหมุดสำหรับ {count} รายการแล้ว"
+
+#: video_history.py:42
+#: video_history.py:83
+#: video_history.py:171
+msgid "Pinned"
+msgstr "ปักหมุดแล้ว"
+
 #: playlist.py:418
-#: search.py:506
+#: search.py:507
 msgid "Play on YouTube"
 msgstr "เล่นบน YouTube"
 
-#: __init__.py:383
+#: addonCore.py:364
 msgid "Playlist"
 msgstr "เพลย์ลิสต์"
 
-#: channel_core.py:1618
+#: channel_core.py:1619
 #: playlist.py:481
 msgid "Playlist download started."
 msgstr "เริ่มดาวน์โหลดเพลย์ลิสต์แล้ว"
@@ -1107,15 +1252,15 @@ msgstr "เริ่มดาวน์โหลดเพลย์ลิสต์
 msgid "Playlist download started: {title}"
 msgstr "เริ่มดาวน์โหลดเพลย์ลิสต์แล้ว: {title}"
 
-#: __init__.py:795
+#: addonCore.py:885
 msgid "Playlist mode disabled"
 msgstr "ปิดใช้งานโหมดเพลย์ลิสต์แล้ว"
 
-#: __init__.py:795
+#: addonCore.py:885
 msgid "Playlist mode enabled"
 msgstr "เปิดใช้งานโหมดเพลย์ลิสต์แล้ว"
 
-#: channel_core.py:68
+#: channel_core.py:69
 msgid "Playlists"
 msgstr "เพลย์ลิสต์"
 
@@ -1129,26 +1274,26 @@ msgstr "โปรดป้อน URL ช่อง"
 msgid "Please enter a channel name."
 msgstr "โปรดป้อนชื่อช่อง"
 
-#: search.py:230
+#: search.py:231
 msgid "Please enter a search term."
 msgstr "โปรดป้อนคำค้นหา"
 
-#: channel_core.py:260
-#: search.py:219
+#: channel_core.py:261
+#: search.py:220
 msgid "Please enter a valid number."
 msgstr "โปรดป้อนตัวเลขที่ถูกต้อง"
 
-#: channel_core.py:67
+#: channel_core.py:68
 msgid "Podcasts"
 msgstr "พอดแคสต์"
 
-#: Trim.py:143
+#: Trim.py:145
 msgid "Preview start"
 msgstr "เริ่มตัวอย่าง"
 
-#: channel_core.py:162
+#: channel_core.py:163
 #: playlist.py:75
-#: search.py:120
+#: search.py:121
 msgid "PreviousPage"
 msgstr "หน้าก่อนหน้า"
 
@@ -1156,86 +1301,126 @@ msgstr "หน้าก่อนหน้า"
 msgid "Processing snapshot..."
 msgstr "กำลังประมวลผลสแนปชอต..."
 
-#: Youtube_settings.py:340
+#: Youtube_settings.py:383
 msgid "Proxy &URL:"
 msgstr "พร็อกซี &URL:"
 
-#: channel_core.py:143
+#: Youtube_settings.py:135
+msgid "Read YouTube subtitles automatically (Chrome, Edge, Firefox)"
+msgstr "อ่านคำบรรยาย YouTube โดยอัตโนมัติ (Chrome, Edge, Firefox)"
+
+#: channel_core.py:144
 msgid "Ready"
 msgstr "พร้อม"
 
-#: channel_core.py:1594
-#: search.py:519
+#: video_history.py:121
+msgid "Remove"
+msgstr "ลบ"
+
+#: video_history.py:190
+msgid "Remove all items from the video history?"
+msgstr "ต้องการลบรายการทั้งหมดออกจากประวัติวิดีโอหรือไม่?"
+
+#: channel_core.py:1595
+#: search.py:520
 msgid "Remove from list"
 msgstr "เอาออกจากรายการ"
 
-#: Youtube_settings.py:360
+#: Youtube_settings.py:403
 msgid "Reset to &safe settings (recommended if blocked)"
 msgstr "รีเซ็ตเป็นค่าที่ปลอดภัย (แนะนำหากถูกบล็อก) (&S)"
 
-#: Youtube_settings.py:645
+#: Youtube_settings.py:688
 msgid "Reset to safe settings. Remember to use cookies for best results."
 msgstr "รีเซ็ตเป็นค่าที่ปลอดภัย โปรดจำไว้ว่าต้องใช้คุกกี้เพื่อให้ได้ผลลัพธ์ที่ดีที่สุด"
 
-#: Download_core.py:892
+#: Download_core.py:1202
 msgid "Resume downloads"
 msgstr "ดำเนินการดาวน์โหลดต่อ"
 
-#: Youtube_settings.py:111
+#: Youtube_settings.py:109
 msgid "Resume interrupted downloads on restart"
 msgstr "ดำเนินการดาวน์โหลดที่ถูกขัดจังหวะต่อเมื่อเริ่มการทำงานใหม่"
 
-#: search.py:87
+#: addonCore.py:865
+msgid "Save description (single tap), save subtitles (double tap), read YouTube subtitles automatically (triple tap): toggle each option"
+msgstr "บันทึกคำอธิบาย (แตะครั้งเดียว), บันทึกคำบรรยาย (แตะสองครั้ง), อ่านคำบรรยาย YouTube อัตโนมัติ (แตะสามครั้ง): สลับแต่ละตัวเลือก"
+
+#: addonCore.py:871
+msgid "Save description disabled"
+msgstr "ปิดการบันทึกคำอธิบายแล้ว"
+
+#: addonCore.py:871
+msgid "Save description enabled"
+msgstr "เปิดการบันทึกคำอธิบายแล้ว"
+
+#: Youtube_settings.py:124
+msgid "Save subtitles as a text file"
+msgstr "บันทึกคำบรรยายเป็นไฟล์ข้อความ"
+
+#: addonCore.py:873
+msgid "Save subtitles disabled"
+msgstr "ปิดการบันทึกคำบรรยายแล้ว"
+
+#: addonCore.py:873
+msgid "Save subtitles enabled"
+msgstr "เปิดการบันทึกคำบรรยายแล้ว"
+
+#: Youtube_settings.py:119
+msgid "Save video description as a text file"
+msgstr "บันทึกคำอธิบายวิดีโอเป็นไฟล์ข้อความ"
+
+#: search.py:88
 msgid "Search"
 msgstr "ค้นหา"
 
-#: search.py:53
+#: search.py:54
 msgid "Search YouTube"
 msgstr "ค้นหาบน YouTube"
 
-#: search.py:84
+#: search.py:85
 msgid "Search YouTube:"
 msgstr "ค้นหาบน YouTube:"
 
-#: __init__.py:597
+#: addonCore.py:644
 msgid "Search Youtube"
 msgstr "ค้นหาบน Youtube"
 
-#: search.py:237
+#: search.py:238
 msgid "Search already in progress."
 msgstr "กำลังดำเนินการค้นหาอยู่แล้ว"
 
-#: search.py:472
+#: search.py:473
 msgid "Search completed."
 msgstr "การค้นหาเสร็จสิ้น"
 
-#: search.py:481
+#: search.py:482
 msgid "Search failed."
 msgstr "การค้นหาล้มเหลว"
 
-#: search.py:480
+#: search.py:481
 msgid "Search failed: {error}"
 msgstr "การค้นหาล้มเหลว: {error}"
 
-#: channel_core.py:136
+#: channel_core.py:137
 msgid "Search:"
 msgstr "ค้นหา:"
 
-#: search.py:266
+#: search.py:267
 msgid "Searching..."
 msgstr "กำลังค้นหา..."
 
-#: Youtube_settings.py:77
+#: Youtube_settings.py:70
 msgid "Select a directory"
 msgstr "เลือกไดเรกทอรี"
 
-#: Youtube_settings.py:448
+#: Youtube_settings.py:491
 msgid ""
 "Select the browser you are currently logged into YouTube with.\n"
-"Close that browser first if possible -- yt-dlp usually cannot read its cookie database while the browser is still running.\n"
-"\n"
-"\n"
-msgstr "เลือกเบราว์เซอร์ที่คุณใช้เข้าสู่ระบบ YouTube อยู่ในขณะนี้"
+"Close that browser first if possible -- yt-dlp usually cannot read its cookie database while the browser is still running."
+msgstr ""
+"เลือกเบราว์เซอร์ที่คุณใช้เข้าสู่ระบบ YouTube อยู่ในขณะนี้\n"
+"หากเป็นไปได้ ให้ปิดเบราว์เซอร์นั้นก่อน เนื่องจากปกติ yt-dlp จะไม่สามารถอ่านฐานข้อมูลคุกกี้ได้ในขณะที่เบราว์เซอร์ยังทำงานอยู่"
 
 #: download_list.py:216
 msgid "Selected item(s) already downloading"
@@ -1250,32 +1435,48 @@ msgstr "ลบรายการที่เลือกแล้ว"
 msgid "Selected items moved to the front of the download queue"
 msgstr "ย้ายรายการที่เลือกไปที่ด้านหน้าของคิวการดาวน์โหลด"
 
-#: __init__.py:631
-#: channel_core.py:1607
+#: video_history.py:183
+msgid "Selected items removed"
+msgstr "ลบรายการที่เลือกแล้ว"
+
+#: addonCore.py:678
+#: channel_core.py:1608
 #: playlist.py:453
-#: search.py:530
+#: search.py:531
 msgid "Short URL copied to clipboard"
 msgstr "คัดลอก URL ย่อไปยังคลิปบอร์ดแล้ว"
 
-#: channel_core.py:65
+#: channel_core.py:66
 msgid "Shorts"
 msgstr "ช็อตส์"
 
-#: channel_core.py:154
+#: channel_core.py:155
 #: playlist.py:67
-#: search.py:111
+#: search.py:112
 msgid "Show items:"
 msgstr "แสดงรายการ:"
 
-#: Youtube_settings.py:217
+#: Youtube_settings.py:260
 msgid "Skip &unavailable fragments"
 msgstr "ข้ามส่วนที่ใช้งานไม่ได้"
 
-#: Youtube_settings.py:106
+#: Youtube_settings.py:168
+msgid "Skip YouTube a&ds automatically (Z skips the ad that is playing)"
+msgstr "ข้ามโฆษณา YouTube อัตโนมัติ (Z เพื่อข้ามโฆษณาที่กำลังเล่นอยู่)"
+
+#: Youtube_settings.py:176
+msgid "Skip button te&xt for other YouTube languages, comma separated (for example {example}):"
+msgstr "ข้อความปุ่มข้า&มสำหรับภาษาอื่นของ YouTube คั่นด้วยจุลภาค (ตัวอย่างเช่น {example}):"
+
+#: Youtube_settings.py:104
 msgid "Skip existing files"
 msgstr "ข้ามไฟล์ที่มีอยู่แล้ว"
 
-#: __init__.py:594
+#: addonCore.py:543
+msgid "Skip the YouTube ad that is playing (Z by default on YouTube pages)"
+msgstr "ข้ามโฆษณา YouTube ที่กำลังเล่นอยู่ (ค่าเริ่มต้นคือ Z บนหน้า YouTube)"
+
+#: addonCore.py:641
 msgid "Snapshot"
 msgstr "ภาพถ่ายหน้าจอ"
 
@@ -1283,29 +1484,29 @@ msgstr "ภาพถ่ายหน้าจอ"
 msgid "Snapshot file already exists"
 msgstr "ไฟล์ภาพถ่ายหน้าจอมีอยู่แล้ว"
 
-#: Youtube_settings.py:224
+#: Youtube_settings.py:267
 msgid "Sound && Status Announcements"
 msgstr "เสียงและการประกาศสถานะ"
 
-#: Youtube_settings.py:148
+#: Youtube_settings.py:191
 msgid "Speed && Connections"
 msgstr "ความเร็วและการเชื่อมต่อ"
 
-#: Trim.py:171
+#: Trim.py:173
 #: channel_dialogs.py:167
-#: search.py:688
+#: search.py:689
 msgid "Start download"
 msgstr "เริ่มดาวน์โหลด"
 
-#: Youtube_settings.py:96
+#: Youtube_settings.py:89
 msgid "Start download immediately (NVDA+Y)"
 msgstr "เริ่มดาวน์โหลดทันที (NVDA+Y)"
 
-#: Trim.py:311
+#: Trim.py:313
 msgid "Start time must be less than end time"
 msgstr "เวลาเริ่มต้นต้องน้อยกว่าเวลาสิ้นสุด"
 
-#: Trim.py:136
+#: Trim.py:138
 msgid "Start time:"
 msgstr "เวลาเริ่มต้น:"
 
@@ -1314,7 +1515,7 @@ msgstr "เวลาเริ่มต้น:"
 msgid "Started {count} download(s)"
 msgstr "เริ่มต้นดาวน์โหลด {count} รายการ"
 
-#: __init__.py:431
+#: addonCore.py:412
 msgid "Starting download: {format} - {title}"
 msgstr "กำลังเริ่มดาวน์โหลด: {format} - {title}"
 
@@ -1322,7 +1523,7 @@ msgstr "กำลังเริ่มดาวน์โหลด: {format} - {t
 msgid "Starting download: {title}"
 msgstr "เริ่มดาวน์โหลด: {title}"
 
-#: Download_core.py:1201
+#: Download_core.py:1639
 msgid "Starting next download from queue: {title}"
 msgstr "กำลังเริ่มดาวน์โหลดรายการถัดไปจากคิว: {title}"
 
@@ -1334,15 +1535,23 @@ msgstr "กำลังเริ่มดาวน์โหลด {count} รา
 msgid "Status"
 msgstr "สถานะ"
 
+#: Youtube_settings.py:129
+msgid "Subtitle languages, comma separated (for example th,en):"
+msgstr "ภาษาคำบรรยาย คั่นด้วยจุลภาค (ตัวอย่างเช่น th,en):"
+
+#: video_history.py:155
+msgid "This item has no web address"
+msgstr "รายการนี้ไม่มีที่อยู่เว็บไซต์"
+
 #: download_list.py:171
 msgid "This item is already downloading"
 msgstr "รายการนี้กำลังดาวน์โหลดอยู่แล้ว"
 
-#: Download_core.py:1654
+#: Download_core.py:2141
 msgid "This livestream hasn't started yet. It starts in {time}."
 msgstr "สตรีมสดนี้ยังไม่เริ่มต้น จะเริ่มใน {time}"
 
-#: Download_core.py:1652
+#: Download_core.py:2139
 msgid "This video hasn't premiered yet. It starts in {time}."
 msgstr "วิดีโอนี้ยังไม่รอบีมียร์ จะเริ่มใน {time}"
 
@@ -1350,140 +1559,164 @@ msgstr "วิดีโอนี้ยังไม่รอบีมียร์
 msgid "Title"
 msgstr "ชื่อเรื่อง"
 
-#: channel_core.py:1648
+#: channel_core.py:1649
 #: playlist.py:443
 msgid "Title correction completed and locked."
 msgstr "การแก้ไขชื่อเรื่องเสร็จสมบูรณ์และถูกล็อกแล้ว"
 
-#: channel_core.py:579
+#: channel_core.py:580
 msgid "Title correction completed for {count} videos."
 msgstr "การแก้ไขชื่อเรื่องเสร็จสมบูรณ์สำหรับ {count} วิดีโอ"
 
-#: channel_core.py:1650
+#: channel_core.py:1651
 #: playlist.py:445
 msgid "Title correction failed."
 msgstr "การแก้ไขชื่อเรื่องล้มเหลว"
 
-#: __init__.py:790
+#: addonCore.py:548
+msgid "Toggle download immediately"
+msgstr "สลับการดาวน์โหลดทันที"
+
+#: addonCore.py:880
 msgid "Toggle playlist mode"
 msgstr "สลับโหมดเพลย์ลิสต์"
 
-#: __init__.py:595
+#: addonCore.py:642
 msgid "Trim setting"
 msgstr "การตั้งค่าการตัดต่อ"
 
-#: Trim.py:327
+#: Trim.py:329
 msgid "Trimming and downloading {format}..."
 msgstr "กำลังตัดต่อและดาวน์โหลด {format}..."
 
-#: Trim.py:129
+#: Trim.py:131
 #: downloadFail.py:72
+#: video_history.py:43
 msgid "URL"
 msgstr "URL"
 
-#: channel_core.py:1610
+#: channel_core.py:1611
 msgid "URL copied to clipboard"
 msgstr "คัดลอก URL ไปยังคลิปบอร์ดแล้ว"
 
-#: Trim.py:296
+#: Trim.py:298
 msgid "URL is required"
 msgstr "จำเป็นต้องมี URL"
 
-#: Download_core.py:1919
+#: Download_core.py:2516
 msgid "URL not found"
 msgstr "ไม่พบ URL"
 
-#: Download_core.py:1057
-#: __init__.py:425
+#: Download_core.py:1494
+#: addonCore.py:406
 #: downloadFail.py:110
 #: downloadFail.py:111
 #: downloadFail.py:112
 #: download_list.py:106
+#: video_history.py:80
 msgid "Unknown"
 msgstr "ไม่รู้จัก"
 
-#: channel_core.py:712
+#: channel_core.py:713
+#: video_history.py:122
 msgid "Unpin"
 msgstr "เลิกปักหมุด"
 
-#: Youtube_settings.py:391
+#: video_history.py:171
+msgid "Unpinned"
+msgstr "เลิกปักหมุดแล้ว"
+
+#: Youtube_settings.py:434
 msgid "Update Deno now"
 msgstr "อัปเดต Deno ตอนนี้"
 
-#: Youtube_settings.py:723
-#: Youtube_settings.py:738
-#: __init__.py:310
+#: Youtube_settings.py:770
+#: Youtube_settings.py:785
+#: addonCore.py:284
 msgid "Update failed: {str}"
 msgstr "อัปเดตไม่สำเร็จ: {str}"
 
-#: Youtube_settings.py:380
-#: Youtube_settings.py:395
+#: Youtube_settings.py:423
+#: Youtube_settings.py:438
 msgid "Update status: Idle"
 msgstr "สถานะการอัปเดต: ว่าง"
 
-#: Youtube_settings.py:722
-#: Youtube_settings.py:737
+#: Youtube_settings.py:769
+#: Youtube_settings.py:784
 msgid "Update status: Update failed: {str}"
 msgstr "สถานะการอัปเดต: อัปเดตไม่สำเร็จ: {str}"
 
-#: Youtube_settings.py:718
-#: Youtube_settings.py:733
+#: Youtube_settings.py:765
+#: Youtube_settings.py:780
 msgid "Update status: Update successful"
 msgstr "สถานะการอัปเดต: อัปเดตสำเร็จแล้ว"
 
-#: Youtube_settings.py:707
-#: Youtube_settings.py:730
+#: Youtube_settings.py:754
+#: Youtube_settings.py:777
 msgid "Update status: Updating..."
 msgstr "สถานะการอัปเดต: กำลังอัปเดต..."
 
-#: Youtube_settings.py:376
+#: Youtube_settings.py:419
 msgid "Update yt-dlp now"
 msgstr "อัปเดต yt-dlp เดี๋ยวนี้"
 
-#: Youtube_settings.py:731
+#: Youtube_settings.py:778
 msgid "Updating Deno..."
 msgstr "กำลังอัปเดต Deno..."
 
-#: Youtube_settings.py:708
-#: __init__.py:305
+#: Youtube_settings.py:755
+#: addonCore.py:279
 msgid "Updating yt-dlp..."
 msgstr "กำลังอัปเดต yt-dlp..."
 
-#: Youtube_settings.py:281
+#: Youtube_settings.py:324
 msgid "Use &cookies (recommended to avoid block)"
 msgstr "ใช้คุกกี้ (&c) (แนะนำเพื่อหลีกเลี่ยงการถูกบล็อก)"
 
-#: Youtube_settings.py:324
+#: Youtube_settings.py:367
 msgid "Use &custom user agent"
 msgstr "ใช้ยูสเซอร์แอนเจนต์กำหนดเอง (&c)"
 
-#: Youtube_settings.py:335
+#: Youtube_settings.py:378
 msgid "Use &proxy"
 msgstr "ใช้พร็อกซี่ (&p)"
 
-#: Youtube_settings.py:153
+#: Youtube_settings.py:196
 msgid "Use download section"
 msgstr "ใช้ส่วนดาวน์โหลด"
 
-#: Youtube_settings.py:329
+#: Youtube_settings.py:372
 msgid "User &agent:"
 msgstr "ยูสเซอร์แอนเจนต์ (&a):"
 
+#: addonCore.py:636
+msgid "Video History Report"
+msgstr "รายงานประวัติวิดีโอ"
+
+#: video_history.py:30
+msgid "Video History Report - Absolute YouTube"
+msgstr "รายงานประวัติวิดีโอ - YouTube แบบสมบูรณ์"
+
 #: downloadFail.py:70
 #: download_list.py:69
-#: search.py:29
+#: search.py:30
+#: video_history.py:39
 msgid "Video Title"
 msgstr "ชื่อวิดีโอ"
 
-#: Trim.py:141
+#: Trim.py:143
 msgid "Video duration: unknown; Overall period: 0 seconds"
 msgstr "ระยะเวลาวิดีโอ: ไม่ทราบ; ระยะเวลารวม: 0 วินาที"
 
-#: Trim.py:254
+#: Trim.py:256
 msgid "Video duration: {duration}; Overall period: {period} seconds"
 msgstr "ระยะเวลาวิดีโอ: {duration}; ระยะเวลารวม: {period} วินาที"
 
-#: channel_core.py:64
+#: video_history.py:199
+msgid "Video history cleared"
+msgstr "ล้างประวัติวิดีโอแล้ว"
+
+#: channel_core.py:65
 msgid "Videos"
 msgstr "วิดีโอ"
 
@@ -1495,86 +1728,103 @@ msgstr "วิดีโอใน {title}"
 msgid "Waiting"
 msgstr "กำลังรอ"
 
-#: __init__.py:677
-#: __init__.py:690
+#: addonCore.py:752
+#: addonCore.py:765
 msgid "You must be on a YouTube page to use this feature"
 msgstr "คุณต้องอยู่บนหน้า YouTube จึงจะใช้คุณสมบัตินี้ได้"
 
-#: channel_core.py:31
+#: Youtube_settings.py:163
+msgid "YouTube ad skipping"
+msgstr "การข้ามโฆษณา YouTube"
+
+#: channel_core.py:32
 msgid "Your favorite channel"
 msgstr "ช่องโปรดของคุณ"
 
-#: Trim.py:253
+#: Trim.py:255
 msgid "invalid"
 msgstr "ไม่ถูกต้อง"
 
-#: Trim.py:249
+#: Trim.py:251
 msgid "invalid (negative)"
 msgstr "ไม่ถูกต้อง (ค่าติดลบ)"
 
-#: search.py:47
+#: search.py:48
 msgid "loading..."
 msgstr "กำลังโหลด..."
 
-#: Trim.py:243
+#: Trim.py:245
 msgid "unknown"
 msgstr "ไม่ทราบ"
 
-#: Youtube_settings.py:582
+#: Youtube_settings.py:625
 msgid "unknown error"
 msgstr "เกิดข้อผิดพลาดที่ไม่รู้จัก"
 
-#: Youtube_settings.py:366
+#: Youtube_settings.py:409
 msgid "yt-dlp Update"
 msgstr "อัปเดต yt-dlp"
 
-#: Youtube_settings.py:719
-#: __init__.py:307
+#: Youtube_settings.py:766
+#: addonCore.py:281
 msgid "yt-dlp updated successfully"
 msgstr "อัปเดต yt-dlp สำเร็จแล้ว"
 
-#: Download_core.py:1948
-#: Youtube_settings.py:464
+#: Download_core.py:2548
+#: Youtube_settings.py:507
 msgid "yt-dlp.exe missing"
 msgstr "ไม่พบไฟล์ yt-dlp.exe"
 
-#: channel_core.py:993
-#: search.py:241
+#: channel_core.py:994
+#: search.py:242
 msgid "yt-dlp.exe not found."
 msgstr "ไม่พบ yt-dlp.exe"
 
-#: Youtube_settings.py:470
+#: Youtube_settings.py:513
 msgid ""
 "{browser} appears to still be running. The cookie database is usually locked while the browser is open, so the export will likely fail with a database error.\n"
 "\n"
-"Close {browser} completely, then click OK to continue anyway or Cancel to stop and close it first.\n"
+"Close {browser} completely, then click OK to continue anyway or Cancel to stop and close it first."
+msgstr ""
+"ดูเหมือนว่า {browser} ยังคงทำงานอยู่ ปกติฐานข้อมูลคุกกี้จะถูกล็อกไว้ในขณะที่เปิดเบราว์เซอร์ ดังนั้นการส่งออกอาจล้มเหลวเนื่องจากข้อผิดพลาดของฐานข้อมูล\n"
 "\n"
-"\n"
-msgstr "{browser} ดูเหมือนจะยังทำงานอยู่ โดยปกติฐานข้อมูลคุกกี้จะถูกล็อกในขณะที่เบราว์เซอร์เปิดอยู่ ดังนั้นการส่งออกอาจล้มเหลวเนื่องจากข้อผิดพลาดของฐานข้อมูล"
+"ปิด {browser} ให้สนิท จากนั้นคลิก ตกลง เพื่อดำเนินการต่อ หรือ ยกเลิก เพื่อหยุดและปิดก่อน"
 
-#: channel_core.py:333
-#: search.py:608
+#: channel_core.py:334
+#: search.py:609
 msgid "{count} downloads queued."
 msgstr "มี {count} รายการดาวน์โหลดในคิว"
 
-#: channel_core.py:1278
+#: channel_core.py:1279
 msgid "{count} new items updated."
 msgstr "อัปเดต {count} รายการใหม่แล้ว"
 
-#: Download_core.py:1399
+#: Download_core.py:1856
 msgid "{mb} MB downloaded"
 msgstr "ดาวน์โหลดแล้ว {mb} เมกะไบต์"
 
-#: Download_core.py:1384
+#: update.py:159
+msgid "{name} update"
+msgstr "อัปเดต {name}"
+
+#: update.py:164
+msgid ""
+"{name} {new} is available (installed: {old}).\n"
+"Update now?"
+msgstr ""
+"มี {name} {new} ให้ใช้งาน (ที่ติดตั้งไว้: {old})\n"
+"ต้องการอัปเดตตอนนี้เลยหรือไม่"
+
+#: Download_core.py:1841
 msgid "{percent}%"
 msgstr "{percent}%"
 
-#: __init__.py:809
+#: addonCore.py:899
 msgid "{quality} kbps"
 msgstr "{quality} กิโลบิตต่อวินาที"
 
-#: channel_core.py:372
+#: channel_core.py:373
 #: playlist.py:124
-#: search.py:185
+#: search.py:186
 msgid "{}, showing {} of {} videos"
-msgstr "{}, กำลังแสดง {{} จาก {}} วิดีโอ"
+msgstr "{}, กำลังแสดง {} จาก {} วิดีโอ"

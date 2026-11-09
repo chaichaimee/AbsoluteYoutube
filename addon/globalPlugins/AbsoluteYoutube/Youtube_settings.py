@@ -17,7 +17,8 @@ import addonHandler
 
 addonHandler.initTranslation()
 
-from .Download_core import YouTubeEXE, log, PlayStartBeep, getAddonConfigBaseDir, getINI, setINI, _kill_process_tree, download_and_replace_yt_dlp_binary, download_and_replace_deno_binary
+from .adSkip import cleanSkipWords
+from .Download_core import YouTubeEXE, log, PlayStartBeep, getAddonConfigBaseDir, getINI, setINI, _cleanSubtitleLanguages, _kill_process_tree, download_and_replace_yt_dlp_binary, download_and_replace_deno_binary
 
 def _safeWidgetCall(func, *args, **kwargs):
 	# A background thread's wx.CallAfter callback can still be pending
@@ -94,6 +95,11 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 		)
 		self.playlistModeChk.SetValue(getINI("PlaylistMode"))
 
+		self.playlistNumberingChk = behaviorHelper.addItem(
+			wx.CheckBox(behaviorBox, label=_("Add item numbers to file names in playlist mode"))
+		)
+		self.playlistNumberingChk.SetValue(getINI("PlaylistNumbering"))
+
 		self.skipExistingChk = behaviorHelper.addItem(
 			wx.CheckBox(behaviorBox, label=_("Skip existing files"))
 		)
@@ -108,6 +114,27 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 			wx.CheckBox(behaviorBox, label=_("Enable &logging"))
 		)
 		self.loggingChk.SetValue(getINI("Logging"))
+
+		self.saveDescriptionChk = behaviorHelper.addItem(
+			wx.CheckBox(behaviorBox, label=_("Save video description as a text file"))
+		)
+		self.saveDescriptionChk.SetValue(getINI("SaveDescriptionText"))
+
+		self.saveSubtitleChk = behaviorHelper.addItem(
+			wx.CheckBox(behaviorBox, label=_("Save subtitles as a text file"))
+		)
+		self.saveSubtitleChk.SetValue(getINI("SaveSubtitleText"))
+
+		self.subtitleLangText = behaviorHelper.addLabeledControl(
+			_("Subtitle languages, comma separated (for example th,en):"),
+			wx.TextCtrl
+		)
+		self.subtitleLangText.SetValue(getINI("SubtitleLanguages"))
+
+		self.autoReadSubtitlesChk = behaviorHelper.addItem(
+			wx.CheckBox(behaviorBox, label=_("Read YouTube subtitles automatically (Chrome, Edge, Firefox)"))
+		)
+		self.autoReadSubtitlesChk.SetValue(getINI("AutoReadSubtitles"))
 
 		qualityLabel = _("MP3 &quality (kbps):")
 		self.qualityChoice = behaviorHelper.addLabeledControl(
@@ -131,6 +158,30 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 		self.maxDownloadsSpin.SetValue(getINI("MaxConcurrentDownloads"))
 
 		helper.addItem(behaviorSizer)
+
+		# --- Ad skipping ---------------------------------------------------------
+		adSkipSizer = wx.StaticBoxSizer(wx.VERTICAL, self, label=_("YouTube ad skipping"))
+		adSkipBox = adSkipSizer.GetStaticBox()
+		adSkipHelper = guiHelper.BoxSizerHelper(self, sizer=adSkipSizer)
+
+		self.autoSkipAdsChk = adSkipHelper.addItem(
+			wx.CheckBox(adSkipBox, label=_("Skip YouTube a&ds automatically (Z skips the ad that is playing)"))
+		)
+		self.autoSkipAdsChk.SetValue(getINI("AutoSkipAds"))
+		self.autoSkipAdsChk.Bind(wx.EVT_CHECKBOX, self.on_auto_skip_ads_toggled)
+
+		# The Thai word is written as escapes because source files stay ASCII.
+		skipWordExample = "\u0e02\u0e49\u0e32\u0e21"
+		self.adSkipWordsText = adSkipHelper.addLabeledControl(
+			_("Skip button te&xt for other YouTube languages, comma separated (for example {example}):").format(
+				example=skipWordExample
+			),
+			wx.TextCtrl
+		)
+		self.adSkipWordsText.SetValue(getINI("AdSkipExtraWords"))
+		self.adSkipWordsText.Enable(self.autoSkipAdsChk.GetValue())
+
+		helper.addItem(adSkipSizer)
 
 		# --- Speed & connections ------------------------------------------------
 		# Grouped together deliberately: multi-part/aria2c connections and
@@ -687,6 +738,10 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 		spinCtrl.SetValue(newValue)
 		setattr(self, lastValueAttr, newValue)
 
+	def on_auto_skip_ads_toggled(self, event):
+		self.adSkipWordsText.Enable(self.autoSkipAdsChk.GetValue())
+		event.Skip()
+
 	def on_throttle_rate_changed(self, event):
 		self._snap_spin_to_step(self.throttleRateSpin, "_lastThrottleValue", 5, 0, 10000)
 
@@ -758,6 +813,7 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 		setINI("SayDownloadComplete", self.sayCompleteChk.GetValue())
 		setINI("MP3Quality", int(self.qualityChoice.GetStringSelection()))
 		setINI("PlaylistMode", self.playlistModeChk.GetValue())
+		setINI("PlaylistNumbering", self.playlistNumberingChk.GetValue())
 		setINI("SkipExisting", self.skipExistingChk.GetValue())
 		setINI("ResumeOnRestart", self.resumeOnRestartChk.GetValue())
 		setINI("Logging", self.loggingChk.GetValue())
@@ -784,3 +840,9 @@ class AudioYoutubeDownloadPanel(SettingsPanel):
 		setINI("ForceIpv4", self.forceIpv4Chk.GetValue())
 		setINI("ForceIpv6", self.forceIpv6Chk.GetValue())
 		setINI("MarkWatched", self.markWatchedChk.GetValue())
+		setINI("SaveDescriptionText", self.saveDescriptionChk.GetValue())
+		setINI("SaveSubtitleText", self.saveSubtitleChk.GetValue())
+		setINI("SubtitleLanguages", _cleanSubtitleLanguages(self.subtitleLangText.GetValue()))
+		setINI("AutoReadSubtitles", self.autoReadSubtitlesChk.GetValue())
+		setINI("AutoSkipAds", self.autoSkipAdsChk.GetValue())
+		setINI("AdSkipExtraWords", cleanSkipWords(self.adSkipWordsText.GetValue()))

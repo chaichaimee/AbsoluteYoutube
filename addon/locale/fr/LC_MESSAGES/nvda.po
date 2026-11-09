@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: AbsoluteYoutube 2026.9.12\n"
+"Project-Id-Version: AbsoluteYoutube 2026.11.0\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-09-14 07:42+0700\n"
+"POT-Creation-Date: 2026-11-09 09:52+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: French\n"
@@ -10,21 +10,21 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: DevOn Addon\n"
+"X-Generator: ChaiBot Addon\n"
 
-#: Youtube_settings.py:270
+#: Youtube_settings.py:313
 msgid "&Announce download progress"
 msgstr "&Annoncer la progression du téléchargement"
 
-#: Youtube_settings.py:229
+#: Youtube_settings.py:272
 msgid "&Beep while converting"
 msgstr "&Émettre un bip pendant la conversion"
 
-#: Youtube_settings.py:76
+#: Youtube_settings.py:69
 msgid "&Browse..."
 msgstr "&Parcourir..."
 
-#: Youtube_settings.py:309
+#: Youtube_settings.py:352
 msgid "&Browser for automatic cookies (used when cookies file is off):"
 msgstr "&Navigateur pour les cookies automatiques (utilisé lorsque le fichier de cookies est désactivé) :"
 
@@ -39,9 +39,9 @@ msgstr "&Annuler"
 msgid "&Clear All"
 msgstr "&Tout effacer"
 
-#: channel_core.py:190
+#: channel_core.py:191
 #: playlist.py:90
-#: search.py:148
+#: search.py:149
 msgid "&Close"
 msgstr "&Fermer"
 
@@ -50,10 +50,14 @@ msgstr "&Fermer"
 msgid "&Delete Selected"
 msgstr "&Supprimer la sélection"
 
-#: channel_core.py:182
+#: video_history.py:48
+msgid "&Download"
+msgstr "&Télécharger"
+
+#: channel_core.py:183
 #: downloadFail.py:84
 #: download_list.py:84
-#: search.py:140
+#: search.py:141
 msgid "&Download All"
 msgstr "&Tout télécharger"
 
@@ -66,19 +70,27 @@ msgstr "&Télécharger toutes les vidéos de la liste de lecture"
 msgid "&Download Selected"
 msgstr "&Télécharger la sélection"
 
-#: search.py:144
+#: search.py:145
 msgid "&Download folder"
 msgstr "&Dossier de téléchargement"
 
-#: Youtube_settings.py:356
+#: update.py:173
+msgid "&Later"
+msgstr "&Plus tard"
+
+#: Youtube_settings.py:399
 msgid "&Mark as watched"
 msgstr "&Marquer comme lu"
 
-#: Youtube_settings.py:133
+#: Youtube_settings.py:152
 msgid "&Max concurrent downloads (1-4):"
 msgstr "&Nombre maximal de téléchargements simultanés (1-4) :"
 
-#: Youtube_settings.py:157
+#: Download_core.py:1209
+msgid "&No"
+msgstr "&Non"
+
+#: Youtube_settings.py:200
 msgid "&Number of connections:"
 msgstr "&Nombre de connexions :"
 
@@ -89,41 +101,67 @@ msgstr "&Nombre de connexions :"
 msgid "&OK"
 msgstr "&OK"
 
-#: Youtube_settings.py:203
+#: video_history.py:49
+msgid "&Open URL"
+msgstr "&Ouvrir l'URL"
+
+#: video_history.py:50
+msgid "&Pin or unpin"
+msgstr "Épingler ou désép&ingler"
+
+#: video_history.py:51
+msgid "&Remove"
+msgstr "&Supprimer"
+
+#: Youtube_settings.py:246
 msgid "&Retry count:"
 msgstr "&Nombre de nouvelles tentatives :"
 
-#: Youtube_settings.py:265
+#: Youtube_settings.py:308
 msgid "&Say download complete"
 msgstr "&Dire téléchargement terminé"
 
-#: Youtube_settings.py:196
+#: Youtube_settings.py:239
 msgid "&Sleep between requests (seconds):"
 msgstr "&Pause entre les requêtes (secondes) :"
 
-#: channel_core.py:186
+#: channel_core.py:187
+# keep-identical
 msgid "&Source"
 msgstr "&Source"
 
-#: Youtube_settings.py:176
+#: Youtube_settings.py:219
 msgid "&Throttle rate (KB/s, 0=unlimited, step of 5):"
 msgstr "&Débit limité (Ko/s, 0=illimité, par pas de 5) :"
 
-#: Download_core.py:1551
+#: update.py:171
+msgid "&Update now"
+msgstr "&Mettre à jour maintenant"
+
+#: Download_core.py:1208
+msgid "&Yes"
+msgstr "&Oui"
+
+#: subtitleWatcher.py:408
+#: subtitleWatcher.py:416
+msgid "...truncated"
+msgstr "...tronqué"
+
+#: Download_core.py:2014
 msgid "0%"
 msgstr "0 %"
 
-#: channel_core.py:1347
+#: channel_core.py:1348
 msgid "A channel with this name already exists. Overwrite?"
 msgstr "Un canal portant ce nom existe déjà. Voulez-vous l'écraser ?"
 
-#: __init__.py:286
+#: addonCore.py:260
 msgid "A new version of yt-dlp is available: {latest}. Current: {current}. Please update in settings."
 msgstr "Une nouvelle version de yt-dlp est disponible : {latest}. Actuelle : {current}. Veuillez la mettre à jour dans les paramètres."
 
 #: Download_core.py:35
-#: Youtube_settings.py:35
-#: __init__.py:45
+#: Youtube_settings.py:36
+#: addonCore.py:47
 msgid "Absolute YouTube"
 msgstr "YouTube absolu"
 
@@ -131,7 +169,7 @@ msgstr "YouTube absolu"
 msgid "Absolute YouTube Trim"
 msgstr "Découpage YouTube absolu"
 
-#: __init__.py:599
+#: addonCore.py:646
 msgid "Absolute YouTube setting"
 msgstr "Paramètre YouTube absolu"
 
@@ -139,15 +177,23 @@ msgstr "Paramètre YouTube absolu"
 msgid "Absolute Youtube"
 msgstr "YouTube absolu"
 
+#: adSkip.py:428
+msgid "Ad skipped"
+msgstr "Annonce publicitaire passée"
+
 #: channel_dialogs.py:42
 msgid "Add New Channel"
 msgstr "Ajouter une nouvelle chaîne"
 
-#: channel_core.py:113
+#: Youtube_settings.py:99
+msgid "Add item numbers to file names in playlist mode"
+msgstr "Ajouter des numéros d'élément aux noms de fichiers en mode liste de lecture"
+
+#: channel_core.py:114
 msgid "Add new channel"
 msgstr "Ajouter une nouvelle chaîne"
 
-#: __init__.py:197
+#: addonCore.py:152
 msgid "Add-on initialization failed: missing pending file path function. Please restart NVDA."
 msgstr "Échec de l'initialisation de l'extension : fonction de chemin de fichier en attente manquante. Veuillez redémarrer NVDA."
 
@@ -159,32 +205,32 @@ msgstr "Erreur interne de l'extension : composants manquants. Veuillez redémarr
 msgid "Added Time"
 msgstr "Heure d'ajout"
 
-#: __init__.py:448
+#: addonCore.py:429
 msgid "Added to download list: {format} - {title}"
 msgstr "Ajouté à la liste de téléchargement : {format} - {title}"
 
-#: __init__.py:442
+#: addonCore.py:423
 msgid "Added to download queue: {format} - {title}"
 msgstr "Ajouté à la file d'attente de téléchargement : {format} - {title}"
 
-#: Download_core.py:2000
+#: Download_core.py:2600
 msgid "Adding link as {format} to download queue"
 msgstr "Ajout du lien en tant que {format} à la file d'attente de téléchargement"
 
-#: channel_core.py:299
-#: search.py:570
+#: channel_core.py:300
+#: search.py:571
 msgid "Adding {count} videos to download queue..."
 msgstr "Ajout de {count} vidéos à la file d'attente de téléchargement..."
 
-#: channel_core.py:1632
+#: channel_core.py:1633
 #: playlist.py:465
-#: search.py:549
-#: search.py:552
+#: search.py:550
+#: search.py:553
 msgid "Adding {title} to download queue."
 msgstr "Ajout de {title} à la file d'attente de téléchargement."
 
-#: search.py:114
-#: search.py:192
+#: search.py:115
+#: search.py:193
 msgid "All"
 msgstr "Tout"
 
@@ -196,11 +242,11 @@ msgstr "Tous les téléchargements échoués ont été effacés"
 msgid "All pending downloads cleared"
 msgstr "Tous les téléchargements en attente ont été effacés"
 
-#: __init__.py:450
+#: addonCore.py:431
 msgid "Already in download list"
 msgstr "Déjà dans la liste de téléchargement"
 
-#: __init__.py:444
+#: addonCore.py:425
 msgid "Already in download queue"
 msgstr "Déjà dans la file d'attente de téléchargement"
 
@@ -208,47 +254,59 @@ msgstr "Déjà dans la file d'attente de téléchargement"
 msgid "An unexpected error occurred."
 msgstr "Une erreur inattendue s'est produite."
 
-#: Youtube_settings.py:276
+#: Youtube_settings.py:319
 msgid "Anti-blocking settings"
 msgstr "Paramètres anti-blocage"
 
-#: channel_core.py:852
+#: channel_core.py:853
 msgid "Are you sure you want to delete saved data for '{name}'?"
 msgstr "Voulez-vous vraiment supprimer les données enregistrées pour '{name}' ?"
 
-#: Youtube_settings.py:185
+#: Youtube_settings.py:228
 msgid "At the maximum (10,000 KB/s = 10 MB/s), this limit essentially never binds -- YouTube's own per-connection serving speed and most home connections stay well under that, so the maximum behaves almost identically to leaving it at 0 (unlimited)."
 msgstr "Au maximum (10 000 Ko/s = 10 Mo/s), cette limite n'a pratiquement aucun effet : la vitesse de diffusion propre de YouTube et la plupart des connexions domestiques restent bien en deçà. Le maximum se comporte donc presque de la même manière qu'une valeur de 0 (illimité)."
 
-#: Trim.py:161
+#: Trim.py:163
 #: channel_dialogs.py:158
 msgid "Audio Quality"
 msgstr "Qualité audio"
 
-#: Youtube_settings.py:371
+#: Youtube_settings.py:414
 msgid "Auto-update yt-dlp on startup"
 msgstr "Mettre à jour yt-dlp automatiquement au démarrage"
 
-#: Youtube_settings.py:239
+#: addonCore.py:875
+msgid "Automatic subtitle reading disabled"
+msgstr "Lecture automatique des sous-titres désactivée"
+
+#: addonCore.py:875
+msgid "Automatic subtitle reading enabled"
+msgstr "Lecture automatique des sous-titres activée"
+
+#: Youtube_settings.py:282
 msgid "Beep &volume (%):"
 msgstr "Bip et &volume (%) :"
 
-#: Youtube_settings.py:255
+#: Youtube_settings.py:298
 msgid "Beep e&very (seconds):"
 msgstr "Bip t&outes les (secondes) :"
 
-#: Youtube_settings.py:306
-#: Youtube_settings.py:431
+#: Youtube_settings.py:349
+#: Youtube_settings.py:474
 msgid "Brave"
 msgstr "Brave"
 
-#: Youtube_settings.py:477
+#: Youtube_settings.py:520
 msgid "Browser still running"
 msgstr "Navigateur toujours en cours d'exécution"
 
-#: Trim.py:174
+#: video_history.py:57
+msgid "C&lose"
+msgstr "F&ermer"
+
+#: Trim.py:176
 #: channel_dialogs.py:169
-#: search.py:689
+#: search.py:690
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -256,31 +314,31 @@ msgstr "Annuler"
 msgid "Cannot create download folder"
 msgstr "Impossible de créer le dossier de téléchargement"
 
-#: channel_core.py:286
+#: channel_core.py:287
 msgid "Cannot create download folder."
 msgstr "Impossible de créer le dossier de téléchargement."
 
-#: Download_core.py:811
+#: Download_core.py:1121
 msgid "Cannot create folder"
 msgstr "Impossible de créer le dossier"
 
-#: search.py:540
+#: search.py:541
 msgid "Cannot determine URL for this video."
 msgstr "Impossible de déterminer l'URL de cette vidéo."
 
-#: __init__.py:406
+#: addonCore.py:387
 msgid "Cannot download from YouTube homepage. Please navigate to a video or playlist."
 msgstr "Impossible de télécharger depuis la page d'accueil de YouTube. Veuillez accéder à une vidéo ou à une liste de lecture."
 
-#: __init__.py:409
+#: addonCore.py:390
 msgid "Cannot download from this YouTube page. Please select a specific video."
 msgstr "Impossible de télécharger depuis cette page YouTube. Veuillez sélectionner une vidéo spécifique."
 
-#: search.py:617
+#: search.py:618
 msgid "Cannot open download folder."
 msgstr "Impossible d'ouvrir le dossier de téléchargement."
 
-#: channel_core.py:342
+#: channel_core.py:343
 msgid "Cannot open source folder."
 msgstr "Impossible d'ouvrir le dossier source."
 
@@ -288,7 +346,7 @@ msgstr "Impossible d'ouvrir le dossier source."
 msgid "Capturing full-size snapshot..."
 msgstr "Capture d'un instantané pleine taille..."
 
-#: channel_core.py:834
+#: channel_core.py:835
 msgid "Channel URL updated."
 msgstr "URL de la chaîne mise à jour."
 
@@ -297,12 +355,12 @@ msgstr "URL de la chaîne mise à jour."
 msgid "Channel URL:"
 msgstr "URL de la chaîne :"
 
-#: channel_core.py:1083
+#: channel_core.py:1084
 msgid "Channel added successfully."
 msgstr "Chaîne ajoutée avec succès."
 
-#: channel_core.py:864
-#: channel_core.py:867
+#: channel_core.py:865
+#: channel_core.py:868
 msgid "Channel deleted."
 msgstr "Chaîne supprimée."
 
@@ -311,40 +369,46 @@ msgstr "Chaîne supprimée."
 msgid "Channel name:"
 msgstr "Nom de la chaîne :"
 
-#: channel_core.py:754
+#: channel_core.py:755
 msgid "Channel pinned."
 msgstr "Chaîne épinglée."
 
-#: channel_core.py:1368
+#: channel_core.py:1369
 msgid "Channel saved."
 msgstr "Chaîne enregistrée."
 
-#: channel_core.py:751
+#: channel_core.py:752
 msgid "Channel unpinned."
 msgstr "Chaîne désépinglée."
 
-#: channel_core.py:821
+#: channel_core.py:822
 msgid "Channel updated."
 msgstr "Chaîne mise à jour."
 
-#: channel_core.py:101
+#: channel_core.py:102
 msgid "Channel:"
 msgstr "Chaîne :"
 
-#: channel_core.py:1136
+#: channel_core.py:1137
 msgid "Checking for new videos..."
 msgstr "Recherche de nouvelles vidéos..."
 
-#: Download_core.py:989
+#: Download_core.py:1387
 msgid "Checking interrupted downloads..."
 msgstr "Vérification des téléchargements interrompus..."
 
+#: video_history.py:52
+msgid "Clear &all"
+msgstr "Effacer &tout"
+
 #: downloadFail.py:150
 #: download_list.py:137
+#: video_history.py:127
+#: video_history.py:191
 msgid "Clear all"
 msgstr "Effacer tout"
 
-#: channel_core.py:853
+#: channel_core.py:854
 msgid "Confirm Delete"
 msgstr "Confirmer la suppression"
 
@@ -352,86 +416,107 @@ msgstr "Confirmer la suppression"
 msgid "Confirm Download"
 msgstr "Confirmer le téléchargement"
 
-#: channel_core.py:1348
+#: channel_core.py:1349
 msgid "Confirm Overwrite"
 msgstr "Confirmer l'écrasement"
 
-#: channel_core.py:126
+#: channel_core.py:127
 msgid "Content type:"
 msgstr "Type de contenu :"
 
-#: Download_core.py:1369
-#: Download_core.py:1391
+#: Download_core.py:1826
+#: Download_core.py:1848
 msgid "Converting"
 msgstr "Conversion en cours"
 
-#: Youtube_settings.py:583
-#: Youtube_settings.py:602
+#: Youtube_settings.py:626
+#: Youtube_settings.py:645
 msgid "Cookie export failed: {str}"
 msgstr "Échec de l'exportation des cookies : {str}"
 
-#: Youtube_settings.py:593
+#: Youtube_settings.py:636
 msgid "Cookie export timed out"
 msgstr "Délai d'exportation des cookies dépassé"
 
-#: Youtube_settings.py:286
+#: Youtube_settings.py:329
 msgid "Cookies &file:"
 msgstr "&Fichier de cookies :"
 
-#: Youtube_settings.py:625
+#: Youtube_settings.py:668
 msgid "Cookies exported successfully to {path}. Anti-blocking is now active."
 msgstr "Cookies exportés avec succès vers {path}. L'anti-blocage est maintenant actif."
 
-#: channel_core.py:1572
+#: channel_core.py:1573
 msgid "Copy URL"
 msgstr "Copier l'URL"
 
-#: __init__.py:581
+#: addonCore.py:626
 #: playlist.py:415
-#: search.py:503
+#: search.py:504
 msgid "Copy video Shorten URL"
 msgstr "Copier l'URL raccourcie de la vidéo"
 
-#: channel_core.py:1582
+#: channel_core.py:1583
 #: playlist.py:421
 msgid "Correct title now"
 msgstr "Corriger le titre maintenant"
 
-#: channel_core.py:1640
+#: channel_core.py:1641
 #: playlist.py:438
 msgid "Correcting title for selected video..."
 msgstr "Correction du titre pour la vidéo sélectionnée..."
 
+#: adSkip.py:393
+msgid "Could not click the skip button."
+msgstr "Impossible de cliquer sur le bouton Passer."
+
 #: playlist.py:455
-#: search.py:532
+#: search.py:533
 msgid "Could not create short URL"
 msgstr "Impossible de créer l'URL courte"
 
-#: __init__.py:633
+#: addonCore.py:680
 msgid "Could not create shortened URL"
 msgstr "Impossible de créer l'URL raccourcie"
 
-#: Youtube_settings.py:567
+#: Youtube_settings.py:610
 msgid "Could not decrypt {browser}'s cookies (DPAPI decryption failed). This usually means yt-dlp needs updating to support this browser's newer cookie encryption. Try 'Update yt-dlp now' below, then export again, or export from Firefox instead, which does not use this encryption. If it still fails, use the manual cookies.txt method."
 msgstr "Impossible de déchiffrer les cookies de {browser} (échec du déchiffrement DPAPI). Cela signifie généralement que yt-dlp doit être mis à jour pour prendre en charge le chiffrement des cookies récent de ce navigateur. Essayez « Mettre à jour yt-dlp maintenant » ci-dessous, puis réessayez l'exportation, ou exportez depuis Firefox à la place, qui n'utilise pas ce chiffrement. Si cela échoue toujours, utilisez la méthode manuelle cookies.txt."
 
-#: Youtube_settings.py:575
+#: Youtube_settings.py:618
 msgid "Could not decrypt {browser}'s cookies (DPAPI decryption failed). This usually means yt-dlp needs updating. Try 'Update yt-dlp now' below, then export again. If it still fails, use the manual cookies.txt method instead."
 msgstr "Impossible de déchiffrer les cookies de {browser} (échec du déchiffrement DPAPI). Cela signifie généralement que yt-dlp doit être mis à jour. Essayez « Mettre à jour yt-dlp maintenant » ci-dessous, puis réessayez l'exportation. Si cela échoue toujours, utilisez plutôt la méthode manuelle cookies.txt."
 
-#: Trim.py:291
+#: update.py:255
+msgid "Could not download the update. Opening the releases page."
+msgstr "Impossible de télécharger la mise à jour. Ouverture de la page des versions."
+
+#: Trim.py:293
 msgid "Could not open preview URL"
 msgstr "Impossible d'ouvrir l'URL de prévisualisation"
 
-#: Youtube_settings.py:549
+#: video_history.py:161
+msgid "Could not open the URL"
+msgstr "Impossible d'ouvrir l'URL"
+
+#: Youtube_settings.py:592
 msgid "Could not read the {browser} cookie database. Close {browser} completely and try exporting again."
 msgstr "Impossible de lire la base de données des cookies de {browser}. Fermez complètement {browser} et réessayez d'exporter."
 
-#: __init__.py:797
+#: addonCore.py:504
+msgid "Cycle MP3 quality (single tap), toggle download immediately (double tap), toggle playlist mode (triple tap)"
+msgstr "Changer la qualité MP3 (simple pression), basculer le téléchargement immédiat (double pression), basculer le mode lecture en boucle (triple pression)"
+
+#: addonCore.py:887
 msgid "Cycle MP3 quality settings"
 msgstr "Faire défiler les paramètres de qualité MP3"
 
-#: channel_core.py:728
+#: video_history.py:41
+# keep-identical
+msgid "Date"
+msgstr "Date"
+
+#: channel_core.py:729
 #: downloadFail.py:137
 #: download_list.py:125
 msgid "Delete"
@@ -442,24 +527,25 @@ msgstr "Supprimer"
 msgid "Delete selected"
 msgstr "Supprimer la sélection"
 
-#: Youtube_settings.py:734
+#: Youtube_settings.py:781
 msgid "Deno updated successfully"
-msgstr "Installez l'extension « Get cookies.txt » dans Chrome ou Firefox"
+msgstr "Deno a été mis à jour avec succès"
 
-#: Youtube_settings.py:73
+#: Youtube_settings.py:66
 msgid "Destination folder"
 msgstr "Dossier de destination"
 
 #: download_list.py:127
+#: video_history.py:119
 msgid "Download"
 msgstr "Télécharger"
 
 #: channel_dialogs.py:141
-#: search.py:671
+#: search.py:672
 msgid "Download All Videos"
 msgstr "Télécharger toutes les vidéos"
 
-#: Youtube_settings.py:91
+#: Youtube_settings.py:84
 msgid "Download Behavior"
 msgstr "Comportement des téléchargements"
 
@@ -471,21 +557,21 @@ msgstr "Gestionnaire d'échecs de téléchargement - Absolute YouTube"
 msgid "Download List Manager - Absolute YouTube"
 msgstr "Gestionnaire de liste de téléchargements - Absolute YouTube"
 
-#: channel_core.py:1585
+#: channel_core.py:1586
 #: playlist.py:424
-#: search.py:509
+#: search.py:510
 msgid "Download MP3"
 msgstr "Télécharger en MP3"
 
-#: channel_core.py:1588
+#: channel_core.py:1589
 #: playlist.py:427
-#: search.py:512
+#: search.py:513
 msgid "Download MP4"
 msgstr "Télécharger en MP4"
 
-#: channel_core.py:1591
+#: channel_core.py:1592
 #: playlist.py:430
-#: search.py:515
+#: search.py:516
 msgid "Download WAV"
 msgstr "Télécharger au format WAV"
 
@@ -498,55 +584,55 @@ msgstr "Tout télécharger"
 msgid "Download all {count} videos in this playlist?"
 msgstr "Télécharger les {count} vidéos de cette liste de lecture ?"
 
-#: Download_core.py:1591
+#: Download_core.py:2058
 msgid "Download complete"
 msgstr "Téléchargement terminé"
 
-#: channel_core.py:1579
+#: channel_core.py:1580
 msgid "Download entire playlist"
 msgstr "Télécharger la liste de lecture entière"
 
-#: __init__.py:587
+#: addonCore.py:632
 msgid "Download fail manager"
 msgstr "Gestionnaire des échecs de téléchargement"
 
-#: __init__.py:589
+#: addonCore.py:634
 msgid "Download fail manager (no failed)"
 msgstr "Gestionnaire des échecs de téléchargement (aucun échec)"
 
-#: Download_core.py:1681
+#: Download_core.py:2168
 msgid "Download failed"
 msgstr "Téléchargement échoué"
 
-#: Download_core.py:1705
+#: Download_core.py:2192
 msgid "Download failed due to an error"
 msgstr "Échec du téléchargement en raison d'une erreur"
 
-#: Download_core.py:1693
+#: Download_core.py:2180
 msgid "Download failed due to timeout"
 msgstr "Échec du téléchargement en raison d'un dépassement de délai"
 
-#: Download_core.py:1739
+#: Download_core.py:2226
 msgid "Download failed to start"
 msgstr "Échec du démarrage du téléchargement"
 
-#: Download_core.py:1656
+#: Download_core.py:2143
 msgid "Download failed: YouTube blocked this request. Try exporting cookies from your browser in the Anti-blocking settings."
 msgstr "Échec du téléchargement : YouTube a bloqué cette requête. Essayez d'exporter les cookies de votre navigateur dans les paramètres anti-blocage."
 
-#: Download_core.py:1679
+#: Download_core.py:2166
 msgid "Download failed: YouTube reports this video is unavailable"
-msgstr "Connectez-vous à YouTube dans votre navigateur"
+msgstr "Échec du téléchargement : YouTube indique que cette vidéo n'est pas disponible"
 
-#: Download_core.py:1669
+#: Download_core.py:2156
 msgid "Download failed: the downloaded JavaScript runtime isn't working. Try deleting the bin folder in your AbsoluteYoutube config directory so it re-downloads."
-msgstr "Cliquez sur l'icône de l'extension et exportez les cookies"
+msgstr "Échec du téléchargement : l'environnement d'exécution JavaScript téléchargé ne fonctionne pas. Essayez de supprimer le dossier bin dans le répertoire de configuration d'AbsoluteYoutube pour qu'il soit retéléchargé."
 
-#: Download_core.py:1677
+#: Download_core.py:2164
 msgid "Download failed: this may be because yt-dlp is outdated (current {current}, latest {latest}). Try updating yt-dlp in settings."
-msgstr "Enregistrez le fichier sous le nom cookies.txt et sélectionnez-le ici"
+msgstr "Échec du téléchargement : yt-dlp est peut-être obsolète (version actuelle {current}, dernière version {latest}). Essayez de mettre à jour yt-dlp dans les paramètres."
 
-#: Download_core.py:1672
+#: Download_core.py:2159
 msgid "Download failed: yt-dlp needs a JavaScript runtime, which this add-on is downloading automatically in the background. Please wait a moment and try again."
 msgstr "Échec du téléchargement : yt-dlp nécessite un moteur JavaScript que cet add-on télécharge automatiquement en arrière-plan. Veuillez patienter un moment et réessayer."
 
@@ -554,28 +640,28 @@ msgstr "Échec du téléchargement : yt-dlp nécessite un moteur JavaScript que 
 msgid "Download file"
 msgstr "Télécharger le fichier"
 
-#: search.py:619
+#: search.py:620
 msgid "Download folder does not exist."
 msgstr "Le dossier de téléchargement n'existe pas."
 
-#: channel_core.py:1620
-#: channel_core.py:1634
+#: channel_core.py:1621
+#: channel_core.py:1635
 #: playlist.py:467
 #: playlist.py:483
 msgid "Download function not available."
 msgstr "Fonction de téléchargement non disponible."
 
-#: __init__.py:503
-msgid "Download immediately"
-msgstr "Télécharger immédiatement"
-
-#: __init__.py:583
+#: addonCore.py:628
 msgid "Download list manager"
 msgstr "Gestionnaire de la liste des téléchargements"
 
-#: __init__.py:457
+#: addonCore.py:438
 msgid "Download or queue video (single tap MP3, double tap MP4, triple tap WAV)"
 msgstr "Télécharger ou mettre en file d'attente la vidéo (un appui simple pour MP3, un double appui pour MP4, un triple appui pour WAV)"
+
+#: video_history.py:146
+msgid "Download requested for {count} item(s)"
+msgstr "Téléchargement demandé pour {count} élément(s)"
 
 #: downloadFail.py:144
 #: download_list.py:132
@@ -590,12 +676,16 @@ msgstr "Téléchargement démarré pour : {title}"
 msgid "Downloading thumbnail..."
 msgstr "Téléchargement de la vignette..."
 
+#: update.py:244
+msgid "Downloading {name} {version}"
+msgstr "Téléchargement de {name} {version}"
+
 #: download_list.py:109
 msgid "Downloading..."
 msgstr "Téléchargement en cours..."
 
 #: downloadFail.py:71
-#: search.py:30
+#: search.py:31
 msgid "Duration"
 msgstr "Durée"
 
@@ -603,27 +693,27 @@ msgstr "Durée"
 msgid "Edit Channel"
 msgstr "Modifier la chaîne"
 
-#: channel_core.py:117
+#: channel_core.py:118
 msgid "Edit channel"
 msgstr "Modifier la chaîne"
 
-#: channel_core.py:725
+#: channel_core.py:726
 msgid "Edit channel..."
 msgstr "Modifier la chaîne..."
 
-#: Youtube_settings.py:116
+#: Youtube_settings.py:114
 msgid "Enable &logging"
 msgstr "Activer la &journalisation"
 
-#: Youtube_settings.py:101
+#: Youtube_settings.py:94
 msgid "Enable &playlist mode by default"
 msgstr "Activer le mode &playlist par défaut"
 
-#: Trim.py:137
+#: Trim.py:139
 msgid "End time:"
 msgstr "Heure de fin :"
 
-#: search.py:96
+#: search.py:97
 msgid "Enter a search query."
 msgstr "Saisissez une requête de recherche."
 
@@ -635,83 +725,87 @@ msgstr "Erreur"
 msgid "Error creating download folder"
 msgstr "Erreur lors de la création du dossier de téléchargement"
 
-#: channel_core.py:870
+#: channel_core.py:871
 msgid "Error deleting channel."
 msgstr "Erreur lors de la suppression de la chaîne."
 
-#: __init__.py:618
+#: addonCore.py:665
 msgid "Error displaying context menu"
 msgstr "Erreur lors de l'affichage du menu contextuel"
 
-#: __init__.py:301
+#: addonCore.py:275
 msgid "Error during auto-update of yt-dlp: {str}"
 msgstr "Erreur lors de la mise à jour automatique de yt-dlp : {str}"
 
-#: channel_core.py:1089
+#: channel_core.py:1090
 msgid "Error fetching channel: {str}"
 msgstr "Erreur lors de la récupération de la chaîne : {str}"
 
-#: __init__.py:192
+#: addonCore.py:147
 #: downloadFail.py:50
 msgid "Error importing core functions: {str}"
 msgstr "Erreur lors de l'importation des fonctions principales : {str}"
 
-#: __init__.py:739
+#: addonCore.py:814
 msgid "Error importing settings panel: {str}"
 msgstr "Erreur lors de l'importation du panneau des paramètres : {str}"
 
-#: __init__.py:215
-#: __init__.py:277
+#: addonCore.py:170
+#: addonCore.py:251
 msgid "Error initializing AbsoluteYoutube: {str}"
 msgstr "Erreur lors de l'initialisation d'AbsoluteYoutube : {str}"
 
-#: channel_core.py:904
+#: channel_core.py:905
 msgid "Error loading cache."
 msgstr "Erreur lors du chargement du cache."
 
-#: channel_core.py:534
-#: channel_core.py:796
+#: channel_core.py:535
+#: channel_core.py:797
 msgid "Error loading channel data."
 msgstr "Erreur lors du chargement des données de la chaîne."
 
-#: __init__.py:527
+#: addonCore.py:572
 msgid "Error opening channel dialog"
 msgstr "Erreur lors de l'ouverture de la boîte de dialogue de la chaîne"
 
-#: __init__.py:785
+#: addonCore.py:860
 msgid "Error opening channel/playlist list: {str}"
 msgstr "Erreur lors de l'ouverture de la liste des chaînes/listes de lecture : {str}"
 
-#: __init__.py:654
-#: __init__.py:658
+#: addonCore.py:701
+#: addonCore.py:705
 msgid "Error opening download fail dialog: {str}"
 msgstr "Erreur lors de l'ouverture de la boîte de dialogue des échecs de téléchargement : {str}"
 
-#: __init__.py:567
+#: addonCore.py:612
 msgid "Error opening download list dialog: {str}"
 msgstr "Erreur lors de l'ouverture de la boîte de dialogue de la liste des téléchargements : {str}"
 
-#: __init__.py:493
+#: addonCore.py:474
 msgid "Error opening folder"
 msgstr "Erreur lors de l'ouverture du dossier"
 
-#: channel_core.py:1554
+#: channel_core.py:1555
 msgid "Error opening playlist."
 msgstr "Erreur lors de l'ouverture de la liste de lecture."
 
-#: __init__.py:724
+#: addonCore.py:799
 msgid "Error opening search dialog: {str}"
 msgstr "Erreur lors de l'ouverture de la boîte de dialogue de recherche : {str}"
 
-#: __init__.py:742
+#: addonCore.py:817
 msgid "Error opening settings dialog: {str}"
 msgstr "Erreur lors de l'ouverture de la boîte de dialogue des paramètres : {str}"
 
-#: __init__.py:705
+#: addonCore.py:780
 msgid "Error opening trim dialog: {str}"
 msgstr "Erreur lors de l'ouverture de la boîte de dialogue de découpage : {str}"
 
-#: Download_core.py:1945
+#: addonCore.py:729
+msgid "Error opening video history: {str}"
+msgstr "Erreur lors de l'ouverture de l'historique des vidéos : {str}"
+
+#: Download_core.py:2545
 msgid "Error processing URL"
 msgstr "Erreur lors du traitement de l'URL"
 
@@ -719,19 +813,19 @@ msgstr "Erreur lors du traitement de l'URL"
 msgid "Error starting download"
 msgstr "Erreur lors du démarrage du téléchargement"
 
-#: channel_core.py:837
+#: channel_core.py:838
 msgid "Error updating channel URL."
 msgstr "Erreur lors de la mise à jour de l'URL de la chaîne."
 
-#: channel_core.py:824
+#: channel_core.py:825
 msgid "Error updating channel."
 msgstr "Erreur lors de la mise à jour de la chaîne."
 
-#: __init__.py:572
+#: addonCore.py:617
 msgid "Error: Download list module not available"
 msgstr "Erreur : Le module de liste de téléchargements n'est pas disponible"
 
-#: __init__.py:644
+#: addonCore.py:691
 msgid "Error: DownloadFail module not available"
 msgstr "Erreur : Le module d'échec de téléchargement n'est pas disponible"
 
@@ -743,106 +837,112 @@ msgstr "Erreur : Échec de la capture de l'instantané."
 msgid "Error: No snapshot file created."
 msgstr "Erreur : Aucun fichier d'instantané créé."
 
-#: __init__.py:729
+#: addonCore.py:804
 msgid "Error: Search module not available"
 msgstr "Erreur : Le module de recherche n'est pas disponible"
 
-#: __init__.py:685
+#: addonCore.py:760
 msgid "Error: Snapshot module not available"
 msgstr "Erreur : Le module d'instantané n'est pas disponible"
 
-#: __init__.py:694
+#: addonCore.py:769
 msgid "Error: Trim module not available"
 msgstr "Erreur : Le module de découpage n'est pas disponible"
 
-#: Download_core.py:1970
-#: Trim.py:324
+#: addonCore.py:716
+msgid "Error: Video history module not available"
+msgstr "Erreur : Le module d'historique des vidéos n'est pas disponible"
+
+#: Download_core.py:2570
+#: Trim.py:326
 msgid "Error: ffmpeg.exe not found."
 msgstr "Erreur : ffmpeg.exe introuvable."
 
-#: Trim.py:321
+#: Trim.py:323
 msgid "Error: yt-dlp.exe not found."
 msgstr "Erreur : yt-dlp.exe introuvable."
 
-#: Youtube_settings.py:453
+#: Youtube_settings.py:496
 msgid "Export YouTube Cookies"
 msgstr "Exporter les cookies YouTube"
 
-#: Youtube_settings.py:319
+#: Youtube_settings.py:362
 msgid "Export YouTube Cookies (Anti-Block)"
 msgstr "Exporter les cookies YouTube (anti-blocage)"
 
-#: Youtube_settings.py:484
+#: Youtube_settings.py:527
 msgid "Exporting cookies from {browser}..."
 msgstr "Exportation des cookies de {browser} en cours..."
 
-#: Youtube_settings.py:758
+#: Youtube_settings.py:805
 msgid "Failed to create the specified folder. Please select a valid folder."
 msgstr "Échec de la création du dossier spécifié. Veuillez sélectionner un dossier valide."
 
-#: __init__.py:591
+#: addonCore.py:638
 msgid "Favorite channel"
 msgstr "Chaîne favorite"
 
-#: channel_core.py:1276
+#: channel_core.py:1277
 msgid "Fetched {count} items total."
 msgstr "{count} éléments récupérés au total."
 
-#: __init__.py:772
+#: addonCore.py:847
 msgid "Fetching channel information..."
 msgstr "Récupération des informations de la chaîne..."
 
-#: channel_core.py:1355
+#: channel_core.py:1356
 msgid "Fetching channel items..."
 msgstr "Récupération des éléments de la chaîne..."
 
-#: channel_core.py:1136
+#: channel_core.py:1137
 msgid "Fetching channel videos..."
 msgstr "Récupération des vidéos de la chaîne..."
 
-#: Trim.py:148
+#: Trim.py:150
 #: channel_dialogs.py:148
-#: search.py:677
+#: search.py:678
 msgid "File Format"
 msgstr "Format de fichier"
 
-#: Download_core.py:1975
+#: Download_core.py:2575
 msgid "File already exists. Skipping download."
 msgstr "Le fichier existe déjà. Téléchargement ignoré."
 
-#: Download_core.py:1931
+#: Download_core.py:2531
 msgid "File exists"
 msgstr "Le fichier existe"
 
-#: Youtube_settings.py:346
+#: Youtube_settings.py:389
 msgid "Force I&Pv4"
 msgstr "Forcer l'&IPv4"
 
-#: Youtube_settings.py:351
+#: Youtube_settings.py:394
 msgid "Force I&Pv6"
 msgstr "Forcer l'&IPv6"
 
 #: download_list.py:70
+#: video_history.py:40
+# keep-identical
 msgid "Format"
 msgstr "Format"
 
-#: Download_core.py:891
+#: Download_core.py:1240
 msgid ""
 "Found {count} interrupted downloads\n"
-"Resume all?\n"
-"\n"
-"\n"
-msgstr "{count} téléchargements interrompus trouvés"
+"Resume all?"
+msgstr ""
+"{count} téléchargements interrompus trouvés\n"
+"Reprendre tout ?"
 
-#: search.py:470
+#: search.py:471
 msgid "Found {count} videos for '{query}'."
 msgstr "{count} vidéos trouvées pour « {query} »."
 
-#: search.py:386
+#: search.py:387
 msgid "Found {} videos..."
 msgstr "{} vidéos trouvées..."
 
-#: Youtube_settings.py:210
+#: Youtube_settings.py:253
 msgid "Fragment &retries:"
 msgstr "Fragment et &tentatives :"
 
@@ -850,22 +950,22 @@ msgstr "Fragment et &tentatives :"
 msgid "Full-size snapshot complete"
 msgstr "Capture d'écran en taille réelle terminée"
 
-#: channel_core.py:175
-#: search.py:133
+#: channel_core.py:176
+#: search.py:134
 msgid "Go"
 msgstr "Aller"
 
-#: channel_core.py:375
-#: search.py:188
+#: channel_core.py:376
+#: search.py:189
 msgid "Go to page of {}:"
 msgstr "Aller à la page de {} :"
 
-#: Youtube_settings.py:306
-#: Youtube_settings.py:431
+#: Youtube_settings.py:349
+#: Youtube_settings.py:474
 msgid "Google Chrome"
 msgstr "Google Chrome"
 
-#: Youtube_settings.py:415
+#: Youtube_settings.py:458
 msgid ""
 "How to get YouTube cookies:\n"
 "\n"
@@ -877,40 +977,49 @@ msgid ""
 "3. Click the extension icon and export cookies\n"
 "4. Save as cookies.txt and select it here\n"
 "\n"
-"Using cookies helps avoid blocks because YouTube sees you as a logged-in user.\n"
+"Using cookies helps avoid blocks because YouTube sees you as a logged-in user."
+msgstr ""
+"Comment obtenir les cookies YouTube :\n"
 "\n"
+"Option 1 (automatique) : Utilisez le bouton 'Exporter les cookies YouTube (Anti-Blocage)' ci-dessous. Fermez d'abord votre navigateur, puis appuyez dessus et choisissez votre navigateur dans la liste.\n"
 "\n"
-msgstr "Comment obtenir les cookies YouTube :"
+"Option 2 (manuel) :\n"
+"1. Installez l'extension 'Get cookies.txt' dans Chrome ou Firefox\n"
+"2. Connectez-vous à YouTube dans votre navigateur\n"
+"3. Cliquez sur l'icône de l'extension et exportez les cookies\n"
+"4. Enregistrez sous cookies.txt et sélectionnez-le ici\n"
+"\n"
+"L'utilisation des cookies aide à éviter les blocages car YouTube vous considère comme un utilisateur connecté."
 
-#: Youtube_settings.py:427
+#: Youtube_settings.py:470
 msgid "How to get cookies"
 msgstr "Comment obtenir les cookies"
 
-#: Youtube_settings.py:294
+#: Youtube_settings.py:337
 msgid "How to get cookies?"
 msgstr "Comment obtenir les cookies ?"
 
-#: __init__.py:511
+#: addonCore.py:556
 msgid "Immediate download mode disabled"
 msgstr "Mode de téléchargement immédiat désactivé"
 
-#: __init__.py:509
+#: addonCore.py:554
 msgid "Immediate download mode enabled"
 msgstr "Mode de téléchargement immédiat activé"
 
-#: Trim.py:280
+#: Trim.py:282
 msgid "Invalid URL or start time"
 msgstr "URL ou heure de début invalide"
 
-#: Trim.py:301
+#: Trim.py:303
 msgid "Invalid YouTube video URL"
 msgstr "URL de vidéo YouTube invalide"
 
-#: __init__.py:515
+#: addonCore.py:560
 msgid "Invalid channel URL"
 msgstr "URL de chaîne invalide"
 
-#: __init__.py:495
+#: addonCore.py:476
 msgid "Invalid download folder"
 msgstr "Dossier de téléchargement invalide"
 
@@ -919,25 +1028,29 @@ msgstr "Dossier de téléchargement invalide"
 msgid "Item deleted"
 msgstr "Élément supprimé"
 
-#: channel_core.py:1659
-#: search.py:557
+#: video_history.py:183
+msgid "Item removed"
+msgstr "Élément supprimé"
+
+#: channel_core.py:1660
+#: search.py:558
 msgid "Item removed."
 msgstr "Élément retiré."
 
-#: Youtube_settings.py:386
+#: Youtube_settings.py:429
 msgid "JavaScript Runtime (Deno)"
 msgstr "Moteur JavaScript (Deno)"
 
-#: channel_core.py:66
+#: channel_core.py:67
 msgid "Live"
 msgstr "En direct"
 
-#: channel_core.py:898
+#: channel_core.py:899
 msgid "Loaded {count} videos from cache."
 msgstr "{count} vidéos chargées depuis le cache."
 
-#: channel_core.py:519
-#: channel_core.py:1120
+#: channel_core.py:520
+#: channel_core.py:1121
 msgid "Loaded {count} videos from {name}."
 msgstr "{count} vidéos chargées depuis {name}."
 
@@ -949,40 +1062,40 @@ msgstr "{count} vidéos chargées."
 msgid "Loading playlist videos..."
 msgstr "Chargement des vidéos de la playlist..."
 
-#: Youtube_settings.py:120
+#: Youtube_settings.py:139
 msgid "MP3 &quality (kbps):"
 msgstr "Qualité MP3 (&kbps) :"
 
-#: Youtube_settings.py:306
-#: Youtube_settings.py:431
+#: Youtube_settings.py:349
+#: Youtube_settings.py:474
 msgid "Microsoft Edge"
 msgstr "Microsoft Edge"
 
-#: channel_core.py:720
+#: channel_core.py:721
 msgid "Move Down"
 msgstr "Déplacer vers le bas"
 
-#: channel_core.py:716
+#: channel_core.py:717
 msgid "Move Up"
 msgstr "Déplacer vers le haut"
 
-#: Youtube_settings.py:306
-#: Youtube_settings.py:431
+#: Youtube_settings.py:349
+#: Youtube_settings.py:474
 msgid "Mozilla Firefox"
 msgstr "Mozilla Firefox"
 
-#: channel_core.py:166
+#: channel_core.py:167
 #: playlist.py:79
-#: search.py:124
+#: search.py:125
 msgid "NextPage"
 msgstr "Page suivante"
 
-#: __init__.py:402
-#: __init__.py:623
+#: addonCore.py:383
+#: addonCore.py:670
 msgid "No YouTube URL found"
 msgstr "Aucune URL YouTube trouvée"
 
-#: channel_core.py:246
+#: channel_core.py:247
 msgid "No channel selected."
 msgstr "Aucune chaîne sélectionnée."
 
@@ -991,7 +1104,7 @@ msgstr "Aucune chaîne sélectionnée."
 msgid "No downloads could be started"
 msgstr "Aucun téléchargement n'a pu être démarré"
 
-#: __init__.py:640
+#: addonCore.py:687
 msgid "No failed downloads"
 msgstr "Aucun téléchargement échoué"
 
@@ -1003,11 +1116,15 @@ msgstr "Aucun téléchargement échoué à effacer"
 msgid "No failed downloads to process"
 msgstr "Aucun téléchargement échoué à traiter"
 
-#: channel_core.py:1085
+#: video_history.py:187
+msgid "No history to clear"
+msgstr "Aucun historique à effacer"
+
+#: channel_core.py:1086
 msgid "No items found for this URL."
 msgstr "Aucun élément trouvé pour cette URL."
 
-#: channel_core.py:1280
+#: channel_core.py:1281
 msgid "No items found."
 msgstr "Aucun élément trouvé."
 
@@ -1015,6 +1132,10 @@ msgstr "Aucun élément trouvé."
 #: downloadFail.py:282
 #: download_list.py:196
 #: download_list.py:209
+#: video_history.py:135
+#: video_history.py:151
+#: video_history.py:166
+#: video_history.py:179
 msgid "No items selected"
 msgstr "Aucun élément sélectionné"
 
@@ -1027,78 +1148,106 @@ msgstr "Aucun téléchargement en attente"
 msgid "No pending downloads to clear"
 msgstr "Aucun téléchargement en attente à effacer"
 
-#: search.py:467
+#: search.py:468
 msgid "No results found for '{query}'."
 msgstr "Aucun résultat trouvé pour '{query}'."
 
-#: search.py:468
+#: search.py:469
 msgid "No results found."
 msgstr "Aucun résultat trouvé."
 
-#: channel_core.py:86
+#: channel_core.py:87
 msgid "No saved data for this channel."
 msgstr "Aucune donnée enregistrée pour cette chaîne."
 
-#: channel_core.py:228
+#: channel_core.py:229
 msgid "No saved data for this content type yet."
 msgstr "Aucune donnée enregistrée pour ce type de contenu pour l'instant."
 
-#: Download_core.py:1978
+#: adSkip.py:395
+msgid "No skip button found."
+msgstr "Aucun bouton Passer trouvé."
+
+#: Download_core.py:2578
 msgid "No valid multimedia link found."
 msgstr "Aucun lien multimédia valide trouvé."
 
-#: channel_core.py:272
+#: addonCore.py:719
+msgid "No video history yet"
+msgstr "Aucun historique vidéo pour le moment"
+
+#: channel_core.py:273
 #: playlist.py:471
-#: search.py:561
+#: search.py:562
 msgid "No videos to download."
 msgstr "Aucune vidéo à télécharger."
 
-#: __init__.py:626
+#: addonCore.py:673
 msgid "Not a YouTube URL"
 msgstr "Ce n'est pas une URL YouTube"
 
-#: Download_core.py:2011
+#: Download_core.py:2611
 msgid "Not a YouTube video or valid multimedia link"
 msgstr "Ce n'est pas une vidéo YouTube ni un lien multimédia valide"
 
-#: __init__.py:470
+#: video_history.py:120
+msgid "Open URL"
+msgstr "Ouvrir l'URL"
+
+#: addonCore.py:451
 msgid "Open context menu (single tap), open download folder (double tap), open search dialog (triple tap)"
 msgstr "Ouvrir le menu contextuel (un seul appui), ouvrir le dossier de téléchargement (double appui), ouvrir la boîte de dialogue de recherche (triple appui)"
 
-#: channel_core.py:1575
+#: addonCore.py:516
+msgid "Open download list (single tap), download fail manager (double tap), video history report (triple tap)"
+msgstr "Ouvrir la liste des téléchargements (simple pression), gestionnaire d'échecs de téléchargement (double pression), rapport d'historique des vidéos (triple pression)"
+
+#: channel_core.py:1576
 msgid "Open in browser"
 msgstr "Ouvrir dans le navigateur"
 
-#: Youtube_settings.py:306
-#: Youtube_settings.py:431
+#: Youtube_settings.py:349
+#: Youtube_settings.py:474
 msgid "Opera"
 msgstr "Opera"
 
-#: channel_core.py:266
-#: search.py:225
+#: channel_core.py:267
+#: search.py:226
 msgid "Page number out of range (1-{})."
 msgstr "Numéro de page hors limites (1-{})."
 
-#: channel_core.py:371
+#: channel_core.py:372
 #: playlist.py:123
-#: search.py:184
+#: search.py:185
+# keep-identical
 msgid "Page {}/{}"
 msgstr "Page {}/{}"
 
-#: channel_core.py:712
+#: channel_core.py:713
+#: video_history.py:122
 msgid "Pin"
 msgstr "Épingler"
 
+#: video_history.py:173
+msgid "Pin state changed for {count} items"
+msgstr "État d'épinglage modifié pour {count} éléments"
+
+#: video_history.py:42
+#: video_history.py:83
+#: video_history.py:171
+msgid "Pinned"
+msgstr "Épinglé"
+
 #: playlist.py:418
-#: search.py:506
+#: search.py:507
 msgid "Play on YouTube"
 msgstr "Lire sur YouTube"
 
-#: __init__.py:383
+#: addonCore.py:364
 msgid "Playlist"
 msgstr "Liste de lecture"
 
-#: channel_core.py:1618
+#: channel_core.py:1619
 #: playlist.py:481
 msgid "Playlist download started."
 msgstr "Téléchargement de la liste de lecture démarré."
@@ -1107,15 +1256,15 @@ msgstr "Téléchargement de la liste de lecture démarré."
 msgid "Playlist download started: {title}"
 msgstr "Téléchargement de la liste de lecture démarré : {title}"
 
-#: __init__.py:795
+#: addonCore.py:885
 msgid "Playlist mode disabled"
 msgstr "Mode liste de lecture désactivé"
 
-#: __init__.py:795
+#: addonCore.py:885
 msgid "Playlist mode enabled"
 msgstr "Mode liste de lecture activé"
 
-#: channel_core.py:68
+#: channel_core.py:69
 msgid "Playlists"
 msgstr "Listes de lecture"
 
@@ -1129,26 +1278,27 @@ msgstr "Veuillez saisir l'URL d'une chaîne."
 msgid "Please enter a channel name."
 msgstr "Veuillez saisir un nom de canal."
 
-#: search.py:230
+#: search.py:231
 msgid "Please enter a search term."
 msgstr "Veuillez saisir un terme de recherche."
 
-#: channel_core.py:260
-#: search.py:219
+#: channel_core.py:261
+#: search.py:220
 msgid "Please enter a valid number."
 msgstr "Veuillez entrer un nombre valide."
 
-#: channel_core.py:67
+#: channel_core.py:68
+# keep-identical
 msgid "Podcasts"
 msgstr "Podcasts"
 
-#: Trim.py:143
+#: Trim.py:145
 msgid "Preview start"
 msgstr "Début de l'aperçu"
 
-#: channel_core.py:162
+#: channel_core.py:163
 #: playlist.py:75
-#: search.py:120
+#: search.py:121
 msgid "PreviousPage"
 msgstr "Page précédente"
 
@@ -1156,86 +1306,126 @@ msgstr "Page précédente"
 msgid "Processing snapshot..."
 msgstr "Traitement de l'instantané..."
 
-#: Youtube_settings.py:340
+#: Youtube_settings.py:383
 msgid "Proxy &URL:"
 msgstr "URL du &proxy :"
 
-#: channel_core.py:143
+#: Youtube_settings.py:135
+msgid "Read YouTube subtitles automatically (Chrome, Edge, Firefox)"
+msgstr "Lire automatiquement les sous-titres YouTube (Chrome, Edge, Firefox)"
+
+#: channel_core.py:144
 msgid "Ready"
 msgstr "Prêt"
 
-#: channel_core.py:1594
-#: search.py:519
+#: video_history.py:121
+msgid "Remove"
+msgstr "Supprimer"
+
+#: video_history.py:190
+msgid "Remove all items from the video history?"
+msgstr "Supprimer tous les éléments de l'historique des vidéos ?"
+
+#: channel_core.py:1595
+#: search.py:520
 msgid "Remove from list"
 msgstr "Retirer de la liste"
 
-#: Youtube_settings.py:360
+#: Youtube_settings.py:403
 msgid "Reset to &safe settings (recommended if blocked)"
 msgstr "Rétablir les paramètres par défaut (&recommandé en cas de blocage)"
 
-#: Youtube_settings.py:645
+#: Youtube_settings.py:688
 msgid "Reset to safe settings. Remember to use cookies for best results."
 msgstr "Rétablir les paramètres par défaut. N'oubliez pas d'utiliser les cookies pour de meilleurs résultats."
 
-#: Download_core.py:892
+#: Download_core.py:1202
 msgid "Resume downloads"
 msgstr "Reprendre les téléchargements"
 
-#: Youtube_settings.py:111
+#: Youtube_settings.py:109
 msgid "Resume interrupted downloads on restart"
 msgstr "Reprendre les téléchargements interrompus au redémarrage"
 
-#: search.py:87
+#: addonCore.py:865
+msgid "Save description (single tap), save subtitles (double tap), read YouTube subtitles automatically (triple tap): toggle each option"
+msgstr "Enregistrer la description (un simple appui), enregistrer les sous-titres (un double appui), lire automatiquement les sous-titres YouTube (un triple appui) : basculer chaque option"
+
+#: addonCore.py:871
+msgid "Save description disabled"
+msgstr "Enregistrement de la description désactivé"
+
+#: addonCore.py:871
+msgid "Save description enabled"
+msgstr "Enregistrement de la description activé"
+
+#: Youtube_settings.py:124
+msgid "Save subtitles as a text file"
+msgstr "Enregistrer les sous-titres sous forme de fichier texte"
+
+#: addonCore.py:873
+msgid "Save subtitles disabled"
+msgstr "Enregistrement des sous-titres désactivé"
+
+#: addonCore.py:873
+msgid "Save subtitles enabled"
+msgstr "Enregistrement des sous-titres activé"
+
+#: Youtube_settings.py:119
+msgid "Save video description as a text file"
+msgstr "Enregistrer la description de la vidéo sous forme de fichier texte"
+
+#: search.py:88
 msgid "Search"
 msgstr "Rechercher"
 
-#: search.py:53
+#: search.py:54
 msgid "Search YouTube"
 msgstr "Rechercher sur YouTube"
 
-#: search.py:84
+#: search.py:85
 msgid "Search YouTube:"
 msgstr "Rechercher sur YouTube :"
 
-#: __init__.py:597
+#: addonCore.py:644
 msgid "Search Youtube"
 msgstr "Rechercher sur Youtube"
 
-#: search.py:237
+#: search.py:238
 msgid "Search already in progress."
 msgstr "Recherche déjà en cours."
 
-#: search.py:472
+#: search.py:473
 msgid "Search completed."
 msgstr "Recherche terminée."
 
-#: search.py:481
+#: search.py:482
 msgid "Search failed."
 msgstr "Échec de la recherche."
 
-#: search.py:480
+#: search.py:481
 msgid "Search failed: {error}"
 msgstr "Échec de la recherche : {error}"
 
-#: channel_core.py:136
+#: channel_core.py:137
 msgid "Search:"
 msgstr "Rechercher :"
 
-#: search.py:266
+#: search.py:267
 msgid "Searching..."
 msgstr "Recherche en cours..."
 
-#: Youtube_settings.py:77
+#: Youtube_settings.py:70
 msgid "Select a directory"
 msgstr "Sélectionner un répertoire"
 
-#: Youtube_settings.py:448
+#: Youtube_settings.py:491
 msgid ""
 "Select the browser you are currently logged into YouTube with.\n"
-"Close that browser first if possible -- yt-dlp usually cannot read its cookie database while the browser is still running.\n"
-"\n"
-"\n"
-msgstr "Sélectionnez le navigateur sur lequel vous êtes actuellement connecté à YouTube."
+"Close that browser first if possible -- yt-dlp usually cannot read its cookie database while the browser is still running."
+msgstr ""
+"Sélectionnez le navigateur sur lequel vous êtes actuellement connecté à YouTube.\n"
+"Fermez ce navigateur au préalable si possible -- yt-dlp ne peut généralement pas lire sa base de données de cookies tant que le navigateur est en cours d'exécution."
 
 #: download_list.py:216
 msgid "Selected item(s) already downloading"
@@ -1250,32 +1440,49 @@ msgstr "Éléments sélectionnés supprimés"
 msgid "Selected items moved to the front of the download queue"
 msgstr "Élément(s) sélectionné(s) déplacé(s) au début de la file d'attente de téléchargement"
 
-#: __init__.py:631
-#: channel_core.py:1607
+#: video_history.py:183
+msgid "Selected items removed"
+msgstr "Éléments sélectionnés supprimés"
+
+#: addonCore.py:678
+#: channel_core.py:1608
 #: playlist.py:453
-#: search.py:530
+#: search.py:531
 msgid "Short URL copied to clipboard"
 msgstr "URL courte copiée dans le presse-papiers"
 
-#: channel_core.py:65
+#: channel_core.py:66
+# keep-identical
 msgid "Shorts"
 msgstr "Shorts"
 
-#: channel_core.py:154
+#: channel_core.py:155
 #: playlist.py:67
-#: search.py:111
+#: search.py:112
 msgid "Show items:"
 msgstr "Afficher les éléments :"
 
-#: Youtube_settings.py:217
+#: Youtube_settings.py:260
 msgid "Skip &unavailable fragments"
 msgstr "Ignorer les fragments &indisponibles"
 
-#: Youtube_settings.py:106
+#: Youtube_settings.py:168
+msgid "Skip YouTube a&ds automatically (Z skips the ad that is playing)"
+msgstr "Passer automatiquement les an&nonces YouTube (Z passe l'annonce en cours de lecture)"
+
+#: Youtube_settings.py:176
+msgid "Skip button te&xt for other YouTube languages, comma separated (for example {example}):"
+msgstr "Te&xte du bouton Passer pour d'autres langues YouTube, séparé par des virgules (par exemple {example}) :"
+
+#: Youtube_settings.py:104
 msgid "Skip existing files"
 msgstr "Ignorer les fichiers existants"
 
-#: __init__.py:594
+#: addonCore.py:543
+msgid "Skip the YouTube ad that is playing (Z by default on YouTube pages)"
+msgstr "Passer l'annonce YouTube en cours de lecture (Z par défaut sur les pages YouTube)"
+
+#: addonCore.py:641
 msgid "Snapshot"
 msgstr "Capture instantanée"
 
@@ -1283,29 +1490,29 @@ msgstr "Capture instantanée"
 msgid "Snapshot file already exists"
 msgstr "Le fichier de capture instantanée existe déjà"
 
-#: Youtube_settings.py:224
+#: Youtube_settings.py:267
 msgid "Sound && Status Announcements"
 msgstr "Annonces de sons et d'états"
 
-#: Youtube_settings.py:148
+#: Youtube_settings.py:191
 msgid "Speed && Connections"
 msgstr "Vitesse et connexions"
 
-#: Trim.py:171
+#: Trim.py:173
 #: channel_dialogs.py:167
-#: search.py:688
+#: search.py:689
 msgid "Start download"
 msgstr "Démarrer le téléchargement"
 
-#: Youtube_settings.py:96
+#: Youtube_settings.py:89
 msgid "Start download immediately (NVDA+Y)"
 msgstr "Démarrer le téléchargement immédiatement (NVDA+Y)"
 
-#: Trim.py:311
+#: Trim.py:313
 msgid "Start time must be less than end time"
 msgstr "L'heure de début doit être antérieure à l'heure de fin"
 
-#: Trim.py:136
+#: Trim.py:138
 msgid "Start time:"
 msgstr "Heure de début :"
 
@@ -1314,7 +1521,7 @@ msgstr "Heure de début :"
 msgid "Started {count} download(s)"
 msgstr "{count} téléchargement(s) démarré(s)"
 
-#: __init__.py:431
+#: addonCore.py:412
 msgid "Starting download: {format} - {title}"
 msgstr "Démarrage du téléchargement : {format} - {title}"
 
@@ -1322,7 +1529,7 @@ msgstr "Démarrage du téléchargement : {format} - {title}"
 msgid "Starting download: {title}"
 msgstr "Démarrage du téléchargement : {title}"
 
-#: Download_core.py:1201
+#: Download_core.py:1639
 msgid "Starting next download from queue: {title}"
 msgstr "Démarrage du téléchargement suivant de la file d'attente : {title}"
 
@@ -1334,15 +1541,23 @@ msgstr "Démarrage de {count} téléchargement(s) en attente"
 msgid "Status"
 msgstr "État"
 
+#: Youtube_settings.py:129
+msgid "Subtitle languages, comma separated (for example th,en):"
+msgstr "Langues des sous-titres, séparées par des virgules (par exemple th,en) :"
+
+#: video_history.py:155
+msgid "This item has no web address"
+msgstr "Cet élément n'a pas d'adresse Web"
+
 #: download_list.py:171
 msgid "This item is already downloading"
 msgstr "Cet élément est déjà en cours de téléchargement"
 
-#: Download_core.py:1654
+#: Download_core.py:2141
 msgid "This livestream hasn't started yet. It starts in {time}."
 msgstr "Ce flux en direct n'a pas encore commencé. Il commence dans {time}."
 
-#: Download_core.py:1652
+#: Download_core.py:2139
 msgid "This video hasn't premiered yet. It starts in {time}."
 msgstr "Cette vidéo n'a pas encore fait l'objet d'une première. Elle commence dans {time}."
 
@@ -1350,140 +1565,164 @@ msgstr "Cette vidéo n'a pas encore fait l'objet d'une première. Elle commence 
 msgid "Title"
 msgstr "Titre"
 
-#: channel_core.py:1648
+#: channel_core.py:1649
 #: playlist.py:443
 msgid "Title correction completed and locked."
 msgstr "Correction du titre terminée et verrouillée."
 
-#: channel_core.py:579
+#: channel_core.py:580
 msgid "Title correction completed for {count} videos."
 msgstr "Correction du titre terminée pour {count} vidéos."
 
-#: channel_core.py:1650
+#: channel_core.py:1651
 #: playlist.py:445
 msgid "Title correction failed."
 msgstr "Échec de la correction du titre."
 
-#: __init__.py:790
+#: addonCore.py:548
+msgid "Toggle download immediately"
+msgstr "Basculer le téléchargement immédiat"
+
+#: addonCore.py:880
 msgid "Toggle playlist mode"
 msgstr "Activer/désactiver le mode liste de lecture"
 
-#: __init__.py:595
+#: addonCore.py:642
 msgid "Trim setting"
 msgstr "Paramètre de rognage"
 
-#: Trim.py:327
+#: Trim.py:329
 msgid "Trimming and downloading {format}..."
 msgstr "Rognage et téléchargement de {format}..."
 
-#: Trim.py:129
+#: Trim.py:131
 #: downloadFail.py:72
+#: video_history.py:43
 msgid "URL"
 msgstr "URL"
 
-#: channel_core.py:1610
+#: channel_core.py:1611
 msgid "URL copied to clipboard"
 msgstr "URL copiée dans le Presse-papiers"
 
-#: Trim.py:296
+#: Trim.py:298
 msgid "URL is required"
 msgstr "L'URL est requise"
 
-#: Download_core.py:1919
+#: Download_core.py:2516
 msgid "URL not found"
 msgstr "URL introuvable"
 
-#: Download_core.py:1057
-#: __init__.py:425
+#: Download_core.py:1494
+#: addonCore.py:406
 #: downloadFail.py:110
 #: downloadFail.py:111
 #: downloadFail.py:112
 #: download_list.py:106
+#: video_history.py:80
 msgid "Unknown"
 msgstr "Inconnu"
 
-#: channel_core.py:712
+#: channel_core.py:713
+#: video_history.py:122
 msgid "Unpin"
 msgstr "Désépingler"
 
-#: Youtube_settings.py:391
+#: video_history.py:171
+msgid "Unpinned"
+msgstr "Désépinglé"
+
+#: Youtube_settings.py:434
 msgid "Update Deno now"
 msgstr "Mettre à jour Deno maintenant"
 
-#: Youtube_settings.py:723
-#: Youtube_settings.py:738
-#: __init__.py:310
+#: Youtube_settings.py:770
+#: Youtube_settings.py:785
+#: addonCore.py:284
 msgid "Update failed: {str}"
 msgstr "Échec de la mise à jour : {str}"
 
-#: Youtube_settings.py:380
-#: Youtube_settings.py:395
+#: Youtube_settings.py:423
+#: Youtube_settings.py:438
 msgid "Update status: Idle"
 msgstr "État de la mise à jour : Inactif"
 
-#: Youtube_settings.py:722
-#: Youtube_settings.py:737
+#: Youtube_settings.py:769
+#: Youtube_settings.py:784
 msgid "Update status: Update failed: {str}"
 msgstr "État de la mise à jour : Échec de la mise à jour : {str}"
 
-#: Youtube_settings.py:718
-#: Youtube_settings.py:733
+#: Youtube_settings.py:765
+#: Youtube_settings.py:780
 msgid "Update status: Update successful"
 msgstr "État de la mise à jour : Mise à jour réussie"
 
-#: Youtube_settings.py:707
-#: Youtube_settings.py:730
+#: Youtube_settings.py:754
+#: Youtube_settings.py:777
 msgid "Update status: Updating..."
 msgstr "État de la mise à jour : Mise à jour en cours..."
 
-#: Youtube_settings.py:376
+#: Youtube_settings.py:419
 msgid "Update yt-dlp now"
 msgstr "Mettre à jour yt-dlp maintenant"
 
-#: Youtube_settings.py:731
+#: Youtube_settings.py:778
 msgid "Updating Deno..."
 msgstr "Mise à jour de Deno en cours..."
 
-#: Youtube_settings.py:708
-#: __init__.py:305
+#: Youtube_settings.py:755
+#: addonCore.py:279
 msgid "Updating yt-dlp..."
 msgstr "Mise à jour de yt-dlp en cours..."
 
-#: Youtube_settings.py:281
+#: Youtube_settings.py:324
 msgid "Use &cookies (recommended to avoid block)"
 msgstr "Utiliser les &cookies (recommandé pour éviter le blocage)"
 
-#: Youtube_settings.py:324
+#: Youtube_settings.py:367
 msgid "Use &custom user agent"
 msgstr "Utiliser un agent utilisateur &personnalisé"
 
-#: Youtube_settings.py:335
+#: Youtube_settings.py:378
 msgid "Use &proxy"
 msgstr "Utiliser un &proxy"
 
-#: Youtube_settings.py:153
+#: Youtube_settings.py:196
 msgid "Use download section"
 msgstr "Utiliser la section de téléchargement"
 
-#: Youtube_settings.py:329
+#: Youtube_settings.py:372
 msgid "User &agent:"
 msgstr "Agent &utilisateur :"
 
+#: addonCore.py:636
+msgid "Video History Report"
+msgstr "Rapport d'historique des vidéos"
+
+#: video_history.py:30
+msgid "Video History Report - Absolute YouTube"
+msgstr "Rapport d'historique des vidéos - Absolute YouTube"
+
 #: downloadFail.py:70
 #: download_list.py:69
-#: search.py:29
+#: search.py:30
+#: video_history.py:39
 msgid "Video Title"
 msgstr "Titre de la vidéo"
 
-#: Trim.py:141
+#: Trim.py:143
 msgid "Video duration: unknown; Overall period: 0 seconds"
 msgstr "Durée de la vidéo : inconnue ; Période globale : 0 secondes"
 
-#: Trim.py:254
+#: Trim.py:256
 msgid "Video duration: {duration}; Overall period: {period} seconds"
 msgstr "Durée de la vidéo : {duration} ; Période globale : {period} secondes"
 
-#: channel_core.py:64
+#: video_history.py:199
+msgid "Video history cleared"
+msgstr "Historique des vidéos effacé"
+
+#: channel_core.py:65
 msgid "Videos"
 msgstr "Vidéos"
 
@@ -1495,86 +1734,103 @@ msgstr "Vidéos dans {title}"
 msgid "Waiting"
 msgstr "En attente"
 
-#: __init__.py:677
-#: __init__.py:690
+#: addonCore.py:752
+#: addonCore.py:765
 msgid "You must be on a YouTube page to use this feature"
 msgstr "Vous devez vous trouver sur une page YouTube pour utiliser cette fonctionnalité"
 
-#: channel_core.py:31
+#: Youtube_settings.py:163
+msgid "YouTube ad skipping"
+msgstr "Passage des annonces YouTube"
+
+#: channel_core.py:32
 msgid "Your favorite channel"
 msgstr "Votre chaîne favorite"
 
-#: Trim.py:253
+#: Trim.py:255
 msgid "invalid"
 msgstr "invalide"
 
-#: Trim.py:249
+#: Trim.py:251
 msgid "invalid (negative)"
 msgstr "invalide (négatif)"
 
-#: search.py:47
+#: search.py:48
 msgid "loading..."
 msgstr "chargement..."
 
-#: Trim.py:243
+#: Trim.py:245
 msgid "unknown"
 msgstr "inconnu"
 
-#: Youtube_settings.py:582
+#: Youtube_settings.py:625
 msgid "unknown error"
 msgstr "erreur inconnue"
 
-#: Youtube_settings.py:366
+#: Youtube_settings.py:409
 msgid "yt-dlp Update"
 msgstr "Mise à jour de yt-dlp"
 
-#: Youtube_settings.py:719
-#: __init__.py:307
+#: Youtube_settings.py:766
+#: addonCore.py:281
 msgid "yt-dlp updated successfully"
 msgstr "yt-dlp mis à jour avec succès"
 
-#: Download_core.py:1948
-#: Youtube_settings.py:464
+#: Download_core.py:2548
+#: Youtube_settings.py:507
 msgid "yt-dlp.exe missing"
 msgstr "yt-dlp.exe manquant"
 
-#: channel_core.py:993
-#: search.py:241
+#: channel_core.py:994
+#: search.py:242
 msgid "yt-dlp.exe not found."
 msgstr "yt-dlp.exe introuvable."
 
-#: Youtube_settings.py:470
+#: Youtube_settings.py:513
 msgid ""
 "{browser} appears to still be running. The cookie database is usually locked while the browser is open, so the export will likely fail with a database error.\n"
 "\n"
-"Close {browser} completely, then click OK to continue anyway or Cancel to stop and close it first.\n"
+"Close {browser} completely, then click OK to continue anyway or Cancel to stop and close it first."
+msgstr ""
+"{browser} semble être toujours en cours d'exécution. La base de données de cookies est généralement verrouillée lorsque le navigateur est ouvert, l'exportation risquant donc d'échouer avec une erreur de base de données.\n"
 "\n"
-"\n"
-msgstr "{browser} semble toujours en cours d'exécution. La base de données des cookies est généralement verrouillée lorsque le navigateur est ouvert, l'exportation échouera donc probablement avec une erreur de base de données."
+"Fermez complètement {browser}, puis cliquez sur OK pour continuer quand même ou sur Annuler pour arrêter et le fermer d'abord."
 
-#: channel_core.py:333
-#: search.py:608
+#: channel_core.py:334
+#: search.py:609
 msgid "{count} downloads queued."
 msgstr "{count} téléchargements mis en file d'attente."
 
-#: channel_core.py:1278
+#: channel_core.py:1279
 msgid "{count} new items updated."
 msgstr "{count} nouveaux éléments mis à jour."
 
-#: Download_core.py:1399
+#: Download_core.py:1856
 msgid "{mb} MB downloaded"
 msgstr "{mb} Mo téléchargés"
 
-#: Download_core.py:1384
+#: update.py:159
+msgid "{name} update"
+msgstr "mise à jour de {name}"
+
+#: update.py:164
+msgid ""
+"{name} {new} is available (installed: {old}).\n"
+"Update now?"
+msgstr ""
+"{name} {new} est disponible (installé : {old}).\n"
+"Mettre à jour maintenant ?"
+
+#: Download_core.py:1841
 msgid "{percent}%"
 msgstr "{percent} %"
 
-#: __init__.py:809
+#: addonCore.py:899
 msgid "{quality} kbps"
 msgstr "{quality} kbps"
 
-#: channel_core.py:372
+#: channel_core.py:373
 #: playlist.py:124
-#: search.py:185
+#: search.py:186
 msgid "{}, showing {} of {} videos"
 msgstr "{}, affichage de {} vidéos sur {}"

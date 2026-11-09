@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: AbsoluteYoutube 2026.9.12\n"
+"Project-Id-Version: AbsoluteYoutube 2026.11.0\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-09-14 07:42+0700\n"
+"POT-Creation-Date: 2026-11-09 09:52+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Korean\n"
@@ -10,21 +10,21 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: DevOn Addon\n"
+"X-Generator: ChaiBot Addon\n"
 
-#: Youtube_settings.py:270
+#: Youtube_settings.py:313
 msgid "&Announce download progress"
 msgstr "다운로드 진행 상황 알림(&A)"
 
-#: Youtube_settings.py:229
+#: Youtube_settings.py:272
 msgid "&Beep while converting"
 msgstr "변환 중 삐 소리 재생(&B)"
 
-#: Youtube_settings.py:76
+#: Youtube_settings.py:69
 msgid "&Browse..."
 msgstr "찾아보기(&B)..."
 
-#: Youtube_settings.py:309
+#: Youtube_settings.py:352
 msgid "&Browser for automatic cookies (used when cookies file is off):"
 msgstr "자동 쿠키용 브라우저 (쿠키 파일이 꺼져있을 때 사용)(&B):"
 
@@ -39,9 +39,9 @@ msgstr "취소(&C)"
 msgid "&Clear All"
 msgstr "모두 지우기(&C)"
 
-#: channel_core.py:190
+#: channel_core.py:191
 #: playlist.py:90
-#: search.py:148
+#: search.py:149
 msgid "&Close"
 msgstr "닫기(&C)"
 
@@ -50,10 +50,14 @@ msgstr "닫기(&C)"
 msgid "&Delete Selected"
 msgstr "선택한 항목 삭제(&D)"
 
-#: channel_core.py:182
+#: video_history.py:48
+msgid "&Download"
+msgstr "다운로드(&D)"
+
+#: channel_core.py:183
 #: downloadFail.py:84
 #: download_list.py:84
-#: search.py:140
+#: search.py:141
 msgid "&Download All"
 msgstr "모두 다운로드(&D)"
 
@@ -66,19 +70,27 @@ msgstr "재생목록의 모든 동영상 다운로드(&D)"
 msgid "&Download Selected"
 msgstr "선택한 항목 다운로드(&D)"
 
-#: search.py:144
+#: search.py:145
 msgid "&Download folder"
 msgstr "다운로드 폴더(&D)"
 
-#: Youtube_settings.py:356
+#: update.py:173
+msgid "&Later"
+msgstr "나중에(&L)"
+
+#: Youtube_settings.py:399
 msgid "&Mark as watched"
 msgstr "시청한 상태로 표시(&M)"
 
-#: Youtube_settings.py:133
+#: Youtube_settings.py:152
 msgid "&Max concurrent downloads (1-4):"
 msgstr "최대 동시 다운로드 수 (1-4)(&M):"
 
-#: Youtube_settings.py:157
+#: Download_core.py:1209
+msgid "&No"
+msgstr "아니오(&N)"
+
+#: Youtube_settings.py:200
 msgid "&Number of connections:"
 msgstr "연결 수(&N):"
 
@@ -89,41 +101,66 @@ msgstr "연결 수(&N):"
 msgid "&OK"
 msgstr "확인(&O)"
 
-#: Youtube_settings.py:203
+#: video_history.py:49
+msgid "&Open URL"
+msgstr "URL 열기(&O)"
+
+#: video_history.py:50
+msgid "&Pin or unpin"
+msgstr "고정 또는 고정 해제(&P)"
+
+#: video_history.py:51
+msgid "&Remove"
+msgstr "제거(&R)"
+
+#: Youtube_settings.py:246
 msgid "&Retry count:"
 msgstr "재시도 횟수(&R):"
 
-#: Youtube_settings.py:265
+#: Youtube_settings.py:308
 msgid "&Say download complete"
 msgstr "다운로드 완료 알림(&S)"
 
-#: Youtube_settings.py:196
+#: Youtube_settings.py:239
 msgid "&Sleep between requests (seconds):"
 msgstr "요청 간 대기 시간(초)(&S):"
 
-#: channel_core.py:186
+#: channel_core.py:187
 msgid "&Source"
 msgstr "소스(&S)"
 
-#: Youtube_settings.py:176
+#: Youtube_settings.py:219
 msgid "&Throttle rate (KB/s, 0=unlimited, step of 5):"
 msgstr "속도 제한 (KB/s, 0=제한 없음, 5 단위)(&T):"
 
-#: Download_core.py:1551
+#: update.py:171
+msgid "&Update now"
+msgstr "지금 업데이트(&U)"
+
+#: Download_core.py:1208
+msgid "&Yes"
+msgstr "예(&Y)"
+
+#: subtitleWatcher.py:408
+#: subtitleWatcher.py:416
+msgid "...truncated"
+msgstr "...잘림"
+
+#: Download_core.py:2014
 msgid "0%"
 msgstr "0%"
 
-#: channel_core.py:1347
+#: channel_core.py:1348
 msgid "A channel with this name already exists. Overwrite?"
 msgstr "이 이름의 채널이 이미 존재합니다. 덮어쓰시겠습니까?"
 
-#: __init__.py:286
+#: addonCore.py:260
 msgid "A new version of yt-dlp is available: {latest}. Current: {current}. Please update in settings."
 msgstr "새로운 yt-dlp 버전을 사용할 수 있습니다: {latest}. 현재 버전: {current}. 설정에서 업데이트하세요."
 
 #: Download_core.py:35
-#: Youtube_settings.py:35
-#: __init__.py:45
+#: Youtube_settings.py:36
+#: addonCore.py:47
 msgid "Absolute YouTube"
 msgstr "절대 유튜브"
 
@@ -131,7 +168,7 @@ msgstr "절대 유튜브"
 msgid "Absolute YouTube Trim"
 msgstr "절대 유튜브 자르기"
 
-#: __init__.py:599
+#: addonCore.py:646
 msgid "Absolute YouTube setting"
 msgstr "절대 유튜브 설정"
 
@@ -139,15 +176,23 @@ msgstr "절대 유튜브 설정"
 msgid "Absolute Youtube"
 msgstr "절대 유튜브"
 
+#: adSkip.py:428
+msgid "Ad skipped"
+msgstr "광고 건너뜀"
+
 #: channel_dialogs.py:42
 msgid "Add New Channel"
 msgstr "새 채널 추가"
 
-#: channel_core.py:113
+#: Youtube_settings.py:99
+msgid "Add item numbers to file names in playlist mode"
+msgstr "재생목록 모드에서 파일 이름에 항목 번호 추가"
+
+#: channel_core.py:114
 msgid "Add new channel"
 msgstr "새 채널 추가"
 
-#: __init__.py:197
+#: addonCore.py:152
 msgid "Add-on initialization failed: missing pending file path function. Please restart NVDA."
 msgstr "애드온 초기화 실패: 대기 중인 파일 경로 함수가 없습니다. NVDA를 다시 시작하세요."
 
@@ -159,32 +204,32 @@ msgstr "애드온 내부 오류: 구성 요소가 없습니다. NVDA를 다시 �
 msgid "Added Time"
 msgstr "추가된 시간"
 
-#: __init__.py:448
+#: addonCore.py:429
 msgid "Added to download list: {format} - {title}"
 msgstr "다운로드 목록에 추가됨: {format} - {title}"
 
-#: __init__.py:442
+#: addonCore.py:423
 msgid "Added to download queue: {format} - {title}"
 msgstr "다운로드 대기열에 추가됨: {format} - {title}"
 
-#: Download_core.py:2000
+#: Download_core.py:2600
 msgid "Adding link as {format} to download queue"
 msgstr "다운로드 대기열에 링크를 {format}(으)로 추가하는 중"
 
-#: channel_core.py:299
-#: search.py:570
+#: channel_core.py:300
+#: search.py:571
 msgid "Adding {count} videos to download queue..."
-msgstr "다운로드 대기열에 동영상 {count개}를 추가하는 중..."
+msgstr "다운로드 대기열에 동영상 {count}개를 추가하는 중..."
 
-#: channel_core.py:1632
+#: channel_core.py:1633
 #: playlist.py:465
-#: search.py:549
-#: search.py:552
+#: search.py:550
+#: search.py:553
 msgid "Adding {title} to download queue."
 msgstr "다운로드 대기열에 {title}을(를) 추가하는 중."
 
-#: search.py:114
-#: search.py:192
+#: search.py:115
+#: search.py:193
 msgid "All"
 msgstr "모두"
 
@@ -196,11 +241,11 @@ msgstr "실패한 모든 다운로드 지워짐"
 msgid "All pending downloads cleared"
 msgstr "대기 중인 모든 다운로드 지워짐"
 
-#: __init__.py:450
+#: addonCore.py:431
 msgid "Already in download list"
 msgstr "이미 다운로드 목록에 있습니다"
 
-#: __init__.py:444
+#: addonCore.py:425
 msgid "Already in download queue"
 msgstr "이미 다운로드 대기열에 있습니다"
 
@@ -208,47 +253,59 @@ msgstr "이미 다운로드 대기열에 있습니다"
 msgid "An unexpected error occurred."
 msgstr "예기치 않은 오류가 발생했습니다."
 
-#: Youtube_settings.py:276
+#: Youtube_settings.py:319
 msgid "Anti-blocking settings"
 msgstr "차단 우회 설정"
 
-#: channel_core.py:852
+#: channel_core.py:853
 msgid "Are you sure you want to delete saved data for '{name}'?"
 msgstr "'{name}'에 대한 저장된 데이터를 삭제하시겠습니까?"
 
-#: Youtube_settings.py:185
+#: Youtube_settings.py:228
 msgid "At the maximum (10,000 KB/s = 10 MB/s), this limit essentially never binds -- YouTube's own per-connection serving speed and most home connections stay well under that, so the maximum behaves almost identically to leaving it at 0 (unlimited)."
 msgstr "최대값(10,000 KB/s = 10 MB/s)으로 설정하면 제한이 사실상 거의 작동하지 않습니다. 유튜브 자체의 연결당 전송 속도와 대부분의 가정용 인터넷은 그보다 훨씬 낮기 때문에, 최대값으로 설정하는 것은 0(제한 없음)으로 두는 것과 거의 동일하게 작동합니다."
 
-#: Trim.py:161
+#: Trim.py:163
 #: channel_dialogs.py:158
 msgid "Audio Quality"
 msgstr "오디오 품질"
 
-#: Youtube_settings.py:371
+#: Youtube_settings.py:414
 msgid "Auto-update yt-dlp on startup"
 msgstr "시작할 때 yt-dlp 자동 업데이트"
 
-#: Youtube_settings.py:239
+#: addonCore.py:875
+msgid "Automatic subtitle reading disabled"
+msgstr "자동 자막 읽기 사용 안 함"
+
+#: addonCore.py:875
+msgid "Automatic subtitle reading enabled"
+msgstr "자동 자막 읽기 사용"
+
+#: Youtube_settings.py:282
 msgid "Beep &volume (%):"
 msgstr "알림음 &볼륨 (%):"
 
-#: Youtube_settings.py:255
+#: Youtube_settings.py:298
 msgid "Beep e&very (seconds):"
 msgstr "알림음 &간격 (초):"
 
-#: Youtube_settings.py:306
-#: Youtube_settings.py:431
+#: Youtube_settings.py:349
+#: Youtube_settings.py:474
 msgid "Brave"
 msgstr "Brave"
 
-#: Youtube_settings.py:477
+#: Youtube_settings.py:520
 msgid "Browser still running"
 msgstr "브라우저가 아직 실행 중입니다"
 
-#: Trim.py:174
+#: video_history.py:57
+msgid "C&lose"
+msgstr "닫기(&L)"
+
+#: Trim.py:176
 #: channel_dialogs.py:169
-#: search.py:689
+#: search.py:690
 msgid "Cancel"
 msgstr "취소"
 
@@ -256,31 +313,31 @@ msgstr "취소"
 msgid "Cannot create download folder"
 msgstr "다운로드 폴더를 만들 수 없습니다"
 
-#: channel_core.py:286
+#: channel_core.py:287
 msgid "Cannot create download folder."
 msgstr "다운로드 폴더를 만들 수 없습니다."
 
-#: Download_core.py:811
+#: Download_core.py:1121
 msgid "Cannot create folder"
 msgstr "폴더를 만들 수 없습니다"
 
-#: search.py:540
+#: search.py:541
 msgid "Cannot determine URL for this video."
 msgstr "이 동영상의 URL을 확인할 수 없습니다."
 
-#: __init__.py:406
+#: addonCore.py:387
 msgid "Cannot download from YouTube homepage. Please navigate to a video or playlist."
 msgstr "유튜브 홈에서는 다운로드할 수 없습니다. 동영상이나 재생목록으로 이동해 주세요."
 
-#: __init__.py:409
+#: addonCore.py:390
 msgid "Cannot download from this YouTube page. Please select a specific video."
 msgstr "이 유튜브 페이지에서는 다운로드할 수 없습니다. 특정 동영상을 선택해 주세요."
 
-#: search.py:617
+#: search.py:618
 msgid "Cannot open download folder."
 msgstr "다운로드 폴더를 열 수 없습니다."
 
-#: channel_core.py:342
+#: channel_core.py:343
 msgid "Cannot open source folder."
 msgstr "원본 폴더를 열 수 없습니다."
 
@@ -288,7 +345,7 @@ msgstr "원본 폴더를 열 수 없습니다."
 msgid "Capturing full-size snapshot..."
 msgstr "전체 크기 스냅샷을 캡처하는 중..."
 
-#: channel_core.py:834
+#: channel_core.py:835
 msgid "Channel URL updated."
 msgstr "채널 URL이 업데이트되었습니다."
 
@@ -297,12 +354,12 @@ msgstr "채널 URL이 업데이트되었습니다."
 msgid "Channel URL:"
 msgstr "채널 URL:"
 
-#: channel_core.py:1083
+#: channel_core.py:1084
 msgid "Channel added successfully."
 msgstr "채널이 성공적으로 추가되었습니다."
 
-#: channel_core.py:864
-#: channel_core.py:867
+#: channel_core.py:865
+#: channel_core.py:868
 msgid "Channel deleted."
 msgstr "채널이 삭제되었습니다."
 
@@ -311,40 +368,46 @@ msgstr "채널이 삭제되었습니다."
 msgid "Channel name:"
 msgstr "채널 이름:"
 
-#: channel_core.py:754
+#: channel_core.py:755
 msgid "Channel pinned."
 msgstr "채널이 고정되었습니다."
 
-#: channel_core.py:1368
+#: channel_core.py:1369
 msgid "Channel saved."
 msgstr "채널이 저장되었습니다."
 
-#: channel_core.py:751
+#: channel_core.py:752
 msgid "Channel unpinned."
 msgstr "채널 고정이 해제되었습니다."
 
-#: channel_core.py:821
+#: channel_core.py:822
 msgid "Channel updated."
 msgstr "채널이 업데이트되었습니다."
 
-#: channel_core.py:101
+#: channel_core.py:102
 msgid "Channel:"
 msgstr "채널:"
 
-#: channel_core.py:1136
+#: channel_core.py:1137
 msgid "Checking for new videos..."
 msgstr "새 동영상 확인 중..."
 
-#: Download_core.py:989
+#: Download_core.py:1387
 msgid "Checking interrupted downloads..."
 msgstr "중단된 다운로드 확인 중..."
 
+#: video_history.py:52
+msgid "Clear &all"
+msgstr "모두 지우기(&A)"
+
 #: downloadFail.py:150
 #: download_list.py:137
+#: video_history.py:127
+#: video_history.py:191
 msgid "Clear all"
 msgstr "모두 지우기"
 
-#: channel_core.py:853
+#: channel_core.py:854
 msgid "Confirm Delete"
 msgstr "삭제 확인"
 
@@ -352,86 +415,106 @@ msgstr "삭제 확인"
 msgid "Confirm Download"
 msgstr "다운로드 확인"
 
-#: channel_core.py:1348
+#: channel_core.py:1349
 msgid "Confirm Overwrite"
 msgstr "덮어쓰기 확인"
 
-#: channel_core.py:126
+#: channel_core.py:127
 msgid "Content type:"
 msgstr "콘텐츠 유형:"
 
-#: Download_core.py:1369
-#: Download_core.py:1391
+#: Download_core.py:1826
+#: Download_core.py:1848
 msgid "Converting"
 msgstr "변환 중"
 
-#: Youtube_settings.py:583
-#: Youtube_settings.py:602
+#: Youtube_settings.py:626
+#: Youtube_settings.py:645
 msgid "Cookie export failed: {str}"
 msgstr "쿠키 내보내기 실패: {str}"
 
-#: Youtube_settings.py:593
+#: Youtube_settings.py:636
 msgid "Cookie export timed out"
 msgstr "쿠키 내보내기 시간 초과"
 
-#: Youtube_settings.py:286
+#: Youtube_settings.py:329
 msgid "Cookies &file:"
 msgstr "쿠키(&f):"
 
-#: Youtube_settings.py:625
+#: Youtube_settings.py:668
 msgid "Cookies exported successfully to {path}. Anti-blocking is now active."
 msgstr "쿠키를 {path}(으)로 성공적으로 내보냈습니다. 이제 차단 방지 기능이 활성화됩니다."
 
-#: channel_core.py:1572
+#: channel_core.py:1573
 msgid "Copy URL"
 msgstr "URL 복사"
 
-#: __init__.py:581
+#: addonCore.py:626
 #: playlist.py:415
-#: search.py:503
+#: search.py:504
 msgid "Copy video Shorten URL"
 msgstr "동영상 단축 URL 복사"
 
-#: channel_core.py:1582
+#: channel_core.py:1583
 #: playlist.py:421
 msgid "Correct title now"
 msgstr "지금 제목 수정"
 
-#: channel_core.py:1640
+#: channel_core.py:1641
 #: playlist.py:438
 msgid "Correcting title for selected video..."
 msgstr "선택한 동영상의 제목을 수정하는 중..."
 
+#: adSkip.py:393
+msgid "Could not click the skip button."
+msgstr "건너뛰기 버튼을 클릭할 수 없습니다."
+
 #: playlist.py:455
-#: search.py:532
+#: search.py:533
 msgid "Could not create short URL"
 msgstr "단축 URL을 만들 수 없습니다."
 
-#: __init__.py:633
+#: addonCore.py:680
 msgid "Could not create shortened URL"
 msgstr "단축 URL을 만들 수 없습니다."
 
-#: Youtube_settings.py:567
+#: Youtube_settings.py:610
 msgid "Could not decrypt {browser}'s cookies (DPAPI decryption failed). This usually means yt-dlp needs updating to support this browser's newer cookie encryption. Try 'Update yt-dlp now' below, then export again, or export from Firefox instead, which does not use this encryption. If it still fails, use the manual cookies.txt method."
 msgstr "{browser}의 쿠키를 복호화할 수 없습니다(DPAPI 복호화 실패). 이는 보통 이 브라우저의 새로운 쿠키 암호화를 지원하기 위해 yt-dlp 업데이트가 필요함을 의미합니다. 아래의 '지금 yt-dlp 업데이트'를 시도한 후 다시 내보내거나, 이 암호화를 사용하지 않는 Firefox에서 대신 내보내세요. 여전히 실패하는 경우 수동 cookies.txt 방법을 사용하세요."
 
-#: Youtube_settings.py:575
+#: Youtube_settings.py:618
 msgid "Could not decrypt {browser}'s cookies (DPAPI decryption failed). This usually means yt-dlp needs updating. Try 'Update yt-dlp now' below, then export again. If it still fails, use the manual cookies.txt method instead."
 msgstr "{browser}의 쿠키를 복호화할 수 없습니다(DPAPI 복호화 실패). 이는 보통 yt-dlp 업데이트가 필요함을 의미합니다. 아래의 '지금 yt-dlp 업데이트'를 시도한 후 다시 내보내세요. 여전히 실패하는 경우 대신 수동 cookies.txt 방법을 사용하세요."
 
-#: Trim.py:291
+#: update.py:255
+msgid "Could not download the update. Opening the releases page."
+msgstr "업데이트를 다운로드할 수 없습니다. 릴리스 페이지를 엽니다."
+
+#: Trim.py:293
 msgid "Could not open preview URL"
 msgstr "미리보기 URL을 열 수 없습니다."
 
-#: Youtube_settings.py:549
+#: video_history.py:161
+msgid "Could not open the URL"
+msgstr "URL을 열 수 없습니다"
+
+#: Youtube_settings.py:592
 msgid "Could not read the {browser} cookie database. Close {browser} completely and try exporting again."
 msgstr "{browser} 쿠키 데이터베이스를 읽을 수 없습니다. {browser}를 완전히 종료한 후 다시 내보내기를 시도하세요."
 
-#: __init__.py:797
+#: addonCore.py:504
+msgid "Cycle MP3 quality (single tap), toggle download immediately (double tap), toggle playlist mode (triple tap)"
+msgstr "MP3 품질 순환(한 번 탭), 즉시 다운로드 토글(두 번 탭), 재생 목록 모드 토글(세 번 탭)"
+
+#: addonCore.py:887
 msgid "Cycle MP3 quality settings"
 msgstr "MP3 품질 설정 순환"
 
-#: channel_core.py:728
+#: video_history.py:41
+msgid "Date"
+msgstr "날짜"
+
+#: channel_core.py:729
 #: downloadFail.py:137
 #: download_list.py:125
 msgid "Delete"
@@ -442,24 +525,25 @@ msgstr "삭제"
 msgid "Delete selected"
 msgstr "선택 항목 삭제"
 
-#: Youtube_settings.py:734
+#: Youtube_settings.py:781
 msgid "Deno updated successfully"
-msgstr "Chrome 또는 Firefox에 'Get cookies.txt' 확장 프로그램을 설치합니다."
+msgstr "Deno가 성공적으로 업데이트되었습니다"
 
-#: Youtube_settings.py:73
+#: Youtube_settings.py:66
 msgid "Destination folder"
 msgstr "대상 폴더"
 
 #: download_list.py:127
+#: video_history.py:119
 msgid "Download"
 msgstr "다운로드"
 
 #: channel_dialogs.py:141
-#: search.py:671
+#: search.py:672
 msgid "Download All Videos"
 msgstr "모든 동영상 다운로드"
 
-#: Youtube_settings.py:91
+#: Youtube_settings.py:84
 msgid "Download Behavior"
 msgstr "다운로드 동작"
 
@@ -471,21 +555,21 @@ msgstr "다운로드 실패 관리자 - Absolute YouTube"
 msgid "Download List Manager - Absolute YouTube"
 msgstr "다운로드 목록 관리자 - Absolute YouTube"
 
-#: channel_core.py:1585
+#: channel_core.py:1586
 #: playlist.py:424
-#: search.py:509
+#: search.py:510
 msgid "Download MP3"
 msgstr "MP3 다운로드"
 
-#: channel_core.py:1588
+#: channel_core.py:1589
 #: playlist.py:427
-#: search.py:512
+#: search.py:513
 msgid "Download MP4"
 msgstr "MP4 다운로드"
 
-#: channel_core.py:1591
+#: channel_core.py:1592
 #: playlist.py:430
-#: search.py:515
+#: search.py:516
 msgid "Download WAV"
 msgstr "WAV 다운로드"
 
@@ -498,55 +582,55 @@ msgstr "모두 다운로드"
 msgid "Download all {count} videos in this playlist?"
 msgstr "이 재생 목록의 동영상 {count}개를 모두 다운로드하시겠습니까?"
 
-#: Download_core.py:1591
+#: Download_core.py:2058
 msgid "Download complete"
 msgstr "다운로드 완료"
 
-#: channel_core.py:1579
+#: channel_core.py:1580
 msgid "Download entire playlist"
 msgstr "전체 재생 목록 다운로드"
 
-#: __init__.py:587
+#: addonCore.py:632
 msgid "Download fail manager"
 msgstr "다운로드 실패 관리자"
 
-#: __init__.py:589
+#: addonCore.py:634
 msgid "Download fail manager (no failed)"
 msgstr "다운로드 실패 관리자 (실패 항목 없음)"
 
-#: Download_core.py:1681
+#: Download_core.py:2168
 msgid "Download failed"
 msgstr "다운로드 실패"
 
-#: Download_core.py:1705
+#: Download_core.py:2192
 msgid "Download failed due to an error"
 msgstr "오류로 인해 다운로드 실패"
 
-#: Download_core.py:1693
+#: Download_core.py:2180
 msgid "Download failed due to timeout"
 msgstr "시간 초과로 인해 다운로드 실패"
 
-#: Download_core.py:1739
+#: Download_core.py:2226
 msgid "Download failed to start"
 msgstr "다운로드를 시작하지 못했습니다."
 
-#: Download_core.py:1656
+#: Download_core.py:2143
 msgid "Download failed: YouTube blocked this request. Try exporting cookies from your browser in the Anti-blocking settings."
 msgstr "다운로드 실패: YouTube에서 이 요청을 차단했습니다. 안티 블로킹 설정에서 브라우저 쿠키를 내보내어 시도해 보세요."
 
-#: Download_core.py:1679
+#: Download_core.py:2166
 msgid "Download failed: YouTube reports this video is unavailable"
-msgstr "브라우저에서 YouTube에 로그인합니다."
+msgstr "다운로드 실패: YouTube에서 이 동영상을 사용할 수 없다고 합니다"
 
-#: Download_core.py:1669
+#: Download_core.py:2156
 msgid "Download failed: the downloaded JavaScript runtime isn't working. Try deleting the bin folder in your AbsoluteYoutube config directory so it re-downloads."
-msgstr "확장 프로그램 아이콘을 클릭하고 쿠키를 내보냅니다."
+msgstr "다운로드 실패: 다운로드한 JavaScript 런타임이 작동하지 않습니다. AbsoluteYoutube 구성 디렉터리의 bin 폴더를 삭제하여 다시 다운로드해 보세요."
 
-#: Download_core.py:1677
+#: Download_core.py:2164
 msgid "Download failed: this may be because yt-dlp is outdated (current {current}, latest {latest}). Try updating yt-dlp in settings."
-msgstr "cookies.txt로 저장하고 여기에서 선택합니다."
+msgstr "다운로드 실패: yt-dlp가 오래되어 발생한 문제일 수 있습니다(현재 {current}, 최신 {latest}). 설정에서 yt-dlp를 업데이트해 보세요."
 
-#: Download_core.py:1672
+#: Download_core.py:2159
 msgid "Download failed: yt-dlp needs a JavaScript runtime, which this add-on is downloading automatically in the background. Please wait a moment and try again."
 msgstr "다운로드 실패: yt-dlp에 JavaScript 런타임이 필요하며, 이 애드온이 백그라운드에서 자동으로 다운로드하고 있습니다. 잠시 후 다시 시도해 주세요."
 
@@ -554,28 +638,28 @@ msgstr "다운로드 실패: yt-dlp에 JavaScript 런타임이 필요하며, 이
 msgid "Download file"
 msgstr "파일 다운로드"
 
-#: search.py:619
+#: search.py:620
 msgid "Download folder does not exist."
 msgstr "다운로드 폴더가 존재하지 않습니다."
 
-#: channel_core.py:1620
-#: channel_core.py:1634
+#: channel_core.py:1621
+#: channel_core.py:1635
 #: playlist.py:467
 #: playlist.py:483
 msgid "Download function not available."
 msgstr "다운로드 기능을 사용할 수 없습니다."
 
-#: __init__.py:503
-msgid "Download immediately"
-msgstr "즉시 다운로드"
-
-#: __init__.py:583
+#: addonCore.py:628
 msgid "Download list manager"
 msgstr "다운로드 목록 관리자"
 
-#: __init__.py:457
+#: addonCore.py:438
 msgid "Download or queue video (single tap MP3, double tap MP4, triple tap WAV)"
 msgstr "동영상 다운로드 또는 대기열 추가 (한 번 탭하면 MP3, 두 번 탭하면 MP4, 세 번 탭하면 WAV)"
+
+#: video_history.py:146
+msgid "Download requested for {count} item(s)"
+msgstr "{count}개 항목의 다운로드가 요청되었습니다"
 
 #: downloadFail.py:144
 #: download_list.py:132
@@ -590,12 +674,16 @@ msgstr "다운로드 시작됨: {title}"
 msgid "Downloading thumbnail..."
 msgstr "썸네일 다운로드 중..."
 
+#: update.py:244
+msgid "Downloading {name} {version}"
+msgstr "{name} {version} 다운로드 중"
+
 #: download_list.py:109
 msgid "Downloading..."
 msgstr "다운로드 중..."
 
 #: downloadFail.py:71
-#: search.py:30
+#: search.py:31
 msgid "Duration"
 msgstr "재생 시간"
 
@@ -603,27 +691,27 @@ msgstr "재생 시간"
 msgid "Edit Channel"
 msgstr "채널 편집"
 
-#: channel_core.py:117
+#: channel_core.py:118
 msgid "Edit channel"
 msgstr "채널 편집"
 
-#: channel_core.py:725
+#: channel_core.py:726
 msgid "Edit channel..."
 msgstr "채널 편집..."
 
-#: Youtube_settings.py:116
+#: Youtube_settings.py:114
 msgid "Enable &logging"
 msgstr "로깅 활성화(&l)"
 
-#: Youtube_settings.py:101
+#: Youtube_settings.py:94
 msgid "Enable &playlist mode by default"
 msgstr "기본적으로 재생 목록 모드 활성화(&p)"
 
-#: Trim.py:137
+#: Trim.py:139
 msgid "End time:"
 msgstr "종료 시간:"
 
-#: search.py:96
+#: search.py:97
 msgid "Enter a search query."
 msgstr "검색어를 입력하세요."
 
@@ -635,83 +723,87 @@ msgstr "오류"
 msgid "Error creating download folder"
 msgstr "다운로드 폴더 생성 오류"
 
-#: channel_core.py:870
+#: channel_core.py:871
 msgid "Error deleting channel."
 msgstr "채널 삭제 오류."
 
-#: __init__.py:618
+#: addonCore.py:665
 msgid "Error displaying context menu"
 msgstr "컨텍스트 메뉴 표시 오류"
 
-#: __init__.py:301
+#: addonCore.py:275
 msgid "Error during auto-update of yt-dlp: {str}"
 msgstr "yt-dlp 자동 업데이트 중 오류 발생: {str}"
 
-#: channel_core.py:1089
+#: channel_core.py:1090
 msgid "Error fetching channel: {str}"
 msgstr "채널 가져오기 오류: {str}"
 
-#: __init__.py:192
+#: addonCore.py:147
 #: downloadFail.py:50
 msgid "Error importing core functions: {str}"
 msgstr "코어 함수 가져오기 오류: {str}"
 
-#: __init__.py:739
+#: addonCore.py:814
 msgid "Error importing settings panel: {str}"
 msgstr "설정 패널 가져오기 오류: {str}"
 
-#: __init__.py:215
-#: __init__.py:277
+#: addonCore.py:170
+#: addonCore.py:251
 msgid "Error initializing AbsoluteYoutube: {str}"
 msgstr "AbsoluteYoutube 초기화 오류: {str}"
 
-#: channel_core.py:904
+#: channel_core.py:905
 msgid "Error loading cache."
 msgstr "캐시 로드 오류."
 
-#: channel_core.py:534
-#: channel_core.py:796
+#: channel_core.py:535
+#: channel_core.py:797
 msgid "Error loading channel data."
 msgstr "채널 데이터 로드 오류."
 
-#: __init__.py:527
+#: addonCore.py:572
 msgid "Error opening channel dialog"
 msgstr "채널 대화상자를 여는 중 오류가 발생했습니다."
 
-#: __init__.py:785
+#: addonCore.py:860
 msgid "Error opening channel/playlist list: {str}"
 msgstr "채널/재생목록 목록을 여는 중 오류 발생: {str}"
 
-#: __init__.py:654
-#: __init__.py:658
+#: addonCore.py:701
+#: addonCore.py:705
 msgid "Error opening download fail dialog: {str}"
 msgstr "다운로드 실패 대화상자를 여는 중 오류 발생: {str}"
 
-#: __init__.py:567
+#: addonCore.py:612
 msgid "Error opening download list dialog: {str}"
 msgstr "다운로드 목록 대화상자를 여는 중 오류 발생: {str}"
 
-#: __init__.py:493
+#: addonCore.py:474
 msgid "Error opening folder"
 msgstr "폴더를 여는 중 오류가 발생했습니다."
 
-#: channel_core.py:1554
+#: channel_core.py:1555
 msgid "Error opening playlist."
 msgstr "재생목록을 여는 중 오류가 발생했습니다."
 
-#: __init__.py:724
+#: addonCore.py:799
 msgid "Error opening search dialog: {str}"
 msgstr "검색 대화상자를 여는 중 오류 발생: {str}"
 
-#: __init__.py:742
+#: addonCore.py:817
 msgid "Error opening settings dialog: {str}"
 msgstr "설정 대화상자를 여는 중 오류 발생: {str}"
 
-#: __init__.py:705
+#: addonCore.py:780
 msgid "Error opening trim dialog: {str}"
 msgstr "자르기 대화상자를 여는 중 오류 발생: {str}"
 
-#: Download_core.py:1945
+#: addonCore.py:729
+msgid "Error opening video history: {str}"
+msgstr "비디오 기록을 여는 중 오류 발생: {str}"
+
+#: Download_core.py:2545
 msgid "Error processing URL"
 msgstr "URL을 처리하는 중 오류가 발생했습니다."
 
@@ -719,19 +811,19 @@ msgstr "URL을 처리하는 중 오류가 발생했습니다."
 msgid "Error starting download"
 msgstr "다운로드를 시작하는 중 오류가 발생했습니다."
 
-#: channel_core.py:837
+#: channel_core.py:838
 msgid "Error updating channel URL."
 msgstr "채널 URL을 업데이트하는 중 오류가 발생했습니다."
 
-#: channel_core.py:824
+#: channel_core.py:825
 msgid "Error updating channel."
 msgstr "채널을 업데이트하는 중 오류가 발생했습니다."
 
-#: __init__.py:572
+#: addonCore.py:617
 msgid "Error: Download list module not available"
 msgstr "오류: 다운로드 목록 모듈을 사용할 수 없습니다."
 
-#: __init__.py:644
+#: addonCore.py:691
 msgid "Error: DownloadFail module not available"
 msgstr "오류: DownloadFail 모듈을 사용할 수 없습니다."
 
@@ -743,129 +835,134 @@ msgstr "오류: 스냅샷을 캡처하지 못했습니다."
 msgid "Error: No snapshot file created."
 msgstr "오류: 생성된 스냅샷 파일이 없습니다."
 
-#: __init__.py:729
+#: addonCore.py:804
 msgid "Error: Search module not available"
 msgstr "오류: 검색 모듈을 사용할 수 없습니다."
 
-#: __init__.py:685
+#: addonCore.py:760
 msgid "Error: Snapshot module not available"
 msgstr "오류: 스냅샷 모듈을 사용할 수 없습니다."
 
-#: __init__.py:694
+#: addonCore.py:769
 msgid "Error: Trim module not available"
 msgstr "오류: 자르기 모듈을 사용할 수 없습니다."
 
-#: Download_core.py:1970
-#: Trim.py:324
+#: addonCore.py:716
+msgid "Error: Video history module not available"
+msgstr "오류: 비디오 기록 모듈을 사용할 수 없습니다"
+
+#: Download_core.py:2570
+#: Trim.py:326
 msgid "Error: ffmpeg.exe not found."
 msgstr "오류: ffmpeg.exe를 찾을 수 없습니다."
 
-#: Trim.py:321
+#: Trim.py:323
 msgid "Error: yt-dlp.exe not found."
 msgstr "오류: yt-dlp.exe를 찾을 수 없습니다."
 
-#: Youtube_settings.py:453
+#: Youtube_settings.py:496
 msgid "Export YouTube Cookies"
 msgstr "유튜브 쿠키 내보내기"
 
-#: Youtube_settings.py:319
+#: Youtube_settings.py:362
 msgid "Export YouTube Cookies (Anti-Block)"
 msgstr "유튜브 쿠키 내보내기 (차단 방지)"
 
-#: Youtube_settings.py:484
+#: Youtube_settings.py:527
 msgid "Exporting cookies from {browser}..."
 msgstr "{browser}에서 쿠키를 내보내는 중..."
 
-#: Youtube_settings.py:758
+#: Youtube_settings.py:805
 msgid "Failed to create the specified folder. Please select a valid folder."
 msgstr "지정한 폴더를 만들지 못했습니다. 올바른 폴더를 선택하십시오."
 
-#: __init__.py:591
+#: addonCore.py:638
 msgid "Favorite channel"
 msgstr "즐겨찾기 채널"
 
-#: channel_core.py:1276
+#: channel_core.py:1277
 msgid "Fetched {count} items total."
 msgstr "총 {count}개의 항목을 가져왔습니다."
 
-#: __init__.py:772
+#: addonCore.py:847
 msgid "Fetching channel information..."
 msgstr "채널 정보를 가져오는 중..."
 
-#: channel_core.py:1355
+#: channel_core.py:1356
 msgid "Fetching channel items..."
 msgstr "채널 항목을 가져오는 중..."
 
-#: channel_core.py:1136
+#: channel_core.py:1137
 msgid "Fetching channel videos..."
 msgstr "채널 동영상을 가져오는 중..."
 
-#: Trim.py:148
+#: Trim.py:150
 #: channel_dialogs.py:148
-#: search.py:677
+#: search.py:678
 msgid "File Format"
 msgstr "파일 형식"
 
-#: Download_core.py:1975
+#: Download_core.py:2575
 msgid "File already exists. Skipping download."
 msgstr "파일이 이미 있습니다. 다운로드를 건너뜁니다."
 
-#: Download_core.py:1931
+#: Download_core.py:2531
 msgid "File exists"
 msgstr "파일이 존재함"
 
-#: Youtube_settings.py:346
+#: Youtube_settings.py:389
 msgid "Force I&Pv4"
 msgstr "IPv4 강제 사용"
 
-#: Youtube_settings.py:351
+#: Youtube_settings.py:394
 msgid "Force I&Pv6"
 msgstr "IPv6 강제 사용"
 
 #: download_list.py:70
+#: video_history.py:40
 msgid "Format"
 msgstr "형식"
 
-#: Download_core.py:891
+#: Download_core.py:1240
 msgid ""
 "Found {count} interrupted downloads\n"
-"Resume all?\n"
-"\n"
-"\n"
-msgstr "중단된 다운로드 {count}개를 찾았습니다."
+"Resume all?"
+msgstr ""
+"중단된 다운로드 {count}개가 발견되었습니다\n"
+"모두 재개하시겠습니까?"
 
-#: search.py:470
+#: search.py:471
 msgid "Found {count} videos for '{query}'."
 msgstr "'{query}'에 대한 동영상 {count}개를 찾았습니다."
 
-#: search.py:386
+#: search.py:387
 msgid "Found {} videos..."
 msgstr "동영상 {}개를 찾는 중..."
 
-#: Youtube_settings.py:210
+#: Youtube_settings.py:253
 msgid "Fragment &retries:"
-msgstr "Chrome 또는 Firefox에 'Get cookies.txt' 확장 프로그램을 설치합니다."
+msgstr "프래그먼트 재시도 횟수(&R):"
 
 #: Snapshot.py:132
 msgid "Full-size snapshot complete"
-msgstr "브라우저에서 YouTube에 로그인합니다."
+msgstr "전체 크기 스냅샷이 완료되었습니다"
 
-#: channel_core.py:175
-#: search.py:133
+#: channel_core.py:176
+#: search.py:134
 msgid "Go"
-msgstr "cookies.txt로 저장한 후 여기서 선택합니다."
+msgstr "이동"
 
-#: channel_core.py:375
-#: search.py:188
+#: channel_core.py:376
+#: search.py:189
 msgid "Go to page of {}:"
 msgstr "{} 페이지로 이동:"
 
-#: Youtube_settings.py:306
-#: Youtube_settings.py:431
+#: Youtube_settings.py:349
+#: Youtube_settings.py:474
 msgid "Google Chrome"
 msgstr "Google Chrome"
 
-#: Youtube_settings.py:415
+#: Youtube_settings.py:458
 msgid ""
 "How to get YouTube cookies:\n"
 "\n"
@@ -877,40 +974,49 @@ msgid ""
 "3. Click the extension icon and export cookies\n"
 "4. Save as cookies.txt and select it here\n"
 "\n"
-"Using cookies helps avoid blocks because YouTube sees you as a logged-in user.\n"
+"Using cookies helps avoid blocks because YouTube sees you as a logged-in user."
+msgstr ""
+"YouTube 쿠키를 가져오는 방법:\n"
 "\n"
+"방법 1(자동): 아래의 'YouTube 쿠키 내보내기(차단 방지)' 버튼을 사용하세요. 먼저 브라우저를 닫은 다음, 버튼을 누르고 목록에서 브라우저를 선택하세요.\n"
 "\n"
-msgstr "YouTube 쿠키를 가져오는 방법:"
+"방법 2(수동):\n"
+"1. Chrome 또는 Firefox에 'Get cookies.txt' 확장 프로그램을 설치합니다.\n"
+"2. 브라우저에서 YouTube에 로그인합니다.\n"
+"3. 확장 프로그램 아이콘을 클릭하고 쿠키를 내보냅니다.\n"
+"4. cookies.txt로 저장하고 여기에서 선택합니다.\n"
+"\n"
+"쿠키를 사용하면 YouTube가 로그인된 사용자로 인식하므로 차단을 방지하는 데 도움이 됩니다."
 
-#: Youtube_settings.py:427
+#: Youtube_settings.py:470
 msgid "How to get cookies"
 msgstr "쿠키 가져오는 방법"
 
-#: Youtube_settings.py:294
+#: Youtube_settings.py:337
 msgid "How to get cookies?"
 msgstr "쿠키를 어떻게 가져오나요?"
 
-#: __init__.py:511
+#: addonCore.py:556
 msgid "Immediate download mode disabled"
 msgstr "즉시 다운로드 모드 사용 안 함"
 
-#: __init__.py:509
+#: addonCore.py:554
 msgid "Immediate download mode enabled"
 msgstr "즉시 다운로드 모드 사용"
 
-#: Trim.py:280
+#: Trim.py:282
 msgid "Invalid URL or start time"
 msgstr "잘못된 URL 또는 시작 시간"
 
-#: Trim.py:301
+#: Trim.py:303
 msgid "Invalid YouTube video URL"
 msgstr "잘못된 YouTube 동영상 URL"
 
-#: __init__.py:515
+#: addonCore.py:560
 msgid "Invalid channel URL"
 msgstr "잘못된 채널 URL"
 
-#: __init__.py:495
+#: addonCore.py:476
 msgid "Invalid download folder"
 msgstr "잘못된 다운로드 폴더"
 
@@ -919,25 +1025,29 @@ msgstr "잘못된 다운로드 폴더"
 msgid "Item deleted"
 msgstr "항목이 삭제되었습니다."
 
-#: channel_core.py:1659
-#: search.py:557
+#: video_history.py:183
+msgid "Item removed"
+msgstr "항목이 제거되었습니다"
+
+#: channel_core.py:1660
+#: search.py:558
 msgid "Item removed."
 msgstr "항목이 제거되었습니다."
 
-#: Youtube_settings.py:386
+#: Youtube_settings.py:429
 msgid "JavaScript Runtime (Deno)"
 msgstr "JavaScript 런타임(Deno)"
 
-#: channel_core.py:66
+#: channel_core.py:67
 msgid "Live"
 msgstr "실시간"
 
-#: channel_core.py:898
+#: channel_core.py:899
 msgid "Loaded {count} videos from cache."
 msgstr "캐시에서 {count}개의 동영상을 로드했습니다."
 
-#: channel_core.py:519
-#: channel_core.py:1120
+#: channel_core.py:520
+#: channel_core.py:1121
 msgid "Loaded {count} videos from {name}."
 msgstr "{name}에서 {count}개의 동영상을 로드했습니다."
 
@@ -949,40 +1059,40 @@ msgstr "{count}개의 동영상을 로드했습니다."
 msgid "Loading playlist videos..."
 msgstr "재생목록 동영상을 로드하는 중..."
 
-#: Youtube_settings.py:120
+#: Youtube_settings.py:139
 msgid "MP3 &quality (kbps):"
 msgstr "MP3 화질(kbps):"
 
-#: Youtube_settings.py:306
-#: Youtube_settings.py:431
+#: Youtube_settings.py:349
+#: Youtube_settings.py:474
 msgid "Microsoft Edge"
 msgstr "Microsoft Edge"
 
-#: channel_core.py:720
+#: channel_core.py:721
 msgid "Move Down"
 msgstr "아래로 이동"
 
-#: channel_core.py:716
+#: channel_core.py:717
 msgid "Move Up"
 msgstr "위로 이동"
 
-#: Youtube_settings.py:306
-#: Youtube_settings.py:431
+#: Youtube_settings.py:349
+#: Youtube_settings.py:474
 msgid "Mozilla Firefox"
 msgstr "Mozilla Firefox"
 
-#: channel_core.py:166
+#: channel_core.py:167
 #: playlist.py:79
-#: search.py:124
+#: search.py:125
 msgid "NextPage"
 msgstr "다음 페이지"
 
-#: __init__.py:402
-#: __init__.py:623
+#: addonCore.py:383
+#: addonCore.py:670
 msgid "No YouTube URL found"
 msgstr "YouTube URL을 찾을 수 없습니다"
 
-#: channel_core.py:246
+#: channel_core.py:247
 msgid "No channel selected."
 msgstr "채널이 선택되지 않았습니다."
 
@@ -991,7 +1101,7 @@ msgstr "채널이 선택되지 않았습니다."
 msgid "No downloads could be started"
 msgstr "다운로드를 시작할 수 없습니다"
 
-#: __init__.py:640
+#: addonCore.py:687
 msgid "No failed downloads"
 msgstr "실패한 다운로드 없음"
 
@@ -1003,11 +1113,15 @@ msgstr "지울 실패한 다운로드가 없습니다"
 msgid "No failed downloads to process"
 msgstr "처리할 실패한 다운로드가 없습니다"
 
-#: channel_core.py:1085
+#: video_history.py:187
+msgid "No history to clear"
+msgstr "지울 기록이 없습니다"
+
+#: channel_core.py:1086
 msgid "No items found for this URL."
 msgstr "이 URL에 대한 항목을 찾을 수 없습니다."
 
-#: channel_core.py:1280
+#: channel_core.py:1281
 msgid "No items found."
 msgstr "항목을 찾을 수 없습니다."
 
@@ -1015,6 +1129,10 @@ msgstr "항목을 찾을 수 없습니다."
 #: downloadFail.py:282
 #: download_list.py:196
 #: download_list.py:209
+#: video_history.py:135
+#: video_history.py:151
+#: video_history.py:166
+#: video_history.py:179
 msgid "No items selected"
 msgstr "선택된 항목 없음"
 
@@ -1027,78 +1145,105 @@ msgstr "대기 중인 다운로드 없음"
 msgid "No pending downloads to clear"
 msgstr "지울 대기 중인 다운로드가 없습니다"
 
-#: search.py:467
+#: search.py:468
 msgid "No results found for '{query}'."
 msgstr "'{query}'에 대한 검색 결과가 없습니다."
 
-#: search.py:468
+#: search.py:469
 msgid "No results found."
 msgstr "검색 결과가 없습니다."
 
-#: channel_core.py:86
+#: channel_core.py:87
 msgid "No saved data for this channel."
 msgstr "이 채널에 대한 저장된 데이터가 없습니다."
 
-#: channel_core.py:228
+#: channel_core.py:229
 msgid "No saved data for this content type yet."
 msgstr "이 콘텐츠 유형에 대해 아직 저장된 데이터가 없습니다."
 
-#: Download_core.py:1978
+#: adSkip.py:395
+msgid "No skip button found."
+msgstr "건너뛰기 버튼을 찾을 수 없습니다."
+
+#: Download_core.py:2578
 msgid "No valid multimedia link found."
 msgstr "유효한 멀티미디어 링크를 찾을 수 없습니다."
 
-#: channel_core.py:272
+#: addonCore.py:719
+msgid "No video history yet"
+msgstr "아직 비디오 기록이 없습니다"
+
+#: channel_core.py:273
 #: playlist.py:471
-#: search.py:561
+#: search.py:562
 msgid "No videos to download."
 msgstr "다운로드할 동영상이 없습니다."
 
-#: __init__.py:626
+#: addonCore.py:673
 msgid "Not a YouTube URL"
 msgstr "YouTube URL이 아닙니다."
 
-#: Download_core.py:2011
+#: Download_core.py:2611
 msgid "Not a YouTube video or valid multimedia link"
 msgstr "YouTube 동영상 또는 유효한 멀티미디어 링크가 아닙니다."
 
-#: __init__.py:470
+#: video_history.py:120
+msgid "Open URL"
+msgstr "URL 열기"
+
+#: addonCore.py:451
 msgid "Open context menu (single tap), open download folder (double tap), open search dialog (triple tap)"
 msgstr "컨텍스트 메뉴 열기(한 번 탭), 다운로드 폴더 열기(두 번 탭), 검색 대화상자 열기(세 번 탭)"
 
-#: channel_core.py:1575
+#: addonCore.py:516
+msgid "Open download list (single tap), download fail manager (double tap), video history report (triple tap)"
+msgstr "다운로드 목록 열기(한 번 탭), 다운로드 실패 관리자(두 번 탭), 비디오 기록 보고서(세 번 탭)"
+
+#: channel_core.py:1576
 msgid "Open in browser"
 msgstr "브라우저에서 열기"
 
-#: Youtube_settings.py:306
-#: Youtube_settings.py:431
+#: Youtube_settings.py:349
+#: Youtube_settings.py:474
 msgid "Opera"
 msgstr "오페라"
 
-#: channel_core.py:266
-#: search.py:225
+#: channel_core.py:267
+#: search.py:226
 msgid "Page number out of range (1-{})."
 msgstr "페이지 번호가 범위를 벗어났습니다 (1-{})."
 
-#: channel_core.py:371
+#: channel_core.py:372
 #: playlist.py:123
-#: search.py:184
+#: search.py:185
 msgid "Page {}/{}"
 msgstr "페이지 {}/{}"
 
-#: channel_core.py:712
+#: channel_core.py:713
+#: video_history.py:122
 msgid "Pin"
 msgstr "고정"
 
+#: video_history.py:173
+msgid "Pin state changed for {count} items"
+msgstr "{count}개 항목의 고정 상태가 변경되었습니다"
+
+#: video_history.py:42
+#: video_history.py:83
+#: video_history.py:171
+msgid "Pinned"
+msgstr "고정됨"
+
 #: playlist.py:418
-#: search.py:506
+#: search.py:507
 msgid "Play on YouTube"
 msgstr "YouTube에서 재생"
 
-#: __init__.py:383
+#: addonCore.py:364
 msgid "Playlist"
 msgstr "재생목록"
 
-#: channel_core.py:1618
+#: channel_core.py:1619
 #: playlist.py:481
 msgid "Playlist download started."
 msgstr "재생목록 다운로드가 시작되었습니다."
@@ -1107,15 +1252,15 @@ msgstr "재생목록 다운로드가 시작되었습니다."
 msgid "Playlist download started: {title}"
 msgstr "재생목록 다운로드 시작됨: {title}"
 
-#: __init__.py:795
+#: addonCore.py:885
 msgid "Playlist mode disabled"
 msgstr "재생목록 모드 해제됨"
 
-#: __init__.py:795
+#: addonCore.py:885
 msgid "Playlist mode enabled"
 msgstr "재생목록 모드 설정됨"
 
-#: channel_core.py:68
+#: channel_core.py:69
 msgid "Playlists"
 msgstr "재생목록"
 
@@ -1129,26 +1274,26 @@ msgstr "채널 URL을 입력하십시오."
 msgid "Please enter a channel name."
 msgstr "채널 이름을 입력해 주세요."
 
-#: search.py:230
+#: search.py:231
 msgid "Please enter a search term."
 msgstr "검색어를 입력해 주세요."
 
-#: channel_core.py:260
-#: search.py:219
+#: channel_core.py:261
+#: search.py:220
 msgid "Please enter a valid number."
 msgstr "유효한 숫자를 입력해 주세요."
 
-#: channel_core.py:67
+#: channel_core.py:68
 msgid "Podcasts"
 msgstr "팟캐스트"
 
-#: Trim.py:143
+#: Trim.py:145
 msgid "Preview start"
 msgstr "미리듣기 시작"
 
-#: channel_core.py:162
+#: channel_core.py:163
 #: playlist.py:75
-#: search.py:120
+#: search.py:121
 msgid "PreviousPage"
 msgstr "이전 페이지"
 
@@ -1156,86 +1301,126 @@ msgstr "이전 페이지"
 msgid "Processing snapshot..."
 msgstr "스냅샷 처리 중..."
 
-#: Youtube_settings.py:340
+#: Youtube_settings.py:383
 msgid "Proxy &URL:"
 msgstr "프록시 &URL:"
 
-#: channel_core.py:143
+#: Youtube_settings.py:135
+msgid "Read YouTube subtitles automatically (Chrome, Edge, Firefox)"
+msgstr "YouTube 자막 자동 읽기 (Chrome, Edge, Firefox)"
+
+#: channel_core.py:144
 msgid "Ready"
 msgstr "준비됨"
 
-#: channel_core.py:1594
-#: search.py:519
+#: video_history.py:121
+msgid "Remove"
+msgstr "제거"
+
+#: video_history.py:190
+msgid "Remove all items from the video history?"
+msgstr "비디오 기록에서 모든 항목을 제거하시겠습니까?"
+
+#: channel_core.py:1595
+#: search.py:520
 msgid "Remove from list"
 msgstr "목록에서 제거"
 
-#: Youtube_settings.py:360
+#: Youtube_settings.py:403
 msgid "Reset to &safe settings (recommended if blocked)"
 msgstr "&안전한 설정으로 초기화 (차단된 경우 권장)"
 
-#: Youtube_settings.py:645
+#: Youtube_settings.py:688
 msgid "Reset to safe settings. Remember to use cookies for best results."
 msgstr "안전한 설정으로 초기화합니다. 최상의 결과를 위해 쿠키를 사용하세요."
 
-#: Download_core.py:892
+#: Download_core.py:1202
 msgid "Resume downloads"
 msgstr "다운로드 재개"
 
-#: Youtube_settings.py:111
+#: Youtube_settings.py:109
 msgid "Resume interrupted downloads on restart"
 msgstr "재시작 시 중단된 다운로드 재개"
 
-#: search.py:87
+#: addonCore.py:865
+msgid "Save description (single tap), save subtitles (double tap), read YouTube subtitles automatically (triple tap): toggle each option"
+msgstr "설명 저장(한 번 탭), 자막 저장(두 번 탭), YouTube 자막 자동 읽기(세 번 탭): 각 옵션 전환"
+
+#: addonCore.py:871
+msgid "Save description disabled"
+msgstr "설명 저장 사용 안 함"
+
+#: addonCore.py:871
+msgid "Save description enabled"
+msgstr "설명 저장 사용"
+
+#: Youtube_settings.py:124
+msgid "Save subtitles as a text file"
+msgstr "자막을 텍스트 파일로 저장"
+
+#: addonCore.py:873
+msgid "Save subtitles disabled"
+msgstr "자막 저장 사용 안 함"
+
+#: addonCore.py:873
+msgid "Save subtitles enabled"
+msgstr "자막 저장 사용"
+
+#: Youtube_settings.py:119
+msgid "Save video description as a text file"
+msgstr "비디오 설명을 텍스트 파일로 저장"
+
+#: search.py:88
 msgid "Search"
 msgstr "검색"
 
-#: search.py:53
+#: search.py:54
 msgid "Search YouTube"
 msgstr "YouTube 검색"
 
-#: search.py:84
+#: search.py:85
 msgid "Search YouTube:"
 msgstr "YouTube 검색:"
 
-#: __init__.py:597
+#: addonCore.py:644
 msgid "Search Youtube"
 msgstr "유튜브 검색"
 
-#: search.py:237
+#: search.py:238
 msgid "Search already in progress."
 msgstr "이미 검색이 진행 중입니다."
 
-#: search.py:472
+#: search.py:473
 msgid "Search completed."
 msgstr "검색이 완료되었습니다."
 
-#: search.py:481
+#: search.py:482
 msgid "Search failed."
 msgstr "검색에 실패했습니다."
 
-#: search.py:480
+#: search.py:481
 msgid "Search failed: {error}"
 msgstr "검색 실패: {error}"
 
-#: channel_core.py:136
+#: channel_core.py:137
 msgid "Search:"
 msgstr "검색:"
 
-#: search.py:266
+#: search.py:267
 msgid "Searching..."
 msgstr "검색 중..."
 
-#: Youtube_settings.py:77
+#: Youtube_settings.py:70
 msgid "Select a directory"
 msgstr "디렉토리 선택"
 
-#: Youtube_settings.py:448
+#: Youtube_settings.py:491
 msgid ""
 "Select the browser you are currently logged into YouTube with.\n"
-"Close that browser first if possible -- yt-dlp usually cannot read its cookie database while the browser is still running.\n"
-"\n"
-"\n"
-msgstr "현재 YouTube에 로그인되어 있는 브라우저를 선택하세요."
+"Close that browser first if possible -- yt-dlp usually cannot read its cookie database while the browser is still running."
+msgstr ""
+"현재 YouTube에 로그인되어 있는 브라우저를 선택하세요.\n"
+"가능하면 먼저 해당 브라우저를 닫아주세요. yt-dlp는 브라우저가 실행 중인 동안에는 보통 쿠키 데이터베이스를 읽을 수 없습니다."
 
 #: download_list.py:216
 msgid "Selected item(s) already downloading"
@@ -1250,32 +1435,48 @@ msgstr "선택한 항목이 삭제되었습니다."
 msgid "Selected items moved to the front of the download queue"
 msgstr "선택한 항목이 다운로드 대기열의 맨 앞으로 이동되었습니다."
 
-#: __init__.py:631
-#: channel_core.py:1607
+#: video_history.py:183
+msgid "Selected items removed"
+msgstr "선택한 항목이 제거되었습니다"
+
+#: addonCore.py:678
+#: channel_core.py:1608
 #: playlist.py:453
-#: search.py:530
+#: search.py:531
 msgid "Short URL copied to clipboard"
 msgstr "단축 URL이 클립보드에 복사되었습니다."
 
-#: channel_core.py:65
+#: channel_core.py:66
 msgid "Shorts"
-msgstr "Shorts"
+msgstr "쇼츠"
 
-#: channel_core.py:154
+#: channel_core.py:155
 #: playlist.py:67
-#: search.py:111
+#: search.py:112
 msgid "Show items:"
 msgstr "항목 표시:"
 
-#: Youtube_settings.py:217
+#: Youtube_settings.py:260
 msgid "Skip &unavailable fragments"
 msgstr "재생할 수 없는 조각 건너뛰기"
 
-#: Youtube_settings.py:106
+#: Youtube_settings.py:168
+msgid "Skip YouTube a&ds automatically (Z skips the ad that is playing)"
+msgstr "YouTube 광고 자동 건너뛰기 (Z는 재생 중인 광고를 건너뜁니다)"
+
+#: Youtube_settings.py:176
+msgid "Skip button te&xt for other YouTube languages, comma separated (for example {example}):"
+msgstr "다른 YouTube 언어의 건너뛰기 버튼 텍스트, 쉼표로 구분 (예: {example}):"
+
+#: Youtube_settings.py:104
 msgid "Skip existing files"
 msgstr "기존 파일 건너뛰기"
 
-#: __init__.py:594
+#: addonCore.py:543
+msgid "Skip the YouTube ad that is playing (Z by default on YouTube pages)"
+msgstr "재생 중인 YouTube 광고 건너뛰기 (YouTube 페이지에서 기본값 Z)"
+
+#: addonCore.py:641
 msgid "Snapshot"
 msgstr "스냅샷"
 
@@ -1283,29 +1484,29 @@ msgstr "스냅샷"
 msgid "Snapshot file already exists"
 msgstr "스냅샷 파일이 이미 존재합니다."
 
-#: Youtube_settings.py:224
+#: Youtube_settings.py:267
 msgid "Sound && Status Announcements"
 msgstr "사운드 및 상태 알림"
 
-#: Youtube_settings.py:148
+#: Youtube_settings.py:191
 msgid "Speed && Connections"
 msgstr "속도 및 연결"
 
-#: Trim.py:171
+#: Trim.py:173
 #: channel_dialogs.py:167
-#: search.py:688
+#: search.py:689
 msgid "Start download"
 msgstr "다운로드 시작"
 
-#: Youtube_settings.py:96
+#: Youtube_settings.py:89
 msgid "Start download immediately (NVDA+Y)"
 msgstr "즉시 다운로드 시작 (NVDA+Y)"
 
-#: Trim.py:311
+#: Trim.py:313
 msgid "Start time must be less than end time"
 msgstr "시작 시간은 종료 시간보다 빨라야 합니다"
 
-#: Trim.py:136
+#: Trim.py:138
 msgid "Start time:"
 msgstr "시작 시간:"
 
@@ -1314,7 +1515,7 @@ msgstr "시작 시간:"
 msgid "Started {count} download(s)"
 msgstr "다운로드 {count}개가 시작되었습니다."
 
-#: __init__.py:431
+#: addonCore.py:412
 msgid "Starting download: {format} - {title}"
 msgstr "다운로드 시작: {format} - {title}"
 
@@ -1322,7 +1523,7 @@ msgstr "다운로드 시작: {format} - {title}"
 msgid "Starting download: {title}"
 msgstr "다운로드 시작: {title}"
 
-#: Download_core.py:1201
+#: Download_core.py:1639
 msgid "Starting next download from queue: {title}"
 msgstr "대기열에서 다음 다운로드 시작: {title}"
 
@@ -1334,15 +1535,23 @@ msgstr "대기 중인 다운로드 {count}개 시작"
 msgid "Status"
 msgstr "상태"
 
+#: Youtube_settings.py:129
+msgid "Subtitle languages, comma separated (for example th,en):"
+msgstr "자막 언어, 쉼표로 구분 (예: th,en):"
+
+#: video_history.py:155
+msgid "This item has no web address"
+msgstr "이 항목에는 웹 주소가 없습니다"
+
 #: download_list.py:171
 msgid "This item is already downloading"
 msgstr "이 항목은 이미 다운로드 중입니다."
 
-#: Download_core.py:1654
+#: Download_core.py:2141
 msgid "This livestream hasn't started yet. It starts in {time}."
 msgstr "이 실시간 방송은 아직 시작되지 않았습니다. {time} 후에 시작됩니다."
 
-#: Download_core.py:1652
+#: Download_core.py:2139
 msgid "This video hasn't premiered yet. It starts in {time}."
 msgstr "이 동영상은 아직 프리미어 방송이 시작되지 않았습니다. {time} 후에 시작됩니다."
 
@@ -1350,140 +1559,164 @@ msgstr "이 동영상은 아직 프리미어 방송이 시작되지 않았습니
 msgid "Title"
 msgstr "제목"
 
-#: channel_core.py:1648
+#: channel_core.py:1649
 #: playlist.py:443
 msgid "Title correction completed and locked."
 msgstr "제목 수정이 완료되어 잠금 처리되었습니다."
 
-#: channel_core.py:579
+#: channel_core.py:580
 msgid "Title correction completed for {count} videos."
 msgstr "{count}개 동영상의 제목 수정이 완료되었습니다."
 
-#: channel_core.py:1650
+#: channel_core.py:1651
 #: playlist.py:445
 msgid "Title correction failed."
 msgstr "제목 수정에 실패했습니다."
 
-#: __init__.py:790
+#: addonCore.py:548
+msgid "Toggle download immediately"
+msgstr "즉시 다운로드 전환"
+
+#: addonCore.py:880
 msgid "Toggle playlist mode"
 msgstr "재생 목록 모드 전환"
 
-#: __init__.py:595
+#: addonCore.py:642
 msgid "Trim setting"
 msgstr "자르기 설정"
 
-#: Trim.py:327
+#: Trim.py:329
 msgid "Trimming and downloading {format}..."
 msgstr "{format}(으)로 자르고 다운로드하는 중..."
 
-#: Trim.py:129
+#: Trim.py:131
 #: downloadFail.py:72
+#: video_history.py:43
 msgid "URL"
 msgstr "URL"
 
-#: channel_core.py:1610
+#: channel_core.py:1611
 msgid "URL copied to clipboard"
 msgstr "URL이 클립보드에 복사되었습니다."
 
-#: Trim.py:296
+#: Trim.py:298
 msgid "URL is required"
 msgstr "URL이 필요합니다."
 
-#: Download_core.py:1919
+#: Download_core.py:2516
 msgid "URL not found"
 msgstr "URL을 찾을 수 없습니다."
 
-#: Download_core.py:1057
-#: __init__.py:425
+#: Download_core.py:1494
+#: addonCore.py:406
 #: downloadFail.py:110
 #: downloadFail.py:111
 #: downloadFail.py:112
 #: download_list.py:106
+#: video_history.py:80
 msgid "Unknown"
 msgstr "알 수 없음"
 
-#: channel_core.py:712
+#: channel_core.py:713
+#: video_history.py:122
 msgid "Unpin"
 msgstr "고정 해제"
 
-#: Youtube_settings.py:391
+#: video_history.py:171
+msgid "Unpinned"
+msgstr "고정 해제됨"
+
+#: Youtube_settings.py:434
 msgid "Update Deno now"
 msgstr "지금 Deno 업데이트"
 
-#: Youtube_settings.py:723
-#: Youtube_settings.py:738
-#: __init__.py:310
+#: Youtube_settings.py:770
+#: Youtube_settings.py:785
+#: addonCore.py:284
 msgid "Update failed: {str}"
 msgstr "업데이트 실패: {str}"
 
-#: Youtube_settings.py:380
-#: Youtube_settings.py:395
+#: Youtube_settings.py:423
+#: Youtube_settings.py:438
 msgid "Update status: Idle"
 msgstr "업데이트 상태: 대기 중"
 
-#: Youtube_settings.py:722
-#: Youtube_settings.py:737
+#: Youtube_settings.py:769
+#: Youtube_settings.py:784
 msgid "Update status: Update failed: {str}"
 msgstr "업데이트 상태: 업데이트 실패: {str}"
 
-#: Youtube_settings.py:718
-#: Youtube_settings.py:733
+#: Youtube_settings.py:765
+#: Youtube_settings.py:780
 msgid "Update status: Update successful"
 msgstr "업데이트 상태: 업데이트 성공"
 
-#: Youtube_settings.py:707
-#: Youtube_settings.py:730
+#: Youtube_settings.py:754
+#: Youtube_settings.py:777
 msgid "Update status: Updating..."
 msgstr "업데이트 상태: 업데이트 중..."
 
-#: Youtube_settings.py:376
+#: Youtube_settings.py:419
 msgid "Update yt-dlp now"
 msgstr "지금 yt-dlp 업데이트"
 
-#: Youtube_settings.py:731
+#: Youtube_settings.py:778
 msgid "Updating Deno..."
 msgstr "Deno 업데이트 중..."
 
-#: Youtube_settings.py:708
-#: __init__.py:305
+#: Youtube_settings.py:755
+#: addonCore.py:279
 msgid "Updating yt-dlp..."
 msgstr "yt-dlp 업데이트 중..."
 
-#: Youtube_settings.py:281
+#: Youtube_settings.py:324
 msgid "Use &cookies (recommended to avoid block)"
 msgstr "&쿠키 사용 (차단 방지 권장)"
 
-#: Youtube_settings.py:324
+#: Youtube_settings.py:367
 msgid "Use &custom user agent"
 msgstr "사용자 지정 &에이전트 사용"
 
-#: Youtube_settings.py:335
+#: Youtube_settings.py:378
 msgid "Use &proxy"
 msgstr "&프록시 사용"
 
-#: Youtube_settings.py:153
+#: Youtube_settings.py:196
 msgid "Use download section"
 msgstr "다운로드 섹션 사용"
 
-#: Youtube_settings.py:329
+#: Youtube_settings.py:372
 msgid "User &agent:"
 msgstr "사용자 &에이전트:"
 
+#: addonCore.py:636
+msgid "Video History Report"
+msgstr "동영상 기록 보고서"
+
+#: video_history.py:30
+msgid "Video History Report - Absolute YouTube"
+msgstr "동영상 기록 보고서 - 절대 YouTube"
+
 #: downloadFail.py:70
 #: download_list.py:69
-#: search.py:29
+#: search.py:30
+#: video_history.py:39
 msgid "Video Title"
 msgstr "동영상 제목"
 
-#: Trim.py:141
+#: Trim.py:143
 msgid "Video duration: unknown; Overall period: 0 seconds"
 msgstr "동영상 길이: 알 수 없음; 전체 기간: 0초"
 
-#: Trim.py:254
+#: Trim.py:256
 msgid "Video duration: {duration}; Overall period: {period} seconds"
 msgstr "동영상 길이: {duration}; 전체 기간: {period}초"
 
-#: channel_core.py:64
+#: video_history.py:199
+msgid "Video history cleared"
+msgstr "동영상 기록이 지워졌습니다"
+
+#: channel_core.py:65
 msgid "Videos"
 msgstr "동영상"
 
@@ -1495,86 +1728,103 @@ msgstr "{title}의 동영상"
 msgid "Waiting"
 msgstr "대기 중"
 
-#: __init__.py:677
-#: __init__.py:690
+#: addonCore.py:752
+#: addonCore.py:765
 msgid "You must be on a YouTube page to use this feature"
 msgstr "이 기능을 사용하려면 YouTube 페이지에 있어야 합니다"
 
-#: channel_core.py:31
+#: Youtube_settings.py:163
+msgid "YouTube ad skipping"
+msgstr "YouTube 광고 건너뛰기"
+
+#: channel_core.py:32
 msgid "Your favorite channel"
 msgstr "즐겨찾는 채널"
 
-#: Trim.py:253
+#: Trim.py:255
 msgid "invalid"
 msgstr "잘못됨"
 
-#: Trim.py:249
+#: Trim.py:251
 msgid "invalid (negative)"
 msgstr "유효하지 않음 (음수)"
 
-#: search.py:47
+#: search.py:48
 msgid "loading..."
 msgstr "로딩 중..."
 
-#: Trim.py:243
+#: Trim.py:245
 msgid "unknown"
 msgstr "알 수 없음"
 
-#: Youtube_settings.py:582
+#: Youtube_settings.py:625
 msgid "unknown error"
 msgstr "알 수 없는 오류"
 
-#: Youtube_settings.py:366
+#: Youtube_settings.py:409
 msgid "yt-dlp Update"
 msgstr "yt-dlp 업데이트"
 
-#: Youtube_settings.py:719
-#: __init__.py:307
+#: Youtube_settings.py:766
+#: addonCore.py:281
 msgid "yt-dlp updated successfully"
 msgstr "yt-dlp가 성공적으로 업데이트되었습니다"
 
-#: Download_core.py:1948
-#: Youtube_settings.py:464
+#: Download_core.py:2548
+#: Youtube_settings.py:507
 msgid "yt-dlp.exe missing"
 msgstr "yt-dlp.exe가 없습니다"
 
-#: channel_core.py:993
-#: search.py:241
+#: channel_core.py:994
+#: search.py:242
 msgid "yt-dlp.exe not found."
 msgstr "yt-dlp.exe를 찾을 수 없습니다."
 
-#: Youtube_settings.py:470
+#: Youtube_settings.py:513
 msgid ""
 "{browser} appears to still be running. The cookie database is usually locked while the browser is open, so the export will likely fail with a database error.\n"
 "\n"
-"Close {browser} completely, then click OK to continue anyway or Cancel to stop and close it first.\n"
+"Close {browser} completely, then click OK to continue anyway or Cancel to stop and close it first."
+msgstr ""
+"{browser}이(가) 아직 실행 중인 것으로 보입니다. 브라우저가 열려 있는 동안에는 쿠키 데이터베이스가 잠겨 있어 내보내기가 데이터베이스 오류로 실패할 수 있습니다.\n"
 "\n"
-"\n"
-msgstr "{browser}이(가) 여전히 실행 중인 것으로 보입니다. 브라우저가 열려 있는 동안에는 쿠키 데이터베이스가 잠겨 있는 경우가 많으므로 내보내기가 데이터베이스 오류로 실패할 수 있습니다."
+"{browser}을(를) 완전히 닫은 후, 계속 진행하려면 확인을 누르고, 먼저 닫으려면 취소를 누르세요."
 
-#: channel_core.py:333
-#: search.py:608
+#: channel_core.py:334
+#: search.py:609
 msgid "{count} downloads queued."
 msgstr "{count}개의 다운로드가 대기 중입니다."
 
-#: channel_core.py:1278
+#: channel_core.py:1279
 msgid "{count} new items updated."
 msgstr "{count}개의 새 항목이 업데이트되었습니다."
 
-#: Download_core.py:1399
+#: Download_core.py:1856
 msgid "{mb} MB downloaded"
 msgstr "{mb} MB 다운로드됨"
 
-#: Download_core.py:1384
+#: update.py:159
+msgid "{name} update"
+msgstr "{name} 업데이트"
+
+#: update.py:164
+msgid ""
+"{name} {new} is available (installed: {old}).\n"
+"Update now?"
+msgstr ""
+"{name} {new} 버전을 사용할 수 있습니다 (설치됨: {old}).\n"
+"지금 업데이트하시겠습니까?"
+
+#: Download_core.py:1841
 msgid "{percent}%"
 msgstr "{percent}%"
 
-#: __init__.py:809
+#: addonCore.py:899
 msgid "{quality} kbps"
 msgstr "{quality} kbps"
 
-#: channel_core.py:372
+#: channel_core.py:373
 #: playlist.py:124
-#: search.py:185
+#: search.py:186
 msgid "{}, showing {} of {} videos"
-msgstr "{}, 전체 {3}개 중 {2}개 동영상 표시 중"
+msgstr "{0}, 전체 {2}개 중 {1}개 동영상 표시 중"

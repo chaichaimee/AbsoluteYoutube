@@ -28,7 +28,7 @@ import psutil
 import sys
 import urllib.request
 import zipfile
-from queue import Queue
+from queue import Queue, Empty
 
 addonHandler.initTranslation()
 
@@ -57,6 +57,9 @@ _download_queue = Queue()
 _global_state_lock = threading.Lock()
 _global_active_downloads = 0
 _global_active_lock = threading.Lock()
+_activeProcesses = []
+_processLock = threading.Lock()
+_shuttingDown = False
 _num_workers = 1
 _pending_lock = threading.Lock()
 _failed_lock = threading.Lock()
@@ -363,6 +366,7 @@ _SETTING_DEFAULTS = {
 	"TrimMP3Quality": 320,
 	"Logging": False,
 	"PlaylistMode": False,
+	"PlaylistNumbering": True,
 	"SkipExisting": True,
 	"ResumeOnRestart": True,
 	"MaxConcurrentDownloads": 1,
@@ -396,6 +400,12 @@ _SETTING_DEFAULTS = {
 	"SponsorBlockCategories": "all",
 	"ImmediateDownload": True,
 	"AnnounceDownloadProgress": False,
+	"SaveDescriptionText": False,
+	"SaveSubtitleText": False,
+	"SubtitleLanguages": "th,en",
+	"AutoReadSubtitles": False,
+	"AutoSkipAds": True,
+	"AdSkipExtraWords": "",
 }
 
 _SETTINGS_SCHEMA_VERSION = 2
@@ -1286,6 +1296,52 @@ def get_video_duration(url):
 	except Exception:
 		return None
 
+PLAYLIST_FOLDER_MAX_LENGTH = 80
+
+def _playlistFolderName(rawTitle):
+	folderName = validFilename(rawTitle or "")[:PLAYLIST_FOLDER_MAX_LENGTH].strip().rstrip(". ")
+	return folderName or "Playlist"
+
+def fetchPlaylistTitle(playlistUrl):
+	cmd = [
+		YouTubeEXE, "--yes-playlist", "--flat-playlist", "--playlist-items", "1", "--skip-download",
+		"--no-warnings", "--print", "%(playlist_title)s"
+	] + js_runtime_args() + [playlistUrl]
+	try:
+		result = subprocess.run(
+			cmd, capture_output=True, text=True, encoding="utf-8", errors="replace",
+			creationflags=subprocess.CREATE_NO_WINDOW, timeout=60
+		)
+	except (OSError, subprocess.SubprocessError) as e:
+		log(f"Playlist title lookup failed: {e}")
+		return None
+	if result.returncode != 0:
+		log(f"Playlist title lookup returned exit code {result.returncode}")
+		return None
+	for line in result.stdout.splitlines():
+		name = line.strip()
+		if name and name not in ("NA", "None"):
+			return name
+	return None
+
+def _retargetPlaylistFolder(cmd, playlistUrl):
+	template = ""
+	for pos, part in enumerate(cmd[:-1]):
+		if part == "-o" and not cmd[pos + 1].startswith(("description:", "subtitle:")):
+			template = cmd[pos + 1]
+	currentDir = os.path.dirname(template)
+	if not currentDir:
+		return cmd
+	realTitle = fetchPlaylistTitle(playlistUrl)
+	if not realTitle:
+		log(f"Playlist folder kept as '{os.path.basename(currentDir)}' (real title unavailable)")
+		return cmd
+	realDir = os.path.join(os.path.dirname(currentDir), _playlistFolderName(realTitle))
+	if realDir == currentDir:
+		return cmd
+	log(f"Playlist folder resolved: '{os.path.basename(currentDir)}' -> '{os.path.basename(realDir)}'")
+	return [part.replace(currentDir, realDir) for part in cmd]
+
 def repairIncompleteFiles(path):
 	def _worker():
 		repaired_count = 0
@@ -1362,10 +1418,45 @@ def start_worker_threads():
 		t.start()
 	log(f"Started {_num_workers} worker threads")
 
+def _trackProcess(process):
+	with _processLock:
+		_activeProcesses[:] = [p for p in _activeProcesses if p.poll() is None]
+		_activeProcesses.append(process)
+
+def _killTrackedProcesses():
+	with _processLock:
+		running = [p for p in _activeProcesses if p.poll() is None]
+		_activeProcesses.clear()
+	for process in running:
+		# taskkill is launched without waiting so closing NVDA is never held up;
+		# it removes the whole tree (yt-dlp plus ffmpeg) even after NVDA exits.
+		try:
+			subprocess.Popen(
+				["taskkill", "/F", "/T", "/PID", str(process.pid)],
+				stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, stdin=subprocess.DEVNULL,
+				creationflags=subprocess.CREATE_NO_WINDOW,
+			)
+		except OSError as e:
+			log(f"taskkill could not be started for pid {process.pid}: {e}")
+			try:
+				process.kill()
+			except OSError:
+				pass
+
 def shutdown_workers():
-	global _num_workers
+	global _num_workers, _shuttingDown
+	_shuttingDown = True
+	# Items that never started stay in the queue file as queued, so the resume
+	# dialog can offer them again; they must not start after teardown.
+	try:
+		while True:
+			_download_queue.get_nowait()
+			_download_queue.task_done()
+	except Empty:
+		pass
 	for _ in range(_num_workers):
 		_download_queue.put(None)
+	_killTrackedProcesses()
 
 def worker_loop():
 	while True:
@@ -1856,6 +1947,10 @@ def run_download(item):
 			cmd = _adjust_multipart_connections(cmd, effective_connections)
 			item["cmd"] = cmd
 
+	if item.get("is_playlist"):
+		cmd = _retargetPlaylistFolder(cmd, url)
+		item["cmd"] = cmd
+
 	updateDownloadStatusInQueue(download_id, "running")
 	PlayStartBeep()
 	process = None
@@ -1899,6 +1994,7 @@ def run_download(item):
 		except Exception:
 			stderrLogPath = None
 			stderrLogFile = None
+		sidecarSince = time.time() - 5
 		process = subprocess.Popen(
 			cmd,
 			stdout=subprocess.DEVNULL,
@@ -1908,6 +2004,7 @@ def run_download(item):
 			startupinfo=si,
 			creationflags=subprocess.CREATE_NO_WINDOW
 		)
+		_trackProcess(process)
 		if stderrLogFile:
 			stderrLogFile.close()
 		progress_stop_event = None
@@ -1941,6 +2038,10 @@ def run_download(item):
 			try:
 				process.wait(timeout=timeoutHolder[0])
 				return_code = process.returncode
+				if _shuttingDown and return_code != 0:
+					# Stopped by add-on teardown, not a real failure; the item stays
+					# queued or running in the state file for the resume dialog.
+					return
 				stderr_text = ""
 				if stderrLogPath:
 					try:
@@ -1957,6 +2058,17 @@ def run_download(item):
 						core.callLater(0, ui.message, _("Download complete"))
 					updateDownloadStatusInQueue(download_id, "completed")
 					remove_failed_download(url, title)
+					if "--write-subs" in item["cmd"]:
+						for stderrLine in stderr_text.split("\n"):
+							if "ubtitle" in stderrLine and not stderrLine.startswith("[debug]"):
+								log(f"yt-dlp subtitle note: {stderrLine.strip()[:300]}")
+						if "no subtitles for the requested languages" in stderr_text and item.get("url"):
+							threading.Thread(target=_logAvailableSubtitles, args=(item["url"],), daemon=True).start()
+					if not is_trimming:
+						try:
+							_finalizeSidecars(item["cmd"], sidecarSince)
+						except Exception as e:
+							log(f"Sidecar text conversion failed: {e}")
 				else:
 					# yt-dlp's own stderr was previously only pattern-matched
 					# in memory (against _DOWNLOADER_ERROR_MARKERS) and then
@@ -2117,6 +2229,93 @@ def run_download(item):
 		with _global_active_lock:
 			_global_active_downloads -= 1
 
+_SRT_TIMING_RE = re.compile(r"^\d{1,2}:\d{2}:\d{2}[,.]\d{3}\s*-->\s*\d{1,2}:\d{2}:\d{2}[,.]\d{3}")
+_SUBTITLE_LANGS_RE = re.compile(r"^[A-Za-z0-9_.,*-]{1,60}$")
+
+def _cleanSubtitleLanguages(text):
+	cleaned = (text or "").replace(" ", "")
+	if _SUBTITLE_LANGS_RE.match(cleaned):
+		return cleaned
+	return _SETTING_DEFAULTS["SubtitleLanguages"]
+
+def _srtToPlainText(text):
+	rows = [row.strip() for row in text.replace("\r\n", "\n").split("\n")]
+	lines = []
+	for pos, line in enumerate(rows):
+		if not line or _SRT_TIMING_RE.match(line):
+			continue
+		nextRow = next((r for r in rows[pos + 1:] if r), "")
+		if line.isdigit() and _SRT_TIMING_RE.match(nextRow):
+			continue
+		line = re.sub(r"<[^>]+>", "", line)
+		line = re.sub(r"\{\\[^}]*\}", "", line)
+		line = line.replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">")
+		line = line.replace("&quot;", '"').replace("&#39;", "'").replace("&nbsp;", " ").strip()
+		if line and not (lines and lines[-1] == line):
+			lines.append(line)
+	return "\n".join(lines)
+
+def _convertSidecarFolder(folder, sourceExt, transform, newerThan=None):
+	if not os.path.isdir(folder):
+		return 0
+	converted = 0
+	for name in os.listdir(folder):
+		if not name.lower().endswith(sourceExt):
+			continue
+		sourcePath = os.path.join(folder, name)
+		try:
+			if newerThan is not None and os.path.getmtime(sourcePath) < newerThan:
+				continue
+			with open(sourcePath, "r", encoding="utf-8", errors="replace") as sourceFile:
+				text = transform(sourceFile.read())
+			targetPath = os.path.splitext(sourcePath)[0] + ".txt"
+			with open(targetPath, "w", encoding="utf-8") as targetFile:
+				targetFile.write(text)
+			os.remove(sourcePath)
+			converted += 1
+		except (OSError, ValueError) as e:
+			log(f"Could not convert {name} to a text file: {e}")
+	return converted
+
+def _logAvailableSubtitles(url):
+	cmd = [YouTubeEXE, "--list-subs", "--skip-download", "--no-playlist"] + js_runtime_args() + [url]
+	try:
+		result = subprocess.run(
+			cmd, capture_output=True, text=True, encoding="utf-8", errors="replace",
+			creationflags=subprocess.CREATE_NO_WINDOW, timeout=90,
+		)
+	except (OSError, subprocess.SubprocessError) as e:
+		log(f"Subtitle language check failed: {e}")
+		return
+	kept = []
+	for line in result.stdout.split("\n"):
+		stripped = line.strip()
+		if stripped.startswith("[debug]") or not stripped:
+			continue
+		if stripped.startswith(("[info]", "Language")) or stripped.split(" ")[0].lower().startswith(("th", "en")):
+			kept.append(stripped[:200])
+	log("Available subtitles for this video (th and en only): " + " | ".join(kept[:40]) if kept else "No subtitle languages reported for this video")
+
+def _finalizeSidecars(cmd, startedAt=None):
+	template = ""
+	for pos, part in enumerate(cmd[:-1]):
+		if part == "-o" and not cmd[pos + 1].startswith(("description:", "subtitle:")):
+			template = cmd[pos + 1]
+	baseDir = os.path.dirname(template)
+	if not baseDir:
+		return
+	# The typed -o templates put these files in their own subfolders. Files that
+	# ended up directly beside the media are also picked up, but only when they
+	# were written during this download, so unrelated files are never touched.
+	if "--write-description" in cmd:
+		count = _convertSidecarFolder(os.path.join(baseDir, "Descriptions"), ".description", lambda text: text.strip() + "\n")
+		count += _convertSidecarFolder(baseDir, ".description", lambda text: text.strip() + "\n", startedAt)
+		log(f"Description files converted to text: {count}")
+	if "--write-subs" in cmd:
+		count = _convertSidecarFolder(os.path.join(baseDir, "Subtitles"), ".srt", _srtToPlainText)
+		count += _convertSidecarFolder(baseDir, ".srt", _srtToPlainText, startedAt)
+		log(f"Subtitle files converted to text: {count}")
+
 def build_ytdlp_command(targetUrl, savePath, mpFormat, isPlaylist=False, title=None):
 	# Single source of truth for yt-dlp command construction. convertToMP()
 	# below and the Download Fail Manager's retry path (downloadFail.py)
@@ -2143,11 +2342,23 @@ def build_ytdlp_command(targetUrl, savePath, mpFormat, isPlaylist=False, title=N
 	# already used for the queue/UI/speech) instead, sanitized and capped
 	# to a safe length, keeps the folder name predictable and short
 	# regardless of how long the real YouTube playlist title is.
+	# The title length is capped through the template's own precision field
+	# instead of --trim-filenames: that option measured the whole output
+	# path, so a long save path or playlist folder left only a few
+	# characters for the title and cut it mid-word.
 	if isPlaylist:
-		safe_playlist_folder = validFilename(title or "Playlist")[:60].strip() or "Playlist"
-		output_template = os.path.join(savePath, safe_playlist_folder, "%(title)s.%(ext)s")
+		safe_playlist_folder = _playlistFolderName(title)
+		directoryLength = len(savePath) + 1 + max(len(safe_playlist_folder), PLAYLIST_FOLDER_MAX_LENGTH)
+		numberPrefix = "%(playlist_index)02d " if getINI("PlaylistNumbering") else ""
 	else:
-		output_template = os.path.join(savePath, "%(title)s.%(ext)s")
+		directoryLength = len(savePath)
+		numberPrefix = ""
+	maxTitleLength = max(40, min(200, 240 - directoryLength - 10))
+	fileNameTemplate = f"{numberPrefix}%(title).{maxTitleLength}s.%(ext)s"
+	if isPlaylist:
+		output_template = os.path.join(savePath, safe_playlist_folder, fileNameTemplate)
+	else:
+		output_template = os.path.join(savePath, fileNameTemplate)
 	use_multipart = getINI("UseMultiPart") and os.path.exists(Aria2cEXE)
 	connections = getINI("MultiPartConnections")
 	base_cmd = [
@@ -2156,20 +2367,8 @@ def build_ytdlp_command(targetUrl, savePath, mpFormat, isPlaylist=False, title=N
 		# sanitizing would otherwise let through but that Windows itself
 		# rejects (trailing dots/spaces, reserved device names like CON/
 		# PRN, control characters) -- safe unconditionally since this
-		# add-on only ever targets Windows (see Section 0/2.1). --trim-
-		# filenames caps the length of the last path segment (the
-		# per-video "%(title)s.%(ext)s" this add-on still lets yt-dlp
-		# resolve) so one unusually long individual video title within an
-		# otherwise short playlist folder can't reproduce the same
-		# MAX_PATH failure by itself. It's deliberately NOT relied on for
-		# the playlist folder name above -- yt-dlp's own issue tracker
-		# documents --trim-filenames behaving unpredictably (in some
-		# reported cases writing into the wrong directory entirely) when
-		# the output template still has an earlier, unresolved templated
-		# directory segment ahead of the trimmed one; there is no such
-		# segment left here since the playlist folder is now a plain,
-		# already-resolved string.
-		"--windows-filenames", "--trim-filenames", "100",
+		# add-on only ever targets Windows (see Section 0/2.1).
+		"--windows-filenames",
 		# --no-warnings was dropped deliberately: with it present, yt-dlp's
 		# WARNING-level messages (e.g. "YouTube is forcing SABR streaming
 		# for this client" / "Some <client> https formats have been
@@ -2246,6 +2445,18 @@ def build_ytdlp_command(targetUrl, savePath, mpFormat, isPlaylist=False, title=N
 	if getINI("AbortOnError"): base_cmd.append("--abort-on-error")
 	if getINI("SkipUnavailableFragments"): base_cmd.append("--skip-unavailable-fragments")
 	if getINI("MarkWatched"): base_cmd.append("--mark-watched")
+	if not isPlaylist:
+		# Backstop: a link that still resolves to several entries must never
+		# download more than the first one while playlist mode is off.
+		base_cmd.extend(["--playlist-items", "1"])
+	sidecarDir = os.path.dirname(output_template)
+	if getINI("SaveDescriptionText"):
+		base_cmd.extend(["--write-description", "-o", "description:" + os.path.join(sidecarDir, "Descriptions", fileNameTemplate)])
+	if getINI("SaveSubtitleText"):
+		base_cmd.extend([
+			"--sleep-subtitles", "2", "--write-subs", "--write-auto-subs", "--sub-langs", _cleanSubtitleLanguages(getINI("SubtitleLanguages")),
+			"--convert-subs", "srt", "-o", "subtitle:" + os.path.join(sidecarDir, "Subtitles", fileNameTemplate),
+		])
 	safe_connections = min(connections, 16)
 	if mpFormat == "mp3":
 		cmd = base_cmd + [
@@ -2281,6 +2492,17 @@ def build_ytdlp_command(targetUrl, savePath, mpFormat, isPlaylist=False, title=N
 			cmd.extend(["--concurrent-fragments", str(safe_connections)])
 	return cmd, use_multipart, safe_connections
 
+def _looksLikeCollectionUrl(url):
+	parsed = urllib.parse.urlparse(url or "")
+	if "youtube.com" not in parsed.netloc.lower():
+		return False
+	path = parsed.path.lower().rstrip("/")
+	if path.startswith("/watch"):
+		return "v" not in urllib.parse.parse_qs(parsed.query)
+	if path.startswith(("/shorts/", "/live/", "/embed/", "/v/")):
+		return False
+	return path.startswith(("/@", "/channel/", "/c/", "/user/", "/playlist", "/results", "/feed", "/hashtag/"))
+
 def convertToMP(mpFormat, savePath, isPlaylist=False, url=None, title=None):
 	if not createFolder(savePath):
 		return
@@ -2294,6 +2516,9 @@ def convertToMP(mpFormat, savePath, isPlaylist=False, url=None, title=None):
 		core.callLater(0, ui.message, _("URL not found"))
 		return
 	is_youtube_url_flag = any(y in current_url.lower() for y in [".youtube.", "youtu.be", "youtube.com"])
+	if is_youtube_url_flag and not isPlaylist and _looksLikeCollectionUrl(current_url):
+		PlayFailBeep()
+		return
 	if is_youtube_url_flag:
 		current_url = clean_youtube_url(current_url, isPlaylist)
 		video_title = title if title else getWebSiteTitle()
