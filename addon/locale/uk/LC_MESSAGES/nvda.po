@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: AbsoluteYoutube 2026.11.0\n"
+"Project-Id-Version: AbsoluteYoutube 2026.11.1\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-11-09 09:52+0700\n"
+"POT-Creation-Date: 2026-11-12 08:51+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Ukrainian\n"
@@ -168,7 +168,7 @@ msgstr "Абсолютний YouTube"
 msgid "Absolute YouTube Trim"
 msgstr "Абсолютне обрізання YouTube"
 
-#: addonCore.py:646
+#: addonCore.py:652
 msgid "Absolute YouTube setting"
 msgstr "Налаштування Absolute YouTube"
 
@@ -176,7 +176,7 @@ msgstr "Налаштування Absolute YouTube"
 msgid "Absolute Youtube"
 msgstr "Абсолютний Youtube"
 
-#: adSkip.py:428
+#: adSkip.py:526
 msgid "Ad skipped"
 msgstr "Рекламу пропущено"
 
@@ -274,11 +274,11 @@ msgstr "Якість аудіо"
 msgid "Auto-update yt-dlp on startup"
 msgstr "Автоматично оновлювати yt-dlp під час запуску"
 
-#: addonCore.py:875
+#: addonCore.py:881
 msgid "Automatic subtitle reading disabled"
 msgstr "Автоматичне читання субтитрів вимкнено"
 
-#: addonCore.py:875
+#: addonCore.py:881
 msgid "Automatic subtitle reading enabled"
 msgstr "Автоматичне читання субтитрів увімкнено"
 
@@ -449,7 +449,7 @@ msgstr "Cookies успішно експортовано до {path}. Захис�
 msgid "Copy URL"
 msgstr "Копіювати URL"
 
-#: addonCore.py:626
+#: addonCore.py:632
 #: playlist.py:415
 #: search.py:504
 msgid "Copy video Shorten URL"
@@ -465,7 +465,7 @@ msgstr "Виправити назву зараз"
 msgid "Correcting title for selected video..."
 msgstr "Виправлення назви для вибраного відео..."
 
-#: adSkip.py:393
+#: adSkip.py:487
 msgid "Could not click the skip button."
 msgstr "Не вдалося натиснути кнопку пропуску."
 
@@ -474,7 +474,7 @@ msgstr "Не вдалося натиснути кнопку пропуску."
 msgid "Could not create short URL"
 msgstr "Не вдалося створити коротку URL-адресу"
 
-#: addonCore.py:680
+#: addonCore.py:686
 msgid "Could not create shortened URL"
 msgstr "Не вдалося створити скорочену URL-адресу"
 
@@ -506,7 +506,7 @@ msgstr "Не вдалося прочитати базу даних cookies бр�
 msgid "Cycle MP3 quality (single tap), toggle download immediately (double tap), toggle playlist mode (triple tap)"
 msgstr "Змінити якість MP3 (одинарний дотик), увімкнути/вимкнути негайне завантаження (подвійний дотик), увімкнути/вимкнути режим плейлиста (потрійний дотик)"
 
-#: addonCore.py:887
+#: addonCore.py:893
 msgid "Cycle MP3 quality settings"
 msgstr "Перемикати налаштування якості MP3"
 
@@ -590,11 +590,11 @@ msgstr "Завантаження завершено"
 msgid "Download entire playlist"
 msgstr "Завантажити весь плейлист"
 
-#: addonCore.py:632
+#: addonCore.py:638
 msgid "Download fail manager"
 msgstr "Менеджер невдалих завантажень"
 
-#: addonCore.py:634
+#: addonCore.py:640
 msgid "Download fail manager (no failed)"
 msgstr "Менеджер невдалих завантажень (немає невдалих)"
 
@@ -649,7 +649,7 @@ msgstr "Папка завантажень не існує."
 msgid "Download function not available."
 msgstr "Функція завантаження недоступна."
 
-#: addonCore.py:628
+#: addonCore.py:634
 msgid "Download list manager"
 msgstr "Менеджер списку завантажень"
 
@@ -727,7 +727,7 @@ msgstr "Помилка створення папки завантаження"
 msgid "Error deleting channel."
 msgstr "Помилка видалення каналу."
 
-#: addonCore.py:665
+#: addonCore.py:671
 msgid "Error displaying context menu"
 msgstr "Помилка відображення контекстного меню"
 
@@ -744,7 +744,7 @@ msgstr "Помилка отримання каналу: {str}"
 msgid "Error importing core functions: {str}"
 msgstr "Помилка імпорту основних функцій: {str}"
 
-#: addonCore.py:814
+#: addonCore.py:820
 msgid "Error importing settings panel: {str}"
 msgstr "Помилка імпорту панелі налаштувань: {str}"
 
@@ -762,20 +762,20 @@ msgstr "Помилка завантаження кешу."
 msgid "Error loading channel data."
 msgstr "Помилка завантаження даних каналу."
 
-#: addonCore.py:572
+#: addonCore.py:578
 msgid "Error opening channel dialog"
 msgstr "Помилка відкриття діалогу каналу"
 
-#: addonCore.py:860
+#: addonCore.py:866
 msgid "Error opening channel/playlist list: {str}"
 msgstr "Помилка відкриття списку каналів/плейлиста: {str}"
 
-#: addonCore.py:701
-#: addonCore.py:705
+#: addonCore.py:707
+#: addonCore.py:711
 msgid "Error opening download fail dialog: {str}"
 msgstr "Помилка відкриття діалогу невдалих завантажень: {str}"
 
-#: addonCore.py:612
+#: addonCore.py:618
 msgid "Error opening download list dialog: {str}"
 msgstr "Помилка відкриття діалогу списку завантажень: {str}"
 
@@ -787,19 +787,19 @@ msgstr "Помилка відкриття теки"
 msgid "Error opening playlist."
 msgstr "Помилка відкриття плейлиста."
 
-#: addonCore.py:799
+#: addonCore.py:805
 msgid "Error opening search dialog: {str}"
 msgstr "Помилка відкриття діалогу пошуку: {str}"
 
-#: addonCore.py:817
+#: addonCore.py:823
 msgid "Error opening settings dialog: {str}"
 msgstr "Помилка відкриття діалогу налаштувань: {str}"
 
-#: addonCore.py:780
+#: addonCore.py:786
 msgid "Error opening trim dialog: {str}"
 msgstr "Помилка відкриття діалогу обрізання: {str}"
 
-#: addonCore.py:729
+#: addonCore.py:735
 msgid "Error opening video history: {str}"
 msgstr "Помилка відкриття історії відео: {str}"
 
@@ -819,11 +819,11 @@ msgstr "Помилка оновлення URL-адреси каналу."
 msgid "Error updating channel."
 msgstr "Помилка оновлення каналу."
 
-#: addonCore.py:617
+#: addonCore.py:623
 msgid "Error: Download list module not available"
 msgstr "Помилка: модуль списку завантажень недоступний"
 
-#: addonCore.py:691
+#: addonCore.py:697
 msgid "Error: DownloadFail module not available"
 msgstr "Помилка: модуль DownloadFail недоступний"
 
@@ -835,19 +835,19 @@ msgstr "Помилка: не вдалося створити знімок."
 msgid "Error: No snapshot file created."
 msgstr "Помилка: файл знімка не створено."
 
-#: addonCore.py:804
+#: addonCore.py:810
 msgid "Error: Search module not available"
 msgstr "Помилка: модуль пошуку недоступний"
 
-#: addonCore.py:760
+#: addonCore.py:766
 msgid "Error: Snapshot module not available"
 msgstr "Помилка: модуль створення знімків недоступний"
 
-#: addonCore.py:769
+#: addonCore.py:775
 msgid "Error: Trim module not available"
 msgstr "Помилка: модуль обрізання недоступний"
 
-#: addonCore.py:716
+#: addonCore.py:722
 msgid "Error: Video history module not available"
 msgstr "Помилка: модуль історії відео недоступний"
 
@@ -876,7 +876,7 @@ msgstr "Екшпорт файлів cookie з браузера {browser}..."
 msgid "Failed to create the specified folder. Please select a valid folder."
 msgstr "Не вдалося створити вказану папки. Будь ласка, виберіть дійсну папку."
 
-#: addonCore.py:638
+#: addonCore.py:644
 msgid "Favorite channel"
 msgstr "Улюблений канал"
 
@@ -884,7 +884,7 @@ msgstr "Улюблений канал"
 msgid "Fetched {count} items total."
 msgstr "Отримано елементів: {count}."
 
-#: addonCore.py:847
+#: addonCore.py:853
 msgid "Fetching channel information..."
 msgstr "Отримання інформації про канал..."
 
@@ -996,11 +996,11 @@ msgstr "Як отримати файли cookie"
 msgid "How to get cookies?"
 msgstr "Як отримати файли cookie?"
 
-#: addonCore.py:556
+#: addonCore.py:562
 msgid "Immediate download mode disabled"
 msgstr "Режим негайного завантаження вимкнено"
 
-#: addonCore.py:554
+#: addonCore.py:560
 msgid "Immediate download mode enabled"
 msgstr "Режим негайного завантаження увімкнено"
 
@@ -1012,7 +1012,7 @@ msgstr "Недійсна URL-адреса або час початку"
 msgid "Invalid YouTube video URL"
 msgstr "Недійсна URL-адреса відео на YouTube"
 
-#: addonCore.py:560
+#: addonCore.py:566
 msgid "Invalid channel URL"
 msgstr "Недійсна URL-адреса каналу"
 
@@ -1088,7 +1088,7 @@ msgid "NextPage"
 msgstr "Наступна сторінка"
 
 #: addonCore.py:383
-#: addonCore.py:670
+#: addonCore.py:676
 msgid "No YouTube URL found"
 msgstr "Не знайдено URL YouTube"
 
@@ -1101,7 +1101,7 @@ msgstr "Канал не вибрано."
 msgid "No downloads could be started"
 msgstr "Не вдалося запустити жодного завантаження"
 
-#: addonCore.py:687
+#: addonCore.py:693
 msgid "No failed downloads"
 msgstr "Немає невдалих завантажень"
 
@@ -1161,7 +1161,7 @@ msgstr "Немає збережених даних для цього канал�
 msgid "No saved data for this content type yet."
 msgstr "Для цього типу контенту ще немає збережених даних."
 
-#: adSkip.py:395
+#: adSkip.py:489
 msgid "No skip button found."
 msgstr "Кнопку пропуску не знайдено."
 
@@ -1169,7 +1169,7 @@ msgstr "Кнопку пропуску не знайдено."
 msgid "No valid multimedia link found."
 msgstr "Не знайдено дійсного мультимедійного посилання."
 
-#: addonCore.py:719
+#: addonCore.py:725
 msgid "No video history yet"
 msgstr "Історії відео ще немає"
 
@@ -1179,7 +1179,7 @@ msgstr "Історії відео ще немає"
 msgid "No videos to download."
 msgstr "Немає відео для завантаження."
 
-#: addonCore.py:673
+#: addonCore.py:679
 msgid "Not a YouTube URL"
 msgstr "Не є URL-адресою YouTube"
 
@@ -1252,11 +1252,11 @@ msgstr "Завантаження плейлиста розпочато."
 msgid "Playlist download started: {title}"
 msgstr "Завантаження плейлиста розпочато: {title}"
 
-#: addonCore.py:885
+#: addonCore.py:891
 msgid "Playlist mode disabled"
 msgstr "Режим плейлиста вимкнено"
 
-#: addonCore.py:885
+#: addonCore.py:891
 msgid "Playlist mode enabled"
 msgstr "Режим плейлиста увімкнено"
 
@@ -1342,15 +1342,15 @@ msgstr "Відновити завантаження"
 msgid "Resume interrupted downloads on restart"
 msgstr "Відновлювати перервані завантаження під час перезапуску"
 
-#: addonCore.py:865
+#: addonCore.py:871
 msgid "Save description (single tap), save subtitles (double tap), read YouTube subtitles automatically (triple tap): toggle each option"
 msgstr "Зберегти опис (одинарний дотик), зберегти субтитри (подвійний дотик), читати субтитри YouTube автоматично (потрійний дотик): перемикати кожну опцію"
 
-#: addonCore.py:871
+#: addonCore.py:877
 msgid "Save description disabled"
 msgstr "Збереження опису вимкнено"
 
-#: addonCore.py:871
+#: addonCore.py:877
 msgid "Save description enabled"
 msgstr "Збереження опису увімкнено"
 
@@ -1358,11 +1358,11 @@ msgstr "Збереження опису увімкнено"
 msgid "Save subtitles as a text file"
 msgstr "Зберегти субтитри як текстовий файл"
 
-#: addonCore.py:873
+#: addonCore.py:879
 msgid "Save subtitles disabled"
 msgstr "Збереження субтитрів вимкнено"
 
-#: addonCore.py:873
+#: addonCore.py:879
 msgid "Save subtitles enabled"
 msgstr "Збереження субтитрів увімкнено"
 
@@ -1382,7 +1382,7 @@ msgstr "Шукати на YouTube"
 msgid "Search YouTube:"
 msgstr "Шукати на YouTube:"
 
-#: addonCore.py:644
+#: addonCore.py:650
 msgid "Search Youtube"
 msgstr "Шукати на Youtube"
 
@@ -1439,7 +1439,7 @@ msgstr "Вибрані елементи переміщено на початок
 msgid "Selected items removed"
 msgstr "Вибрані елементи видалено"
 
-#: addonCore.py:678
+#: addonCore.py:684
 #: channel_core.py:1608
 #: playlist.py:453
 #: search.py:531
@@ -1472,11 +1472,11 @@ msgstr "Т&екст кнопки пропуску для інших мов YouTu
 msgid "Skip existing files"
 msgstr "Пропускати наявні файли"
 
-#: addonCore.py:543
+#: addonCore.py:549
 msgid "Skip the YouTube ad that is playing (Z by default on YouTube pages)"
 msgstr "Пропустити рекламу YouTube, що відтворюється (за замовчуванням Z на сторінках YouTube)"
 
-#: addonCore.py:641
+#: addonCore.py:647
 msgid "Snapshot"
 msgstr "Знімок екрана"
 
@@ -1573,15 +1573,15 @@ msgstr "Виправлення назви завершено для відео: 
 msgid "Title correction failed."
 msgstr "Не вдалося виправити назву."
 
-#: addonCore.py:548
+#: addonCore.py:554
 msgid "Toggle download immediately"
 msgstr "Перемкнути негайне завантаження"
 
-#: addonCore.py:880
+#: addonCore.py:886
 msgid "Toggle playlist mode"
 msgstr "Перемкнути режим списку відтворення"
 
-#: addonCore.py:642
+#: addonCore.py:648
 msgid "Trim setting"
 msgstr "Налаштування обрізання"
 
@@ -1689,7 +1689,7 @@ msgstr "Використовувати розділ завантаження"
 msgid "User &agent:"
 msgstr "Агент &користувача:"
 
-#: addonCore.py:636
+#: addonCore.py:642
 msgid "Video History Report"
 msgstr "Звіт про історію відео"
 
@@ -1728,8 +1728,8 @@ msgstr "Відео в {title}"
 msgid "Waiting"
 msgstr "Очікування"
 
-#: addonCore.py:752
-#: addonCore.py:765
+#: addonCore.py:758
+#: addonCore.py:771
 msgid "You must be on a YouTube page to use this feature"
 msgstr "Щоб користуватися цією функцією, ви повинні перебувати на сторінці YouTube"
 
@@ -1819,7 +1819,7 @@ msgstr ""
 msgid "{percent}%"
 msgstr "{percent}%"
 
-#: addonCore.py:899
+#: addonCore.py:905
 msgid "{quality} kbps"
 msgstr "{quality} кбіт/с"
 

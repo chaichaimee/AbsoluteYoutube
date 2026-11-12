@@ -540,6 +540,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		except LookupError as e:
 			self.core_functions['log'](f"Skip shortcut was already unbound: {e}")
 
+	def event_gainFocus(self, obj, nextHandler):
+		try:
+			self._adSkipper.noteFocusedDocument(obj)
+		finally:
+			nextHandler()
+
 	@script(description=_("Skip the YouTube ad that is playing (Z by default on YouTube pages)"))
 	def script_skipYoutubeAd(self, gesture):
 		if not self._adSkipper.handleShortcut():

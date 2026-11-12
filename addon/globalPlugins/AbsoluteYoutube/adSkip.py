@@ -11,11 +11,13 @@ import browseMode
 import controlTypes
 import core
 import globalVars
+import inputCore
 import textInfos
 import ui
 import winUser
 from comtypes import COMError
 from logHandler import log
+from speech.extensions import filter_speechSequence
 
 from .Download_core import getINI
 
@@ -46,6 +48,15 @@ MAX_EXTRA_WORDS = 20
 MAX_WORD_LENGTH = 40
 MOUSE_DOWN_DELAY_MS = 50
 MOUSE_UP_DELAY_MS = 100
+# While a skip run is active, and for a while after a click, every announcement
+# the user did not ask for is held back so the ad and the video play silently.
+# Speech spoken shortly after a keypress, and the skip confirmation itself, pass.
+GESTURE_SPEECH_WINDOW_SECONDS = 2.0
+SKIP_FEEDBACK_PASS_SECONDS = 1.5
+AD_SPEECH_TAIL_SECONDS = 20
+# A YouTube watch page that has just gained focus is silent for this long, even
+# for speech right after a keypress, so its window and page titles stay quiet.
+PAGE_LOAD_HOLD_SECONDS = 3.0
 
 _WORD_SEPARATORS = re.compile(r"[,;|\r\n]+")
 _STALE_BUFFER_MARKERS = ("too big for buffer", "out of range", "is past end of buffer")
@@ -136,15 +147,35 @@ class AdSkipper:
 		self._watchUrl = ""
 		self._contextActive = False
 		self._lastReason = None
+		self._hooksRegistered = False
+		self._lastGestureAt = 0.0
+		self._speechPassUntil = 0.0
+		self._holdTailUntil = 0.0
+		self._holdTailTreeInt = None
+		self._heldCount = 0
+		self._pageLoadHoldUntil = 0.0
+		self._pageLoadHoldTreeInt = None
+		self._pageLoadHoldUrl = ""
 
 	def start(self):
 		if getattr(globalVars.appArgs, "secure", False):
 			return
 		self._active = True
+		inputCore.decide_executeGesture.register(self._onDecideExecuteGesture)
+		filter_speechSequence.register(self._onFilterSpeechSequence)
+		self._hooksRegistered = True
 		self._schedulePoll()
 
 	def stop(self):
 		self._active = False
+		if self._hooksRegistered:
+			self._hooksRegistered = False
+			inputCore.decide_executeGesture.unregister(self._onDecideExecuteGesture)
+			filter_speechSequence.unregister(self._onFilterSpeechSequence)
+		self._holdTailUntil = 0.0
+		self._holdTailTreeInt = None
+		self._pageLoadHoldUntil = 0.0
+		self._pageLoadHoldTreeInt = None
 		self._cancelRun()
 		if self._pollTimer is not None and self._pollTimer.IsRunning():
 			self._pollTimer.Stop()
@@ -152,6 +183,59 @@ class AdSkipper:
 		self._watchTreeInt = None
 		self._watchUrl = ""
 		self._contextActive = False
+
+	def _onDecideExecuteGesture(self, gesture):
+		self._lastGestureAt = time.monotonic()
+		return True
+
+	def _speechHoldTreeInt(self):
+		if self._run is not None:
+			return self._run.treeInt
+		if time.monotonic() < self._holdTailUntil:
+			return self._holdTailTreeInt
+		return None
+
+	def noteFocusedDocument(self, focusObj):
+		if not self._active or not getINI("AutoSkipAds"):
+			return
+		treeInt = getattr(focusObj, "treeInterceptor", None)
+		if not isinstance(treeInt, browseMode.BrowseModeTreeInterceptor):
+			return
+		try:
+			url = str(getattr(treeInt, "documentConstantIdentifier", "") or "")
+		except _SAFE_ERRORS:
+			return
+		lowerUrl = url.lower()
+		if "youtube.com" not in lowerUrl or not any(marker in lowerUrl for marker in WATCH_URL_MARKERS):
+			return
+		if treeInt is self._pageLoadHoldTreeInt and url == self._pageLoadHoldUrl:
+			return
+		self._pageLoadHoldTreeInt = treeInt
+		self._pageLoadHoldUrl = url
+		self._pageLoadHoldUntil = time.monotonic() + PAGE_LOAD_HOLD_SECONDS
+		log.debug("adSkip: speech hold started on page load for %s", url[:80])
+
+	def _onFilterSpeechSequence(self, speechSequence):
+		now = time.monotonic()
+		isPageLoadHold = now < self._pageLoadHoldUntil
+		holdTreeInt = self._pageLoadHoldTreeInt if isPageLoadHold else self._speechHoldTreeInt()
+		if holdTreeInt is None:
+			return speechSequence
+		if now <= self._speechPassUntil:
+			return speechSequence
+		if not isPageLoadHold and now - self._lastGestureAt <= GESTURE_SPEECH_WINDOW_SECONDS:
+			return speechSequence
+		if not self._isTreeIntFocused(holdTreeInt):
+			return speechSequence
+		self._heldCount += 1
+		return []
+
+	def _allowSpeechBriefly(self):
+		self._speechPassUntil = time.monotonic() + SKIP_FEEDBACK_PASS_SECONDS
+
+	def _reportHeldSpeech(self, reason):
+		log.debug("adSkip: speech hold ended (%s), held back %d announcement(s)", reason, self._heldCount)
+		self._heldCount = 0
 
 	def _note(self, reason):
 		# One line per change of state, never per tick.
@@ -178,6 +262,13 @@ class AdSkipper:
 	def _tick(self):
 		if not self._active:
 			return
+		if self._pageLoadHoldUntil and time.monotonic() >= self._pageLoadHoldUntil:
+			self._pageLoadHoldUntil = 0.0
+			self._pageLoadHoldTreeInt = None
+		if self._holdTailUntil and time.monotonic() >= self._holdTailUntil:
+			self._holdTailUntil = 0.0
+			self._holdTailTreeInt = None
+			self._reportHeldSpeech("quiet period after the last skip ended")
 		try:
 			self._poll()
 		except _SAFE_ERRORS:
@@ -388,7 +479,10 @@ class AdSkipper:
 			return
 		self._run = None
 		log.debug("adSkip: run finished after %d click(s), interactive=%s", run.clicks, run.isInteractive)
+		if run.clicks == 0 or time.monotonic() >= self._holdTailUntil:
+			self._reportHeldSpeech("watch finished")
 		if run.isInteractive and run.clicks == 0:
+			self._allowSpeechBriefly()
 			if run.activationFailed:
 				ui.message(_("Could not click the skip button."))
 			else:
@@ -399,6 +493,7 @@ class AdSkipper:
 			return
 		self._run = None
 		log.debug("adSkip: run abandoned, %s", reason)
+		self._reportHeldSpeech("watch abandoned")
 
 	# ------------------------------------------------------------------
 	# Click
@@ -425,6 +520,9 @@ class AdSkipper:
 		run.attempt = 0
 		run.deadline = max(run.deadline, now + CHAIN_WINDOW_SECONDS)
 		log.debug("adSkip: skip button activated, click %d", run.clicks)
+		self._holdTailUntil = now + AD_SPEECH_TAIL_SECONDS
+		self._holdTailTreeInt = run.treeInt
+		self._allowSpeechBriefly()
 		ui.message(_("Ad skipped"))
 		if run.clicks >= MAX_CLICKS_PER_RUN:
 			self._finishRun(run)

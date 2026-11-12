@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: AbsoluteYoutube 2026.11.0\n"
+"Project-Id-Version: AbsoluteYoutube 2026.11.1\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-11-09 09:52+0700\n"
+"POT-Creation-Date: 2026-11-12 08:51+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: English\n"
@@ -168,7 +168,7 @@ msgstr "Absolute YouTube"
 msgid "Absolute YouTube Trim"
 msgstr "Absolute YouTube Trim"
 
-#: addonCore.py:646
+#: addonCore.py:652
 msgid "Absolute YouTube setting"
 msgstr "Absolute YouTube setting"
 
@@ -176,7 +176,7 @@ msgstr "Absolute YouTube setting"
 msgid "Absolute Youtube"
 msgstr "Absolute Youtube"
 
-#: adSkip.py:428
+#: adSkip.py:526
 msgid "Ad skipped"
 msgstr "Ad skipped"
 
@@ -274,11 +274,11 @@ msgstr "Audio Quality"
 msgid "Auto-update yt-dlp on startup"
 msgstr "Auto-update yt-dlp on startup"
 
-#: addonCore.py:875
+#: addonCore.py:881
 msgid "Automatic subtitle reading disabled"
 msgstr "Automatic subtitle reading disabled"
 
-#: addonCore.py:875
+#: addonCore.py:881
 msgid "Automatic subtitle reading enabled"
 msgstr "Automatic subtitle reading enabled"
 
@@ -449,7 +449,7 @@ msgstr "Cookies exported successfully to {path}. Anti-blocking is now active."
 msgid "Copy URL"
 msgstr "Copy URL"
 
-#: addonCore.py:626
+#: addonCore.py:632
 #: playlist.py:415
 #: search.py:504
 msgid "Copy video Shorten URL"
@@ -465,7 +465,7 @@ msgstr "Correct title now"
 msgid "Correcting title for selected video..."
 msgstr "Correcting title for selected video..."
 
-#: adSkip.py:393
+#: adSkip.py:487
 msgid "Could not click the skip button."
 msgstr "Could not click the skip button."
 
@@ -474,7 +474,7 @@ msgstr "Could not click the skip button."
 msgid "Could not create short URL"
 msgstr "Could not create short URL"
 
-#: addonCore.py:680
+#: addonCore.py:686
 msgid "Could not create shortened URL"
 msgstr "Could not create shortened URL"
 
@@ -506,7 +506,7 @@ msgstr "Could not read the {browser} cookie database. Close {browser} completely
 msgid "Cycle MP3 quality (single tap), toggle download immediately (double tap), toggle playlist mode (triple tap)"
 msgstr "Cycle MP3 quality (single tap), toggle download immediately (double tap), toggle playlist mode (triple tap)"
 
-#: addonCore.py:887
+#: addonCore.py:893
 msgid "Cycle MP3 quality settings"
 msgstr "Cycle MP3 quality settings"
 
@@ -590,11 +590,11 @@ msgstr "Download complete"
 msgid "Download entire playlist"
 msgstr "Download entire playlist"
 
-#: addonCore.py:632
+#: addonCore.py:638
 msgid "Download fail manager"
 msgstr "Download fail manager"
 
-#: addonCore.py:634
+#: addonCore.py:640
 msgid "Download fail manager (no failed)"
 msgstr "Download fail manager (no failed)"
 
@@ -649,7 +649,7 @@ msgstr "Download folder does not exist."
 msgid "Download function not available."
 msgstr "Download function not available."
 
-#: addonCore.py:628
+#: addonCore.py:634
 msgid "Download list manager"
 msgstr "Download list manager"
 
@@ -727,7 +727,7 @@ msgstr "Error creating download folder"
 msgid "Error deleting channel."
 msgstr "Error deleting channel."
 
-#: addonCore.py:665
+#: addonCore.py:671
 msgid "Error displaying context menu"
 msgstr "Error displaying context menu"
 
@@ -744,7 +744,7 @@ msgstr "Error fetching channel: {str}"
 msgid "Error importing core functions: {str}"
 msgstr "Error importing core functions: {str}"
 
-#: addonCore.py:814
+#: addonCore.py:820
 msgid "Error importing settings panel: {str}"
 msgstr "Error importing settings panel: {str}"
 
@@ -762,20 +762,20 @@ msgstr "Error loading cache."
 msgid "Error loading channel data."
 msgstr "Error loading channel data."
 
-#: addonCore.py:572
+#: addonCore.py:578
 msgid "Error opening channel dialog"
 msgstr "Error opening channel dialog"
 
-#: addonCore.py:860
+#: addonCore.py:866
 msgid "Error opening channel/playlist list: {str}"
 msgstr "Error opening channel/playlist list: {str}"
 
-#: addonCore.py:701
-#: addonCore.py:705
+#: addonCore.py:707
+#: addonCore.py:711
 msgid "Error opening download fail dialog: {str}"
 msgstr "Error opening download fail dialog: {str}"
 
-#: addonCore.py:612
+#: addonCore.py:618
 msgid "Error opening download list dialog: {str}"
 msgstr "Error opening download list dialog: {str}"
 
@@ -787,19 +787,19 @@ msgstr "Error opening folder"
 msgid "Error opening playlist."
 msgstr "Error opening playlist."
 
-#: addonCore.py:799
+#: addonCore.py:805
 msgid "Error opening search dialog: {str}"
 msgstr "Error opening search dialog: {str}"
 
-#: addonCore.py:817
+#: addonCore.py:823
 msgid "Error opening settings dialog: {str}"
 msgstr "Error opening settings dialog: {str}"
 
-#: addonCore.py:780
+#: addonCore.py:786
 msgid "Error opening trim dialog: {str}"
 msgstr "Error opening trim dialog: {str}"
 
-#: addonCore.py:729
+#: addonCore.py:735
 msgid "Error opening video history: {str}"
 msgstr "Error opening video history: {str}"
 
@@ -819,11 +819,11 @@ msgstr "Error updating channel URL."
 msgid "Error updating channel."
 msgstr "Error updating channel."
 
-#: addonCore.py:617
+#: addonCore.py:623
 msgid "Error: Download list module not available"
 msgstr "Error: Download list module not available"
 
-#: addonCore.py:691
+#: addonCore.py:697
 msgid "Error: DownloadFail module not available"
 msgstr "Error: DownloadFail module not available"
 
@@ -835,19 +835,19 @@ msgstr "Error: Failed to capture snapshot."
 msgid "Error: No snapshot file created."
 msgstr "Error: No snapshot file created."
 
-#: addonCore.py:804
+#: addonCore.py:810
 msgid "Error: Search module not available"
 msgstr "Error: Search module not available"
 
-#: addonCore.py:760
+#: addonCore.py:766
 msgid "Error: Snapshot module not available"
 msgstr "Error: Snapshot module not available"
 
-#: addonCore.py:769
+#: addonCore.py:775
 msgid "Error: Trim module not available"
 msgstr "Error: Trim module not available"
 
-#: addonCore.py:716
+#: addonCore.py:722
 msgid "Error: Video history module not available"
 msgstr "Error: Video history module not available"
 
@@ -876,7 +876,7 @@ msgstr "Exporting cookies from {browser}..."
 msgid "Failed to create the specified folder. Please select a valid folder."
 msgstr "Failed to create the specified folder. Please select a valid folder."
 
-#: addonCore.py:638
+#: addonCore.py:644
 msgid "Favorite channel"
 msgstr "Favorite channel"
 
@@ -884,7 +884,7 @@ msgstr "Favorite channel"
 msgid "Fetched {count} items total."
 msgstr "Fetched {count} items total."
 
-#: addonCore.py:847
+#: addonCore.py:853
 msgid "Fetching channel information..."
 msgstr "Fetching channel information..."
 
@@ -996,11 +996,11 @@ msgstr "How to get cookies"
 msgid "How to get cookies?"
 msgstr "How to get cookies?"
 
-#: addonCore.py:556
+#: addonCore.py:562
 msgid "Immediate download mode disabled"
 msgstr "Immediate download mode disabled"
 
-#: addonCore.py:554
+#: addonCore.py:560
 msgid "Immediate download mode enabled"
 msgstr "Immediate download mode enabled"
 
@@ -1012,7 +1012,7 @@ msgstr "Invalid URL or start time"
 msgid "Invalid YouTube video URL"
 msgstr "Invalid YouTube video URL"
 
-#: addonCore.py:560
+#: addonCore.py:566
 msgid "Invalid channel URL"
 msgstr "Invalid channel URL"
 
@@ -1088,7 +1088,7 @@ msgid "NextPage"
 msgstr "NextPage"
 
 #: addonCore.py:383
-#: addonCore.py:670
+#: addonCore.py:676
 msgid "No YouTube URL found"
 msgstr "No YouTube URL found"
 
@@ -1101,7 +1101,7 @@ msgstr "No channel selected."
 msgid "No downloads could be started"
 msgstr "No downloads could be started"
 
-#: addonCore.py:687
+#: addonCore.py:693
 msgid "No failed downloads"
 msgstr "No failed downloads"
 
@@ -1161,7 +1161,7 @@ msgstr "No saved data for this channel."
 msgid "No saved data for this content type yet."
 msgstr "No saved data for this content type yet."
 
-#: adSkip.py:395
+#: adSkip.py:489
 msgid "No skip button found."
 msgstr "No skip button found."
 
@@ -1169,7 +1169,7 @@ msgstr "No skip button found."
 msgid "No valid multimedia link found."
 msgstr "No valid multimedia link found."
 
-#: addonCore.py:719
+#: addonCore.py:725
 msgid "No video history yet"
 msgstr "No video history yet"
 
@@ -1179,7 +1179,7 @@ msgstr "No video history yet"
 msgid "No videos to download."
 msgstr "No videos to download."
 
-#: addonCore.py:673
+#: addonCore.py:679
 msgid "Not a YouTube URL"
 msgstr "Not a YouTube URL"
 
@@ -1252,11 +1252,11 @@ msgstr "Playlist download started."
 msgid "Playlist download started: {title}"
 msgstr "Playlist download started: {title}"
 
-#: addonCore.py:885
+#: addonCore.py:891
 msgid "Playlist mode disabled"
 msgstr "Playlist mode disabled"
 
-#: addonCore.py:885
+#: addonCore.py:891
 msgid "Playlist mode enabled"
 msgstr "Playlist mode enabled"
 
@@ -1342,15 +1342,15 @@ msgstr "Resume downloads"
 msgid "Resume interrupted downloads on restart"
 msgstr "Resume interrupted downloads on restart"
 
-#: addonCore.py:865
+#: addonCore.py:871
 msgid "Save description (single tap), save subtitles (double tap), read YouTube subtitles automatically (triple tap): toggle each option"
 msgstr "Save description (single tap), save subtitles (double tap), read YouTube subtitles automatically (triple tap): toggle each option"
 
-#: addonCore.py:871
+#: addonCore.py:877
 msgid "Save description disabled"
 msgstr "Save description disabled"
 
-#: addonCore.py:871
+#: addonCore.py:877
 msgid "Save description enabled"
 msgstr "Save description enabled"
 
@@ -1358,11 +1358,11 @@ msgstr "Save description enabled"
 msgid "Save subtitles as a text file"
 msgstr "Save subtitles as a text file"
 
-#: addonCore.py:873
+#: addonCore.py:879
 msgid "Save subtitles disabled"
 msgstr "Save subtitles disabled"
 
-#: addonCore.py:873
+#: addonCore.py:879
 msgid "Save subtitles enabled"
 msgstr "Save subtitles enabled"
 
@@ -1382,7 +1382,7 @@ msgstr "Search YouTube"
 msgid "Search YouTube:"
 msgstr "Search YouTube:"
 
-#: addonCore.py:644
+#: addonCore.py:650
 msgid "Search Youtube"
 msgstr "Search Youtube"
 
@@ -1439,7 +1439,7 @@ msgstr "Selected items moved to the front of the download queue"
 msgid "Selected items removed"
 msgstr "Selected items removed"
 
-#: addonCore.py:678
+#: addonCore.py:684
 #: channel_core.py:1608
 #: playlist.py:453
 #: search.py:531
@@ -1472,11 +1472,11 @@ msgstr "Skip button te&xt for other YouTube languages, comma separated (for exam
 msgid "Skip existing files"
 msgstr "Skip existing files"
 
-#: addonCore.py:543
+#: addonCore.py:549
 msgid "Skip the YouTube ad that is playing (Z by default on YouTube pages)"
 msgstr "Skip the YouTube ad that is playing (Z by default on YouTube pages)"
 
-#: addonCore.py:641
+#: addonCore.py:647
 msgid "Snapshot"
 msgstr "Snapshot"
 
@@ -1573,15 +1573,15 @@ msgstr "Title correction completed for {count} videos."
 msgid "Title correction failed."
 msgstr "Title correction failed."
 
-#: addonCore.py:548
+#: addonCore.py:554
 msgid "Toggle download immediately"
 msgstr "Toggle download immediately"
 
-#: addonCore.py:880
+#: addonCore.py:886
 msgid "Toggle playlist mode"
 msgstr "Toggle playlist mode"
 
-#: addonCore.py:642
+#: addonCore.py:648
 msgid "Trim setting"
 msgstr "Trim setting"
 
@@ -1689,7 +1689,7 @@ msgstr "Use download section"
 msgid "User &agent:"
 msgstr "User &agent:"
 
-#: addonCore.py:636
+#: addonCore.py:642
 msgid "Video History Report"
 msgstr "Video History Report"
 
@@ -1728,8 +1728,8 @@ msgstr "Videos in {title}"
 msgid "Waiting"
 msgstr "Waiting"
 
-#: addonCore.py:752
-#: addonCore.py:765
+#: addonCore.py:758
+#: addonCore.py:771
 msgid "You must be on a YouTube page to use this feature"
 msgstr "You must be on a YouTube page to use this feature"
 
@@ -1819,7 +1819,7 @@ msgstr ""
 msgid "{percent}%"
 msgstr "{percent}%"
 
-#: addonCore.py:899
+#: addonCore.py:905
 msgid "{quality} kbps"
 msgstr "{quality} kbps"
 

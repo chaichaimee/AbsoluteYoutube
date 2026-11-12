@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: AbsoluteYoutube 2026.11.0\n"
+"Project-Id-Version: AbsoluteYoutube 2026.11.1\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-11-09 09:52+0700\n"
+"POT-Creation-Date: 2026-11-12 08:51+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Korean\n"
@@ -168,7 +168,7 @@ msgstr "절대 유튜브"
 msgid "Absolute YouTube Trim"
 msgstr "절대 유튜브 자르기"
 
-#: addonCore.py:646
+#: addonCore.py:652
 msgid "Absolute YouTube setting"
 msgstr "절대 유튜브 설정"
 
@@ -176,7 +176,7 @@ msgstr "절대 유튜브 설정"
 msgid "Absolute Youtube"
 msgstr "절대 유튜브"
 
-#: adSkip.py:428
+#: adSkip.py:526
 msgid "Ad skipped"
 msgstr "광고 건너뜀"
 
@@ -274,11 +274,11 @@ msgstr "오디오 품질"
 msgid "Auto-update yt-dlp on startup"
 msgstr "시작할 때 yt-dlp 자동 업데이트"
 
-#: addonCore.py:875
+#: addonCore.py:881
 msgid "Automatic subtitle reading disabled"
 msgstr "자동 자막 읽기 사용 안 함"
 
-#: addonCore.py:875
+#: addonCore.py:881
 msgid "Automatic subtitle reading enabled"
 msgstr "자동 자막 읽기 사용"
 
@@ -449,7 +449,7 @@ msgstr "쿠키를 {path}(으)로 성공적으로 내보냈습니다. 이제 차�
 msgid "Copy URL"
 msgstr "URL 복사"
 
-#: addonCore.py:626
+#: addonCore.py:632
 #: playlist.py:415
 #: search.py:504
 msgid "Copy video Shorten URL"
@@ -465,7 +465,7 @@ msgstr "지금 제목 수정"
 msgid "Correcting title for selected video..."
 msgstr "선택한 동영상의 제목을 수정하는 중..."
 
-#: adSkip.py:393
+#: adSkip.py:487
 msgid "Could not click the skip button."
 msgstr "건너뛰기 버튼을 클릭할 수 없습니다."
 
@@ -474,7 +474,7 @@ msgstr "건너뛰기 버튼을 클릭할 수 없습니다."
 msgid "Could not create short URL"
 msgstr "단축 URL을 만들 수 없습니다."
 
-#: addonCore.py:680
+#: addonCore.py:686
 msgid "Could not create shortened URL"
 msgstr "단축 URL을 만들 수 없습니다."
 
@@ -506,7 +506,7 @@ msgstr "{browser} 쿠키 데이터베이스를 읽을 수 없습니다. {browser
 msgid "Cycle MP3 quality (single tap), toggle download immediately (double tap), toggle playlist mode (triple tap)"
 msgstr "MP3 품질 순환(한 번 탭), 즉시 다운로드 토글(두 번 탭), 재생 목록 모드 토글(세 번 탭)"
 
-#: addonCore.py:887
+#: addonCore.py:893
 msgid "Cycle MP3 quality settings"
 msgstr "MP3 품질 설정 순환"
 
@@ -590,11 +590,11 @@ msgstr "다운로드 완료"
 msgid "Download entire playlist"
 msgstr "전체 재생 목록 다운로드"
 
-#: addonCore.py:632
+#: addonCore.py:638
 msgid "Download fail manager"
 msgstr "다운로드 실패 관리자"
 
-#: addonCore.py:634
+#: addonCore.py:640
 msgid "Download fail manager (no failed)"
 msgstr "다운로드 실패 관리자 (실패 항목 없음)"
 
@@ -649,7 +649,7 @@ msgstr "다운로드 폴더가 존재하지 않습니다."
 msgid "Download function not available."
 msgstr "다운로드 기능을 사용할 수 없습니다."
 
-#: addonCore.py:628
+#: addonCore.py:634
 msgid "Download list manager"
 msgstr "다운로드 목록 관리자"
 
@@ -727,7 +727,7 @@ msgstr "다운로드 폴더 생성 오류"
 msgid "Error deleting channel."
 msgstr "채널 삭제 오류."
 
-#: addonCore.py:665
+#: addonCore.py:671
 msgid "Error displaying context menu"
 msgstr "컨텍스트 메뉴 표시 오류"
 
@@ -744,7 +744,7 @@ msgstr "채널 가져오기 오류: {str}"
 msgid "Error importing core functions: {str}"
 msgstr "코어 함수 가져오기 오류: {str}"
 
-#: addonCore.py:814
+#: addonCore.py:820
 msgid "Error importing settings panel: {str}"
 msgstr "설정 패널 가져오기 오류: {str}"
 
@@ -762,20 +762,20 @@ msgstr "캐시 로드 오류."
 msgid "Error loading channel data."
 msgstr "채널 데이터 로드 오류."
 
-#: addonCore.py:572
+#: addonCore.py:578
 msgid "Error opening channel dialog"
 msgstr "채널 대화상자를 여는 중 오류가 발생했습니다."
 
-#: addonCore.py:860
+#: addonCore.py:866
 msgid "Error opening channel/playlist list: {str}"
 msgstr "채널/재생목록 목록을 여는 중 오류 발생: {str}"
 
-#: addonCore.py:701
-#: addonCore.py:705
+#: addonCore.py:707
+#: addonCore.py:711
 msgid "Error opening download fail dialog: {str}"
 msgstr "다운로드 실패 대화상자를 여는 중 오류 발생: {str}"
 
-#: addonCore.py:612
+#: addonCore.py:618
 msgid "Error opening download list dialog: {str}"
 msgstr "다운로드 목록 대화상자를 여는 중 오류 발생: {str}"
 
@@ -787,19 +787,19 @@ msgstr "폴더를 여는 중 오류가 발생했습니다."
 msgid "Error opening playlist."
 msgstr "재생목록을 여는 중 오류가 발생했습니다."
 
-#: addonCore.py:799
+#: addonCore.py:805
 msgid "Error opening search dialog: {str}"
 msgstr "검색 대화상자를 여는 중 오류 발생: {str}"
 
-#: addonCore.py:817
+#: addonCore.py:823
 msgid "Error opening settings dialog: {str}"
 msgstr "설정 대화상자를 여는 중 오류 발생: {str}"
 
-#: addonCore.py:780
+#: addonCore.py:786
 msgid "Error opening trim dialog: {str}"
 msgstr "자르기 대화상자를 여는 중 오류 발생: {str}"
 
-#: addonCore.py:729
+#: addonCore.py:735
 msgid "Error opening video history: {str}"
 msgstr "비디오 기록을 여는 중 오류 발생: {str}"
 
@@ -819,11 +819,11 @@ msgstr "채널 URL을 업데이트하는 중 오류가 발생했습니다."
 msgid "Error updating channel."
 msgstr "채널을 업데이트하는 중 오류가 발생했습니다."
 
-#: addonCore.py:617
+#: addonCore.py:623
 msgid "Error: Download list module not available"
 msgstr "오류: 다운로드 목록 모듈을 사용할 수 없습니다."
 
-#: addonCore.py:691
+#: addonCore.py:697
 msgid "Error: DownloadFail module not available"
 msgstr "오류: DownloadFail 모듈을 사용할 수 없습니다."
 
@@ -835,19 +835,19 @@ msgstr "오류: 스냅샷을 캡처하지 못했습니다."
 msgid "Error: No snapshot file created."
 msgstr "오류: 생성된 스냅샷 파일이 없습니다."
 
-#: addonCore.py:804
+#: addonCore.py:810
 msgid "Error: Search module not available"
 msgstr "오류: 검색 모듈을 사용할 수 없습니다."
 
-#: addonCore.py:760
+#: addonCore.py:766
 msgid "Error: Snapshot module not available"
 msgstr "오류: 스냅샷 모듈을 사용할 수 없습니다."
 
-#: addonCore.py:769
+#: addonCore.py:775
 msgid "Error: Trim module not available"
 msgstr "오류: 자르기 모듈을 사용할 수 없습니다."
 
-#: addonCore.py:716
+#: addonCore.py:722
 msgid "Error: Video history module not available"
 msgstr "오류: 비디오 기록 모듈을 사용할 수 없습니다"
 
@@ -876,7 +876,7 @@ msgstr "{browser}에서 쿠키를 내보내는 중..."
 msgid "Failed to create the specified folder. Please select a valid folder."
 msgstr "지정한 폴더를 만들지 못했습니다. 올바른 폴더를 선택하십시오."
 
-#: addonCore.py:638
+#: addonCore.py:644
 msgid "Favorite channel"
 msgstr "즐겨찾기 채널"
 
@@ -884,7 +884,7 @@ msgstr "즐겨찾기 채널"
 msgid "Fetched {count} items total."
 msgstr "총 {count}개의 항목을 가져왔습니다."
 
-#: addonCore.py:847
+#: addonCore.py:853
 msgid "Fetching channel information..."
 msgstr "채널 정보를 가져오는 중..."
 
@@ -996,11 +996,11 @@ msgstr "쿠키 가져오는 방법"
 msgid "How to get cookies?"
 msgstr "쿠키를 어떻게 가져오나요?"
 
-#: addonCore.py:556
+#: addonCore.py:562
 msgid "Immediate download mode disabled"
 msgstr "즉시 다운로드 모드 사용 안 함"
 
-#: addonCore.py:554
+#: addonCore.py:560
 msgid "Immediate download mode enabled"
 msgstr "즉시 다운로드 모드 사용"
 
@@ -1012,7 +1012,7 @@ msgstr "잘못된 URL 또는 시작 시간"
 msgid "Invalid YouTube video URL"
 msgstr "잘못된 YouTube 동영상 URL"
 
-#: addonCore.py:560
+#: addonCore.py:566
 msgid "Invalid channel URL"
 msgstr "잘못된 채널 URL"
 
@@ -1088,7 +1088,7 @@ msgid "NextPage"
 msgstr "다음 페이지"
 
 #: addonCore.py:383
-#: addonCore.py:670
+#: addonCore.py:676
 msgid "No YouTube URL found"
 msgstr "YouTube URL을 찾을 수 없습니다"
 
@@ -1101,7 +1101,7 @@ msgstr "채널이 선택되지 않았습니다."
 msgid "No downloads could be started"
 msgstr "다운로드를 시작할 수 없습니다"
 
-#: addonCore.py:687
+#: addonCore.py:693
 msgid "No failed downloads"
 msgstr "실패한 다운로드 없음"
 
@@ -1161,7 +1161,7 @@ msgstr "이 채널에 대한 저장된 데이터가 없습니다."
 msgid "No saved data for this content type yet."
 msgstr "이 콘텐츠 유형에 대해 아직 저장된 데이터가 없습니다."
 
-#: adSkip.py:395
+#: adSkip.py:489
 msgid "No skip button found."
 msgstr "건너뛰기 버튼을 찾을 수 없습니다."
 
@@ -1169,7 +1169,7 @@ msgstr "건너뛰기 버튼을 찾을 수 없습니다."
 msgid "No valid multimedia link found."
 msgstr "유효한 멀티미디어 링크를 찾을 수 없습니다."
 
-#: addonCore.py:719
+#: addonCore.py:725
 msgid "No video history yet"
 msgstr "아직 비디오 기록이 없습니다"
 
@@ -1179,7 +1179,7 @@ msgstr "아직 비디오 기록이 없습니다"
 msgid "No videos to download."
 msgstr "다운로드할 동영상이 없습니다."
 
-#: addonCore.py:673
+#: addonCore.py:679
 msgid "Not a YouTube URL"
 msgstr "YouTube URL이 아닙니다."
 
@@ -1252,11 +1252,11 @@ msgstr "재생목록 다운로드가 시작되었습니다."
 msgid "Playlist download started: {title}"
 msgstr "재생목록 다운로드 시작됨: {title}"
 
-#: addonCore.py:885
+#: addonCore.py:891
 msgid "Playlist mode disabled"
 msgstr "재생목록 모드 해제됨"
 
-#: addonCore.py:885
+#: addonCore.py:891
 msgid "Playlist mode enabled"
 msgstr "재생목록 모드 설정됨"
 
@@ -1342,15 +1342,15 @@ msgstr "다운로드 재개"
 msgid "Resume interrupted downloads on restart"
 msgstr "재시작 시 중단된 다운로드 재개"
 
-#: addonCore.py:865
+#: addonCore.py:871
 msgid "Save description (single tap), save subtitles (double tap), read YouTube subtitles automatically (triple tap): toggle each option"
 msgstr "설명 저장(한 번 탭), 자막 저장(두 번 탭), YouTube 자막 자동 읽기(세 번 탭): 각 옵션 전환"
 
-#: addonCore.py:871
+#: addonCore.py:877
 msgid "Save description disabled"
 msgstr "설명 저장 사용 안 함"
 
-#: addonCore.py:871
+#: addonCore.py:877
 msgid "Save description enabled"
 msgstr "설명 저장 사용"
 
@@ -1358,11 +1358,11 @@ msgstr "설명 저장 사용"
 msgid "Save subtitles as a text file"
 msgstr "자막을 텍스트 파일로 저장"
 
-#: addonCore.py:873
+#: addonCore.py:879
 msgid "Save subtitles disabled"
 msgstr "자막 저장 사용 안 함"
 
-#: addonCore.py:873
+#: addonCore.py:879
 msgid "Save subtitles enabled"
 msgstr "자막 저장 사용"
 
@@ -1382,7 +1382,7 @@ msgstr "YouTube 검색"
 msgid "Search YouTube:"
 msgstr "YouTube 검색:"
 
-#: addonCore.py:644
+#: addonCore.py:650
 msgid "Search Youtube"
 msgstr "유튜브 검색"
 
@@ -1439,7 +1439,7 @@ msgstr "선택한 항목이 다운로드 대기열의 맨 앞으로 이동되었
 msgid "Selected items removed"
 msgstr "선택한 항목이 제거되었습니다"
 
-#: addonCore.py:678
+#: addonCore.py:684
 #: channel_core.py:1608
 #: playlist.py:453
 #: search.py:531
@@ -1472,11 +1472,11 @@ msgstr "다른 YouTube 언어의 건너뛰기 버튼 텍스트, 쉼표로 구분
 msgid "Skip existing files"
 msgstr "기존 파일 건너뛰기"
 
-#: addonCore.py:543
+#: addonCore.py:549
 msgid "Skip the YouTube ad that is playing (Z by default on YouTube pages)"
 msgstr "재생 중인 YouTube 광고 건너뛰기 (YouTube 페이지에서 기본값 Z)"
 
-#: addonCore.py:641
+#: addonCore.py:647
 msgid "Snapshot"
 msgstr "스냅샷"
 
@@ -1573,15 +1573,15 @@ msgstr "{count}개 동영상의 제목 수정이 완료되었습니다."
 msgid "Title correction failed."
 msgstr "제목 수정에 실패했습니다."
 
-#: addonCore.py:548
+#: addonCore.py:554
 msgid "Toggle download immediately"
 msgstr "즉시 다운로드 전환"
 
-#: addonCore.py:880
+#: addonCore.py:886
 msgid "Toggle playlist mode"
 msgstr "재생 목록 모드 전환"
 
-#: addonCore.py:642
+#: addonCore.py:648
 msgid "Trim setting"
 msgstr "자르기 설정"
 
@@ -1689,7 +1689,7 @@ msgstr "다운로드 섹션 사용"
 msgid "User &agent:"
 msgstr "사용자 &에이전트:"
 
-#: addonCore.py:636
+#: addonCore.py:642
 msgid "Video History Report"
 msgstr "동영상 기록 보고서"
 
@@ -1728,8 +1728,8 @@ msgstr "{title}의 동영상"
 msgid "Waiting"
 msgstr "대기 중"
 
-#: addonCore.py:752
-#: addonCore.py:765
+#: addonCore.py:758
+#: addonCore.py:771
 msgid "You must be on a YouTube page to use this feature"
 msgstr "이 기능을 사용하려면 YouTube 페이지에 있어야 합니다"
 
@@ -1819,7 +1819,7 @@ msgstr ""
 msgid "{percent}%"
 msgstr "{percent}%"
 
-#: addonCore.py:899
+#: addonCore.py:905
 msgid "{quality} kbps"
 msgstr "{quality} kbps"
 

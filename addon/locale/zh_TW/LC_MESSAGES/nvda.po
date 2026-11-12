@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: AbsoluteYoutube 2026.11.0\n"
+"Project-Id-Version: AbsoluteYoutube 2026.11.1\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-11-09 09:52+0700\n"
+"POT-Creation-Date: 2026-11-12 08:51+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Chinese (Traditional)\n"
@@ -168,7 +168,7 @@ msgstr "Absolute YouTube"
 msgid "Absolute YouTube Trim"
 msgstr "Absolute YouTube 剪輯"
 
-#: addonCore.py:646
+#: addonCore.py:652
 msgid "Absolute YouTube setting"
 msgstr "Absolute YouTube 設定"
 
@@ -176,7 +176,7 @@ msgstr "Absolute YouTube 設定"
 msgid "Absolute Youtube"
 msgstr "Absolute Youtube"
 
-#: adSkip.py:428
+#: adSkip.py:526
 msgid "Ad skipped"
 msgstr "已略過廣告"
 
@@ -274,11 +274,11 @@ msgstr "音訊品質"
 msgid "Auto-update yt-dlp on startup"
 msgstr "啟動時自動更新 yt-dlp"
 
-#: addonCore.py:875
+#: addonCore.py:881
 msgid "Automatic subtitle reading disabled"
 msgstr "已停用自動朗讀字幕"
 
-#: addonCore.py:875
+#: addonCore.py:881
 msgid "Automatic subtitle reading enabled"
 msgstr "已啟用自動朗讀字幕"
 
@@ -449,7 +449,7 @@ msgstr "Cookie 已成功匯出至 {path}。防封鎖功能現已啟用。"
 msgid "Copy URL"
 msgstr "複製網址"
 
-#: addonCore.py:626
+#: addonCore.py:632
 #: playlist.py:415
 #: search.py:504
 msgid "Copy video Shorten URL"
@@ -465,7 +465,7 @@ msgstr "立即修正標題"
 msgid "Correcting title for selected video..."
 msgstr "正在修正所選影片的標題..."
 
-#: adSkip.py:393
+#: adSkip.py:487
 msgid "Could not click the skip button."
 msgstr "無法按一下略過按鈕。"
 
@@ -474,7 +474,7 @@ msgstr "無法按一下略過按鈕。"
 msgid "Could not create short URL"
 msgstr "無法建立短網址"
 
-#: addonCore.py:680
+#: addonCore.py:686
 msgid "Could not create shortened URL"
 msgstr "無法建立縮短的網址"
 
@@ -506,7 +506,7 @@ msgstr "無法讀取 {browser} Cookie 資料庫。請完全關閉 {browser} 後�
 msgid "Cycle MP3 quality (single tap), toggle download immediately (double tap), toggle playlist mode (triple tap)"
 msgstr "循環切換 MP3 品質（單擊），立即切換下載（雙擊），切換播放清單模式（三擊）"
 
-#: addonCore.py:887
+#: addonCore.py:893
 msgid "Cycle MP3 quality settings"
 msgstr "切換 MP3 品質設定"
 
@@ -590,11 +590,11 @@ msgstr "下載完成"
 msgid "Download entire playlist"
 msgstr "下載整個播放清單"
 
-#: addonCore.py:632
+#: addonCore.py:638
 msgid "Download fail manager"
 msgstr "失敗下載管理員"
 
-#: addonCore.py:634
+#: addonCore.py:640
 msgid "Download fail manager (no failed)"
 msgstr "失敗下載管理員（無失敗項目）"
 
@@ -649,7 +649,7 @@ msgstr "下載資料夾不存在。"
 msgid "Download function not available."
 msgstr "下載功能無法使用。"
 
-#: addonCore.py:628
+#: addonCore.py:634
 msgid "Download list manager"
 msgstr "下載清單管理員"
 
@@ -727,7 +727,7 @@ msgstr "建立下載資料夾時發生錯誤"
 msgid "Error deleting channel."
 msgstr "刪除頻道時發生錯誤。"
 
-#: addonCore.py:665
+#: addonCore.py:671
 msgid "Error displaying context menu"
 msgstr "顯示內容功能表時發生錯誤"
 
@@ -744,7 +744,7 @@ msgstr "取得頻道時發生錯誤：{str}"
 msgid "Error importing core functions: {str}"
 msgstr "匯入核心功能時發生錯誤：{str}"
 
-#: addonCore.py:814
+#: addonCore.py:820
 msgid "Error importing settings panel: {str}"
 msgstr "匯入設定面板時發生錯誤：{str}"
 
@@ -762,20 +762,20 @@ msgstr "載入快取時發生錯誤。"
 msgid "Error loading channel data."
 msgstr "載入頻道資料時發生錯誤。"
 
-#: addonCore.py:572
+#: addonCore.py:578
 msgid "Error opening channel dialog"
 msgstr "開啟頻道對話方塊時發生錯誤"
 
-#: addonCore.py:860
+#: addonCore.py:866
 msgid "Error opening channel/playlist list: {str}"
 msgstr "開啟頻道/播放清單列表時發生錯誤：{str}"
 
-#: addonCore.py:701
-#: addonCore.py:705
+#: addonCore.py:707
+#: addonCore.py:711
 msgid "Error opening download fail dialog: {str}"
 msgstr "開啟下載失敗對話方塊時發生錯誤：{str}"
 
-#: addonCore.py:612
+#: addonCore.py:618
 msgid "Error opening download list dialog: {str}"
 msgstr "開啟下載列表對話方塊時發生錯誤：{str}"
 
@@ -787,19 +787,19 @@ msgstr "開啟資料夾時發生錯誤"
 msgid "Error opening playlist."
 msgstr "開啟播放清單時發生錯誤。"
 
-#: addonCore.py:799
+#: addonCore.py:805
 msgid "Error opening search dialog: {str}"
 msgstr "開啟搜尋對話方塊時發生錯誤：{str}"
 
-#: addonCore.py:817
+#: addonCore.py:823
 msgid "Error opening settings dialog: {str}"
 msgstr "開啟設定對話方塊時發生錯誤：{str}"
 
-#: addonCore.py:780
+#: addonCore.py:786
 msgid "Error opening trim dialog: {str}"
 msgstr "開啟剪裁對話方塊時發生錯誤：{str}"
 
-#: addonCore.py:729
+#: addonCore.py:735
 msgid "Error opening video history: {str}"
 msgstr "開啟影片歷史記錄時發生錯誤：{str}"
 
@@ -819,11 +819,11 @@ msgstr "更新頻道網址時發生錯誤。"
 msgid "Error updating channel."
 msgstr "更新頻道時發生錯誤。"
 
-#: addonCore.py:617
+#: addonCore.py:623
 msgid "Error: Download list module not available"
 msgstr "錯誤：下載列表模組無法使用"
 
-#: addonCore.py:691
+#: addonCore.py:697
 msgid "Error: DownloadFail module not available"
 msgstr "錯誤：下載失敗模組無法使用"
 
@@ -835,19 +835,19 @@ msgstr "錯誤：無法擷取快照。"
 msgid "Error: No snapshot file created."
 msgstr "錯誤：未建立快照檔案。"
 
-#: addonCore.py:804
+#: addonCore.py:810
 msgid "Error: Search module not available"
 msgstr "錯誤：搜尋模組無法使用"
 
-#: addonCore.py:760
+#: addonCore.py:766
 msgid "Error: Snapshot module not available"
 msgstr "錯誤：快照模組無法使用"
 
-#: addonCore.py:769
+#: addonCore.py:775
 msgid "Error: Trim module not available"
 msgstr "錯誤：裁剪模組無法使用"
 
-#: addonCore.py:716
+#: addonCore.py:722
 msgid "Error: Video history module not available"
 msgstr "錯誤：影片歷史記錄模組無法使用"
 
@@ -876,7 +876,7 @@ msgstr "正在從 {browser} 匯出 Cookie..."
 msgid "Failed to create the specified folder. Please select a valid folder."
 msgstr "無法建立指定的資料夾。請選擇有效的資料夾。"
 
-#: addonCore.py:638
+#: addonCore.py:644
 msgid "Favorite channel"
 msgstr "最愛頻道"
 
@@ -884,7 +884,7 @@ msgstr "最愛頻道"
 msgid "Fetched {count} items total."
 msgstr "總共取得 {count} 個項目。"
 
-#: addonCore.py:847
+#: addonCore.py:853
 msgid "Fetching channel information..."
 msgstr "正在取得頻道資訊..."
 
@@ -996,11 +996,11 @@ msgstr "如何取得 Cookie"
 msgid "How to get cookies?"
 msgstr "如何取得 Cookie？"
 
-#: addonCore.py:556
+#: addonCore.py:562
 msgid "Immediate download mode disabled"
 msgstr "立即下載模式已停用"
 
-#: addonCore.py:554
+#: addonCore.py:560
 msgid "Immediate download mode enabled"
 msgstr "立即下載模式已啟用"
 
@@ -1012,7 +1012,7 @@ msgstr "無效的網址或開始時間"
 msgid "Invalid YouTube video URL"
 msgstr "無效的 YouTube 影片網址"
 
-#: addonCore.py:560
+#: addonCore.py:566
 msgid "Invalid channel URL"
 msgstr "無效的頻道網址"
 
@@ -1088,7 +1088,7 @@ msgid "NextPage"
 msgstr "下一頁"
 
 #: addonCore.py:383
-#: addonCore.py:670
+#: addonCore.py:676
 msgid "No YouTube URL found"
 msgstr "找不到 YouTube 網址"
 
@@ -1101,7 +1101,7 @@ msgstr "未選取頻道。"
 msgid "No downloads could be started"
 msgstr "無法啟動任何下載"
 
-#: addonCore.py:687
+#: addonCore.py:693
 msgid "No failed downloads"
 msgstr "沒有失敗的下載"
 
@@ -1161,7 +1161,7 @@ msgstr "此頻道沒有儲存的資料。"
 msgid "No saved data for this content type yet."
 msgstr "此內容類型尚無儲存的資料。"
 
-#: adSkip.py:395
+#: adSkip.py:489
 msgid "No skip button found."
 msgstr "找不到略過按鈕。"
 
@@ -1169,7 +1169,7 @@ msgstr "找不到略過按鈕。"
 msgid "No valid multimedia link found."
 msgstr "找不到有效的多媒體連結。"
 
-#: addonCore.py:719
+#: addonCore.py:725
 msgid "No video history yet"
 msgstr "尚無影片歷史記錄"
 
@@ -1179,7 +1179,7 @@ msgstr "尚無影片歷史記錄"
 msgid "No videos to download."
 msgstr "沒有可下載的影片。"
 
-#: addonCore.py:673
+#: addonCore.py:679
 msgid "Not a YouTube URL"
 msgstr "不是 YouTube 網址"
 
@@ -1252,11 +1252,11 @@ msgstr "播放清單下載已開始。"
 msgid "Playlist download started: {title}"
 msgstr "播放清單下載已開始：{title}"
 
-#: addonCore.py:885
+#: addonCore.py:891
 msgid "Playlist mode disabled"
 msgstr "播放清單模式已停用"
 
-#: addonCore.py:885
+#: addonCore.py:891
 msgid "Playlist mode enabled"
 msgstr "播放清單模式已啟用"
 
@@ -1342,15 +1342,15 @@ msgstr "繼續下載"
 msgid "Resume interrupted downloads on restart"
 msgstr "重新啟動時繼續未完成的下載"
 
-#: addonCore.py:865
+#: addonCore.py:871
 msgid "Save description (single tap), save subtitles (double tap), read YouTube subtitles automatically (triple tap): toggle each option"
 msgstr "儲存影片資訊 (按一下)、儲存字幕 (按兩下)、自動朗讀 YouTube 字幕 (按三下)：切換各個選項"
 
-#: addonCore.py:871
+#: addonCore.py:877
 msgid "Save description disabled"
 msgstr "已停用儲存影片資訊"
 
-#: addonCore.py:871
+#: addonCore.py:877
 msgid "Save description enabled"
 msgstr "已啟用儲存影片資訊"
 
@@ -1358,11 +1358,11 @@ msgstr "已啟用儲存影片資訊"
 msgid "Save subtitles as a text file"
 msgstr "將字幕儲存為文字檔"
 
-#: addonCore.py:873
+#: addonCore.py:879
 msgid "Save subtitles disabled"
 msgstr "已停用儲存字幕"
 
-#: addonCore.py:873
+#: addonCore.py:879
 msgid "Save subtitles enabled"
 msgstr "已啟用儲存字幕"
 
@@ -1382,7 +1382,7 @@ msgstr "搜尋 YouTube"
 msgid "Search YouTube:"
 msgstr "搜尋 YouTube："
 
-#: addonCore.py:644
+#: addonCore.py:650
 msgid "Search Youtube"
 msgstr "搜尋 YouTube"
 
@@ -1439,7 +1439,7 @@ msgstr "選取的項目已移至下載佇列的最前方"
 msgid "Selected items removed"
 msgstr "已移除所選項目"
 
-#: addonCore.py:678
+#: addonCore.py:684
 #: channel_core.py:1608
 #: playlist.py:453
 #: search.py:531
@@ -1472,11 +1472,11 @@ msgstr "其他 YouTube 語言的略過按鈕文字，以逗號分隔 (例如 {ex
 msgid "Skip existing files"
 msgstr "跳過現有檔案"
 
-#: addonCore.py:543
+#: addonCore.py:549
 msgid "Skip the YouTube ad that is playing (Z by default on YouTube pages)"
 msgstr "略過正在播放的 YouTube 廣告 (在 YouTube 頁面上預設為 Z 鍵)"
 
-#: addonCore.py:641
+#: addonCore.py:647
 msgid "Snapshot"
 msgstr "快照"
 
@@ -1573,15 +1573,15 @@ msgstr "已完成 {count} 部影片的標題修正。"
 msgid "Title correction failed."
 msgstr "標題修正失敗。"
 
-#: addonCore.py:548
+#: addonCore.py:554
 msgid "Toggle download immediately"
 msgstr "切換為立即下載"
 
-#: addonCore.py:880
+#: addonCore.py:886
 msgid "Toggle playlist mode"
 msgstr "切換播放清單模式"
 
-#: addonCore.py:642
+#: addonCore.py:648
 msgid "Trim setting"
 msgstr "剪輯設定"
 
@@ -1689,7 +1689,7 @@ msgstr "使用下載區段"
 msgid "User &agent:"
 msgstr "使用者代理(&a)："
 
-#: addonCore.py:636
+#: addonCore.py:642
 msgid "Video History Report"
 msgstr "影片歷史紀錄報告"
 
@@ -1728,8 +1728,8 @@ msgstr "{title} 中的影片"
 msgid "Waiting"
 msgstr "等待中"
 
-#: addonCore.py:752
-#: addonCore.py:765
+#: addonCore.py:758
+#: addonCore.py:771
 msgid "You must be on a YouTube page to use this feature"
 msgstr "您必須位於 YouTube 頁面才能使用此功能"
 
@@ -1819,7 +1819,7 @@ msgstr ""
 msgid "{percent}%"
 msgstr "{percent}%"
 
-#: addonCore.py:899
+#: addonCore.py:905
 msgid "{quality} kbps"
 msgstr "{quality} kbps"
 

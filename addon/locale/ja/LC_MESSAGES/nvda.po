@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: AbsoluteYoutube 2026.11.0\n"
+"Project-Id-Version: AbsoluteYoutube 2026.11.1\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-11-09 09:52+0700\n"
+"POT-Creation-Date: 2026-11-12 08:51+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Japanese\n"
@@ -168,7 +168,7 @@ msgstr "Absolute YouTube"
 msgid "Absolute YouTube Trim"
 msgstr "Absolute YouTube トリム"
 
-#: addonCore.py:646
+#: addonCore.py:652
 msgid "Absolute YouTube setting"
 msgstr "Absolute YouTube 設定"
 
@@ -176,7 +176,7 @@ msgstr "Absolute YouTube 設定"
 msgid "Absolute Youtube"
 msgstr "Absolute Youtube"
 
-#: adSkip.py:428
+#: adSkip.py:526
 msgid "Ad skipped"
 msgstr "広告をスキップしました"
 
@@ -274,11 +274,11 @@ msgstr "音質"
 msgid "Auto-update yt-dlp on startup"
 msgstr "起動時にyt-dlpを自動更新する"
 
-#: addonCore.py:875
+#: addonCore.py:881
 msgid "Automatic subtitle reading disabled"
 msgstr "自動字幕読み上げが無効になりました"
 
-#: addonCore.py:875
+#: addonCore.py:881
 msgid "Automatic subtitle reading enabled"
 msgstr "自動字幕読み上げが有効になりました"
 
@@ -449,7 +449,7 @@ msgstr "Cookie が {path} に正常にエクスポートされました。アン
 msgid "Copy URL"
 msgstr "URLをコピー"
 
-#: addonCore.py:626
+#: addonCore.py:632
 #: playlist.py:415
 #: search.py:504
 msgid "Copy video Shorten URL"
@@ -465,7 +465,7 @@ msgstr "今すぐタイトルを修正"
 msgid "Correcting title for selected video..."
 msgstr "選択した動画のタイトルを修正中..."
 
-#: adSkip.py:393
+#: adSkip.py:487
 msgid "Could not click the skip button."
 msgstr "スキップボタンをクリックできませんでした。"
 
@@ -474,7 +474,7 @@ msgstr "スキップボタンをクリックできませんでした。"
 msgid "Could not create short URL"
 msgstr "短縮URLを作成できませんでした"
 
-#: addonCore.py:680
+#: addonCore.py:686
 msgid "Could not create shortened URL"
 msgstr "短縮URLを作成できませんでした"
 
@@ -506,7 +506,7 @@ msgstr "{browser}のクッキーデータベースを読み込めませんでし
 msgid "Cycle MP3 quality (single tap), toggle download immediately (double tap), toggle playlist mode (triple tap)"
 msgstr "MP3の品質を切り替え (シングルタップ)、すぐにダウンロードを切り替え (ダブルタップ)、プレイリストモードを切り替え (トリプルタップ)"
 
-#: addonCore.py:887
+#: addonCore.py:893
 msgid "Cycle MP3 quality settings"
 msgstr "MP3の音質設定を切り替え"
 
@@ -590,11 +590,11 @@ msgstr "ダウンロード完了"
 msgid "Download entire playlist"
 msgstr "プレイリスト全体をダウンロード"
 
-#: addonCore.py:632
+#: addonCore.py:638
 msgid "Download fail manager"
 msgstr "失敗したダウンロードの管理"
 
-#: addonCore.py:634
+#: addonCore.py:640
 msgid "Download fail manager (no failed)"
 msgstr "失敗したダウンロードの管理 (失敗なし)"
 
@@ -649,7 +649,7 @@ msgstr "ダウンロードフォルダーが存在しません。"
 msgid "Download function not available."
 msgstr "ダウンロード機能は利用できません。"
 
-#: addonCore.py:628
+#: addonCore.py:634
 msgid "Download list manager"
 msgstr "ダウンロードリスト管理"
 
@@ -727,7 +727,7 @@ msgstr "ダウンロードフォルダーの作成エラー"
 msgid "Error deleting channel."
 msgstr "チャンネルの削除エラー"
 
-#: addonCore.py:665
+#: addonCore.py:671
 msgid "Error displaying context menu"
 msgstr "コンテキストメニューの表示エラー"
 
@@ -744,7 +744,7 @@ msgstr "チャンネルの取得エラー: {str}"
 msgid "Error importing core functions: {str}"
 msgstr "コア機能のインポートエラー: {str}"
 
-#: addonCore.py:814
+#: addonCore.py:820
 msgid "Error importing settings panel: {str}"
 msgstr "設定パネルのインポートエラー: {str}"
 
@@ -762,20 +762,20 @@ msgstr "キャッシュの読み込みエラー。"
 msgid "Error loading channel data."
 msgstr "チャンネルデータの読み込みエラー。"
 
-#: addonCore.py:572
+#: addonCore.py:578
 msgid "Error opening channel dialog"
 msgstr "チャンネルダイアログを開くエラー"
 
-#: addonCore.py:860
+#: addonCore.py:866
 msgid "Error opening channel/playlist list: {str}"
 msgstr "チャンネル/プレイリストリストを開くエラー: {str}"
 
-#: addonCore.py:701
-#: addonCore.py:705
+#: addonCore.py:707
+#: addonCore.py:711
 msgid "Error opening download fail dialog: {str}"
 msgstr "ダウンロード失敗ダイアログを開くエラー: {str}"
 
-#: addonCore.py:612
+#: addonCore.py:618
 msgid "Error opening download list dialog: {str}"
 msgstr "ダウンロードリストダイアログを開くエラー: {str}"
 
@@ -787,19 +787,19 @@ msgstr "フォルダーを開くエラー"
 msgid "Error opening playlist."
 msgstr "プレイリストを開くエラー"
 
-#: addonCore.py:799
+#: addonCore.py:805
 msgid "Error opening search dialog: {str}"
 msgstr "検索ダイアログを開くエラー: {str}"
 
-#: addonCore.py:817
+#: addonCore.py:823
 msgid "Error opening settings dialog: {str}"
 msgstr "設定ダイアログを開くエラー: {str}"
 
-#: addonCore.py:780
+#: addonCore.py:786
 msgid "Error opening trim dialog: {str}"
 msgstr "トリミングダイアログを開くエラー: {str}"
 
-#: addonCore.py:729
+#: addonCore.py:735
 msgid "Error opening video history: {str}"
 msgstr "動画履歴を開く際にエラーが発生しました: {str}"
 
@@ -819,11 +819,11 @@ msgstr "チャンネルURLの更新エラー"
 msgid "Error updating channel."
 msgstr "チャンネルの更新エラー"
 
-#: addonCore.py:617
+#: addonCore.py:623
 msgid "Error: Download list module not available"
 msgstr "エラー: ダウンロードリストモジュールが利用できません"
 
-#: addonCore.py:691
+#: addonCore.py:697
 msgid "Error: DownloadFail module not available"
 msgstr "エラー: DownloadFail モジュールが利用できません"
 
@@ -835,19 +835,19 @@ msgstr "エラー: スナップショットの取得に失敗しました。"
 msgid "Error: No snapshot file created."
 msgstr "エラー: スナップショットファイルが作成されませんでした。"
 
-#: addonCore.py:804
+#: addonCore.py:810
 msgid "Error: Search module not available"
 msgstr "エラー: 検索モジュールが利用できません"
 
-#: addonCore.py:760
+#: addonCore.py:766
 msgid "Error: Snapshot module not available"
 msgstr "エラー: スナップショットモジュールが利用できません"
 
-#: addonCore.py:769
+#: addonCore.py:775
 msgid "Error: Trim module not available"
 msgstr "エラー: トリミングモジュールが利用できません"
 
-#: addonCore.py:716
+#: addonCore.py:722
 msgid "Error: Video history module not available"
 msgstr "エラー: 動画履歴モジュールを利用できません"
 
@@ -876,7 +876,7 @@ msgstr "{browser} からクッキーをエクスポートしています..."
 msgid "Failed to create the specified folder. Please select a valid folder."
 msgstr "指定されたフォルダーを作成できませんでした。有効なフォルダーを選択してください。"
 
-#: addonCore.py:638
+#: addonCore.py:644
 msgid "Favorite channel"
 msgstr "お気に入りチャンネル"
 
@@ -884,7 +884,7 @@ msgstr "お気に入りチャンネル"
 msgid "Fetched {count} items total."
 msgstr "合計 {count} 件を取得しました。"
 
-#: addonCore.py:847
+#: addonCore.py:853
 msgid "Fetching channel information..."
 msgstr "チャンネル情報を取得しています..."
 
@@ -996,11 +996,11 @@ msgstr "Cookieの取得方法"
 msgid "How to get cookies?"
 msgstr "Cookieの取得方法"
 
-#: addonCore.py:556
+#: addonCore.py:562
 msgid "Immediate download mode disabled"
 msgstr "即時ダウンロードモードが無効になりました"
 
-#: addonCore.py:554
+#: addonCore.py:560
 msgid "Immediate download mode enabled"
 msgstr "即時ダウンロードモードが有効になりました"
 
@@ -1012,7 +1012,7 @@ msgstr "無効なURLまたは開始時間です"
 msgid "Invalid YouTube video URL"
 msgstr "無効なYouTube動画URLです"
 
-#: addonCore.py:560
+#: addonCore.py:566
 msgid "Invalid channel URL"
 msgstr "無効なチャンネルURLです"
 
@@ -1088,7 +1088,7 @@ msgid "NextPage"
 msgstr "次のページ"
 
 #: addonCore.py:383
-#: addonCore.py:670
+#: addonCore.py:676
 msgid "No YouTube URL found"
 msgstr "YouTube の URL が見つかりません"
 
@@ -1101,7 +1101,7 @@ msgstr "チャンネルが選択されていません。"
 msgid "No downloads could be started"
 msgstr "ダウンロードを開始できませんでした"
 
-#: addonCore.py:687
+#: addonCore.py:693
 msgid "No failed downloads"
 msgstr "失敗したダウンロードはありません"
 
@@ -1161,7 +1161,7 @@ msgstr "このチャンネルの保存されたデータはありません。"
 msgid "No saved data for this content type yet."
 msgstr "このコンテンツタイプの保存されたデータはまだありません。"
 
-#: adSkip.py:395
+#: adSkip.py:489
 msgid "No skip button found."
 msgstr "スキップボタンが見つかりません。"
 
@@ -1169,7 +1169,7 @@ msgstr "スキップボタンが見つかりません。"
 msgid "No valid multimedia link found."
 msgstr "有効なマルチメディアリンクが見つかりません。"
 
-#: addonCore.py:719
+#: addonCore.py:725
 msgid "No video history yet"
 msgstr "動画履歴はまだありません"
 
@@ -1179,7 +1179,7 @@ msgstr "動画履歴はまだありません"
 msgid "No videos to download."
 msgstr "ダウンロードする動画がありません。"
 
-#: addonCore.py:673
+#: addonCore.py:679
 msgid "Not a YouTube URL"
 msgstr "YouTubeのURLではありません"
 
@@ -1252,11 +1252,11 @@ msgstr "プレイリストのダウンロードを開始しました。"
 msgid "Playlist download started: {title}"
 msgstr "プレイリストのダウンロードを開始しました: {title}"
 
-#: addonCore.py:885
+#: addonCore.py:891
 msgid "Playlist mode disabled"
 msgstr "プレイリストモードが無効になりました"
 
-#: addonCore.py:885
+#: addonCore.py:891
 msgid "Playlist mode enabled"
 msgstr "プレイリストモードが有効になりました"
 
@@ -1342,15 +1342,15 @@ msgstr "ダウンロードを再開"
 msgid "Resume interrupted downloads on restart"
 msgstr "再起動時に中断されたダウンロードを再開する"
 
-#: addonCore.py:865
+#: addonCore.py:871
 msgid "Save description (single tap), save subtitles (double tap), read YouTube subtitles automatically (triple tap): toggle each option"
 msgstr "説明の保存（1回タップ）、字幕の保存（2回タップ）、YouTube字幕の自動読み上げ（3回タップ）：各オプションの切り替え"
 
-#: addonCore.py:871
+#: addonCore.py:877
 msgid "Save description disabled"
 msgstr "説明の保存が無効になりました"
 
-#: addonCore.py:871
+#: addonCore.py:877
 msgid "Save description enabled"
 msgstr "説明の保存が有効になりました"
 
@@ -1358,11 +1358,11 @@ msgstr "説明の保存が有効になりました"
 msgid "Save subtitles as a text file"
 msgstr "字幕をテキストファイルとして保存する"
 
-#: addonCore.py:873
+#: addonCore.py:879
 msgid "Save subtitles disabled"
 msgstr "字幕の保存が無効になりました"
 
-#: addonCore.py:873
+#: addonCore.py:879
 msgid "Save subtitles enabled"
 msgstr "字幕の保存が有効になりました"
 
@@ -1382,7 +1382,7 @@ msgstr "YouTubeを検索"
 msgid "Search YouTube:"
 msgstr "YouTubeを検索:"
 
-#: addonCore.py:644
+#: addonCore.py:650
 msgid "Search Youtube"
 msgstr "YouTubeを検索"
 
@@ -1439,7 +1439,7 @@ msgstr "選択した項目をダウンロードキューの先頭に移動しま
 msgid "Selected items removed"
 msgstr "選択された項目を削除しました"
 
-#: addonCore.py:678
+#: addonCore.py:684
 #: channel_core.py:1608
 #: playlist.py:453
 #: search.py:531
@@ -1472,11 +1472,11 @@ msgstr "他のYouTube言語のスキップボタンのテキスト、カンマ�
 msgid "Skip existing files"
 msgstr "既存のファイルをスキップ"
 
-#: addonCore.py:543
+#: addonCore.py:549
 msgid "Skip the YouTube ad that is playing (Z by default on YouTube pages)"
 msgstr "再生中のYouTube広告をスキップする (YouTubeページではデフォルトでZ)"
 
-#: addonCore.py:641
+#: addonCore.py:647
 msgid "Snapshot"
 msgstr "スナップショット"
 
@@ -1573,15 +1573,15 @@ msgstr "{count}件の動画のタイトル修正が完了しました。"
 msgid "Title correction failed."
 msgstr "タイトルの修正に失敗しました。"
 
-#: addonCore.py:548
+#: addonCore.py:554
 msgid "Toggle download immediately"
 msgstr "すぐにダウンロードの切り替え"
 
-#: addonCore.py:880
+#: addonCore.py:886
 msgid "Toggle playlist mode"
 msgstr "プレイリストモードの切り替え"
 
-#: addonCore.py:642
+#: addonCore.py:648
 msgid "Trim setting"
 msgstr "トリム設定"
 
@@ -1689,7 +1689,7 @@ msgstr "ダウンロードセクションを使用する"
 msgid "User &agent:"
 msgstr "ユーザーエージェント (&A):"
 
-#: addonCore.py:636
+#: addonCore.py:642
 msgid "Video History Report"
 msgstr "動画履歴レポート"
 
@@ -1728,8 +1728,8 @@ msgstr "{title} 内の動画"
 msgid "Waiting"
 msgstr "待機中"
 
-#: addonCore.py:752
-#: addonCore.py:765
+#: addonCore.py:758
+#: addonCore.py:771
 msgid "You must be on a YouTube page to use this feature"
 msgstr "この機能を使用するにはYouTubeのページを開いている必要があります"
 
@@ -1819,7 +1819,7 @@ msgstr ""
 msgid "{percent}%"
 msgstr "{percent}%"
 
-#: addonCore.py:899
+#: addonCore.py:905
 msgid "{quality} kbps"
 msgstr "{quality} kbps"
 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: AbsoluteYoutube 2026.11.0\n"
+"Project-Id-Version: AbsoluteYoutube 2026.11.1\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-11-09 09:52+0700\n"
+"POT-Creation-Date: 2026-11-12 08:51+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Arabic\n"
@@ -168,7 +168,7 @@ msgstr "يوتيوب المطلق"
 msgid "Absolute YouTube Trim"
 msgstr "قص يوتيوب المطلق"
 
-#: addonCore.py:646
+#: addonCore.py:652
 msgid "Absolute YouTube setting"
 msgstr "إعدادات يوتيوب المطلق"
 
@@ -176,7 +176,7 @@ msgstr "إعدادات يوتيوب المطلق"
 msgid "Absolute Youtube"
 msgstr "يوتيوب المطلق"
 
-#: adSkip.py:428
+#: adSkip.py:526
 msgid "Ad skipped"
 msgstr "تم تخطي الإعلان"
 
@@ -274,11 +274,11 @@ msgstr "جودة الصوت"
 msgid "Auto-update yt-dlp on startup"
 msgstr "تحديث yt-dlp تلقائيًا عند بدء التشغيل"
 
-#: addonCore.py:875
+#: addonCore.py:881
 msgid "Automatic subtitle reading disabled"
 msgstr "قراءة الترجمة تلقائياً معطلة"
 
-#: addonCore.py:875
+#: addonCore.py:881
 msgid "Automatic subtitle reading enabled"
 msgstr "قراءة الترجمة تلقائياً مفعلة"
 
@@ -449,7 +449,7 @@ msgstr "تم تصدير ملفات تعريف الارتباط بنجاح إلى
 msgid "Copy URL"
 msgstr "نسخ رابط URL"
 
-#: addonCore.py:626
+#: addonCore.py:632
 #: playlist.py:415
 #: search.py:504
 msgid "Copy video Shorten URL"
@@ -465,7 +465,7 @@ msgstr "تصحيح العنوان الآن"
 msgid "Correcting title for selected video..."
 msgstr "جاري تصحيح عنوان الفيديو المحدد..."
 
-#: adSkip.py:393
+#: adSkip.py:487
 msgid "Could not click the skip button."
 msgstr "تعذر النقر على زر التخطي."
 
@@ -474,7 +474,7 @@ msgstr "تعذر النقر على زر التخطي."
 msgid "Could not create short URL"
 msgstr "تعذر إنشاء رابط قصير"
 
-#: addonCore.py:680
+#: addonCore.py:686
 msgid "Could not create shortened URL"
 msgstr "تعذر إنشاء رابط مختصر"
 
@@ -506,7 +506,7 @@ msgstr "تعذر قراءة قاعدة بيانات ملفات تعريف الا
 msgid "Cycle MP3 quality (single tap), toggle download immediately (double tap), toggle playlist mode (triple tap)"
 msgstr "تبديل جودة MP3 (نقرة واحدة)، تبديل التنزيل الفوري (نقرتان)، تبديل وضع قائمة التشغيل (ثلاث نقرات)"
 
-#: addonCore.py:887
+#: addonCore.py:893
 msgid "Cycle MP3 quality settings"
 msgstr "التبديل بين إعدادات جودة MP3"
 
@@ -590,11 +590,11 @@ msgstr "اكتمل التنزيل"
 msgid "Download entire playlist"
 msgstr "تنزيل قائمة التشغيل بأكملها"
 
-#: addonCore.py:632
+#: addonCore.py:638
 msgid "Download fail manager"
 msgstr "مدير التنزيلات الفاشلة"
 
-#: addonCore.py:634
+#: addonCore.py:640
 msgid "Download fail manager (no failed)"
 msgstr "مدير التنزيلات الفاشلة (لا توجد تنزيلات فاشلة)"
 
@@ -649,7 +649,7 @@ msgstr "مجلد التنزيل غير موجود."
 msgid "Download function not available."
 msgstr "ميزة التنزيل غير متوفرة."
 
-#: addonCore.py:628
+#: addonCore.py:634
 msgid "Download list manager"
 msgstr "مدير قائمة التنزيل"
 
@@ -727,7 +727,7 @@ msgstr "خطأ في إنشاء مجلد التنزيل"
 msgid "Error deleting channel."
 msgstr "خطأ في حذف القناة."
 
-#: addonCore.py:665
+#: addonCore.py:671
 msgid "Error displaying context menu"
 msgstr "خطأ في عرض قائمة السياق"
 
@@ -744,7 +744,7 @@ msgstr "خطأ في جلب القناة: {str}"
 msgid "Error importing core functions: {str}"
 msgstr "خطأ في استيراد الوظائف الأساسية: {str}"
 
-#: addonCore.py:814
+#: addonCore.py:820
 msgid "Error importing settings panel: {str}"
 msgstr "خطأ في استيراد لوحة الإعدادات: {str}"
 
@@ -762,20 +762,20 @@ msgstr "خطأ في تحميل ذاكرة التخزين المؤقت."
 msgid "Error loading channel data."
 msgstr "خطأ في تحميل بيانات القناة."
 
-#: addonCore.py:572
+#: addonCore.py:578
 msgid "Error opening channel dialog"
 msgstr "خطأ في فتح محاورة القناة"
 
-#: addonCore.py:860
+#: addonCore.py:866
 msgid "Error opening channel/playlist list: {str}"
 msgstr "خطأ في فتح قائمة القناة/قائمة التشغيل: {str}"
 
-#: addonCore.py:701
-#: addonCore.py:705
+#: addonCore.py:707
+#: addonCore.py:711
 msgid "Error opening download fail dialog: {str}"
 msgstr "خطأ في فتح محاورة فشل التنزيل: {str}"
 
-#: addonCore.py:612
+#: addonCore.py:618
 msgid "Error opening download list dialog: {str}"
 msgstr "خطأ في فتح محاورة قائمة التنزيل: {str}"
 
@@ -787,19 +787,19 @@ msgstr "خطأ في فتح المجلد"
 msgid "Error opening playlist."
 msgstr "خطأ في فتح قائمة التشغيل."
 
-#: addonCore.py:799
+#: addonCore.py:805
 msgid "Error opening search dialog: {str}"
 msgstr "خطأ في فتح محاورة البحث: {str}"
 
-#: addonCore.py:817
+#: addonCore.py:823
 msgid "Error opening settings dialog: {str}"
 msgstr "خطأ في فتح محاورة الإعدادات: {str}"
 
-#: addonCore.py:780
+#: addonCore.py:786
 msgid "Error opening trim dialog: {str}"
 msgstr "خطأ في فتح محاورة القص: {str}"
 
-#: addonCore.py:729
+#: addonCore.py:735
 msgid "Error opening video history: {str}"
 msgstr "خطأ في فتح سجل الفيديو: {str}"
 
@@ -819,11 +819,11 @@ msgstr "خطأ في تحديث عنوان URL للقناة."
 msgid "Error updating channel."
 msgstr "خطأ في تحديث القناة."
 
-#: addonCore.py:617
+#: addonCore.py:623
 msgid "Error: Download list module not available"
 msgstr "خطأ: وحدة قائمة التنزيل غير متوفرة"
 
-#: addonCore.py:691
+#: addonCore.py:697
 msgid "Error: DownloadFail module not available"
 msgstr "خطأ: وحدة فشل التنزيل غير متوفرة"
 
@@ -835,19 +835,19 @@ msgstr "خطأ: فشل التقاط اللقطة."
 msgid "Error: No snapshot file created."
 msgstr "خطأ: لم يتم إنشاء ملف اللقطة."
 
-#: addonCore.py:804
+#: addonCore.py:810
 msgid "Error: Search module not available"
 msgstr "خطأ: وحدة البحث غير متوفرة"
 
-#: addonCore.py:760
+#: addonCore.py:766
 msgid "Error: Snapshot module not available"
 msgstr "خطأ: وحدة اللقطة غير متوفرة"
 
-#: addonCore.py:769
+#: addonCore.py:775
 msgid "Error: Trim module not available"
 msgstr "خطأ: وحدة القص غير متوفرة"
 
-#: addonCore.py:716
+#: addonCore.py:722
 msgid "Error: Video history module not available"
 msgstr "خطأ: وحدة سجل الفيديو غير متوفرة"
 
@@ -876,7 +876,7 @@ msgstr "جاري تصدير ملفات تعريف الارتباط من {browser
 msgid "Failed to create the specified folder. Please select a valid folder."
 msgstr "فشل إنشاء المجلد المحدد. يرجى اختيار مجلد صالح."
 
-#: addonCore.py:638
+#: addonCore.py:644
 msgid "Favorite channel"
 msgstr "القناة المفضلة"
 
@@ -884,7 +884,7 @@ msgstr "القناة المفضلة"
 msgid "Fetched {count} items total."
 msgstr "تم جلب {count} عنصرًا إجمالاً."
 
-#: addonCore.py:847
+#: addonCore.py:853
 msgid "Fetching channel information..."
 msgstr "جاري جلب معلومات القناة..."
 
@@ -996,11 +996,11 @@ msgstr "كيفية الحصول على ملفات تعريف الارتباط"
 msgid "How to get cookies?"
 msgstr "كيفية الحصول على ملفات تعريف الارتباط؟"
 
-#: addonCore.py:556
+#: addonCore.py:562
 msgid "Immediate download mode disabled"
 msgstr "تم تعطيل وضع التنزيل الفوري"
 
-#: addonCore.py:554
+#: addonCore.py:560
 msgid "Immediate download mode enabled"
 msgstr "تم تمكين وضع التنزيل الفوري"
 
@@ -1012,7 +1012,7 @@ msgstr "رابط أو وقت بدء غير صالح"
 msgid "Invalid YouTube video URL"
 msgstr "رابط فيديو YouTube غير صالح"
 
-#: addonCore.py:560
+#: addonCore.py:566
 msgid "Invalid channel URL"
 msgstr "رابط قناة غير صالح"
 
@@ -1088,7 +1088,7 @@ msgid "NextPage"
 msgstr "الصفحة التالية"
 
 #: addonCore.py:383
-#: addonCore.py:670
+#: addonCore.py:676
 msgid "No YouTube URL found"
 msgstr "لم يتم العثور على رابط YouTube"
 
@@ -1101,7 +1101,7 @@ msgstr "لم يتم تحديد أي قناة."
 msgid "No downloads could be started"
 msgstr "تعذر بدء أي تنزيلات"
 
-#: addonCore.py:687
+#: addonCore.py:693
 msgid "No failed downloads"
 msgstr "لا توجد تنزيلات فاشلة"
 
@@ -1161,7 +1161,7 @@ msgstr "لا توجد بيانات محفوظة لهذه القناة."
 msgid "No saved data for this content type yet."
 msgstr "لا توجد بيانات محفوظة لنوع المحتوى هذا بعد."
 
-#: adSkip.py:395
+#: adSkip.py:489
 msgid "No skip button found."
 msgstr "لم يتم العثور على زر تخطي."
 
@@ -1169,7 +1169,7 @@ msgstr "لم يتم العثور على زر تخطي."
 msgid "No valid multimedia link found."
 msgstr "لم يُعثَر على رابط وسائط متعددة صالح."
 
-#: addonCore.py:719
+#: addonCore.py:725
 msgid "No video history yet"
 msgstr "لا يوجد سجل فيديو حتى الآن"
 
@@ -1179,7 +1179,7 @@ msgstr "لا يوجد سجل فيديو حتى الآن"
 msgid "No videos to download."
 msgstr "لا توجد مقاطع فيديو لتنزيلها."
 
-#: addonCore.py:673
+#: addonCore.py:679
 msgid "Not a YouTube URL"
 msgstr "ليس عنوان URL ليوتيوب"
 
@@ -1252,11 +1252,11 @@ msgstr "بدأ تنزيل قائمة التشغيل."
 msgid "Playlist download started: {title}"
 msgstr "بدأ تنزيل قائمة التشغيل: {title}"
 
-#: addonCore.py:885
+#: addonCore.py:891
 msgid "Playlist mode disabled"
 msgstr "تم تعطيل وضع قائمة التشغيل"
 
-#: addonCore.py:885
+#: addonCore.py:891
 msgid "Playlist mode enabled"
 msgstr "تم تمكين وضع قائمة التشغيل"
 
@@ -1342,15 +1342,15 @@ msgstr "استئناف التنزيلات"
 msgid "Resume interrupted downloads on restart"
 msgstr "استئناف التنزيلات المتوقفة عند إعادة التشغيل"
 
-#: addonCore.py:865
+#: addonCore.py:871
 msgid "Save description (single tap), save subtitles (double tap), read YouTube subtitles automatically (triple tap): toggle each option"
 msgstr "حفظ الوصف (نقرة واحدة)، حفظ الترجمة (نقرتان)، قراءة ترجمات يوتيوب تلقائياً (ثلاث نقرات): تبديل كل خيار"
 
-#: addonCore.py:871
+#: addonCore.py:877
 msgid "Save description disabled"
 msgstr "حفظ الوصف معطل"
 
-#: addonCore.py:871
+#: addonCore.py:877
 msgid "Save description enabled"
 msgstr "حفظ الوصف مفعل"
 
@@ -1358,11 +1358,11 @@ msgstr "حفظ الوصف مفعل"
 msgid "Save subtitles as a text file"
 msgstr "حفظ الترجمة كملف نصي"
 
-#: addonCore.py:873
+#: addonCore.py:879
 msgid "Save subtitles disabled"
 msgstr "حفظ الترجمة معطل"
 
-#: addonCore.py:873
+#: addonCore.py:879
 msgid "Save subtitles enabled"
 msgstr "حفظ الترجمة مفعل"
 
@@ -1382,7 +1382,7 @@ msgstr "البحث في يوتيوب"
 msgid "Search YouTube:"
 msgstr "البحث في يوتيوب:"
 
-#: addonCore.py:644
+#: addonCore.py:650
 msgid "Search Youtube"
 msgstr "البحث في يوتيوب"
 
@@ -1439,7 +1439,7 @@ msgstr "تم نقل العناصر المحددة إلى مقدمة قائمة �
 msgid "Selected items removed"
 msgstr "تمت إزالة العناصر المحددة"
 
-#: addonCore.py:678
+#: addonCore.py:684
 #: channel_core.py:1608
 #: playlist.py:453
 #: search.py:531
@@ -1472,11 +1472,11 @@ msgstr "نص زر التخطي بلغات يوتيوب الأخرى، مفصول
 msgid "Skip existing files"
 msgstr "تخطي الملفات الموجودة"
 
-#: addonCore.py:543
+#: addonCore.py:549
 msgid "Skip the YouTube ad that is playing (Z by default on YouTube pages)"
 msgstr "تخطي إعلان يوتيوب قيد التشغيل (Z افتراضياً في صفحات يوتيوب)"
 
-#: addonCore.py:641
+#: addonCore.py:647
 msgid "Snapshot"
 msgstr "لقطة"
 
@@ -1573,15 +1573,15 @@ msgstr "اكتمل تصحيح العنوان لـ {count} فيديو."
 msgid "Title correction failed."
 msgstr "فشل تصحيح العنوان."
 
-#: addonCore.py:548
+#: addonCore.py:554
 msgid "Toggle download immediately"
 msgstr "تبديل التنزيل الفوري"
 
-#: addonCore.py:880
+#: addonCore.py:886
 msgid "Toggle playlist mode"
 msgstr "تبديل وضع قائمة التشغيل"
 
-#: addonCore.py:642
+#: addonCore.py:648
 msgid "Trim setting"
 msgstr "إعداد القص"
 
@@ -1689,7 +1689,7 @@ msgstr "استخدام قسم التنزيل"
 msgid "User &agent:"
 msgstr "&وكيل المستخدم:"
 
-#: addonCore.py:636
+#: addonCore.py:642
 msgid "Video History Report"
 msgstr "تقرير سجل الفيديو"
 
@@ -1728,8 +1728,8 @@ msgstr "الفيديوهات في {title}"
 msgid "Waiting"
 msgstr "قيد الانتظار"
 
-#: addonCore.py:752
-#: addonCore.py:765
+#: addonCore.py:758
+#: addonCore.py:771
 msgid "You must be on a YouTube page to use this feature"
 msgstr "يجب أن تكون في صفحة يوتيوب لاستخدام هذه الميزة"
 
@@ -1819,7 +1819,7 @@ msgstr ""
 msgid "{percent}%"
 msgstr "{percent}%"
 
-#: addonCore.py:899
+#: addonCore.py:905
 msgid "{quality} kbps"
 msgstr "{quality} كيلوبت في الثانية"
 
