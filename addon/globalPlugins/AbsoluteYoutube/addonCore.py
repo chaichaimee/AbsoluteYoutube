@@ -53,6 +53,8 @@ sectionName = AddOnName
 
 log = logging.getLogger("AbsoluteYoutube")
 
+YT_DLP_STARTUP_CHECK_INTERVAL_SECONDS = 24 * 60 * 60
+
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	scriptCategory = AddOnSummary
 
@@ -251,9 +253,19 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			ui.message(_("Error initializing AbsoluteYoutube: {str}").format(str=str(e)))
 			self.core_functions['log'](f"Error during deferred startup init: {e}")
 
+	def _claimStartupUpdateCheck(self):
+		nowSeconds = int(time.time())
+		secondsSinceLastCheck = nowSeconds - getINI("LastYtDlpCheckTime")
+		if 0 <= secondsSinceLastCheck < YT_DLP_STARTUP_CHECK_INTERVAL_SECONDS:
+			return False
+		setINI("LastYtDlpCheckTime", nowSeconds)
+		return True
+
 	def _check_for_yt_dlp_update(self):
 		try:
 			if 'get_yt_dlp_versions' not in self.core_functions:
+				return
+			if not self._claimStartupUpdateCheck():
 				return
 			current_version, latest_version = self.core_functions['get_yt_dlp_versions']()
 			if current_version and latest_version and current_version != latest_version:
@@ -266,6 +278,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def _auto_update_yt_dlp(self):
 		try:
 			if 'get_yt_dlp_versions' not in self.core_functions:
+				return
+			if not self._claimStartupUpdateCheck():
 				return
 			current_version, latest_version = self.core_functions['get_yt_dlp_versions']()
 			if current_version and latest_version and current_version != latest_version:

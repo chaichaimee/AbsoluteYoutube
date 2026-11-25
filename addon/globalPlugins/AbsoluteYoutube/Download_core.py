@@ -380,6 +380,7 @@ _SETTING_DEFAULTS = {
 	"MultiPartConnections": 16,
 	"SayDownloadComplete": True,
 	"AutoUpdateYtDlp": False,
+	"LastYtDlpCheckTime": 0,
 	"UseCookies": True,
 	"CookiesFile": "",
 	"AutoCookiesBrowser": "chrome",
@@ -969,13 +970,13 @@ def _playConfiguredTone(frequency, length):
 		_beep()
 
 def PlayStartBeep():
-	_playConfiguredTone(200, 150)
+	_playConfiguredTone(6000, 70)
 
 def PlayProgressBeep(frequency=600):
 	_playConfiguredTone(frequency, 150)
 
 def PlayCompleteBeep():
-	_playConfiguredTone(800, 150)
+	_playConfiguredTone(3000, 70)
 
 def PlayFailBeep():
 	_playConfiguredTone(120, 150)
@@ -1001,7 +1002,7 @@ def _kill_process_tree(pid):
 		pass
 
 def PlayTrimCompleteBeep():
-	_playConfiguredTone(800, 150)
+	_playConfiguredTone(6000, 70)
 
 def initialize_folders():
 	global DownloadPath, _num_workers

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: AbsoluteYoutube 2026.11.1\n"
+"Project-Id-Version: AbsoluteYoutube 2026.12.0\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-11-12 08:51+0700\n"
+"POT-Creation-Date: 2026-11-25 17:38+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Hindi\n"
@@ -86,7 +86,7 @@ msgstr "देखा गया के रूप में &चिह्नित
 msgid "&Max concurrent downloads (1-4):"
 msgstr "अधिकतम समवर्ती डाउनलोड (1-4):"
 
-#: Download_core.py:1209
+#: Download_core.py:1210
 msgid "&No"
 msgstr "नहीं (&N)"
 
@@ -137,7 +137,7 @@ msgstr "थ्रॉटल दर (KB/s, 0=असीमित, 5 का चर�
 msgid "&Update now"
 msgstr "अभी अपडेट करें (&U)"
 
-#: Download_core.py:1208
+#: Download_core.py:1209
 msgid "&Yes"
 msgstr "हाँ (&Y)"
 
@@ -146,7 +146,7 @@ msgstr "हाँ (&Y)"
 msgid "...truncated"
 msgstr "...काटा गया"
 
-#: Download_core.py:2014
+#: Download_core.py:2015
 msgid "0%"
 msgstr "0%"
 
@@ -154,7 +154,7 @@ msgstr "0%"
 msgid "A channel with this name already exists. Overwrite?"
 msgstr "इस नाम का चैनल पहले से मौजूद है। क्या आप अधिलेखित (ओवरराइट) करना चाहते हैं?"
 
-#: addonCore.py:260
+#: addonCore.py:272
 msgid "A new version of yt-dlp is available: {latest}. Current: {current}. Please update in settings."
 msgstr "yt-dlp का एक नया संस्करण उपलब्ध है: {latest}। वर्तमान: {current}। कृपया सेटिंग्स में अपडेट करें।"
 
@@ -168,7 +168,7 @@ msgstr "एब्सोल्यूट यूट्यूब"
 msgid "Absolute YouTube Trim"
 msgstr "एब्सोल्यूट यूट्यूब ट्रिम"
 
-#: addonCore.py:652
+#: addonCore.py:666
 msgid "Absolute YouTube setting"
 msgstr "एब्सोल्यूट यूट्यूब सेटिंग"
 
@@ -192,7 +192,7 @@ msgstr "प्लेलिस्ट मोड में फ़ाइल ना�
 msgid "Add new channel"
 msgstr "नया चैनल जोड़ें"
 
-#: addonCore.py:152
+#: addonCore.py:154
 msgid "Add-on initialization failed: missing pending file path function. Please restart NVDA."
 msgstr "एड-ऑन आरंभीकरण विफल: लंबित फ़ाइल पथ फ़ंक्शन अनुपस्थित है। कृपया NVDA को पुनरारंभ करें।"
 
@@ -204,15 +204,15 @@ msgstr "एड-ऑन आंतरिक त्रुटि: घटक अनु
 msgid "Added Time"
 msgstr "जोड़ने का समय"
 
-#: addonCore.py:429
+#: addonCore.py:443
 msgid "Added to download list: {format} - {title}"
 msgstr "डाउनलोड सूची में जोड़ा गया: {format} - {title}"
 
-#: addonCore.py:423
+#: addonCore.py:437
 msgid "Added to download queue: {format} - {title}"
 msgstr "डाउनलोड कतार में जोड़ा गया: {format} - {title}"
 
-#: Download_core.py:2600
+#: Download_core.py:2601
 msgid "Adding link as {format} to download queue"
 msgstr "डाउनलोड कतार में {format} के रूप में लिंक जोड़ा जा रहा है"
 
@@ -241,11 +241,11 @@ msgstr "सभी असफल डाउनलोड साफ़ किए ग�
 msgid "All pending downloads cleared"
 msgstr "सभी लंबित डाउनलोड साफ़ किए गए"
 
-#: addonCore.py:431
+#: addonCore.py:445
 msgid "Already in download list"
 msgstr "पहले से ही डाउनलोड सूची में है"
 
-#: addonCore.py:425
+#: addonCore.py:439
 msgid "Already in download queue"
 msgstr "पहले से ही डाउनलोड कतार में है"
 
@@ -274,11 +274,11 @@ msgstr "ऑडियो गुणवत्ता"
 msgid "Auto-update yt-dlp on startup"
 msgstr "स्टार्टअप पर yt-dlp को स्वतः-अपडेट करें"
 
-#: addonCore.py:881
+#: addonCore.py:895
 msgid "Automatic subtitle reading disabled"
 msgstr "स्वचालित उपशीर्षक पढ़ना अक्षम"
 
-#: addonCore.py:881
+#: addonCore.py:895
 msgid "Automatic subtitle reading enabled"
 msgstr "स्वचालित उपशीर्षक पढ़ना सक्षम"
 
@@ -317,7 +317,7 @@ msgstr "डाउनलोड फ़ोल्डर नहीं बनाया
 msgid "Cannot create download folder."
 msgstr "डाउनलोड फ़ोल्डर नहीं बनाया जा सकता।"
 
-#: Download_core.py:1121
+#: Download_core.py:1122
 msgid "Cannot create folder"
 msgstr "फ़ोल्डर नहीं बनाया जा सकता"
 
@@ -325,11 +325,11 @@ msgstr "फ़ोल्डर नहीं बनाया जा सकता"
 msgid "Cannot determine URL for this video."
 msgstr "इस वीडियो के लिए यूआरएल निर्धारित नहीं किया जा सकता।"
 
-#: addonCore.py:387
+#: addonCore.py:401
 msgid "Cannot download from YouTube homepage. Please navigate to a video or playlist."
 msgstr "यूट्यूब होमपेज से डाउनलोड नहीं किया जा सकता। कृपया किसी वीडियो या प्लेलिस्ट पर जाएं।"
 
-#: addonCore.py:390
+#: addonCore.py:404
 msgid "Cannot download from this YouTube page. Please select a specific video."
 msgstr "इस यूट्यूब पेज से डाउनलोड नहीं किया जा सकता। कृपया कोई विशिष्ट वीडियो चुनें।"
 
@@ -392,7 +392,7 @@ msgstr "चैनल:"
 msgid "Checking for new videos..."
 msgstr "नए वीडियो की जाँच की जा रही है..."
 
-#: Download_core.py:1387
+#: Download_core.py:1388
 msgid "Checking interrupted downloads..."
 msgstr "अधूरी डाउनलोडिंग की जाँच की जा रही है..."
 
@@ -423,8 +423,8 @@ msgstr "ओवरराइट की पुष्टि करें"
 msgid "Content type:"
 msgstr "सामग्री का प्रकार:"
 
-#: Download_core.py:1826
-#: Download_core.py:1848
+#: Download_core.py:1827
+#: Download_core.py:1849
 msgid "Converting"
 msgstr "कनवर्ट किया जा रहा है"
 
@@ -449,7 +449,7 @@ msgstr "कुकीज़ सफलतापूर्वक {path} पर न�
 msgid "Copy URL"
 msgstr "URL कॉपी करें"
 
-#: addonCore.py:632
+#: addonCore.py:646
 #: playlist.py:415
 #: search.py:504
 msgid "Copy video Shorten URL"
@@ -474,7 +474,7 @@ msgstr "स्किप बटन पर क्लिक नहीं किय�
 msgid "Could not create short URL"
 msgstr "छोटा URL नहीं बनाया जा सका"
 
-#: addonCore.py:686
+#: addonCore.py:700
 msgid "Could not create shortened URL"
 msgstr "संक्षिप्त URL नहीं बनाया जा सका"
 
@@ -502,11 +502,11 @@ msgstr "यूआरएल नहीं खोला जा सका"
 msgid "Could not read the {browser} cookie database. Close {browser} completely and try exporting again."
 msgstr "{browser} कुकी डेटाबेस नहीं पढ़ा जा सका। {browser} को पूरी तरह से बंद करें और फिर से निर्यात करने का प्रयास करें।"
 
-#: addonCore.py:504
+#: addonCore.py:518
 msgid "Cycle MP3 quality (single tap), toggle download immediately (double tap), toggle playlist mode (triple tap)"
 msgstr "एमपी3 क्वालिटी बदलें (एक बार टैप करें), तुरंत डाउनलोड टॉगल करें (दो बार टैप करें), प्लेलिस्ट मोड टॉगल करें (तीन बार टैप करें)"
 
-#: addonCore.py:893
+#: addonCore.py:907
 msgid "Cycle MP3 quality settings"
 msgstr "MP3 गुणवत्ता सेटिंग्स बदलें"
 
@@ -582,7 +582,7 @@ msgstr "सभी डाउनलोड करें"
 msgid "Download all {count} videos in this playlist?"
 msgstr "इस प्लेलिस्ट के सभी {count} वीडियो डाउनलोड करें?"
 
-#: Download_core.py:2058
+#: Download_core.py:2059
 msgid "Download complete"
 msgstr "डाउनलोड पूरा हुआ"
 
@@ -590,47 +590,47 @@ msgstr "डाउनलोड पूरा हुआ"
 msgid "Download entire playlist"
 msgstr "पूरी प्लेलिस्ट डाउनलोड करें"
 
-#: addonCore.py:638
+#: addonCore.py:652
 msgid "Download fail manager"
 msgstr "विफल डाउनलोड प्रबंधक"
 
-#: addonCore.py:640
+#: addonCore.py:654
 msgid "Download fail manager (no failed)"
 msgstr "विफल डाउनलोड प्रबंधक (कोई विफल नहीं)"
 
-#: Download_core.py:2168
+#: Download_core.py:2169
 msgid "Download failed"
 msgstr "डाउनलोड विफल"
 
-#: Download_core.py:2192
+#: Download_core.py:2193
 msgid "Download failed due to an error"
 msgstr "एक त्रुटि के कारण डाउनलोड विफल"
 
-#: Download_core.py:2180
+#: Download_core.py:2181
 msgid "Download failed due to timeout"
 msgstr "समय-समाप्ति के कारण डाउनलोड विफल"
 
-#: Download_core.py:2226
+#: Download_core.py:2227
 msgid "Download failed to start"
 msgstr "डाउनलोड शुरू होने में विफल"
 
-#: Download_core.py:2143
+#: Download_core.py:2144
 msgid "Download failed: YouTube blocked this request. Try exporting cookies from your browser in the Anti-blocking settings."
 msgstr "डाउनलोड विफल: YouTube ने इस अनुरोध को अवरुद्ध कर दिया है। एंटी-ब्लॉकिंग सेटिंग्स में अपने ब्राउज़र से कुकीज़ निर्यात करने का प्रयास करें।"
 
-#: Download_core.py:2166
+#: Download_core.py:2167
 msgid "Download failed: YouTube reports this video is unavailable"
 msgstr "डाउनलोड विफल: YouTube के अनुसार यह वीडियो उपलब्ध नहीं है"
 
-#: Download_core.py:2156
+#: Download_core.py:2157
 msgid "Download failed: the downloaded JavaScript runtime isn't working. Try deleting the bin folder in your AbsoluteYoutube config directory so it re-downloads."
 msgstr "डाउनलोड विफल: डाउनलोड किया गया JavaScript रनटाइम काम नहीं कर रहा है। इसे फिर से डाउनलोड करने के लिए AbsoluteYoutube कॉन्फ़िगरेशन निर्देशिका में bin फ़ोल्डर को हटाकर देखें।"
 
-#: Download_core.py:2164
+#: Download_core.py:2165
 msgid "Download failed: this may be because yt-dlp is outdated (current {current}, latest {latest}). Try updating yt-dlp in settings."
 msgstr "डाउनलोड विफल: संभव है कि yt-dlp पुराना हो गया हो (वर्तमान {current}, नवीनतम {latest})। सेटिंग्स में yt-dlp को अपडेट करके देखें।"
 
-#: Download_core.py:2159
+#: Download_core.py:2160
 msgid "Download failed: yt-dlp needs a JavaScript runtime, which this add-on is downloading automatically in the background. Please wait a moment and try again."
 msgstr "डाउनलोड विफल: yt-dlp को एक JavaScript रनटाइम की आवश्यकता है, जिसे यह एड-ऑन पृष्ठभूमि में स्वचालित रूप से डाउनलोड कर रहा है। कृपया थोड़ी देर प्रतीक्षा करें और पुनः प्रयास करें।"
 
@@ -649,11 +649,11 @@ msgstr "डाउनलोड फ़ोल्डर मौजूद नहीं
 msgid "Download function not available."
 msgstr "डाउनलोड फ़ंक्शन उपलब्ध नहीं है।"
 
-#: addonCore.py:634
+#: addonCore.py:648
 msgid "Download list manager"
 msgstr "डाउनलोड सूची प्रबंधक"
 
-#: addonCore.py:438
+#: addonCore.py:452
 msgid "Download or queue video (single tap MP3, double tap MP4, triple tap WAV)"
 msgstr "वीडियो डाउनलोड करें या कतार में रखें (एक बार टैप करने पर MP3, दो बार टैप करने पर MP4, तीन बार टैप करने पर WAV)"
 
@@ -727,11 +727,11 @@ msgstr "डाउनलोड फ़ोल्डर बनाने में �
 msgid "Error deleting channel."
 msgstr "चैनल हटाने में त्रुटि।"
 
-#: addonCore.py:671
+#: addonCore.py:685
 msgid "Error displaying context menu"
 msgstr "संदर्भ मेनू प्रदर्शित करने में त्रुटि"
 
-#: addonCore.py:275
+#: addonCore.py:289
 msgid "Error during auto-update of yt-dlp: {str}"
 msgstr "yt-dlp के स्वतः-अद्यतन के दौरान त्रुटि: {str}"
 
@@ -739,17 +739,17 @@ msgstr "yt-dlp के स्वतः-अद्यतन के दौरान 
 msgid "Error fetching channel: {str}"
 msgstr "चैनल लाने में त्रुटि: {str}"
 
-#: addonCore.py:147
+#: addonCore.py:149
 #: downloadFail.py:50
 msgid "Error importing core functions: {str}"
 msgstr "कोर फ़ंक्शंस आयात करने में त्रुटि: {str}"
 
-#: addonCore.py:820
+#: addonCore.py:834
 msgid "Error importing settings panel: {str}"
 msgstr "सेटिंग्स पैनल आयात करने में त्रुटि: {str}"
 
-#: addonCore.py:170
-#: addonCore.py:251
+#: addonCore.py:172
+#: addonCore.py:253
 msgid "Error initializing AbsoluteYoutube: {str}"
 msgstr "AbsoluteYoutube प्रारंभ करने में त्रुटि: {str}"
 
@@ -762,24 +762,24 @@ msgstr "कैश लोड करने में त्रुटि।"
 msgid "Error loading channel data."
 msgstr "चैनल डेटा लोड करने में त्रुटि।"
 
-#: addonCore.py:578
+#: addonCore.py:592
 msgid "Error opening channel dialog"
 msgstr "चैनल संवाद खोलने में त्रुटि"
 
-#: addonCore.py:866
+#: addonCore.py:880
 msgid "Error opening channel/playlist list: {str}"
 msgstr "चैनल/प्लेलिस्ट सूची खोलने में त्रुटि: {str}"
 
-#: addonCore.py:707
-#: addonCore.py:711
+#: addonCore.py:721
+#: addonCore.py:725
 msgid "Error opening download fail dialog: {str}"
 msgstr "डाउनलोड विफल संवाद खोलने में त्रुटि: {str}"
 
-#: addonCore.py:618
+#: addonCore.py:632
 msgid "Error opening download list dialog: {str}"
 msgstr "डाउनलोड सूची संवाद खोलने में त्रुटि: {str}"
 
-#: addonCore.py:474
+#: addonCore.py:488
 msgid "Error opening folder"
 msgstr "फ़ोल्डर खोलने में त्रुटि"
 
@@ -787,23 +787,23 @@ msgstr "फ़ोल्डर खोलने में त्रुटि"
 msgid "Error opening playlist."
 msgstr "प्लेलिस्ट खोलने में त्रुटि।"
 
-#: addonCore.py:805
+#: addonCore.py:819
 msgid "Error opening search dialog: {str}"
 msgstr "खोज संवाद खोलने में त्रुटि: {str}"
 
-#: addonCore.py:823
+#: addonCore.py:837
 msgid "Error opening settings dialog: {str}"
 msgstr "सेटिंग्स संवाद खोलने में त्रुटि: {str}"
 
-#: addonCore.py:786
+#: addonCore.py:800
 msgid "Error opening trim dialog: {str}"
 msgstr "ट्रिम संवाद खोलने में त्रुटि: {str}"
 
-#: addonCore.py:735
+#: addonCore.py:749
 msgid "Error opening video history: {str}"
 msgstr "वीडियो इतिहास खोलने में त्रुटि: {str}"
 
-#: Download_core.py:2545
+#: Download_core.py:2546
 msgid "Error processing URL"
 msgstr "यूआरएल प्रोसेस करने में त्रुटि"
 
@@ -819,11 +819,11 @@ msgstr "चैनल यूआरएल अपडेट करने में �
 msgid "Error updating channel."
 msgstr "चैनल अपडेट करने में त्रुटि।"
 
-#: addonCore.py:623
+#: addonCore.py:637
 msgid "Error: Download list module not available"
 msgstr "त्रुटि: डाउनलोड सूची मॉड्यूल उपलब्ध नहीं है"
 
-#: addonCore.py:697
+#: addonCore.py:711
 msgid "Error: DownloadFail module not available"
 msgstr "त्रुटि: डाउनलोडविफल मॉड्यूल उपलब्ध नहीं है"
 
@@ -835,23 +835,23 @@ msgstr "त्रुटि: स्नैपशॉट कैप्चर कर�
 msgid "Error: No snapshot file created."
 msgstr "त्रुटि: कोई स्नैपशॉट फ़ाइल नहीं बनाई गई।"
 
-#: addonCore.py:810
+#: addonCore.py:824
 msgid "Error: Search module not available"
 msgstr "त्रुटि: खोज मॉड्यूल उपलब्ध नहीं है"
 
-#: addonCore.py:766
+#: addonCore.py:780
 msgid "Error: Snapshot module not available"
 msgstr "त्रुटि: स्नैपशॉट मॉड्यूल उपलब्ध नहीं है"
 
-#: addonCore.py:775
+#: addonCore.py:789
 msgid "Error: Trim module not available"
 msgstr "त्रुटि: ट्रिम मॉड्यूल उपलब्ध नहीं है"
 
-#: addonCore.py:722
+#: addonCore.py:736
 msgid "Error: Video history module not available"
 msgstr "त्रुटि: वीडियो इतिहास मॉड्यूल उपलब्ध नहीं है"
 
-#: Download_core.py:2570
+#: Download_core.py:2571
 #: Trim.py:326
 msgid "Error: ffmpeg.exe not found."
 msgstr "त्रुटि: ffmpeg.exe नहीं मिला।"
@@ -876,7 +876,7 @@ msgstr "{browser} से कुकीज़ निर्यात की जा 
 msgid "Failed to create the specified folder. Please select a valid folder."
 msgstr "निर्दिष्ट फ़ोल्डर बनाने में विफल। कृपया एक वैध फ़ोल्डर चुनें।"
 
-#: addonCore.py:644
+#: addonCore.py:658
 msgid "Favorite channel"
 msgstr "पसंदीदा चैनल"
 
@@ -884,7 +884,7 @@ msgstr "पसंदीदा चैनल"
 msgid "Fetched {count} items total."
 msgstr "कुल {count} आइटम प्राप्त किए गए।"
 
-#: addonCore.py:853
+#: addonCore.py:867
 msgid "Fetching channel information..."
 msgstr "चैनल की जानकारी प्राप्त की जा रही है..."
 
@@ -902,11 +902,11 @@ msgstr "चैनल के वीडियो प्राप्त किए �
 msgid "File Format"
 msgstr "फ़ाइल स्वरूप"
 
-#: Download_core.py:2575
+#: Download_core.py:2576
 msgid "File already exists. Skipping download."
 msgstr "फ़ाइल पहले से मौजूद है। डाउनलोड छोड़ा जा रहा है।"
 
-#: Download_core.py:2531
+#: Download_core.py:2532
 msgid "File exists"
 msgstr "फ़ाइल मौजूद है"
 
@@ -923,7 +923,7 @@ msgstr "I&Pv6 को बाध्य करें"
 msgid "Format"
 msgstr "स्वरूप"
 
-#: Download_core.py:1240
+#: Download_core.py:1241
 msgid ""
 "Found {count} interrupted downloads\n"
 "Resume all?"
@@ -996,11 +996,11 @@ msgstr "कुकीज़ कैसे प्राप्त करें"
 msgid "How to get cookies?"
 msgstr "कुकीज़ कैसे प्राप्त करें?"
 
-#: addonCore.py:562
+#: addonCore.py:576
 msgid "Immediate download mode disabled"
 msgstr "तत्काल डाउनलोड मोड अक्षम किया गया"
 
-#: addonCore.py:560
+#: addonCore.py:574
 msgid "Immediate download mode enabled"
 msgstr "तत्काल डाउनलोड मोड सक्षम किया गया"
 
@@ -1012,11 +1012,11 @@ msgstr "अमान्य यूआरएल या प्रारंभ स�
 msgid "Invalid YouTube video URL"
 msgstr "अमान्य यूट्यूब वीडियो यूआरएल"
 
-#: addonCore.py:566
+#: addonCore.py:580
 msgid "Invalid channel URL"
 msgstr "अमान्य चैनल यूआरएल"
 
-#: addonCore.py:476
+#: addonCore.py:490
 msgid "Invalid download folder"
 msgstr "अमान्य डाउनलोड फ़ोल्डर"
 
@@ -1087,8 +1087,8 @@ msgstr "मोज़िला फ़ायरफ़ॉक्स"
 msgid "NextPage"
 msgstr "अगला पेज"
 
-#: addonCore.py:383
-#: addonCore.py:676
+#: addonCore.py:397
+#: addonCore.py:690
 msgid "No YouTube URL found"
 msgstr "कोई यूट्यूब URL नहीं मिला"
 
@@ -1101,7 +1101,7 @@ msgstr "कोई चैनल चयनित नहीं है।"
 msgid "No downloads could be started"
 msgstr "कोई डाउनलोड शुरू नहीं किया जा सका"
 
-#: addonCore.py:693
+#: addonCore.py:707
 msgid "No failed downloads"
 msgstr "कोई विफल डाउनलोड नहीं"
 
@@ -1165,11 +1165,11 @@ msgstr "इस सामग्री प्रकार के लिए अभ�
 msgid "No skip button found."
 msgstr "कोई स्किप बटन नहीं मिला।"
 
-#: Download_core.py:2578
+#: Download_core.py:2579
 msgid "No valid multimedia link found."
 msgstr "कोई मान्य मल्टीमीडिया लिंक नहीं मिला।"
 
-#: addonCore.py:725
+#: addonCore.py:739
 msgid "No video history yet"
 msgstr "अभी तक कोई वीडियो इतिहास नहीं है"
 
@@ -1179,11 +1179,11 @@ msgstr "अभी तक कोई वीडियो इतिहास नह�
 msgid "No videos to download."
 msgstr "डाउनलोड करने के लिए कोई वीडियो नहीं हैं।"
 
-#: addonCore.py:679
+#: addonCore.py:693
 msgid "Not a YouTube URL"
 msgstr "यह YouTube URL नहीं है"
 
-#: Download_core.py:2611
+#: Download_core.py:2612
 msgid "Not a YouTube video or valid multimedia link"
 msgstr "यह YouTube वीडियो या मान्य मल्टीमीडिया लिंक नहीं है"
 
@@ -1191,11 +1191,11 @@ msgstr "यह YouTube वीडियो या मान्य मल्टी
 msgid "Open URL"
 msgstr "यूआरएल खोलें"
 
-#: addonCore.py:451
+#: addonCore.py:465
 msgid "Open context menu (single tap), open download folder (double tap), open search dialog (triple tap)"
 msgstr "संदर्भ मेनू खोलें (एक बार टैप करें), डाउनलोड फ़ोल्डर खोलें (दो बार टैप करें), खोज संवाद खोलें (तीन बार टैप करें)"
 
-#: addonCore.py:516
+#: addonCore.py:530
 msgid "Open download list (single tap), download fail manager (double tap), video history report (triple tap)"
 msgstr "डाउनलोड सूची खोलें (एक बार टैप करें), डाउनलोड विफलता प्रबंधक (दो बार टैप करें), वीडियो इतिहास रिपोर्ट (तीन बार टैप करें)"
 
@@ -1239,7 +1239,7 @@ msgstr "पिन किया गया"
 msgid "Play on YouTube"
 msgstr "YouTube पर चलाएं"
 
-#: addonCore.py:364
+#: addonCore.py:378
 msgid "Playlist"
 msgstr "प्लेलिस्ट"
 
@@ -1252,11 +1252,11 @@ msgstr "प्लेलिस्ट डाउनलोड शुरू हो �
 msgid "Playlist download started: {title}"
 msgstr "प्लेलिस्ट डाउनलोड शुरू हो गई: {title}"
 
-#: addonCore.py:891
+#: addonCore.py:905
 msgid "Playlist mode disabled"
 msgstr "प्लेलिस्ट मोड अक्षम किया गया"
 
-#: addonCore.py:891
+#: addonCore.py:905
 msgid "Playlist mode enabled"
 msgstr "प्लेलिस्ट मोड सक्षम किया गया"
 
@@ -1334,7 +1334,7 @@ msgstr "सुरक्षित सेटिंग्स पर रीसेट
 msgid "Reset to safe settings. Remember to use cookies for best results."
 msgstr "सुरक्षित सेटिंग्स पर रीसेट करें। सर्वोत्तम परिणामों के लिए कुकीज़ का उपयोग करना याद रखें।"
 
-#: Download_core.py:1202
+#: Download_core.py:1203
 msgid "Resume downloads"
 msgstr "डाउनलोड फिर से शुरू करें"
 
@@ -1342,15 +1342,15 @@ msgstr "डाउनलोड फिर से शुरू करें"
 msgid "Resume interrupted downloads on restart"
 msgstr "पुनरारंभ करने पर बाधित डाउनलोड फिर से शुरू करें"
 
-#: addonCore.py:871
+#: addonCore.py:885
 msgid "Save description (single tap), save subtitles (double tap), read YouTube subtitles automatically (triple tap): toggle each option"
 msgstr "विवरण सहेजें (एक बार टैप करें), उपशीर्षक सहेजें (दो बार टैप करें), YouTube उपशीर्षक स्वचालित रूप से पढ़ें (तीन बार टैप करें): प्रत्येक विकल्प को टॉगल करें"
 
-#: addonCore.py:877
+#: addonCore.py:891
 msgid "Save description disabled"
 msgstr "विवरण सहेजना अक्षम"
 
-#: addonCore.py:877
+#: addonCore.py:891
 msgid "Save description enabled"
 msgstr "विवरण सहेजना सक्षम"
 
@@ -1358,11 +1358,11 @@ msgstr "विवरण सहेजना सक्षम"
 msgid "Save subtitles as a text file"
 msgstr "उपशीर्षक को टेक्स्ट फ़ाइल के रूप में सहेजें"
 
-#: addonCore.py:879
+#: addonCore.py:893
 msgid "Save subtitles disabled"
 msgstr "उपशीर्षक सहेजना अक्षम"
 
-#: addonCore.py:879
+#: addonCore.py:893
 msgid "Save subtitles enabled"
 msgstr "उपशीर्षक सहेजना सक्षम"
 
@@ -1382,7 +1382,7 @@ msgstr "यूट्यूब खोजें"
 msgid "Search YouTube:"
 msgstr "यूट्यूब खोजें:"
 
-#: addonCore.py:650
+#: addonCore.py:664
 msgid "Search Youtube"
 msgstr "यूट्यूब खोजें"
 
@@ -1439,7 +1439,7 @@ msgstr "चयनित आइटम डाउनलोड कतार के �
 msgid "Selected items removed"
 msgstr "चयनित आइटम हटाए गए"
 
-#: addonCore.py:684
+#: addonCore.py:698
 #: channel_core.py:1608
 #: playlist.py:453
 #: search.py:531
@@ -1472,11 +1472,11 @@ msgstr "अन्य YouTube भाषाओं के लिए स्किप
 msgid "Skip existing files"
 msgstr "मौजूद फ़ाइलें छोड़ें"
 
-#: addonCore.py:549
+#: addonCore.py:563
 msgid "Skip the YouTube ad that is playing (Z by default on YouTube pages)"
 msgstr "चल रहे YouTube विज्ञापन को छोड़ें (YouTube पृष्ठों पर डिफ़ॉल्ट रूप से Z)"
 
-#: addonCore.py:647
+#: addonCore.py:661
 msgid "Snapshot"
 msgstr "स्नैपशॉट"
 
@@ -1515,7 +1515,7 @@ msgstr "प्रारंभ समय:"
 msgid "Started {count} download(s)"
 msgstr "{count} डाउनलोड शुरू किए गए"
 
-#: addonCore.py:412
+#: addonCore.py:426
 msgid "Starting download: {format} - {title}"
 msgstr "डाउनलोड शुरू हो रहा है: {format} - {title}"
 
@@ -1523,7 +1523,7 @@ msgstr "डाउनलोड शुरू हो रहा है: {format} - {
 msgid "Starting download: {title}"
 msgstr "डाउनलोड शुरू हो रहा है: {title}"
 
-#: Download_core.py:1639
+#: Download_core.py:1640
 msgid "Starting next download from queue: {title}"
 msgstr "कतार से अगला डाउनलोड शुरू हो रहा है: {title}"
 
@@ -1547,11 +1547,11 @@ msgstr "इस आइटम का कोई वेब पता नहीं �
 msgid "This item is already downloading"
 msgstr "यह आइटम पहले से डाउनलोड हो रहा है"
 
-#: Download_core.py:2141
+#: Download_core.py:2142
 msgid "This livestream hasn't started yet. It starts in {time}."
 msgstr "यह लाइवस्ट्रीम अभी शुरू नहीं हुआ है। यह {time} में शुरू होगा।"
 
-#: Download_core.py:2139
+#: Download_core.py:2140
 msgid "This video hasn't premiered yet. It starts in {time}."
 msgstr "यह वीडियो अभी प्रीमियर नहीं हुआ है। यह {time} में शुरू होगा।"
 
@@ -1573,15 +1573,15 @@ msgstr "{count} वीडियो के लिए शीर्षक सुध
 msgid "Title correction failed."
 msgstr "शीर्षक सुधार विफल रहा।"
 
-#: addonCore.py:554
+#: addonCore.py:568
 msgid "Toggle download immediately"
 msgstr "तुरंत डाउनलोड टॉगल करें"
 
-#: addonCore.py:886
+#: addonCore.py:900
 msgid "Toggle playlist mode"
 msgstr "प्लेलिस्ट मोड टॉगल करें"
 
-#: addonCore.py:648
+#: addonCore.py:662
 msgid "Trim setting"
 msgstr "ट्रिम सेटिंग"
 
@@ -1603,12 +1603,12 @@ msgstr "यूआरएल क्लिपबोर्ड पर कॉपी �
 msgid "URL is required"
 msgstr "यूआरएल आवश्यक है"
 
-#: Download_core.py:2516
+#: Download_core.py:2517
 msgid "URL not found"
 msgstr "यूआरएल नहीं मिला"
 
-#: Download_core.py:1494
-#: addonCore.py:406
+#: Download_core.py:1495
+#: addonCore.py:420
 #: downloadFail.py:110
 #: downloadFail.py:111
 #: downloadFail.py:112
@@ -1632,7 +1632,7 @@ msgstr "Deno को अभी अपडेट करें"
 
 #: Youtube_settings.py:770
 #: Youtube_settings.py:785
-#: addonCore.py:284
+#: addonCore.py:298
 msgid "Update failed: {str}"
 msgstr "अपडेट विफल: {str}"
 
@@ -1665,7 +1665,7 @@ msgid "Updating Deno..."
 msgstr "Deno को अपडेट किया जा रहा है..."
 
 #: Youtube_settings.py:755
-#: addonCore.py:279
+#: addonCore.py:293
 msgid "Updating yt-dlp..."
 msgstr "yt-dlp अपडेट हो रहा है..."
 
@@ -1689,7 +1689,7 @@ msgstr "डाउनलोड अनुभाग का उपयोग कर�
 msgid "User &agent:"
 msgstr "यूज़र &एजेंट:"
 
-#: addonCore.py:642
+#: addonCore.py:656
 msgid "Video History Report"
 msgstr "वीडियो इतिहास रिपोर्ट"
 
@@ -1728,8 +1728,8 @@ msgstr "{title} में वीडियो"
 msgid "Waiting"
 msgstr "प्रतीक्षा की जा रही है"
 
-#: addonCore.py:758
-#: addonCore.py:771
+#: addonCore.py:772
+#: addonCore.py:785
 msgid "You must be on a YouTube page to use this feature"
 msgstr "इस सुविधा का उपयोग करने के लिए आपको YouTube पृष्ठ पर होना चाहिए"
 
@@ -1766,11 +1766,11 @@ msgid "yt-dlp Update"
 msgstr "yt-dlp अपडेट"
 
 #: Youtube_settings.py:766
-#: addonCore.py:281
+#: addonCore.py:295
 msgid "yt-dlp updated successfully"
 msgstr "yt-dlp सफलतापूर्वक अपडेट हो गया"
 
-#: Download_core.py:2548
+#: Download_core.py:2549
 #: Youtube_settings.py:507
 msgid "yt-dlp.exe missing"
 msgstr "yt-dlp.exe गायब है"
@@ -1799,7 +1799,7 @@ msgstr "{count} डाउनलोड कतार में हैं।"
 msgid "{count} new items updated."
 msgstr "{count} नई वस्तुएं अपडेट की गईं।"
 
-#: Download_core.py:1856
+#: Download_core.py:1857
 msgid "{mb} MB downloaded"
 msgstr "{mb} MB डाउनलोड हुआ"
 
@@ -1815,11 +1815,11 @@ msgstr ""
 "{name} {new} उपलब्ध है (इंस्टॉल किया गया: {old})।\n"
 "अभी अपडेट करें?"
 
-#: Download_core.py:1841
+#: Download_core.py:1842
 msgid "{percent}%"
 msgstr "{percent}%"
 
-#: addonCore.py:905
+#: addonCore.py:919
 msgid "{quality} kbps"
 msgstr "{quality} kbps"
 

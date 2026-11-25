@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: AbsoluteYoutube 2026.11.1\n"
+"Project-Id-Version: AbsoluteYoutube 2026.12.0\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-11-12 08:51+0700\n"
+"POT-Creation-Date: 2026-11-25 17:38+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: French\n"
@@ -86,7 +86,7 @@ msgstr "&Marquer comme lu"
 msgid "&Max concurrent downloads (1-4):"
 msgstr "&Nombre maximal de téléchargements simultanés (1-4) :"
 
-#: Download_core.py:1209
+#: Download_core.py:1210
 msgid "&No"
 msgstr "&Non"
 
@@ -138,7 +138,7 @@ msgstr "&Débit limité (Ko/s, 0=illimité, par pas de 5) :"
 msgid "&Update now"
 msgstr "&Mettre à jour maintenant"
 
-#: Download_core.py:1208
+#: Download_core.py:1209
 msgid "&Yes"
 msgstr "&Oui"
 
@@ -147,7 +147,7 @@ msgstr "&Oui"
 msgid "...truncated"
 msgstr "...tronqué"
 
-#: Download_core.py:2014
+#: Download_core.py:2015
 msgid "0%"
 msgstr "0 %"
 
@@ -155,7 +155,7 @@ msgstr "0 %"
 msgid "A channel with this name already exists. Overwrite?"
 msgstr "Un canal portant ce nom existe déjà. Voulez-vous l'écraser ?"
 
-#: addonCore.py:260
+#: addonCore.py:272
 msgid "A new version of yt-dlp is available: {latest}. Current: {current}. Please update in settings."
 msgstr "Une nouvelle version de yt-dlp est disponible : {latest}. Actuelle : {current}. Veuillez la mettre à jour dans les paramètres."
 
@@ -169,7 +169,7 @@ msgstr "YouTube absolu"
 msgid "Absolute YouTube Trim"
 msgstr "Découpage YouTube absolu"
 
-#: addonCore.py:652
+#: addonCore.py:666
 msgid "Absolute YouTube setting"
 msgstr "Paramètre YouTube absolu"
 
@@ -193,7 +193,7 @@ msgstr "Ajouter des numéros d'élément aux noms de fichiers en mode liste de l
 msgid "Add new channel"
 msgstr "Ajouter une nouvelle chaîne"
 
-#: addonCore.py:152
+#: addonCore.py:154
 msgid "Add-on initialization failed: missing pending file path function. Please restart NVDA."
 msgstr "Échec de l'initialisation de l'extension : fonction de chemin de fichier en attente manquante. Veuillez redémarrer NVDA."
 
@@ -205,15 +205,15 @@ msgstr "Erreur interne de l'extension : composants manquants. Veuillez redémarr
 msgid "Added Time"
 msgstr "Heure d'ajout"
 
-#: addonCore.py:429
+#: addonCore.py:443
 msgid "Added to download list: {format} - {title}"
 msgstr "Ajouté à la liste de téléchargement : {format} - {title}"
 
-#: addonCore.py:423
+#: addonCore.py:437
 msgid "Added to download queue: {format} - {title}"
 msgstr "Ajouté à la file d'attente de téléchargement : {format} - {title}"
 
-#: Download_core.py:2600
+#: Download_core.py:2601
 msgid "Adding link as {format} to download queue"
 msgstr "Ajout du lien en tant que {format} à la file d'attente de téléchargement"
 
@@ -242,11 +242,11 @@ msgstr "Tous les téléchargements échoués ont été effacés"
 msgid "All pending downloads cleared"
 msgstr "Tous les téléchargements en attente ont été effacés"
 
-#: addonCore.py:431
+#: addonCore.py:445
 msgid "Already in download list"
 msgstr "Déjà dans la liste de téléchargement"
 
-#: addonCore.py:425
+#: addonCore.py:439
 msgid "Already in download queue"
 msgstr "Déjà dans la file d'attente de téléchargement"
 
@@ -275,11 +275,11 @@ msgstr "Qualité audio"
 msgid "Auto-update yt-dlp on startup"
 msgstr "Mettre à jour yt-dlp automatiquement au démarrage"
 
-#: addonCore.py:881
+#: addonCore.py:895
 msgid "Automatic subtitle reading disabled"
 msgstr "Lecture automatique des sous-titres désactivée"
 
-#: addonCore.py:881
+#: addonCore.py:895
 msgid "Automatic subtitle reading enabled"
 msgstr "Lecture automatique des sous-titres activée"
 
@@ -318,7 +318,7 @@ msgstr "Impossible de créer le dossier de téléchargement"
 msgid "Cannot create download folder."
 msgstr "Impossible de créer le dossier de téléchargement."
 
-#: Download_core.py:1121
+#: Download_core.py:1122
 msgid "Cannot create folder"
 msgstr "Impossible de créer le dossier"
 
@@ -326,11 +326,11 @@ msgstr "Impossible de créer le dossier"
 msgid "Cannot determine URL for this video."
 msgstr "Impossible de déterminer l'URL de cette vidéo."
 
-#: addonCore.py:387
+#: addonCore.py:401
 msgid "Cannot download from YouTube homepage. Please navigate to a video or playlist."
 msgstr "Impossible de télécharger depuis la page d'accueil de YouTube. Veuillez accéder à une vidéo ou à une liste de lecture."
 
-#: addonCore.py:390
+#: addonCore.py:404
 msgid "Cannot download from this YouTube page. Please select a specific video."
 msgstr "Impossible de télécharger depuis cette page YouTube. Veuillez sélectionner une vidéo spécifique."
 
@@ -393,7 +393,7 @@ msgstr "Chaîne :"
 msgid "Checking for new videos..."
 msgstr "Recherche de nouvelles vidéos..."
 
-#: Download_core.py:1387
+#: Download_core.py:1388
 msgid "Checking interrupted downloads..."
 msgstr "Vérification des téléchargements interrompus..."
 
@@ -424,8 +424,8 @@ msgstr "Confirmer l'écrasement"
 msgid "Content type:"
 msgstr "Type de contenu :"
 
-#: Download_core.py:1826
-#: Download_core.py:1848
+#: Download_core.py:1827
+#: Download_core.py:1849
 msgid "Converting"
 msgstr "Conversion en cours"
 
@@ -450,7 +450,7 @@ msgstr "Cookies exportés avec succès vers {path}. L'anti-blocage est maintenan
 msgid "Copy URL"
 msgstr "Copier l'URL"
 
-#: addonCore.py:632
+#: addonCore.py:646
 #: playlist.py:415
 #: search.py:504
 msgid "Copy video Shorten URL"
@@ -475,7 +475,7 @@ msgstr "Impossible de cliquer sur le bouton Passer."
 msgid "Could not create short URL"
 msgstr "Impossible de créer l'URL courte"
 
-#: addonCore.py:686
+#: addonCore.py:700
 msgid "Could not create shortened URL"
 msgstr "Impossible de créer l'URL raccourcie"
 
@@ -503,11 +503,11 @@ msgstr "Impossible d'ouvrir l'URL"
 msgid "Could not read the {browser} cookie database. Close {browser} completely and try exporting again."
 msgstr "Impossible de lire la base de données des cookies de {browser}. Fermez complètement {browser} et réessayez d'exporter."
 
-#: addonCore.py:504
+#: addonCore.py:518
 msgid "Cycle MP3 quality (single tap), toggle download immediately (double tap), toggle playlist mode (triple tap)"
 msgstr "Changer la qualité MP3 (simple pression), basculer le téléchargement immédiat (double pression), basculer le mode lecture en boucle (triple pression)"
 
-#: addonCore.py:893
+#: addonCore.py:907
 msgid "Cycle MP3 quality settings"
 msgstr "Faire défiler les paramètres de qualité MP3"
 
@@ -584,7 +584,7 @@ msgstr "Tout télécharger"
 msgid "Download all {count} videos in this playlist?"
 msgstr "Télécharger les {count} vidéos de cette liste de lecture ?"
 
-#: Download_core.py:2058
+#: Download_core.py:2059
 msgid "Download complete"
 msgstr "Téléchargement terminé"
 
@@ -592,47 +592,47 @@ msgstr "Téléchargement terminé"
 msgid "Download entire playlist"
 msgstr "Télécharger la liste de lecture entière"
 
-#: addonCore.py:638
+#: addonCore.py:652
 msgid "Download fail manager"
 msgstr "Gestionnaire des échecs de téléchargement"
 
-#: addonCore.py:640
+#: addonCore.py:654
 msgid "Download fail manager (no failed)"
 msgstr "Gestionnaire des échecs de téléchargement (aucun échec)"
 
-#: Download_core.py:2168
+#: Download_core.py:2169
 msgid "Download failed"
 msgstr "Téléchargement échoué"
 
-#: Download_core.py:2192
+#: Download_core.py:2193
 msgid "Download failed due to an error"
 msgstr "Échec du téléchargement en raison d'une erreur"
 
-#: Download_core.py:2180
+#: Download_core.py:2181
 msgid "Download failed due to timeout"
 msgstr "Échec du téléchargement en raison d'un dépassement de délai"
 
-#: Download_core.py:2226
+#: Download_core.py:2227
 msgid "Download failed to start"
 msgstr "Échec du démarrage du téléchargement"
 
-#: Download_core.py:2143
+#: Download_core.py:2144
 msgid "Download failed: YouTube blocked this request. Try exporting cookies from your browser in the Anti-blocking settings."
 msgstr "Échec du téléchargement : YouTube a bloqué cette requête. Essayez d'exporter les cookies de votre navigateur dans les paramètres anti-blocage."
 
-#: Download_core.py:2166
+#: Download_core.py:2167
 msgid "Download failed: YouTube reports this video is unavailable"
 msgstr "Échec du téléchargement : YouTube indique que cette vidéo n'est pas disponible"
 
-#: Download_core.py:2156
+#: Download_core.py:2157
 msgid "Download failed: the downloaded JavaScript runtime isn't working. Try deleting the bin folder in your AbsoluteYoutube config directory so it re-downloads."
 msgstr "Échec du téléchargement : l'environnement d'exécution JavaScript téléchargé ne fonctionne pas. Essayez de supprimer le dossier bin dans le répertoire de configuration d'AbsoluteYoutube pour qu'il soit retéléchargé."
 
-#: Download_core.py:2164
+#: Download_core.py:2165
 msgid "Download failed: this may be because yt-dlp is outdated (current {current}, latest {latest}). Try updating yt-dlp in settings."
 msgstr "Échec du téléchargement : yt-dlp est peut-être obsolète (version actuelle {current}, dernière version {latest}). Essayez de mettre à jour yt-dlp dans les paramètres."
 
-#: Download_core.py:2159
+#: Download_core.py:2160
 msgid "Download failed: yt-dlp needs a JavaScript runtime, which this add-on is downloading automatically in the background. Please wait a moment and try again."
 msgstr "Échec du téléchargement : yt-dlp nécessite un moteur JavaScript que cet add-on télécharge automatiquement en arrière-plan. Veuillez patienter un moment et réessayer."
 
@@ -651,11 +651,11 @@ msgstr "Le dossier de téléchargement n'existe pas."
 msgid "Download function not available."
 msgstr "Fonction de téléchargement non disponible."
 
-#: addonCore.py:634
+#: addonCore.py:648
 msgid "Download list manager"
 msgstr "Gestionnaire de la liste des téléchargements"
 
-#: addonCore.py:438
+#: addonCore.py:452
 msgid "Download or queue video (single tap MP3, double tap MP4, triple tap WAV)"
 msgstr "Télécharger ou mettre en file d'attente la vidéo (un appui simple pour MP3, un double appui pour MP4, un triple appui pour WAV)"
 
@@ -729,11 +729,11 @@ msgstr "Erreur lors de la création du dossier de téléchargement"
 msgid "Error deleting channel."
 msgstr "Erreur lors de la suppression de la chaîne."
 
-#: addonCore.py:671
+#: addonCore.py:685
 msgid "Error displaying context menu"
 msgstr "Erreur lors de l'affichage du menu contextuel"
 
-#: addonCore.py:275
+#: addonCore.py:289
 msgid "Error during auto-update of yt-dlp: {str}"
 msgstr "Erreur lors de la mise à jour automatique de yt-dlp : {str}"
 
@@ -741,17 +741,17 @@ msgstr "Erreur lors de la mise à jour automatique de yt-dlp : {str}"
 msgid "Error fetching channel: {str}"
 msgstr "Erreur lors de la récupération de la chaîne : {str}"
 
-#: addonCore.py:147
+#: addonCore.py:149
 #: downloadFail.py:50
 msgid "Error importing core functions: {str}"
 msgstr "Erreur lors de l'importation des fonctions principales : {str}"
 
-#: addonCore.py:820
+#: addonCore.py:834
 msgid "Error importing settings panel: {str}"
 msgstr "Erreur lors de l'importation du panneau des paramètres : {str}"
 
-#: addonCore.py:170
-#: addonCore.py:251
+#: addonCore.py:172
+#: addonCore.py:253
 msgid "Error initializing AbsoluteYoutube: {str}"
 msgstr "Erreur lors de l'initialisation d'AbsoluteYoutube : {str}"
 
@@ -764,24 +764,24 @@ msgstr "Erreur lors du chargement du cache."
 msgid "Error loading channel data."
 msgstr "Erreur lors du chargement des données de la chaîne."
 
-#: addonCore.py:578
+#: addonCore.py:592
 msgid "Error opening channel dialog"
 msgstr "Erreur lors de l'ouverture de la boîte de dialogue de la chaîne"
 
-#: addonCore.py:866
+#: addonCore.py:880
 msgid "Error opening channel/playlist list: {str}"
 msgstr "Erreur lors de l'ouverture de la liste des chaînes/listes de lecture : {str}"
 
-#: addonCore.py:707
-#: addonCore.py:711
+#: addonCore.py:721
+#: addonCore.py:725
 msgid "Error opening download fail dialog: {str}"
 msgstr "Erreur lors de l'ouverture de la boîte de dialogue des échecs de téléchargement : {str}"
 
-#: addonCore.py:618
+#: addonCore.py:632
 msgid "Error opening download list dialog: {str}"
 msgstr "Erreur lors de l'ouverture de la boîte de dialogue de la liste des téléchargements : {str}"
 
-#: addonCore.py:474
+#: addonCore.py:488
 msgid "Error opening folder"
 msgstr "Erreur lors de l'ouverture du dossier"
 
@@ -789,23 +789,23 @@ msgstr "Erreur lors de l'ouverture du dossier"
 msgid "Error opening playlist."
 msgstr "Erreur lors de l'ouverture de la liste de lecture."
 
-#: addonCore.py:805
+#: addonCore.py:819
 msgid "Error opening search dialog: {str}"
 msgstr "Erreur lors de l'ouverture de la boîte de dialogue de recherche : {str}"
 
-#: addonCore.py:823
+#: addonCore.py:837
 msgid "Error opening settings dialog: {str}"
 msgstr "Erreur lors de l'ouverture de la boîte de dialogue des paramètres : {str}"
 
-#: addonCore.py:786
+#: addonCore.py:800
 msgid "Error opening trim dialog: {str}"
 msgstr "Erreur lors de l'ouverture de la boîte de dialogue de découpage : {str}"
 
-#: addonCore.py:735
+#: addonCore.py:749
 msgid "Error opening video history: {str}"
 msgstr "Erreur lors de l'ouverture de l'historique des vidéos : {str}"
 
-#: Download_core.py:2545
+#: Download_core.py:2546
 msgid "Error processing URL"
 msgstr "Erreur lors du traitement de l'URL"
 
@@ -821,11 +821,11 @@ msgstr "Erreur lors de la mise à jour de l'URL de la chaîne."
 msgid "Error updating channel."
 msgstr "Erreur lors de la mise à jour de la chaîne."
 
-#: addonCore.py:623
+#: addonCore.py:637
 msgid "Error: Download list module not available"
 msgstr "Erreur : Le module de liste de téléchargements n'est pas disponible"
 
-#: addonCore.py:697
+#: addonCore.py:711
 msgid "Error: DownloadFail module not available"
 msgstr "Erreur : Le module d'échec de téléchargement n'est pas disponible"
 
@@ -837,23 +837,23 @@ msgstr "Erreur : Échec de la capture de l'instantané."
 msgid "Error: No snapshot file created."
 msgstr "Erreur : Aucun fichier d'instantané créé."
 
-#: addonCore.py:810
+#: addonCore.py:824
 msgid "Error: Search module not available"
 msgstr "Erreur : Le module de recherche n'est pas disponible"
 
-#: addonCore.py:766
+#: addonCore.py:780
 msgid "Error: Snapshot module not available"
 msgstr "Erreur : Le module d'instantané n'est pas disponible"
 
-#: addonCore.py:775
+#: addonCore.py:789
 msgid "Error: Trim module not available"
 msgstr "Erreur : Le module de découpage n'est pas disponible"
 
-#: addonCore.py:722
+#: addonCore.py:736
 msgid "Error: Video history module not available"
 msgstr "Erreur : Le module d'historique des vidéos n'est pas disponible"
 
-#: Download_core.py:2570
+#: Download_core.py:2571
 #: Trim.py:326
 msgid "Error: ffmpeg.exe not found."
 msgstr "Erreur : ffmpeg.exe introuvable."
@@ -878,7 +878,7 @@ msgstr "Exportation des cookies de {browser} en cours..."
 msgid "Failed to create the specified folder. Please select a valid folder."
 msgstr "Échec de la création du dossier spécifié. Veuillez sélectionner un dossier valide."
 
-#: addonCore.py:644
+#: addonCore.py:658
 msgid "Favorite channel"
 msgstr "Chaîne favorite"
 
@@ -886,7 +886,7 @@ msgstr "Chaîne favorite"
 msgid "Fetched {count} items total."
 msgstr "{count} éléments récupérés au total."
 
-#: addonCore.py:853
+#: addonCore.py:867
 msgid "Fetching channel information..."
 msgstr "Récupération des informations de la chaîne..."
 
@@ -904,11 +904,11 @@ msgstr "Récupération des vidéos de la chaîne..."
 msgid "File Format"
 msgstr "Format de fichier"
 
-#: Download_core.py:2575
+#: Download_core.py:2576
 msgid "File already exists. Skipping download."
 msgstr "Le fichier existe déjà. Téléchargement ignoré."
 
-#: Download_core.py:2531
+#: Download_core.py:2532
 msgid "File exists"
 msgstr "Le fichier existe"
 
@@ -926,7 +926,7 @@ msgstr "Forcer l'&IPv6"
 msgid "Format"
 msgstr "Format"
 
-#: Download_core.py:1240
+#: Download_core.py:1241
 msgid ""
 "Found {count} interrupted downloads\n"
 "Resume all?"
@@ -999,11 +999,11 @@ msgstr "Comment obtenir les cookies"
 msgid "How to get cookies?"
 msgstr "Comment obtenir les cookies ?"
 
-#: addonCore.py:562
+#: addonCore.py:576
 msgid "Immediate download mode disabled"
 msgstr "Mode de téléchargement immédiat désactivé"
 
-#: addonCore.py:560
+#: addonCore.py:574
 msgid "Immediate download mode enabled"
 msgstr "Mode de téléchargement immédiat activé"
 
@@ -1015,11 +1015,11 @@ msgstr "URL ou heure de début invalide"
 msgid "Invalid YouTube video URL"
 msgstr "URL de vidéo YouTube invalide"
 
-#: addonCore.py:566
+#: addonCore.py:580
 msgid "Invalid channel URL"
 msgstr "URL de chaîne invalide"
 
-#: addonCore.py:476
+#: addonCore.py:490
 msgid "Invalid download folder"
 msgstr "Dossier de téléchargement invalide"
 
@@ -1090,8 +1090,8 @@ msgstr "Mozilla Firefox"
 msgid "NextPage"
 msgstr "Page suivante"
 
-#: addonCore.py:383
-#: addonCore.py:676
+#: addonCore.py:397
+#: addonCore.py:690
 msgid "No YouTube URL found"
 msgstr "Aucune URL YouTube trouvée"
 
@@ -1104,7 +1104,7 @@ msgstr "Aucune chaîne sélectionnée."
 msgid "No downloads could be started"
 msgstr "Aucun téléchargement n'a pu être démarré"
 
-#: addonCore.py:693
+#: addonCore.py:707
 msgid "No failed downloads"
 msgstr "Aucun téléchargement échoué"
 
@@ -1168,11 +1168,11 @@ msgstr "Aucune donnée enregistrée pour ce type de contenu pour l'instant."
 msgid "No skip button found."
 msgstr "Aucun bouton Passer trouvé."
 
-#: Download_core.py:2578
+#: Download_core.py:2579
 msgid "No valid multimedia link found."
 msgstr "Aucun lien multimédia valide trouvé."
 
-#: addonCore.py:725
+#: addonCore.py:739
 msgid "No video history yet"
 msgstr "Aucun historique vidéo pour le moment"
 
@@ -1182,11 +1182,11 @@ msgstr "Aucun historique vidéo pour le moment"
 msgid "No videos to download."
 msgstr "Aucune vidéo à télécharger."
 
-#: addonCore.py:679
+#: addonCore.py:693
 msgid "Not a YouTube URL"
 msgstr "Ce n'est pas une URL YouTube"
 
-#: Download_core.py:2611
+#: Download_core.py:2612
 msgid "Not a YouTube video or valid multimedia link"
 msgstr "Ce n'est pas une vidéo YouTube ni un lien multimédia valide"
 
@@ -1194,11 +1194,11 @@ msgstr "Ce n'est pas une vidéo YouTube ni un lien multimédia valide"
 msgid "Open URL"
 msgstr "Ouvrir l'URL"
 
-#: addonCore.py:451
+#: addonCore.py:465
 msgid "Open context menu (single tap), open download folder (double tap), open search dialog (triple tap)"
 msgstr "Ouvrir le menu contextuel (un seul appui), ouvrir le dossier de téléchargement (double appui), ouvrir la boîte de dialogue de recherche (triple appui)"
 
-#: addonCore.py:516
+#: addonCore.py:530
 msgid "Open download list (single tap), download fail manager (double tap), video history report (triple tap)"
 msgstr "Ouvrir la liste des téléchargements (simple pression), gestionnaire d'échecs de téléchargement (double pression), rapport d'historique des vidéos (triple pression)"
 
@@ -1243,7 +1243,7 @@ msgstr "Épinglé"
 msgid "Play on YouTube"
 msgstr "Lire sur YouTube"
 
-#: addonCore.py:364
+#: addonCore.py:378
 msgid "Playlist"
 msgstr "Liste de lecture"
 
@@ -1256,11 +1256,11 @@ msgstr "Téléchargement de la liste de lecture démarré."
 msgid "Playlist download started: {title}"
 msgstr "Téléchargement de la liste de lecture démarré : {title}"
 
-#: addonCore.py:891
+#: addonCore.py:905
 msgid "Playlist mode disabled"
 msgstr "Mode liste de lecture désactivé"
 
-#: addonCore.py:891
+#: addonCore.py:905
 msgid "Playlist mode enabled"
 msgstr "Mode liste de lecture activé"
 
@@ -1339,7 +1339,7 @@ msgstr "Rétablir les paramètres par défaut (&recommandé en cas de blocage)"
 msgid "Reset to safe settings. Remember to use cookies for best results."
 msgstr "Rétablir les paramètres par défaut. N'oubliez pas d'utiliser les cookies pour de meilleurs résultats."
 
-#: Download_core.py:1202
+#: Download_core.py:1203
 msgid "Resume downloads"
 msgstr "Reprendre les téléchargements"
 
@@ -1347,15 +1347,15 @@ msgstr "Reprendre les téléchargements"
 msgid "Resume interrupted downloads on restart"
 msgstr "Reprendre les téléchargements interrompus au redémarrage"
 
-#: addonCore.py:871
+#: addonCore.py:885
 msgid "Save description (single tap), save subtitles (double tap), read YouTube subtitles automatically (triple tap): toggle each option"
 msgstr "Enregistrer la description (un simple appui), enregistrer les sous-titres (un double appui), lire automatiquement les sous-titres YouTube (un triple appui) : basculer chaque option"
 
-#: addonCore.py:877
+#: addonCore.py:891
 msgid "Save description disabled"
 msgstr "Enregistrement de la description désactivé"
 
-#: addonCore.py:877
+#: addonCore.py:891
 msgid "Save description enabled"
 msgstr "Enregistrement de la description activé"
 
@@ -1363,11 +1363,11 @@ msgstr "Enregistrement de la description activé"
 msgid "Save subtitles as a text file"
 msgstr "Enregistrer les sous-titres sous forme de fichier texte"
 
-#: addonCore.py:879
+#: addonCore.py:893
 msgid "Save subtitles disabled"
 msgstr "Enregistrement des sous-titres désactivé"
 
-#: addonCore.py:879
+#: addonCore.py:893
 msgid "Save subtitles enabled"
 msgstr "Enregistrement des sous-titres activé"
 
@@ -1387,7 +1387,7 @@ msgstr "Rechercher sur YouTube"
 msgid "Search YouTube:"
 msgstr "Rechercher sur YouTube :"
 
-#: addonCore.py:650
+#: addonCore.py:664
 msgid "Search Youtube"
 msgstr "Rechercher sur Youtube"
 
@@ -1444,7 +1444,7 @@ msgstr "Élément(s) sélectionné(s) déplacé(s) au début de la file d'attent
 msgid "Selected items removed"
 msgstr "Éléments sélectionnés supprimés"
 
-#: addonCore.py:684
+#: addonCore.py:698
 #: channel_core.py:1608
 #: playlist.py:453
 #: search.py:531
@@ -1478,11 +1478,11 @@ msgstr "Te&xte du bouton Passer pour d'autres langues YouTube, séparé par des 
 msgid "Skip existing files"
 msgstr "Ignorer les fichiers existants"
 
-#: addonCore.py:549
+#: addonCore.py:563
 msgid "Skip the YouTube ad that is playing (Z by default on YouTube pages)"
 msgstr "Passer l'annonce YouTube en cours de lecture (Z par défaut sur les pages YouTube)"
 
-#: addonCore.py:647
+#: addonCore.py:661
 msgid "Snapshot"
 msgstr "Capture instantanée"
 
@@ -1521,7 +1521,7 @@ msgstr "Heure de début :"
 msgid "Started {count} download(s)"
 msgstr "{count} téléchargement(s) démarré(s)"
 
-#: addonCore.py:412
+#: addonCore.py:426
 msgid "Starting download: {format} - {title}"
 msgstr "Démarrage du téléchargement : {format} - {title}"
 
@@ -1529,7 +1529,7 @@ msgstr "Démarrage du téléchargement : {format} - {title}"
 msgid "Starting download: {title}"
 msgstr "Démarrage du téléchargement : {title}"
 
-#: Download_core.py:1639
+#: Download_core.py:1640
 msgid "Starting next download from queue: {title}"
 msgstr "Démarrage du téléchargement suivant de la file d'attente : {title}"
 
@@ -1553,11 +1553,11 @@ msgstr "Cet élément n'a pas d'adresse Web"
 msgid "This item is already downloading"
 msgstr "Cet élément est déjà en cours de téléchargement"
 
-#: Download_core.py:2141
+#: Download_core.py:2142
 msgid "This livestream hasn't started yet. It starts in {time}."
 msgstr "Ce flux en direct n'a pas encore commencé. Il commence dans {time}."
 
-#: Download_core.py:2139
+#: Download_core.py:2140
 msgid "This video hasn't premiered yet. It starts in {time}."
 msgstr "Cette vidéo n'a pas encore fait l'objet d'une première. Elle commence dans {time}."
 
@@ -1579,15 +1579,15 @@ msgstr "Correction du titre terminée pour {count} vidéos."
 msgid "Title correction failed."
 msgstr "Échec de la correction du titre."
 
-#: addonCore.py:554
+#: addonCore.py:568
 msgid "Toggle download immediately"
 msgstr "Basculer le téléchargement immédiat"
 
-#: addonCore.py:886
+#: addonCore.py:900
 msgid "Toggle playlist mode"
 msgstr "Activer/désactiver le mode liste de lecture"
 
-#: addonCore.py:648
+#: addonCore.py:662
 msgid "Trim setting"
 msgstr "Paramètre de rognage"
 
@@ -1609,12 +1609,12 @@ msgstr "URL copiée dans le Presse-papiers"
 msgid "URL is required"
 msgstr "L'URL est requise"
 
-#: Download_core.py:2516
+#: Download_core.py:2517
 msgid "URL not found"
 msgstr "URL introuvable"
 
-#: Download_core.py:1494
-#: addonCore.py:406
+#: Download_core.py:1495
+#: addonCore.py:420
 #: downloadFail.py:110
 #: downloadFail.py:111
 #: downloadFail.py:112
@@ -1638,7 +1638,7 @@ msgstr "Mettre à jour Deno maintenant"
 
 #: Youtube_settings.py:770
 #: Youtube_settings.py:785
-#: addonCore.py:284
+#: addonCore.py:298
 msgid "Update failed: {str}"
 msgstr "Échec de la mise à jour : {str}"
 
@@ -1671,7 +1671,7 @@ msgid "Updating Deno..."
 msgstr "Mise à jour de Deno en cours..."
 
 #: Youtube_settings.py:755
-#: addonCore.py:279
+#: addonCore.py:293
 msgid "Updating yt-dlp..."
 msgstr "Mise à jour de yt-dlp en cours..."
 
@@ -1695,7 +1695,7 @@ msgstr "Utiliser la section de téléchargement"
 msgid "User &agent:"
 msgstr "Agent &utilisateur :"
 
-#: addonCore.py:642
+#: addonCore.py:656
 msgid "Video History Report"
 msgstr "Rapport d'historique des vidéos"
 
@@ -1734,8 +1734,8 @@ msgstr "Vidéos dans {title}"
 msgid "Waiting"
 msgstr "En attente"
 
-#: addonCore.py:758
-#: addonCore.py:771
+#: addonCore.py:772
+#: addonCore.py:785
 msgid "You must be on a YouTube page to use this feature"
 msgstr "Vous devez vous trouver sur une page YouTube pour utiliser cette fonctionnalité"
 
@@ -1772,11 +1772,11 @@ msgid "yt-dlp Update"
 msgstr "Mise à jour de yt-dlp"
 
 #: Youtube_settings.py:766
-#: addonCore.py:281
+#: addonCore.py:295
 msgid "yt-dlp updated successfully"
 msgstr "yt-dlp mis à jour avec succès"
 
-#: Download_core.py:2548
+#: Download_core.py:2549
 #: Youtube_settings.py:507
 msgid "yt-dlp.exe missing"
 msgstr "yt-dlp.exe manquant"
@@ -1805,7 +1805,7 @@ msgstr "{count} téléchargements mis en file d'attente."
 msgid "{count} new items updated."
 msgstr "{count} nouveaux éléments mis à jour."
 
-#: Download_core.py:1856
+#: Download_core.py:1857
 msgid "{mb} MB downloaded"
 msgstr "{mb} Mo téléchargés"
 
@@ -1821,11 +1821,11 @@ msgstr ""
 "{name} {new} est disponible (installé : {old}).\n"
 "Mettre à jour maintenant ?"
 
-#: Download_core.py:1841
+#: Download_core.py:1842
 msgid "{percent}%"
 msgstr "{percent} %"
 
-#: addonCore.py:905
+#: addonCore.py:919
 msgid "{quality} kbps"
 msgstr "{quality} kbps"
 

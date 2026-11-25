@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: AbsoluteYoutube 2026.11.1\n"
+"Project-Id-Version: AbsoluteYoutube 2026.12.0\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-11-12 08:51+0700\n"
+"POT-Creation-Date: 2026-11-25 17:38+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Indonesian\n"
@@ -86,7 +86,7 @@ msgstr "&Tandai sebagai sudah ditonton"
 msgid "&Max concurrent downloads (1-4):"
 msgstr "&Maksimum unduhan bersamaan (1-4):"
 
-#: Download_core.py:1209
+#: Download_core.py:1210
 msgid "&No"
 msgstr "&Tidak"
 
@@ -137,7 +137,7 @@ msgstr "&Kecepatan pembatas (KB/d, 0=tanpa batas, kelipatan 5):"
 msgid "&Update now"
 msgstr "&Perbarui sekarang"
 
-#: Download_core.py:1208
+#: Download_core.py:1209
 msgid "&Yes"
 msgstr "&Ya"
 
@@ -146,7 +146,7 @@ msgstr "&Ya"
 msgid "...truncated"
 msgstr "...terpotong"
 
-#: Download_core.py:2014
+#: Download_core.py:2015
 msgid "0%"
 msgstr "0%"
 
@@ -154,7 +154,7 @@ msgstr "0%"
 msgid "A channel with this name already exists. Overwrite?"
 msgstr "Saluran dengan nama ini sudah ada. Timpa?"
 
-#: addonCore.py:260
+#: addonCore.py:272
 msgid "A new version of yt-dlp is available: {latest}. Current: {current}. Please update in settings."
 msgstr "Versi baru yt-dlp tersedia: {latest}. Saat ini: {current}. Silakan perbarui di pengaturan."
 
@@ -168,7 +168,7 @@ msgstr "YouTube Absolut"
 msgid "Absolute YouTube Trim"
 msgstr "Pangkas YouTube Absolut"
 
-#: addonCore.py:652
+#: addonCore.py:666
 msgid "Absolute YouTube setting"
 msgstr "Pengaturan YouTube Absolut"
 
@@ -192,7 +192,7 @@ msgstr "Tambahkan nomor item ke nama file dalam mode daftar putar"
 msgid "Add new channel"
 msgstr "Tambah saluran baru"
 
-#: addonCore.py:152
+#: addonCore.py:154
 msgid "Add-on initialization failed: missing pending file path function. Please restart NVDA."
 msgstr "Inisialisasi pengaya gagal: fungsi jalur berkas tertunda hilang. Silakan mulai ulang NVDA."
 
@@ -204,15 +204,15 @@ msgstr "Kesalahan internal pengaya: komponen hilang. Silakan mulai ulang NVDA."
 msgid "Added Time"
 msgstr "Waktu Ditambahkan"
 
-#: addonCore.py:429
+#: addonCore.py:443
 msgid "Added to download list: {format} - {title}"
 msgstr "Ditambahkan ke daftar unduhan: {format} - {title}"
 
-#: addonCore.py:423
+#: addonCore.py:437
 msgid "Added to download queue: {format} - {title}"
 msgstr "Ditambahkan ke antrean unduhan: {format} - {title}"
 
-#: Download_core.py:2600
+#: Download_core.py:2601
 msgid "Adding link as {format} to download queue"
 msgstr "Menambahkan tautan sebagai {format} ke antrean unduhan"
 
@@ -241,11 +241,11 @@ msgstr "Semua unduhan yang gagal dibersihkan"
 msgid "All pending downloads cleared"
 msgstr "Semua unduhan tertunda dibersihkan"
 
-#: addonCore.py:431
+#: addonCore.py:445
 msgid "Already in download list"
 msgstr "Sudah ada di dalam daftar unduhan"
 
-#: addonCore.py:425
+#: addonCore.py:439
 msgid "Already in download queue"
 msgstr "Sudah ada di dalam antrean unduhan"
 
@@ -274,11 +274,11 @@ msgstr "Kualitas Audio"
 msgid "Auto-update yt-dlp on startup"
 msgstr "Perbarui otomatis yt-dlp saat pengaktifan"
 
-#: addonCore.py:881
+#: addonCore.py:895
 msgid "Automatic subtitle reading disabled"
 msgstr "Pembacaan subtitle otomatis dinonaktifkan"
 
-#: addonCore.py:881
+#: addonCore.py:895
 msgid "Automatic subtitle reading enabled"
 msgstr "Pembacaan subtitle otomatis diaktifkan"
 
@@ -317,7 +317,7 @@ msgstr "Tidak dapat membuat folder unduhan"
 msgid "Cannot create download folder."
 msgstr "Tidak dapat membuat folder unduhan."
 
-#: Download_core.py:1121
+#: Download_core.py:1122
 msgid "Cannot create folder"
 msgstr "Tidak dapat membuat folder"
 
@@ -325,11 +325,11 @@ msgstr "Tidak dapat membuat folder"
 msgid "Cannot determine URL for this video."
 msgstr "Tidak dapat menentukan URL untuk video ini."
 
-#: addonCore.py:387
+#: addonCore.py:401
 msgid "Cannot download from YouTube homepage. Please navigate to a video or playlist."
 msgstr "Tidak dapat mengunduh dari beranda YouTube. Silakan navigasikan ke video atau daftar putar."
 
-#: addonCore.py:390
+#: addonCore.py:404
 msgid "Cannot download from this YouTube page. Please select a specific video."
 msgstr "Tidak dapat mengunduh dari halaman YouTube ini. Silakan pilih video tertentu."
 
@@ -392,7 +392,7 @@ msgstr "Saluran:"
 msgid "Checking for new videos..."
 msgstr "Memeriksa video baru..."
 
-#: Download_core.py:1387
+#: Download_core.py:1388
 msgid "Checking interrupted downloads..."
 msgstr "Memeriksa unduhan yang terganggu..."
 
@@ -423,8 +423,8 @@ msgstr "Konfirmasi Timpa"
 msgid "Content type:"
 msgstr "Jenis konten:"
 
-#: Download_core.py:1826
-#: Download_core.py:1848
+#: Download_core.py:1827
+#: Download_core.py:1849
 msgid "Converting"
 msgstr "Mengonversi"
 
@@ -449,7 +449,7 @@ msgstr "Kuki berhasil diekspor ke {path}. Anti-pemblokiran kini aktif."
 msgid "Copy URL"
 msgstr "Salin URL"
 
-#: addonCore.py:632
+#: addonCore.py:646
 #: playlist.py:415
 #: search.py:504
 msgid "Copy video Shorten URL"
@@ -474,7 +474,7 @@ msgstr "Tidak dapat mengklik tombol lewati."
 msgid "Could not create short URL"
 msgstr "Tidak dapat membuat URL pendek"
 
-#: addonCore.py:686
+#: addonCore.py:700
 msgid "Could not create shortened URL"
 msgstr "Tidak dapat membuat URL yang diperpendek"
 
@@ -502,11 +502,11 @@ msgstr "Tidak dapat membuka URL"
 msgid "Could not read the {browser} cookie database. Close {browser} completely and try exporting again."
 msgstr "Tidak dapat membaca database koin {browser}. Tutup {browser} sepenuhnya dan coba ekspor lagi."
 
-#: addonCore.py:504
+#: addonCore.py:518
 msgid "Cycle MP3 quality (single tap), toggle download immediately (double tap), toggle playlist mode (triple tap)"
 msgstr "Siklus kualitas MP3 (ketuk sekali), alihkan unduhan segera (ketuk dua kali), alihkan mode daftar putar (ketuk tiga kali)"
 
-#: addonCore.py:893
+#: addonCore.py:907
 msgid "Cycle MP3 quality settings"
 msgstr "Siklus pengaturan kualitas MP3"
 
@@ -582,7 +582,7 @@ msgstr "Unduh semua"
 msgid "Download all {count} videos in this playlist?"
 msgstr "Unduh semua {count} video dalam daftar putar ini?"
 
-#: Download_core.py:2058
+#: Download_core.py:2059
 msgid "Download complete"
 msgstr "Unduh selesai"
 
@@ -590,47 +590,47 @@ msgstr "Unduh selesai"
 msgid "Download entire playlist"
 msgstr "Unduh seluruh daftar putar"
 
-#: addonCore.py:638
+#: addonCore.py:652
 msgid "Download fail manager"
 msgstr "Pengelola unduhan gagal"
 
-#: addonCore.py:640
+#: addonCore.py:654
 msgid "Download fail manager (no failed)"
 msgstr "Pengelola unduhan gagal (tidak ada yang gagal)"
 
-#: Download_core.py:2168
+#: Download_core.py:2169
 msgid "Download failed"
 msgstr "Unduhan gagal"
 
-#: Download_core.py:2192
+#: Download_core.py:2193
 msgid "Download failed due to an error"
 msgstr "Unduhan gagal karena galat"
 
-#: Download_core.py:2180
+#: Download_core.py:2181
 msgid "Download failed due to timeout"
 msgstr "Unduhan gagal karena habis waktu"
 
-#: Download_core.py:2226
+#: Download_core.py:2227
 msgid "Download failed to start"
 msgstr "Unduhan gagal dimulai"
 
-#: Download_core.py:2143
+#: Download_core.py:2144
 msgid "Download failed: YouTube blocked this request. Try exporting cookies from your browser in the Anti-blocking settings."
 msgstr "Unduhan gagal: YouTube memblokir permintaan ini. Coba ekspor kuki dari peramban Anda di pengaturan anti-pemblokiran."
 
-#: Download_core.py:2166
+#: Download_core.py:2167
 msgid "Download failed: YouTube reports this video is unavailable"
 msgstr "Unduhan gagal: YouTube melaporkan video ini tidak tersedia"
 
-#: Download_core.py:2156
+#: Download_core.py:2157
 msgid "Download failed: the downloaded JavaScript runtime isn't working. Try deleting the bin folder in your AbsoluteYoutube config directory so it re-downloads."
 msgstr "Unduhan gagal: runtime JavaScript yang diunduh tidak berfungsi. Coba hapus folder bin di direktori konfigurasi AbsoluteYoutube Anda agar diunduh ulang."
 
-#: Download_core.py:2164
+#: Download_core.py:2165
 msgid "Download failed: this may be because yt-dlp is outdated (current {current}, latest {latest}). Try updating yt-dlp in settings."
 msgstr "Unduhan gagal: ini mungkin karena yt-dlp sudah kedaluwarsa (saat ini {current}, terbaru {latest}). Coba perbarui yt-dlp di pengaturan."
 
-#: Download_core.py:2159
+#: Download_core.py:2160
 msgid "Download failed: yt-dlp needs a JavaScript runtime, which this add-on is downloading automatically in the background. Please wait a moment and try again."
 msgstr "Unduhan gagal: yt-dlp memerlukan runtime JavaScript, yang sedang diunduh secara otomatis oleh add-on ini di latar belakang. Harap tunggu sebentar dan coba lagi."
 
@@ -649,11 +649,11 @@ msgstr "Folder unduhan tidak ada."
 msgid "Download function not available."
 msgstr "Fungsi unduh tidak tersedia."
 
-#: addonCore.py:634
+#: addonCore.py:648
 msgid "Download list manager"
 msgstr "Pengelola daftar unduh"
 
-#: addonCore.py:438
+#: addonCore.py:452
 msgid "Download or queue video (single tap MP3, double tap MP4, triple tap WAV)"
 msgstr "Unduh atau antrekan video (ketuk sekali MP3, ketuk dua kali MP4, ketuk tiga kali WAV)"
 
@@ -727,11 +727,11 @@ msgstr "Kesalahan saat membuat folder unduhan"
 msgid "Error deleting channel."
 msgstr "Kesalahan saat menghapus saluran."
 
-#: addonCore.py:671
+#: addonCore.py:685
 msgid "Error displaying context menu"
 msgstr "Kesalahan saat menampilkan menu konteks"
 
-#: addonCore.py:275
+#: addonCore.py:289
 msgid "Error during auto-update of yt-dlp: {str}"
 msgstr "Kesalahan selama pemutakhiran otomatis yt-dlp: {str}"
 
@@ -739,17 +739,17 @@ msgstr "Kesalahan selama pemutakhiran otomatis yt-dlp: {str}"
 msgid "Error fetching channel: {str}"
 msgstr "Kesalahan saat mengambil saluran: {str}"
 
-#: addonCore.py:147
+#: addonCore.py:149
 #: downloadFail.py:50
 msgid "Error importing core functions: {str}"
 msgstr "Kesalahan saat mengimpor fungsi inti: {str}"
 
-#: addonCore.py:820
+#: addonCore.py:834
 msgid "Error importing settings panel: {str}"
 msgstr "Kesalahan saat mengimpor panel pengaturan: {str}"
 
-#: addonCore.py:170
-#: addonCore.py:251
+#: addonCore.py:172
+#: addonCore.py:253
 msgid "Error initializing AbsoluteYoutube: {str}"
 msgstr "Kesalahan saat menginisialisasi AbsoluteYoutube: {str}"
 
@@ -762,24 +762,24 @@ msgstr "Kesalahan saat memuat tembolok."
 msgid "Error loading channel data."
 msgstr "Kesalahan saat memuat data saluran."
 
-#: addonCore.py:578
+#: addonCore.py:592
 msgid "Error opening channel dialog"
 msgstr "Galat saat membuka dialog saluran"
 
-#: addonCore.py:866
+#: addonCore.py:880
 msgid "Error opening channel/playlist list: {str}"
 msgstr "Galat saat membuka daftar saluran/daftar putar: {str}"
 
-#: addonCore.py:707
-#: addonCore.py:711
+#: addonCore.py:721
+#: addonCore.py:725
 msgid "Error opening download fail dialog: {str}"
 msgstr "Galat saat membuka dialog unduhan gagal: {str}"
 
-#: addonCore.py:618
+#: addonCore.py:632
 msgid "Error opening download list dialog: {str}"
 msgstr "Galat saat membuka dialog daftar unduhan: {str}"
 
-#: addonCore.py:474
+#: addonCore.py:488
 msgid "Error opening folder"
 msgstr "Galat saat membuka folder"
 
@@ -787,23 +787,23 @@ msgstr "Galat saat membuka folder"
 msgid "Error opening playlist."
 msgstr "Galat saat membuka daftar putar."
 
-#: addonCore.py:805
+#: addonCore.py:819
 msgid "Error opening search dialog: {str}"
 msgstr "Galat saat membuka dialog pencarian: {str}"
 
-#: addonCore.py:823
+#: addonCore.py:837
 msgid "Error opening settings dialog: {str}"
 msgstr "Galat saat membuka dialog pengaturan: {str}"
 
-#: addonCore.py:786
+#: addonCore.py:800
 msgid "Error opening trim dialog: {str}"
 msgstr "Galat saat membuka dialog pemotongan: {str}"
 
-#: addonCore.py:735
+#: addonCore.py:749
 msgid "Error opening video history: {str}"
 msgstr "Gagal membuka riwayat video: {str}"
 
-#: Download_core.py:2545
+#: Download_core.py:2546
 msgid "Error processing URL"
 msgstr "Galat saat memproses URL"
 
@@ -819,11 +819,11 @@ msgstr "Galat saat memperbarui URL saluran."
 msgid "Error updating channel."
 msgstr "Galat saat memperbarui saluran."
 
-#: addonCore.py:623
+#: addonCore.py:637
 msgid "Error: Download list module not available"
 msgstr "Galat: Modul daftar unduhan tidak tersedia"
 
-#: addonCore.py:697
+#: addonCore.py:711
 msgid "Error: DownloadFail module not available"
 msgstr "Galat: Modul unduhan gagal tidak tersedia"
 
@@ -835,23 +835,23 @@ msgstr "Galat: Gagal mengambil cuplikan layar."
 msgid "Error: No snapshot file created."
 msgstr "Galat: Tidak ada berkas cuplikan layar yang dibuat."
 
-#: addonCore.py:810
+#: addonCore.py:824
 msgid "Error: Search module not available"
 msgstr "Galat: Modul pencarian tidak tersedia"
 
-#: addonCore.py:766
+#: addonCore.py:780
 msgid "Error: Snapshot module not available"
 msgstr "Galat: Modul cuplikan layar tidak tersedia"
 
-#: addonCore.py:775
+#: addonCore.py:789
 msgid "Error: Trim module not available"
 msgstr "Galat: Modul pemotongan tidak tersedia"
 
-#: addonCore.py:722
+#: addonCore.py:736
 msgid "Error: Video history module not available"
 msgstr "Galat: Modul riwayat video tidak tersedia"
 
-#: Download_core.py:2570
+#: Download_core.py:2571
 #: Trim.py:326
 msgid "Error: ffmpeg.exe not found."
 msgstr "Kesalahan: ffmpeg.exe tidak ditemukan."
@@ -876,7 +876,7 @@ msgstr "Mengekspor cookie dari {browser}..."
 msgid "Failed to create the specified folder. Please select a valid folder."
 msgstr "Gagal membuat folder yang ditentukan. Pilih folder yang valid."
 
-#: addonCore.py:644
+#: addonCore.py:658
 msgid "Favorite channel"
 msgstr "Saluran favorit"
 
@@ -884,7 +884,7 @@ msgstr "Saluran favorit"
 msgid "Fetched {count} items total."
 msgstr "Total {count} item diambil."
 
-#: addonCore.py:853
+#: addonCore.py:867
 msgid "Fetching channel information..."
 msgstr "Mengambil informasi saluran..."
 
@@ -902,11 +902,11 @@ msgstr "Mengambil video saluran..."
 msgid "File Format"
 msgstr "Format Berkas"
 
-#: Download_core.py:2575
+#: Download_core.py:2576
 msgid "File already exists. Skipping download."
 msgstr "Berkas sudah ada. Lewati unduhan."
 
-#: Download_core.py:2531
+#: Download_core.py:2532
 msgid "File exists"
 msgstr "Berkas sudah ada"
 
@@ -924,7 +924,7 @@ msgstr "Paksa I&Pv6"
 msgid "Format"
 msgstr "Format"
 
-#: Download_core.py:1240
+#: Download_core.py:1241
 msgid ""
 "Found {count} interrupted downloads\n"
 "Resume all?"
@@ -997,11 +997,11 @@ msgstr "Cara mendapatkan cookie"
 msgid "How to get cookies?"
 msgstr "Cara mendapatkan cookie?"
 
-#: addonCore.py:562
+#: addonCore.py:576
 msgid "Immediate download mode disabled"
 msgstr "Mode unduh langsung dinonaktifkan"
 
-#: addonCore.py:560
+#: addonCore.py:574
 msgid "Immediate download mode enabled"
 msgstr "Mode unduh langsung diaktifkan"
 
@@ -1013,11 +1013,11 @@ msgstr "URL atau waktu mulai tidak valid"
 msgid "Invalid YouTube video URL"
 msgstr "URL video YouTube tidak valid"
 
-#: addonCore.py:566
+#: addonCore.py:580
 msgid "Invalid channel URL"
 msgstr "URL saluran tidak valid"
 
-#: addonCore.py:476
+#: addonCore.py:490
 msgid "Invalid download folder"
 msgstr "Folder unduhan tidak valid"
 
@@ -1088,8 +1088,8 @@ msgstr "Mozilla Firefox"
 msgid "NextPage"
 msgstr "HalamanBerikutnya"
 
-#: addonCore.py:383
-#: addonCore.py:676
+#: addonCore.py:397
+#: addonCore.py:690
 msgid "No YouTube URL found"
 msgstr "URL YouTube tidak ditemukan"
 
@@ -1102,7 +1102,7 @@ msgstr "Tidak ada saluran yang dipilih."
 msgid "No downloads could be started"
 msgstr "Tidak ada unduhan yang dapat dimulai"
 
-#: addonCore.py:693
+#: addonCore.py:707
 msgid "No failed downloads"
 msgstr "Tidak ada unduhan yang gagal"
 
@@ -1166,11 +1166,11 @@ msgstr "Belum ada data tersimpan untuk jenis konten ini."
 msgid "No skip button found."
 msgstr "Tombol lewati tidak ditemukan."
 
-#: Download_core.py:2578
+#: Download_core.py:2579
 msgid "No valid multimedia link found."
 msgstr "Tidak ditemukan tautan multimedia yang valid."
 
-#: addonCore.py:725
+#: addonCore.py:739
 msgid "No video history yet"
 msgstr "Belum ada riwayat video"
 
@@ -1180,11 +1180,11 @@ msgstr "Belum ada riwayat video"
 msgid "No videos to download."
 msgstr "Tidak ada video untuk diunduh."
 
-#: addonCore.py:679
+#: addonCore.py:693
 msgid "Not a YouTube URL"
 msgstr "Bukan URL YouTube"
 
-#: Download_core.py:2611
+#: Download_core.py:2612
 msgid "Not a YouTube video or valid multimedia link"
 msgstr "Bukan video YouTube atau tautan multimedia yang valid"
 
@@ -1192,11 +1192,11 @@ msgstr "Bukan video YouTube atau tautan multimedia yang valid"
 msgid "Open URL"
 msgstr "Buka URL"
 
-#: addonCore.py:451
+#: addonCore.py:465
 msgid "Open context menu (single tap), open download folder (double tap), open search dialog (triple tap)"
 msgstr "Buka menu konteks (ketuk sekali), buka folder unduhan (ketuk dua kali), buka dialog pencarian (ketuk tiga kali)"
 
-#: addonCore.py:516
+#: addonCore.py:530
 msgid "Open download list (single tap), download fail manager (double tap), video history report (triple tap)"
 msgstr "Buka daftar unduhan (ketuk sekali), pengelola kegagalan unduhan (ketuk dua kali), laporan riwayat video (ketuk tiga kali)"
 
@@ -1240,7 +1240,7 @@ msgstr "Disematkan"
 msgid "Play on YouTube"
 msgstr "Putar di YouTube"
 
-#: addonCore.py:364
+#: addonCore.py:378
 msgid "Playlist"
 msgstr "Daftar putar"
 
@@ -1253,11 +1253,11 @@ msgstr "Unduhan daftar putar dimulai."
 msgid "Playlist download started: {title}"
 msgstr "Unduhan daftar putar dimulai: {title}"
 
-#: addonCore.py:891
+#: addonCore.py:905
 msgid "Playlist mode disabled"
 msgstr "Mode daftar putar dinonaktifkan"
 
-#: addonCore.py:891
+#: addonCore.py:905
 msgid "Playlist mode enabled"
 msgstr "Mode daftar putar diaktifkan"
 
@@ -1335,7 +1335,7 @@ msgstr "Reset ke pengaturan &aman (disarankan jika diblokir)"
 msgid "Reset to safe settings. Remember to use cookies for best results."
 msgstr "Reset ke pengaturan aman. Ingat untuk menggunakan kuki untuk hasil terbaik."
 
-#: Download_core.py:1202
+#: Download_core.py:1203
 msgid "Resume downloads"
 msgstr "Lanjutkan unduhan"
 
@@ -1343,15 +1343,15 @@ msgstr "Lanjutkan unduhan"
 msgid "Resume interrupted downloads on restart"
 msgstr "Lanjutkan unduhan yang terganggu saat dimulai ulang"
 
-#: addonCore.py:871
+#: addonCore.py:885
 msgid "Save description (single tap), save subtitles (double tap), read YouTube subtitles automatically (triple tap): toggle each option"
 msgstr "Simpan deskripsi (ketuk sekali), simpan subtitle (ketuk dua kali), baca subtitle YouTube secara otomatis (ketuk tiga kali): alihkan setiap opsi"
 
-#: addonCore.py:877
+#: addonCore.py:891
 msgid "Save description disabled"
 msgstr "Simpan deskripsi dinonaktifkan"
 
-#: addonCore.py:877
+#: addonCore.py:891
 msgid "Save description enabled"
 msgstr "Simpan deskripsi diaktifkan"
 
@@ -1359,11 +1359,11 @@ msgstr "Simpan deskripsi diaktifkan"
 msgid "Save subtitles as a text file"
 msgstr "Simpan subtitle sebagai file teks"
 
-#: addonCore.py:879
+#: addonCore.py:893
 msgid "Save subtitles disabled"
 msgstr "Simpan subtitle dinonaktifkan"
 
-#: addonCore.py:879
+#: addonCore.py:893
 msgid "Save subtitles enabled"
 msgstr "Simpan subtitle diaktifkan"
 
@@ -1383,7 +1383,7 @@ msgstr "Cari YouTube"
 msgid "Search YouTube:"
 msgstr "Cari YouTube:"
 
-#: addonCore.py:650
+#: addonCore.py:664
 msgid "Search Youtube"
 msgstr "Cari Youtube"
 
@@ -1440,7 +1440,7 @@ msgstr "Item yang dipilih dipindahkan ke antrean unduhan terdepan"
 msgid "Selected items removed"
 msgstr "Item yang dipilih dihapus"
 
-#: addonCore.py:684
+#: addonCore.py:698
 #: channel_core.py:1608
 #: playlist.py:453
 #: search.py:531
@@ -1473,11 +1473,11 @@ msgstr "Teks tombol le&wati untuk bahasa YouTube lainnya, dipisahkan dengan koma
 msgid "Skip existing files"
 msgstr "Lewati berkas yang sudah ada"
 
-#: addonCore.py:549
+#: addonCore.py:563
 msgid "Skip the YouTube ad that is playing (Z by default on YouTube pages)"
 msgstr "Lewati iklan YouTube yang sedang diputar (secara default Z di halaman YouTube)"
 
-#: addonCore.py:647
+#: addonCore.py:661
 msgid "Snapshot"
 msgstr "Tangkapan layar"
 
@@ -1516,7 +1516,7 @@ msgstr "Waktu mulai:"
 msgid "Started {count} download(s)"
 msgstr "Memulai {count} unduhan"
 
-#: addonCore.py:412
+#: addonCore.py:426
 msgid "Starting download: {format} - {title}"
 msgstr "Memulai unduhan: {format} - {title}"
 
@@ -1524,7 +1524,7 @@ msgstr "Memulai unduhan: {format} - {title}"
 msgid "Starting download: {title}"
 msgstr "Memulai unduhan: {title}"
 
-#: Download_core.py:1639
+#: Download_core.py:1640
 msgid "Starting next download from queue: {title}"
 msgstr "Memulai unduhan berikutnya dari antrean: {title}"
 
@@ -1549,11 +1549,11 @@ msgstr "Item ini tidak memiliki alamat web"
 msgid "This item is already downloading"
 msgstr "Item ini sudah diunduh"
 
-#: Download_core.py:2141
+#: Download_core.py:2142
 msgid "This livestream hasn't started yet. It starts in {time}."
 msgstr "Siaran langsung ini belum dimulai. Dimulai dalam {time}."
 
-#: Download_core.py:2139
+#: Download_core.py:2140
 msgid "This video hasn't premiered yet. It starts in {time}."
 msgstr "Video ini belum ditayangkan perdana. Dimulai dalam {time}."
 
@@ -1575,15 +1575,15 @@ msgstr "Koreksi judul selesai untuk {count} video."
 msgid "Title correction failed."
 msgstr "Koreksi judul gagal."
 
-#: addonCore.py:554
+#: addonCore.py:568
 msgid "Toggle download immediately"
 msgstr "Alihkan unduhan segera"
 
-#: addonCore.py:886
+#: addonCore.py:900
 msgid "Toggle playlist mode"
 msgstr "Alihkan mode daftar putar"
 
-#: addonCore.py:648
+#: addonCore.py:662
 msgid "Trim setting"
 msgstr "Pengaturan pemotongan"
 
@@ -1605,12 +1605,12 @@ msgstr "URL disalin ke papan klip"
 msgid "URL is required"
 msgstr "URL wajib diisi"
 
-#: Download_core.py:2516
+#: Download_core.py:2517
 msgid "URL not found"
 msgstr "URL tidak ditemukan"
 
-#: Download_core.py:1494
-#: addonCore.py:406
+#: Download_core.py:1495
+#: addonCore.py:420
 #: downloadFail.py:110
 #: downloadFail.py:111
 #: downloadFail.py:112
@@ -1634,7 +1634,7 @@ msgstr "Perbarui Deno sekarang"
 
 #: Youtube_settings.py:770
 #: Youtube_settings.py:785
-#: addonCore.py:284
+#: addonCore.py:298
 msgid "Update failed: {str}"
 msgstr "Pembaruan gagal: {str}"
 
@@ -1667,7 +1667,7 @@ msgid "Updating Deno..."
 msgstr "Memperbarui Deno..."
 
 #: Youtube_settings.py:755
-#: addonCore.py:279
+#: addonCore.py:293
 msgid "Updating yt-dlp..."
 msgstr "Memperbarui yt-dlp..."
 
@@ -1691,7 +1691,7 @@ msgstr "Gunakan bagian unduhan"
 msgid "User &agent:"
 msgstr "&Agen pengguna:"
 
-#: addonCore.py:642
+#: addonCore.py:656
 msgid "Video History Report"
 msgstr "Laporan Riwayat Video"
 
@@ -1730,8 +1730,8 @@ msgstr "Video di {title}"
 msgid "Waiting"
 msgstr "Menunggu"
 
-#: addonCore.py:758
-#: addonCore.py:771
+#: addonCore.py:772
+#: addonCore.py:785
 msgid "You must be on a YouTube page to use this feature"
 msgstr "Anda harus berada di halaman YouTube untuk menggunakan fitur ini"
 
@@ -1768,11 +1768,11 @@ msgid "yt-dlp Update"
 msgstr "Pembaruan yt-dlp"
 
 #: Youtube_settings.py:766
-#: addonCore.py:281
+#: addonCore.py:295
 msgid "yt-dlp updated successfully"
 msgstr "yt-dlp berhasil diperbarui"
 
-#: Download_core.py:2548
+#: Download_core.py:2549
 #: Youtube_settings.py:507
 msgid "yt-dlp.exe missing"
 msgstr "yt-dlp.exe tidak ada"
@@ -1801,7 +1801,7 @@ msgstr "{count} unduhan dalam antrean."
 msgid "{count} new items updated."
 msgstr "{count} item baru diperbarui."
 
-#: Download_core.py:1856
+#: Download_core.py:1857
 msgid "{mb} MB downloaded"
 msgstr "{mb} MB diunduh"
 
@@ -1817,11 +1817,11 @@ msgstr ""
 "{name} {new} tersedia (terpasang: {old}).\n"
 "Perbarui sekarang?"
 
-#: Download_core.py:1841
+#: Download_core.py:1842
 msgid "{percent}%"
 msgstr "{percent}%"
 
-#: addonCore.py:905
+#: addonCore.py:919
 msgid "{quality} kbps"
 msgstr "{quality} kbps"
 
